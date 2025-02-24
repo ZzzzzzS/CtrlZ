@@ -4,7 +4,11 @@
 #include "NetInferenceWorker.h"
 #include "Utils/ZenBuffer.hpp"
 #include <chrono>
+#include <cmath>
 
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
 namespace zzs
 {
 	template<typename SchedulerType, typename InferencePrecision, size_t INPUT_STUCK_LENGTH, size_t JOINT_NUMBER>
@@ -98,7 +102,7 @@ namespace zzs
 				CurrentMotorVel,
 				LastAction,
 				AngVel,
-				Ang	
+				Ang
 			) * this->InputScaleVec;
 
 			this->HistoryInputBuffer.push(SingleInputVecScaled);
@@ -151,8 +155,6 @@ namespace zzs
 
 		InferencePrecision cycle_time;
 		InferencePrecision dt;
-
-		const InferencePrecision M_PI = 3.14159265358979323846;
 
 		//compute time
 		std::chrono::steady_clock::time_point start_time;

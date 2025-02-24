@@ -17,7 +17,7 @@ namespace zzs
     public:
         AbstractWorker() {}
 
-        AbstractWorker(SchedulerType* scheduler,const nlohmann::json& cfg = nlohmann::json())
+        AbstractWorker(SchedulerType* scheduler, const nlohmann::json& cfg = nlohmann::json())
         {
             this->Scheduler = scheduler;
         }
@@ -49,10 +49,10 @@ namespace zzs
         virtual void TaskRun() override
         {
             std::cout << "SimpleTestWorker::TaskRun" << std::endl;
-            this->Scheduler->SetData<"1">(123);
-            this->Scheduler->SetData<"1">(123);
+            this->Scheduler->template SetData<"1">(123);
+            this->Scheduler->template SetData<"1">(123);
             int data;
-            this->Scheduler->GetData<"1">(data);
+            this->Scheduler->template GetData<"1">(data);
             std::cout << "data:" << data << std::endl;
         }
     };
@@ -63,15 +63,15 @@ namespace zzs
         using CallbackType = std::function<void(SchedulerType*)>;
     public:
         SimpleCallbackWorker(SchedulerType* scheduler, CallbackType func, const nlohmann::json& cfg = nlohmann::json())
-            :AbstractWorker<SchedulerType>(scheduler), callback__(func),cfg__(cfg) {}
+            :AbstractWorker<SchedulerType>(scheduler), callback__(func), cfg__(cfg) {}
         virtual ~SimpleCallbackWorker() {}
 
         virtual void TaskRun() override
         {
             callback__(this->Scheduler);
         }
-		nlohmann::json& getConfig() { return this->cfg__; }
-        
+        nlohmann::json& getConfig() { return this->cfg__; }
+
     private:
         CallbackType callback__;
         nlohmann::json cfg__;

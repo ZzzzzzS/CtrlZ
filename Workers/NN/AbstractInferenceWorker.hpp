@@ -24,11 +24,11 @@ namespace zzs
 			MemoryInfo__(nullptr),
 			IoBinding__(nullptr)
 		{
-			//¶ÁÈ¡ÅäÖÃÎÄ¼þ
+			//è¯»å–é…ç½®æ–‡ä»¶
 			nlohmann::json InferenceCfg = cfg["Workers"]["NN"]["Inference"];
 			nlohmann::json NetworkCfg = cfg["Workers"]["NN"]["Network"];
 
-			//¶ÁÈ¡ÍÆÀíÅäÖÃ
+			//è¯»å–æŽ¨ç†é…ç½®
 			this->WarmUpModel__ = InferenceCfg["WarmUpModel"].get<bool>();
 			if (this->WarmUpModel__)
 			{
@@ -36,12 +36,12 @@ namespace zzs
 			}
 			this->IntraNumberThreads__ = InferenceCfg["IntraNumberThreads"].get<size_t>();
 
-			//¶ÁÈ¡ÍøÂçÅäÖÃ
+			//è¯»å–ç½‘ç»œé…ç½®
 			this->ModelPath__ = NetworkCfg["ModelPath"].get<std::string>();
 			this->InputNodeNames__ = NetworkCfg["InputNodeNames"].get<std::vector<std::string>>();
 			this->OutputNodeNames__ = NetworkCfg["OutputNodeNames"].get<std::vector<std::string>>();
 
-			//³õÊ¼»¯Ä£ÐÍ
+			//åˆå§‹åŒ–æ¨¡åž‹
 			this->SessionOptions__.SetGraphOptimizationLevel(GraphOptimizationLevel::ORT_ENABLE_ALL);
 			this->SessionOptions__.SetIntraOpNumThreads(this->IntraNumberThreads__);
 			this->SessionOptions__.SetInterOpNumThreads(1);
@@ -81,7 +81,7 @@ namespace zzs
 		}
 
 		void virtual PreProcess() = 0;
-		void virtual PostProcess()  = 0;
+		void virtual PostProcess() = 0;
 
 		void virtual InferenceOnce()
 		{
@@ -98,16 +98,16 @@ namespace zzs
 		void TaskCreate() override
 		{
 			//bind input and output tensor
-			if(this->InputOrtTensors__.empty()||this->OutputOrtTensors__.empty())
+			if (this->InputOrtTensors__.empty() || this->OutputOrtTensors__.empty())
 				throw(std::runtime_error("InputOrtTensors or OutputOrtTensors is empty, call WarpOrtTensor to create Ort tensors before launch scheduler!"));
 
-			if(this->InputNodeNames__.size()!=this->InputOrtTensors__.size())
+			if (this->InputNodeNames__.size() != this->InputOrtTensors__.size())
 				throw(std::runtime_error("InputNodeNames size is not equal to InputOrtTensors size!"));
 			if (this->OutputNodeNames__.size() != this->OutputOrtTensors__.size())
 				throw(std::runtime_error("OutputNodeNames size is not equal to OutputOrtTensors size!"));
 
 			this->IoBinding__ = Ort::IoBinding(this->Session__);
-			
+
 			for (size_t i = 0; i < this->InputNodeNames__.size(); i++)
 			{
 				this->IoBinding__.BindInput(this->InputNodeNames__[i].c_str(), this->InputOrtTensors__[i]);
@@ -128,18 +128,13 @@ namespace zzs
 			}
 		}
 
-		template<int64_t ...Dims>
-		void WarpOrtTensor(math::Tensor<InferencePrecision, Dims...>& Tensor, Ort::Value& OrtTensor)
-		{
-			OrtTensor = Ort::Value::CreateTensor<InferencePrecision>(this->MemoryInfo__, Tensor.data__(), Tensor.size(), Tensor.shape_ptr(), Tensor.num_dims());
-		}
 
 		template<int64_t ...Dims>
 		Ort::Value WarpOrtTensor(math::Tensor<InferencePrecision, Dims...>& Tensor)
 		{
 			return Ort::Value::CreateTensor<InferencePrecision>(this->MemoryInfo__, Tensor.data(), Tensor.size(), Tensor.shape_ptr(), Tensor.num_dims());
 		}
-		
+
 
 	protected:
 		bool WarmUpModel__ = false;
@@ -152,7 +147,7 @@ namespace zzs
 		Ort::SessionOptions SessionOptions__;
 		Ort::AllocatorWithDefaultOptions DefaultAllocator__;
 		Ort::MemoryInfo MemoryInfo__;
-		
+
 		std::vector<std::string> InputNodeNames__;
 		std::vector<std::string> OutputNodeNames__;
 		std::vector<Ort::Value> InputOrtTensors__;

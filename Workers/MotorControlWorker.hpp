@@ -66,7 +66,7 @@ namespace zzs
 
 
 	//TODO: add mix control worker type 
-	template<typename SchedulerType,typename JointType,  typename MotorPrecision, size_t JointNumber>
+	template<typename SchedulerType, typename JointType, typename MotorPrecision, size_t JointNumber>
 	class MotorControlWorker : public AbstractWorker<SchedulerType>
 	{
 		using MotorValVec = math::Vector<MotorPrecision, JointNumber>;
@@ -116,9 +116,6 @@ namespace zzs
 				ControlMode = ControlType::Torque;
 				std::cout << "ControlMode=Torque" << std::endl;
 			}
-
-			
-
 
 			try
 			{

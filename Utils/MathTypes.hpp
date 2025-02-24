@@ -45,7 +45,7 @@ namespace zzs
 		class Vector : public std::array<T, N>
 		{
 			static_assert(std::is_arithmetic<T>::value, "T must be arithmetic type");
-			using std::array<T, N>::_Elems;
+			//using std::array<T, N>::_Elems;
 		public:
 			/**
 			 * @brief clamp val to min and max
@@ -228,7 +228,7 @@ namespace zzs
 			 */
 			constexpr T& operator()(size_t idx)
 			{
-				return this->_Elems[idx];
+				return this->operator[](idx);
 			}
 
 			/**
@@ -239,7 +239,7 @@ namespace zzs
 			 */
 			constexpr const T& operator()(size_t idx) const
 			{
-				return this->_Elems[idx];
+				return this->operator[](idx);
 			}
 
 			/**
@@ -276,7 +276,7 @@ namespace zzs
 				Vector<T, N> result;
 				for (size_t i = 0; i < N; i++)
 				{
-					result[i] = this->_Elems[i] + other[i];
+					result[i] = this->operator[](i) + other[i];
 				}
 				return result;
 			}
@@ -292,7 +292,7 @@ namespace zzs
 				Vector<T, N> result;
 				for (size_t i = 0; i < N; i++)
 				{
-					result[i] = this->_Elems[i] - other[i];
+					result[i] = this->operator[](i) - other[i];
 				}
 				return result;
 			}
@@ -307,7 +307,7 @@ namespace zzs
 				Vector<T, N> result;
 				for (size_t i = 0; i < N; i++)
 				{
-					result[i] = -this->_Elems[i];
+					result[i] = -this->operator[](i);
 				}
 				return result;
 			}
@@ -323,7 +323,7 @@ namespace zzs
 				Vector<T, N> result;
 				for (size_t i = 0; i < N; i++)
 				{
-					result[i] = this->_Elems[i] * other[i];
+					result[i] = this->operator[](i) * other[i];
 				}
 				return result;
 			}
@@ -339,7 +339,7 @@ namespace zzs
 				Vector<T, N> result;
 				for (size_t i = 0; i < N; i++)
 				{
-					result[i] = this->_Elems[i] / other[i];
+					result[i] = this->operator[](i) / other[i];
 				}
 				return result;
 			}
@@ -355,7 +355,7 @@ namespace zzs
 				Vector<T, N> result;
 				for (size_t i = 0; i < N; i++)
 				{
-					result[i] = this->_Elems[i] + val;
+					result[i] = this->operator[](i) + val;
 				}
 				return result;
 			}
@@ -371,7 +371,7 @@ namespace zzs
 				Vector<T, N> result;
 				for (size_t i = 0; i < N; i++)
 				{
-					result[i] = this->_Elems[i] - val;
+					result[i] = this->operator[](i) - val;
 				}
 				return result;
 			}
@@ -387,7 +387,7 @@ namespace zzs
 				Vector<T, N> result;
 				for (size_t i = 0; i < N; i++)
 				{
-					result[i] = this->_Elems[i] * val;
+					result[i] = this->operator[](i) * val;
 				}
 				return result;
 			}
@@ -403,7 +403,7 @@ namespace zzs
 				Vector<T, N> result;
 				for (size_t i = 0; i < N; i++)
 				{
-					result[i] = this->_Elems[i] / val;
+					result[i] = this->operator[](i) / val;
 				}
 				return result;
 			}
@@ -418,7 +418,7 @@ namespace zzs
 			{
 				for (size_t i = 0; i < N; i++)
 				{
-					this->_Elems[i] += other[i];
+					this->operator[](i) += other[i];
 				}
 				return *this;
 			}
@@ -433,7 +433,7 @@ namespace zzs
 			{
 				for (size_t i = 0; i < N; i++)
 				{
-					this->_Elems[i] -= other[i];
+					this->operator[](i) -= other[i];
 				}
 				return *this;
 			}
@@ -448,7 +448,7 @@ namespace zzs
 			{
 				for (size_t i = 0; i < N; i++)
 				{
-					this->_Elems[i] *= other[i];
+					this->operator[](i) *= other[i];
 				}
 				return *this;
 			}
@@ -463,7 +463,7 @@ namespace zzs
 			{
 				for (size_t i = 0; i < N; i++)
 				{
-					this->_Elems[i] /= other[i];
+					this->operator[](i) /= other[i];
 				}
 				return *this;
 			}
@@ -478,7 +478,7 @@ namespace zzs
 			{
 				for (size_t i = 0; i < N; i++)
 				{
-					this->_Elems[i] += val;
+					this->operator[](i) += val;
 				}
 				return *this;
 			}
@@ -493,7 +493,7 @@ namespace zzs
 			{
 				for (size_t i = 0; i < N; i++)
 				{
-					this->_Elems[i] -= val;
+					this->operator[](i) -= val;
 				}
 				return *this;
 			}
@@ -508,7 +508,7 @@ namespace zzs
 			{
 				for (size_t i = 0; i < N; i++)
 				{
-					this->_Elems[i] *= val;
+					this->operator[](i) *= val;
 				}
 				return *this;
 			}
@@ -523,7 +523,7 @@ namespace zzs
 			{
 				for (size_t i = 0; i < N; i++)
 				{
-					this->_Elems[i] /= val;
+					this->operator[](i) /= val;
 				}
 				return *this;
 			}
@@ -539,7 +539,7 @@ namespace zzs
 				T result = 0;
 				for (size_t i = 0; i < N; i++)
 				{
-					result += this->_Elems[i] * other[i];
+					result += this->operator[](i) * other[i];
 				}
 				return result;
 			}
@@ -554,7 +554,7 @@ namespace zzs
 				T result = 0;
 				for (size_t i = 0; i < N; i++)
 				{
-					result += this->_Elems[i] * this->_Elems[i];
+					result += this->operator[](i) * this->operator[](i);
 				}
 				return std::sqrt(result);
 			}
@@ -570,7 +570,7 @@ namespace zzs
 				Vector<T, N> result;
 				for (size_t i = 0; i < N; i++)
 				{
-					result[i] = this->_Elems[i] / len;
+					result[i] = this->operator[](i) / len;
 				}
 				return result;
 			}
@@ -582,12 +582,12 @@ namespace zzs
 			 */
 			constexpr T max() const
 			{
-				T result = _Elems[0];
+				T result = this->operator[](0);
 				for (size_t i = 1; i < N; i++)
 				{
-					if (_Elems[i] > result)
+					if (this->operator[](i) > result)
 					{
-						result = _Elems[i];
+						result = this->operator[](i);
 					}
 				}
 				return result;
@@ -600,12 +600,12 @@ namespace zzs
 			 */
 			constexpr T min() const
 			{
-				T result = _Elems[0];
+				T result = this->operator[](0);
 				for (size_t i = 1; i < N; i++)
 				{
-					if (_Elems[i] < result)
+					if (this->operator[](i) < result)
 					{
-						result = _Elems[i];
+						result = this->operator[](i);
 					}
 				}
 				return result;
@@ -621,7 +621,7 @@ namespace zzs
 				T result = 0;
 				for (size_t i = 0; i < N; i++)
 				{
-					result += _Elems[i];
+					result += this->operator[](i);
 				}
 				return result;
 			}
@@ -641,7 +641,7 @@ namespace zzs
 			{
 				for (size_t i = 0; i < N; i++)
 				{
-					func(this->_Elems[i], i);
+					func(this->operator[](i), i);
 				}
 			}
 		};
@@ -983,7 +983,7 @@ namespace zzs
 		 * @tparam T type of tensor element
 		 * @tparam Dims
 		 */
-		template<typename T, size_t... Dims>
+		template<typename T, int64_t... Dims>
 		class Tensor : public TensorBase<T, Dims...> {
 		public:
 			using Base = TensorBase<T, Dims...>;

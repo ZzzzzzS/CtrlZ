@@ -50,8 +50,8 @@ namespace zzs
             for (auto [taskname, task] : TaskList)
             {
                 task->isRunning = false;
-				task->PauseLock.notify_all();
-				this->SyncLock.notify_all();
+                task->PauseLock.notify_all();
+                this->SyncLock.notify_all();
                 task->thread.join();
                 delete task;
             }
@@ -60,7 +60,7 @@ namespace zzs
             {
                 worker->TaskDestroy();
             }
-			delete this->MainThreadTaskBlock;
+            delete this->MainThreadTaskBlock;
         }
 
         /**
@@ -152,11 +152,11 @@ namespace zzs
                 return -1;
             }
 
-			if (MainThreadTask && this->MainThreadTaskBlock)
-			{
-				std::cout << "Main thread task already exists, create task list failed." << std::endl;
-				return -1;
-			}
+            if (MainThreadTask && this->MainThreadTaskBlock)
+            {
+                std::cout << "Main thread task already exists, create task list failed." << std::endl;
+                return -1;
+            }
 
             TCB* tcb = new TCB();
             tcb->TaskName = TaskName;
@@ -165,7 +165,7 @@ namespace zzs
             tcb->isRunning = false;
             tcb->NewRun = false;
             tcb->Pause = true;
-			tcb->cnt = 0;
+            tcb->cnt = 0;
 
             if (MainThreadTask)
             {
@@ -239,6 +239,7 @@ namespace zzs
             tcb->Pause = false;
             tcb->PauseMutex.unlock();
             tcb->PauseLock.notify_all();
+            return true;
         }
 
         /**
@@ -267,6 +268,8 @@ namespace zzs
             tcb->Pause = true;
             tcb->PauseMutex.unlock();
             tcb->PauseLock.notify_all();
+
+            return true;
         }
 
 
@@ -394,7 +397,7 @@ namespace zzs
         std::map<std::string, TCB*> TaskList;
 
         /// @brief control block of the main thread task
-        TCB* MainThreadTaskBlock =nullptr;
+        TCB* MainThreadTaskBlock = nullptr;
 
         /// @brief main thread task name
         std::string MainThreadTaskName;

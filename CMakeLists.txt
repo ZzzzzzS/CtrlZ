@@ -25,7 +25,7 @@ add_library(CtrlZ STATIC
 )
 target_include_directories(CtrlZ PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-set(ONNXRUNTIME_ROOT "C:/ProgramFiles/vcpkg/packages/onnxruntime-gpu_x64-windows")
+set(ONNXRUNTIME_ROOT "/home/zhouzishun/Desktop/onnxruntime-linux-x64-1.20.1")
 
 if(WIN32)
 message("Build on windows")
@@ -49,6 +49,11 @@ message("Build on windows")
 
 elseif(UNIX)
 message("Build on unix like system")
+target_include_directories(CtrlZ PUBLIC ${ONNXRUNTIME_ROOT}/include)
+ message("${ONNXRUNTIME_ROOT}/include")
+ target_link_libraries(CtrlZ PUBLIC 
+	${ONNXRUNTIME_ROOT}/lib/libonnxruntime_providers_shared.so
+	${ONNXRUNTIME_ROOT}/lib/libonnxruntime.so)
 else()
 message(FATAL_ERROR "Unsupported platform")
 endif()

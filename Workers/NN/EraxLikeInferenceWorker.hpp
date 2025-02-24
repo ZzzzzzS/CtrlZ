@@ -4,10 +4,14 @@
 #include "NetInferenceWorker.h"
 #include "Utils/ZenBuffer.hpp"
 #include <chrono>
+#include <cmath>
 
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
 namespace zzs
 {
-	template<typename SchedulerType, typename InferencePrecision,size_t INPUT_STUCK_LENGTH, size_t EXTRA_INPUT_LENGTH, size_t JOINT_NUMBER>
+	template<typename SchedulerType, typename InferencePrecision, size_t INPUT_STUCK_LENGTH, size_t EXTRA_INPUT_LENGTH, size_t JOINT_NUMBER>
 	class EraxLikeInferenceWorker : public CommonLocoInferenceWorker<SchedulerType, InferencePrecision, JOINT_NUMBER>
 	{
 	public:
@@ -117,7 +121,7 @@ namespace zzs
 			constexpr size_t EXTRA_OFFSET = INPUT_STUCK_LENGTH * INPUT_TENSOR_LENGTH_UNIT;
 			std::copy(ExtraInputVec.begin(), ExtraInputVec.end(), InputVec.begin() + EXTRA_OFFSET);
 
-			this->InputTensor.Array() = decltype(InputVec)::clamp(InputVec,-this->ClipObservation, this->ClipObservation);
+			this->InputTensor.Array() = decltype(InputVec)::clamp(InputVec, -this->ClipObservation, this->ClipObservation);
 		}
 
 		void PostProcess() override
@@ -158,8 +162,6 @@ namespace zzs
 
 		InferencePrecision Stance_T;
 		InferencePrecision dt;
-
-		const InferencePrecision M_PI = 3.14159265358979323846;
 
 		//compute time
 		std::chrono::steady_clock::time_point start_time;
