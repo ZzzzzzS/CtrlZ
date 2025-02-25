@@ -34,3 +34,5 @@
 .vscode/
 .vs/
 .VSCodeCounter/
+out/
+build/
