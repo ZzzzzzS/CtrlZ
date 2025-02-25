@@ -27,7 +27,7 @@ namespace zzs
     };
 
 
-	// compile time string concatenation
+    // compile time string concatenation
     template <std::size_t N, std::size_t M>
     constexpr auto concat(const char(&a)[N], const char(&b)[M]) {
         char result[N + M - 1] = {};
@@ -70,13 +70,13 @@ namespace zzs
         static constexpr size_t dim = Dim;
     };
 
-	template <CTString CT, typename T, size_t Dim>
+    template <CTString CT, typename T, size_t Dim>
     struct CTSPair<CT, math::Vector<T, Dim>>
     {
-		static constexpr CTString str{ CT };
-		math::Vector<T, Dim>* type = {};
-		static constexpr bool isArray = true;
-		static constexpr size_t dim = Dim;
+        static constexpr CTString str{ CT };
+        math::Vector<T, Dim>* type = {};
+        static constexpr bool isArray = true;
+        static constexpr size_t dim = Dim;
     };
 
 
@@ -133,8 +133,8 @@ namespace zzs
         {
             constexpr auto it = std::find(string_array_.begin(), string_array_.end(), std::string_view(CT.value));
             constexpr size_t idx = it != string_array_.end() ? std::distance(string_array_.begin(), it) : sizeof...(CTS);
-            
-			//constexpr auto error_message = concat("CTS not found in CTSArray: ", CT.value);
+
+            //constexpr auto error_message = concat("CTS not found in CTSArray: ", CT.value);
             static_assert(idx != sizeof...(CTS), "CTS not found in CTSMap");
             return idx;
         }

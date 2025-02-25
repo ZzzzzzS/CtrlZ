@@ -15,9 +15,6 @@
 #include "Workers/NN/EraxLikeInferenceWorker.hpp"
 #include "Workers/NN/HumanoidGymInferenceWorker.hpp"
 
-/**
- * @details 这个文件用于指定具体的IMU类型和关节类型，需要用户根据硬件实际情况定义
- */
 #include "../HW_Spec.hpp"
 
 
@@ -58,10 +55,10 @@ constexpr zzs::CTSPair<"InferenceTime", RealNumber> InferenceTimePair;
 
 // define scheduler
 using LimxScheduler = zzs::AbstractScheduler<ImuAccRawPair, ImuGyroRawPair, ImuMagRawPair, LinearVelocityValuePair,
-	ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair,
-	TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair,
-	TargetMotorTorquePair, LimitTargetMotorTorquePair,
-	NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair>;
+    ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair,
+    TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair,
+    TargetMotorTorquePair, LimitTargetMotorTorquePair,
+    NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair>;
 
 
 //define workers
@@ -69,10 +66,10 @@ using LimxMotorResetWorker = zzs::MotorResetPositionWorker<LimxScheduler, RealNu
 using LimxImuWorker = zzs::ImuProcessWorker<LimxScheduler, DeviceImu*, RealNumber>;
 using LimxMotorWorker = zzs::MotorControlWorker<LimxScheduler, DeviceJoint*, RealNumber, JOINT_NUMBER>;
 using LimxLogWorker = zzs::AsyncLoggerWorker<LimxScheduler, RealNumber, ImuAccRawPair, ImuGyroRawPair, ImuMagRawPair, LinearVelocityValuePair,
-	ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair,
-	TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair,
-	TargetMotorTorquePair, LimitTargetMotorTorquePair,
-	NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair>;
+    ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair,
+    TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair,
+    TargetMotorTorquePair, LimitTargetMotorTorquePair,
+    NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair>;
 
 using LimxFlexPatchWorker = zzs::SimpleCallbackWorker<LimxScheduler>;
 

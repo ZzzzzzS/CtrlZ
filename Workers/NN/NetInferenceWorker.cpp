@@ -10,11 +10,11 @@
  */
 Ort::Env& GetOrtEnv()
 {
-	static Ort::Env env(ORT_LOGGING_LEVEL_WARNING, "NetInferenceWorker");
-	return env;
+    static Ort::Env env(ORT_LOGGING_LEVEL_WARNING, "NetInferenceWorker");
+    return env;
 }
 
 std::wstring string_to_wstring(const std::string& str) {
-	std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
-	return converter.from_bytes(str);
+    std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
+    return converter.from_bytes(str);
 }

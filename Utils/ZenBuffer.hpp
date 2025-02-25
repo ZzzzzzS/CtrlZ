@@ -216,14 +216,14 @@ namespace zzs
         }
 
         WeightFilter(std::vector<T> param)
-			: buffer(param.size())
+            : buffer(param.size())
         {
-			this->weight = param;
-			this->buffer_sz = param.size();
-			this->SumWeight = T();
+            this->weight = param;
+            this->buffer_sz = param.size();
+            this->SumWeight = T();
             for (auto&& i : this->weight)
             {
-				this->SumWeight += i;
+                this->SumWeight += i;
             }
         }
 

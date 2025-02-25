@@ -25,38 +25,38 @@ namespace zzs
         AsyncLoggerWorker(SchedulerType* scheduler, const nlohmann::json& root_cfg)
             :AbstractWorker<SchedulerType>(scheduler)
         {
-			nlohmann::json cfg = root_cfg["Workers"]["AsyncLogger"];
+            nlohmann::json cfg = root_cfg["Workers"]["AsyncLogger"];
             //TODO: add static assert to check if the value type is a valid type (number or array of numbers)
-			std::time_t now = std::time(nullptr);
-			std::tm tm = *std::localtime(&now);
-			std::string time_str = std::to_string(tm.tm_year + 1900) + "-" + std::to_string(tm.tm_mon + 1) + "-" + std::to_string(tm.tm_mday) + "-" + std::to_string(tm.tm_hour) + "-" + std::to_string(tm.tm_min) + "-" + std::to_string(tm.tm_sec);
+            std::time_t now = std::time(nullptr);
+            std::tm tm = *std::localtime(&now);
+            std::string time_str = std::to_string(tm.tm_year + 1900) + "-" + std::to_string(tm.tm_mon + 1) + "-" + std::to_string(tm.tm_mday) + "-" + std::to_string(tm.tm_hour) + "-" + std::to_string(tm.tm_min) + "-" + std::to_string(tm.tm_sec);
             this->PrintSplitLine();
             std::cout << "AsyncLoggerWorker" << std::endl;
             std::string path;
             try
             {
-				path = cfg["LogPath"].get<std::string>();
+                path = cfg["LogPath"].get<std::string>();
                 this->LogPath__ = path;
-			}
-			catch (const std::exception&)
-			{
-				std::cerr << "AsyncLoggerWorker: Failed to get LogPath from config, use default path" << std::endl;
-                this->LogPath__ = "./";
-            }
-			this->LogPath__ = path + time_str + ".csv";
-
-            try
-            {
-				this->WriteBackFrequency__ = cfg["WriteBackFrequency"].get<size_t>();
             }
             catch (const std::exception&)
             {
-				std::cerr << "AsyncLoggerWorker: Failed to get WriteBackFrequency from config, use default value" << std::endl;
-				this->WriteBackFrequency__ = 1000;
+                std::cerr << "AsyncLoggerWorker: Failed to get LogPath from config, use default path" << std::endl;
+                this->LogPath__ = "./";
+            }
+            this->LogPath__ = path + time_str + ".csv";
+
+            try
+            {
+                this->WriteBackFrequency__ = cfg["WriteBackFrequency"].get<size_t>();
+            }
+            catch (const std::exception&)
+            {
+                std::cerr << "AsyncLoggerWorker: Failed to get WriteBackFrequency from config, use default value" << std::endl;
+                this->WriteBackFrequency__ = 1000;
             }
 
-			std::cout << "LogPath:" << this->LogPath__ << std::endl;
-			std::cout << "WriteBackFrequency:" << this->WriteBackFrequency__ << std::endl;
+            std::cout << "LogPath:" << this->LogPath__ << std::endl;
+            std::cout << "WriteBackFrequency:" << this->WriteBackFrequency__ << std::endl;
             this->PrintSplitLine();
 
         }
@@ -72,7 +72,7 @@ namespace zzs
         //     static_assert(std::conjunction_v<std::is_arithmetic<Args::type>...> , "All Args must be a number type");
         // }
 
-        virtual void TaskRun() override{}
+        virtual void TaskRun() override {}
 
         virtual void TaskCreate() override
         {
@@ -237,11 +237,11 @@ namespace zzs
                     this->LogThreadSyncCV__.wait(lock, [this] {return this->LogThreadNeedWrite__ || !this->LogThreadRun__; });
                 }
                 if (!this->LogThreadRun__) break;
-				//std::cout << "WriteLogThreadRun" << std::endl;
+                //std::cout << "WriteLogThreadRun" << std::endl;
                 WriteFile();
                 this->LogThreadNeedWrite__ = false;
             }
-			std::cout << "WriteLogThreadRun exit" << std::endl;
+            std::cout << "WriteLogThreadRun exit" << std::endl;
             WriteFile();
             this->FileStream__.close();
         }

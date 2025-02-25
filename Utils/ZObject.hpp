@@ -13,13 +13,13 @@ namespace zzs
         ZObject() {}
         ~ZObject() {}
 
-		void PrintSplitLine(size_t length = 60, char c = '-')
-		{
-			for (size_t i = 0; i < length; i++)
-			{
-				std::cout << c;
-			}
-			std::cout << std::endl;
-		}
+        void PrintSplitLine(size_t length = 60, char c = '-')
+        {
+            for (size_t i = 0; i < length; i++)
+            {
+                std::cout << c;
+            }
+            std::cout << std::endl;
+        }
     };
 };
