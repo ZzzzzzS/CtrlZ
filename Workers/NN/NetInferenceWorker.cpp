@@ -6,7 +6,7 @@
 #include <iostream>
 
 /**
- * @brief singleton Ort::Env object
+ * @brief singleton get Ort::Env object
  */
 Ort::Env& GetOrtEnv()
 {
@@ -14,6 +14,12 @@ Ort::Env& GetOrtEnv()
     return env;
 }
 
+/**
+ * @brief convert string to wstring, this is used for windows platform
+ *
+ * @param str input string
+ * @return std::wstring output wstring
+ */
 std::wstring string_to_wstring(const std::string& str) {
     std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
     return converter.from_bytes(str);

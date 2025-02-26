@@ -10,13 +10,57 @@
 
 namespace zzs
 {
+    /**
+     * @brief ImuProcessWorker 类型是一个IMU数据处理工人类型，这个类型用于处理IMU传感器的数据，包括加速度，角速度和角度。
+     * 通常来说，这个类型可以被用于主任务队列中。
+     * 这个类会在TaskCycleBegin方法中获取IMU数据并对齐进行滤波和去除异常值。用户可以通过配置文件来配置滤波器的权重。
+     * @details
+     * 该类会要求数据总线中包含"AccelerationRaw","AngleVelocityRaw","AngleRaw"这三个数据用于存储IMU传感器的原始数据。
+     * 该类会在数据总线中存储"AccelerationValue","AngleVelocityValue","AngleValue"这三个数据用于存储滤波处理后的IMU数据。
+     *
+     * @details config.json配置文件示例：
+     * {
+     *   "Workers": {
+     *      "ImuProcess": {
+     *          "AccFilterWeight": [
+     *            1,  //加速度滤波权重,表示一个长度为2周期，每个周期的权重都是1的滤波器(有限长冲激响应滤波器FIR)
+     *            1
+     *          ],
+     *          "GyroFilterWeight": [
+     *            1,
+     *            1
+     *          ],
+     *          "MagFilterWeight": [
+     *            1,
+     *            1
+     *          ]
+     *      }
+     * }
+     *
+     *
+     * @tparam SchedulerType 调度器类型
+     * @tparam ImuType IMU传感器类型，用户可以通过这个参数来指定IMU传感器的具体类型，
+     * 但是这个类型必须要实现GetAccX, GetAccY, GetAccZ, GetGyroX, GetGyroY, GetGyroZ, GetRoll, GetPitch, GetYaw这些方法。
+     * @tparam ImuPrecision IMU数据的精度，用户可以通过这个参数来指定IMU数据的精度，比如可以指定为float或者double
+     */
     template<typename SchedulerType, typename ImuType, typename ImuPrecision>
     class ImuProcessWorker : public AbstractWorker<SchedulerType>
     {
+        ///@brief 传感器数据必须是数值类型
         static_assert(std::is_arithmetic<ImuPrecision>::value, "ImuPrecision must be a arithmetic type");
+
+        ///@brief 传感器数据类型
         using ImuValVec = math::Vector<ImuPrecision, 3>;
+
     public:
-        ImuProcessWorker(SchedulerType* scheduler, ImuType ImuInstance, const nlohmann::json& root_cfg = nlohmann::json())
+        /**
+         * @brief 构造一个IMU数据处理工人类型
+         *
+         * @param scheduler 调度器的指针
+         * @param ImuInstance IMU传感器实例指针
+         * @param root_cfg 配置文件
+         */
+        ImuProcessWorker(SchedulerType* scheduler, ImuType ImuInstancePtr, const nlohmann::json& root_cfg = nlohmann::json())
             :AbstractWorker<SchedulerType>(scheduler),
             ImuInstance(ImuInstance)
         {
@@ -67,8 +111,16 @@ namespace zzs
             this->PrintSplitLine();
         }
 
+        /**
+         * @brief 析构函数，虚函数，用于释放资源
+         *
+         */
         ~ImuProcessWorker() {}
 
+        /**
+         * @brief TaskCycleBegin方法，在每次任务队列循环的开始会被调度器调用，用于获取IMU数据并进行滤波和去除异常值。
+         *
+         */
         void TaskCycleBegin() override
         {
             ImuValVec Acc = {
@@ -109,12 +161,23 @@ namespace zzs
             this->Scheduler->template SetData<"AngleValue">((*MagFilter)(Mag));
         }
 
+        /**
+         * @brief TaskRun方法默认没有实现工作逻辑，因为对IMU数据的处理通常在流水线的开始阶段。
+         *
+         */
         void TaskRun() override
         {
         }
 
     private:
 
+        /**
+         * @brief 去除nan值，用上一次的值代替
+         *
+         * @param vec 待处理的数据
+         * @param last_value 上一次的数据
+         * @return ImuValVec 处理后的数据
+         */
         ImuValVec RemoveNan(ImuValVec& vec, const ImuValVec& last_value)
         {
             vec.apply([&last_value](ImuPrecision& val, size_t idx) {
@@ -124,11 +187,16 @@ namespace zzs
         }
 
     private:
+        /// @brief IMU传感器实例指针
         ImuType ImuInstance;
 
-
+        /// @brief 加速度滤波器
         std::unique_ptr<WeightFilter<ImuValVec>> AccFilter;
+
+        /// @brief 角速度滤波器
         std::unique_ptr<WeightFilter<ImuValVec>> GyroFilter;
+
+        /// @brief 角度滤波器
         std::unique_ptr<WeightFilter<ImuValVec>> MagFilter;
     };
 };

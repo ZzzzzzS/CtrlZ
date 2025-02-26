@@ -15,7 +15,7 @@ namespace zzs
     /**
      * @brief compile time string
      *
-     * @tparam N
+     * @tparam N size of the string
      */
     template<size_t N>
     struct CTString {
@@ -27,7 +27,13 @@ namespace zzs
     };
 
 
-    // compile time string concatenation
+    /**
+     * @brief concat two compile time strings
+     *
+     * @tparam N size of first string
+     * @tparam M size of second string
+     * @return constexpr auto concatenated string
+     */
     template <std::size_t N, std::size_t M>
     constexpr auto concat(const char(&a)[N], const char(&b)[M]) {
         char result[N + M - 1] = {};
@@ -70,6 +76,17 @@ namespace zzs
         static constexpr size_t dim = Dim;
     };
 
+    /**
+     * @brief compile time string key-value pair for array (zzs::math::Vector)
+     *
+     * @tparam CT compile time string key
+     * @tparam T value type array
+     * @tparam Dim array size
+     *
+     * @example constexpr zzs::CTSPair<"InferenceTime", float> InferenceTimePair;
+     * //explain this create a compile time string key-value pair with key "InferenceTime" and value type float.
+     * //this can be used in CTSMap and work as fundimation to get and set value in DataCenter, Scheduler, and Workers classes.
+     */
     template <CTString CT, typename T, size_t Dim>
     struct CTSPair<CT, math::Vector<T, Dim>>
     {
@@ -220,7 +237,10 @@ namespace zzs
         }
 
     private:
+        /// @brief compile time string array
         static constexpr CTSArray<CTS.str...> ctsArray = {};
+
+        /// @brief compile time string value
         std::tuple<std::remove_pointer_t<decltype(CTS.type)>...> ctsValue;
     };
 };

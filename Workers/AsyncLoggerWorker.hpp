@@ -17,11 +17,30 @@
 
 namespace zzs
 {
+    /**
+     * @brief 异步日志工人类型，用户可以通过这个工人类型来异步的实现记录数据的功能。
+     * @details 异步日志工人类型，用户可以通过这个工人类型来异步的实现记录数据的功能。
+     * 这个工人类型的优点是可以异步的记录数据，不会阻塞主线程，适用于一些需要记录数据的场景。
+     * 比如需要记录一些传感器的数据，或者需要记录一些模型的输出数据。同时，用户可以通过配置文件来配置日志的路径和写入频率。
+     * 所有的数据都会被记录到一个csv文件中，用户可以通过这个文件来查看数据。
+     * @tparam SchedulerType 调度器类型
+     * @tparam LogPrecision 日志精度，用户可以通过这个参数来指定日志的精度，比如可以指定为float或者double
+     * @tparam Args 一个或者多个CTSPair类型的模板参数，用户可以通过这个参数来指定需要记录的数据的名称和类型，
+     * 请注意这些数据类型必须是在调度器的数据总线中注册过的数据类型。在这里记录的数据类型将会自动被正确记录并保存在CSV中。
+     *
+     */
     template<typename SchedulerType, typename LogPrecision, CTSPair ...Args>
     class AsyncLoggerWorker : public AbstractWorker<SchedulerType>
     {
         static_assert(std::is_arithmetic<LogPrecision>::value, "LogPrecision must be a number type");
     public:
+
+        /**
+         * @brief 创建一个异步日志工人类型
+         *
+         * @param scheduler 调度器的指针
+         * @param root_cfg 配置文件
+         */
         AsyncLoggerWorker(SchedulerType* scheduler, const nlohmann::json& root_cfg)
             :AbstractWorker<SchedulerType>(scheduler)
         {
@@ -61,6 +80,10 @@ namespace zzs
 
         }
 
+        /**
+         * @brief 析构函数，虚函数，用于释放资源
+         *
+         */
         virtual ~AsyncLoggerWorker()
         {
             TaskDestroy();
@@ -72,8 +95,16 @@ namespace zzs
         //     static_assert(std::conjunction_v<std::is_arithmetic<Args::type>...> , "All Args must be a number type");
         // }
 
+        /**
+         * @brief TaskRun方法，在每次任务队列循环中被调用，但是这个方法在这里没有实际的作用，因为数据记录通常发生在流水线的结尾，也就是在TaskCycleEnd方法中。
+         *
+         */
         virtual void TaskRun() override {}
 
+        /**
+         * @brief TaskCreate方法，在任务队列创建的时候会被调度器调用，这里用于初始化资源，打开文件流，生成表头，创建写入线程等。
+         *
+         */
         virtual void TaskCreate() override
         {
             this->FileStream__.open(this->LogPath__, std::fstream::out);
@@ -90,6 +121,10 @@ namespace zzs
             this->WriteLogThread__ = std::thread(&AsyncLoggerWorker::WriteLogThreadRun, this);
         }
 
+        /**
+         * @brief TaskDestroy方法，在任务队列删除的时候会被调度器调用
+         *
+         */
         virtual void TaskDestroy() override
         {
             this->LogThreadSyncMutex__.lock();
@@ -102,6 +137,10 @@ namespace zzs
             }
         }
 
+        /**
+         * @brief TaskCycleEnd方法，在每次任务队列循环的结束会被调度器调用，用于将数据总线中的数据复制到数据队列中，供写入线程写入文件。
+         *
+         */
         virtual void TaskCycleEnd() override
         {
             LogFrameType DataFrame;

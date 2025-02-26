@@ -996,12 +996,20 @@ namespace zzs
 
             /**
              * @brief create a new tensor pointer
+             *
+             * @return Ptr Pointer of new tensor
              */
             static Ptr Create()
             {
                 return std::make_shared<Tensor<T, Dims...>>();
             }
 
+            /**
+             * @brief create a new tensor pointer with given value for all elements
+             *
+             * @param val value for all elements
+             * @return Ptr Pointer of new tensor
+             */
             static Ptr Create(const T& val)
             {
                 return std::make_shared<Tensor<T, Dims...>>(val);

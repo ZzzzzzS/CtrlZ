@@ -48,18 +48,10 @@ namespace zzs
         }
 
         /**
-         * @brief Destroy the Abstract Scheduler object
-         * @details the scheduler will destroy all tasks and workers,
-         * workers in other threads will be destroyed by the thread, when the thread is destroyed,
-         * the main thread task will also be destroyed
-         *
+         * @brief 销毁调度器
+         * @details 销毁调度器时将销毁所有的任务队列(TaskList)但不会销毁Worker，Worker的生命周期由调度器外部管理，
+         * 调度器只负责管理任务队列。销毁调度器时，调度器会停止所有的任务队列，并等待所有的任务队列线程结束，主线程任务(MainThreadTask)也会被销毁。
          */
-
-         /**
-          * @brief 销毁调度器
-          * @details 销毁调度器时将销毁所有的任务队列(TaskList)但不会销毁Worker，Worker的生命周期由调度器外部管理，
-          * 调度器只负责管理任务队列。销毁调度器时，调度器会停止所有的任务队列，并等待所有的任务队列线程结束，主线程任务(MainThreadTask)也会被销毁。
-          */
         virtual ~AbstractScheduler()
         {
             for (auto [taskname, task] : TaskList)

@@ -6,7 +6,7 @@
 namespace zzs
 {
     /**
-     * @brief ring buffer class, this buffer does not garantee thread safety
+     * @brief ring buffer class, **this buffer does NOT garantee thread safety**
      *
      * @tparam T type of data
      */
