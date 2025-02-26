@@ -11,6 +11,30 @@
 #endif
 namespace zzs
 {
+    /**
+     * @brief HumanoidGymInferenceWorker 类型是一个人形机器人推理工人类型，该类实现了HumanoidGym网络兼容的推理功能。
+     * @details HumanoidGymInferenceWorker 类型是一个人形机器人推理工人类型，该类实现了HumanoidGym网络兼容的推理功能。
+     * HumanoidGym参见[https://github.com/roboterax/humanoid-gym](https://github.com/roboterax/humanoid-gym)
+     *
+     * @details config.json配置文件示例：
+     * {
+     *  "Scheduler": {
+     *    "dt": 0.001 //调度器的时间步长 1ms
+     *  },
+     *  "Workers": {
+     *     "NN": {
+     *        "NetWork":{
+     *           "Cycle_time": 0.63 //步频周期
+     *       }
+     *     }
+     *   }
+     * }
+     *
+     * @tparam SchedulerType 调度器类型
+     * @tparam InferencePrecision 推理精度，用户可以通过这个参数来指定推理的精度，比如可以指定为float或者double
+     * @tparam INPUT_STUCK_LENGTH HumanoidGym网络的Actor输入堆叠长度
+     * @tparam JOINT_NUMBER 关节数量
+     */
     template<typename SchedulerType, typename InferencePrecision, size_t INPUT_STUCK_LENGTH, size_t JOINT_NUMBER>
     class HumanoidGymInferenceWorker : public CommonLocoInferenceWorker<SchedulerType, InferencePrecision, JOINT_NUMBER>
     {
@@ -20,6 +44,12 @@ namespace zzs
         using ValVec3 = math::Vector<InferencePrecision, 3>;
 
     public:
+        /**
+         * @brief 构造一个HumanoidGymInferenceWorker类型
+         *
+         * @param scheduler 调度器的指针
+         * @param cfg 配置文件
+         */
         HumanoidGymInferenceWorker(SchedulerType* scheduler, const nlohmann::json& cfg)
             :CommonLocoInferenceWorker<SchedulerType, InferencePrecision, JOINT_NUMBER>(scheduler, cfg),
             GravityVector({ 0.0,0.0,-1.0 }),
@@ -56,11 +86,20 @@ namespace zzs
             this->OutputOrtTensors__.push_back(this->WarpOrtTensor(OutputTensor));
         }
 
+        /**
+         * @brief 析构函数
+         *
+         */
         virtual ~HumanoidGymInferenceWorker()
         {
 
         }
 
+        /**
+         * @brief 推理前的准备工作,主要是将数据从数据总线中读取出来，并将数据缩放到合适的范围
+         * 构造堆叠的输入数据，并准备好输入张量。
+         *
+         */
         void PreProcess() override
         {
             this->start_time = std::chrono::steady_clock::now();
@@ -117,6 +156,10 @@ namespace zzs
             this->InputTensor.Array() = decltype(InputVec)::clamp(InputVec, -this->ClipObservation, this->ClipObservation);
         }
 
+        /**
+         * @brief 推理后的处理工作,主要是将推理的结果从数据总线中读取出来，并将数据缩放到合适的范围
+         *
+         */
         void PostProcess() override
         {
             auto LastAction = this->OutputTensor.toVector();
@@ -151,8 +194,10 @@ namespace zzs
         zzs::math::Tensor<InferencePrecision, 1, OUTPUT_TENSOR_LENGTH> OutputTensor;
         zzs::math::Vector<InferencePrecision, OUTPUT_TENSOR_LENGTH> OutputScaleVec;
 
+        /// @brief 重力向量{0,0,-1}
         const ValVec3 GravityVector;
 
+        //cycle time and dt
         InferencePrecision cycle_time;
         InferencePrecision dt;
 

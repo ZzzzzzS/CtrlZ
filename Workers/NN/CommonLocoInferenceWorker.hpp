@@ -6,6 +6,43 @@
 
 namespace zzs
 {
+    /**
+     * @brief CommonLocoInferenceWorker类型是一个通用的Locomotion推理工人类型，该类型实现了一些Locomotion推理的通用逻辑。
+     * @details CommonLocoInferenceWorker类型是一个通用的Locomotion推理工人类型，该类型实现了一些Locomotion推理的通用逻辑。
+     * 该类型主要从配置文件中读取一些推理的参数，比如观测量的缩放(observation scale)，动作量的缩放(action scale)，
+     * 观测量的裁剪(observation clip)，动作量的裁剪(action clip)等。
+     *
+     * @details config.json配置文件示例：
+     * {
+     *   "Workers": {
+     *     "NN": {
+     *      "Preprocess": {
+     *          "ObservationScales": {
+     *            "lin_vel": 1.0,
+     *            "ang_vel": 1.0,
+     *            "project_gravity": 1.0,
+     *            "dof_pos": 1.0,
+     *            "dof_vel": 1.0
+     *           },
+     *          "ClipObservations": 100.0
+     *       },
+     *       "Postprocess": {
+     *          "action_scale": [1.0, 1.0, 1.0，1.0, 1.0, 1.0], //需要和动作的维度相匹配
+     *          "clip_actions": 1.0,
+     *          "joint_clip_upper": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0], //需要和动作的维度相匹配
+     *          "joint_clip_lower": [-1.0, -1.0, -1.0, -1.0, -1.0, -1.0] //需要和动作的维度相匹配
+     *       }
+     *     }
+     *     "MotorControl": {
+     *         "DefaultPosition": [0, 0, 0, 0, 0, 0] //默认位置，注意这里的默认位置需要和动作的维度相匹配
+     *     }
+     *   }
+     * }
+     *
+     * @tparam SchedulerType 调度器类型
+     * @tparam InferencePrecision 推理精度，用户可以通过这个参数来指定推理的精度，比如可以指定为float或者double
+     * @tparam JOINT_NUMBER 关节数量
+     */
     template<typename SchedulerType, typename InferencePrecision, size_t JOINT_NUMBER>
     class CommonLocoInferenceWorker : public AbstractNetInferenceWorker<SchedulerType, InferencePrecision>
     {
@@ -20,6 +57,12 @@ namespace zzs
         using Base::InputOrtTensors__;
         using Base::OutputOrtTensors__;
     public:
+        /**
+         * @brief 构造一个CommonLocoInferenceWorker类型
+         *
+         * @param scheduler 调度器的指针
+         * @param cfg 配置文件
+         */
         CommonLocoInferenceWorker(SchedulerType* scheduler, const nlohmann::json& cfg)
             :AbstractNetInferenceWorker<SchedulerType, InferencePrecision>(scheduler, cfg)
         {
@@ -97,29 +140,58 @@ namespace zzs
             this->PrintSplitLine();
         }
 
+        /**
+         * @brief 析构函数
+         *
+         */
         virtual ~CommonLocoInferenceWorker()
         {
         }
 
     protected:
+        /// @brief 电机向量类型
         using MotorValVec = math::Vector<InferencePrecision, JOINT_NUMBER>;
+
+        /// @brief 三维向量类型(用于IMU， cmd等)
         using ValVec3 = math::Vector<InferencePrecision, 3>;
 
+        /// @brief 电机默认位置
         MotorValVec JointDefaultPos;
+
+        /// @brief 电机裁剪上限
         MotorValVec JointClipUpper;
+
+        /// @brief 电机裁剪下限
         MotorValVec JointClipLower;
+
+        /// @brief 动作缩放
         MotorValVec ActionScale;
 
+        /// @brief 观测量裁剪
         InferencePrecision ClipObservation;
+
+        /// @brief 动作裁剪
         InferencePrecision ClipAction;
 
+        /// @brief 观测量线速度缩放
         ValVec3 Scales_lin_vel;
+
+        /// @brief 观测量角速度缩放
         ValVec3 Scales_ang_vel;
+
+        /// @brief 观测量重力投影缩放
         ValVec3 Scales_project_gravity;
+
+        /// @brief 观测量命令缩放 ValVec3 Scales_command3 = { scales_lin_vel,scales_lin_vel ,scales_ang_vel }
         ValVec3 Scales_command3;
 
+        /// @brief 观测量关节位置缩放
         MotorValVec Scales_dof_pos;
+
+        /// @brief 观测量关节速度缩放
         MotorValVec Scales_dof_vel;
+
+        /// @brief 观测量上一次动作缩放
         MotorValVec Scales_last_action;
     };
 };
