@@ -224,10 +224,10 @@ namespace zzs
 		Ort::Session Session__;
 
 		/// @brief ONNXRuntime的SessionOptions对象，用来配置Session
-		Ort::SessionOptions SessionOptions__;、
+		Ort::SessionOptions SessionOptions__;
 
 			/// @brief ONNXRuntime的AllocatorWithDefaultOptions对象，用来分配内存
-			Ort::AllocatorWithDefaultOptions DefaultAllocator__;
+		Ort::AllocatorWithDefaultOptions DefaultAllocator__;
 
 		/// @brief ONNXRuntime的MemoryInfo对象，用来配置内存信息
 		Ort::MemoryInfo MemoryInfo__;

@@ -62,3 +62,6 @@ nlohmann_json::nlohmann_json
 readerwriterqueue
 Eigen3::Eigen
 )
+
+add_subdirectory(doc)
+option(BUILD_DOC "Build documentation" ON)
