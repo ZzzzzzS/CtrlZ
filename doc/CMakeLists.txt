@@ -17,7 +17,9 @@ if (DOXYGEN_FOUND)
     if(BUILD_DOC)
         doxygen_add_docs(
         ${PROJECT_NAME}
-        ${CMAKE_SOURCE_DIR}
+        ${CMAKE_SOURCE_DIR}/CtrlZ
+        ${CMAKE_SOURCE_DIR}/example
+        ${CMAKE_CURRENT_SOURCE_DIR}
         ../README.md
         )
     endif(BUILD_DOC)
@@ -25,10 +27,3 @@ if (DOXYGEN_FOUND)
 else (DOXYGEN_FOUND)
   message("Doxygen need to be installed to generate the doxygen documentation")
 endif (DOXYGEN_FOUND)
-
-
-#if (DOXYGEN_FOUND)
-#    if(BUILD_DOC)
-#	    install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/html DESTINATION ${DIVISIBLE_INSTALL_DOC_DIR})
-#	endif(BUILD_DOC)
-#endif (DOXYGEN_FOUND)

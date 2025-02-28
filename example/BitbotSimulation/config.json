@@ -1,0 +1,109 @@
+{
+  "Scheduler": {
+    "dt": 0.0005,
+    "InferTask": {
+      "PolicyFrequency": 20
+    }
+  },
+  "Workers": {
+    "ResetPosition": {
+      "Duration": 3
+    },
+    "MotorControl": {
+      "ControlMode": [
+        "Position",
+        "Position",
+        "Position",
+        "Position",
+        "Position",
+        "Position"
+      ],
+      "PosFilterWeight": [
+        1
+      ],
+      "VelFilterWeight": [
+        1
+      ],
+      "DefaultPosition": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "ImuProcess": {
+      "AccFilterWeight": [
+        1,
+        1
+      ],
+      "GyroFilterWeight": [
+        1,
+        1
+      ],
+      "MagFilterWeight": [
+        1,
+        1
+      ]
+    },
+    "AsyncLogger": {
+      "LogPath": "./",
+      "WriteBackFrequency": 1000
+    },
+    "NN": {
+      "Inference": {
+        "WarmUpModel": false,
+        "IntraNumberThreads": 1,
+        "PolicyFrequency": 20
+      },
+      "Network": {
+        "ModelPath": "C:\\Users\\ZhouZishun\\Documents\\Workspace\\BitbotLimx\\check_point\\policy_1.onnx",
+        "InputNodeNames": [
+          "observation"
+        ],
+        "OutputNodeNames": [
+          "action"
+        ],
+        "StanceT": 0.25
+      },
+      "Preprocess": {
+        "ObservationScales": {
+          "lin_vel": 2.0,
+          "ang_vel": 0.25,
+          "project_gravity": 1,
+          "dof_pos": 1,
+          "dof_vel": 0.05
+        },
+        "ClipObservations": 100
+      },
+      "Postprocess": {
+        "clip_actions": 100,
+        "action_scale": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "joint_clip_upper": [
+          100,
+          100,
+          100,
+          100,
+          100,
+          100
+        ],
+        "joint_clip_lower": [
+          -100,
+          -100,
+          -100,
+          -100,
+          -100,
+          -100
+        ]
+      }
+    }
+  }
+}

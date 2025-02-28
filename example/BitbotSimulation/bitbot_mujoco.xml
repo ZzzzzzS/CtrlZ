@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bitbot>
+    <backend settings_file="setting.json"/>
+    <mujoco file="./models/PF_TRON1A/mjcf/mjmodel.xml"/>
+    <logger path="../../log"/>
+    <logger level="debug"/>
+    <bus>
+        <device id="0" type="MujocoJoint" name="abad_L_Joint"
+                mode="position"
+                pos_kp='60' pos_kd='1.5' pos_ki='0' vel_kp='0' vel_kd='0'
+    />
+        <device id="1" type="MujocoJoint" name="hip_L_Joint"
+                mode="position"
+                pos_kp='60' pos_kd='1.5' pos_ki='0' vel_kp='0' vel_kd='0'
+    />
+        <device id="2" type="MujocoJoint" name="knee_L_Joint"
+                mode="position"
+                pos_kp='60' pos_kd='1.5' pos_ki='0' vel_kp='0' vel_kd='0'
+    />
+        <device id="3" type="MujocoJoint" name="abad_R_Joint"
+                mode="position"
+                pos_kp='50' pos_kd='1.5' pos_ki='0' vel_kp='0' vel_kd='0'
+    />
+        <device id="4" type="MujocoJoint" name="hip_R_Joint"
+                mode="position"
+                pos_kp='60' pos_kd='1.5' pos_ki='0' vel_kp='0' vel_kd='0'
+    />
+        <device id="5" type="MujocoJoint" name="knee_R_Joint"
+                mode="position"
+                pos_kp='60' pos_kd='1.5' pos_ki='0' vel_kp='0' vel_kd='0'
+    />
+        <device id="6" type="MujocoImu" name="imu"
+            site="imu_site" acc="imu_acc" gyro="imu_gyro"
+    />
+
+    </bus>
+
+</bitbot>
