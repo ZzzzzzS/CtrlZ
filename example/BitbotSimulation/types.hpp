@@ -15,8 +15,12 @@
 #include "Workers/NN/EraxLikeInferenceWorker.hpp"
 #include "Workers/NN/HumanoidGymInferenceWorker.hpp"
 
-#include "HW_Spec.hpp"
 
+#include "bitbot_mujoco/device/mujoco_imu.h"
+#include "bitbot_mujoco/device/mujoco_joint.h"
+
+using DeviceImu = bitbot::MujocoImu;
+using DeviceJoint = bitbot::MujocoJoint;
 
 /************ basic definintion***********/
 using RealNumber = float;
@@ -73,5 +77,9 @@ using LimxLogWorker = z::AsyncLoggerWorker<LimxScheduler, RealNumber, ImuAccRawP
 
 using LimxFlexPatchWorker = z::SimpleCallbackWorker<LimxScheduler>;
 
-//using LimxNetInferWorker = z::HumanoidGymInferenceWorker<LimxScheduler, RealNumber,10, JOINT_NUMBER>;
-using LimxNetInferWorker = z::EraxLikeInferenceWorker<LimxScheduler, RealNumber, 10, 5, JOINT_NUMBER>;
+
+/******define actor net************/
+constexpr size_t OBSERVATION_STUCK_LENGTH = 10;
+constexpr size_t OBSERVATION_EXTRA_LENGTH = 5;
+//using LimxNetInferWorker = z::HumanoidGymInferenceWorker<LimxScheduler, RealNumber,OBSERVATION_STUCK_LENGTH, JOINT_NUMBER>;
+using LimxNetInferWorker = z::EraxLikeInferenceWorker<LimxScheduler, RealNumber, OBSERVATION_STUCK_LENGTH, OBSERVATION_EXTRA_LENGTH, JOINT_NUMBER>;

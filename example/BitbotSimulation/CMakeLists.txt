@@ -38,7 +38,6 @@ add_executable(main_app
     user_func.h
     user_func.cpp
     types.hpp
-    HW_Spec.hpp
     )
 
 
