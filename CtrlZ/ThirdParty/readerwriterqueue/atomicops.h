@@ -48,8 +48,8 @@
 #if __has_feature(thread_sanitizer)
 #if __cplusplus >= 201703L  // inline variables require C++17
 namespace moodycamel2 { inline int ae_tsan_global; }
-#define AE_TSAN_ANNOTATE_RELEASE() AnnotateHappensBefore(__FILE__, __LINE__, (void *)(&::moodycamel::ae_tsan_global))
-#define AE_TSAN_ANNOTATE_ACQUIRE() AnnotateHappensAfter(__FILE__, __LINE__, (void *)(&::moodycamel::ae_tsan_global))
+#define AE_TSAN_ANNOTATE_RELEASE() AnnotateHappensBefore(__FILE__, __LINE__, (void *)(&::moodycamel2::ae_tsan_global))
+#define AE_TSAN_ANNOTATE_ACQUIRE() AnnotateHappensAfter(__FILE__, __LINE__, (void *)(&::moodycamel2::ae_tsan_global))
 extern "C" void AnnotateHappensBefore(const char*, int, void*);
 extern "C" void AnnotateHappensAfter(const char*, int, void*);
 #else  // when we can't work with tsan, attempt to disable its warnings
@@ -104,7 +104,7 @@ namespace moodycamel2 {
 		memory_order_sync = memory_order_seq_cst
 	};
 
-}    // end namespace moodycamel
+}    // end namespace moodycamel2
 
 #if (defined(AE_VCPP) && (_MSC_VER < 1700 || defined(__cplusplus_cli))) || (defined(AE_ICC) && __INTEL_COMPILER < 1600)
 // VS2010 and ICC13 don't support std::atomic_*_fence, implement our own fences
@@ -196,7 +196,7 @@ namespace moodycamel2 {
 		}
 	}
 #endif
-}    // end namespace moodycamel
+}    // end namespace moodycamel2
 #else
 // Use standard library of atomics
 #include <atomic>
@@ -227,7 +227,7 @@ namespace moodycamel2 {
 		}
 	}
 
-}    // end namespace moodycamel
+}    // end namespace moodycamel2
 
 #endif
 
@@ -340,7 +340,7 @@ namespace moodycamel2 {
 #endif
 	};
 
-}	// end namespace moodycamel
+}	// end namespace moodycamel2
 
 
 
@@ -750,7 +750,7 @@ namespace moodycamel2
 			}
 		};
 	}	// end namespace spsc_sema
-}	// end namespace moodycamel
+}	// end namespace moodycamel2
 
 #if defined(AE_VCPP) && (_MSC_VER < 1700 || defined(__cplusplus_cli))
 #pragma warning(pop)

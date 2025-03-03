@@ -759,7 +759,7 @@ namespace moodycamel2 {
 	class BlockingReaderWriterQueue
 	{
 	private:
-		typedef ::moodycamel::ReaderWriterQueue<T, MAX_BLOCK_SIZE> ReaderWriterQueue;
+		typedef ::moodycamel2::ReaderWriterQueue<T, MAX_BLOCK_SIZE> ReaderWriterQueue;
 
 	public:
 		explicit BlockingReaderWriterQueue(size_t size = 15) AE_NO_TSAN

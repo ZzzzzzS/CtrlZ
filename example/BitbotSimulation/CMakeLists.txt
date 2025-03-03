@@ -31,7 +31,9 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 
 find_package(Eigen3 REQUIRED)
 message(STATUS "Eigen version=${Eigen3_VERSION}")
-
+set(PROJECT_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+add_definitions(-DPROJECT_ROOT_DIR="${PROJECT_ROOT_DIR}")
+message("PROJECT_ROOT_DIR: ${PROJECT_ROOT_DIR}")
 
 add_executable(main_app 
     main.cpp

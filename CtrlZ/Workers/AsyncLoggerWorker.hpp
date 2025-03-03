@@ -9,6 +9,7 @@
 #include <atomic>
 #include <condition_variable>
 #include <mutex>
+#include <fstream>
 #include "readerwriterqueue/readerwriterqueue.h"
 //#include "readerwriterqueue.h"
 
@@ -108,6 +109,12 @@ namespace z
          */
         virtual void TaskCreate() override
         {
+            std::lock_guard<std::mutex> lock(this->CreateMutex__);
+            if (this->AlreadyCreated__)
+            {
+                return;
+            }
+
             this->FileStream__.open(this->LogPath__, std::fstream::out);
             if (!this->FileStream__.is_open())
             {
@@ -120,6 +127,7 @@ namespace z
             size_t CurrentWriteBackCount__ = 0;
             std::atomic<bool> LogThreadNeedWrite__ = false;
             this->WriteLogThread__ = std::thread(&AsyncLoggerWorker::WriteLogThreadRun, this);
+            this->AlreadyCreated__ = true;
         }
 
         /**
@@ -144,6 +152,17 @@ namespace z
          */
         virtual void TaskCycleEnd() override
         {
+            size_t TS = this->Scheduler->getTimeStamp();
+            if (TS == this->last_call_time.load())
+            {
+                //您可以在多个tasklist中注册logger，但是您需要确保正在运行的tasklist中该logger在每周期只会被调用一次，否则会出现数据重复记录的问题
+                //如果您知道您在做什么，可以注释掉这个异常
+                throw std::runtime_error("Mutiple call in one cycle, only one call is allowed in one cycle, check your task list!");
+                this->last_call_time.store(TS);
+                return;
+            }
+            this->last_call_time.store(TS);
+
             LogFrameType DataFrame;
             getValues(DataFrame);
             if (!this->DataQueue__.enqueue(DataFrame))
@@ -192,6 +211,10 @@ namespace z
 
         std::array<std::string, HeaderSize()> HeaderList__; //表头列表
         moodycamel2::ReaderWriterQueue<LogFrameType> DataQueue__; //数据队列
+
+        bool AlreadyCreated__ = false;
+        std::mutex CreateMutex__;
+        std::atomic<size_t> last_call_time = { 0 };
 
     private:
         void GenerateHeader()

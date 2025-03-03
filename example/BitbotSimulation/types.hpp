@@ -24,7 +24,7 @@ using DeviceJoint = bitbot::MujocoJoint;
 
 /************ basic definintion***********/
 using RealNumber = float;
-constexpr size_t JOINT_NUMBER = 6;
+constexpr size_t JOINT_NUMBER = 8;
 using Vec3 = z::math::Vector<RealNumber, 3>;
 using MotorVec = z::math::Vector<RealNumber, JOINT_NUMBER>;
 
@@ -58,7 +58,7 @@ constexpr z::CTSPair<"NetClockVector", z::math::Vector<RealNumber, 2>> NetClockV
 constexpr z::CTSPair<"InferenceTime", RealNumber> InferenceTimePair;
 
 // define scheduler
-using LimxScheduler = z::AbstractScheduler<ImuAccRawPair, ImuGyroRawPair, ImuMagRawPair, LinearVelocityValuePair,
+using SchedulerType = z::AbstractScheduler<ImuAccRawPair, ImuGyroRawPair, ImuMagRawPair, LinearVelocityValuePair,
     ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair,
     TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair,
     TargetMotorTorquePair, LimitTargetMotorTorquePair,
@@ -66,20 +66,21 @@ using LimxScheduler = z::AbstractScheduler<ImuAccRawPair, ImuGyroRawPair, ImuMag
 
 
 //define workers
-using LimxMotorResetWorker = z::MotorResetPositionWorker<LimxScheduler, RealNumber, JOINT_NUMBER>;
-using LimxImuWorker = z::ImuProcessWorker<LimxScheduler, DeviceImu*, RealNumber>;
-using LimxMotorWorker = z::MotorControlWorker<LimxScheduler, DeviceJoint*, RealNumber, JOINT_NUMBER>;
-using LimxLogWorker = z::AsyncLoggerWorker<LimxScheduler, RealNumber, ImuAccRawPair, ImuGyroRawPair, ImuMagRawPair, LinearVelocityValuePair,
+using MotorResetWorkerType = z::MotorResetPositionWorker<SchedulerType, RealNumber, JOINT_NUMBER>;
+using ImuWorkerType = z::ImuProcessWorker<SchedulerType, DeviceImu*, RealNumber>;
+using MotorWorkerType = z::MotorControlWorker<SchedulerType, DeviceJoint*, RealNumber, JOINT_NUMBER>;
+using MotorPDWorkerType = z::MotorPDControlWorker<SchedulerType, RealNumber, JOINT_NUMBER>;
+using LoggerWorkerType = z::AsyncLoggerWorker<SchedulerType, RealNumber, ImuAccRawPair, ImuGyroRawPair, ImuMagRawPair, LinearVelocityValuePair,
     ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair,
     TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair,
     TargetMotorTorquePair, LimitTargetMotorTorquePair,
     NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair>;
 
-using LimxFlexPatchWorker = z::SimpleCallbackWorker<LimxScheduler>;
+using FlexPatchWorkerType = z::SimpleCallbackWorker<SchedulerType>;
 
 
 /******define actor net************/
 constexpr size_t OBSERVATION_STUCK_LENGTH = 10;
 constexpr size_t OBSERVATION_EXTRA_LENGTH = 5;
-//using LimxNetInferWorker = z::HumanoidGymInferenceWorker<LimxScheduler, RealNumber,OBSERVATION_STUCK_LENGTH, JOINT_NUMBER>;
-using LimxNetInferWorker = z::EraxLikeInferenceWorker<LimxScheduler, RealNumber, OBSERVATION_STUCK_LENGTH, OBSERVATION_EXTRA_LENGTH, JOINT_NUMBER>;
+//using HumanoidGymInferWorkerType = z::HumanoidGymInferenceWorker<SchedulerType, RealNumber,OBSERVATION_STUCK_LENGTH, JOINT_NUMBER>;
+using EraxLikeInferWorkerType = z::EraxLikeInferenceWorker<SchedulerType, RealNumber, OBSERVATION_STUCK_LENGTH, OBSERVATION_EXTRA_LENGTH, JOINT_NUMBER>;

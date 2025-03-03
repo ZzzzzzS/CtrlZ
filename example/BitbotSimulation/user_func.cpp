@@ -18,40 +18,45 @@ void ConfigFunc(const KernelBus& bus, UserData& d)
     nlohmann::json cfg_root;
     {
         //NOTE: 注意将配置文件路径修改为自己的路径
-        std::ifstream cfg_file("../../config.json");
+        std::string path = PROJECT_ROOT_DIR + std::string("/config.json");
+        std::ifstream cfg_file(path);
         cfg_root = nlohmann::json::parse(cfg_file, nullptr, true, true);
     }
 
     //创建调度器
-    d.TaskScheduler = new LimxScheduler();
+    d.TaskScheduler = new SchedulerType();
 
     //初始化各个worker
-    d.ImuWorker = new LimxImuWorker(d.TaskScheduler, bus.GetDevice<DeviceImu>(6).value(), cfg_root);
-    d.MotorWorker = new LimxMotorWorker(d.TaskScheduler, cfg_root, {
+    d.ImuWorker = new ImuWorkerType(d.TaskScheduler, bus.GetDevice<DeviceImu>(8).value(), cfg_root);
+    d.MotorWorker = new MotorWorkerType(d.TaskScheduler, cfg_root, {
           bus.GetDevice<DeviceJoint>(0).value(),
           bus.GetDevice<DeviceJoint>(1).value(),
           bus.GetDevice<DeviceJoint>(2).value(),
           bus.GetDevice<DeviceJoint>(3).value(),
           bus.GetDevice<DeviceJoint>(4).value(),
-          bus.GetDevice<DeviceJoint>(5).value() });
-    d.Logger = new LimxLogWorker(d.TaskScheduler, cfg_root);
+          bus.GetDevice<DeviceJoint>(5).value(),
+          bus.GetDevice<DeviceJoint>(6).value(),
+          bus.GetDevice<DeviceJoint>(7).value() });
+    d.MotorPDWorker = new MotorPDWorkerType(d.TaskScheduler, cfg_root);
+    d.Logger = new LoggerWorkerType(d.TaskScheduler, cfg_root);
 
     //创建主任务列表，并添加worker
     d.TaskScheduler->CreateTaskList("MainTask", 1, true);
     d.TaskScheduler->AddWorkers("MainTask",
         {
             d.ImuWorker,
-            d.MotorWorker,
-            d.Logger
+            d.MotorPDWorker,
+            d.MotorWorker
         });
 
     //创建推理任务列表，并添加worker，设置推理任务频率
-    d.NetInferWorker = new LimxNetInferWorker(d.TaskScheduler, cfg_root);
+    d.NetInferWorker = new EraxLikeInferWorkerType(d.TaskScheduler, cfg_root);
     d.TaskScheduler->CreateTaskList("InferTask", cfg_root["Scheduler"]["InferTask"]["PolicyFrequency"]);
     d.TaskScheduler->AddWorker("InferTask", d.NetInferWorker);
+    d.TaskScheduler->AddWorker("InferTask", d.Logger);
 
     //创建复位任务列表，并添加worker，设置复位任务频率为主任务频率的1/10
-    d.MotorResetWorker = new LimxMotorResetWorker(d.TaskScheduler, cfg_root);
+    d.MotorResetWorker = new MotorResetWorkerType(d.TaskScheduler, cfg_root);
     d.TaskScheduler->CreateTaskList("ResetTask", 10);
     d.TaskScheduler->AddWorker("ResetTask", d.MotorResetWorker);
 
@@ -65,6 +70,7 @@ void FinishFunc(UserData& d)
     delete d.TaskScheduler;
     delete d.ImuWorker;
     delete d.MotorWorker;
+    delete d.MotorPDWorker;
     delete d.Logger;
     delete d.NetInferWorker;
     delete d.MotorResetWorker;
@@ -114,8 +120,8 @@ std::optional<bitbot::StateId> EventSystemTest(bitbot::EventValue value,
 }
 
 // velocity control callback
-#define X_VEL_STEP 0.1
-#define Y_VEL_STEP 0.1
+#define X_VEL_STEP 0.2
+#define Y_VEL_STEP 0.05
 std::optional<bitbot::StateId> EventVeloXIncrease(bitbot::EventValue keyState, UserData& d)
 {
     if (keyState == static_cast<bitbot::EventValue>(bitbot::KeyboardEvent::Up))

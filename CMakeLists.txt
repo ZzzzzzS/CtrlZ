@@ -9,12 +9,11 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 include_directories(${PROJECT_SOURCE_DIR}/CtrlZ)
 
 option(BUILD_DOC "Build documentation" OFF)
-option(BUILD_EXAMPLE "Build example" ON)
 
 if(WIN32)
   set(ONNXRUNTIME_ROOT "C:/ProgramFiles/lib/onnxruntime")
 elseif(UNIX)
-    set(ONNXRUNTIME_ROOT "/usr/local/onnxruntime")
+    set(ONNXRUNTIME_ROOT "/usr/local/")
 else()
     message(FATAL_ERROR "Unsupported platform")
 endif()

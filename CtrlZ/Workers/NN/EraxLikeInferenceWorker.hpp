@@ -30,13 +30,13 @@ namespace z
             //read cfg
             nlohmann::json InferenceCfg = cfg["Workers"]["NN"]["Inference"];
             nlohmann::json NetworkCfg = cfg["Workers"]["NN"]["Network"];
-            this->Stance_T = NetworkCfg["StanceT"].get<InferencePrecision>();
+            this->CyctleTime = NetworkCfg["Cycle_time"].get<InferencePrecision>();
             this->dt = cfg["Scheduler"]["dt"].get<InferencePrecision>();
 
             this->PrintSplitLine();
             std::cout << "EraxInferenceWorker" << std::endl;
             std::cout << "JOINT_NUMBER=" << JOINT_NUMBER << std::endl;
-            std::cout << "Stance_T=" << this->Stance_T << std::endl;
+            std::cout << "Cycle_Time=" << this->CyctleTime << std::endl;
             std::cout << "dt=" << this->dt << std::endl;
             this->PrintSplitLine();
 
@@ -92,7 +92,7 @@ namespace z
             this->Scheduler->template SetData<"NetProjectedGravity">(ProjectedGravity);
 
             size_t t = this->Scheduler->getTimeStamp();
-            InferencePrecision clock = 2 * M_PI / (2 * this->Stance_T) * this->dt * static_cast<InferencePrecision>(t);
+            InferencePrecision clock = 2 * M_PI / this->CyctleTime * this->dt * static_cast<InferencePrecision>(t);
             InferencePrecision clock_sin = std::sin(clock);
             InferencePrecision clock_cos = std::cos(clock);
             z::math::Vector<InferencePrecision, 2> ClockVector = { clock_sin, clock_cos };
@@ -160,7 +160,7 @@ namespace z
 
         const ValVec3 GravityVector;
 
-        InferencePrecision Stance_T;
+        InferencePrecision CyctleTime;
         InferencePrecision dt;
 
         //compute time

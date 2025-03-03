@@ -32,12 +32,13 @@ enum class States : bitbot::StateId
 
 struct UserData
 {
-    LimxScheduler* TaskScheduler;
-    LimxImuWorker* ImuWorker;
-    LimxMotorWorker* MotorWorker;
-    LimxLogWorker* Logger;
-    LimxNetInferWorker* NetInferWorker;
-    LimxMotorResetWorker* MotorResetWorker;
+    SchedulerType* TaskScheduler;
+    ImuWorkerType* ImuWorker;
+    MotorWorkerType* MotorWorker;
+    MotorPDWorkerType* MotorPDWorker;
+    LoggerWorkerType* Logger;
+    EraxLikeInferWorkerType* NetInferWorker;
+    MotorResetWorkerType* MotorResetWorker;
     //NOTE: REMEMBER TO DELETE THESE POINTERS IN FinishFunc
 };
 
