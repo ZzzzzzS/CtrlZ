@@ -19,23 +19,23 @@ namespace z
      * 该类会在数据总线中存储"AccelerationValue","AngleVelocityValue","AngleValue"这三个数据用于存储滤波处理后的IMU数据。
      *
      * @details config.json配置文件示例：
-     * {
-     *   "Workers": {
-     *      "ImuProcess": {
-     *          "AccFilterWeight": [
-     *            1,  //加速度滤波权重,表示一个长度为2周期，每个周期的权重都是1的滤波器(有限长冲激响应滤波器FIR)
-     *            1
-     *          ],
-     *          "GyroFilterWeight": [
-     *            1,
-     *            1
-     *          ],
-     *          "MagFilterWeight": [
-     *            1,
-     *            1
-     *          ]
-     *      }
-     * }
+     * { \n
+     *   "Workers": { \n
+     *      "ImuProcess": { \n
+     *          "AccFilterWeight": [ \n
+     *            1,  //加速度滤波权重,表示一个长度为2周期，每个周期的权重都是1的滤波器(有限长冲激响应滤波器FIR)  \n
+     *            1 \n
+     *          ], \n
+     *          "GyroFilterWeight": [ \n
+     *            1, \n
+     *            1 \n
+     *          ], \n
+     *          "MagFilterWeight": [ \n
+     *            1, \n
+     *            1 \n
+     *          ] \n
+     *      } \n
+     * } \n
      *
      *
      * @tparam SchedulerType 调度器类型
