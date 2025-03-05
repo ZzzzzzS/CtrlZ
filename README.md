@@ -7,6 +7,7 @@ CtrlZ是一个多线程强化学习部署框架，用于简化学习类机器人
 # 安装
 
 该项目仅需用户手动安装[onnxruntime](https://onnxruntime.ai/)，其余依赖项均可实现自动安装。用户安装CtrlZ前需要从[onnxruntime官方网站](https://github.com/microsoft/onnxruntime)下载安装，并在本项目根CMakeList.txt中指定onnxruntime的根目录。
+**用户也可以使用vcpkg实现自动安装，CtrlZ支持使用vcpkg清单模式安装**
 
 ```bash
 #将路径换成onnxruntime的安装路径

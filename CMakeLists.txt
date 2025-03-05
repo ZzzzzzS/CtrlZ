@@ -18,6 +18,12 @@ else()
     message(FATAL_ERROR "Unsupported platform")
 endif()
 
+if(DEFINED VCPKG_INSTALLED_DIR)
+    message("vcpkgDIR=${VCPKG_INSTALLED_DIR}")
+    message("using vcpkg onnxruntime")
+    set(ONNXRUNTIME_ROOT "${VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}")
+endif()
+
 add_subdirectory(CtrlZ)
 add_subdirectory(doc)
 add_subdirectory(example)
