@@ -1,10 +1,12 @@
-﻿/*****************************************************************//**
- * \file   main.cpp
- * \brief
+﻿/**
+ * @file main.cpp
+ * @author zishun zhou (zhouzishun@mail.zzshub.cn)
+ * @brief
+ * @version 0.1
+ * @date 2025-03-04
  *
- * \author ZhouZishun
- * \date   March 2025
- *********************************************************************/
+ * @copyright Copyright (c) 2025
+ */
 
 # include "bitbot_mujoco/kernel/mujoco_kernel.hpp"
 #include "user_func.h"

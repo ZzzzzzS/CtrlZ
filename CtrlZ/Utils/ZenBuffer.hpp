@@ -200,8 +200,7 @@ namespace z
         /**
          * @brief Construct a new Weight Filter object with weight
          *
-         * @param param array of weight
-         * @example WeightFilter<double> filter({0.1, 0.2, 0.3, 0.4});
+         * @param param array of weight WeightFilter<double> filter({0.1, 0.2, 0.3, 0.4});
          */
         WeightFilter(std::initializer_list<T> param)
             : buffer(param.size())

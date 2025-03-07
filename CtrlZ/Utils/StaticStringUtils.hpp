@@ -83,7 +83,7 @@ namespace z
      * @tparam T value type array
      * @tparam Dim array size
      *
-     * @example constexpr z::CTSPair<"InferenceTime", float> InferenceTimePair;
+     * @details constexpr z::CTSPair<"InferenceTime", float> InferenceTimePair;
      * //explain this create a compile time string key-value pair with key "InferenceTime" and value type float.
      * //this can be used in CTSMap and work as fundimation to get and set value in DataCenter, Scheduler, and Workers classes.
      */
@@ -164,7 +164,7 @@ namespace z
      * @brief Compile time string map
      *
      * @tparam CTS compile time string key-value pairs
-     * @example CTSMap<CTSPair<"key1", int>, CTSPair<"key2", float>> ctsMap;
+     * @details CTSMap<CTSPair<"key1", int>, CTSPair<"key2", float>> ctsMap;
      */
     template<CTSPair ...CTS>
     class CTSMap

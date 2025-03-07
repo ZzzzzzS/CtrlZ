@@ -1,3 +1,16 @@
+/**
+ * @file main.cpp
+ * @author zishun zhou (zhouzishun@mail.zzshub.cn)
+ * @brief
+ * @version 0.1
+ * @date 2025-03-04
+ *
+ * @copyright Copyright (c) 2025
+ * @example 使用CtrlZ控制Airbot机械臂的例子
+ * 本示例大致介绍了如何使用CtrlZ控制[Airbot机械臂](https://airbots.online/)完成抓取任务
+ *
+ *
+ */
 #include "iostream"
 #include "atomic"
 #include "chrono"
