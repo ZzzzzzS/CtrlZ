@@ -228,7 +228,10 @@ namespace z
              */
             constexpr T& operator()(size_t idx)
             {
-                return this->operator[](idx);
+                if(idx<0)
+					return this->operator[](N + idx);
+                else
+                    return this->operator[](idx);
             }
 
             /**
@@ -239,7 +242,10 @@ namespace z
              */
             constexpr const T& operator()(size_t idx) const
             {
-                return this->operator[](idx);
+				if (idx < 0)
+					return this->operator[](N + idx);
+                else
+                    return this->operator[](idx);
             }
 
             /**

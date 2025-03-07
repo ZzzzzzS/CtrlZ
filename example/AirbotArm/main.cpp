@@ -57,6 +57,116 @@ void InitArmInstance(const nlohmann::json& cfg)
     TaskScheduler->template SetData<"CurrentMotorTorque">(CurrentMotorTorque);
 }
 
+#define CMD_STEP 0.1
+void RegistUserCmd()
+{
+    KeyboardWorker->RegisterKeyCallback('1', [](SchedulerType* SchedulerPtr) {
+        std::cout << "cmd 1 Add Pressed" << std::endl;
+        Vec7 UserCmd;
+        SchedulerPtr->template GetData<"NetUserCommand">(UserCmd);
+        UserCmd(0) = 1;
+        SchedulerPtr->template SetData<"NetUserCommand">(UserCmd);
+        });
+    KeyboardWorker->RegisterKeyCallback('!', [](SchedulerType* SchedulerPtr) {
+        std::cout << "cmd 1 Sub Pressed" << std::endl;
+        Vec7 UserCmd;
+        SchedulerPtr->template GetData<"NetUserCommand">(UserCmd);
+        UserCmd(0) = 0;
+        SchedulerPtr->template SetData<"NetUserCommand">(UserCmd);
+        });
+
+    KeyboardWorker->RegisterKeyCallback('2', [](SchedulerType* SchedulerPtr) {
+        std::cout << "cmd 2 Add Pressed" << std::endl;
+        Vec7 UserCmd;
+        SchedulerPtr->template GetData<"NetUserCommand">(UserCmd);
+        UserCmd(1) += CMD_STEP;
+        SchedulerPtr->template SetData<"NetUserCommand">(UserCmd);
+        });
+    KeyboardWorker->RegisterKeyCallback('@', [](SchedulerType* SchedulerPtr) {
+        std::cout << "cmd 2 Sub Pressed" << std::endl;
+        Vec7 UserCmd;
+        SchedulerPtr->template GetData<"NetUserCommand">(UserCmd);
+        UserCmd(1) -= CMD_STEP;
+        SchedulerPtr->template SetData<"NetUserCommand">(UserCmd);
+        });
+
+    KeyboardWorker->RegisterKeyCallback('3', [](SchedulerType* SchedulerPtr) {
+        std::cout << "cmd 3 Add Pressed" << std::endl;
+        Vec7 UserCmd;
+        SchedulerPtr->template GetData<"NetUserCommand">(UserCmd);
+        UserCmd(2) += CMD_STEP;
+        SchedulerPtr->template SetData<"NetUserCommand">(UserCmd);
+        });
+    KeyboardWorker->RegisterKeyCallback('#', [](SchedulerType* SchedulerPtr) {
+        std::cout << "cmd 3 Sub Pressed" << std::endl;
+        Vec7 UserCmd;
+        SchedulerPtr->template GetData<"NetUserCommand">(UserCmd);
+        UserCmd(2) -= CMD_STEP;
+        SchedulerPtr->template SetData<"NetUserCommand">(UserCmd);
+        });
+
+    KeyboardWorker->RegisterKeyCallback('4', [](SchedulerType* SchedulerPtr) {
+        std::cout << "cmd 4 Add Pressed" << std::endl;
+        Vec7 UserCmd;
+        SchedulerPtr->template GetData<"NetUserCommand">(UserCmd);
+        UserCmd(3) += CMD_STEP;
+        SchedulerPtr->template SetData<"NetUserCommand">(UserCmd);
+        });
+    KeyboardWorker->RegisterKeyCallback('$', [](SchedulerType* SchedulerPtr) {
+        std::cout << "cmd 4 Sub Pressed" << std::endl;
+        Vec7 UserCmd;
+        SchedulerPtr->template GetData<"NetUserCommand">(UserCmd);
+        UserCmd(3) -= CMD_STEP;
+        SchedulerPtr->template SetData<"NetUserCommand">(UserCmd);
+        });
+
+    KeyboardWorker->RegisterKeyCallback('5', [](SchedulerType* SchedulerPtr) {
+        std::cout << "cmd 5 Add Pressed" << std::endl;
+        Vec7 UserCmd;
+        SchedulerPtr->template GetData<"NetUserCommand">(UserCmd);
+        UserCmd(4) += CMD_STEP;
+        SchedulerPtr->template SetData<"NetUserCommand">(UserCmd);
+        });
+    KeyboardWorker->RegisterKeyCallback('%', [](SchedulerType* SchedulerPtr) {
+        std::cout << "cmd 5 Sub Pressed" << std::endl;
+        Vec7 UserCmd;
+        SchedulerPtr->template GetData<"NetUserCommand">(UserCmd);
+        UserCmd(4) -= CMD_STEP;
+        SchedulerPtr->template SetData<"NetUserCommand">(UserCmd);
+        });
+
+    KeyboardWorker->RegisterKeyCallback('6', [](SchedulerType* SchedulerPtr) {
+        std::cout << "cmd 6 Add Pressed" << std::endl;
+        Vec7 UserCmd;
+        SchedulerPtr->template GetData<"NetUserCommand">(UserCmd);
+        UserCmd(5) += CMD_STEP;
+        SchedulerPtr->template SetData<"NetUserCommand">(UserCmd);
+        });
+    KeyboardWorker->RegisterKeyCallback('^', [](SchedulerType* SchedulerPtr) {
+        std::cout << "cmd 6 Sub Pressed" << std::endl;
+        Vec7 UserCmd;
+        SchedulerPtr->template GetData<"NetUserCommand">(UserCmd);
+        UserCmd(5) -= CMD_STEP;
+        SchedulerPtr->template SetData<"NetUserCommand">(UserCmd);
+        });
+
+    KeyboardWorker->RegisterKeyCallback('7', [](SchedulerType* SchedulerPtr) {
+        std::cout << "cmd 7 Add Pressed" << std::endl;
+        Vec7 UserCmd;
+        SchedulerPtr->template GetData<"NetUserCommand">(UserCmd);
+        UserCmd(6) += CMD_STEP;
+        SchedulerPtr->template SetData<"NetUserCommand">(UserCmd);
+        });
+    KeyboardWorker->RegisterKeyCallback('&', [](SchedulerType* SchedulerPtr) {
+        std::cout << "cmd 7 Sub Pressed" << std::endl;
+        Vec7 UserCmd;
+        SchedulerPtr->template GetData<"NetUserCommand">(UserCmd);
+        UserCmd(6) -= CMD_STEP;
+        SchedulerPtr->template SetData<"NetUserCommand">(UserCmd);
+        });
+
+}
+
 void SystemInit()
 {
     nlohmann::json cfg_root;
@@ -79,6 +189,12 @@ void SystemInit()
         MotorVec CurrentMotorPos = static_cast<MotorVec>(ArmInstance->get_current_joint_q());
         MotorVec CurrentMotorVel = static_cast<MotorVec>(ArmInstance->get_current_joint_v());
         MotorVec CurrentMotorTorque = static_cast<MotorVec>(ArmInstance->get_current_joint_t());
+
+        //mask final joint to 0
+        CurrentMotorPos(-1) = 0;
+        CurrentMotorVel(-1) = 0;
+        CurrentMotorTorque(-1) = 0;
+
         SchedulerPtr->template SetData<"CurrentMotorPosition">(CurrentMotorPos);
         SchedulerPtr->template SetData<"CurrentMotorVelocity">(CurrentMotorVel);
         SchedulerPtr->template SetData<"CurrentMotorTorque">(CurrentMotorTorque);
@@ -89,6 +205,11 @@ void SystemInit()
         SchedulerPtr->template GetData<"TargetMotorPosition">(TargetMotorPos);
         MotorVec TargetMotorVel;
         SchedulerPtr->template GetData<"TargetMotorVelocity">(TargetMotorVel);
+
+        //mask final joint to 0
+        TargetMotorPos(-1) = 0;
+        TargetMotorVel(-1) = 0;
+
         //set to arm sdk
         ArmInstance->set_target_joint_mit(TargetMotorPos, TargetMotorVel, Kp, Kd, FeedForward);
         }, cfg_root);
@@ -99,10 +220,7 @@ void SystemInit()
 
     //注册键盘输入回调函数
     KeyboardWorker = new KeyboardWorkerType(TaskScheduler, cfg_root);
-    KeyboardWorker->RegisterKeyCallback('w', [](SchedulerType* SchedulerPtr) {
-        std::cout << "w key pressed" << std::endl;
-        });
-
+    RegistUserCmd();
 
     //创建主任务列表，并添加worker
     TaskScheduler->CreateTaskList("MainTask", 1, true);

@@ -154,7 +154,7 @@ std::optional<bitbot::StateId> EventVeloYIncrease(bitbot::EventValue keyState, U
     {
         Vec3 cmd;
         d.TaskScheduler->template GetData<"NetUserCommand3">(cmd);
-        cmd[1] += Y_VEL_STEP;
+        cmd[2] += Y_VEL_STEP;
         std::cout << "current cmd velocity: " << cmd;
         d.TaskScheduler->template SetData<"NetUserCommand3">(cmd);
     }
@@ -167,7 +167,7 @@ std::optional<bitbot::StateId> EventVeloYDecrease(bitbot::EventValue keyState, U
     {
         Vec3 cmd;
         d.TaskScheduler->template GetData<"NetUserCommand3">(cmd);
-        cmd[1] -= Y_VEL_STEP;
+        cmd[2] -= Y_VEL_STEP;
         std::cout << "current cmd velocity: " << cmd;
         d.TaskScheduler->template SetData<"NetUserCommand3">(cmd);
     }

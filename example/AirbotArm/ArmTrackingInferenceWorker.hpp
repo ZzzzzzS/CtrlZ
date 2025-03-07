@@ -12,10 +12,8 @@ namespace z
         using Base = CommonLocoInferenceWorker<SchedulerType, InferencePrecision, JOINT_NUMBER>;
         /// @brief 电机向量类型
         using MotorValVec = math::Vector<InferencePrecision, JOINT_NUMBER>;
-
-        /// @brief 三维向量类型(用于IMU， cmd等)
-        using ValVec3 = math::Vector<InferencePrecision, 3>;
-
+		/// @brief 七维向量类型
+        using ValVec7 = math::Vector<InferencePrecision, 7>;
     public:
         /**
          * @brief 构造一个ArmTrackingInferenceWorker类型
@@ -27,8 +25,9 @@ namespace z
             :CommonLocoInferenceWorker<SchedulerType, InferencePrecision, JOINT_NUMBER>(scheduler, cfg)
         {
             //concatenate all scales
+			ValVec7 Scales_Cmd = ValVec7::Ones();
             this->InputScaleVec = math::cat(
-                this->Scales_command3,
+                Scales_Cmd,
                 this->Scales_dof_pos,
                 this->Scales_dof_vel,
                 this->Scales_last_action
@@ -67,12 +66,12 @@ namespace z
             MotorValVec LastAction;
             this->Scheduler->template GetData<"NetLastAction">(LastAction);
 
-            ValVec3 UserCmd3;
-            this->Scheduler->template GetData<"NetUserCommand">(UserCmd3);
+            ValVec7 UserCmd;
+            this->Scheduler->template GetData<"NetUserCommand">(UserCmd);
 
 
             auto InputVecScaled = math::cat(
-                UserCmd3,
+                UserCmd,
                 CurrentMotorPos,
                 CurrentMotorVel,
                 LastAction
@@ -104,8 +103,8 @@ namespace z
         }
 
     private:
-        //base lin vel; base ang vel; proj grav; cmd3; dof pos; dof vel; last action
-        static constexpr size_t INPUT_TENSOR_LENGTH = 3 + JOINT_NUMBER + JOINT_NUMBER + JOINT_NUMBER;
+        //base lin vel; base ang vel; proj grav; cmd7; dof pos; dof vel; last action
+        static constexpr size_t INPUT_TENSOR_LENGTH = 7 + JOINT_NUMBER + JOINT_NUMBER + JOINT_NUMBER;
         //joint number
         static constexpr size_t OUTPUT_TENSOR_LENGTH = JOINT_NUMBER;
 

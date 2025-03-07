@@ -11,6 +11,7 @@
 using RealNumber = double;
 constexpr size_t JOINT_NUMBER = 6;
 using Vec3 = z::math::Vector<RealNumber, 3>;
+using Vec7 = z::math::Vector<RealNumber, 7>;
 using Vec6 = z::math::Vector<RealNumber, 6>;
 using MotorVec = z::math::Vector<RealNumber, JOINT_NUMBER>;
 
@@ -23,7 +24,7 @@ constexpr z::CTSPair<"CurrentMotorTorque", MotorVec> CurrentMotorTorquePair;
 
 /********* NN pair ********************/
 constexpr z::CTSPair<"NetLastAction", MotorVec> NetLastActionPair;
-constexpr z::CTSPair<"NetUserCommand", Vec3> NetUserCommandPair;
+constexpr z::CTSPair<"NetUserCommand", Vec7> NetUserCommandPair;
 constexpr z::CTSPair<"NetScaledAction", MotorVec> NetScaledActionPair;
 constexpr z::CTSPair<"InferenceTime", RealNumber> InferenceTimePair;
 
