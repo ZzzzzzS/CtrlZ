@@ -1,3 +1,13 @@
+/**
+ * @file NetInferenceWorker.h
+ * @author Zishun Zhou
+ * @brief
+ *
+ * @date 2025-03-10
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
 #pragma once
 #include "onnxruntime_cxx_api.h"
 #include <string>
@@ -9,9 +19,9 @@
 #include <Eigen/Core>
 #include <type_traits>
 
-/**
- * @brief singleton get Ort::Env object
- */
+ /**
+  * @brief singleton get Ort::Env object
+  */
 extern Ort::Env& GetOrtEnv();
 
 /**

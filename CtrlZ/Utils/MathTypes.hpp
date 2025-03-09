@@ -1,19 +1,29 @@
-﻿#pragma once
+﻿/**
+ * @file MathTypes.hpp
+ * @author zishun zhou
+ * @brief
+ *
+ * @date 2025-03-10
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
+#pragma once
 #include <iostream>
 #include <array>
 #include <cmath>
 #include <algorithm>
 #include <functional>
 
-/**
- * @brief overload operator << for std::array to print array
- *
- * @tparam T array type
- * @tparam N array length
- * @param os std::ostream
- * @param arr std::array<T, N>
- * @return std::ostream&
- */
+ /**
+  * @brief overload operator << for std::array to print array
+  *
+  * @tparam T array type
+  * @tparam N array length
+  * @param os std::ostream
+  * @param arr std::array<T, N>
+  * @return std::ostream&
+  */
 template<typename T, std::size_t N>
 std::ostream& operator<<(std::ostream& os, const std::array<T, N>& arr) {
     os << "[";
@@ -228,8 +238,8 @@ namespace z
              */
             constexpr T& operator()(size_t idx)
             {
-                if(idx<0)
-					return this->operator[](N + idx);
+                if (idx < 0)
+                    return this->operator[](N + idx);
                 else
                     return this->operator[](idx);
             }
@@ -242,8 +252,8 @@ namespace z
              */
             constexpr const T& operator()(size_t idx) const
             {
-				if (idx < 0)
-					return this->operator[](N + idx);
+                if (idx < 0)
+                    return this->operator[](N + idx);
                 else
                     return this->operator[](idx);
             }

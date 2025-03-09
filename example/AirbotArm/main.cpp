@@ -1,8 +1,8 @@
 /**
  * @file main.cpp
- * @author zishun zhou (zhouzishun@mail.zzshub.cn)
+ * @author zishun zhou
  * @brief
- * @version 0.1
+ *
  * @date 2025-03-04
  *
  * @copyright Copyright (c) 2025

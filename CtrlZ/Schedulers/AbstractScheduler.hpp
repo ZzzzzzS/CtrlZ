@@ -1,3 +1,12 @@
+/**
+ * @file AbstractScheduler.hpp
+ * @author Zishun Zhou
+ * @brief AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。
+ * @date 2025-03-10
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
 #pragma once
 #include "../Utils/ZObject.hpp"
 #include "../Utils/StaticStringUtils.hpp"

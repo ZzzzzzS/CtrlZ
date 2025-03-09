@@ -1,3 +1,13 @@
+/**
+ * @file AsyncLoggerWorker.hpp
+ * @author Zishun Zhou
+ * @brief
+ *
+ * @date 2025-03-10
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
 #pragma once
 #include <thread>
 #include <string>
@@ -11,7 +21,7 @@
 #include <mutex>
 #include <fstream>
 #include "readerwriterqueue/readerwriterqueue.h"
-//#include "readerwriterqueue.h"
+ //#include "readerwriterqueue.h"
 
 #include "../Utils/StaticStringUtils.hpp"
 #include "../Utils/ZenBuffer.hpp"

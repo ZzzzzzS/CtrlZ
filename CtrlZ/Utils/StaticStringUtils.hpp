@@ -1,3 +1,13 @@
+/**
+ * @file StaticStringUtils.hpp
+ * @author zishun zhou
+ * @brief
+ *
+ * @date 2025-03-10
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
 #pragma once
 #include <string>
 #include <array>

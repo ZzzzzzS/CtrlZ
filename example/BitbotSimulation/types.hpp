@@ -1,3 +1,12 @@
+/**
+ * @file types.hpp
+ * @author Zishun Zhou
+ * @brief 类型定义
+ * @date 2025-03-10
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
 #pragma once
 #include <array>
 

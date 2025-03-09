@@ -1,3 +1,12 @@
+/**
+ * @file ArmTrackingInferenceWorker.hpp
+ * @author Zishun Zhou
+ * @brief 机械臂控制程序所需控制网络
+ * @date 2025-03-10
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
 #pragma once
 #include "Workers/NN/CommonLocoInferenceWorker.hpp"
 #include "Workers/NN/NetInferenceWorker.h"
@@ -12,7 +21,7 @@ namespace z
         using Base = CommonLocoInferenceWorker<SchedulerType, InferencePrecision, JOINT_NUMBER>;
         /// @brief 电机向量类型
         using MotorValVec = math::Vector<InferencePrecision, JOINT_NUMBER>;
-		/// @brief 七维向量类型
+        /// @brief 七维向量类型
         using ValVec7 = math::Vector<InferencePrecision, 7>;
     public:
         /**
@@ -25,7 +34,7 @@ namespace z
             :CommonLocoInferenceWorker<SchedulerType, InferencePrecision, JOINT_NUMBER>(scheduler, cfg)
         {
             //concatenate all scales
-			ValVec7 Scales_Cmd = ValVec7::Ones();
+            ValVec7 Scales_Cmd = ValVec7::Ones();
             this->InputScaleVec = math::cat(
                 Scales_Cmd,
                 this->Scales_dof_pos,
