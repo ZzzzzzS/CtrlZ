@@ -65,4 +65,10 @@ AbstractWorker 类型是一切工人类型的基类，在这个类中指定了�
 
 # 示例
 
-TBD...
+## BitbotSimulation
+
+BitbotSimulation示例是使用Bitbot Mujoco结合CtrlZ，在Mujoco仿真器中控制机器人的程序，Bitbot也可用于真实机器人部署，关于更多Bitbot的信息请参阅[Bitbot网站](https://bitbot.lmy.name/)。若要编译该示例，需要在cmake中设置``DBUILD_EXAMPLE_BITBOT_SIM``变量为``ON``. *可能需要稳定的国际互联网连接来正确下载部分依赖项*.
+
+## BitbotAirbotARM
+
+BitbotAirbotArm示例是使用CtrlZ结合Airbot机械臂进行抓取控制的示例，若要编译该示例，需要在cmake中设置``BUILD_EXAMPLE_AIRBOT_ARM``为``ON``. *由于SDK限制，该项目仅能在Ubuntu20.04环境下运行，且需要提前安装Airbot机械臂相关[SDK](https://airbots.online/dowload)*。
