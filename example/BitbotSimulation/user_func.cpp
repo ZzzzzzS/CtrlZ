@@ -1,3 +1,12 @@
+/**
+ * @file user_func.cpp
+ * @author Zishun Zhou
+ * @brief
+ * @date 2025-03-10
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
 #include "user_func.h"
 
 #include <chrono>

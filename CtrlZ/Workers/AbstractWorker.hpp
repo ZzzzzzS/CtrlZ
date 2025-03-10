@@ -1,3 +1,13 @@
+/**
+ * @file AbstractWorker.hpp
+ * @author Zishun Zhou
+ * @brief
+ *
+ * @date 2025-03-10
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
 #pragma once
 #include "../Utils/ZObject.hpp"
 #include "../Utils/StaticStringUtils.hpp"

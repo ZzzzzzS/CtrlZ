@@ -1,3 +1,13 @@
+/**
+ * @file CommonLocoInferenceWorker.hpp
+ * @author Zishun Zhou
+ * @brief
+ *
+ * @date 2025-03-10
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
 #pragma once
 #include "AbstractInferenceWorker.hpp"
 #include "onnxruntime_cxx_api.h"

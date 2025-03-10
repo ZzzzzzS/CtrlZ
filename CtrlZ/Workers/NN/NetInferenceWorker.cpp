@@ -1,3 +1,13 @@
+/**
+ * @file NetInferenceWorker.cpp
+ * @author Zishun Zhou
+ * @brief
+ *
+ * @date 2025-03-10
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
 #include "NetInferenceWorker.h"
 #include "onnxruntime_cxx_api.h"
 #include <string>
@@ -5,9 +15,9 @@
 #include <codecvt>
 #include <iostream>
 
-/**
- * @brief singleton get Ort::Env object
- */
+ /**
+  * @brief singleton get Ort::Env object
+  */
 Ort::Env& GetOrtEnv()
 {
     static Ort::Env env(ORT_LOGGING_LEVEL_WARNING, "NetInferenceWorker");

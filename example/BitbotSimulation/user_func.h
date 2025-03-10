@@ -1,3 +1,12 @@
+/**
+ * @file user_func.h
+ * @author Zishun Zhou
+ * @brief
+ * @date 2025-03-10
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
 #pragma once
 #include "bitbot_mujoco/kernel/mujoco_kernel.hpp"
 #include "types.hpp"

@@ -1,13 +1,22 @@
+/**
+ * @file types.hpp
+ * @author Zishun Zhou
+ * @brief 机械臂控制程序所需的一些类型定义
+ * @date 2025-03-10
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
 #pragma once 
 #include "Utils/StaticStringUtils.hpp"
 #include "Utils/MathTypes.hpp"
 #include "Schedulers/AbstractScheduler.hpp"
 #include "Workers/AsyncLoggerWorker.hpp"
 #include "Workers/AbstractWorker.hpp"
-#include "Workers/KeyboardCmmandWorker.hpp"
+#include "Workers/KeyboardCommandWorker.hpp"
 #include "ArmTrackingInferenceWorker.hpp"
 
-/************ basic definintion***********/
+ /************ basic definintion***********/
 using RealNumber = double;
 constexpr size_t JOINT_NUMBER = 6;
 using Vec3 = z::math::Vector<RealNumber, 3>;
