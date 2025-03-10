@@ -138,7 +138,7 @@ namespace z
 
             this->end_time = std::chrono::steady_clock::now();
             auto duration = std::chrono::duration_cast<std::chrono::microseconds>(this->end_time - this->start_time);
-            InferencePrecision inference_time = static_cast<InferencePrecision>(duration.count());
+            InferencePrecision inference_time = static_cast<InferencePrecision>(duration.count()) / 1000.0;
             this->Scheduler->template SetData<"InferenceTime">(inference_time);
         }
 
