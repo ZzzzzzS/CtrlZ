@@ -289,6 +289,44 @@ namespace z
          */
         ~MotorControlWorker() {}
 
+        void TaskCreate()
+        {
+            MotorValVec MotorVel;
+            MotorValVec MotorPos;
+            MotorValVec MotorTorque;
+
+            MotorVel.apply([this](MotorPrecision& val, size_t i) {
+                val = this->Joints[i]->GetActualVelocity();
+                });
+            MotorPos.apply([this](MotorPrecision& val, size_t i) {
+                val = this->Joints[i]->GetActualPosition();
+                });
+            MotorTorque.apply([this](MotorPrecision& val, size_t i) {
+                val = this->Joints[i]->GetActualTorque();
+                });
+
+
+            this->CurrentMotorVel = (*JointVelFilter)(MotorVel);
+            this->CurrentMotorPos = (*JointPosFilter)(MotorPos);
+
+            this->Scheduler->template SetData<"CurrentMotorVelocity">(CurrentMotorVel);
+            this->Scheduler->template SetData<"CurrentMotorPosition">(CurrentMotorPos);
+            this->Scheduler->template SetData<"CurrentMotorTorque">(MotorTorque);
+
+            SetCurrentPositionAsTargetPosition();
+        }
+
+        /**
+         * @brief 设置当前位置为目标位置
+         *
+         */
+        void SetCurrentPositionAsTargetPosition()
+        {
+            MotorValVec TargetVel = MotorValVec::zeros();
+            this->Scheduler->template SetData<"TargetMotorPosition">(CurrentMotorPos);
+            this->Scheduler->template SetData<"TargetMotorVelocity">(TargetVel);
+        }
+
         /**
          * @brief TaskCycleBegin方法，在每次任务队列循环开始时被调用，用来读取电机的位置、速度、电流等数据并写入到数据总线中
          *
@@ -316,6 +354,7 @@ namespace z
             this->Scheduler->template SetData<"CurrentMotorVelocity">(CurrentMotorVel);
             this->Scheduler->template SetData<"CurrentMotorPosition">(CurrentMotorPos);
             this->Scheduler->template SetData<"CurrentMotorTorque">(MotorTorque);
+
         }
 
         /**
