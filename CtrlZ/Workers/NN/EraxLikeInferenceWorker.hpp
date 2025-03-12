@@ -42,6 +42,8 @@ namespace z
             nlohmann::json NetworkCfg = cfg["Workers"]["NN"]["Network"];
             this->CyctleTime = NetworkCfg["Cycle_time"].get<InferencePrecision>();
             this->dt = cfg["Scheduler"]["dt"].get<InferencePrecision>();
+            InferencePrecision StableSwitchTime = NetworkCfg["SwitchTime"].get<InferencePrecision>();
+            this->BlockOutputPeriod = static_cast<size_t>(StableSwitchTime / this->dt);
 
             this->PrintSplitLine();
             std::cout << "EraxInferenceWorker" << std::endl;
@@ -69,6 +71,12 @@ namespace z
         virtual ~EraxLikeInferenceWorker()
         {
 
+        }
+
+        void AboutToSwitch()
+        {
+            this->BlockOutput = true;
+            this->BlockOutputTargetTimestamp = this->Scheduler->getTimeStamp() + this->BlockOutputPeriod;
         }
 
         void PreProcess() override
@@ -143,8 +151,16 @@ namespace z
             auto ScaledAction = ClipedLastAction * this->OutputScaleVec + this->JointDefaultPos;
             this->Scheduler->template SetData<"NetScaledAction">(ScaledAction);
 
-            auto clipedAction = MotorValVec::clamp(ScaledAction, this->JointClipLower, this->JointClipUpper);
-            this->Scheduler->template SetData<"TargetMotorPosition">(clipedAction);
+            if (BlockOutput && static_cast<int>(this->Scheduler->getTimeStamp()) - static_cast<int>(BlockOutputTargetTimestamp) > 0)
+            {
+                BlockOutput = false;
+            }
+
+            if (!this->BlockOutput)
+            {
+                auto clipedAction = MotorValVec::clamp(ScaledAction, this->JointClipLower, this->JointClipUpper);
+                this->Scheduler->template SetData<"TargetMotorPosition">(clipedAction);
+            }
 
             this->end_time = std::chrono::steady_clock::now();
             auto duration = std::chrono::duration_cast<std::chrono::microseconds>(this->end_time - this->start_time);
@@ -172,6 +188,11 @@ namespace z
 
         InferencePrecision CyctleTime;
         InferencePrecision dt;
+
+        //block output for state estimation stable
+        size_t BlockOutputTargetTimestamp = 0;
+        size_t BlockOutputPeriod = 0;
+        bool BlockOutput = false;
 
         //compute time
         std::chrono::steady_clock::time_point start_time;
