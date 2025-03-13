@@ -1,0 +1,9 @@
+<map id="z::AbstractScheduler&lt; CTS &gt;" name="z::AbstractScheduler&lt; CTS &gt;">
+<area shape="rect" id="Node000001" title="AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。" alt="" coords="112,112,256,155"/>
+<area shape="rect" id="Node000002" href="$classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="5,13,88,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,47,158,109,155,114,73,52"/>
+<area shape="rect" id="Node000003" href="$structz_1_1_abstract_scheduler_1_1_t_c_b.html" title="Task Control Block" alt="" coords="112,5,256,48"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,64,186,111,181,111,181,64"/>
+<area shape="rect" id="Node000004" href="$classz_1_1_data_center.html" title=" " alt="" coords="279,13,446,40"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="353,55,340,74,324,90,292,109,257,122,255,116,289,104,321,86,336,70,348,52"/>
+</map>

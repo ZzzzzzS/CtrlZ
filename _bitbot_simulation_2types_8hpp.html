@@ -1,0 +1,489 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ctrl-Z: C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/example/BitbotSimulation/types.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Ctrl-Z
+   </div>
+   <div id="projectbrief">一个多线程机器人运动控制强化学习部署框架</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_bitbot_simulation_2types_8hpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">types.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>类型定义  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;array&gt;</code><br />
+<code>#include &quot;<a class="el" href="_abstract_scheduler_8hpp_source.html">Schedulers/AbstractScheduler.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_static_string_utils_8hpp_source.html">Utils/StaticStringUtils.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_math_types_8hpp_source.html">Utils/MathTypes.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_abstract_worker_8hpp_source.html">Workers/AbstractWorker.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_async_logger_worker_8hpp_source.html">Workers/AsyncLoggerWorker.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_imu_process_worker_8hpp_source.html">Workers/ImuProcessWorker.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_motor_control_worker_8hpp_source.html">Workers/MotorControlWorker.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_motor_reset_position_worker_8hpp_source.html">Workers/MotorResetPositionWorker.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_erax_like_inference_worker_8hpp_source.html">Workers/NN/EraxLikeInferenceWorker.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_humanoid_gym_inference_worker_8hpp_source.html">Workers/NN/HumanoidGymInferenceWorker.hpp</a>&quot;</code><br />
+<code>#include &quot;bitbot_mujoco/device/mujoco_imu.h&quot;</code><br />
+<code>#include &quot;bitbot_mujoco/device/mujoco_joint.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+types.hpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_bitbot_simulation_2types_8hpp__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2example_2_bitbot_simulation_2types_8hpp" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2example_2_bitbot_simulation_2types_8hpp" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2example_2_bitbot_simulation_2types_8hpp">
+<area shape="rect" title="类型定义" alt="" coords="1853,5,2059,80"/>
+<area shape="rect" title=" " alt="" coords="2759,683,2809,709"/>
+<area shape="poly" title=" " alt="" coords="2060,40,2513,43,2811,50,3119,64,3409,87,3538,102,3651,121,3746,142,3818,167,3845,181,3865,196,3877,213,3881,230,3881,399,3876,453,3861,498,3838,535,3806,564,3767,588,3721,607,3615,637,3543,650,3448,661,3217,678,2825,696,2825,691,3217,673,3447,656,3542,645,3614,632,3720,602,3764,583,3803,560,3833,531,3857,496,3871,452,3876,399,3876,231,3872,215,3861,200,3842,186,3816,172,3744,147,3650,126,3537,108,3408,92,3119,70,2811,56,2513,48,2060,46"/>
+<area shape="rect" href="_abstract_scheduler_8hpp.html" title="AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。" alt="" coords="1062,384,1284,411"/>
+<area shape="poly" title=" " alt="" coords="1876,83,1216,380,1214,375,1874,78"/>
+<area shape="rect" href="_static_string_utils_8hpp.html" title=" " alt="" coords="1130,533,1315,560"/>
+<area shape="poly" title=" " alt="" coords="1853,49,1533,59,1106,75,683,99,507,114,374,131,309,136,245,134,127,129,78,133,58,140,41,149,27,162,17,180,10,202,8,231,8,316,13,357,27,388,48,412,76,429,110,444,148,456,234,483,354,496,597,512,1115,538,1115,543,596,517,353,501,233,488,147,461,108,449,74,434,44,416,22,391,8,358,3,316,3,231,5,201,12,178,23,159,38,145,56,135,77,128,126,123,245,129,309,131,373,125,506,109,682,94,1106,70,1533,53,1852,44"/>
+<area shape="rect" href="_math_types_8hpp.html" title=" " alt="" coords="2328,608,2438,635"/>
+<area shape="poly" title=" " alt="" coords="2061,75,2718,291,2741,328,2756,363,2763,397,2763,431,2756,464,2742,497,2721,530,2692,562,2604,582,2454,610,2453,605,2603,577,2689,558,2716,526,2737,495,2751,463,2758,430,2758,398,2751,364,2736,330,2714,295,2059,80"/>
+<area shape="rect" href="_abstract_worker_8hpp.html" title=" " alt="" coords="669,459,870,485"/>
+<area shape="poly" title=" " alt="" coords="1853,49,1493,61,1264,74,1030,91,813,115,716,130,632,146,562,165,508,185,475,207,467,219,464,231,464,316,471,335,489,355,518,374,553,393,634,426,710,451,709,456,632,431,551,398,515,379,486,359,466,338,459,316,459,230,462,217,471,204,506,180,560,160,631,141,715,125,812,110,1030,86,1264,68,1492,56,1853,43"/>
+<area shape="rect" href="_async_logger_worker_8hpp.html" title=" " alt="" coords="1848,384,2064,411"/>
+<area shape="poly" title=" " alt="" coords="1959,80,1959,368,1953,368,1953,80"/>
+<area shape="rect" href="_imu_process_worker_8hpp.html" title=" " alt="" coords="534,301,743,328"/>
+<area shape="poly" title=" " alt="" coords="1853,59,1638,88,1389,131,1189,174,993,221,698,299,697,294,992,216,1188,168,1387,125,1637,83,1852,54"/>
+<area shape="rect" href="_motor_control_worker_8hpp.html" title=" " alt="" coords="152,301,366,328"/>
+<area shape="poly" title=" " alt="" coords="1853,48,1515,55,1075,70,861,81,672,94,527,111,477,120,444,130,416,145,389,164,342,207,304,252,277,290,272,287,299,249,338,204,386,160,413,141,442,126,475,115,526,106,672,89,860,75,1075,64,1515,50,1852,43"/>
+<area shape="rect" href="_motor_reset_position_worker_8hpp.html" title=" " alt="" coords="911,293,1100,336"/>
+<area shape="poly" title=" " alt="" coords="1853,63,1700,91,1530,131,1401,169,1274,213,1071,290,1069,285,1272,208,1399,164,1529,125,1699,86,1852,57"/>
+<area shape="rect" href="_erax_like_inference_worker_8hpp.html" title=" " alt="" coords="2851,128,3053,171"/>
+<area shape="poly" title=" " alt="" coords="2060,49,2400,77,2616,98,2836,125,2835,130,2615,104,2400,82,2059,54"/>
+<area shape="rect" href="_humanoid_gym_inference_worker_8hpp.html" title=" " alt="" coords="2589,128,2827,171"/>
+<area shape="poly" title=" " alt="" coords="2060,55,2571,125,2574,126,2573,131,2570,131,2059,60"/>
+<area shape="rect" title=" " alt="" coords="3916,128,4060,171"/>
+<area shape="poly" title=" " alt="" coords="2059,43,2443,53,2974,69,3507,94,3729,109,3898,125,3901,126,3900,131,3897,131,3729,114,3507,99,2974,75,2443,58,2059,49"/>
+<area shape="rect" title=" " alt="" coords="4084,128,4228,171"/>
+<area shape="poly" title=" " alt="" coords="2060,43,2468,50,3043,65,3628,90,3877,106,4069,125,4068,130,3876,111,3628,95,3043,71,2468,56,2060,48"/>
+<area shape="rect" href="_z_object_8hpp.html" title=" " alt="" coords="770,533,905,560"/>
+<area shape="poly" title=" " alt="" coords="1143,414,1029,461,879,529,877,524,1027,456,1141,409"/>
+<area shape="poly" title=" " alt="" coords="1120,414,1084,426,1054,442,1043,452,1037,461,1037,472,1042,484,1057,500,1075,513,1116,531,1114,536,1072,518,1053,504,1038,487,1031,473,1032,460,1039,448,1051,438,1082,421,1118,409"/>
+<area shape="rect" title=" " alt="" coords="2461,608,2515,635"/>
+<area shape="poly" title=" " alt="" coords="1285,406,1464,425,1666,456,1719,469,1771,483,1959,519,2108,541,2257,564,2447,605,2446,610,2256,570,2107,546,1958,524,1770,488,1717,474,1665,461,1464,431,1285,411"/>
+<area shape="rect" href="_data_center_8hpp.html" title=" " alt="" coords="1448,459,1605,485"/>
+<area shape="poly" title=" " alt="" coords="1236,409,1450,452,1449,458,1235,414"/>
+<area shape="rect" title=" " alt="" coords="1833,533,1890,560"/>
+<area shape="poly" title=" " alt="" coords="1285,402,1444,419,1532,435,1618,456,1647,469,1676,483,1819,530,1817,535,1674,488,1645,474,1616,461,1531,440,1443,425,1284,407"/>
+<area shape="rect" title=" " alt="" coords="1444,533,1490,560"/>
+<area shape="poly" title=" " alt="" coords="1147,413,1122,428,1099,446,1087,465,1088,474,1092,483,1135,495,1229,511,1428,538,1428,543,1228,516,1134,500,1089,487,1082,476,1082,464,1095,442,1119,424,1145,409"/>
+<area shape="rect" title=" " alt="" coords="1564,533,1625,560"/>
+<area shape="poly" title=" " alt="" coords="1162,413,1148,429,1136,448,1131,467,1136,483,1549,537,1549,542,1133,487,1125,467,1131,446,1144,426,1158,409"/>
+<area shape="poly" title=" " alt="" coords="1103,414,855,458,854,453,1102,409"/>
+<area shape="rect" title=" " alt="" coords="1782,459,1839,485"/>
+<area shape="poly" title=" " alt="" coords="1285,408,1712,456,1767,463,1767,468,1712,461,1284,413"/>
+<area shape="rect" title=" " alt="" coords="1147,459,1272,485"/>
+<area shape="poly" title=" " alt="" coords="1182,410,1199,443,1194,446,1177,412"/>
+<area shape="rect" title=" " alt="" coords="802,683,873,709"/>
+<area shape="poly" title=" " alt="" coords="840,561,840,667,835,667,835,561"/>
+<area shape="poly" title=" " alt="" coords="1246,558,1374,632,1570,644,1986,662,2743,691,2743,696,1985,667,1569,649,1373,637,1243,563"/>
+<area shape="poly" title=" " alt="" coords="1229,560,1235,597,1232,618,1222,636,1199,653,1164,667,1074,685,974,694,889,697,888,692,974,688,1073,679,1163,662,1196,649,1218,633,1227,616,1229,597,1224,561"/>
+<area shape="poly" title=" " alt="" coords="1316,551,1432,557,1586,563,1716,564,1940,561,2048,562,2163,569,2293,582,2447,605,2446,611,2293,587,2163,574,2047,568,1940,566,1717,569,1586,568,1432,563,1315,556"/>
+<area shape="rect" title=" " alt="" coords="1752,683,1826,709"/>
+<area shape="poly" title=" " alt="" coords="1235,559,1274,596,1300,616,1329,632,1363,643,1408,653,1521,670,1737,689,1736,694,1520,675,1407,658,1361,648,1327,637,1297,621,1271,600,1232,563"/>
+<area shape="rect" title=" " alt="" coords="1385,608,1434,635"/>
+<area shape="poly" title=" " alt="" coords="1256,558,1371,602,1369,607,1254,563"/>
+<area shape="rect" title=" " alt="" coords="1120,608,1208,635"/>
+<area shape="poly" title=" " alt="" coords="1215,562,1186,597,1182,594,1210,559"/>
+<area shape="rect" title=" " alt="" coords="1887,608,1969,635"/>
+<area shape="poly" title=" " alt="" coords="1315,555,1334,557,1872,612,1871,617,1333,563,1315,561"/>
+<area shape="rect" title=" " alt="" coords="1480,608,1522,635"/>
+<area shape="poly" title=" " alt="" coords="1272,558,1466,608,1464,613,1271,563"/>
+<area shape="poly" title=" " alt="" coords="1315,556,1334,557,1618,578,1897,595,2312,615,2312,620,1897,600,1617,583,1333,563,1315,561"/>
+<area shape="poly" title=" " alt="" coords="2439,630,2450,632,2744,685,2743,690,2449,637,2438,635"/>
+<area shape="poly" title=" " alt="" coords="2327,628,889,695,888,690,2327,623"/>
+<area shape="poly" title=" " alt="" coords="2327,632,1842,691,1842,686,2327,627"/>
+<area shape="rect" title=" " alt="" coords="3850,683,3907,709"/>
+<area shape="poly" title=" " alt="" coords="2439,631,2450,632,2658,652,2870,667,3280,685,3620,692,3834,692,3834,698,3620,697,3280,690,2870,672,2657,657,2449,637,2438,636"/>
+<area shape="rect" title=" " alt="" coords="2344,683,2421,709"/>
+<area shape="poly" title=" " alt="" coords="2385,635,2385,667,2380,667,2380,635"/>
+<area shape="poly" title=" " alt="" coords="1552,484,1639,531,1683,558,1776,603,1819,618,1875,632,1955,645,2060,656,2315,674,2743,691,2743,696,2314,679,2060,662,1954,650,1874,637,1817,623,1774,608,1680,562,1636,536,1549,488"/>
+<area shape="poly" title=" " alt="" coords="1448,484,920,539,920,534,1448,479"/>
+<area shape="poly" title=" " alt="" coords="1474,489,1291,532,1290,527,1473,483"/>
+<area shape="poly" title=" " alt="" coords="1562,483,1682,531,1711,546,1741,557,1845,579,1934,589,2014,591,2090,589,2247,585,2339,591,2446,605,2445,611,2339,596,2247,591,2090,594,2014,597,1934,594,1844,584,1739,563,1709,551,1680,536,1560,488"/>
+<area shape="poly" title=" " alt="" coords="1527,486,1509,593,1503,592,1522,485"/>
+<area shape="poly" title=" " alt="" coords="1598,483,1699,503,1818,530,1817,535,1698,508,1597,489"/>
+<area shape="poly" title=" " alt="" coords="1518,488,1489,523,1484,520,1514,484"/>
+<area shape="rect" title=" " alt="" coords="1751,533,1809,560"/>
+<area shape="poly" title=" " alt="" coords="1572,483,1737,530,1736,535,1570,488"/>
+<area shape="poly" title=" " alt="" coords="1540,484,1574,520,1571,524,1537,488"/>
+<area shape="poly" title=" " alt="" coords="783,484,817,520,813,524,779,488"/>
+<area shape="poly" title=" " alt="" coords="849,483,1129,528,1128,533,848,489"/>
+<area shape="rect" title=" " alt="" coords="387,533,456,560"/>
+<area shape="poly" title=" " alt="" coords="709,489,471,538,470,533,708,483"/>
+<area shape="rect" title=" " alt="" coords="2523,533,2653,560"/>
+<area shape="poly" title=" " alt="" coords="870,475,2508,539,2507,545,870,480"/>
+<area shape="poly" title=" " alt="" coords="2064,406,2218,424,2394,450,2479,467,2556,486,2620,507,2667,531,2703,562,2733,599,2774,668,2770,670,2729,602,2699,566,2664,536,2618,512,2554,491,2478,472,2393,455,2218,429,2064,411"/>
+<area shape="poly" title=" " alt="" coords="1848,406,1566,425,1428,441,1372,450,1329,461,1307,474,1285,488,1239,504,1202,512,1165,520,1120,536,1047,570,977,609,869,676,866,672,975,604,1045,565,1118,531,1164,515,1201,507,1238,499,1283,483,1304,469,1327,456,1370,445,1427,435,1565,419,1848,400"/>
+<area shape="poly" title=" " alt="" coords="1848,401,1750,405,1635,415,1512,433,1393,461,1331,489,1259,528,1256,523,1329,484,1391,456,1511,428,1634,410,1749,400,1848,396"/>
+<area shape="poly" title=" " alt="" coords="2064,404,2229,423,2303,438,2355,456,2395,486,2430,523,2457,561,2477,593,2472,596,2453,564,2426,527,2392,490,2352,461,2301,443,2228,428,2064,409"/>
+<area shape="poly" title=" " alt="" coords="1848,407,1599,427,1493,442,1457,451,1438,461,1418,490,1408,526,1406,561,1408,593,1402,593,1400,561,1403,525,1413,488,1434,457,1455,446,1492,437,1599,422,1848,402"/>
+<area shape="poly" title=" " alt="" coords="2064,398,2143,404,2223,414,2291,431,2316,443,2334,457,2340,472,2334,487,2300,525,2258,555,2212,579,2163,596,2114,608,2066,616,1985,623,1984,618,2065,611,2113,603,2161,591,2210,574,2255,551,2296,521,2330,484,2335,472,2330,460,2313,447,2289,436,2222,419,2143,409,2064,404"/>
+<area shape="poly" title=" " alt="" coords="2064,399,2137,405,2211,416,2273,433,2296,444,2313,457,2319,472,2313,487,2299,499,2281,508,2236,521,2181,528,2121,531,2001,531,1950,532,1910,536,1906,537,1905,531,1909,531,1949,527,2001,526,2121,526,2181,523,2235,516,2279,504,2296,495,2309,484,2314,472,2309,460,2293,448,2271,438,2210,421,2137,411,2064,405"/>
+<area shape="poly" title=" " alt="" coords="2065,406,2116,417,2159,433,2173,443,2181,456,2181,471,2171,487,2146,505,2109,517,2064,524,2015,528,1912,531,1824,536,1824,531,1912,525,2015,522,2064,519,2108,512,2143,500,2167,484,2176,469,2176,457,2169,447,2156,437,2115,422,2064,412"/>
+<area shape="poly" title=" " alt="" coords="1947,413,1908,450,1882,470,1853,488,1798,510,1741,526,1641,544,1640,539,1739,521,1796,505,1851,483,1879,466,1905,446,1943,409"/>
+<area shape="poly" title=" " alt="" coords="1848,408,885,466,885,461,1848,403"/>
+<area shape="poly" title=" " alt="" coords="1932,414,1851,454,1848,449,1930,409"/>
+<area shape="poly" title=" " alt="" coords="1848,409,1594,430,1291,461,1288,462,1287,456,1290,456,1593,425,1848,404"/>
+<area shape="rect" title=" " alt="" coords="2233,459,2298,485"/>
+<area shape="poly" title=" " alt="" coords="2011,409,2218,457,2217,462,2010,414"/>
+<area shape="rect" title=" " alt="" coords="1915,459,2157,485"/>
+<area shape="poly" title=" " alt="" coords="1972,409,2013,446,2009,450,1968,413"/>
+<area shape="rect" href="_zen_buffer_8hpp.html" title=" " alt="" coords="499,459,645,485"/>
+<area shape="poly" title=" " alt="" coords="1848,403,1340,418,1005,435,661,461,660,456,1004,430,1340,413,1848,398"/>
+<area shape="poly" title=" " alt="" coords="619,483,777,526,776,531,618,488"/>
+<area shape="poly" title=" " alt="" coords="589,484,813,671,809,675,585,488"/>
+<area shape="poly" title=" " alt="" coords="645,481,658,483,833,495,982,498,1238,492,1361,491,1493,494,1643,506,1818,531,1817,536,1642,512,1493,499,1361,496,1238,498,982,503,833,500,657,488,645,487"/>
+<area shape="poly" title=" " alt="" coords="723,326,1074,378,1073,384,722,331"/>
+<area shape="poly" title=" " alt="" coords="558,331,492,352,459,367,430,386,388,424,373,444,362,464,356,485,354,507,358,532,368,559,382,586,399,604,419,618,448,632,512,652,605,668,787,688,786,693,604,673,511,657,446,637,417,623,395,608,378,589,363,561,353,533,349,508,351,484,357,462,368,441,384,421,426,382,457,362,490,347,556,326"/>
+<area shape="poly" title=" " alt="" coords="614,331,563,359,511,398,491,419,480,441,478,463,490,483,513,491,567,499,735,515,1115,538,1115,543,734,520,566,505,512,496,486,487,473,464,475,440,487,416,508,394,561,354,611,326"/>
+<area shape="poly" title=" " alt="" coords="744,321,996,344,1147,361,1296,381,1482,414,1666,456,1771,483,2072,551,2312,603,2311,608,2071,556,1770,488,1665,461,1481,419,1296,387,1146,366,996,349,744,326"/>
+<area shape="poly" title=" " alt="" coords="651,327,751,445,747,449,647,330"/>
+<area shape="poly" title=" " alt="" coords="589,331,540,349,485,375,434,412,412,435,394,460,390,474,391,490,405,520,400,522,386,491,385,474,390,457,408,431,430,408,483,371,538,344,588,326"/>
+<area shape="poly" title=" " alt="" coords="636,330,586,445,581,443,631,328"/>
+<area shape="poly" title=" " alt="" coords="367,323,1047,382,1047,388,366,328"/>
+<area shape="poly" title=" " alt="" coords="210,331,166,352,147,367,132,385,128,396,127,409,134,439,146,466,157,484,210,542,261,579,319,605,395,632,502,662,610,680,708,689,786,692,786,697,708,694,609,685,500,667,394,637,317,610,258,583,207,546,153,487,141,468,129,440,122,410,122,395,127,383,143,363,163,347,207,326"/>
+<area shape="poly" title=" " alt="" coords="240,331,218,346,199,366,188,388,187,399,192,409,206,430,221,444,254,462,342,483,462,498,673,514,1115,538,1115,543,673,519,462,503,341,488,252,467,218,449,202,433,187,412,182,399,182,387,194,363,215,342,236,326"/>
+<area shape="poly" title=" " alt="" coords="270,327,301,366,346,409,413,455,445,469,489,483,613,511,719,524,814,526,904,522,994,517,1091,513,1200,516,1327,531,1380,544,1432,557,1615,576,1864,593,2312,615,2312,620,1864,598,1614,582,1432,563,1379,549,1326,536,1199,522,1091,518,994,522,904,528,814,532,719,529,612,516,487,488,443,474,410,460,342,413,297,369,265,330"/>
+<area shape="poly" title=" " alt="" coords="284,326,444,408,551,437,654,455,653,460,549,442,442,413,282,331"/>
+<area shape="poly" title=" " alt="" coords="216,331,174,352,155,367,141,385,138,397,141,410,158,452,171,467,191,483,235,507,283,524,330,534,372,540,371,545,329,540,281,529,233,512,188,488,167,471,154,455,136,412,132,397,136,383,152,363,171,347,213,326"/>
+<area shape="poly" title=" " alt="" coords="275,327,326,366,393,408,451,433,508,451,506,456,449,438,391,413,323,370,272,331"/>
+<area shape="poly" title=" " alt="" coords="1050,334,1134,375,1132,379,1047,339"/>
+<area shape="poly" title=" " alt="" coords="911,325,758,345,672,362,589,387,516,411,459,435,435,451,414,472,395,499,377,534,373,547,377,559,404,582,446,603,499,623,559,640,683,667,787,685,786,690,682,673,557,645,497,628,444,608,401,586,372,561,368,547,372,532,390,497,410,469,431,447,456,431,514,406,587,381,671,357,757,340,910,320"/>
+<area shape="poly" title=" " alt="" coords="1004,337,1001,369,1002,408,1011,448,1019,467,1030,484,1048,501,1069,514,1116,532,1114,537,1066,519,1045,505,1026,487,1014,469,1005,450,997,408,996,368,999,336"/>
+<area shape="poly" title=" " alt="" coords="1100,313,1281,316,1525,325,1799,346,1940,362,2076,381,2160,389,2230,391,2261,397,2292,408,2323,427,2355,457,2375,489,2386,525,2389,562,2389,593,2383,592,2384,562,2381,526,2371,491,2351,460,2320,431,2290,413,2260,402,2229,397,2160,394,2076,387,1939,367,1799,351,1524,331,1281,321,1100,318"/>
+<area shape="poly" title=" " alt="" coords="986,339,944,375,893,413,815,454,813,450,891,408,941,371,982,335"/>
+<area shape="poly" title=" " alt="" coords="1100,314,1458,320,1931,331,2158,340,2353,351,2493,365,2536,373,2559,382,2572,396,2582,412,2593,449,2596,486,2595,518,2589,517,2591,486,2588,450,2577,415,2568,399,2556,386,2535,378,2492,370,2352,357,2158,345,1931,337,1458,325,1100,320"/>
+<area shape="poly" title=" " alt="" coords="3054,151,3250,158,3481,171,3684,190,3756,202,3797,216,3834,242,3863,268,3887,294,3905,322,3918,353,3926,387,3932,471,3932,548,3928,582,3920,615,3896,670,3891,668,3914,613,3923,581,3927,548,3927,471,3921,388,3913,354,3900,325,3883,297,3860,272,3830,246,3795,221,3755,207,3684,195,3481,176,3250,163,3054,156"/>
+<area shape="poly" title=" " alt="" coords="2897,174,2771,217,2663,248,2584,258,2492,265,2277,268,2034,264,1777,256,1520,251,1279,252,1168,257,1067,265,977,278,899,296,878,304,863,314,828,338,612,453,609,449,825,334,860,310,876,299,898,291,976,273,1066,260,1168,252,1279,247,1521,245,1777,251,2034,259,2277,263,2491,260,2583,253,2662,243,2769,212,2895,169"/>
+<area shape="rect" href="_common_loco_inference_worker_8hpp.html" title=" " alt="" coords="2782,219,3004,245"/>
+<area shape="poly" title=" " alt="" coords="2939,173,2914,207,2909,204,2935,170"/>
+<area shape="rect" href="_net_inference_worker_8h.html" title=" " alt="" coords="3122,384,3270,411"/>
+<area shape="poly" title=" " alt="" coords="3054,161,3152,183,3191,198,3217,217,3227,235,3233,255,3234,297,3224,338,3211,371,3206,369,3219,336,3228,297,3228,256,3222,237,3213,220,3189,203,3150,188,3053,167"/>
+<area shape="rect" title=" " alt="" coords="2590,219,2650,245"/>
+<area shape="poly" title=" " alt="" coords="2867,174,2670,221,2666,222,2665,217,2669,216,2865,169"/>
+<area shape="poly" title=" " alt="" coords="2903,245,2930,308,2942,351,2947,396,2947,474,2943,501,2933,524,2916,544,2894,559,2868,571,2837,581,2767,593,2688,599,2606,602,2526,604,2453,610,2453,605,2526,599,2606,596,2688,594,2766,588,2836,576,2866,567,2891,555,2912,540,2928,522,2938,500,2941,473,2941,396,2936,352,2925,310,2898,247"/>
+<area shape="poly" title=" " alt="" coords="2883,248,2613,524,2609,520,2879,244"/>
+<area shape="rect" href="_abstract_inference_worker_8hpp.html" title=" " alt="" coords="2514,301,2704,328"/>
+<area shape="poly" title=" " alt="" coords="2850,248,2669,299,2668,294,2848,243"/>
+<area shape="rect" title=" " alt="" coords="3585,459,3740,485"/>
+<area shape="poly" title=" " alt="" coords="2968,243,3074,264,3207,294,3354,333,3498,382,3571,414,3631,448,3629,453,3568,419,3496,386,3352,338,3206,299,3073,269,2967,249"/>
+<area shape="poly" title=" " alt="" coords="2705,316,2990,328,3167,340,3346,355,3512,375,3650,400,3703,415,3744,431,3770,449,3777,460,3780,470,3780,548,3778,558,3771,568,3745,584,3706,600,3655,613,3526,637,3372,657,3053,683,2825,696,2825,690,3052,678,3371,652,3525,632,3654,608,3705,595,3743,580,3767,564,3773,556,3775,548,3775,471,3773,462,3766,453,3741,436,3701,420,3648,405,3511,380,3345,360,3167,345,2990,334,2705,321"/>
+<area shape="poly" title=" " alt="" coords="2514,324,1300,392,1300,386,2514,319"/>
+<area shape="poly" title=" " alt="" coords="2705,316,2822,322,2967,334,3126,353,3283,381,3370,395,3455,410,3488,421,3509,437,3514,447,3514,459,3499,487,3479,501,3446,515,3346,539,3212,560,3059,578,2750,606,2530,620,2530,615,2749,600,3058,573,3211,555,3345,534,3444,510,3477,497,3495,484,3509,458,3509,449,3505,440,3485,426,3453,416,3369,401,3282,387,3125,358,2967,339,2822,327,2705,321"/>
+<area shape="poly" title=" " alt="" coords="2621,327,2648,369,2677,431,2686,465,2689,499,2684,532,2667,562,2590,581,2454,609,2453,604,2588,576,2664,558,2679,530,2684,499,2681,466,2672,433,2643,372,2616,330"/>
+<area shape="poly" title=" " alt="" coords="2596,331,2553,363,2491,407,2415,451,2333,488,2275,506,2215,520,2095,538,1987,546,1906,548,1905,543,1987,541,2094,532,2214,514,2273,500,2331,483,2412,447,2488,402,2550,359,2593,326"/>
+<area shape="poly" title=" " alt="" coords="2514,320,2201,325,1778,336,1358,356,1183,370,1051,387,986,401,922,419,816,455,814,450,921,414,985,395,1050,381,1183,365,1357,351,1778,331,2201,319,2514,314"/>
+<area shape="poly" title=" " alt="" coords="2514,318,2243,320,1853,329,1399,350,1165,366,936,387,866,392,806,392,702,393,653,398,604,409,550,429,489,461,473,473,458,489,436,521,432,518,454,486,469,470,487,456,548,424,602,404,652,392,701,388,806,387,866,386,936,381,1165,361,1399,345,1853,324,2243,315,2514,313"/>
+<area shape="poly" title=" " alt="" coords="2613,328,2616,396,2615,440,2611,486,2602,519,2596,518,2605,485,2610,440,2611,396,2608,329"/>
+<area shape="poly" title=" " alt="" coords="2514,321,2333,328,2121,340,1936,359,1873,372,1838,386,1827,398,1820,413,1814,444,1808,443,1815,411,1823,395,1834,382,1871,367,1936,354,2121,335,2332,323,2513,316"/>
+<area shape="poly" title=" " alt="" coords="2705,317,3095,340,3299,358,3383,369,3447,381,3480,393,3512,408,3618,450,3616,455,3510,413,3478,398,3446,387,3382,375,3299,364,3095,345,2705,323"/>
+<area shape="poly" title=" " alt="" coords="2702,326,3107,381,3106,386,2701,331"/>
+<area shape="poly" title=" " alt="" coords="3160,414,3116,433,3072,461,3049,487,3036,513,3022,539,2995,562,2931,596,2875,617,2822,628,2771,633,2662,632,2599,633,2527,637,2372,649,2166,659,1676,677,889,696,889,691,1676,672,2166,654,2372,644,2526,632,2599,627,2662,627,2771,627,2821,623,2873,612,2929,591,2992,558,3018,535,3031,511,3045,484,3069,457,3113,428,3158,409"/>
+<area shape="poly" title=" " alt="" coords="3271,397,3353,402,3432,416,3463,427,3482,442,3487,452,3487,463,3474,487,3460,499,3443,508,3398,520,3344,526,3285,528,3167,528,3117,530,3078,536,3046,549,3014,563,2877,591,2740,608,2619,618,2530,622,2530,617,2619,613,2739,603,2876,586,3013,557,3044,544,3077,531,3116,525,3167,523,3285,523,3344,521,3397,515,3441,503,3457,494,3470,484,3482,462,3482,453,3478,445,3460,432,3431,421,3353,407,3271,402"/>
+<area shape="poly" title=" " alt="" coords="3156,414,2666,563,2471,592,2278,610,2109,619,1985,622,1985,617,2108,613,2278,604,2471,586,2665,557,3154,409"/>
+<area shape="poly" title=" " alt="" coords="3131,414,3078,432,3052,445,3028,461,3016,473,3008,486,2999,512,2988,538,2979,551,2964,562,2920,581,2862,593,2795,600,2722,603,2576,606,2453,611,2453,605,2575,600,2722,598,2795,594,2862,587,2918,576,2961,558,2975,547,2984,536,2994,510,3003,483,3012,470,3025,457,3049,440,3076,427,3129,409"/>
+<area shape="poly" title=" " alt="" coords="3271,408,3570,454,3569,459,3270,413"/>
+<area shape="rect" title=" " alt="" coords="3083,459,3138,485"/>
+<area shape="poly" title=" " alt="" coords="3183,413,3138,451,3135,447,3179,409"/>
+<area shape="rect" title=" " alt="" coords="3162,459,3230,485"/>
+<area shape="poly" title=" " alt="" coords="3199,411,3199,443,3193,443,3193,411"/>
+<area shape="rect" title=" " alt="" coords="3253,459,3350,485"/>
+<area shape="poly" title=" " alt="" coords="3216,409,3272,447,3269,452,3213,413"/>
+<area shape="rect" title=" " alt="" coords="3374,459,3460,485"/>
+<area shape="poly" title=" " alt="" coords="3235,409,3365,451,3363,456,3234,414"/>
+<area shape="poly" title=" " alt="" coords="2826,169,3054,216,3173,239,3279,252,3375,260,3463,270,3547,289,3588,303,3629,322,3670,346,3711,376,3753,413,3797,457,3816,482,3832,509,3856,567,3871,622,3878,667,3873,667,3866,623,3851,568,3827,511,3812,485,3793,460,3750,417,3708,380,3667,351,3627,327,3586,308,3546,294,3462,276,3374,265,3278,257,3172,244,3053,221,2825,174"/>
+<area shape="poly" title=" " alt="" coords="2588,155,2212,165,1709,188,1452,206,1212,230,1008,259,924,277,856,296,778,329,706,372,644,415,599,451,595,447,641,411,703,367,776,324,854,291,923,272,1007,254,1212,225,1451,201,1709,183,2212,159,2588,150"/>
+<area shape="poly" title=" " alt="" coords="2757,169,2851,210,2849,215,2755,174"/>
+<area shape="poly" title=" " alt="" coords="2828,167,2937,190,2984,203,3017,216,3069,251,3115,293,3153,335,3181,370,3177,373,3149,339,3111,297,3066,256,3015,221,2982,208,2936,195,2827,173"/>
+<area shape="poly" title=" " alt="" coords="2687,173,2647,210,2643,206,2684,169"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="_bitbot_simulation_2types_8hpp__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2example_2_bitbot_simulation_2types_8hppdep" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2example_2_bitbot_simulation_2types_8hppdep" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2example_2_bitbot_simulation_2types_8hppdep">
+<area shape="rect" title="类型定义" alt="" coords="75,5,281,80"/>
+<area shape="rect" href="user__func_8cpp.html" title=" " alt="" coords="5,251,212,325"/>
+<area shape="poly" title=" " alt="" coords="151,95,136,129,121,193,114,251,108,250,116,192,131,127,146,93"/>
+<area shape="rect" href="user__func_8h.html" title=" " alt="" coords="145,128,352,203"/>
+<area shape="poly" title=" " alt="" coords="209,92,229,126,225,129,205,95"/>
+<area shape="poly" title=" " alt="" coords="196,215,153,252,149,248,193,211"/>
+<area shape="rect" href="_bitbot_simulation_2main_8cpp.html" title=" " alt="" coords="236,251,442,325"/>
+<area shape="poly" title=" " alt="" coords="287,214,314,249,310,252,283,217"/>
+</map>
+</div>
+</div>
+<p><a href="_bitbot_simulation_2types_8hpp_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:a19f608075125a31fb4dadb7c86776c37" id="r_a19f608075125a31fb4dadb7c86776c37"><td class="memItemLeft" align="right" valign="top"><a id="a19f608075125a31fb4dadb7c86776c37" name="a19f608075125a31fb4dadb7c86776c37"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>DeviceImu</b> = bitbot::MujocoImu</td></tr>
+<tr class="separator:a19f608075125a31fb4dadb7c86776c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83ee71b9755b10787117c1a97e2e4ad0" id="r_a83ee71b9755b10787117c1a97e2e4ad0"><td class="memItemLeft" align="right" valign="top"><a id="a83ee71b9755b10787117c1a97e2e4ad0" name="a83ee71b9755b10787117c1a97e2e4ad0"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>DeviceJoint</b> = bitbot::MujocoJoint</td></tr>
+<tr class="separator:a83ee71b9755b10787117c1a97e2e4ad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78a86225fe1fe6efa31e957e27248549" id="r_a78a86225fe1fe6efa31e957e27248549"><td class="memItemLeft" align="right" valign="top"><a id="a78a86225fe1fe6efa31e957e27248549" name="a78a86225fe1fe6efa31e957e27248549"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>RealNumber</b> = float</td></tr>
+<tr class="separator:a78a86225fe1fe6efa31e957e27248549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe752cc9854aea05f0d19292b8558c35" id="r_afe752cc9854aea05f0d19292b8558c35"><td class="memItemLeft" align="right" valign="top"><a id="afe752cc9854aea05f0d19292b8558c35" name="afe752cc9854aea05f0d19292b8558c35"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>Vec3</b> = <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt;RealNumber, 3&gt;</td></tr>
+<tr class="separator:afe752cc9854aea05f0d19292b8558c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5d11e2cf3f22a07917356a3f8d494e1" id="r_ad5d11e2cf3f22a07917356a3f8d494e1"><td class="memItemLeft" align="right" valign="top"><a id="ad5d11e2cf3f22a07917356a3f8d494e1" name="ad5d11e2cf3f22a07917356a3f8d494e1"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>MotorVec</b> = <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt;RealNumber, JOINT_NUMBER&gt;</td></tr>
+<tr class="separator:ad5d11e2cf3f22a07917356a3f8d494e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00b9347a952499ad00d0996bae6e2117" id="r_a00b9347a952499ad00d0996bae6e2117"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00b9347a952499ad00d0996bae6e2117">SchedulerType</a></td></tr>
+<tr class="separator:a00b9347a952499ad00d0996bae6e2117"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa055fc0c51efdadfc5b551e2db8ddebb" id="r_aa055fc0c51efdadfc5b551e2db8ddebb"><td class="memItemLeft" align="right" valign="top"><a id="aa055fc0c51efdadfc5b551e2db8ddebb" name="aa055fc0c51efdadfc5b551e2db8ddebb"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>MotorResetWorkerType</b> = <a class="el" href="classz_1_1_motor_reset_position_worker.html">z::MotorResetPositionWorker</a>&lt;<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, RealNumber, JOINT_NUMBER&gt;</td></tr>
+<tr class="separator:aa055fc0c51efdadfc5b551e2db8ddebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a181fbb9b88da71ddc8c403fe8a8f5448" id="r_a181fbb9b88da71ddc8c403fe8a8f5448"><td class="memItemLeft" align="right" valign="top"><a id="a181fbb9b88da71ddc8c403fe8a8f5448" name="a181fbb9b88da71ddc8c403fe8a8f5448"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ImuWorkerType</b> = <a class="el" href="classz_1_1_imu_process_worker.html">z::ImuProcessWorker</a>&lt;<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, DeviceImu*, RealNumber&gt;</td></tr>
+<tr class="separator:a181fbb9b88da71ddc8c403fe8a8f5448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c9282c830e4d8c926a92c67cdb9aa8d" id="r_a9c9282c830e4d8c926a92c67cdb9aa8d"><td class="memItemLeft" align="right" valign="top"><a id="a9c9282c830e4d8c926a92c67cdb9aa8d" name="a9c9282c830e4d8c926a92c67cdb9aa8d"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>MotorWorkerType</b> = <a class="el" href="classz_1_1_motor_control_worker.html">z::MotorControlWorker</a>&lt;<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, DeviceJoint*, RealNumber, JOINT_NUMBER&gt;</td></tr>
+<tr class="separator:a9c9282c830e4d8c926a92c67cdb9aa8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a773af6b8721ea8792daf7f8fcc4e61e6" id="r_a773af6b8721ea8792daf7f8fcc4e61e6"><td class="memItemLeft" align="right" valign="top"><a id="a773af6b8721ea8792daf7f8fcc4e61e6" name="a773af6b8721ea8792daf7f8fcc4e61e6"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>MotorPDWorkerType</b> = <a class="el" href="classz_1_1_motor_p_d_control_worker.html">z::MotorPDControlWorker</a>&lt;<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, RealNumber, JOINT_NUMBER&gt;</td></tr>
+<tr class="separator:a773af6b8721ea8792daf7f8fcc4e61e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a819a8d4cf495b829d1c43eb092db701e" id="r_a819a8d4cf495b829d1c43eb092db701e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a819a8d4cf495b829d1c43eb092db701e">LoggerWorkerType</a></td></tr>
+<tr class="separator:a819a8d4cf495b829d1c43eb092db701e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e1571e0eb483466f576aeae9a493c6" id="r_a34e1571e0eb483466f576aeae9a493c6"><td class="memItemLeft" align="right" valign="top"><a id="a34e1571e0eb483466f576aeae9a493c6" name="a34e1571e0eb483466f576aeae9a493c6"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>FlexPatchWorkerType</b> = <a class="el" href="classz_1_1_simple_callback_worker.html">z::SimpleCallbackWorker</a>&lt;<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>&gt;</td></tr>
+<tr class="separator:a34e1571e0eb483466f576aeae9a493c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0707728d11ecda4f63c2aecd9c38319" id="r_ad0707728d11ecda4f63c2aecd9c38319"><td class="memItemLeft" align="right" valign="top"><a id="ad0707728d11ecda4f63c2aecd9c38319" name="ad0707728d11ecda4f63c2aecd9c38319"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>EraxLikeInferWorkerType</b> = <a class="el" href="classz_1_1_erax_like_inference_worker.html">z::EraxLikeInferenceWorker</a>&lt;<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, RealNumber, OBSERVATION_STUCK_LENGTH, OBSERVATION_EXTRA_LENGTH, JOINT_NUMBER&gt;</td></tr>
+<tr class="separator:ad0707728d11ecda4f63c2aecd9c38319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a258756e6a2194ef40e7653e24b9ccdf9" id="r_a258756e6a2194ef40e7653e24b9ccdf9"><td class="memItemLeft" align="right" valign="top"><a id="a258756e6a2194ef40e7653e24b9ccdf9" name="a258756e6a2194ef40e7653e24b9ccdf9"></a>
+constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>JOINT_NUMBER</b> = 8</td></tr>
+<tr class="separator:a258756e6a2194ef40e7653e24b9ccdf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fa40daf185e4cfbeb81893db07b20c0" id="r_a4fa40daf185e4cfbeb81893db07b20c0"><td class="memItemLeft" align="right" valign="top"><a id="a4fa40daf185e4cfbeb81893db07b20c0" name="a4fa40daf185e4cfbeb81893db07b20c0"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;AccelerationRaw&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">Vec3</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ImuAccRawPair</b></td></tr>
+<tr class="separator:a4fa40daf185e4cfbeb81893db07b20c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af214cfcf47c666221e96aadc301c460a" id="r_af214cfcf47c666221e96aadc301c460a"><td class="memItemLeft" align="right" valign="top"><a id="af214cfcf47c666221e96aadc301c460a" name="af214cfcf47c666221e96aadc301c460a"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;AngleVelocityRaw&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">Vec3</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ImuGyroRawPair</b></td></tr>
+<tr class="separator:af214cfcf47c666221e96aadc301c460a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80170a98b42d36863b3c4e27092bde4d" id="r_a80170a98b42d36863b3c4e27092bde4d"><td class="memItemLeft" align="right" valign="top"><a id="a80170a98b42d36863b3c4e27092bde4d" name="a80170a98b42d36863b3c4e27092bde4d"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;AngleRaw&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">Vec3</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ImuMagRawPair</b></td></tr>
+<tr class="separator:a80170a98b42d36863b3c4e27092bde4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2650c483126aefc1ff25ab089043ad9" id="r_ac2650c483126aefc1ff25ab089043ad9"><td class="memItemLeft" align="right" valign="top"><a id="ac2650c483126aefc1ff25ab089043ad9" name="ac2650c483126aefc1ff25ab089043ad9"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;AccelerationValue&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">Vec3</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ImuAccFilteredPair</b></td></tr>
+<tr class="separator:ac2650c483126aefc1ff25ab089043ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdc31cebbde97888148f394a110dd2c1" id="r_afdc31cebbde97888148f394a110dd2c1"><td class="memItemLeft" align="right" valign="top"><a id="afdc31cebbde97888148f394a110dd2c1" name="afdc31cebbde97888148f394a110dd2c1"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;AngleValue&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">Vec3</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ImuMagFilteredPair</b></td></tr>
+<tr class="separator:afdc31cebbde97888148f394a110dd2c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a985be3232beb5ac35bf002544ce40842" id="r_a985be3232beb5ac35bf002544ce40842"><td class="memItemLeft" align="right" valign="top"><a id="a985be3232beb5ac35bf002544ce40842" name="a985be3232beb5ac35bf002544ce40842"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;AngleVelocityValue&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">Vec3</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ImuGyroFilteredPair</b></td></tr>
+<tr class="separator:a985be3232beb5ac35bf002544ce40842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef4e90a4e95c4c208da4658fd54d2555" id="r_aef4e90a4e95c4c208da4658fd54d2555"><td class="memItemLeft" align="right" valign="top"><a id="aef4e90a4e95c4c208da4658fd54d2555" name="aef4e90a4e95c4c208da4658fd54d2555"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;LinearVelocityValue&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">Vec3</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>LinearVelocityValuePair</b></td></tr>
+<tr class="separator:aef4e90a4e95c4c208da4658fd54d2555"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b8f9c40b26ad6bb759361639fe58033" id="r_a9b8f9c40b26ad6bb759361639fe58033"><td class="memItemLeft" align="right" valign="top"><a id="a9b8f9c40b26ad6bb759361639fe58033" name="a9b8f9c40b26ad6bb759361639fe58033"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;TargetMotorPosition&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">MotorVec</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>TargetMotorPosPair</b></td></tr>
+<tr class="separator:a9b8f9c40b26ad6bb759361639fe58033"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ed060859e8c4c4ec4642b3a063d4143" id="r_a2ed060859e8c4c4ec4642b3a063d4143"><td class="memItemLeft" align="right" valign="top"><a id="a2ed060859e8c4c4ec4642b3a063d4143" name="a2ed060859e8c4c4ec4642b3a063d4143"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;TargetMotorVelocity&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">MotorVec</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>TargetMotorVelPair</b></td></tr>
+<tr class="separator:a2ed060859e8c4c4ec4642b3a063d4143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a140ca58b1f66cd605828c519ff7a6701" id="r_a140ca58b1f66cd605828c519ff7a6701"><td class="memItemLeft" align="right" valign="top"><a id="a140ca58b1f66cd605828c519ff7a6701" name="a140ca58b1f66cd605828c519ff7a6701"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;TargetMotorTorque&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">MotorVec</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>TargetMotorTorquePair</b></td></tr>
+<tr class="separator:a140ca58b1f66cd605828c519ff7a6701"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec115545d24bda6cdd3ab7cecfea6d45" id="r_aec115545d24bda6cdd3ab7cecfea6d45"><td class="memItemLeft" align="right" valign="top"><a id="aec115545d24bda6cdd3ab7cecfea6d45" name="aec115545d24bda6cdd3ab7cecfea6d45"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;CurrentMotorPosition&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">MotorVec</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>CurrentMotorPosPair</b></td></tr>
+<tr class="separator:aec115545d24bda6cdd3ab7cecfea6d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cc6613606fefcc316935dd1db4f741a" id="r_a8cc6613606fefcc316935dd1db4f741a"><td class="memItemLeft" align="right" valign="top"><a id="a8cc6613606fefcc316935dd1db4f741a" name="a8cc6613606fefcc316935dd1db4f741a"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;CurrentMotorVelocity&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">MotorVec</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>CurrentMotorVelPair</b></td></tr>
+<tr class="separator:a8cc6613606fefcc316935dd1db4f741a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a104f7063119627f641badb5ae1fd4c50" id="r_a104f7063119627f641badb5ae1fd4c50"><td class="memItemLeft" align="right" valign="top"><a id="a104f7063119627f641badb5ae1fd4c50" name="a104f7063119627f641badb5ae1fd4c50"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;CurrentMotorTorque&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">MotorVec</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>CurrentMotorTorquePair</b></td></tr>
+<tr class="separator:a104f7063119627f641badb5ae1fd4c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45f48c8cf37229922f84935334425488" id="r_a45f48c8cf37229922f84935334425488"><td class="memItemLeft" align="right" valign="top"><a id="a45f48c8cf37229922f84935334425488" name="a45f48c8cf37229922f84935334425488"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;LimitTargetMotorTorque&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">MotorVec</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>LimitTargetMotorTorquePair</b></td></tr>
+<tr class="separator:a45f48c8cf37229922f84935334425488"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2add0149bd5cea141feb566a74cb91d3" id="r_a2add0149bd5cea141feb566a74cb91d3"><td class="memItemLeft" align="right" valign="top"><a id="a2add0149bd5cea141feb566a74cb91d3" name="a2add0149bd5cea141feb566a74cb91d3"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;NetLastAction&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">MotorVec</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>NetLastActionPair</b></td></tr>
+<tr class="separator:a2add0149bd5cea141feb566a74cb91d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00c9935b08e8eb447d53b6f49c2f8cb1" id="r_a00c9935b08e8eb447d53b6f49c2f8cb1"><td class="memItemLeft" align="right" valign="top"><a id="a00c9935b08e8eb447d53b6f49c2f8cb1" name="a00c9935b08e8eb447d53b6f49c2f8cb1"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;NetUserCommand3&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">Vec3</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>NetCommand3Pair</b></td></tr>
+<tr class="separator:a00c9935b08e8eb447d53b6f49c2f8cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a634bf01487736c539643ee744470a20e" id="r_a634bf01487736c539643ee744470a20e"><td class="memItemLeft" align="right" valign="top"><a id="a634bf01487736c539643ee744470a20e" name="a634bf01487736c539643ee744470a20e"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;NetProjectedGravity&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">Vec3</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>NetProjectedGravityPair</b></td></tr>
+<tr class="separator:a634bf01487736c539643ee744470a20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a810422ea2a9c6883d0af5ac82258d67b" id="r_a810422ea2a9c6883d0af5ac82258d67b"><td class="memItemLeft" align="right" valign="top"><a id="a810422ea2a9c6883d0af5ac82258d67b" name="a810422ea2a9c6883d0af5ac82258d67b"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;NetScaledAction&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">MotorVec</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>NetScaledActionPair</b></td></tr>
+<tr class="separator:a810422ea2a9c6883d0af5ac82258d67b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4708a90455bd267bb0147a33cc07ede9" id="r_a4708a90455bd267bb0147a33cc07ede9"><td class="memItemLeft" align="right" valign="top"><a id="a4708a90455bd267bb0147a33cc07ede9" name="a4708a90455bd267bb0147a33cc07ede9"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;NetClockVector&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; RealNumber, 2 &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>NetClockVectorPair</b></td></tr>
+<tr class="separator:a4708a90455bd267bb0147a33cc07ede9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78d9b26e52f8ed7e24a70933c63bde63" id="r_a78d9b26e52f8ed7e24a70933c63bde63"><td class="memItemLeft" align="right" valign="top"><a id="a78d9b26e52f8ed7e24a70933c63bde63" name="a78d9b26e52f8ed7e24a70933c63bde63"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;InferenceTime&quot;, RealNumber &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>InferenceTimePair</b></td></tr>
+<tr class="separator:a78d9b26e52f8ed7e24a70933c63bde63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8650b9acdd9b702155ca3dc6a78068b5" id="r_a8650b9acdd9b702155ca3dc6a78068b5"><td class="memItemLeft" align="right" valign="top"><a id="a8650b9acdd9b702155ca3dc6a78068b5" name="a8650b9acdd9b702155ca3dc6a78068b5"></a>
+constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>OBSERVATION_STUCK_LENGTH</b> = 10</td></tr>
+<tr class="separator:a8650b9acdd9b702155ca3dc6a78068b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3247ebde34faf4530eaa45f23f8ddb78" id="r_a3247ebde34faf4530eaa45f23f8ddb78"><td class="memItemLeft" align="right" valign="top"><a id="a3247ebde34faf4530eaa45f23f8ddb78" name="a3247ebde34faf4530eaa45f23f8ddb78"></a>
+constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>OBSERVATION_EXTRA_LENGTH</b> = 5</td></tr>
+<tr class="separator:a3247ebde34faf4530eaa45f23f8ddb78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>类型定义 </p>
+<dl class="section author"><dt>作者</dt><dd>Zishun Zhou </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2025-03-10</dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>Copyright (c) 2025 </dd></dl>
+</div><h2 class="groupheader">类型定义说明</h2>
+<a id="a819a8d4cf495b829d1c43eb092db701e" name="a819a8d4cf495b829d1c43eb092db701e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a819a8d4cf495b829d1c43eb092db701e">&#9670;&#160;</a></span>LoggerWorkerType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classz_1_1_async_logger_worker.html">LoggerWorkerType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line"> <a class="code hl_class" href="classz_1_1_async_logger_worker.html">z::AsyncLoggerWorker</a>&lt;SchedulerType, RealNumber, ImuAccRawPair, ImuGyroRawPair, ImuMagRawPair, LinearVelocityValuePair,</div>
+<div class="line">    ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair,</div>
+<div class="line">    TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair,</div>
+<div class="line">    TargetMotorTorquePair, LimitTargetMotorTorquePair,</div>
+<div class="line">    NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair&gt;</div>
+<div class="ttc" id="aclassz_1_1_async_logger_worker_html"><div class="ttname"><a href="classz_1_1_async_logger_worker.html">z::AsyncLoggerWorker</a></div><div class="ttdoc">异步日志工人类型，用户可以通过这个工人类型来异步的实现记录数据的功能。</div><div class="ttdef"><b>定义</b> AsyncLoggerWorker.hpp:46</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a00b9347a952499ad00d0996bae6e2117" name="a00b9347a952499ad00d0996bae6e2117"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00b9347a952499ad00d0996bae6e2117">&#9670;&#160;</a></span>SchedulerType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line"> <a class="code hl_class" href="classz_1_1_abstract_scheduler.html">z::AbstractScheduler</a>&lt;ImuAccRawPair, ImuGyroRawPair, ImuMagRawPair, LinearVelocityValuePair,</div>
+<div class="line">    ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair,</div>
+<div class="line">    TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair,</div>
+<div class="line">    TargetMotorTorquePair, LimitTargetMotorTorquePair,</div>
+<div class="line">    NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair&gt;</div>
+<div class="ttc" id="aclassz_1_1_abstract_scheduler_html"><div class="ttname"><a href="classz_1_1_abstract_scheduler.html">z::AbstractScheduler</a></div><div class="ttdoc">AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。</div><div class="ttdef"><b>定义</b> AbstractScheduler.hpp:45</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_cfafba98a580ce4b62f8a6fa96d7cbb0.html">example</a></li><li class="navelem"><a class="el" href="dir_c050db323da6c49d1f45615466d39463.html">BitbotSimulation</a></li><li class="navelem"><a class="el" href="_bitbot_simulation_2types_8hpp.html">types.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

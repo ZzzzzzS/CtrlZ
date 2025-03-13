@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ctrl-Z: z::ImuProcessWorker&lt; SchedulerType, ImuType, ImuPrecision &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Ctrl-Z
+   </div>
+   <div id="projectbrief">一个多线程机器人运动控制强化学习部署框架</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classz_1_1_imu_process_worker.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classz_1_1_imu_process_worker-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">z::ImuProcessWorker&lt; SchedulerType, ImuType, ImuPrecision &gt; 模板类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="classz_1_1_imu_process_worker.html" title="ImuProcessWorker 类型是一个IMU数据处理工人类型，这个类型用于处理IMU传感器的数据，包括加速度，角速度和角度。 通常来说，这个类型可以被用于主任务队列中。 这个类会在TaskCycl...">ImuProcessWorker</a> 类型是一个IMU数据处理工人类型，这个类型用于处理IMU传感器的数据，包括加速度，角速度和角度。 通常来说，这个类型可以被用于主任务队列中。 这个类会在TaskCycleBegin方法中获取IMU数据并对齐进行滤波和去除异常值。用户可以通过配置文件来配置滤波器的权重。  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_imu_process_worker_8hpp_source.html">ImuProcessWorker.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 z::ImuProcessWorker&lt; SchedulerType, ImuType, ImuPrecision &gt; 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classz_1_1_imu_process_worker__inherit__graph.png" border="0" usemap="#az_1_1_imu_process_worker_3_01_scheduler_type_00_01_imu_type_00_01_imu_precision_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="az_1_1_imu_process_worker_3_01_scheduler_type_00_01_imu_type_00_01_imu_precision_01_4_inherit__map" id="az_1_1_imu_process_worker_3_01_scheduler_type_00_01_imu_type_00_01_imu_precision_01_4_inherit__map">
+<area shape="rect" title="ImuProcessWorker 类型是一个IMU数据处理工人类型，这个类型用于处理IMU传感器的数据，包括加速度，角速度和角度。 通常来说，这个类型可以被用于主任务队列中。 这个类会在TaskCycl..." alt="" coords="5,171,187,229"/>
+<area shape="rect" href="classz_1_1_abstract_worker.html" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="29,80,163,123"/>
+<area shape="poly" title=" " alt="" coords="99,138,99,170,93,170,93,138"/>
+<area shape="rect" href="classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="55,5,137,32"/>
+<area shape="poly" title=" " alt="" coords="99,48,99,80,93,80,93,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+z::ImuProcessWorker&lt; SchedulerType, ImuType, ImuPrecision &gt; 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classz_1_1_imu_process_worker__coll__graph.png" border="0" usemap="#az_1_1_imu_process_worker_3_01_scheduler_type_00_01_imu_type_00_01_imu_precision_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="az_1_1_imu_process_worker_3_01_scheduler_type_00_01_imu_type_00_01_imu_precision_01_4_coll__map" id="az_1_1_imu_process_worker_3_01_scheduler_type_00_01_imu_type_00_01_imu_precision_01_4_coll__map">
+<area shape="rect" title="ImuProcessWorker 类型是一个IMU数据处理工人类型，这个类型用于处理IMU传感器的数据，包括加速度，角速度和角度。 通常来说，这个类型可以被用于主任务队列中。 这个类会在TaskCycl..." alt="" coords="721,5,902,64"/>
+<area shape="rect" href="classz_1_1_abstract_worker.html" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="537,13,672,56"/>
+<area shape="poly" title=" " alt="" coords="687,32,720,32,720,37,687,37"/>
+<area shape="rect" href="classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="5,37,88,64"/>
+<area shape="poly" title=" " alt="" coords="102,31,137,24,246,15,356,14,456,18,537,25,537,30,456,24,356,19,246,20,137,29,103,36"/>
+<area shape="rect" href="classz_1_1_abstract_scheduler.html" title=" " alt="" coords="137,39,427,161"/>
+<area shape="poly" title=" " alt="" coords="103,60,137,67,136,72,102,65"/>
+<area shape="poly" title=" " alt="" coords="442,65,536,46,537,51,443,70"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aec094c042defe5615f82fcaafe8b32c2" id="r_aec094c042defe5615f82fcaafe8b32c2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec094c042defe5615f82fcaafe8b32c2">ImuProcessWorker</a> (<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *scheduler, ImuType ImuInstancePtr, const nlohmann::json &amp;root_cfg=nlohmann::json())</td></tr>
+<tr class="memdesc:aec094c042defe5615f82fcaafe8b32c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造一个IMU数据处理工人类型  <br /></td></tr>
+<tr class="separator:aec094c042defe5615f82fcaafe8b32c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35e33fe70a80a0b77239a6d3d997324c" id="r_a35e33fe70a80a0b77239a6d3d997324c"><td class="memItemLeft" align="right" valign="top"><a id="a35e33fe70a80a0b77239a6d3d997324c" name="a35e33fe70a80a0b77239a6d3d997324c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~ImuProcessWorker</b> ()</td></tr>
+<tr class="memdesc:a35e33fe70a80a0b77239a6d3d997324c"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数，虚函数，用于释放资源 <br /></td></tr>
+<tr class="separator:a35e33fe70a80a0b77239a6d3d997324c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82720c5f7abc072c1d20a5b6a62377c5" id="r_a82720c5f7abc072c1d20a5b6a62377c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82720c5f7abc072c1d20a5b6a62377c5">TaskCycleBegin</a> () override</td></tr>
+<tr class="memdesc:a82720c5f7abc072c1d20a5b6a62377c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">TaskCycleBegin方法，在每次任务队列循环的开始会被调度器调用，用于获取IMU数据并进行滤波和去除异常值。  <br /></td></tr>
+<tr class="separator:a82720c5f7abc072c1d20a5b6a62377c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed0b2196bc41137844a2aff7ee4f3871" id="r_aed0b2196bc41137844a2aff7ee4f3871"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed0b2196bc41137844a2aff7ee4f3871">TaskRun</a> () override</td></tr>
+<tr class="memdesc:aed0b2196bc41137844a2aff7ee4f3871"><td class="mdescLeft">&#160;</td><td class="mdescRight">TaskRun方法默认没有实现工作逻辑，因为对IMU数据的处理通常在流水线的开始阶段。  <br /></td></tr>
+<tr class="separator:aed0b2196bc41137844a2aff7ee4f3871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classz_1_1_abstract_worker"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classz_1_1_abstract_worker')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classz_1_1_abstract_worker.html">z::AbstractWorker&lt; SchedulerType &gt;</a></td></tr>
+<tr class="memitem:aacfc5c4056a1b543d20f677aac609bff inherit pub_methods_classz_1_1_abstract_worker" id="r_aacfc5c4056a1b543d20f677aac609bff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_abstract_worker.html#aacfc5c4056a1b543d20f677aac609bff">AbstractWorker</a> (<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *scheduler, const nlohmann::json &amp;cfg=nlohmann::json())</td></tr>
+<tr class="memdesc:aacfc5c4056a1b543d20f677aac609bff inherit pub_methods_classz_1_1_abstract_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造一个抽象工人类型  <br /></td></tr>
+<tr class="separator:aacfc5c4056a1b543d20f677aac609bff inherit pub_methods_classz_1_1_abstract_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30f113136aaacbbb515c80734b7432f4 inherit pub_methods_classz_1_1_abstract_worker" id="r_a30f113136aaacbbb515c80734b7432f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_abstract_worker.html#a30f113136aaacbbb515c80734b7432f4">setScheduler</a> (<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *scheduler)</td></tr>
+<tr class="memdesc:a30f113136aaacbbb515c80734b7432f4 inherit pub_methods_classz_1_1_abstract_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置调度器的指针  <br /></td></tr>
+<tr class="separator:a30f113136aaacbbb515c80734b7432f4 inherit pub_methods_classz_1_1_abstract_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7afec2a7c09fd2708333201335d881cd inherit pub_methods_classz_1_1_abstract_worker" id="r_a7afec2a7c09fd2708333201335d881cd"><td class="memItemLeft" align="right" valign="top">
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~AbstractWorker</b> ()</td></tr>
+<tr class="memdesc:a7afec2a7c09fd2708333201335d881cd inherit pub_methods_classz_1_1_abstract_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数，虚函数，用于释放资源 <br /></td></tr>
+<tr class="separator:a7afec2a7c09fd2708333201335d881cd inherit pub_methods_classz_1_1_abstract_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10203246dd092e6e7ee8e632a8fa95b5 inherit pub_methods_classz_1_1_abstract_worker" id="r_a10203246dd092e6e7ee8e632a8fa95b5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_abstract_worker.html#a10203246dd092e6e7ee8e632a8fa95b5">TaskCreate</a> ()</td></tr>
+<tr class="memdesc:a10203246dd092e6e7ee8e632a8fa95b5 inherit pub_methods_classz_1_1_abstract_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">TaskCreate方法，在任务队列创建的时候会被调度器调用，用户可以在这个方法中初始化一些资源  <br /></td></tr>
+<tr class="separator:a10203246dd092e6e7ee8e632a8fa95b5 inherit pub_methods_classz_1_1_abstract_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9fcf291e3e17fed6ed6dd89c4734d49 inherit pub_methods_classz_1_1_abstract_worker" id="r_ad9fcf291e3e17fed6ed6dd89c4734d49"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_abstract_worker.html#ad9fcf291e3e17fed6ed6dd89c4734d49">TaskDestroy</a> ()</td></tr>
+<tr class="memdesc:ad9fcf291e3e17fed6ed6dd89c4734d49 inherit pub_methods_classz_1_1_abstract_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">TaskDestroy方法，在任务队列删除的时候会被调度器调用，用户可以在这个方法中释放一些资源  <br /></td></tr>
+<tr class="separator:ad9fcf291e3e17fed6ed6dd89c4734d49 inherit pub_methods_classz_1_1_abstract_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a324d1283ce33a8314f31a2e7dc6fd543 inherit pub_methods_classz_1_1_abstract_worker" id="r_a324d1283ce33a8314f31a2e7dc6fd543"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_abstract_worker.html#a324d1283ce33a8314f31a2e7dc6fd543">TaskCycleEnd</a> ()</td></tr>
+<tr class="memdesc:a324d1283ce33a8314f31a2e7dc6fd543 inherit pub_methods_classz_1_1_abstract_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">TaskCycleEnd方法，在每次任务队列循环的结束会被调度器调用。  <br /></td></tr>
+<tr class="separator:a324d1283ce33a8314f31a2e7dc6fd543 inherit pub_methods_classz_1_1_abstract_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classz_1_1_z_object"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classz_1_1_z_object')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classz_1_1_z_object.html">z::ZObject</a></td></tr>
+<tr class="memitem:a20fc044ee664a6b01d500d536e63a1ed inherit pub_methods_classz_1_1_z_object" id="r_a20fc044ee664a6b01d500d536e63a1ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_z_object.html#a20fc044ee664a6b01d500d536e63a1ed">PrintSplitLine</a> (size_t length=60, char c='-')</td></tr>
+<tr class="memdesc:a20fc044ee664a6b01d500d536e63a1ed inherit pub_methods_classz_1_1_z_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">print a split line, default length is 60 and character is '-'  <br /></td></tr>
+<tr class="separator:a20fc044ee664a6b01d500d536e63a1ed inherit pub_methods_classz_1_1_z_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pro_attribs_classz_1_1_abstract_worker"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classz_1_1_abstract_worker')"><img src="closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="classz_1_1_abstract_worker.html">z::AbstractWorker&lt; SchedulerType &gt;</a></td></tr>
+<tr class="memitem:af4842124f95ccfb50ddb0d21a9642cab inherit pro_attribs_classz_1_1_abstract_worker" id="r_af4842124f95ccfb50ddb0d21a9642cab"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>Scheduler</b> = nullptr</td></tr>
+<tr class="memdesc:af4842124f95ccfb50ddb0d21a9642cab inherit pro_attribs_classz_1_1_abstract_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">调度器的指针，用户可以通过这个指针来获取一些全局的数据， 比如当前任务的时间戳，前级工人的输出数据等，也可以通过这个指针来设置一些全局的数据。 <br /></td></tr>
+<tr class="separator:af4842124f95ccfb50ddb0d21a9642cab inherit pro_attribs_classz_1_1_abstract_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, typename ImuType, typename ImuPrecision&gt;<br />
+class z::ImuProcessWorker&lt; SchedulerType, ImuType, ImuPrecision &gt;</div><p><a class="el" href="classz_1_1_imu_process_worker.html" title="ImuProcessWorker 类型是一个IMU数据处理工人类型，这个类型用于处理IMU传感器的数据，包括加速度，角速度和角度。 通常来说，这个类型可以被用于主任务队列中。 这个类会在TaskCycl...">ImuProcessWorker</a> 类型是一个IMU数据处理工人类型，这个类型用于处理IMU传感器的数据，包括加速度，角速度和角度。 通常来说，这个类型可以被用于主任务队列中。 这个类会在TaskCycleBegin方法中获取IMU数据并对齐进行滤波和去除异常值。用户可以通过配置文件来配置滤波器的权重。 </p>
+<p>该类会要求数据总线中包含"AccelerationRaw","AngleVelocityRaw","AngleRaw"这三个数据用于存储IMU传感器的原始数据。 该类会在数据总线中存储"AccelerationValue","AngleVelocityValue","AngleValue"这三个数据用于存储滤波处理后的IMU数据。</p>
+<p>config.json配置文件示例： { <br  />
+ "Workers": { <br  />
+ "ImuProcess": { <br  />
+ "AccFilterWeight": [ <br  />
+ 1, //加速度滤波权重,表示一个长度为2周期，每个周期的权重都是1的滤波器(有限长冲激响应滤波器FIR) <br  />
+ 1 <br  />
+ ], <br  />
+ "GyroFilterWeight": [ <br  />
+ 1, <br  />
+ 1 <br  />
+ ], <br  />
+ "MagFilterWeight": [ <br  />
+ 1, <br  />
+ 1 <br  />
+ ] <br  />
+ } <br  />
+} <br  />
+</p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">SchedulerType</td><td>调度器类型 </td></tr>
+    <tr><td class="paramname">ImuType</td><td>IMU传感器类型，用户可以通过这个参数来指定IMU传感器的具体类型， 但是这个类型必须要实现GetAccX, GetAccY, GetAccZ, GetGyroX, GetGyroY, GetGyroZ, GetRoll, GetPitch, GetYaw这些方法。 </td></tr>
+    <tr><td class="paramname">ImuPrecision</td><td>IMU数据的精度，用户可以通过这个参数来指定IMU数据的精度，比如可以指定为float或者double </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aec094c042defe5615f82fcaafe8b32c2" name="aec094c042defe5615f82fcaafe8b32c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec094c042defe5615f82fcaafe8b32c2">&#9670;&#160;</a></span>ImuProcessWorker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, typename ImuType, typename ImuPrecision&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1_imu_process_worker.html">z::ImuProcessWorker</a>&lt; <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, ImuType, ImuPrecision &gt;::ImuProcessWorker </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *</td>          <td class="paramname"><span class="paramname"><em>scheduler</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ImuType</td>          <td class="paramname"><span class="paramname"><em>ImuInstancePtr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const nlohmann::json &amp;</td>          <td class="paramname"><span class="paramname"><em>root_cfg</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nlohmann::json()</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造一个IMU数据处理工人类型 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scheduler</td><td>调度器的指针 </td></tr>
+    <tr><td class="paramname">ImuInstance</td><td>IMU传感器实例指针 </td></tr>
+    <tr><td class="paramname">root_cfg</td><td>配置文件 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a82720c5f7abc072c1d20a5b6a62377c5" name="a82720c5f7abc072c1d20a5b6a62377c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82720c5f7abc072c1d20a5b6a62377c5">&#9670;&#160;</a></span>TaskCycleBegin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, typename ImuType, typename ImuPrecision&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classz_1_1_imu_process_worker.html">z::ImuProcessWorker</a>&lt; <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, ImuType, ImuPrecision &gt;::TaskCycleBegin </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>TaskCycleBegin方法，在每次任务队列循环的开始会被调度器调用，用于获取IMU数据并进行滤波和去除异常值。 </p>
+
+<p>重载 <a class="el" href="classz_1_1_abstract_worker.html#ae5ac80e86556d8a6e540d5581bd5ab21">z::AbstractWorker&lt; SchedulerType &gt;</a> .</p>
+
+</div>
+</div>
+<a id="aed0b2196bc41137844a2aff7ee4f3871" name="aed0b2196bc41137844a2aff7ee4f3871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed0b2196bc41137844a2aff7ee4f3871">&#9670;&#160;</a></span>TaskRun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, typename ImuType, typename ImuPrecision&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classz_1_1_imu_process_worker.html">z::ImuProcessWorker</a>&lt; <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, ImuType, ImuPrecision &gt;::TaskRun </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>TaskRun方法默认没有实现工作逻辑，因为对IMU数据的处理通常在流水线的开始阶段。 </p>
+
+<p>实现了 <a class="el" href="classz_1_1_abstract_worker.html#a21c7a77eb87b6ac52e86b9cff4f558d2">z::AbstractWorker&lt; SchedulerType &gt;</a>.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/<a class="el" href="_imu_process_worker_8hpp_source.html">ImuProcessWorker.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>z</b></li><li class="navelem"><a class="el" href="classz_1_1_imu_process_worker.html">ImuProcessWorker</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

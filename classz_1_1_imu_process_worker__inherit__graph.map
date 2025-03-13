@@ -1,0 +1,7 @@
+<map id="z::ImuProcessWorker&lt; SchedulerType, ImuType, ImuPrecision &gt;" name="z::ImuProcessWorker&lt; SchedulerType, ImuType, ImuPrecision &gt;">
+<area shape="rect" id="Node000001" title="ImuProcessWorker 类型是一个IMU数据处理工人类型，这个类型用于处理IMU传感器的数据，包括加速度，角速度和角度。 通常来说，这个类型可以被用于主任务队列中。 这个类会在TaskCycl..." alt="" coords="5,171,187,229"/>
+<area shape="rect" id="Node000002" href="$classz_1_1_abstract_worker.html" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="29,80,163,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,138,99,170,93,170,93,138"/>
+<area shape="rect" id="Node000003" href="$classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="55,5,137,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="99,48,99,80,93,80,93,48"/>
+</map>

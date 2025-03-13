@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ctrl-Z: C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/KeyboardCommandWorker.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Ctrl-Z
+   </div>
+   <div id="projectbrief">一个多线程机器人运动控制强化学习部署框架</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_keyboard_command_worker_8hpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a>  </div>
+  <div class="headertitle"><div class="title">KeyboardCommandWorker.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
+<code>#include &quot;<a class="el" href="_abstract_worker_8hpp_source.html">AbstractWorker.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_abstract_scheduler_8hpp_source.html">Schedulers/AbstractScheduler.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+KeyboardCommandWorker.hpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_keyboard_command_worker_8hpp__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_keyboard_command_worker_8hpp" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_keyboard_command_worker_8hpp" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_keyboard_command_worker_8hpp">
+<area shape="rect" title=" " alt="" coords="138,5,344,80"/>
+<area shape="rect" title=" " alt="" coords="5,128,66,155"/>
+<area shape="poly" title=" " alt="" coords="164,83,77,124,75,119,161,78"/>
+<area shape="rect" title=" " alt="" coords="66,427,144,453"/>
+<area shape="poly" title=" " alt="" coords="189,82,160,108,133,140,114,175,106,215,106,292,107,411,102,411,101,292,101,214,109,174,129,137,156,105,185,78"/>
+<area shape="rect" href="_abstract_worker_8hpp.html" title=" " alt="" coords="310,203,446,229"/>
+<area shape="poly" title=" " alt="" coords="272,79,361,189,357,192,268,82"/>
+<area shape="rect" href="_abstract_scheduler_8hpp.html" title="AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。" alt="" coords="772,128,995,155"/>
+<area shape="poly" title=" " alt="" coords="345,57,785,123,784,128,344,62"/>
+<area shape="rect" href="_z_object_8hpp.html" title=" " alt="" coords="389,277,524,304"/>
+<area shape="poly" title=" " alt="" coords="394,228,434,265,430,269,390,232"/>
+<area shape="rect" href="_static_string_utils_8hpp.html" title=" " alt="" coords="549,277,733,304"/>
+<area shape="poly" title=" " alt="" coords="425,227,581,270,579,275,423,232"/>
+<area shape="rect" title=" " alt="" coords="141,277,210,304"/>
+<area shape="poly" title=" " alt="" coords="344,232,225,274,223,269,342,227"/>
+<area shape="rect" title=" " alt="" coords="234,277,365,304"/>
+<area shape="poly" title=" " alt="" coords="366,232,326,269,322,265,363,228"/>
+<area shape="rect" title=" " alt="" coords="169,427,240,453"/>
+<area shape="poly" title=" " alt="" coords="389,305,264,329,213,342,188,354,182,367,182,382,192,413,187,415,176,383,177,366,184,350,212,337,263,323,388,300"/>
+<area shape="poly" title=" " alt="" coords="548,306,350,332,269,345,232,354,222,366,215,381,208,412,203,411,210,379,217,363,229,350,268,339,349,326,548,300"/>
+<area shape="rect" title=" " alt="" coords="937,352,990,379"/>
+<area shape="poly" title=" " alt="" coords="698,302,922,352,921,357,697,307"/>
+<area shape="rect" title=" " alt="" coords="537,427,587,453"/>
+<area shape="poly" title=" " alt="" coords="622,307,596,326,575,353,566,382,563,411,558,411,561,381,570,351,593,323,618,302"/>
+<area shape="rect" title=" " alt="" coords="438,427,513,453"/>
+<area shape="poly" title=" " alt="" coords="624,307,561,354,498,417,495,413,558,350,620,302"/>
+<area shape="rect" title=" " alt="" coords="584,352,634,379"/>
+<area shape="poly" title=" " alt="" coords="638,306,623,339,618,337,633,303"/>
+<area shape="rect" title=" " alt="" coords="657,352,744,379"/>
+<area shape="poly" title=" " alt="" coords="653,303,683,338,679,342,649,306"/>
+<area shape="rect" title=" " alt="" coords="242,352,325,379"/>
+<area shape="poly" title=" " alt="" coords="575,307,340,354,339,349,574,302"/>
+<area shape="rect" title=" " alt="" coords="769,352,811,379"/>
+<area shape="poly" title=" " alt="" coords="668,302,756,345,754,350,666,307"/>
+<area shape="rect" href="_math_types_8hpp.html" title=" " alt="" coords="348,352,459,379"/>
+<area shape="poly" title=" " alt="" coords="600,307,460,350,459,344,599,302"/>
+<area shape="poly" title=" " alt="" coords="352,382,159,428,158,423,351,377"/>
+<area shape="poly" title=" " alt="" coords="370,382,255,423,253,418,368,377"/>
+<area shape="poly" title=" " alt="" coords="432,377,524,418,521,423,430,382"/>
+<area shape="poly" title=" " alt="" coords="418,377,454,414,451,417,414,381"/>
+<area shape="rect" title=" " alt="" coords="358,427,415,453"/>
+<area shape="poly" title=" " alt="" coords="403,380,395,412,390,411,398,379"/>
+<area shape="poly" title=" " alt="" coords="795,158,462,205,461,200,795,153"/>
+<area shape="poly" title=" " alt="" coords="818,158,733,178,642,205,562,239,494,272,492,267,559,234,640,200,732,172,817,153"/>
+<area shape="poly" title=" " alt="" coords="773,152,714,171,687,185,664,204,655,217,649,232,643,262,638,261,644,230,650,215,660,201,684,181,712,166,771,147"/>
+<area shape="poly" title=" " alt="" coords="996,145,1063,157,1130,181,1161,198,1189,220,1212,245,1229,276,1233,291,1228,306,1213,318,1191,329,1131,345,1065,357,1006,363,1005,358,1064,351,1130,340,1189,324,1210,314,1224,302,1228,291,1224,278,1207,249,1185,223,1158,203,1128,186,1062,163,995,150"/>
+<area shape="rect" href="_data_center_8hpp.html" title=" " alt="" coords="675,203,831,229"/>
+<area shape="poly" title=" " alt="" coords="862,158,790,197,788,192,859,153"/>
+<area shape="rect" title=" " alt="" coords="1002,277,1059,304"/>
+<area shape="poly" title=" " alt="" coords="996,151,1040,169,1060,183,1076,201,1082,218,1079,236,1058,268,1053,265,1074,234,1077,219,1072,204,1056,187,1038,174,994,156"/>
+<area shape="rect" title=" " alt="" coords="1083,277,1129,304"/>
+<area shape="poly" title=" " alt="" coords="996,147,1051,166,1076,181,1098,201,1106,215,1111,231,1113,262,1107,262,1106,232,1101,217,1093,204,1073,185,1049,171,994,152"/>
+<area shape="rect" title=" " alt="" coords="1153,277,1214,304"/>
+<area shape="poly" title=" " alt="" coords="996,152,1061,170,1093,183,1122,201,1153,230,1174,262,1169,265,1148,233,1119,205,1090,188,1059,175,995,157"/>
+<area shape="rect" title=" " alt="" coords="855,203,912,229"/>
+<area shape="poly" title=" " alt="" coords="886,155,886,187,881,187,881,155"/>
+<area shape="rect" title=" " alt="" coords="937,203,1062,229"/>
+<area shape="poly" title=" " alt="" coords="905,153,968,192,965,196,902,157"/>
+<area shape="poly" title=" " alt="" coords="702,233,524,276,523,271,700,227"/>
+<area shape="poly" title=" " alt="" coords="735,232,675,271,672,266,732,228"/>
+<area shape="poly" title=" " alt="" coords="812,227,887,248,919,261,940,275,957,305,965,336,959,337,953,307,936,279,916,266,885,254,811,233"/>
+<area shape="poly" title=" " alt="" coords="768,228,795,257,823,296,833,317,838,339,836,360,826,380,810,393,788,404,729,420,662,431,603,438,603,433,661,426,727,415,786,399,808,388,821,377,831,359,832,339,828,319,818,298,791,260,765,232"/>
+<area shape="poly" title=" " alt="" coords="759,229,786,336,781,338,753,230"/>
+<area shape="poly" title=" " alt="" coords="802,227,987,275,986,281,800,232"/>
+<area shape="poly" title=" " alt="" coords="832,226,941,245,1068,274,1067,279,940,251,831,231"/>
+<area shape="rect" title=" " alt="" coords="868,277,926,304"/>
+<area shape="poly" title=" " alt="" coords="779,227,859,267,857,272,777,232"/>
+<area shape="poly" title=" " alt="" coords="832,226,990,249,1138,274,1137,280,990,254,831,231"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="_keyboard_command_worker_8hpp__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_keyboard_command_worker_8hppdep" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_keyboard_command_worker_8hppdep" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_keyboard_command_worker_8hppdep">
+<area shape="rect" title=" " alt="" coords="5,5,212,80"/>
+<area shape="rect" href="_airbot_arm_2types_8hpp.html" title="机械臂控制程序所需的一些类型定义" alt="" coords="24,128,193,203"/>
+<area shape="poly" title=" " alt="" coords="111,96,111,128,106,128,106,96"/>
+<area shape="rect" href="_airbot_arm_2main_8cpp.html" title=" " alt="" coords="24,251,193,325"/>
+<area shape="poly" title=" " alt="" coords="111,219,111,250,106,250,106,219"/>
+</map>
+</div>
+</div>
+<p><a href="_keyboard_command_worker_8hpp_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_keyboard_command_worker.html">z::KeyboardCommandWorker&lt; SchedulerType &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classz_1_1_keyboard_command_worker.html" title="KeyboardCommandWorker 类型是一个键盘命令工人类型，用户可以通过这个工人类型来实现键盘命令的功能。">KeyboardCommandWorker</a> 类型是一个键盘命令工人类型，用户可以通过这个工人类型来实现键盘命令的功能。  <a href="classz_1_1_keyboard_command_worker.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><dl class="section author"><dt>作者</dt><dd>Zishun Zhou </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2025-03-10</dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>Copyright (c) 2025 </dd></dl>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7b6a9de995744179e2af2e4eac8c765a.html">CtrlZ</a></li><li class="navelem"><a class="el" href="dir_23feaddda2c120f5a6c49ee991b2b1fd.html">Workers</a></li><li class="navelem"><a class="el" href="_keyboard_command_worker_8hpp.html">KeyboardCommandWorker.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

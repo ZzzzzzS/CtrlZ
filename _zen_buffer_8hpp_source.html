@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ctrl-Z: C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Utils/ZenBuffer.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Ctrl-Z
+   </div>
+   <div id="projectbrief">一个多线程机器人运动控制强化学习部署框架</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_zen_buffer_8hpp_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ZenBuffer.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_zen_buffer_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_z_object_8hpp.html">ZObject.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span>z</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classz_1_1_ring_buffer.html">   24</a></span>    <span class="keyword">class </span><a class="code hl_function" href="classz_1_1_ring_buffer.html#ad5bcfacb6df3fb65a85f6be521354718">RingBuffer</a> : <span class="keyword">public</span> ZObject</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classz_1_1_ring_buffer.html#ad5bcfacb6df3fb65a85f6be521354718">   32</a></span>        <a class="code hl_function" href="classz_1_1_ring_buffer.html#ad5bcfacb6df3fb65a85f6be521354718">RingBuffer</a>(<span class="keywordtype">int</span> _Size)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            this-&gt;Size = _Size;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            this-&gt;Data.resize(_Size);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            this-&gt;CurrentIndex = 0;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        }</div>
+</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classz_1_1_ring_buffer.html#ad79beef9a70711200f4ba95bfcb2f04e">   45</a></span>        <a class="code hl_function" href="classz_1_1_ring_buffer.html#ad79beef9a70711200f4ba95bfcb2f04e">RingBuffer</a>(<span class="keywordtype">int</span> _Size, T&amp; <span class="keywordtype">object</span>)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            this-&gt;Size = _Size;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            this-&gt;Data.reserve(this-&gt;Size);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; this-&gt;Size; i++)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                this-&gt;Data.push_back(<span class="keywordtype">object</span>); <span class="comment">// need to push object multiple times, so can not use move here.</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            this-&gt;CurrentIndex = 0;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        }</div>
+</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classz_1_1_ring_buffer.html#a88515db0d6f98c36230745f360ecd404">   61</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_ring_buffer.html#a88515db0d6f98c36230745f360ecd404">push</a>(<span class="keyword">const</span> T&amp; _Data)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            this-&gt;Data[this-&gt;CurrentIndex] = _Data;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            this-&gt;CurrentIndex = (this-&gt;CurrentIndex + 1) % this-&gt;Size;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        }</div>
+</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classz_1_1_ring_buffer.html#a05fc65528a59a980360e57fd5e81b5ab">   73</a></span>        T&amp; <a class="code hl_function" href="classz_1_1_ring_buffer.html#a05fc65528a59a980360e57fd5e81b5ab">operator()</a>(<span class="keywordtype">int</span> _Index)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="keywordflow">return</span> this-&gt;Data[(_Index + this-&gt;CurrentIndex) % this-&gt;Size];</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        }</div>
+</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classz_1_1_ring_buffer.html#afd9b108f28cdab2d7ace224f8b5e3f72">   84</a></span>        T&amp; <a class="code hl_function" href="classz_1_1_ring_buffer.html#afd9b108f28cdab2d7ace224f8b5e3f72">operator[]</a>(<span class="keywordtype">int</span> _Index)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <span class="keywordflow">return</span> this-&gt;Data[(_Index + this-&gt;CurrentIndex) % this-&gt;Size];</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        }</div>
+</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classz_1_1_ring_buffer.html#a0323466c434706a9f71fb3a6f25cc17c">   94</a></span>        T&amp; <a class="code hl_function" href="classz_1_1_ring_buffer.html#a0323466c434706a9f71fb3a6f25cc17c">front</a>()</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordflow">return</span> this-&gt;Data[this-&gt;CurrentIndex];</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        }</div>
+</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
+<div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classz_1_1_ring_buffer.html#ac7c3191c2481c09481626a4e6033115a">  104</a></span>        T&amp; <a class="code hl_function" href="classz_1_1_ring_buffer.html#ac7c3191c2481c09481626a4e6033115a">back</a>()</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <span class="keywordflow">return</span> this-&gt;Data[(this-&gt;CurrentIndex - 1 + this-&gt;Size) % this-&gt;Size];</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        }</div>
+</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span></div>
+<div class="foldopen" id="foldopen00114" data-start="{" data-end="}">
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classz_1_1_ring_buffer.html#ab9d70c103c4ca507c8a9c469c161a13a">  114</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classz_1_1_ring_buffer.html#ab9d70c103c4ca507c8a9c469c161a13a">size</a>()</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <span class="keywordflow">return</span> this-&gt;Size;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        }</div>
+</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classz_1_1_ring_buffer.html#a9fda7c8af2a98612e5a0f0ff356bce6a">  123</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_ring_buffer.html#a9fda7c8af2a98612e5a0f0ff356bce6a">flush</a>()</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; i : this-&gt;Data)</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                i = T();</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        }</div>
+</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        std::vector&lt;T&gt; Data;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordtype">int</span> Size;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <span class="keywordtype">int</span> CurrentIndex;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    };</div>
+</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00143" data-start="{" data-end="};">
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="classz_1_1filter.html">  143</a></span>    <span class="keyword">class </span><a class="code hl_function" href="classz_1_1filter.html#a30d4dc0e46be5f5fe5db134eeb09cfd2">filter</a> : <span class="keyword">public</span> ZObject</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00151" data-start="{" data-end="}">
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="classz_1_1filter.html#a30d4dc0e46be5f5fe5db134eeb09cfd2">  151</a></span>        <a class="code hl_function" href="classz_1_1filter.html#a30d4dc0e46be5f5fe5db134eeb09cfd2">filter</a>(<span class="keywordtype">int</span> buffer_sz = 3)</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            this-&gt;buffer_sz = buffer_sz;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            this-&gt;buffer.resize(buffer_sz);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; i : this-&gt;buffer)</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                i = 0;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        }</div>
+</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span></div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="}">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classz_1_1filter.html#ad91bc2d8bf9850749753571f656a16bb">  162</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1filter.html#ad91bc2d8bf9850749753571f656a16bb">clear</a>()</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; i : this-&gt;buffer)</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                i = T();</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        }</div>
+</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span></div>
+<div class="foldopen" id="foldopen00176" data-start="{" data-end="}">
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="classz_1_1filter.html#a6c8d91ea2cc663886e6f4838826b28da">  176</a></span>        T <a class="code hl_function" href="classz_1_1filter.html#a6c8d91ea2cc663886e6f4838826b28da">operator()</a>(T input)</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        {</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            buffer[this-&gt;pointer] = input;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            this-&gt;pointer++;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            this-&gt;pointer %= this-&gt;buffer_sz;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            T sum = 0;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; i : this-&gt;buffer)</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                sum += i;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            }</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            <span class="keywordflow">return</span> sum / <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(buffer_sz);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        }</div>
+</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <span class="keywordtype">int</span> buffer_sz;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        std::vector&lt;T&gt; buffer;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <span class="keywordtype">int</span> pointer = 0;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    };</div>
+</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="_zen_buffer_8hpp.html#ae8d05084e622d5a15d6b38a96758aa66">  196</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="_zen_buffer_8hpp.html#ae8d05084e622d5a15d6b38a96758aa66">filterd</a> = <a class="code hl_class" href="classz_1_1filter.html">filter&lt;double&gt;</a>;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="_zen_buffer_8hpp.html#a114dbc3eb869927c02fbf1af8b9a4470">  198</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="_zen_buffer_8hpp.html#a114dbc3eb869927c02fbf1af8b9a4470">filterf</a> = <a class="code hl_class" href="classz_1_1filter.html">filter&lt;float&gt;</a>;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00207" data-start="{" data-end="};">
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno"><a class="line" href="classz_1_1_weight_filter.html">  207</a></span>    <span class="keyword">class </span><a class="code hl_function" href="classz_1_1_weight_filter.html#a070a3b5a5efb9de6f66512fcdb0ef667">WeightFilter</a> : <span class="keyword">public</span> ZObject</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    {</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00215" data-start="{" data-end="}">
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="classz_1_1_weight_filter.html#a070a3b5a5efb9de6f66512fcdb0ef667">  215</a></span>        <a class="code hl_function" href="classz_1_1_weight_filter.html#a070a3b5a5efb9de6f66512fcdb0ef667">WeightFilter</a>(std::initializer_list&lt;T&gt; param)</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            : buffer(param.size())</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            this-&gt;weight = param;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            this-&gt;buffer_sz = param.size();</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>            this-&gt;SumWeight = T();</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; i : this-&gt;weight)</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            {</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                this-&gt;SumWeight += i;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>            }</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        }</div>
+</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        <a class="code hl_function" href="classz_1_1_weight_filter.html#a070a3b5a5efb9de6f66512fcdb0ef667">WeightFilter</a>(std::vector&lt;T&gt; param)</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            : buffer(param.size())</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        {</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            this-&gt;weight = param;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            this-&gt;buffer_sz = param.size();</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            this-&gt;SumWeight = T();</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; i : this-&gt;weight)</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            {</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>                this-&gt;SumWeight += i;</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>            }</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        }</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span></div>
+<div class="foldopen" id="foldopen00243" data-start="{" data-end="}">
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="classz_1_1_weight_filter.html#ad6bf925bc9bf8dc0140c424ca25c046a">  243</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_weight_filter.html#ad6bf925bc9bf8dc0140c424ca25c046a">clear</a>()</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        {</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>            this-&gt;buffer.flush();</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        }</div>
+</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span></div>
+<div class="foldopen" id="foldopen00254" data-start="{" data-end="}">
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno"><a class="line" href="classz_1_1_weight_filter.html#aef42fb080dc654d1c07d2497ac6727fa">  254</a></span>        T <a class="code hl_function" href="classz_1_1_weight_filter.html#aef42fb080dc654d1c07d2497ac6727fa">operator()</a>(T input)</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        {</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>            buffer.push(input);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>            T sum = T();</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; this-&gt;buffer_sz; i++)</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>            {</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                sum += buffer[i] * weight[i];</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>            }</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>            <span class="keywordflow">return</span> sum / SumWeight;</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        }</div>
+</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        <span class="keywordtype">size_t</span> buffer_sz;</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>        std::vector&lt;T&gt; weight;</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        <a class="code hl_class" href="classz_1_1_ring_buffer.html">RingBuffer&lt;T&gt;</a> buffer;</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        T SumWeight;</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    };</div>
+</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>};</div>
+<div class="ttc" id="a_z_object_8hpp_html"><div class="ttname"><a href="_z_object_8hpp.html">ZObject.hpp</a></div></div>
+<div class="ttc" id="a_zen_buffer_8hpp_html_a114dbc3eb869927c02fbf1af8b9a4470"><div class="ttname"><a href="_zen_buffer_8hpp.html#a114dbc3eb869927c02fbf1af8b9a4470">z::filterf</a></div><div class="ttdeci">filter&lt; float &gt; filterf</div><div class="ttdoc">alias for float filter</div><div class="ttdef"><b>定义</b> ZenBuffer.hpp:198</div></div>
+<div class="ttc" id="a_zen_buffer_8hpp_html_ae8d05084e622d5a15d6b38a96758aa66"><div class="ttname"><a href="_zen_buffer_8hpp.html#ae8d05084e622d5a15d6b38a96758aa66">z::filterd</a></div><div class="ttdeci">filter&lt; double &gt; filterd</div><div class="ttdoc">alias for double filter</div><div class="ttdef"><b>定义</b> ZenBuffer.hpp:196</div></div>
+<div class="ttc" id="aclassz_1_1_ring_buffer_html"><div class="ttname"><a href="classz_1_1_ring_buffer.html">z::RingBuffer</a></div><div class="ttdoc">ring buffer class, this buffer does NOT garantee thread safety</div><div class="ttdef"><b>定义</b> ZenBuffer.hpp:25</div></div>
+<div class="ttc" id="aclassz_1_1_ring_buffer_html_a0323466c434706a9f71fb3a6f25cc17c"><div class="ttname"><a href="classz_1_1_ring_buffer.html#a0323466c434706a9f71fb3a6f25cc17c">z::RingBuffer::front</a></div><div class="ttdeci">T &amp; front()</div><div class="ttdoc">get the oldest data from the buffer</div><div class="ttdef"><b>定义</b> ZenBuffer.hpp:94</div></div>
+<div class="ttc" id="aclassz_1_1_ring_buffer_html_a05fc65528a59a980360e57fd5e81b5ab"><div class="ttname"><a href="classz_1_1_ring_buffer.html#a05fc65528a59a980360e57fd5e81b5ab">z::RingBuffer::operator()</a></div><div class="ttdeci">T &amp; operator()(int _Index)</div><div class="ttdoc">get data from the buffer</div><div class="ttdef"><b>定义</b> ZenBuffer.hpp:73</div></div>
+<div class="ttc" id="aclassz_1_1_ring_buffer_html_a88515db0d6f98c36230745f360ecd404"><div class="ttname"><a href="classz_1_1_ring_buffer.html#a88515db0d6f98c36230745f360ecd404">z::RingBuffer::push</a></div><div class="ttdeci">void push(const T &amp;_Data)</div><div class="ttdoc">push data to the buffer</div><div class="ttdef"><b>定义</b> ZenBuffer.hpp:61</div></div>
+<div class="ttc" id="aclassz_1_1_ring_buffer_html_a9fda7c8af2a98612e5a0f0ff356bce6a"><div class="ttname"><a href="classz_1_1_ring_buffer.html#a9fda7c8af2a98612e5a0f0ff356bce6a">z::RingBuffer::flush</a></div><div class="ttdeci">void flush()</div><div class="ttdoc">flush the buffer with default value</div><div class="ttdef"><b>定义</b> ZenBuffer.hpp:123</div></div>
+<div class="ttc" id="aclassz_1_1_ring_buffer_html_ab9d70c103c4ca507c8a9c469c161a13a"><div class="ttname"><a href="classz_1_1_ring_buffer.html#ab9d70c103c4ca507c8a9c469c161a13a">z::RingBuffer::size</a></div><div class="ttdeci">int size()</div><div class="ttdoc">get the size of the buffer</div><div class="ttdef"><b>定义</b> ZenBuffer.hpp:114</div></div>
+<div class="ttc" id="aclassz_1_1_ring_buffer_html_ac7c3191c2481c09481626a4e6033115a"><div class="ttname"><a href="classz_1_1_ring_buffer.html#ac7c3191c2481c09481626a4e6033115a">z::RingBuffer::back</a></div><div class="ttdeci">T &amp; back()</div><div class="ttdoc">get the newest data from the buffer</div><div class="ttdef"><b>定义</b> ZenBuffer.hpp:104</div></div>
+<div class="ttc" id="aclassz_1_1_ring_buffer_html_ad5bcfacb6df3fb65a85f6be521354718"><div class="ttname"><a href="classz_1_1_ring_buffer.html#ad5bcfacb6df3fb65a85f6be521354718">z::RingBuffer::RingBuffer</a></div><div class="ttdeci">RingBuffer(int _Size)</div><div class="ttdoc">Construct a new Ring Buffer object with size</div><div class="ttdef"><b>定义</b> ZenBuffer.hpp:32</div></div>
+<div class="ttc" id="aclassz_1_1_ring_buffer_html_ad79beef9a70711200f4ba95bfcb2f04e"><div class="ttname"><a href="classz_1_1_ring_buffer.html#ad79beef9a70711200f4ba95bfcb2f04e">z::RingBuffer::RingBuffer</a></div><div class="ttdeci">RingBuffer(int _Size, T &amp;object)</div><div class="ttdoc">Construct a new Ring Buffer object with size and initial value</div><div class="ttdef"><b>定义</b> ZenBuffer.hpp:45</div></div>
+<div class="ttc" id="aclassz_1_1_ring_buffer_html_afd9b108f28cdab2d7ace224f8b5e3f72"><div class="ttname"><a href="classz_1_1_ring_buffer.html#afd9b108f28cdab2d7ace224f8b5e3f72">z::RingBuffer::operator[]</a></div><div class="ttdeci">T &amp; operator[](int _Index)</div><div class="ttdoc">get data from the buffer</div><div class="ttdef"><b>定义</b> ZenBuffer.hpp:84</div></div>
+<div class="ttc" id="aclassz_1_1_weight_filter_html_a070a3b5a5efb9de6f66512fcdb0ef667"><div class="ttname"><a href="classz_1_1_weight_filter.html#a070a3b5a5efb9de6f66512fcdb0ef667">z::WeightFilter::WeightFilter</a></div><div class="ttdeci">WeightFilter(std::initializer_list&lt; T &gt; param)</div><div class="ttdoc">Construct a new Weight Filter object with weight</div><div class="ttdef"><b>定义</b> ZenBuffer.hpp:215</div></div>
+<div class="ttc" id="aclassz_1_1_weight_filter_html_ad6bf925bc9bf8dc0140c424ca25c046a"><div class="ttname"><a href="classz_1_1_weight_filter.html#ad6bf925bc9bf8dc0140c424ca25c046a">z::WeightFilter::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">clear the buffer and reset the pointer with default value</div><div class="ttdef"><b>定义</b> ZenBuffer.hpp:243</div></div>
+<div class="ttc" id="aclassz_1_1_weight_filter_html_aef42fb080dc654d1c07d2497ac6727fa"><div class="ttname"><a href="classz_1_1_weight_filter.html#aef42fb080dc654d1c07d2497ac6727fa">z::WeightFilter::operator()</a></div><div class="ttdeci">T operator()(T input)</div><div class="ttdoc">operator () to filter the input</div><div class="ttdef"><b>定义</b> ZenBuffer.hpp:254</div></div>
+<div class="ttc" id="aclassz_1_1filter_html"><div class="ttname"><a href="classz_1_1filter.html">z::filter</a></div><div class="ttdoc">filter class with simple average filter</div><div class="ttdef"><b>定义</b> ZenBuffer.hpp:144</div></div>
+<div class="ttc" id="aclassz_1_1filter_html_a30d4dc0e46be5f5fe5db134eeb09cfd2"><div class="ttname"><a href="classz_1_1filter.html#a30d4dc0e46be5f5fe5db134eeb09cfd2">z::filter::filter</a></div><div class="ttdeci">filter(int buffer_sz=3)</div><div class="ttdoc">Construct a new filter object</div><div class="ttdef"><b>定义</b> ZenBuffer.hpp:151</div></div>
+<div class="ttc" id="aclassz_1_1filter_html_a6c8d91ea2cc663886e6f4838826b28da"><div class="ttname"><a href="classz_1_1filter.html#a6c8d91ea2cc663886e6f4838826b28da">z::filter::operator()</a></div><div class="ttdeci">T operator()(T input)</div><div class="ttdoc">operator () to filter the input</div><div class="ttdef"><b>定义</b> ZenBuffer.hpp:176</div></div>
+<div class="ttc" id="aclassz_1_1filter_html_ad91bc2d8bf9850749753571f656a16bb"><div class="ttname"><a href="classz_1_1filter.html#ad91bc2d8bf9850749753571f656a16bb">z::filter::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">clear the buffer and reset the pointer with default value</div><div class="ttdef"><b>定义</b> ZenBuffer.hpp:162</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7b6a9de995744179e2af2e4eac8c765a.html">CtrlZ</a></li><li class="navelem"><a class="el" href="dir_0ae636835fa1df8aeaf077e074b22c49.html">Utils</a></li><li class="navelem"><a class="el" href="_zen_buffer_8hpp.html">ZenBuffer.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ctrl-Z: C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/example/AirbotArm/types.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Ctrl-Z
+   </div>
+   <div id="projectbrief">一个多线程机器人运动控制强化学习部署框架</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_airbot_arm_2types_8hpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">types.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>机械臂控制程序所需的一些类型定义  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_static_string_utils_8hpp_source.html">Utils/StaticStringUtils.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_math_types_8hpp_source.html">Utils/MathTypes.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_abstract_scheduler_8hpp_source.html">Schedulers/AbstractScheduler.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_async_logger_worker_8hpp_source.html">Workers/AsyncLoggerWorker.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_abstract_worker_8hpp_source.html">Workers/AbstractWorker.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_keyboard_command_worker_8hpp_source.html">Workers/KeyboardCommandWorker.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_arm_tracking_inference_worker_8hpp_source.html">ArmTrackingInferenceWorker.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+types.hpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_airbot_arm_2types_8hpp__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2example_2_airbot_arm_2types_8hpp" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2example_2_airbot_arm_2types_8hpp" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2example_2_airbot_arm_2types_8hpp">
+<area shape="rect" title="机械臂控制程序所需的一些类型定义" alt="" coords="1551,5,1721,80"/>
+<area shape="rect" href="_static_string_utils_8hpp.html" title=" " alt="" coords="955,517,1128,544"/>
+<area shape="poly" title=" " alt="" coords="1551,47,1179,55,934,65,681,81,443,103,337,117,244,134,167,153,108,174,71,198,62,210,59,223,59,382,64,416,79,437,101,449,131,455,204,458,244,461,284,467,413,486,592,502,940,522,940,528,591,507,413,491,284,472,244,466,204,464,130,460,99,454,75,441,59,418,53,383,53,222,57,208,67,194,106,169,165,148,243,129,336,112,442,98,680,75,934,60,1179,50,1551,42"/>
+<area shape="rect" href="_math_types_8hpp.html" title=" " alt="" coords="1598,592,1708,619"/>
+<area shape="poly" title=" " alt="" coords="1721,44,1818,56,1870,68,1920,85,1964,108,1999,138,2013,156,2023,176,2030,198,2032,223,2032,457,2028,488,2017,510,1998,528,1972,546,1928,565,1863,580,1724,600,1723,594,1862,574,1926,559,1969,542,1995,524,2012,507,2023,486,2027,457,2027,223,2025,199,2018,178,2009,159,1995,141,1961,112,1917,90,1869,73,1817,61,1721,49"/>
+<area shape="rect" href="_abstract_scheduler_8hpp.html" title="AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。" alt="" coords="1426,368,1648,395"/>
+<area shape="poly" title=" " alt="" coords="1642,80,1644,130,1641,192,1630,258,1620,290,1606,321,1591,343,1572,360,1568,356,1587,339,1602,319,1615,289,1625,257,1636,191,1639,130,1637,80"/>
+<area shape="rect" href="_abstract_worker_8hpp.html" title=" " alt="" coords="1792,443,1992,469"/>
+<area shape="poly" title=" " alt="" coords="1695,79,1727,106,1757,140,1779,179,1786,200,1788,223,1788,308,1795,345,1814,379,1839,408,1864,431,1860,435,1835,412,1810,382,1790,347,1783,308,1783,223,1780,201,1774,181,1753,143,1724,110,1692,83"/>
+<area shape="rect" href="_async_logger_worker_8hpp.html" title=" " alt="" coords="778,368,993,395"/>
+<area shape="poly" title=" " alt="" coords="1634,81,1624,143,1608,215,1588,280,1575,305,1562,322,1533,335,1483,345,1338,362,1166,373,1009,379,1008,374,1166,367,1337,356,1482,340,1531,330,1558,318,1571,302,1583,278,1603,213,1618,142,1629,80"/>
+<area shape="rect" href="_keyboard_command_worker_8hpp.html" title=" " alt="" coords="1294,293,1548,320"/>
+<area shape="poly" title=" " alt="" coords="1608,82,1569,130,1443,283,1439,280,1565,126,1604,79"/>
+<area shape="rect" href="_arm_tracking_inference_worker_8hpp.html" title="机械臂控制程序所需控制网络" alt="" coords="2378,128,2593,155"/>
+<area shape="poly" title=" " alt="" coords="1722,51,2363,123,2362,129,1721,56"/>
+<area shape="rect" title=" " alt="" coords="1471,592,1524,619"/>
+<area shape="poly" title=" " alt="" coords="1122,542,1456,595,1455,600,1121,547"/>
+<area shape="rect" title=" " alt="" coords="1408,667,1458,693"/>
+<area shape="poly" title=" " alt="" coords="1067,542,1209,616,1308,648,1394,668,1392,673,1306,653,1207,621,1064,547"/>
+<area shape="rect" title=" " alt="" coords="1198,667,1272,693"/>
+<area shape="poly" title=" " alt="" coords="1059,542,1208,655,1205,659,1056,547"/>
+<area shape="rect" title=" " alt="" coords="578,592,627,619"/>
+<area shape="poly" title=" " alt="" coords="965,547,643,600,642,595,964,542"/>
+<area shape="rect" title=" " alt="" coords="1007,592,1094,619"/>
+<area shape="poly" title=" " alt="" coords="1046,544,1050,576,1044,577,1040,545"/>
+<area shape="rect" title=" " alt="" coords="1018,667,1089,693"/>
+<area shape="poly" title=" " alt="" coords="1029,546,1002,579,995,598,997,618,1009,638,1026,655,1022,659,1005,641,992,620,990,597,998,576,1025,543"/>
+<area shape="rect" title=" " alt="" coords="1220,592,1302,619"/>
+<area shape="poly" title=" " alt="" coords="1080,542,1209,584,1207,589,1079,547"/>
+<area shape="rect" title=" " alt="" coords="1336,592,1378,619"/>
+<area shape="poly" title=" " alt="" coords="1104,542,1315,589,1322,591,1321,596,1314,595,1103,547"/>
+<area shape="poly" title=" " alt="" coords="1128,540,1583,593,1582,598,1127,545"/>
+<area shape="poly" title=" " alt="" coords="1616,622,1474,668,1472,663,1614,617"/>
+<area shape="poly" title=" " alt="" coords="1598,619,1288,672,1287,667,1597,614"/>
+<area shape="poly" title=" " alt="" coords="1598,619,1580,621,1313,654,1105,676,1104,671,1312,649,1580,616,1597,613"/>
+<area shape="rect" title=" " alt="" coords="1625,667,1682,693"/>
+<area shape="poly" title=" " alt="" coords="1656,619,1656,651,1651,651,1651,619"/>
+<area shape="rect" title=" " alt="" coords="488,667,565,693"/>
+<area shape="poly" title=" " alt="" coords="1598,615,1536,621,978,659,581,679,580,674,978,653,1536,616,1598,610"/>
+<area shape="poly" title=" " alt="" coords="1490,398,1421,418,1346,445,1321,459,1294,472,1210,498,1130,516,1129,511,1209,493,1292,467,1318,454,1344,440,1420,413,1488,393"/>
+<area shape="poly" title=" " alt="" coords="1580,393,1643,417,1707,451,1733,472,1749,495,1753,520,1741,546,1713,560,1660,574,1540,599,1539,594,1659,569,1711,555,1737,542,1747,519,1744,497,1729,475,1705,455,1641,422,1578,398"/>
+<area shape="rect" href="_z_object_8hpp.html" title=" " alt="" coords="1522,517,1657,544"/>
+<area shape="poly" title=" " alt="" coords="1572,393,1604,412,1619,425,1630,442,1635,459,1632,476,1615,507,1610,504,1627,474,1629,459,1626,444,1615,429,1601,416,1570,397"/>
+<area shape="rect" href="_data_center_8hpp.html" title=" " alt="" coords="1459,443,1616,469"/>
+<area shape="poly" title=" " alt="" coords="1540,395,1540,427,1535,427,1535,395"/>
+<area shape="rect" title=" " alt="" coords="1287,517,1345,544"/>
+<area shape="poly" title=" " alt="" coords="1520,398,1448,445,1349,511,1346,506,1445,440,1517,393"/>
+<area shape="rect" title=" " alt="" coords="1681,517,1727,544"/>
+<area shape="poly" title=" " alt="" coords="1572,393,1612,413,1651,441,1676,471,1694,502,1690,505,1672,474,1648,445,1609,417,1570,398"/>
+<area shape="rect" title=" " alt="" coords="1203,517,1264,544"/>
+<area shape="poly" title=" " alt="" coords="1508,398,1402,445,1271,512,1269,507,1400,440,1506,393"/>
+<area shape="poly" title=" " alt="" coords="1600,393,1815,436,1814,442,1599,398"/>
+<area shape="rect" title=" " alt="" coords="1225,443,1282,469"/>
+<area shape="poly" title=" " alt="" coords="1489,398,1298,446,1296,441,1487,393"/>
+<area shape="rect" title=" " alt="" coords="1075,443,1200,469"/>
+<area shape="poly" title=" " alt="" coords="1468,398,1216,443,1215,438,1467,393"/>
+<area shape="poly" title=" " alt="" coords="1588,546,1571,584,1556,604,1537,621,1478,633,1359,648,1105,676,1104,671,1359,643,1478,628,1535,616,1552,601,1566,581,1583,543"/>
+<area shape="poly" title=" " alt="" coords="1459,471,1143,517,1142,512,1458,466"/>
+<area shape="poly" title=" " alt="" coords="1533,471,1512,518,1502,577,1496,576,1507,517,1528,469"/>
+<area shape="poly" title=" " alt="" coords="1531,471,1501,519,1479,555,1461,593,1442,652,1437,651,1456,591,1474,553,1496,516,1527,468"/>
+<area shape="poly" title=" " alt="" coords="1500,472,1458,491,1416,519,1391,549,1372,580,1367,577,1386,546,1413,515,1455,487,1498,467"/>
+<area shape="poly" title=" " alt="" coords="1549,468,1574,503,1569,506,1544,471"/>
+<area shape="poly" title=" " alt="" coords="1500,472,1360,518,1359,513,1498,467"/>
+<area shape="poly" title=" " alt="" coords="1567,467,1668,511,1666,516,1565,472"/>
+<area shape="rect" title=" " alt="" coords="574,517,631,544"/>
+<area shape="poly" title=" " alt="" coords="1459,466,647,529,647,523,1459,461"/>
+<area shape="poly" title=" " alt="" coords="1478,473,1279,519,1278,514,1477,467"/>
+<area shape="poly" title=" " alt="" coords="1792,468,1143,523,1143,518,1791,463"/>
+<area shape="poly" title=" " alt="" coords="1840,473,1658,516,1657,511,1838,467"/>
+<area shape="rect" title=" " alt="" coords="1890,517,1958,544"/>
+<area shape="poly" title=" " alt="" coords="1900,469,1915,502,1910,504,1895,471"/>
+<area shape="rect" title=" " alt="" coords="2216,517,2346,544"/>
+<area shape="poly" title=" " alt="" coords="1961,467,2202,512,2201,517,1960,473"/>
+<area shape="poly" title=" " alt="" coords="889,394,898,430,907,450,919,468,949,492,983,509,981,514,946,496,915,471,902,452,893,432,884,395"/>
+<area shape="poly" title=" " alt="" coords="895,393,925,430,945,450,968,467,1013,488,1052,495,1092,501,1141,515,1166,529,1192,542,1263,563,1335,579,1456,597,1455,602,1334,584,1261,568,1190,546,1164,533,1139,520,1091,506,1051,500,1011,493,965,472,942,454,921,433,891,396"/>
+<area shape="poly" title=" " alt="" coords="888,395,890,429,899,469,916,517,932,555,956,586,996,616,1018,624,1057,632,1168,648,1393,672,1393,678,1168,654,1056,637,1017,629,993,621,952,590,928,558,911,519,893,470,885,429,883,395"/>
+<area shape="poly" title=" " alt="" coords="778,396,767,397,470,406,289,419,225,430,203,437,191,445,175,469,170,493,175,517,191,542,217,560,255,574,304,585,359,593,472,600,563,602,563,607,471,606,359,598,303,590,254,580,214,565,187,546,170,520,164,493,170,467,187,441,201,432,223,425,289,413,470,400,767,392,777,391"/>
+<area shape="poly" title=" " alt="" coords="778,396,767,397,459,405,359,410,271,418,203,429,181,437,169,445,152,469,147,493,153,517,169,542,193,565,227,585,269,603,318,618,432,642,560,659,690,669,814,675,1002,677,1002,682,814,680,690,674,559,664,431,647,317,623,267,608,225,590,190,569,165,546,148,519,142,493,147,466,165,441,179,432,202,424,270,413,359,405,459,400,767,392,777,391"/>
+<area shape="poly" title=" " alt="" coords="778,396,767,397,634,401,453,406,371,413,307,425,286,433,273,443,269,454,276,468,305,500,335,520,366,530,399,535,473,535,515,536,562,541,835,566,1205,597,1205,602,834,571,561,547,515,541,473,540,399,540,365,536,333,524,302,504,271,471,264,454,268,440,283,428,306,420,370,407,453,401,633,396,766,392,777,391"/>
+<area shape="poly" title=" " alt="" coords="915,393,1016,440,1040,455,1064,467,1119,485,1165,494,1213,502,1273,514,1271,519,1212,507,1164,499,1118,490,1062,472,1037,459,1013,445,913,398"/>
+<area shape="poly" title=" " alt="" coords="778,396,767,397,519,408,368,422,314,432,286,445,281,456,286,468,304,481,331,493,405,510,487,520,559,525,558,530,487,525,404,515,329,498,301,486,282,471,276,456,282,441,312,427,367,416,519,403,766,392,777,391"/>
+<area shape="poly" title=" " alt="" coords="903,393,953,429,1020,467,1189,515,1187,520,1018,472,950,434,900,397"/>
+<area shape="poly" title=" " alt="" coords="994,388,1777,444,1776,449,993,393"/>
+<area shape="poly" title=" " alt="" coords="967,393,1079,412,1210,440,1209,445,1078,417,967,398"/>
+<area shape="poly" title=" " alt="" coords="930,393,1080,435,1078,441,928,398"/>
+<area shape="rect" title=" " alt="" coords="466,443,531,469"/>
+<area shape="poly" title=" " alt="" coords="801,398,684,417,547,445,546,439,683,412,800,393"/>
+<area shape="rect" title=" " alt="" coords="555,443,797,469"/>
+<area shape="poly" title=" " alt="" coords="850,398,728,440,726,435,848,393"/>
+<area shape="rect" href="_zen_buffer_8hpp.html" title=" " alt="" coords="297,443,442,469"/>
+<area shape="poly" title=" " alt="" coords="794,398,458,445,457,439,793,393"/>
+<area shape="poly" title=" " alt="" coords="382,468,410,499,453,541,507,583,566,616,603,628,652,638,772,655,1002,673,1002,679,772,660,651,643,601,633,564,621,504,587,450,545,406,503,378,472"/>
+<area shape="poly" title=" " alt="" coords="443,466,454,467,1506,522,1506,528,453,472,442,471"/>
+<area shape="poly" title=" " alt="" coords="443,466,454,467,577,477,682,481,863,481,950,482,1043,486,1149,496,1272,514,1271,520,1148,501,1043,491,950,487,863,486,682,486,577,482,453,472,442,471"/>
+<area shape="poly" title=" " alt="" coords="1294,311,946,316,733,324,519,336,322,355,158,380,95,396,48,414,18,434,10,444,8,455,8,532,12,548,22,564,39,578,61,591,119,614,189,633,266,648,343,659,472,672,472,678,343,664,265,653,188,638,117,619,58,596,35,582,18,567,7,550,3,532,3,454,6,442,14,430,45,409,94,391,157,375,321,349,519,331,733,318,946,311,1294,305"/>
+<area shape="poly" title=" " alt="" coords="1443,318,1505,357,1503,362,1440,323"/>
+<area shape="poly" title=" " alt="" coords="1480,318,1566,339,1661,365,1762,400,1849,434,1847,439,1760,405,1659,371,1564,344,1479,323"/>
+<area shape="rect" title=" " alt="" coords="694,368,754,395"/>
+<area shape="poly" title=" " alt="" coords="1294,315,1054,332,913,348,770,370,769,365,912,343,1054,327,1294,310"/>
+<area shape="rect" href="_common_loco_inference_worker_8hpp.html" title=" " alt="" coords="2268,203,2500,245"/>
+<area shape="poly" title=" " alt="" coords="2471,157,2423,195,2420,191,2468,153"/>
+<area shape="rect" href="_net_inference_worker_8h.html" title=" " alt="" coords="2691,368,2840,395"/>
+<area shape="poly" title=" " alt="" coords="2502,153,2741,356,2737,360,2498,157"/>
+<area shape="rect" title=" " alt="" coords="2624,211,2685,237"/>
+<area shape="poly" title=" " alt="" coords="2513,153,2616,201,2614,206,2511,158"/>
+<area shape="poly" title=" " alt="" coords="2268,237,2233,245,2199,257,2166,274,2138,295,2113,325,2101,357,2097,388,2096,421,2096,453,2091,485,2077,516,2050,546,2025,560,1992,572,1906,589,1810,599,1724,604,1724,599,1810,594,1905,584,1990,567,2023,555,2046,542,2072,513,2085,484,2090,453,2091,421,2092,388,2096,355,2109,323,2134,291,2164,269,2197,252,2232,240,2267,232"/>
+<area shape="poly" title=" " alt="" coords="2380,247,2293,504,2288,502,2375,245"/>
+<area shape="rect" href="_abstract_inference_worker_8hpp.html" title=" " alt="" coords="2148,293,2338,320"/>
+<area shape="poly" title=" " alt="" coords="2349,248,2279,288,2277,283,2346,244"/>
+<area shape="rect" title=" " alt="" coords="2472,443,2627,469"/>
+<area shape="poly" title=" " alt="" coords="2402,244,2493,366,2535,428,2531,431,2488,370,2398,247"/>
+<area shape="poly" title=" " alt="" coords="2259,318,2303,359,2352,418,2370,451,2380,484,2378,516,2371,532,2360,546,2342,557,2313,566,2226,579,2111,587,1983,591,1735,592,1587,595,1540,600,1539,595,1586,589,1735,587,1983,586,2111,582,2225,574,2312,561,2340,552,2357,542,2367,529,2373,515,2374,485,2365,453,2347,421,2299,363,2256,322"/>
+<area shape="poly" title=" " alt="" coords="2289,318,2336,337,2384,365,2405,383,2422,404,2433,428,2437,454,2437,533,2427,544,2402,554,2311,575,2181,597,2025,618,1703,655,1474,678,1474,672,1703,649,2024,613,2180,592,2310,570,2400,549,2424,539,2432,531,2432,455,2428,429,2417,407,2401,387,2381,369,2333,342,2287,323"/>
+<area shape="poly" title=" " alt="" coords="2245,321,2241,366,2227,430,2215,464,2198,496,2176,524,2148,546,2114,561,2069,573,1954,590,1831,600,1725,605,1724,600,1831,595,1954,585,2067,567,2113,556,2145,542,2172,520,2194,493,2210,462,2222,429,2236,366,2240,320"/>
+<area shape="poly" title=" " alt="" coords="2147,320,1664,370,1664,364,2147,315"/>
+<area shape="poly" title=" " alt="" coords="2231,323,2195,354,2142,396,2077,438,2005,472,1912,484,1726,500,1360,529,1360,523,1726,495,1911,479,2003,467,2074,434,2139,392,2192,350,2228,319"/>
+<area shape="poly" title=" " alt="" coords="2214,323,1937,439,1935,434,2212,318"/>
+<area shape="poly" title=" " alt="" coords="2237,322,2185,392,2146,434,2100,472,2069,489,2037,503,1974,522,1973,517,2035,498,2067,484,2097,467,2142,431,2181,389,2233,319"/>
+<area shape="poly" title=" " alt="" coords="2247,320,2279,502,2274,503,2242,321"/>
+<area shape="poly" title=" " alt="" coords="2147,313,1973,318,1761,329,1560,346,1478,357,1415,371,1379,384,1343,401,1284,436,1282,431,1341,396,1377,379,1414,365,1477,352,1559,340,1761,323,1972,313,2147,307"/>
+<area shape="poly" title=" " alt="" coords="2318,318,2386,336,2455,366,2497,396,2531,429,2527,433,2494,400,2452,370,2384,342,2317,323"/>
+<area shape="poly" title=" " alt="" coords="2335,318,2676,365,2676,370,2334,323"/>
+<area shape="poly" title=" " alt="" coords="2766,396,2758,428,2744,469,2720,512,2703,531,2684,546,2656,558,2612,567,2485,580,2323,588,2142,591,1795,592,1587,595,1540,600,1539,595,1586,589,1795,587,2142,586,2323,583,2485,575,2611,562,2654,553,2681,542,2700,527,2715,509,2739,467,2753,426,2761,395"/>
+<area shape="poly" title=" " alt="" coords="2774,394,2791,442,2795,474,2794,500,2785,524,2763,546,2723,565,2661,582,2579,596,2481,609,2248,628,1987,642,1486,659,1185,669,1105,677,1104,671,1185,664,1486,654,1987,637,2247,623,2481,603,2579,591,2660,577,2722,560,2760,542,2780,521,2789,499,2790,474,2785,443,2769,396"/>
+<area shape="poly" title=" " alt="" coords="2752,397,2704,434,2640,472,2564,503,2503,522,2440,534,2359,547,2203,567,2069,576,1952,579,1842,577,1615,574,1481,580,1324,595,1318,595,1317,590,1324,589,1481,575,1615,569,1842,571,1952,573,2069,571,2202,561,2358,541,2439,529,2502,517,2563,498,2637,467,2701,429,2749,393"/>
+<area shape="poly" title=" " alt="" coords="2770,395,2773,426,2771,467,2760,510,2750,529,2735,546,2719,553,2689,558,2593,569,2302,586,1724,605,1724,600,2302,581,2592,564,2688,553,2718,547,2732,542,2745,526,2755,508,2766,466,2767,426,2765,395"/>
+<area shape="poly" title=" " alt="" coords="2729,398,2602,440,2601,435,2727,393"/>
+<area shape="rect" title=" " alt="" coords="2854,443,2909,469"/>
+<area shape="poly" title=" " alt="" coords="2787,393,2849,432,2847,436,2784,397"/>
+<area shape="rect" title=" " alt="" coords="2933,443,3000,469"/>
+<area shape="poly" title=" " alt="" coords="2801,393,2919,435,2918,440,2800,398"/>
+<area shape="rect" title=" " alt="" coords="3024,443,3120,469"/>
+<area shape="poly" title=" " alt="" coords="2820,393,3009,437,3008,442,2818,398"/>
+<area shape="rect" title=" " alt="" coords="3145,443,3231,469"/>
+<area shape="poly" title=" " alt="" coords="2840,391,3130,440,3130,445,2840,396"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="_airbot_arm_2types_8hpp__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2example_2_airbot_arm_2types_8hppdep" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2example_2_airbot_arm_2types_8hppdep" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2example_2_airbot_arm_2types_8hppdep">
+<area shape="rect" title="机械臂控制程序所需的一些类型定义" alt="" coords="5,5,175,80"/>
+<area shape="rect" href="_airbot_arm_2main_8cpp.html" title=" " alt="" coords="5,128,175,203"/>
+<area shape="poly" title=" " alt="" coords="93,96,93,128,87,128,87,96"/>
+</map>
+</div>
+</div>
+<p><a href="_airbot_arm_2types_8hpp_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:aaf80200f486f8189bf3be78b99be08f3" id="r_aaf80200f486f8189bf3be78b99be08f3"><td class="memItemLeft" align="right" valign="top"><a id="aaf80200f486f8189bf3be78b99be08f3" name="aaf80200f486f8189bf3be78b99be08f3"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>RealNumber</b> = double</td></tr>
+<tr class="separator:aaf80200f486f8189bf3be78b99be08f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe752cc9854aea05f0d19292b8558c35" id="r_afe752cc9854aea05f0d19292b8558c35"><td class="memItemLeft" align="right" valign="top"><a id="afe752cc9854aea05f0d19292b8558c35" name="afe752cc9854aea05f0d19292b8558c35"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>Vec3</b> = <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt;RealNumber, 3&gt;</td></tr>
+<tr class="separator:afe752cc9854aea05f0d19292b8558c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26af592e197eca37cdb4a17056c8b01a" id="r_a26af592e197eca37cdb4a17056c8b01a"><td class="memItemLeft" align="right" valign="top"><a id="a26af592e197eca37cdb4a17056c8b01a" name="a26af592e197eca37cdb4a17056c8b01a"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>Vec7</b> = <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt;RealNumber, 7&gt;</td></tr>
+<tr class="separator:a26af592e197eca37cdb4a17056c8b01a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d29b427e8e22554a77876d9ba8e5444" id="r_a5d29b427e8e22554a77876d9ba8e5444"><td class="memItemLeft" align="right" valign="top"><a id="a5d29b427e8e22554a77876d9ba8e5444" name="a5d29b427e8e22554a77876d9ba8e5444"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>Vec6</b> = <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt;RealNumber, 6&gt;</td></tr>
+<tr class="separator:a5d29b427e8e22554a77876d9ba8e5444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5d11e2cf3f22a07917356a3f8d494e1" id="r_ad5d11e2cf3f22a07917356a3f8d494e1"><td class="memItemLeft" align="right" valign="top"><a id="ad5d11e2cf3f22a07917356a3f8d494e1" name="ad5d11e2cf3f22a07917356a3f8d494e1"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>MotorVec</b> = <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt;RealNumber, JOINT_NUMBER&gt;</td></tr>
+<tr class="separator:ad5d11e2cf3f22a07917356a3f8d494e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec802f8d31a75132831744532887b869" id="r_aec802f8d31a75132831744532887b869"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec802f8d31a75132831744532887b869">SchedulerType</a></td></tr>
+<tr class="separator:aec802f8d31a75132831744532887b869"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1cac6f499f46c565b0b7474f5008b48" id="r_aa1cac6f499f46c565b0b7474f5008b48"><td class="memItemLeft" align="right" valign="top"><a id="aa1cac6f499f46c565b0b7474f5008b48" name="aa1cac6f499f46c565b0b7474f5008b48"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>PatchWorkerType</b> = <a class="el" href="classz_1_1_simple_callback_worker.html">z::SimpleCallbackWorker</a>&lt;<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>&gt;</td></tr>
+<tr class="separator:aa1cac6f499f46c565b0b7474f5008b48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37093dc7908cdf3b6c5a3d06a47faadd" id="r_a37093dc7908cdf3b6c5a3d06a47faadd"><td class="memItemLeft" align="right" valign="top"><a id="a37093dc7908cdf3b6c5a3d06a47faadd" name="a37093dc7908cdf3b6c5a3d06a47faadd"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>NNType</b> = <a class="el" href="classz_1_1_arm_tracking_inference_worker.html">z::ArmTrackingInferenceWorker</a>&lt;<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, RealNumber, JOINT_NUMBER&gt;</td></tr>
+<tr class="separator:a37093dc7908cdf3b6c5a3d06a47faadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ec255eb968a54276f317a135f7462d9" id="r_a7ec255eb968a54276f317a135f7462d9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ec255eb968a54276f317a135f7462d9">LoggerWorkerType</a></td></tr>
+<tr class="separator:a7ec255eb968a54276f317a135f7462d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af38f41e4a2344f16d2553c74ade432b6" id="r_af38f41e4a2344f16d2553c74ade432b6"><td class="memItemLeft" align="right" valign="top"><a id="af38f41e4a2344f16d2553c74ade432b6" name="af38f41e4a2344f16d2553c74ade432b6"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>KeyboardWorkerType</b> = <a class="el" href="classz_1_1_keyboard_command_worker.html">z::KeyboardCommandWorker</a>&lt;<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>&gt;</td></tr>
+<tr class="separator:af38f41e4a2344f16d2553c74ade432b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a258756e6a2194ef40e7653e24b9ccdf9" id="r_a258756e6a2194ef40e7653e24b9ccdf9"><td class="memItemLeft" align="right" valign="top"><a id="a258756e6a2194ef40e7653e24b9ccdf9" name="a258756e6a2194ef40e7653e24b9ccdf9"></a>
+constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>JOINT_NUMBER</b> = 6</td></tr>
+<tr class="separator:a258756e6a2194ef40e7653e24b9ccdf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b8f9c40b26ad6bb759361639fe58033" id="r_a9b8f9c40b26ad6bb759361639fe58033"><td class="memItemLeft" align="right" valign="top"><a id="a9b8f9c40b26ad6bb759361639fe58033" name="a9b8f9c40b26ad6bb759361639fe58033"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;TargetMotorPosition&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">MotorVec</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>TargetMotorPosPair</b></td></tr>
+<tr class="separator:a9b8f9c40b26ad6bb759361639fe58033"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ed060859e8c4c4ec4642b3a063d4143" id="r_a2ed060859e8c4c4ec4642b3a063d4143"><td class="memItemLeft" align="right" valign="top"><a id="a2ed060859e8c4c4ec4642b3a063d4143" name="a2ed060859e8c4c4ec4642b3a063d4143"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;TargetMotorVelocity&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">MotorVec</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>TargetMotorVelPair</b></td></tr>
+<tr class="separator:a2ed060859e8c4c4ec4642b3a063d4143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec115545d24bda6cdd3ab7cecfea6d45" id="r_aec115545d24bda6cdd3ab7cecfea6d45"><td class="memItemLeft" align="right" valign="top"><a id="aec115545d24bda6cdd3ab7cecfea6d45" name="aec115545d24bda6cdd3ab7cecfea6d45"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;CurrentMotorPosition&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">MotorVec</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>CurrentMotorPosPair</b></td></tr>
+<tr class="separator:aec115545d24bda6cdd3ab7cecfea6d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cc6613606fefcc316935dd1db4f741a" id="r_a8cc6613606fefcc316935dd1db4f741a"><td class="memItemLeft" align="right" valign="top"><a id="a8cc6613606fefcc316935dd1db4f741a" name="a8cc6613606fefcc316935dd1db4f741a"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;CurrentMotorVelocity&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">MotorVec</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>CurrentMotorVelPair</b></td></tr>
+<tr class="separator:a8cc6613606fefcc316935dd1db4f741a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a104f7063119627f641badb5ae1fd4c50" id="r_a104f7063119627f641badb5ae1fd4c50"><td class="memItemLeft" align="right" valign="top"><a id="a104f7063119627f641badb5ae1fd4c50" name="a104f7063119627f641badb5ae1fd4c50"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;CurrentMotorTorque&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">MotorVec</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>CurrentMotorTorquePair</b></td></tr>
+<tr class="separator:a104f7063119627f641badb5ae1fd4c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2add0149bd5cea141feb566a74cb91d3" id="r_a2add0149bd5cea141feb566a74cb91d3"><td class="memItemLeft" align="right" valign="top"><a id="a2add0149bd5cea141feb566a74cb91d3" name="a2add0149bd5cea141feb566a74cb91d3"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;NetLastAction&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">MotorVec</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>NetLastActionPair</b></td></tr>
+<tr class="separator:a2add0149bd5cea141feb566a74cb91d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8797c1e3ca605db36a9f4eab9dc8b6a5" id="r_a8797c1e3ca605db36a9f4eab9dc8b6a5"><td class="memItemLeft" align="right" valign="top"><a id="a8797c1e3ca605db36a9f4eab9dc8b6a5" name="a8797c1e3ca605db36a9f4eab9dc8b6a5"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;NetUserCommand&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">Vec7</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>NetUserCommandPair</b></td></tr>
+<tr class="separator:a8797c1e3ca605db36a9f4eab9dc8b6a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a810422ea2a9c6883d0af5ac82258d67b" id="r_a810422ea2a9c6883d0af5ac82258d67b"><td class="memItemLeft" align="right" valign="top"><a id="a810422ea2a9c6883d0af5ac82258d67b" name="a810422ea2a9c6883d0af5ac82258d67b"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;NetScaledAction&quot;, <a class="el" href="classz_1_1math_1_1_vector.html">MotorVec</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>NetScaledActionPair</b></td></tr>
+<tr class="separator:a810422ea2a9c6883d0af5ac82258d67b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78d9b26e52f8ed7e24a70933c63bde63" id="r_a78d9b26e52f8ed7e24a70933c63bde63"><td class="memItemLeft" align="right" valign="top"><a id="a78d9b26e52f8ed7e24a70933c63bde63" name="a78d9b26e52f8ed7e24a70933c63bde63"></a>
+constexpr <a class="el" href="structz_1_1_c_t_s_pair.html">z::CTSPair</a>&lt;&quot;InferenceTime&quot;, RealNumber &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>InferenceTimePair</b></td></tr>
+<tr class="separator:a78d9b26e52f8ed7e24a70933c63bde63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>机械臂控制程序所需的一些类型定义 </p>
+<dl class="section author"><dt>作者</dt><dd>Zishun Zhou </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2025-03-10</dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>Copyright (c) 2025 </dd></dl>
+</div><h2 class="groupheader">类型定义说明</h2>
+<a id="a7ec255eb968a54276f317a135f7462d9" name="a7ec255eb968a54276f317a135f7462d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ec255eb968a54276f317a135f7462d9">&#9670;&#160;</a></span>LoggerWorkerType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classz_1_1_async_logger_worker.html">LoggerWorkerType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line"> <a class="code hl_class" href="classz_1_1_async_logger_worker.html">z::AsyncLoggerWorker</a>&lt;SchedulerType, RealNumber, TargetMotorPosPair, TargetMotorVelPair,</div>
+<div class="line">    CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair,</div>
+<div class="line">    NetLastActionPair, NetUserCommandPair, NetScaledActionPair, InferenceTimePair&gt;</div>
+<div class="ttc" id="aclassz_1_1_async_logger_worker_html"><div class="ttname"><a href="classz_1_1_async_logger_worker.html">z::AsyncLoggerWorker</a></div><div class="ttdoc">异步日志工人类型，用户可以通过这个工人类型来异步的实现记录数据的功能。</div><div class="ttdef"><b>定义</b> AsyncLoggerWorker.hpp:46</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aec802f8d31a75132831744532887b869" name="aec802f8d31a75132831744532887b869"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec802f8d31a75132831744532887b869">&#9670;&#160;</a></span>SchedulerType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line"> <a class="code hl_class" href="classz_1_1_abstract_scheduler.html">z::AbstractScheduler</a>&lt;TargetMotorPosPair, TargetMotorVelPair,</div>
+<div class="line">    CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair,</div>
+<div class="line">    NetLastActionPair, NetUserCommandPair, NetScaledActionPair, InferenceTimePair&gt;</div>
+<div class="ttc" id="aclassz_1_1_abstract_scheduler_html"><div class="ttname"><a href="classz_1_1_abstract_scheduler.html">z::AbstractScheduler</a></div><div class="ttdoc">AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。</div><div class="ttdef"><b>定义</b> AbstractScheduler.hpp:45</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_cfafba98a580ce4b62f8a6fa96d7cbb0.html">example</a></li><li class="navelem"><a class="el" href="dir_82c43eff1120581c7335bba2e9ef273e.html">AirbotArm</a></li><li class="navelem"><a class="el" href="_airbot_arm_2types_8hpp.html">types.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

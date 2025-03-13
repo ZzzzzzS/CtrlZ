@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ctrl-Z: C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/KeyboardCommandWorker.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Ctrl-Z
+   </div>
+   <div id="projectbrief">一个多线程机器人运动控制强化学习部署框架</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_keyboard_command_worker_8hpp_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">KeyboardCommandWorker.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_keyboard_command_worker_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;conio.h&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="_abstract_worker_8hpp.html">AbstractWorker.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="_abstract_scheduler_8hpp.html">Schedulers/AbstractScheduler.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> <span class="comment">//check linux</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#ifdef __linux__</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;termios.h&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;fcntl.h&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// Function to check if a key has been pressed</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">int</span> _kbhit(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">struct </span>termios oldt, newt;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">int</span> ch;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">int</span> oldf;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    tcgetattr(STDIN_FILENO, &amp;oldt);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    newt = oldt;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    newt.c_lflag &amp;= ~(ICANON | ECHO);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    tcsetattr(STDIN_FILENO, TCSANOW, &amp;newt);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    oldf = fcntl(STDIN_FILENO, F_GETFL, 0);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    ch = getchar();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    tcsetattr(STDIN_FILENO, TCSANOW, &amp;oldt);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    fcntl(STDIN_FILENO, F_SETFL, oldf);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">if</span> (ch != EOF) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        ungetc(ch, stdin);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">// Function to get a character without waiting for Enter key</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keywordtype">int</span> _getch(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">struct </span>termios oldt, newt;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">int</span> ch;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    tcgetattr(STDIN_FILENO, &amp;oldt);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    newt = oldt;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    newt.c_lflag &amp;= ~(ICANON | ECHO);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    tcsetattr(STDIN_FILENO, TCSANOW, &amp;newt);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    ch = getchar();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    tcsetattr(STDIN_FILENO, TCSANOW, &amp;oldt);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">return</span> ch;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">namespace </span>z</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>{</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> SchedulerType&gt;</div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="};">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classz_1_1_keyboard_command_worker.html">   81</a></span>    <span class="keyword">class </span><a class="code hl_function" href="classz_1_1_keyboard_command_worker.html#ad38ebdb41a15e93e1da826b6d25ce067">KeyboardCommandWorker</a> : <span class="keyword">public</span> AbstractWorker&lt;SchedulerType&gt;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classz_1_1_keyboard_command_worker.html#a8715c2871cff017d34149c74307f0afb">   85</a></span>        <span class="keyword">using </span><a class="code hl_typedef" href="classz_1_1_keyboard_command_worker.html#a8715c2871cff017d34149c74307f0afb">KeyCallbackType</a> = std::function&lt;void(SchedulerType*)&gt;;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classz_1_1_keyboard_command_worker.html#ad38ebdb41a15e93e1da826b6d25ce067">   93</a></span>        <a class="code hl_function" href="classz_1_1_keyboard_command_worker.html#ad38ebdb41a15e93e1da826b6d25ce067">KeyboardCommandWorker</a>(SchedulerType* scheduler, <span class="keyword">const</span> nlohmann::json&amp; cfg = nlohmann::json())</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            :AbstractWorker&lt;SchedulerType&gt;(scheduler, cfg)</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; 256; i++)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                KeyCallbackArray[i] = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        }</div>
+</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span></div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classz_1_1_keyboard_command_worker.html#abb89b3d4351cbb4a0d59d0f6cf9a271c">  108</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_keyboard_command_worker.html#abb89b3d4351cbb4a0d59d0f6cf9a271c">RegisterKeyCallback</a>(<span class="keywordtype">char</span> key, <a class="code hl_typedef" href="classz_1_1_keyboard_command_worker.html#a8715c2871cff017d34149c74307f0afb">KeyCallbackType</a> callback)</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            KeyCallbackArray[key] = callback;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        }</div>
+</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
+<div class="foldopen" id="foldopen00117" data-start="{" data-end="}">
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classz_1_1_keyboard_command_worker.html#a3614a3df08930f42bf2587d0f0c77a8b">  117</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_keyboard_command_worker.html#a3614a3df08930f42bf2587d0f0c77a8b">TaskRun</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <span class="keywordflow">if</span> (_kbhit())</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                <span class="keywordtype">char</span> key = _getch();</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                <span class="keywordflow">if</span> (KeyCallbackArray[key] != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                    KeyCallbackArray[key](this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            }</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        }</div>
+</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        std::array&lt;KeyCallbackType, 256&gt; KeyCallbackArray;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    };</div>
+</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>};</div>
+<div class="ttc" id="a_abstract_scheduler_8hpp_html"><div class="ttname"><a href="_abstract_scheduler_8hpp.html">AbstractScheduler.hpp</a></div><div class="ttdoc">AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。</div></div>
+<div class="ttc" id="a_abstract_worker_8hpp_html"><div class="ttname"><a href="_abstract_worker_8hpp.html">AbstractWorker.hpp</a></div></div>
+<div class="ttc" id="aclassz_1_1_abstract_worker_html_af4842124f95ccfb50ddb0d21a9642cab"><div class="ttname"><a href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">z::AbstractWorker::Scheduler</a></div><div class="ttdeci">SchedulerType * Scheduler</div><div class="ttdoc">调度器的指针，用户可以通过这个指针来获取一些全局的数据， 比如当前任务的时间戳，前级工人的输出数据等，也可以通过这个指针来设置一些全局的数据。</div><div class="ttdef"><b>定义</b> AbstractWorker.hpp:98</div></div>
+<div class="ttc" id="aclassz_1_1_keyboard_command_worker_html_a3614a3df08930f42bf2587d0f0c77a8b"><div class="ttname"><a href="classz_1_1_keyboard_command_worker.html#a3614a3df08930f42bf2587d0f0c77a8b">z::KeyboardCommandWorker::TaskRun</a></div><div class="ttdeci">void TaskRun() override</div><div class="ttdoc">处理键盘输入的工作逻辑</div><div class="ttdef"><b>定义</b> KeyboardCommandWorker.hpp:117</div></div>
+<div class="ttc" id="aclassz_1_1_keyboard_command_worker_html_a8715c2871cff017d34149c74307f0afb"><div class="ttname"><a href="classz_1_1_keyboard_command_worker.html#a8715c2871cff017d34149c74307f0afb">z::KeyboardCommandWorker::KeyCallbackType</a></div><div class="ttdeci">std::function&lt; void(SchedulerType *)&gt; KeyCallbackType</div><div class="ttdoc">键盘输入回调函数类型，函数签名为void(SchedulerType*)，包含一个调度器的指针</div><div class="ttdef"><b>定义</b> KeyboardCommandWorker.hpp:85</div></div>
+<div class="ttc" id="aclassz_1_1_keyboard_command_worker_html_abb89b3d4351cbb4a0d59d0f6cf9a271c"><div class="ttname"><a href="classz_1_1_keyboard_command_worker.html#abb89b3d4351cbb4a0d59d0f6cf9a271c">z::KeyboardCommandWorker::RegisterKeyCallback</a></div><div class="ttdeci">void RegisterKeyCallback(char key, KeyCallbackType callback)</div><div class="ttdoc">注册一个键盘输入回调函数</div><div class="ttdef"><b>定义</b> KeyboardCommandWorker.hpp:108</div></div>
+<div class="ttc" id="aclassz_1_1_keyboard_command_worker_html_ad38ebdb41a15e93e1da826b6d25ce067"><div class="ttname"><a href="classz_1_1_keyboard_command_worker.html#ad38ebdb41a15e93e1da826b6d25ce067">z::KeyboardCommandWorker::KeyboardCommandWorker</a></div><div class="ttdeci">KeyboardCommandWorker(SchedulerType *scheduler, const nlohmann::json &amp;cfg=nlohmann::json())</div><div class="ttdoc">构造一个键盘命令工人类型</div><div class="ttdef"><b>定义</b> KeyboardCommandWorker.hpp:93</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7b6a9de995744179e2af2e4eac8c765a.html">CtrlZ</a></li><li class="navelem"><a class="el" href="dir_23feaddda2c120f5a6c49ee991b2b1fd.html">Workers</a></li><li class="navelem"><a class="el" href="_keyboard_command_worker_8hpp.html">KeyboardCommandWorker.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

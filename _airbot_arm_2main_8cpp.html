@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ctrl-Z: C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/example/AirbotArm/main.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Ctrl-Z
+   </div>
+   <div id="projectbrief">一个多线程机器人运动控制强化学习部署框架</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_airbot_arm_2main_8cpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">main.cpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;iostream&quot;</code><br />
+<code>#include &quot;atomic&quot;</code><br />
+<code>#include &quot;chrono&quot;</code><br />
+<code>#include &quot;nlohmann/json.hpp&quot;</code><br />
+<code>#include &quot;fstream&quot;</code><br />
+<code>#include &quot;<a class="el" href="_airbot_arm_2types_8hpp_source.html">types.hpp</a>&quot;</code><br />
+<code>#include &quot;airbot/airbot.hpp&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+main.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_airbot_arm_2main_8cpp__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2example_2_airbot_arm_2main_8cpp" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2example_2_airbot_arm_2main_8cpp" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2example_2_airbot_arm_2main_8cpp">
+<area shape="rect" title=" " alt="" coords="3133,5,3302,80"/>
+<area shape="rect" title=" " alt="" coords="2658,741,2729,768"/>
+<area shape="poly" title=" " alt="" coords="3281,79,3313,104,3342,136,3364,173,3370,193,3372,215,3372,607,3366,630,3351,651,3327,670,3295,686,3214,711,3116,730,3011,742,2908,750,2744,756,2744,750,2908,745,3011,737,3115,724,3212,706,3293,681,3324,665,3347,648,3362,628,3367,606,3367,215,3365,194,3359,175,3338,139,3309,108,3277,83"/>
+<area shape="rect" title=" " alt="" coords="2494,592,2554,619"/>
+<area shape="poly" title=" " alt="" coords="3229,80,3255,194,3284,340,3302,472,3303,519,3295,546,3280,556,3255,564,3182,578,3085,589,2972,596,2742,604,2570,607,2570,601,2742,599,2972,591,3084,584,3181,573,3254,559,3278,551,3291,542,3298,518,3297,473,3279,341,3250,195,3224,81"/>
+<area shape="rect" title=" " alt="" coords="1099,285,1160,312"/>
+<area shape="poly" title=" " alt="" coords="3133,48,2808,56,2355,71,1900,96,1711,112,1568,131,1509,143,1450,160,1336,201,1238,245,1167,280,1164,275,1236,240,1334,196,1448,155,1508,138,1568,125,1711,107,1900,90,2355,66,2807,51,3132,43"/>
+<area shape="rect" title=" " alt="" coords="927,592,1057,619"/>
+<area shape="poly" title=" " alt="" coords="3132,47,2429,51,1919,58,1378,72,861,92,628,106,423,123,251,142,119,164,71,176,36,189,15,202,8,215,8,383,10,414,16,439,26,461,40,480,80,511,133,542,177,554,254,565,472,582,715,593,911,599,911,605,714,598,472,587,254,570,176,559,131,546,77,516,37,483,22,464,11,441,5,414,3,383,3,214,11,198,34,184,70,171,118,158,250,136,422,117,628,101,860,87,1378,66,1919,53,2429,45,3132,41"/>
+<area shape="rect" title=" " alt="" coords="3215,517,3281,544"/>
+<area shape="poly" title=" " alt="" coords="3237,79,3259,142,3268,178,3271,215,3271,383,3266,447,3257,502,3251,501,3261,447,3265,383,3265,215,3262,179,3254,143,3232,81"/>
+<area shape="rect" href="_airbot_arm_2types_8hpp.html" title="机械臂控制程序所需的一些类型定义" alt="" coords="1580,128,1658,155"/>
+<area shape="poly" title=" " alt="" coords="3133,52,1674,139,1674,134,3132,46"/>
+<area shape="rect" title=" " alt="" coords="3407,128,3521,155"/>
+<area shape="poly" title=" " alt="" coords="3304,75,3419,120,3417,124,3302,80"/>
+<area shape="rect" href="_static_string_utils_8hpp.html" title=" " alt="" coords="2068,592,2241,619"/>
+<area shape="poly" title=" " alt="" coords="1659,145,1773,161,1915,191,1981,212,2036,236,2074,264,2084,280,2088,297,2088,457,2093,492,2105,524,2137,578,2133,581,2100,527,2088,493,2083,458,2083,298,2079,282,2070,268,2033,240,1979,217,1914,196,1772,167,1658,150"/>
+<area shape="rect" href="_math_types_8hpp.html" title=" " alt="" coords="998,667,1108,693"/>
+<area shape="poly" title=" " alt="" coords="1579,145,1238,146,990,152,726,163,474,181,360,194,260,209,176,227,113,248,72,272,62,284,59,298,59,383,59,468,67,503,90,542,118,574,145,592,178,604,219,616,286,631,374,643,589,660,810,670,983,675,983,680,810,676,589,666,373,648,285,636,218,621,176,609,143,597,114,578,86,546,63,505,53,469,53,383,53,297,57,282,69,268,110,243,175,222,259,204,360,188,473,176,726,157,990,146,1238,141,1579,140"/>
+<area shape="rect" href="_abstract_scheduler_8hpp.html" title="AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。" alt="" coords="1561,443,1783,469"/>
+<area shape="poly" title=" " alt="" coords="1623,155,1670,427,1665,428,1618,156"/>
+<area shape="rect" href="_abstract_worker_8hpp.html" title=" " alt="" coords="1332,517,1532,544"/>
+<area shape="poly" title=" " alt="" coords="1582,158,1514,183,1436,218,1402,238,1373,258,1355,278,1348,298,1348,382,1354,418,1369,451,1389,481,1410,504,1406,508,1385,484,1365,454,1349,420,1343,383,1343,297,1350,276,1370,254,1399,233,1434,214,1512,178,1580,153"/>
+<area shape="rect" href="_async_logger_worker_8hpp.html" title=" " alt="" coords="2406,443,2621,469"/>
+<area shape="poly" title=" " alt="" coords="1658,139,1741,141,1854,149,1980,167,2044,182,2105,200,2164,224,2223,253,2333,317,2425,381,2488,430,2485,435,2421,385,2330,322,2221,257,2162,229,2103,205,2042,187,1979,172,1853,154,1741,146,1658,145"/>
+<area shape="rect" href="_keyboard_command_worker_8hpp.html" title=" " alt="" coords="1382,368,1636,395"/>
+<area shape="poly" title=" " alt="" coords="1616,156,1524,355,1519,353,1611,154"/>
+<area shape="rect" href="_arm_tracking_inference_worker_8hpp.html" title="机械臂控制程序所需控制网络" alt="" coords="944,203,1160,229"/>
+<area shape="poly" title=" " alt="" coords="1580,150,1167,203,1166,197,1579,145"/>
+<area shape="poly" title=" " alt="" coords="2202,617,2643,737,2642,742,2200,622"/>
+<area shape="rect" title=" " alt="" coords="1596,667,1649,693"/>
+<area shape="poly" title=" " alt="" coords="2068,621,1665,676,1664,670,2068,616"/>
+<area shape="rect" title=" " alt="" coords="1715,741,1765,768"/>
+<area shape="poly" title=" " alt="" coords="2121,622,1913,696,1781,742,1779,737,1911,691,2119,617"/>
+<area shape="rect" title=" " alt="" coords="1450,741,1524,768"/>
+<area shape="poly" title=" " alt="" coords="2096,622,2009,642,1913,669,1878,683,1842,696,1760,715,1677,731,1540,750,1539,745,1677,725,1759,710,1841,691,1876,678,1911,664,2008,637,2095,617"/>
+<area shape="rect" title=" " alt="" coords="2870,667,2919,693"/>
+<area shape="poly" title=" " alt="" coords="2242,612,2855,672,2854,677,2241,618"/>
+<area shape="rect" title=" " alt="" coords="2063,667,2150,693"/>
+<area shape="poly" title=" " alt="" coords="2149,621,2126,655,2121,652,2144,618"/>
+<area shape="rect" title=" " alt="" coords="2175,667,2257,693"/>
+<area shape="poly" title=" " alt="" coords="2167,617,2198,653,2194,657,2163,621"/>
+<area shape="rect" title=" " alt="" coords="1787,667,1829,693"/>
+<area shape="poly" title=" " alt="" coords="2094,622,1845,674,1844,669,2093,617"/>
+<area shape="poly" title=" " alt="" coords="2068,620,2058,621,1787,643,1521,659,1124,679,1124,673,1521,654,1787,638,2057,616,2068,615"/>
+<area shape="poly" title=" " alt="" coords="1109,685,1178,691,1622,716,2053,733,2643,750,2642,755,2053,739,1622,721,1177,696,1109,690"/>
+<area shape="poly" title=" " alt="" coords="1109,688,1127,691,1457,727,1700,748,1699,753,1456,732,1126,696,1109,693"/>
+<area shape="poly" title=" " alt="" coords="1110,688,1434,742,1434,747,1109,693"/>
+<area shape="rect" title=" " alt="" coords="1025,741,1082,768"/>
+<area shape="poly" title=" " alt="" coords="1056,694,1056,726,1051,726,1051,694"/>
+<area shape="rect" title=" " alt="" coords="1181,741,1259,768"/>
+<area shape="poly" title=" " alt="" coords="1083,691,1178,732,1176,737,1081,696"/>
+<area shape="poly" title=" " alt="" coords="1755,467,2035,515,2162,541,2479,594,2478,600,2161,547,2034,520,1754,473"/>
+<area shape="poly" title=" " alt="" coords="1779,467,1880,486,1986,515,2061,547,2123,581,2120,586,2059,552,1984,520,1879,491,1778,473"/>
+<area shape="poly" title=" " alt="" coords="1664,471,1629,522,1611,556,1597,593,1596,608,1598,624,1609,653,1604,655,1593,625,1590,608,1592,591,1606,554,1624,519,1660,468"/>
+<area shape="rect" href="_z_object_8hpp.html" title=" " alt="" coords="1910,592,2045,619"/>
+<area shape="poly" title=" " alt="" coords="1784,466,1888,484,1932,498,1960,515,1971,529,1977,545,1981,576,1976,577,1972,546,1966,532,1957,519,1930,503,1887,489,1783,471"/>
+<area shape="rect" href="_data_center_8hpp.html" title=" " alt="" coords="1790,517,1946,544"/>
+<area shape="poly" title=" " alt="" coords="1707,467,1820,509,1818,514,1705,472"/>
+<area shape="rect" title=" " alt="" coords="1829,592,1886,619"/>
+<area shape="poly" title=" " alt="" coords="1675,469,1680,505,1688,525,1699,542,1725,563,1754,578,1814,596,1812,601,1752,583,1722,568,1695,546,1683,527,1675,507,1670,470"/>
+<area shape="rect" title=" " alt="" coords="1606,592,1652,619"/>
+<area shape="poly" title=" " alt="" coords="1670,470,1655,518,1638,578,1633,576,1649,517,1665,469"/>
+<area shape="poly" title=" " alt="" coords="1631,472,1490,515,1488,510,1629,467"/>
+<area shape="rect" title=" " alt="" coords="1709,517,1766,544"/>
+<area shape="poly" title=" " alt="" coords="1685,468,1718,504,1714,508,1681,472"/>
+<area shape="rect" title=" " alt="" coords="2173,517,2299,544"/>
+<area shape="poly" title=" " alt="" coords="1780,467,2155,515,2158,515,2158,520,2154,520,1779,473"/>
+<area shape="poly" title=" " alt="" coords="1986,617,2011,655,2030,675,2052,691,2101,709,2168,723,2248,733,2335,741,2508,749,2642,751,2642,756,2508,754,2335,746,2247,738,2167,728,2099,714,2049,696,2026,679,2007,659,1981,620"/>
+<area shape="poly" title=" " alt="" coords="1947,538,2478,596,2478,602,1946,543"/>
+<area shape="poly" title=" " alt="" coords="1919,542,2090,585,2089,590,1917,547"/>
+<area shape="poly" title=" " alt="" coords="1828,547,1776,567,1723,594,1681,625,1647,657,1643,653,1678,621,1720,590,1774,562,1826,542"/>
+<area shape="poly" title=" " alt="" coords="1854,546,1830,567,1808,594,1788,627,1771,663,1750,727,1745,725,1766,661,1783,625,1803,590,1826,563,1850,542"/>
+<area shape="poly" title=" " alt="" coords="1856,546,1836,567,1820,593,1812,623,1810,652,1804,651,1807,622,1815,591,1832,564,1852,542"/>
+<area shape="poly" title=" " alt="" coords="1889,542,1947,581,1944,586,1886,547"/>
+<area shape="poly" title=" " alt="" coords="1869,545,1864,577,1859,576,1864,544"/>
+<area shape="poly" title=" " alt="" coords="1827,547,1668,595,1667,590,1826,542"/>
+<area shape="rect" title=" " alt="" coords="2297,592,2354,619"/>
+<area shape="poly" title=" " alt="" coords="1947,541,2254,589,2282,594,2281,599,2253,595,1946,547"/>
+<area shape="poly" title=" " alt="" coords="1355,547,1073,593,1072,588,1354,542"/>
+<area shape="poly" title=" " alt="" coords="1533,538,2053,589,2053,594,1533,543"/>
+<area shape="poly" title=" " alt="" coords="1533,542,1895,589,1894,594,1532,547"/>
+<area shape="rect" title=" " alt="" coords="1379,592,1448,619"/>
+<area shape="poly" title=" " alt="" coords="1431,545,1423,577,1418,576,1426,544"/>
+<area shape="poly" title=" " alt="" coords="2622,459,2752,466,2891,477,3008,493,3048,503,3070,515,3092,535,3112,547,3127,557,3131,569,3120,585,3090,608,2959,696,2906,722,2848,740,2793,750,2745,755,2744,749,2792,745,2847,735,2904,717,2956,691,3087,604,3116,581,3126,568,3123,560,3109,551,3089,539,3066,520,3046,508,3007,498,2891,482,2751,471,2621,464"/>
+<area shape="poly" title=" " alt="" coords="2621,461,2853,480,2950,496,2983,505,3002,516,3009,531,3002,546,2987,558,2968,568,2920,582,2862,589,2798,591,2671,590,2616,591,2574,595,2570,595,2569,590,2573,589,2616,585,2671,585,2798,586,2862,583,2919,577,2966,563,2984,554,2998,542,3003,531,2998,519,2981,510,2949,501,2852,486,2621,466"/>
+<area shape="poly" title=" " alt="" coords="2622,460,2884,478,3041,494,3196,515,3201,515,3200,521,3196,520,3040,499,2884,483,2621,465"/>
+<area shape="poly" title=" " alt="" coords="2492,472,2356,546,2288,571,2223,590,2221,585,2286,566,2354,542,2489,468"/>
+<area shape="poly" title=" " alt="" coords="2509,471,2490,503,2459,545,2418,588,2394,606,2367,621,1665,678,1665,673,2366,616,2391,602,2414,584,2455,542,2485,500,2505,468"/>
+<area shape="poly" title=" " alt="" coords="2523,469,2560,547,2573,589,2573,607,2569,620,2545,643,2512,663,2472,680,2425,695,2316,719,2194,736,2071,747,1954,753,1781,756,1781,751,1954,747,2070,741,2194,731,2315,714,2423,690,2470,675,2510,658,2542,639,2564,617,2568,606,2567,590,2555,549,2518,471"/>
+<area shape="poly" title=" " alt="" coords="2621,459,2745,467,2877,478,2986,494,3024,504,3045,515,3056,537,3056,558,3046,579,3029,599,2983,635,2934,663,2932,658,2980,631,3025,596,3042,576,3051,557,3051,538,3041,519,3022,509,2985,499,2876,484,2745,472,2621,465"/>
+<area shape="poly" title=" " alt="" coords="2622,456,2761,463,2904,477,2962,488,3006,502,3020,511,3029,521,3030,533,3023,546,3000,566,2969,585,2932,601,2888,615,2786,639,2674,656,2558,667,2446,675,2273,681,2272,676,2446,670,2557,662,2673,650,2785,633,2886,610,2930,596,2967,580,2997,562,3019,542,3025,532,3024,523,3017,515,3003,507,2961,493,2903,482,2761,468,2621,462"/>
+<area shape="poly" title=" " alt="" coords="2475,472,2418,493,2356,520,2334,534,2312,546,2252,564,2201,574,2110,579,2018,581,1964,585,1902,594,1901,589,1963,579,2017,575,2110,574,2200,569,2251,559,2310,542,2332,529,2353,515,2416,488,2473,467"/>
+<area shape="poly" title=" " alt="" coords="2500,472,2407,546,2356,585,2353,580,2404,542,2496,468"/>
+<area shape="poly" title=" " alt="" coords="2405,467,1548,524,1547,519,2405,462"/>
+<area shape="poly" title=" " alt="" coords="2405,462,2280,467,2126,476,1955,494,1782,520,1781,514,1955,488,2125,471,2280,461,2405,456"/>
+<area shape="poly" title=" " alt="" coords="2466,472,2300,516,2298,510,2464,467"/>
+<area shape="rect" title=" " alt="" coords="2576,517,2818,544"/>
+<area shape="poly" title=" " alt="" coords="2546,467,2652,509,2650,514,2544,472"/>
+<area shape="rect" href="_zen_buffer_8hpp.html" title=" " alt="" coords="2842,517,2987,544"/>
+<area shape="poly" title=" " alt="" coords="2584,467,2830,511,2829,517,2583,473"/>
+<area shape="poly" title=" " alt="" coords="2924,543,2937,573,2948,613,2950,656,2945,676,2934,695,2921,706,2903,716,2854,731,2745,750,2744,745,2853,726,2901,711,2918,702,2930,692,2940,674,2944,655,2943,614,2932,575,2919,546"/>
+<area shape="poly" title=" " alt="" coords="2842,545,2831,547,2616,564,2447,570,2277,577,2061,594,2060,589,2277,571,2446,565,2615,558,2830,541,2841,540"/>
+<area shape="poly" title=" " alt="" coords="2842,546,2831,547,2690,557,2570,561,2366,559,2267,559,2161,563,2042,574,1901,595,1901,589,2041,569,2161,558,2267,554,2366,554,2570,556,2690,552,2830,541,2841,540"/>
+<area shape="poly" title=" " alt="" coords="1485,398,1405,445,1361,479,1322,519,1287,572,1260,630,1241,684,1229,727,1224,725,1236,682,1256,628,1283,570,1318,516,1358,475,1402,440,1482,393"/>
+<area shape="poly" title=" " alt="" coords="1539,393,1631,433,1629,438,1537,398"/>
+<area shape="poly" title=" " alt="" coords="1506,396,1468,471,1449,505,1444,503,1463,468,1501,394"/>
+<area shape="rect" title=" " alt="" coords="1807,443,1868,469"/>
+<area shape="poly" title=" " alt="" coords="1576,393,1792,440,1791,445,1575,398"/>
+<area shape="poly" title=" " alt="" coords="1066,228,1109,273,1105,276,1062,232"/>
+<area shape="rect" href="_common_loco_inference_worker_8hpp.html" title=" " alt="" coords="824,277,1056,320"/>
+<area shape="poly" title=" " alt="" coords="1036,232,983,270,979,266,1033,228"/>
+<area shape="rect" href="_net_inference_worker_8h.html" title=" " alt="" coords="663,443,812,469"/>
+<area shape="poly" title=" " alt="" coords="944,226,875,244,843,259,814,279,785,313,765,353,751,393,744,428,739,426,746,392,760,351,780,310,810,275,840,254,874,239,943,221"/>
+<area shape="poly" title=" " alt="" coords="946,320,990,576,985,577,941,321"/>
+<area shape="poly" title=" " alt="" coords="824,312,615,334,379,366,273,385,187,407,129,431,114,443,109,455,109,531,116,546,137,561,170,575,213,588,326,610,463,630,753,658,983,673,982,678,753,663,462,635,325,616,212,593,168,580,134,565,112,550,104,533,104,454,110,440,127,426,186,402,272,380,379,360,614,328,823,307"/>
+<area shape="rect" href="_abstract_inference_worker_8hpp.html" title=" " alt="" coords="1022,368,1212,395"/>
+<area shape="poly" title=" " alt="" coords="987,318,1077,359,1075,364,985,323"/>
+<area shape="rect" title=" " alt="" coords="144,517,299,544"/>
+<area shape="poly" title=" " alt="" coords="876,323,276,515,275,510,875,318"/>
+<area shape="poly" title=" " alt="" coords="1086,398,1053,416,1025,444,1009,477,999,512,993,577,988,576,994,511,1004,475,1021,441,1050,412,1083,393"/>
+<area shape="poly" title=" " alt="" coords="1123,394,1131,424,1145,463,1167,505,1197,542,1241,577,1291,605,1344,628,1399,645,1501,666,1581,674,1580,680,1500,671,1397,650,1343,633,1289,610,1238,582,1193,546,1162,508,1140,466,1126,426,1117,396"/>
+<area shape="poly" title=" " alt="" coords="1123,394,1145,463,1167,505,1197,542,1257,591,1324,632,1395,666,1467,692,1536,713,1600,728,1700,746,1699,751,1599,734,1535,718,1465,697,1393,671,1321,637,1253,596,1193,546,1163,508,1141,465,1118,396"/>
+<area shape="poly" title=" " alt="" coords="1107,397,1090,418,1076,444,1066,491,1069,529,1074,569,1072,619,1065,653,1059,651,1067,618,1068,569,1063,530,1061,490,1071,442,1085,415,1103,393"/>
+<area shape="poly" title=" " alt="" coords="1213,392,1560,437,1560,443,1212,398"/>
+<area shape="poly" title=" " alt="" coords="1134,393,1235,478,1289,520,1321,542,1399,557,1538,573,1813,598,1813,603,1538,578,1399,562,1319,546,1286,524,1232,482,1130,397"/>
+<area shape="poly" title=" " alt="" coords="1151,393,1264,440,1397,507,1395,512,1262,445,1149,398"/>
+<area shape="poly" title=" " alt="" coords="1129,393,1164,441,1180,471,1191,496,1204,519,1227,542,1251,555,1286,567,1365,590,1363,595,1284,573,1248,559,1224,546,1200,522,1186,499,1176,474,1159,444,1125,396"/>
+<area shape="poly" title=" " alt="" coords="1171,393,1694,516,1693,522,1170,398"/>
+<area shape="poly" title=" " alt="" coords="1022,396,849,417,651,445,456,482,293,516,291,511,455,476,650,440,848,411,1022,390"/>
+<area shape="poly" title=" " alt="" coords="1051,398,819,442,818,437,1050,393"/>
+<area shape="poly" title=" " alt="" coords="743,469,754,500,773,541,801,583,819,601,839,616,887,632,972,645,1206,667,1584,691,1899,712,2207,729,2642,749,2642,754,2207,735,1899,717,1584,696,1206,673,972,651,886,637,836,621,815,605,797,586,769,544,749,502,738,471"/>
+<area shape="poly" title=" " alt="" coords="756,468,782,489,809,516,827,545,837,572,848,595,872,616,913,629,987,640,1193,658,1415,669,1581,675,1580,680,1415,674,1192,663,986,645,912,634,869,621,844,598,832,574,823,548,805,519,778,493,753,472"/>
+<area shape="poly" title=" " alt="" coords="764,468,799,488,835,515,859,544,873,571,888,595,916,616,947,626,995,635,1133,647,1311,654,1510,657,1901,658,2056,660,2159,664,2159,670,2056,665,1901,664,1510,662,1311,659,1133,652,994,640,946,632,913,621,884,599,869,574,855,547,832,519,796,493,761,472"/>
+<area shape="poly" title=" " alt="" coords="738,470,736,500,739,540,749,581,758,600,771,617,785,627,805,636,860,651,983,670,982,675,859,656,804,641,783,631,767,621,754,603,744,583,733,541,731,500,733,470"/>
+<area shape="poly" title=" " alt="" coords="663,470,315,519,314,514,662,465"/>
+<area shape="rect" title=" " alt="" coords="323,517,378,544"/>
+<area shape="poly" title=" " alt="" coords="663,470,541,490,394,520,393,514,540,485,662,465"/>
+<area shape="rect" title=" " alt="" coords="402,517,470,544"/>
+<area shape="poly" title=" " alt="" coords="682,473,485,519,484,514,681,467"/>
+<area shape="rect" title=" " alt="" coords="493,517,590,544"/>
+<area shape="poly" title=" " alt="" coords="704,472,591,514,589,509,702,467"/>
+<area shape="rect" title=" " alt="" coords="614,517,700,544"/>
+<area shape="poly" title=" " alt="" coords="725,472,684,509,680,505,722,468"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ad56827296f51c2c46e3e9dd9e4d3fe80" id="r_ad56827296f51c2c46e3e9dd9e4d3fe80"><td class="memItemLeft" align="right" valign="top"><a id="ad56827296f51c2c46e3e9dd9e4d3fe80" name="ad56827296f51c2c46e3e9dd9e4d3fe80"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CMD_STEP</b>&#160;&#160;&#160;0.1</td></tr>
+<tr class="separator:ad56827296f51c2c46e3e9dd9e4d3fe80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:a66769fa2f4529bcf9bc1b8dbb970c014" id="r_a66769fa2f4529bcf9bc1b8dbb970c014"><td class="memItemLeft" align="right" valign="top"><a id="a66769fa2f4529bcf9bc1b8dbb970c014" name="a66769fa2f4529bcf9bc1b8dbb970c014"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ArmType</b> = arm::Robot&lt;6&gt;</td></tr>
+<tr class="separator:a66769fa2f4529bcf9bc1b8dbb970c014"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a36f845566eb1c45e0189d3ac35264613" id="r_a36f845566eb1c45e0189d3ac35264613"><td class="memItemLeft" align="right" valign="top"><a id="a36f845566eb1c45e0189d3ac35264613" name="a36f845566eb1c45e0189d3ac35264613"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>signalExitHandler</b> (int signum)</td></tr>
+<tr class="separator:a36f845566eb1c45e0189d3ac35264613"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac39ea3fef0c4c123a200cbfbad844fc8" id="r_ac39ea3fef0c4c123a200cbfbad844fc8"><td class="memItemLeft" align="right" valign="top"><a id="ac39ea3fef0c4c123a200cbfbad844fc8" name="ac39ea3fef0c4c123a200cbfbad844fc8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>InitArmInstance</b> (const nlohmann::json &amp;cfg)</td></tr>
+<tr class="separator:ac39ea3fef0c4c123a200cbfbad844fc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e66dc817e349d8d75d18e3d344a6712" id="r_a7e66dc817e349d8d75d18e3d344a6712"><td class="memItemLeft" align="right" valign="top"><a id="a7e66dc817e349d8d75d18e3d344a6712" name="a7e66dc817e349d8d75d18e3d344a6712"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>RegistUserCmd</b> ()</td></tr>
+<tr class="separator:a7e66dc817e349d8d75d18e3d344a6712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd5a104987528829c883e7498602008f" id="r_abd5a104987528829c883e7498602008f"><td class="memItemLeft" align="right" valign="top"><a id="abd5a104987528829c883e7498602008f" name="abd5a104987528829c883e7498602008f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SystemInit</b> ()</td></tr>
+<tr class="separator:abd5a104987528829c883e7498602008f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf3d97f9a63eb458fc1406df1a256971" id="r_adf3d97f9a63eb458fc1406df1a256971"><td class="memItemLeft" align="right" valign="top"><a id="adf3d97f9a63eb458fc1406df1a256971" name="adf3d97f9a63eb458fc1406df1a256971"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SystemExit</b> ()</td></tr>
+<tr class="separator:adf3d97f9a63eb458fc1406df1a256971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2a9e395cb5a282f3a83eae8f52b6198" id="r_ad2a9e395cb5a282f3a83eae8f52b6198"><td class="memItemLeft" align="right" valign="top"><a id="ad2a9e395cb5a282f3a83eae8f52b6198" name="ad2a9e395cb5a282f3a83eae8f52b6198"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SystemRun</b> ()</td></tr>
+<tr class="separator:ad2a9e395cb5a282f3a83eae8f52b6198"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top"><a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a047e71b70cbb5ad639a3449108b00504" id="r_a047e71b70cbb5ad639a3449108b00504"><td class="memItemLeft" align="right" valign="top"><a id="a047e71b70cbb5ad639a3449108b00504" name="a047e71b70cbb5ad639a3449108b00504"></a>
+<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>TaskScheduler</b> = nullptr</td></tr>
+<tr class="separator:a047e71b70cbb5ad639a3449108b00504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4dc5686c85c7224f45d6410f2887b9f" id="r_aa4dc5686c85c7224f45d6410f2887b9f"><td class="memItemLeft" align="right" valign="top"><a id="aa4dc5686c85c7224f45d6410f2887b9f" name="aa4dc5686c85c7224f45d6410f2887b9f"></a>
+<a class="el" href="classz_1_1_simple_callback_worker.html">PatchWorkerType</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetArmStateWorker</b> = nullptr</td></tr>
+<tr class="separator:aa4dc5686c85c7224f45d6410f2887b9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a536862bebb2ea5ab1ac621b86ec5c3b8" id="r_a536862bebb2ea5ab1ac621b86ec5c3b8"><td class="memItemLeft" align="right" valign="top"><a id="a536862bebb2ea5ab1ac621b86ec5c3b8" name="a536862bebb2ea5ab1ac621b86ec5c3b8"></a>
+<a class="el" href="classz_1_1_simple_callback_worker.html">PatchWorkerType</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>SetArmStateWorker</b> = nullptr</td></tr>
+<tr class="separator:a536862bebb2ea5ab1ac621b86ec5c3b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed0c837254fc38c91a0c23171ed7e4ff" id="r_aed0c837254fc38c91a0c23171ed7e4ff"><td class="memItemLeft" align="right" valign="top"><a id="aed0c837254fc38c91a0c23171ed7e4ff" name="aed0c837254fc38c91a0c23171ed7e4ff"></a>
+<a class="el" href="classz_1_1_arm_tracking_inference_worker.html">NNType</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>ArmTrackingInferenceWorker</b> = nullptr</td></tr>
+<tr class="separator:aed0c837254fc38c91a0c23171ed7e4ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a716d4dce4910fc95d27c18f6d56b8872" id="r_a716d4dce4910fc95d27c18f6d56b8872"><td class="memItemLeft" align="right" valign="top"><a id="a716d4dce4910fc95d27c18f6d56b8872" name="a716d4dce4910fc95d27c18f6d56b8872"></a>
+<a class="el" href="classz_1_1_async_logger_worker.html">LoggerWorkerType</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>LoggerWorker</b> = nullptr</td></tr>
+<tr class="separator:a716d4dce4910fc95d27c18f6d56b8872"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a8a34418c9829fef4b9a0f34dc714af" id="r_a2a8a34418c9829fef4b9a0f34dc714af"><td class="memItemLeft" align="right" valign="top"><a id="a2a8a34418c9829fef4b9a0f34dc714af" name="a2a8a34418c9829fef4b9a0f34dc714af"></a>
+<a class="el" href="classz_1_1_keyboard_command_worker.html">KeyboardWorkerType</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>KeyboardWorker</b> = nullptr</td></tr>
+<tr class="separator:a2a8a34418c9829fef4b9a0f34dc714af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7e23a582363a4a63ac217092403487d" id="r_af7e23a582363a4a63ac217092403487d"><td class="memItemLeft" align="right" valign="top"><a id="af7e23a582363a4a63ac217092403487d" name="af7e23a582363a4a63ac217092403487d"></a>
+ArmType *&#160;</td><td class="memItemRight" valign="bottom"><b>ArmInstance</b> = nullptr</td></tr>
+<tr class="separator:af7e23a582363a4a63ac217092403487d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fbed630ef61cc220cfb239a2f5bc266" id="r_a9fbed630ef61cc220cfb239a2f5bc266"><td class="memItemLeft" align="right" valign="top"><a id="a9fbed630ef61cc220cfb239a2f5bc266" name="a9fbed630ef61cc220cfb239a2f5bc266"></a>
+std::array&lt; RealNumber, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>init_q</b> = { 0,0,0,0,0,0 }</td></tr>
+<tr class="separator:a9fbed630ef61cc220cfb239a2f5bc266"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9727fd28d2c6c983697428496af71db" id="r_ad9727fd28d2c6c983697428496af71db"><td class="memItemLeft" align="right" valign="top"><a id="ad9727fd28d2c6c983697428496af71db" name="ad9727fd28d2c6c983697428496af71db"></a>
+std::array&lt; double, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Kp</b></td></tr>
+<tr class="separator:ad9727fd28d2c6c983697428496af71db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ee1175c047bcc016350b214318ec346" id="r_a2ee1175c047bcc016350b214318ec346"><td class="memItemLeft" align="right" valign="top"><a id="a2ee1175c047bcc016350b214318ec346" name="a2ee1175c047bcc016350b214318ec346"></a>
+std::array&lt; double, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Kd</b></td></tr>
+<tr class="separator:a2ee1175c047bcc016350b214318ec346"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a704c7ade842cb6a6e16d41b041f94eec" id="r_a704c7ade842cb6a6e16d41b041f94eec"><td class="memItemLeft" align="right" valign="top"><a id="a704c7ade842cb6a6e16d41b041f94eec" name="a704c7ade842cb6a6e16d41b041f94eec"></a>
+std::array&lt; double, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>FeedForward</b></td></tr>
+<tr class="separator:a704c7ade842cb6a6e16d41b041f94eec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dc5379d3475dea6b813d2a3482cd848" id="r_a5dc5379d3475dea6b813d2a3482cd848"><td class="memItemLeft" align="right" valign="top"><a id="a5dc5379d3475dea6b813d2a3482cd848" name="a5dc5379d3475dea6b813d2a3482cd848"></a>
+std::atomic&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>IsRunning</b> = false</td></tr>
+<tr class="separator:a5dc5379d3475dea6b813d2a3482cd848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><dl class="section author"><dt>作者</dt><dd>zishun zhou </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2025-03-04</dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>Copyright (c) 2025 </dd></dl>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_cfafba98a580ce4b62f8a6fa96d7cbb0.html">example</a></li><li class="navelem"><a class="el" href="dir_82c43eff1120581c7335bba2e9ef273e.html">AirbotArm</a></li><li class="navelem"><a class="el" href="_airbot_arm_2main_8cpp.html">main.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

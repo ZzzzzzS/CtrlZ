@@ -1,0 +1,67 @@
+<map id="z::ZObject" name="z::ZObject">
+<area shape="rect" id="Node000001" title="ZObject z fundamental object" alt="" coords="5,613,88,640"/>
+<area shape="rect" id="Node000002" href="$classz_1_1_abstract_scheduler.html" title=" " alt="" coords="200,40,490,163"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="47,598,55,503,72,377,97,255,114,207,134,173,163,147,198,128,201,132,166,151,138,176,119,209,102,256,77,377,61,503,52,598"/>
+<area shape="rect" id="Node000003" href="$classz_1_1_abstract_scheduler.html" title=" " alt="" coords="136,187,554,373"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="49,597,57,552,73,496,98,437,114,409,134,384,145,372,149,376,138,387,119,412,102,439,78,498,62,553,54,598"/>
+<area shape="rect" id="Node000004" href="$classz_1_1_abstract_worker.html" title=" " alt="" coords="275,397,414,456"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="53,597,64,566,81,530,104,495,134,466,167,447,203,434,275,423,275,429,205,440,169,452,137,470,108,499,85,533,69,568,58,599"/>
+<area shape="rect" id="Node000005" href="$classz_1_1_ring_buffer.html" title=" " alt="" coords="218,480,472,539"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="68,600,98,573,134,548,175,532,217,521,218,526,176,537,137,553,101,577,71,604"/>
+<area shape="rect" id="Node000006" href="$classz_1_1filter.html" title=" " alt="" coords="283,563,406,589"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="102,607,135,599,212,586,282,578,283,583,212,591,136,604,103,612"/>
+<area shape="rect" id="Node000007" href="$classz_1_1filter.html" title=" " alt="" coords="290,613,400,640"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="104,624,289,624,289,629,104,629"/>
+<area shape="rect" id="Node000008" href="$classz_1_1_abstract_scheduler.html" title="AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。" alt="" coords="273,664,416,707"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="103,641,136,649,273,674,272,679,135,655,102,646"/>
+<area shape="rect" id="Node000009" href="$classz_1_1_abstract_worker.html" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="278,731,412,773"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="67,651,97,686,116,703,137,716,171,731,207,740,278,749,277,755,206,746,169,736,134,721,113,707,93,690,63,654"/>
+<area shape="rect" id="Node000031" href="$classz_1_1_ring_buffer.html" title="ring buffer class, this buffer does NOT garantee thread safety" alt="" coords="281,797,409,824"/>
+<area shape="poly" id="edge30_Node000001_Node000031" title=" " alt="" coords="57,654,68,685,85,721,107,755,137,783,171,800,208,810,245,814,280,815,280,820,245,820,207,815,169,805,134,788,103,759,80,724,63,687,52,656"/>
+<area shape="rect" id="Node000032" href="$classz_1_1_weight_filter.html" title="filter class with weight filter" alt="" coords="277,848,413,875"/>
+<area shape="poly" id="edge31_Node000001_Node000032" title=" " alt="" coords="53,655,61,696,76,745,101,794,117,816,137,834,169,852,205,862,241,867,276,867,276,872,241,872,204,867,167,857,134,838,114,819,96,797,71,747,56,697,48,656"/>
+<area shape="rect" id="Node000033" href="$classz_1_1filter.html" title="filter class with simple average filter" alt="" coords="299,899,391,925"/>
+<area shape="poly" id="edge32_Node000001_Node000033" title=" " alt="" coords="51,655,55,706,69,769,80,801,94,832,114,861,137,885,175,906,217,916,260,919,298,917,298,922,260,924,216,921,173,911,134,889,109,864,90,835,75,803,63,770,50,707,46,655"/>
+<area shape="rect" id="Node000010" href="$classz_1_1_async_logger_worker.html" title=" " alt="" coords="652,5,955,128"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="428,758,461,757,495,750,526,737,552,717,566,696,575,670,585,603,584,521,579,432,573,343,571,260,578,190,587,161,600,138,623,115,651,97,653,102,626,119,604,142,592,163,584,191,576,261,578,343,584,432,590,521,590,603,581,671,571,699,556,720,528,742,496,755,462,762,428,764"/>
+<area shape="rect" id="Node000011" href="$classz_1_1_async_logger_worker.html" title=" " alt="" coords="602,152,1005,339"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="427,758,461,756,494,749,525,737,552,717,570,695,583,673,590,652,594,630,592,586,583,542,573,496,568,449,575,400,585,375,600,349,609,337,613,341,604,352,590,377,580,401,574,449,578,495,588,541,597,586,599,630,596,653,588,676,575,698,556,721,528,741,496,754,461,761,428,763"/>
+<area shape="rect" id="Node000012" href="$classz_1_1_imu_process_worker.html" title=" " alt="" coords="708,363,899,421"/>
+<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="427,757,461,755,494,749,525,736,552,717,566,700,576,683,585,649,583,613,576,577,569,541,567,504,576,468,586,449,600,431,623,413,650,400,679,391,708,387,709,392,680,397,652,405,626,417,604,435,590,452,581,469,572,504,574,540,581,576,588,613,590,649,581,685,571,703,556,721,528,741,495,754,461,761,428,763"/>
+<area shape="rect" id="Node000013" href="$classz_1_1_motor_control_worker.html" title=" " alt="" coords="686,445,922,504"/>
+<area shape="poly" id="edge12_Node000009_Node000013" title=" " alt="" coords="428,757,460,754,494,748,525,736,552,717,570,693,578,669,579,644,576,618,573,592,573,566,581,539,600,514,619,499,640,488,684,474,686,479,642,493,622,504,604,518,586,542,579,566,578,592,581,618,584,644,583,670,575,696,556,721,527,740,495,753,461,760,428,762"/>
+<area shape="rect" id="Node000014" href="$classz_1_1_motor_p_d_control_worker.html" title=" " alt="" coords="702,528,906,587"/>
+<area shape="poly" id="edge13_Node000009_Node000014" title=" " alt="" coords="427,754,460,752,492,745,524,734,552,717,565,703,572,689,576,659,580,627,587,611,600,597,623,581,648,570,701,557,702,562,650,575,626,586,604,601,591,614,585,629,581,659,577,691,569,706,556,721,526,739,494,750,460,757,428,760"/>
+<area shape="rect" id="Node000015" href="$classz_1_1_motor_reset_position_worker.html" title=" " alt="" coords="702,611,906,669"/>
+<area shape="poly" id="edge14_Node000009_Node000015" title=" " alt="" coords="427,746,490,736,553,716,567,708,576,698,586,688,601,679,650,661,701,649,702,654,652,666,603,684,589,692,580,702,570,712,555,721,492,741,428,751"/>
+<area shape="rect" id="Node000016" href="$classz_1_1_abstract_net_inference_worker.html" title="AbstractNetInferenceWorker类型是一切神经网络推理工人类型的基类，该类提供一些基本推理的功能， 用户可以通过继承这个类来实现自己的推理工人类型。" alt="" coords="680,693,927,736"/>
+<area shape="poly" id="edge15_Node000009_Node000016" title=" " alt="" coords="427,743,679,722,680,727,428,748"/>
+<area shape="rect" id="Node000024" href="$classz_1_1_async_logger_worker.html" title="异步日志工人类型，用户可以通过这个工人类型来异步的实现记录数据的功能。" alt="" coords="700,760,907,819"/>
+<area shape="poly" id="edge23_Node000009_Node000024" title=" " alt="" coords="428,756,700,778,700,784,427,761"/>
+<area shape="rect" id="Node000025" href="$classz_1_1_imu_process_worker.html" title="ImuProcessWorker 类型是一个IMU数据处理工人类型，这个类型用于处理IMU传感器的数据，包括加速度，角速度和角度。 通常来说，这个类型可以被用于主任务队列中。 这个类会在TaskCycl..." alt="" coords="713,843,894,901"/>
+<area shape="poly" id="edge24_Node000009_Node000025" title=" " alt="" coords="428,751,491,761,524,770,555,783,571,794,580,806,589,818,603,828,657,849,713,862,712,867,656,854,601,833,585,822,576,809,567,798,553,788,522,775,490,766,427,757"/>
+<area shape="rect" id="Node000026" href="$classz_1_1_keyboard_command_worker.html" title="KeyboardCommandWorker 类型是一个键盘命令工人类型，用户可以通过这个工人类型来实现键盘命令的功能。" alt="" coords="708,925,900,968"/>
+<area shape="poly" id="edge25_Node000009_Node000026" title=" " alt="" coords="428,744,461,747,494,753,527,765,556,783,570,799,577,815,581,849,584,882,591,897,604,911,627,926,652,937,707,948,706,953,651,942,624,931,600,915,586,900,579,883,575,850,572,817,565,802,552,787,524,770,493,758,460,752,427,749"/>
+<area shape="rect" id="Node000027" href="$classz_1_1_motor_control_worker.html" title="MotorControlWorker类型是一个电机控制类型，用于读取实际电机的位置、速度、电流等数据，并将控制指令写入到电机的控制接口。" alt="" coords="700,992,907,1051"/>
+<area shape="poly" id="edge26_Node000009_Node000027" title=" " alt="" coords="428,742,461,745,495,751,527,764,556,783,575,807,583,832,584,857,581,882,579,907,579,932,587,955,604,978,625,994,648,1006,701,1019,699,1024,647,1011,622,999,600,982,582,958,574,932,573,907,576,882,578,857,578,833,570,810,552,787,525,768,494,756,460,750,427,748"/>
+<area shape="rect" id="Node000028" href="$classz_1_1_motor_p_d_control_worker.html" title="MotorPDControlWorker类型是一个电机PD控制工人类型，用户可以通过这个工人类型来实现电机的PD控制。" alt="" coords="694,1075,913,1133"/>
+<area shape="poly" id="edge27_Node000009_Node000028" title=" " alt="" coords="428,741,461,743,495,750,528,763,556,783,580,818,589,853,588,888,581,924,575,959,573,994,581,1027,604,1061,623,1077,645,1088,695,1102,694,1107,643,1093,620,1081,600,1064,576,1030,568,994,569,958,576,923,583,888,584,853,576,820,552,787,525,768,494,755,461,749,427,747"/>
+<area shape="rect" id="Node000029" href="$classz_1_1_motor_reset_position_worker.html" title="MotorResetPositionWorker 类型是一个电机复位工人类型，用户可以通过这个工人类型来实现电机的复位功能。" alt="" coords="694,1157,913,1216"/>
+<area shape="poly" id="edge28_Node000009_Node000029" title=" " alt="" coords="428,741,461,743,496,750,528,763,556,783,574,806,586,828,593,851,596,874,592,919,582,965,571,1010,567,1055,569,1078,575,1100,587,1122,604,1143,623,1160,645,1172,695,1185,693,1190,643,1177,620,1164,600,1147,582,1125,570,1102,564,1079,561,1056,566,1010,576,964,587,918,591,874,588,852,581,830,570,809,552,787,525,767,494,755,461,748,427,746"/>
+<area shape="rect" id="Node000030" href="$classz_1_1_simple_callback_worker.html" title="SimpleCallbackWorker 类型是一个简单的回调工人类型，用户可以通过这个工人类型来实现一些简单的工作逻辑。" alt="" coords="720,1240,888,1283"/>
+<area shape="poly" id="edge29_Node000009_Node000030" title=" " alt="" coords="428,741,461,742,496,749,528,762,556,783,578,811,592,839,600,867,603,895,596,951,581,1007,566,1063,559,1118,561,1146,569,1173,583,1199,604,1226,628,1245,657,1257,688,1264,719,1267,719,1272,687,1269,655,1262,626,1250,600,1230,578,1202,564,1175,556,1147,554,1118,560,1062,576,1006,591,950,597,895,595,868,587,841,573,814,552,787,526,767,494,754,461,748,427,746"/>
+<area shape="rect" id="Node000017" href="$classz_1_1_common_loco_inference_worker.html" title="CommonLocoInferenceWorker类型是一个通用的Locomotion推理工人类型，该类型实现了一些Locomotion推理的通用逻辑。" alt="" coords="1053,685,1293,744"/>
+<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="943,712,1053,712,1053,717,943,717"/>
+<area shape="rect" id="Node000018" href="$classz_1_1_arm_tracking_inference_worker.html" title=" " alt="" coords="1391,443,1596,501"/>
+<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="1196,671,1222,632,1255,589,1294,547,1339,511,1389,488,1391,493,1342,516,1298,551,1259,592,1226,635,1201,673"/>
+<area shape="rect" id="Node000019" href="$classz_1_1_erax_like_inference_worker.html" title=" " alt="" coords="1354,525,1633,616"/>
+<area shape="poly" id="edge18_Node000017_Node000019" title=" " alt="" coords="1240,675,1340,626,1366,614,1368,619,1342,630,1242,680"/>
+<area shape="rect" id="Node000020" href="$classz_1_1_arm_tracking_inference_worker.html" title=" " alt="" coords="1374,640,1613,699"/>
+<area shape="poly" id="edge19_Node000017_Node000020" title=" " alt="" coords="1308,693,1373,684,1374,689,1308,698"/>
+<area shape="rect" id="Node000021" href="$classz_1_1_erax_like_inference_worker.html" title=" " alt="" coords="1353,723,1634,797"/>
+<area shape="poly" id="edge20_Node000017_Node000021" title=" " alt="" coords="1309,731,1353,737,1352,743,1308,736"/>
+<area shape="rect" id="Node000022" href="$classz_1_1_humanoid_gym_inference_worker.html" title="HumanoidGymInferenceWorker 类型是一个人形机器人推理工人类型，该类实现了HumanoidGym网络兼容的推理功能。" alt="" coords="1341,821,1646,880"/>
+<area shape="poly" id="edge21_Node000017_Node000022" title=" " alt="" coords="1234,750,1285,780,1342,807,1373,818,1371,823,1340,812,1283,785,1231,755"/>
+<area shape="rect" id="Node000023" href="$classz_1_1_plain_inference_worker.html" title="该类型实现了一个可用的平凡推理工人类型，用户可以通过这个工人类型来实现推理的功能。" alt="" coords="1374,904,1613,963"/>
+<area shape="poly" id="edge22_Node000017_Node000023" title=" " alt="" coords="1205,755,1264,825,1301,860,1342,890,1374,905,1372,910,1339,894,1297,864,1260,829,1201,759"/>
+</map>

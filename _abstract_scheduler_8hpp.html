@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ctrl-Z: C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Schedulers/AbstractScheduler.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Ctrl-Z
+   </div>
+   <div id="projectbrief">一个多线程机器人运动控制强化学习部署框架</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_abstract_scheduler_8hpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a>  </div>
+  <div class="headertitle"><div class="title">AbstractScheduler.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_z_object_8hpp_source.html">../Utils/ZObject.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_static_string_utils_8hpp_source.html">../Utils/StaticStringUtils.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_data_center_8hpp_source.html">../Utils/DataCenter.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_abstract_worker_8hpp_source.html">../Workers/AbstractWorker.hpp</a>&quot;</code><br />
+<code>#include &lt;thread&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;condition_variable&gt;</code><br />
+<code>#include &lt;atomic&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+AbstractScheduler.hpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_abstract_scheduler_8hpp__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_schedulers_2_abstract_scheduler_8hpp" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_schedulers_2_abstract_scheduler_8hpp" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_schedulers_2_abstract_scheduler_8hpp">
+<area shape="rect" title="AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。" alt="" coords="705,5,866,80"/>
+<area shape="rect" href="_z_object_8hpp.html" title=" " alt="" coords="271,203,407,229"/>
+<area shape="poly" title=" " alt="" coords="706,77,387,199,385,194,704,72"/>
+<area shape="rect" href="_static_string_utils_8hpp.html" title=" " alt="" coords="482,203,666,229"/>
+<area shape="poly" title=" " alt="" coords="709,83,673,105,640,130,612,160,591,191,586,188,608,157,636,126,670,100,706,78"/>
+<area shape="rect" title=" " alt="" coords="27,277,80,304"/>
+<area shape="poly" title=" " alt="" coords="705,50,531,62,427,74,320,89,218,109,128,135,58,166,32,185,13,204,8,219,11,234,31,265,27,268,6,236,3,218,9,201,28,180,55,162,127,130,217,104,319,84,426,68,530,57,704,45"/>
+<area shape="rect" href="_data_center_8hpp.html" title=" " alt="" coords="650,128,807,155"/>
+<area shape="poly" title=" " alt="" coords="766,82,746,116,741,113,762,79"/>
+<area shape="rect" title=" " alt="" coords="873,203,930,229"/>
+<area shape="poly" title=" " alt="" coords="813,79,887,188,883,191,808,82"/>
+<area shape="rect" title=" " alt="" coords="955,203,1001,229"/>
+<area shape="poly" title=" " alt="" coords="829,79,954,190,951,194,825,83"/>
+<area shape="rect" title=" " alt="" coords="1025,203,1085,229"/>
+<area shape="poly" title=" " alt="" coords="845,78,1025,192,1022,197,842,83"/>
+<area shape="rect" href="_abstract_worker_8hpp.html" title=" " alt="" coords="239,128,439,155"/>
+<area shape="poly" title=" " alt="" coords="705,64,413,127,412,122,704,59"/>
+<area shape="rect" title=" " alt="" coords="984,128,1041,155"/>
+<area shape="poly" title=" " alt="" coords="868,76,970,119,968,124,866,81"/>
+<area shape="rect" title=" " alt="" coords="1066,128,1191,155"/>
+<area shape="poly" title=" " alt="" coords="868,64,1070,121,1068,126,866,69"/>
+<area shape="rect" title=" " alt="" coords="82,352,153,379"/>
+<area shape="poly" title=" " alt="" coords="271,230,112,257,46,270,17,279,12,288,11,296,21,314,43,329,69,343,67,348,40,334,17,317,6,298,7,287,13,275,45,265,111,252,271,225"/>
+<area shape="poly" title=" " alt="" coords="481,230,272,256,186,270,146,280,136,291,129,306,121,337,116,336,124,304,131,288,143,275,185,264,271,251,481,225"/>
+<area shape="poly" title=" " alt="" coords="481,230,273,255,100,280,96,281,95,275,99,275,273,250,481,225"/>
+<area shape="rect" title=" " alt="" coords="653,352,703,379"/>
+<area shape="poly" title=" " alt="" coords="585,228,662,338,658,341,580,231"/>
+<area shape="rect" title=" " alt="" coords="554,352,628,379"/>
+<area shape="poly" title=" " alt="" coords="578,230,590,336,585,337,573,230"/>
+<area shape="rect" title=" " alt="" coords="156,277,205,304"/>
+<area shape="poly" title=" " alt="" coords="482,231,361,250,221,279,220,274,360,245,481,226"/>
+<area shape="rect" title=" " alt="" coords="229,277,316,304"/>
+<area shape="poly" title=" " alt="" coords="522,233,332,278,331,273,520,227"/>
+<area shape="rect" title=" " alt="" coords="341,277,423,304"/>
+<area shape="poly" title=" " alt="" coords="541,232,430,274,429,269,539,227"/>
+<area shape="rect" title=" " alt="" coords="682,277,724,304"/>
+<area shape="poly" title=" " alt="" coords="598,228,670,268,667,272,595,232"/>
+<area shape="rect" href="_math_types_8hpp.html" title=" " alt="" coords="447,277,557,304"/>
+<area shape="poly" title=" " alt="" coords="563,232,527,268,523,264,559,228"/>
+<area shape="poly" title=" " alt="" coords="447,305,169,357,168,352,446,300"/>
+<area shape="poly" title=" " alt="" coords="533,302,639,345,637,350,531,307"/>
+<area shape="poly" title=" " alt="" coords="519,302,565,340,562,344,516,307"/>
+<area shape="rect" title=" " alt="" coords="473,352,530,379"/>
+<area shape="poly" title=" " alt="" coords="504,305,504,336,499,336,499,305"/>
+<area shape="rect" title=" " alt="" coords="371,352,448,379"/>
+<area shape="poly" title=" " alt="" coords="487,307,439,345,436,340,484,302"/>
+<area shape="poly" title=" " alt="" coords="661,158,422,202,421,197,660,153"/>
+<area shape="poly" title=" " alt="" coords="703,158,616,198,613,193,700,153"/>
+<area shape="poly" title=" " alt="" coords="652,158,564,177,471,205,446,219,420,232,338,254,273,264,206,269,122,280,96,284,95,279,121,275,206,264,272,258,337,249,418,227,443,214,469,200,562,172,650,153"/>
+<area shape="poly" title=" " alt="" coords="735,154,742,182,748,220,749,263,739,305,726,326,709,344,705,340,722,323,734,303,743,262,743,221,737,183,730,156"/>
+<area shape="poly" title=" " alt="" coords="729,156,710,262,705,261,724,155"/>
+<area shape="poly" title=" " alt="" coords="760,153,860,194,858,199,758,158"/>
+<area shape="poly" title=" " alt="" coords="778,153,940,199,939,204,776,158"/>
+<area shape="rect" title=" " alt="" coords="792,203,849,229"/>
+<area shape="poly" title=" " alt="" coords="746,153,794,191,791,195,743,157"/>
+<area shape="poly" title=" " alt="" coords="795,153,1010,200,1009,205,794,158"/>
+<area shape="poly" title=" " alt="" coords="342,155,342,187,336,187,336,155"/>
+<area shape="poly" title=" " alt="" coords="381,153,519,195,517,200,379,158"/>
+<area shape="rect" title=" " alt="" coords="24,203,92,229"/>
+<area shape="poly" title=" " alt="" coords="290,158,108,205,106,199,289,153"/>
+<area shape="rect" title=" " alt="" coords="117,203,247,229"/>
+<area shape="poly" title=" " alt="" coords="313,158,224,198,222,193,311,153"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="_abstract_scheduler_8hpp__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_schedulers_2_abstract_scheduler_8hppdep" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_schedulers_2_abstract_scheduler_8hppdep" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_schedulers_2_abstract_scheduler_8hppdep">
+<area shape="rect" title="AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。" alt="" coords="1140,5,1301,80"/>
+<area shape="rect" href="_imu_process_worker_8hpp.html" title=" " alt="" coords="1141,251,1302,325"/>
+<area shape="poly" title=" " alt="" coords="1223,95,1224,250,1219,250,1218,95"/>
+<area shape="rect" href="_bitbot_simulation_2types_8hpp.html" title="类型定义" alt="" coords="1212,496,1418,571"/>
+<area shape="poly" title=" " alt="" coords="1247,93,1291,186,1318,250,1327,317,1330,385,1323,496,1317,495,1324,385,1322,318,1313,251,1286,188,1242,95"/>
+<area shape="rect" href="_keyboard_command_worker_8hpp.html" title=" " alt="" coords="5,251,212,325"/>
+<area shape="poly" title=" " alt="" coords="1124,50,897,61,619,78,370,102,281,115,231,130,197,155,168,187,145,220,127,251,123,249,140,218,164,183,193,151,229,126,280,110,369,96,618,73,897,56,1124,45"/>
+<area shape="rect" href="_airbot_arm_2types_8hpp.html" title="机械臂控制程序所需的一些类型定义" alt="" coords="164,496,333,571"/>
+<area shape="poly" title=" " alt="" coords="1125,48,1041,54,939,66,826,85,706,115,585,157,527,183,470,213,416,247,365,285,318,327,276,375,260,403,251,435,247,467,247,496,242,496,242,467,246,434,255,401,272,372,314,324,361,281,413,242,467,208,524,178,583,152,704,110,825,80,938,60,1040,49,1124,43"/>
+<area shape="rect" href="_motor_control_worker_8hpp.html" title=" " alt="" coords="1308,128,1474,203"/>
+<area shape="poly" title=" " alt="" coords="1286,87,1341,125,1338,130,1283,91"/>
+<area shape="rect" href="_motor_reset_position_worker_8hpp.html" title=" " alt="" coords="1499,128,1705,203"/>
+<area shape="poly" title=" " alt="" coords="1317,71,1499,129,1497,134,1315,77"/>
+<area shape="rect" href="_abstract_inference_worker_8hpp.html" title=" " alt="" coords="878,128,1096,203"/>
+<area shape="poly" title=" " alt="" coords="1137,90,1060,130,1057,125,1135,85"/>
+<area shape="poly" title=" " alt="" coords="1251,338,1267,372,1290,437,1308,495,1303,496,1285,438,1262,374,1247,341"/>
+<area shape="rect" href="user__func_8cpp.html" title=" " alt="" coords="1283,741,1489,816"/>
+<area shape="poly" title=" " alt="" coords="1348,583,1363,618,1379,682,1386,741,1381,742,1373,683,1358,620,1343,586"/>
+<area shape="rect" href="user__func_8h.html" title=" " alt="" coords="1143,619,1349,693"/>
+<area shape="poly" title=" " alt="" coords="1289,586,1269,620,1265,617,1284,583"/>
+<area shape="poly" title=" " alt="" coords="1302,702,1345,739,1342,743,1298,706"/>
+<area shape="rect" href="_bitbot_simulation_2main_8cpp.html" title=" " alt="" coords="1052,741,1258,816"/>
+<area shape="poly" title=" " alt="" coords="1211,707,1185,743,1181,739,1207,704"/>
+<area shape="poly" title=" " alt="" coords="139,337,230,494,225,497,135,340"/>
+<area shape="rect" href="_airbot_arm_2main_8cpp.html" title=" " alt="" coords="164,619,333,693"/>
+<area shape="poly" title=" " alt="" coords="251,587,251,618,246,618,246,587"/>
+<area shape="poly" title=" " alt="" coords="1394,218,1386,326,1377,388,1362,449,1340,497,1336,495,1357,447,1371,387,1381,325,1388,218"/>
+<area shape="poly" title=" " alt="" coords="1568,217,1388,450,1349,497,1344,494,1384,446,1564,214"/>
+<area shape="rect" href="_common_loco_inference_worker_8hpp.html" title=" " alt="" coords="777,251,1027,325"/>
+<area shape="poly" title=" " alt="" coords="955,217,930,252,926,249,950,214"/>
+<area shape="rect" href="_erax_like_inference_worker_8hpp.html" title=" " alt="" coords="529,373,749,448"/>
+<area shape="poly" title=" " alt="" coords="809,335,720,375,718,370,807,330"/>
+<area shape="rect" href="_humanoid_gym_inference_worker_8hpp.html" title=" " alt="" coords="774,373,1030,448"/>
+<area shape="poly" title=" " alt="" coords="904,341,904,373,899,373,899,341"/>
+<area shape="rect" href="_plain_inference_worker_8hpp.html" title=" " alt="" coords="1055,373,1253,448"/>
+<area shape="poly" title=" " alt="" coords="994,330,1078,370,1076,375,991,335"/>
+<area shape="rect" href="_arm_tracking_inference_worker_8hpp.html" title="机械臂控制程序所需控制网络" alt="" coords="286,373,505,448"/>
+<area shape="poly" title=" " alt="" coords="762,320,517,376,506,379,504,374,516,371,761,315"/>
+<area shape="poly" title=" " alt="" coords="765,446,888,470,1009,490,1212,518,1211,523,1008,495,887,475,764,451"/>
+<area shape="poly" title=" " alt="" coords="1043,450,1212,499,1211,504,1042,455"/>
+<area shape="poly" title=" " alt="" coords="340,460,295,498,291,494,337,456"/>
+</map>
+</div>
+</div>
+<p><a href="_abstract_scheduler_8hpp_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_abstract_scheduler.html">z::AbstractScheduler&lt; CTS &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classz_1_1_abstract_scheduler.html" title="AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。">AbstractScheduler</a> 调度器类型，用于管理任务，工作线程和数据。  <a href="classz_1_1_abstract_scheduler.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structz_1_1_abstract_scheduler_1_1_t_c_b.html">z::AbstractScheduler&lt; CTS &gt;::TCB</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task Control Block  <a href="structz_1_1_abstract_scheduler_1_1_t_c_b.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。 </p>
+<dl class="section author"><dt>作者</dt><dd>Zishun Zhou </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2025-03-10</dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>Copyright (c) 2025 </dd></dl>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7b6a9de995744179e2af2e4eac8c765a.html">CtrlZ</a></li><li class="navelem"><a class="el" href="dir_d8b1fa7776c7cca1259b1997abbde623.html">Schedulers</a></li><li class="navelem"><a class="el" href="_abstract_scheduler_8hpp.html">AbstractScheduler.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

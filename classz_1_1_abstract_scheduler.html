@@ -1,0 +1,760 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ctrl-Z: z::AbstractScheduler&lt; CTS &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Ctrl-Z
+   </div>
+   <div id="projectbrief">一个多线程机器人运动控制强化学习部署框架</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classz_1_1_abstract_scheduler.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="classz_1_1_abstract_scheduler-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">z::AbstractScheduler&lt; CTS &gt; 模板类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="classz_1_1_abstract_scheduler.html" title="AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。">AbstractScheduler</a> 调度器类型，用于管理任务，工作线程和数据。  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_abstract_scheduler_8hpp_source.html">AbstractScheduler.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 z::AbstractScheduler&lt; CTS &gt; 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classz_1_1_abstract_scheduler__inherit__graph.png" border="0" usemap="#az_1_1_abstract_scheduler_3_01_c_t_s_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="az_1_1_abstract_scheduler_3_01_c_t_s_01_4_inherit__map" id="az_1_1_abstract_scheduler_3_01_c_t_s_01_4_inherit__map">
+<area shape="rect" title="AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。" alt="" coords="5,80,149,123"/>
+<area shape="rect" href="classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="36,5,118,32"/>
+<area shape="poly" title=" " alt="" coords="80,48,80,80,74,80,74,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+z::AbstractScheduler&lt; CTS &gt; 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classz_1_1_abstract_scheduler__coll__graph.png" border="0" usemap="#az_1_1_abstract_scheduler_3_01_c_t_s_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="az_1_1_abstract_scheduler_3_01_c_t_s_01_4_coll__map" id="az_1_1_abstract_scheduler_3_01_c_t_s_01_4_coll__map">
+<area shape="rect" title="AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。" alt="" coords="112,112,256,155"/>
+<area shape="rect" href="classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="5,13,88,40"/>
+<area shape="poly" title=" " alt="" coords="77,47,158,109,155,114,73,52"/>
+<area shape="rect" href="structz_1_1_abstract_scheduler_1_1_t_c_b.html" title="Task Control Block" alt="" coords="112,5,256,48"/>
+<area shape="poly" title=" " alt="" coords="186,64,186,111,181,111,181,64"/>
+<area shape="rect" href="classz_1_1_data_center.html" title=" " alt="" coords="279,13,446,40"/>
+<area shape="poly" title=" " alt="" coords="353,55,340,74,324,90,292,109,257,122,255,116,289,104,321,86,336,70,348,52"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structz_1_1_abstract_scheduler_1_1_t_c_b.html">TCB</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task Control Block  <a href="structz_1_1_abstract_scheduler_1_1_t_c_b.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ae20b8b94872dd27438455ef87a67f444" id="r_ae20b8b94872dd27438455ef87a67f444"><td class="memItemLeft" align="right" valign="top"><a id="ae20b8b94872dd27438455ef87a67f444" name="ae20b8b94872dd27438455ef87a67f444"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>AbstractScheduler</b> ()</td></tr>
+<tr class="memdesc:ae20b8b94872dd27438455ef87a67f444"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建一个调度器 <br /></td></tr>
+<tr class="separator:ae20b8b94872dd27438455ef87a67f444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ea6d67fd7f132bbfc3bf6ff4bb167d3" id="r_a1ea6d67fd7f132bbfc3bf6ff4bb167d3"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ea6d67fd7f132bbfc3bf6ff4bb167d3">~AbstractScheduler</a> ()</td></tr>
+<tr class="memdesc:a1ea6d67fd7f132bbfc3bf6ff4bb167d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">销毁调度器  <br /></td></tr>
+<tr class="separator:a1ea6d67fd7f132bbfc3bf6ff4bb167d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e23309ab7b1a5fbeb568379aba0cf69" id="r_a9e23309ab7b1a5fbeb568379aba0cf69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e23309ab7b1a5fbeb568379aba0cf69">Start</a> ()</td></tr>
+<tr class="memdesc:a9e23309ab7b1a5fbeb568379aba0cf69"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动调度器  <br /></td></tr>
+<tr class="separator:a9e23309ab7b1a5fbeb568379aba0cf69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a834279438447ba4412b1e021e9b4dc84" id="r_a834279438447ba4412b1e021e9b4dc84"><td class="memItemLeft" align="right" valign="top"><a id="a834279438447ba4412b1e021e9b4dc84" name="a834279438447ba4412b1e021e9b4dc84"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SpinOnce</b> ()</td></tr>
+<tr class="memdesc:a834279438447ba4412b1e021e9b4dc84"><td class="mdescLeft">&#160;</td><td class="mdescRight">进行一次调度，调度器将调度主线程任务(MainThreadTask)中的Worker，并为其他任务队列运行一个新的周期。 如果任务运行过慢，调度器会打印一个警告信息。**请不要在Worker中或者其他线程中调用这个函数，这个函数应该在主线程中调用。 否则会出现未定义行为！** <br /></td></tr>
+<tr class="separator:a834279438447ba4412b1e021e9b4dc84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9a79659e7995d4e73c99b92c99cf70c" id="r_ab9a79659e7995d4e73c99b92c99cf70c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9a79659e7995d4e73c99b92c99cf70c">getTimeStamp</a> ()</td></tr>
+<tr class="memdesc:ab9a79659e7995d4e73c99b92c99cf70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取时间辍。  <br /></td></tr>
+<tr class="separator:ab9a79659e7995d4e73c99b92c99cf70c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b65b1d044186e193b1abd62d76d0e1f" id="r_a2b65b1d044186e193b1abd62d76d0e1f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b65b1d044186e193b1abd62d76d0e1f">CreateTaskList</a> (const std::string &amp;TaskName, size_t div, bool MainThreadTask=false)</td></tr>
+<tr class="memdesc:a2b65b1d044186e193b1abd62d76d0e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建一个任务队列，在调度器启动时，Workers中的TaskCreate方法会被调用，用于初始化每个Worker。  <br /></td></tr>
+<tr class="separator:a2b65b1d044186e193b1abd62d76d0e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cebfb9baf7708be2294470e80c5ca76" id="r_a9cebfb9baf7708be2294470e80c5ca76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9cebfb9baf7708be2294470e80c5ca76">DestroyTaskList</a> (const std::string &amp;TaskName)</td></tr>
+<tr class="memdesc:a9cebfb9baf7708be2294470e80c5ca76"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除一个任务队列。  <br /></td></tr>
+<tr class="separator:a9cebfb9baf7708be2294470e80c5ca76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a2e5b15e795ac09025a5593542f72a9" id="r_a9a2e5b15e795ac09025a5593542f72a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a2e5b15e795ac09025a5593542f72a9">EnableTaskList</a> (const std::string &amp;TaskName)</td></tr>
+<tr class="memdesc:a9a2e5b15e795ac09025a5593542f72a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置任务列表的启用状态  <br /></td></tr>
+<tr class="separator:a9a2e5b15e795ac09025a5593542f72a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96023b059671fc266fd0fc64e213dbc7" id="r_a96023b059671fc266fd0fc64e213dbc7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96023b059671fc266fd0fc64e213dbc7">DisableTaskList</a> (const std::string &amp;TaskName)</td></tr>
+<tr class="memdesc:a96023b059671fc266fd0fc64e213dbc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置任务列表的禁用状态  <br /></td></tr>
+<tr class="separator:a96023b059671fc266fd0fc64e213dbc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1c73b08a6d3def995487191b466f1dd" id="r_ab1c73b08a6d3def995487191b466f1dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1c73b08a6d3def995487191b466f1dd">AddWorker</a> (const std::string &amp;TaskName, <a class="el" href="classz_1_1_abstract_worker.html">WorkerType</a> *worker)</td></tr>
+<tr class="memdesc:ab1c73b08a6d3def995487191b466f1dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">向任务中添加一个工人  <br /></td></tr>
+<tr class="separator:ab1c73b08a6d3def995487191b466f1dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59ebdaf47017266dbb8068fd5ed0c8d2" id="r_a59ebdaf47017266dbb8068fd5ed0c8d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59ebdaf47017266dbb8068fd5ed0c8d2">AddWorkers</a> (const std::string &amp;TaskName, std::vector&lt; <a class="el" href="classz_1_1_abstract_worker.html">WorkerType</a> * &gt; workers)</td></tr>
+<tr class="memdesc:a59ebdaf47017266dbb8068fd5ed0c8d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">批量向任务中添加工人  <br /></td></tr>
+<tr class="separator:a59ebdaf47017266dbb8068fd5ed0c8d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad27a82fb12320024611b0290a9fa36b" id="r_aad27a82fb12320024611b0290a9fa36b"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structz_1_1_c_t_string.html">CTString</a> CT, typename T&gt; </td></tr>
+<tr class="memitem:aad27a82fb12320024611b0290a9fa36b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aad27a82fb12320024611b0290a9fa36b">SetData</a> (const T &amp;data)</td></tr>
+<tr class="memdesc:aad27a82fb12320024611b0290a9fa36b"><td class="mdescLeft">&#160;</td><td class="mdescRight">从数据中心中获取数据，并自动更新时间戳  <br /></td></tr>
+<tr class="separator:aad27a82fb12320024611b0290a9fa36b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6fc42a080f7b0915936bd50a59e45c5" id="r_aa6fc42a080f7b0915936bd50a59e45c5"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structz_1_1_c_t_string.html">CTString</a> CT, typename T&gt; </td></tr>
+<tr class="memitem:aa6fc42a080f7b0915936bd50a59e45c5"><td class="memTemplItemLeft" align="right" valign="top">size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa6fc42a080f7b0915936bd50a59e45c5">GetData</a> (T &amp;data)</td></tr>
+<tr class="memdesc:aa6fc42a080f7b0915936bd50a59e45c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">从数据中心中获取数据  <br /></td></tr>
+<tr class="separator:aa6fc42a080f7b0915936bd50a59e45c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classz_1_1_z_object"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classz_1_1_z_object')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classz_1_1_z_object.html">z::ZObject</a></td></tr>
+<tr class="memitem:a20fc044ee664a6b01d500d536e63a1ed inherit pub_methods_classz_1_1_z_object" id="r_a20fc044ee664a6b01d500d536e63a1ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_z_object.html#a20fc044ee664a6b01d500d536e63a1ed">PrintSplitLine</a> (size_t length=60, char c='-')</td></tr>
+<tr class="memdesc:a20fc044ee664a6b01d500d536e63a1ed inherit pub_methods_classz_1_1_z_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">print a split line, default length is 60 and character is '-'  <br /></td></tr>
+<tr class="separator:a20fc044ee664a6b01d500d536e63a1ed inherit pub_methods_classz_1_1_z_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a9023c232db4f7998e5f9a59c18d9e0b1" id="r_a9023c232db4f7998e5f9a59c18d9e0b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9023c232db4f7998e5f9a59c18d9e0b1">run_once</a> (<a class="el" href="structz_1_1_abstract_scheduler_1_1_t_c_b.html">TCB</a> *tcb)</td></tr>
+<tr class="memdesc:a9023c232db4f7998e5f9a59c18d9e0b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">运行任务的一个调度周期  <br /></td></tr>
+<tr class="separator:a9023c232db4f7998e5f9a59c18d9e0b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04d1aea8ab24bdb4b0fc7591cc08a758" id="r_a04d1aea8ab24bdb4b0fc7591cc08a758"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04d1aea8ab24bdb4b0fc7591cc08a758">run</a> (const std::string &amp;TaskName)</td></tr>
+<tr class="memdesc:a04d1aea8ab24bdb4b0fc7591cc08a758"><td class="mdescLeft">&#160;</td><td class="mdescRight">运行任务  <br /></td></tr>
+<tr class="separator:a04d1aea8ab24bdb4b0fc7591cc08a758"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:a0d6e11efbbdc5fbf4abbd88e18fd8b4e" id="r_a0d6e11efbbdc5fbf4abbd88e18fd8b4e"><td class="memItemLeft" align="right" valign="top"><a id="a0d6e11efbbdc5fbf4abbd88e18fd8b4e" name="a0d6e11efbbdc5fbf4abbd88e18fd8b4e"></a>
+std::thread::id&#160;</td><td class="memItemRight" valign="bottom"><b>threadId</b></td></tr>
+<tr class="memdesc:a0d6e11efbbdc5fbf4abbd88e18fd8b4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">main thread id <br /></td></tr>
+<tr class="separator:a0d6e11efbbdc5fbf4abbd88e18fd8b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75b97f9d5ec52aa50b3a6b8289caa115" id="r_a75b97f9d5ec52aa50b3a6b8289caa115"><td class="memItemLeft" align="right" valign="top"><a id="a75b97f9d5ec52aa50b3a6b8289caa115" name="a75b97f9d5ec52aa50b3a6b8289caa115"></a>
+std::map&lt; std::string, <a class="el" href="structz_1_1_abstract_scheduler_1_1_t_c_b.html">TCB</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>TaskList</b></td></tr>
+<tr class="memdesc:a75b97f9d5ec52aa50b3a6b8289caa115"><td class="mdescLeft">&#160;</td><td class="mdescRight">task list <br /></td></tr>
+<tr class="separator:a75b97f9d5ec52aa50b3a6b8289caa115"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d2527582dd43820a1b2d51ad23701fb" id="r_a6d2527582dd43820a1b2d51ad23701fb"><td class="memItemLeft" align="right" valign="top"><a id="a6d2527582dd43820a1b2d51ad23701fb" name="a6d2527582dd43820a1b2d51ad23701fb"></a>
+<a class="el" href="structz_1_1_abstract_scheduler_1_1_t_c_b.html">TCB</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>MainThreadTaskBlock</b> = nullptr</td></tr>
+<tr class="memdesc:a6d2527582dd43820a1b2d51ad23701fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">control block of the main thread task <br /></td></tr>
+<tr class="separator:a6d2527582dd43820a1b2d51ad23701fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a208a17d1ae9ede0b5e4a8d521a70bce3" id="r_a208a17d1ae9ede0b5e4a8d521a70bce3"><td class="memItemLeft" align="right" valign="top"><a id="a208a17d1ae9ede0b5e4a8d521a70bce3" name="a208a17d1ae9ede0b5e4a8d521a70bce3"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>MainThreadTaskName</b></td></tr>
+<tr class="memdesc:a208a17d1ae9ede0b5e4a8d521a70bce3"><td class="mdescLeft">&#160;</td><td class="mdescRight">main thread task name <br /></td></tr>
+<tr class="separator:a208a17d1ae9ede0b5e4a8d521a70bce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48e19a1edd67fff5596103dfb1514e54" id="r_a48e19a1edd67fff5596103dfb1514e54"><td class="memItemLeft" align="right" valign="top"><a id="a48e19a1edd67fff5596103dfb1514e54" name="a48e19a1edd67fff5596103dfb1514e54"></a>
+std::atomic&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>TimeStamp</b></td></tr>
+<tr class="memdesc:a48e19a1edd67fff5596103dfb1514e54"><td class="mdescLeft">&#160;</td><td class="mdescRight">time stamp <br /></td></tr>
+<tr class="separator:a48e19a1edd67fff5596103dfb1514e54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2c119c841bc14e68b728b5479960262" id="r_ad2c119c841bc14e68b728b5479960262"><td class="memItemLeft" align="right" valign="top"><a id="ad2c119c841bc14e68b728b5479960262" name="ad2c119c841bc14e68b728b5479960262"></a>
+<a class="el" href="classz_1_1_data_center.html">DataCenter</a>&lt; CTS... &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>dataCenter</b></td></tr>
+<tr class="memdesc:ad2c119c841bc14e68b728b5479960262"><td class="mdescLeft">&#160;</td><td class="mdescRight">data center for storing data with time stamp <br /></td></tr>
+<tr class="separator:ad2c119c841bc14e68b728b5479960262"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea76dd9c01f9b570984b8476b98d5f51" id="r_aea76dd9c01f9b570984b8476b98d5f51"><td class="memItemLeft" align="right" valign="top"><a id="aea76dd9c01f9b570984b8476b98d5f51" name="aea76dd9c01f9b570984b8476b98d5f51"></a>
+std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>SyncMutex</b></td></tr>
+<tr class="memdesc:aea76dd9c01f9b570984b8476b98d5f51"><td class="mdescLeft">&#160;</td><td class="mdescRight">task list sync mutex <br /></td></tr>
+<tr class="separator:aea76dd9c01f9b570984b8476b98d5f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9f7e63da117efa52cdcc7bc0b458186" id="r_ab9f7e63da117efa52cdcc7bc0b458186"><td class="memItemLeft" align="right" valign="top"><a id="ab9f7e63da117efa52cdcc7bc0b458186" name="ab9f7e63da117efa52cdcc7bc0b458186"></a>
+std::condition_variable&#160;</td><td class="memItemRight" valign="bottom"><b>SyncLock</b></td></tr>
+<tr class="memdesc:ab9f7e63da117efa52cdcc7bc0b458186"><td class="mdescLeft">&#160;</td><td class="mdescRight">task list sync lock variable <br /></td></tr>
+<tr class="separator:ab9f7e63da117efa52cdcc7bc0b458186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... CTS&gt;<br />
+class z::AbstractScheduler&lt; CTS &gt;</div><p><a class="el" href="classz_1_1_abstract_scheduler.html" title="AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。">AbstractScheduler</a> 调度器类型，用于管理任务，工作线程和数据。 </p>
+<p>调度器类型是CtrlZ框架的核心类型之一，用于管理任务和工作线程，和工人类(Workers)负责执行每一个具体的任务不同， 调度器类型主要负责管理任务和工作线程。通过在调度器类型中创建任务队列(TaskList)，并在这些任务队列中添加工作线程(Workers)， 调度器类型可以实现多任务调度，每一个任务队列(TaskList)都有一个独立的线程，用于调度这个任务队列中的工作线程。在运行过程中，调度器会根据 任务流水线中Worker的顺序在每个流水线循环中依次调用Worker的TaskCycleBegin, TaskRun和TaskCycleEnd方法，在任务开始和结束的时候还会调用TaskCreate和TaskDestroy方法。 通过这些方法，工作线程可以在任务开始和结束的时候进行初始化和销毁工作，而在任务运行的时候进行具体的工作。 此外调度器还可以为不同的任务队列设置不同的调度周期，通过设置调度周期，可以实现不同任务队列的不同调度频率，从而实现不同任务队列的不同调度速度。 调度器分为主线程任务(MainThreadTask)和其他任务队列，主线程任务是一个特殊的任务队列，它是在主线程中运行的，而其他任务队列是在独立的线程中运行的。其他任务队列的频率 可以通过设置调度周期来调整，可以设置为主任务队列的整数倍分频(1/n)，而主任务队列的频率是固定的，受spinOnce函数的调用频率控制。 调度器类型还可以管理数据管线(DataCenter)，用于存储和获取数据，数据管线中的数据通过时间戳来进行读写数据，存储在数据中心中的数据 都是线程安全的，可以在任何线程中读写数据。同时时间辍的存在保证了数据的时序性。</p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">CTS</td><td>用于数据中心的键-类型对。其中键是一个编译期字符串常量，类型是数据的类型，通常是一个数字或者一个array。 这些键-类型对用于标识数据中心中的数据，通过键可以获取对应的数据, 通过类型可以确定数据的类型。而且这些键-类型对是在编译期就确定的， 保证了数据的唯一性。具体的使用方法可以参考CTSPair类，CTString类和DataCenter类。 </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a1ea6d67fd7f132bbfc3bf6ff4bb167d3" name="a1ea6d67fd7f132bbfc3bf6ff4bb167d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ea6d67fd7f132bbfc3bf6ff4bb167d3">&#9670;&#160;</a></span>~AbstractScheduler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... CTS&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classz_1_1_abstract_scheduler.html">z::AbstractScheduler</a>&lt; CTS &gt;::~<a class="el" href="classz_1_1_abstract_scheduler.html">AbstractScheduler</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>销毁调度器 </p>
+<p>销毁调度器时将销毁所有的任务队列(TaskList)但不会销毁Worker，Worker的生命周期由调度器外部管理， 调度器只负责管理任务队列。销毁调度器时，调度器会停止所有的任务队列，并等待所有的任务队列线程结束，主线程任务(MainThreadTask)也会被销毁。 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ab1c73b08a6d3def995487191b466f1dd" name="ab1c73b08a6d3def995487191b466f1dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1c73b08a6d3def995487191b466f1dd">&#9670;&#160;</a></span>AddWorker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... CTS&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classz_1_1_abstract_scheduler.html">z::AbstractScheduler</a>&lt; CTS &gt;::AddWorker </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>TaskName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classz_1_1_abstract_worker.html">WorkerType</a> *</td>          <td class="paramname"><span class="paramname"><em>worker</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>向任务中添加一个工人 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TaskName</td><td>任务名称 </td></tr>
+    <tr><td class="paramname">worker</td><td>工人 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a59ebdaf47017266dbb8068fd5ed0c8d2" name="a59ebdaf47017266dbb8068fd5ed0c8d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59ebdaf47017266dbb8068fd5ed0c8d2">&#9670;&#160;</a></span>AddWorkers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... CTS&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classz_1_1_abstract_scheduler.html">z::AbstractScheduler</a>&lt; CTS &gt;::AddWorkers </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>TaskName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classz_1_1_abstract_worker.html">WorkerType</a> * &gt;</td>          <td class="paramname"><span class="paramname"><em>workers</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>批量向任务中添加工人 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TaskName</td><td>任务名称 </td></tr>
+    <tr><td class="paramname">workers</td><td>工人列表，列表顺序即为任务队列中工人调度的顺序 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2b65b1d044186e193b1abd62d76d0e1f" name="a2b65b1d044186e193b1abd62d76d0e1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b65b1d044186e193b1abd62d76d0e1f">&#9670;&#160;</a></span>CreateTaskList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... CTS&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classz_1_1_abstract_scheduler.html">z::AbstractScheduler</a>&lt; CTS &gt;::CreateTaskList </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>TaskName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>div</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>MainThreadTask</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>创建一个任务队列，在调度器启动时，Workers中的TaskCreate方法会被调用，用于初始化每个Worker。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TaskName</td><td>任务名 </td></tr>
+    <tr><td class="paramname">div</td><td>分频系数，用于控制任务的调度频率，任务的调度频率是主线程任务的1/div。如果是主线程任务，div将被忽略。 </td></tr>
+    <tr><td class="paramname">MainThreadTask</td><td>是否是主线程任务。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>size_t 任务ID </dd></dl>
+
+</div>
+</div>
+<a id="a9cebfb9baf7708be2294470e80c5ca76" name="a9cebfb9baf7708be2294470e80c5ca76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cebfb9baf7708be2294470e80c5ca76">&#9670;&#160;</a></span>DestroyTaskList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... CTS&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classz_1_1_abstract_scheduler.html">z::AbstractScheduler</a>&lt; CTS &gt;::DestroyTaskList </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>TaskName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>删除一个任务队列。 </p>
+<p>删除一个任务队列时，调度器会停止这个任务队列，并等待当前周期结束，然后销毁任务队列。 销毁时将依次调用Worker的TaskDestroy方法。注意主线程任务(MainThreadTask)不能被销毁。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TaskName</td><td>待销毁的任务名 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a96023b059671fc266fd0fc64e213dbc7" name="a96023b059671fc266fd0fc64e213dbc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96023b059671fc266fd0fc64e213dbc7">&#9670;&#160;</a></span>DisableTaskList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... CTS&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classz_1_1_abstract_scheduler.html">z::AbstractScheduler</a>&lt; CTS &gt;::DisableTaskList </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>TaskName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置任务列表的禁用状态 </p>
+<p>该函数的作用与EnableTaskList函数相反。 </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TaskName</td><td>任务名称 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true 任务已禁用 </dd>
+<dd>
+false 任务未禁用（可能找不到任务） </dd></dl>
+
+</div>
+</div>
+<a id="a9a2e5b15e795ac09025a5593542f72a9" name="a9a2e5b15e795ac09025a5593542f72a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a2e5b15e795ac09025a5593542f72a9">&#9670;&#160;</a></span>EnableTaskList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... CTS&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classz_1_1_abstract_scheduler.html">z::AbstractScheduler</a>&lt; CTS &gt;::EnableTaskList </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>TaskName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置任务列表的启用状态 </p>
+<p>此函数用于设置任务的启用状态。如果任务被启用，调度器将根据分频设置为该任务进行调度。 如果任务被禁用，任务将不会被调度，并且会一直被阻塞，直到再次启用。 需要注意的是，主线程任务始终处于启用状态，不受此函数的影响。 </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TaskName</td><td>任务名称 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true 任务已启用 </dd>
+<dd>
+false 任务未启用（可能找不到任务） </dd></dl>
+
+</div>
+</div>
+<a id="aa6fc42a080f7b0915936bd50a59e45c5" name="aa6fc42a080f7b0915936bd50a59e45c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6fc42a080f7b0915936bd50a59e45c5">&#9670;&#160;</a></span>GetData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... CTS&gt; </div>
+<div class="memtemplate">
+template&lt;<a class="el" href="structz_1_1_c_t_string.html">CTString</a> CT, typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classz_1_1_abstract_scheduler.html">z::AbstractScheduler</a>&lt; CTS &gt;::GetData </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>从数据中心中获取数据 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">CT</td><td>数据名称 </td></tr>
+    <tr><td class="paramname">T</td><td>数据类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>size_t 数据的时间戳 </dd></dl>
+
+</div>
+</div>
+<a id="ab9a79659e7995d4e73c99b92c99cf70c" name="ab9a79659e7995d4e73c99b92c99cf70c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9a79659e7995d4e73c99b92c99cf70c">&#9670;&#160;</a></span>getTimeStamp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... CTS&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classz_1_1_abstract_scheduler.html">z::AbstractScheduler</a>&lt; CTS &gt;::getTimeStamp </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取时间辍。 </p>
+<p>时间辍是CtrlZ框架中的一个重要概念，用于标识数据的时序性，时间辍是一个递增的整数，每次调用SpinOnce函数时，时间辍都会递增1， 不同的TaskList中的Worker可以通过时间辍来获取数据，通过时间辍可以保证数据的时序性。 时间辍与TaskList中的分频系数无关，仅与SpinOnce函数的调用频率有关。</p>
+<dl class="section return"><dt>返回</dt><dd>size_t 时间辍 </dd></dl>
+
+</div>
+</div>
+<a id="a04d1aea8ab24bdb4b0fc7591cc08a758" name="a04d1aea8ab24bdb4b0fc7591cc08a758"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04d1aea8ab24bdb4b0fc7591cc08a758">&#9670;&#160;</a></span>run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... CTS&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classz_1_1_abstract_scheduler.html">z::AbstractScheduler</a>&lt; CTS &gt;::run </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>TaskName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>运行任务 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TaskName</td><td>任务名 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9023c232db4f7998e5f9a59c18d9e0b1" name="a9023c232db4f7998e5f9a59c18d9e0b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9023c232db4f7998e5f9a59c18d9e0b1">&#9670;&#160;</a></span>run_once()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... CTS&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classz_1_1_abstract_scheduler.html">z::AbstractScheduler</a>&lt; CTS &gt;::run_once </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structz_1_1_abstract_scheduler_1_1_t_c_b.html">TCB</a> *</td>          <td class="paramname"><span class="paramname"><em>tcb</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>运行任务的一个调度周期 </p>
+<p>在一个调度周期内，调度器将按照顺序调用任务中的工作者。工作者将按照它们被添加到任务中的顺序被调用。对于每个工作者，将依次调用TaskCycleBegin、TaskRun、TaskCycleEnd函数。 </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tcb</td><td>给定的任务控制块 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aad27a82fb12320024611b0290a9fa36b" name="aad27a82fb12320024611b0290a9fa36b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad27a82fb12320024611b0290a9fa36b">&#9670;&#160;</a></span>SetData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... CTS&gt; </div>
+<div class="memtemplate">
+template&lt;<a class="el" href="structz_1_1_c_t_string.html">CTString</a> CT, typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classz_1_1_abstract_scheduler.html">z::AbstractScheduler</a>&lt; CTS &gt;::SetData </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>从数据中心中获取数据，并自动更新时间戳 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">CT</td><td>数据名称 </td></tr>
+    <tr><td class="paramname">T</td><td>数据类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9e23309ab7b1a5fbeb568379aba0cf69" name="a9e23309ab7b1a5fbeb568379aba0cf69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e23309ab7b1a5fbeb568379aba0cf69">&#9670;&#160;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... CTS&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classz_1_1_abstract_scheduler.html">z::AbstractScheduler</a>&lt; CTS &gt;::Start </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>启动调度器 </p>
+<p>启动调度器时将启动所有的任务队列(TaskList)和主线程任务(MainThreadTask)，启动任务队列时，调度器会调用任务队列中的Worker的TaskCreate方法， 用于初始化Worker。启动调度器后，调度器会开始调度任务队列中的Worker，调度器会根据任务队列中的调度周期来调度任务队列中的Worker， 调度周期是通过调度器的SpinOnce函数来控制的，SpinOnce函数会在主线程中调用，用于调度任务队列中的Worker，当任务队列中的Worker运行过慢时， 调度器会打印一个警告信息。</p>
+<p>值得注意的是创建的非主线任务默认是不使能的，需要通过EnableTaskList函数来使能任务队列，使能任务队列后，任务队列中Worker的调度周期才会生效， 任务会在第一个Worker的TaskCycleBegin前被阻塞，直到任务队列被使能。然而在任务创建的时候，任务队列中的Worker会被调用一次TaskCreate方法， 用于初始化Worker，不受使能状态的影响。主线程任务(MainThreadTask)是默认使能的，不受使能状态的影响。 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Schedulers/<a class="el" href="_abstract_scheduler_8hpp_source.html">AbstractScheduler.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>z</b></li><li class="navelem"><a class="el" href="classz_1_1_abstract_scheduler.html">AbstractScheduler</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ctrl-Z: z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Ctrl-Z
+   </div>
+   <div id="projectbrief">一个多线程机器人运动控制强化学习部署框架</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classz_1_1_abstract_net_inference_worker.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="classz_1_1_abstract_net_inference_worker-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt; 模板类 参考<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>AbstractNetInferenceWorker类型是一切神经网络推理工人类型的基类，该类提供一些基本推理的功能， 用户可以通过继承这个类来实现自己的推理工人类型。  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_abstract_inference_worker_8hpp_source.html">AbstractInferenceWorker.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt; 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classz_1_1_abstract_net_inference_worker__inherit__graph.png" border="0" usemap="#az_1_1_abstract_net_inference_worker_3_01_scheduler_type_00_01_inference_precision_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="az_1_1_abstract_net_inference_worker_3_01_scheduler_type_00_01_inference_precision_01_4_inherit__map" id="az_1_1_abstract_net_inference_worker_3_01_scheduler_type_00_01_inference_precision_01_4_inherit__map">
+<area shape="rect" title="AbstractNetInferenceWorker类型是一切神经网络推理工人类型的基类，该类提供一些基本推理的功能， 用户可以通过继承这个类来实现自己的推理工人类型。" alt="" coords="318,256,565,299"/>
+<area shape="rect" href="classz_1_1_common_loco_inference_worker.html" title="CommonLocoInferenceWorker类型是一个通用的Locomotion推理工人类型，该类型实现了一些Locomotion推理的通用逻辑。" alt="" coords="613,248,853,307"/>
+<area shape="poly" title=" " alt="" coords="581,275,613,275,613,280,581,280"/>
+<area shape="rect" href="classz_1_1_abstract_worker.html" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="136,256,270,299"/>
+<area shape="poly" title=" " alt="" coords="286,275,318,275,318,280,286,280"/>
+<area shape="rect" href="classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="5,264,88,291"/>
+<area shape="poly" title=" " alt="" coords="103,275,135,275,135,280,103,280"/>
+<area shape="rect" href="classz_1_1_arm_tracking_inference_worker.html" title=" " alt="" coords="951,5,1156,64"/>
+<area shape="poly" title=" " alt="" coords="756,233,782,195,815,152,854,110,899,74,949,51,951,56,902,78,858,113,819,155,786,198,761,236"/>
+<area shape="rect" href="classz_1_1_erax_like_inference_worker.html" title=" " alt="" coords="914,88,1193,179"/>
+<area shape="poly" title=" " alt="" coords="800,238,900,188,926,177,928,182,902,193,802,243"/>
+<area shape="rect" href="classz_1_1_arm_tracking_inference_worker.html" title=" " alt="" coords="934,203,1173,261"/>
+<area shape="poly" title=" " alt="" coords="868,256,933,246,934,252,868,261"/>
+<area shape="rect" href="classz_1_1_erax_like_inference_worker.html" title=" " alt="" coords="913,285,1194,360"/>
+<area shape="poly" title=" " alt="" coords="869,294,913,300,912,305,868,299"/>
+<area shape="rect" href="classz_1_1_humanoid_gym_inference_worker.html" title="HumanoidGymInferenceWorker 类型是一个人形机器人推理工人类型，该类实现了HumanoidGym网络兼容的推理功能。" alt="" coords="901,384,1206,443"/>
+<area shape="poly" title=" " alt="" coords="794,313,845,343,902,370,933,381,931,386,900,374,843,347,791,318"/>
+<area shape="rect" href="classz_1_1_plain_inference_worker.html" title="该类型实现了一个可用的平凡推理工人类型，用户可以通过这个工人类型来实现推理的功能。" alt="" coords="934,467,1173,525"/>
+<area shape="poly" title=" " alt="" coords="765,318,824,388,861,423,902,452,934,468,932,473,899,457,857,427,820,391,761,321"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt; 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classz_1_1_abstract_net_inference_worker__coll__graph.png" border="0" usemap="#az_1_1_abstract_net_inference_worker_3_01_scheduler_type_00_01_inference_precision_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="az_1_1_abstract_net_inference_worker_3_01_scheduler_type_00_01_inference_precision_01_4_coll__map" id="az_1_1_abstract_net_inference_worker_3_01_scheduler_type_00_01_inference_precision_01_4_coll__map">
+<area shape="rect" title="AbstractNetInferenceWorker类型是一切神经网络推理工人类型的基类，该类提供一些基本推理的功能， 用户可以通过继承这个类来实现自己的推理工人类型。" alt="" coords="721,5,968,48"/>
+<area shape="rect" href="classz_1_1_abstract_worker.html" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="537,5,672,48"/>
+<area shape="poly" title=" " alt="" coords="687,24,721,24,721,29,687,29"/>
+<area shape="rect" href="classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="5,29,88,56"/>
+<area shape="poly" title=" " alt="" coords="102,23,137,16,246,7,356,6,456,10,537,17,537,22,456,16,356,11,246,12,137,21,103,28"/>
+<area shape="rect" href="classz_1_1_abstract_scheduler.html" title=" " alt="" coords="137,31,427,153"/>
+<area shape="poly" title=" " alt="" coords="103,52,137,59,136,64,102,57"/>
+<area shape="poly" title=" " alt="" coords="442,57,536,38,537,43,443,62"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a4233d82bef23c27d9166875ebfb8fb2f" id="r_a4233d82bef23c27d9166875ebfb8fb2f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4233d82bef23c27d9166875ebfb8fb2f">AbstractNetInferenceWorker</a> (<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *scheduler, const nlohmann::json &amp;cfg)</td></tr>
+<tr class="memdesc:a4233d82bef23c27d9166875ebfb8fb2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">推理精度必须是一个算术类型  <br /></td></tr>
+<tr class="separator:a4233d82bef23c27d9166875ebfb8fb2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a664eb7fce52aef3ed4ba727a25f7482f" id="r_a664eb7fce52aef3ed4ba727a25f7482f"><td class="memItemLeft" align="right" valign="top"><a id="a664eb7fce52aef3ed4ba727a25f7482f" name="a664eb7fce52aef3ed4ba727a25f7482f"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~AbstractNetInferenceWorker</b> ()</td></tr>
+<tr class="memdesc:a664eb7fce52aef3ed4ba727a25f7482f"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数 <br /></td></tr>
+<tr class="separator:a664eb7fce52aef3ed4ba727a25f7482f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58895a2a28294831b36285ede29b902c" id="r_a58895a2a28294831b36285ede29b902c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58895a2a28294831b36285ede29b902c">PreProcess</a> ()=0</td></tr>
+<tr class="memdesc:a58895a2a28294831b36285ede29b902c"><td class="mdescLeft">&#160;</td><td class="mdescRight">预处理方法，用户必须实现这个方法，用来实现推理前的准备工作,该方法在每次InferenceOnce()之前被调用  <br /></td></tr>
+<tr class="separator:a58895a2a28294831b36285ede29b902c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad86b971cfc22dc49111fb88b71c2a3ba" id="r_ad86b971cfc22dc49111fb88b71c2a3ba"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad86b971cfc22dc49111fb88b71c2a3ba">PostProcess</a> ()=0</td></tr>
+<tr class="memdesc:ad86b971cfc22dc49111fb88b71c2a3ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">后处理方法，用户必须实现这个方法，用来实现推理后的处理工作,该方法在每次InferenceOnce()之后被调用  <br /></td></tr>
+<tr class="separator:ad86b971cfc22dc49111fb88b71c2a3ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56cac3c3acdab88e5ffd4e07c8a001ae" id="r_a56cac3c3acdab88e5ffd4e07c8a001ae"><td class="memItemLeft" align="right" valign="top"><a id="a56cac3c3acdab88e5ffd4e07c8a001ae" name="a56cac3c3acdab88e5ffd4e07c8a001ae"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>InferenceOnce</b> ()</td></tr>
+<tr class="memdesc:a56cac3c3acdab88e5ffd4e07c8a001ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">推理方法，用户可选重定义这个方法，用来实现推理的逻辑，默认实现是使用onnxruntime的推理方法 <br /></td></tr>
+<tr class="separator:a56cac3c3acdab88e5ffd4e07c8a001ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a806fb181f59b745ccb28781e83673a5a" id="r_a806fb181f59b745ccb28781e83673a5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a806fb181f59b745ccb28781e83673a5a">TaskRun</a> () override</td></tr>
+<tr class="memdesc:a806fb181f59b745ccb28781e83673a5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">在每次任务队列循环中被调用，用来实现推理的逻辑,默认实现是依次调用PreProcess，InferenceOnce，PostProcess方法  <br /></td></tr>
+<tr class="separator:a806fb181f59b745ccb28781e83673a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e0155aab60ec9902d53a1b9f8bcf318" id="r_a1e0155aab60ec9902d53a1b9f8bcf318"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e0155aab60ec9902d53a1b9f8bcf318">TaskCreate</a> () override</td></tr>
+<tr class="memdesc:a1e0155aab60ec9902d53a1b9f8bcf318"><td class="mdescLeft">&#160;</td><td class="mdescRight">任务创建的方法，该方法中会初始化模型，预热模型，绑定输入输出节点等  <br /></td></tr>
+<tr class="separator:a1e0155aab60ec9902d53a1b9f8bcf318"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bf4762ebd0079c6e9a573f6305e2fe8" id="r_a8bf4762ebd0079c6e9a573f6305e2fe8"><td class="memTemplParams" colspan="2">template&lt;int64_t ... Dims&gt; </td></tr>
+<tr class="memitem:a8bf4762ebd0079c6e9a573f6305e2fe8"><td class="memTemplItemLeft" align="right" valign="top">Ort::Value&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a8bf4762ebd0079c6e9a573f6305e2fe8">WarpOrtTensor</a> (<a class="el" href="classz_1_1math_1_1_tensor.html">math::Tensor</a>&lt; InferencePrecision, Dims... &gt; &amp;Tensor)</td></tr>
+<tr class="memdesc:a8bf4762ebd0079c6e9a573f6305e2fe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">将z::math::Tensor类型的数据转换为Ort::Value类型的数据。  <br /></td></tr>
+<tr class="separator:a8bf4762ebd0079c6e9a573f6305e2fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classz_1_1_abstract_worker"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classz_1_1_abstract_worker')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classz_1_1_abstract_worker.html">z::AbstractWorker&lt; SchedulerType &gt;</a></td></tr>
+<tr class="memitem:aacfc5c4056a1b543d20f677aac609bff inherit pub_methods_classz_1_1_abstract_worker" id="r_aacfc5c4056a1b543d20f677aac609bff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_abstract_worker.html#aacfc5c4056a1b543d20f677aac609bff">AbstractWorker</a> (<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *scheduler, const nlohmann::json &amp;cfg=nlohmann::json())</td></tr>
+<tr class="memdesc:aacfc5c4056a1b543d20f677aac609bff inherit pub_methods_classz_1_1_abstract_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造一个抽象工人类型  <br /></td></tr>
+<tr class="separator:aacfc5c4056a1b543d20f677aac609bff inherit pub_methods_classz_1_1_abstract_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30f113136aaacbbb515c80734b7432f4 inherit pub_methods_classz_1_1_abstract_worker" id="r_a30f113136aaacbbb515c80734b7432f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_abstract_worker.html#a30f113136aaacbbb515c80734b7432f4">setScheduler</a> (<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *scheduler)</td></tr>
+<tr class="memdesc:a30f113136aaacbbb515c80734b7432f4 inherit pub_methods_classz_1_1_abstract_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置调度器的指针  <br /></td></tr>
+<tr class="separator:a30f113136aaacbbb515c80734b7432f4 inherit pub_methods_classz_1_1_abstract_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7afec2a7c09fd2708333201335d881cd inherit pub_methods_classz_1_1_abstract_worker" id="r_a7afec2a7c09fd2708333201335d881cd"><td class="memItemLeft" align="right" valign="top">
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~AbstractWorker</b> ()</td></tr>
+<tr class="memdesc:a7afec2a7c09fd2708333201335d881cd inherit pub_methods_classz_1_1_abstract_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数，虚函数，用于释放资源 <br /></td></tr>
+<tr class="separator:a7afec2a7c09fd2708333201335d881cd inherit pub_methods_classz_1_1_abstract_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9fcf291e3e17fed6ed6dd89c4734d49 inherit pub_methods_classz_1_1_abstract_worker" id="r_ad9fcf291e3e17fed6ed6dd89c4734d49"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_abstract_worker.html#ad9fcf291e3e17fed6ed6dd89c4734d49">TaskDestroy</a> ()</td></tr>
+<tr class="memdesc:ad9fcf291e3e17fed6ed6dd89c4734d49 inherit pub_methods_classz_1_1_abstract_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">TaskDestroy方法，在任务队列删除的时候会被调度器调用，用户可以在这个方法中释放一些资源  <br /></td></tr>
+<tr class="separator:ad9fcf291e3e17fed6ed6dd89c4734d49 inherit pub_methods_classz_1_1_abstract_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5ac80e86556d8a6e540d5581bd5ab21 inherit pub_methods_classz_1_1_abstract_worker" id="r_ae5ac80e86556d8a6e540d5581bd5ab21"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_abstract_worker.html#ae5ac80e86556d8a6e540d5581bd5ab21">TaskCycleBegin</a> ()</td></tr>
+<tr class="memdesc:ae5ac80e86556d8a6e540d5581bd5ab21 inherit pub_methods_classz_1_1_abstract_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">TaskCycleBegin方法，在每次任务队列循环的开始会被调度器调用。  <br /></td></tr>
+<tr class="separator:ae5ac80e86556d8a6e540d5581bd5ab21 inherit pub_methods_classz_1_1_abstract_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a324d1283ce33a8314f31a2e7dc6fd543 inherit pub_methods_classz_1_1_abstract_worker" id="r_a324d1283ce33a8314f31a2e7dc6fd543"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_abstract_worker.html#a324d1283ce33a8314f31a2e7dc6fd543">TaskCycleEnd</a> ()</td></tr>
+<tr class="memdesc:a324d1283ce33a8314f31a2e7dc6fd543 inherit pub_methods_classz_1_1_abstract_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">TaskCycleEnd方法，在每次任务队列循环的结束会被调度器调用。  <br /></td></tr>
+<tr class="separator:a324d1283ce33a8314f31a2e7dc6fd543 inherit pub_methods_classz_1_1_abstract_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classz_1_1_z_object"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classz_1_1_z_object')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classz_1_1_z_object.html">z::ZObject</a></td></tr>
+<tr class="memitem:a20fc044ee664a6b01d500d536e63a1ed inherit pub_methods_classz_1_1_z_object" id="r_a20fc044ee664a6b01d500d536e63a1ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_z_object.html#a20fc044ee664a6b01d500d536e63a1ed">PrintSplitLine</a> (size_t length=60, char c='-')</td></tr>
+<tr class="memdesc:a20fc044ee664a6b01d500d536e63a1ed inherit pub_methods_classz_1_1_z_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">print a split line, default length is 60 and character is '-'  <br /></td></tr>
+<tr class="separator:a20fc044ee664a6b01d500d536e63a1ed inherit pub_methods_classz_1_1_z_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:a044e250c9621080c8f031e772659b4ec" id="r_a044e250c9621080c8f031e772659b4ec"><td class="memItemLeft" align="right" valign="top"><a id="a044e250c9621080c8f031e772659b4ec" name="a044e250c9621080c8f031e772659b4ec"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>WarmUpModel__</b> = false</td></tr>
+<tr class="memdesc:a044e250c9621080c8f031e772659b4ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否需要预热模型 <br /></td></tr>
+<tr class="separator:a044e250c9621080c8f031e772659b4ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e6e847e9bce6700da317ffe14602749" id="r_a0e6e847e9bce6700da317ffe14602749"><td class="memItemLeft" align="right" valign="top"><a id="a0e6e847e9bce6700da317ffe14602749" name="a0e6e847e9bce6700da317ffe14602749"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>WarmUpCnt__</b> = 0</td></tr>
+<tr class="memdesc:a0e6e847e9bce6700da317ffe14602749"><td class="mdescLeft">&#160;</td><td class="mdescRight">预热次数 <br /></td></tr>
+<tr class="separator:a0e6e847e9bce6700da317ffe14602749"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4b7153b7a195cd21516fad2e323ef71" id="r_ac4b7153b7a195cd21516fad2e323ef71"><td class="memItemLeft" align="right" valign="top"><a id="ac4b7153b7a195cd21516fad2e323ef71" name="ac4b7153b7a195cd21516fad2e323ef71"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ModelPath__</b></td></tr>
+<tr class="memdesc:ac4b7153b7a195cd21516fad2e323ef71"><td class="mdescLeft">&#160;</td><td class="mdescRight">模型路径 <br /></td></tr>
+<tr class="separator:ac4b7153b7a195cd21516fad2e323ef71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3ff2aab7efd26d91289bee89e576774" id="r_ac3ff2aab7efd26d91289bee89e576774"><td class="memItemLeft" align="right" valign="top"><a id="ac3ff2aab7efd26d91289bee89e576774" name="ac3ff2aab7efd26d91289bee89e576774"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>IntraNumberThreads__</b> = 1</td></tr>
+<tr class="memdesc:ac3ff2aab7efd26d91289bee89e576774"><td class="mdescLeft">&#160;</td><td class="mdescRight">推理线程数，默认为1，增大线程数可能可以提升推理速度但是会增加资源消耗 <br /></td></tr>
+<tr class="separator:ac3ff2aab7efd26d91289bee89e576774"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ef3efd5054b843748581aebcb3b1794" id="r_a1ef3efd5054b843748581aebcb3b1794"><td class="memItemLeft" align="right" valign="top"><a id="a1ef3efd5054b843748581aebcb3b1794" name="a1ef3efd5054b843748581aebcb3b1794"></a>
+Ort::Session&#160;</td><td class="memItemRight" valign="bottom"><b>Session__</b></td></tr>
+<tr class="memdesc:a1ef3efd5054b843748581aebcb3b1794"><td class="mdescLeft">&#160;</td><td class="mdescRight">ONNXRuntime的Session对象，用来加载模型和进行推理 <br /></td></tr>
+<tr class="separator:a1ef3efd5054b843748581aebcb3b1794"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38fd97ac8e762c77a632d0cd64f14e89" id="r_a38fd97ac8e762c77a632d0cd64f14e89"><td class="memItemLeft" align="right" valign="top"><a id="a38fd97ac8e762c77a632d0cd64f14e89" name="a38fd97ac8e762c77a632d0cd64f14e89"></a>
+Ort::SessionOptions&#160;</td><td class="memItemRight" valign="bottom"><b>SessionOptions__</b></td></tr>
+<tr class="memdesc:a38fd97ac8e762c77a632d0cd64f14e89"><td class="mdescLeft">&#160;</td><td class="mdescRight">ONNXRuntime的SessionOptions对象，用来配置Session <br /></td></tr>
+<tr class="separator:a38fd97ac8e762c77a632d0cd64f14e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7ce9a61c1433be200e001ea8f6da844" id="r_af7ce9a61c1433be200e001ea8f6da844"><td class="memItemLeft" align="right" valign="top"><a id="af7ce9a61c1433be200e001ea8f6da844" name="af7ce9a61c1433be200e001ea8f6da844"></a>
+Ort::AllocatorWithDefaultOptions&#160;</td><td class="memItemRight" valign="bottom"><b>DefaultAllocator__</b></td></tr>
+<tr class="memdesc:af7ce9a61c1433be200e001ea8f6da844"><td class="mdescLeft">&#160;</td><td class="mdescRight">ONNXRuntime的AllocatorWithDefaultOptions对象，用来分配内存 <br /></td></tr>
+<tr class="separator:af7ce9a61c1433be200e001ea8f6da844"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1484a6fb51e3669b9ae0840c18006a3c" id="r_a1484a6fb51e3669b9ae0840c18006a3c"><td class="memItemLeft" align="right" valign="top"><a id="a1484a6fb51e3669b9ae0840c18006a3c" name="a1484a6fb51e3669b9ae0840c18006a3c"></a>
+Ort::MemoryInfo&#160;</td><td class="memItemRight" valign="bottom"><b>MemoryInfo__</b></td></tr>
+<tr class="memdesc:a1484a6fb51e3669b9ae0840c18006a3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ONNXRuntime的MemoryInfo对象，用来配置内存信息 <br /></td></tr>
+<tr class="separator:a1484a6fb51e3669b9ae0840c18006a3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5a97583ace87779b016d6e12f6d83b9" id="r_ac5a97583ace87779b016d6e12f6d83b9"><td class="memItemLeft" align="right" valign="top"><a id="ac5a97583ace87779b016d6e12f6d83b9" name="ac5a97583ace87779b016d6e12f6d83b9"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>InputNodeNames__</b></td></tr>
+<tr class="memdesc:ac5a97583ace87779b016d6e12f6d83b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">输入节点名称列表 <br /></td></tr>
+<tr class="separator:ac5a97583ace87779b016d6e12f6d83b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff692268930a3f8da04346885cc6d273" id="r_aff692268930a3f8da04346885cc6d273"><td class="memItemLeft" align="right" valign="top"><a id="aff692268930a3f8da04346885cc6d273" name="aff692268930a3f8da04346885cc6d273"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>OutputNodeNames__</b></td></tr>
+<tr class="memdesc:aff692268930a3f8da04346885cc6d273"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出节点名称列表 <br /></td></tr>
+<tr class="separator:aff692268930a3f8da04346885cc6d273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d902e76f24d3d3c3da5c9ff78d22347" id="r_a7d902e76f24d3d3c3da5c9ff78d22347"><td class="memItemLeft" align="right" valign="top"><a id="a7d902e76f24d3d3c3da5c9ff78d22347" name="a7d902e76f24d3d3c3da5c9ff78d22347"></a>
+std::vector&lt; Ort::Value &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>InputOrtTensors__</b></td></tr>
+<tr class="memdesc:a7d902e76f24d3d3c3da5c9ff78d22347"><td class="mdescLeft">&#160;</td><td class="mdescRight">输入Ort::Value列表，顺序与InputNodeNames一致 <br /></td></tr>
+<tr class="separator:a7d902e76f24d3d3c3da5c9ff78d22347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae83553a86377993037ce2505cc1f2091" id="r_ae83553a86377993037ce2505cc1f2091"><td class="memItemLeft" align="right" valign="top"><a id="ae83553a86377993037ce2505cc1f2091" name="ae83553a86377993037ce2505cc1f2091"></a>
+std::vector&lt; Ort::Value &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>OutputOrtTensors__</b></td></tr>
+<tr class="memdesc:ae83553a86377993037ce2505cc1f2091"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出Ort::Value列表，顺序与OutputNodeNames一致 <br /></td></tr>
+<tr class="separator:ae83553a86377993037ce2505cc1f2091"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab93ad5aa7fca9bb6c85b8beb43dd58e8" id="r_ab93ad5aa7fca9bb6c85b8beb43dd58e8"><td class="memItemLeft" align="right" valign="top"><a id="ab93ad5aa7fca9bb6c85b8beb43dd58e8" name="ab93ad5aa7fca9bb6c85b8beb43dd58e8"></a>
+Ort::IoBinding&#160;</td><td class="memItemRight" valign="bottom"><b>IoBinding__</b></td></tr>
+<tr class="memdesc:ab93ad5aa7fca9bb6c85b8beb43dd58e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">ONNXRuntime的IoBinding对象，用来绑定输入输出节点，绑定名称和数据 <br /></td></tr>
+<tr class="separator:ab93ad5aa7fca9bb6c85b8beb43dd58e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classz_1_1_abstract_worker"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classz_1_1_abstract_worker')"><img src="closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="classz_1_1_abstract_worker.html">z::AbstractWorker&lt; SchedulerType &gt;</a></td></tr>
+<tr class="memitem:af4842124f95ccfb50ddb0d21a9642cab inherit pro_attribs_classz_1_1_abstract_worker" id="r_af4842124f95ccfb50ddb0d21a9642cab"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>Scheduler</b> = nullptr</td></tr>
+<tr class="memdesc:af4842124f95ccfb50ddb0d21a9642cab inherit pro_attribs_classz_1_1_abstract_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">调度器的指针，用户可以通过这个指针来获取一些全局的数据， 比如当前任务的时间戳，前级工人的输出数据等，也可以通过这个指针来设置一些全局的数据。 <br /></td></tr>
+<tr class="separator:af4842124f95ccfb50ddb0d21a9642cab inherit pro_attribs_classz_1_1_abstract_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, typename InferencePrecision&gt;<br />
+class z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;</div><p>AbstractNetInferenceWorker类型是一切神经网络推理工人类型的基类，该类提供一些基本推理的功能， 用户可以通过继承这个类来实现自己的推理工人类型。 </p>
+<p>AbstractNetInferenceWorker类型是一切神经网络推理工人类型的基类，该类提供一些基本推理的功能， 用户可以通过继承这个类来实现自己的推理工人类型。该类型实现了与ONNXRuntime的交互，用户可以通过配置文件来配置模型的路径， 输入节点名称，输出节点名称，线程数等参数。用户可以通过继承这个类来实现自己的推理工人类型，用户必须实现PreProcess，PostProcess，方法 分别用来实现推理前的准备工作，推理后的处理工作，将在推理前后(InferenceOnce方法前后)依次调用这两个方法。</p>
+<p>details config.json配置文件示例： { "Workers": { "NN": { "Inference": { "WarmUpModel": true, //是否需要预热模型 "WarmUpCount": 10, //预热次数 "IntraNumberThreads": 1 //线程数 }, "Network": { "ModelPath": "model.onnx", //模型路径 "InputNodeNames": ["input"], //输入节点名称 "OutputNodeNames": ["output"] //输出节点名称 } } } }</p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">SchedulerType</td><td>调度器类型 </td></tr>
+    <tr><td class="paramname">InferencePrecision</td><td>推理精度，用户可以通过这个参数来指定推理的精度，比如可以指定为float或者double </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a4233d82bef23c27d9166875ebfb8fb2f" name="a4233d82bef23c27d9166875ebfb8fb2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4233d82bef23c27d9166875ebfb8fb2f">&#9670;&#160;</a></span>AbstractNetInferenceWorker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, typename InferencePrecision&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1_abstract_net_inference_worker.html">z::AbstractNetInferenceWorker</a>&lt; <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, InferencePrecision &gt;::AbstractNetInferenceWorker </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *</td>          <td class="paramname"><span class="paramname"><em>scheduler</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const nlohmann::json &amp;</td>          <td class="paramname"><span class="paramname"><em>cfg</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>推理精度必须是一个算术类型 </p>
+<p>构造一个AbstractNetInferenceWorker类型</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scheduler</td><td>调度器的指针 </td></tr>
+    <tr><td class="paramname">cfg</td><td>配置文件 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ad86b971cfc22dc49111fb88b71c2a3ba" name="ad86b971cfc22dc49111fb88b71c2a3ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad86b971cfc22dc49111fb88b71c2a3ba">&#9670;&#160;</a></span>PostProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, typename InferencePrecision&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classz_1_1_abstract_net_inference_worker.html">z::AbstractNetInferenceWorker</a>&lt; <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, InferencePrecision &gt;::PostProcess </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>后处理方法，用户必须实现这个方法，用来实现推理后的处理工作,该方法在每次InferenceOnce()之后被调用 </p>
+
+<p>在 <a class="el" href="classz_1_1_arm_tracking_inference_worker.html#ac71782127aca805d68385b7f5b2f4b50">z::ArmTrackingInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a>, <a class="el" href="classz_1_1_arm_tracking_inference_worker.html#ac71782127aca805d68385b7f5b2f4b50">z::ArmTrackingInferenceWorker&lt; SchedulerType, RealNumber, JOINT_NUMBER &gt;</a>, <a class="el" href="classz_1_1_arm_tracking_inference_worker.html#ac71782127aca805d68385b7f5b2f4b50">z::ArmTrackingInferenceWorker&lt; SchedulerType, RealNumber, JOINT_NUMBER &gt;</a>, <a class="el" href="classz_1_1_erax_like_inference_worker.html#aabfbd2143b14d48328bc9d1a3bc7b88e">z::EraxLikeInferenceWorker&lt; SchedulerType, InferencePrecision, INPUT_STUCK_LENGTH, EXTRA_INPUT_LENGTH, JOINT_NUMBER &gt;</a>, <a class="el" href="classz_1_1_erax_like_inference_worker.html#aabfbd2143b14d48328bc9d1a3bc7b88e">z::EraxLikeInferenceWorker&lt; SchedulerType, RealNumber, OBSERVATION_STUCK_LENGTH, OBSERVATION_EXTRA_LENGTH, JOINT_NUMBER &gt;</a>, <a class="el" href="classz_1_1_erax_like_inference_worker.html#aabfbd2143b14d48328bc9d1a3bc7b88e">z::EraxLikeInferenceWorker&lt; SchedulerType, RealNumber, OBSERVATION_STUCK_LENGTH, OBSERVATION_EXTRA_LENGTH, JOINT_NUMBER &gt;</a>, <a class="el" href="classz_1_1_humanoid_gym_inference_worker.html#a9bb9a307145d8e070d115a805c2aa839">z::HumanoidGymInferenceWorker&lt; SchedulerType, InferencePrecision, INPUT_STUCK_LENGTH, JOINT_NUMBER &gt;</a> , 以及 <a class="el" href="classz_1_1_plain_inference_worker.html#a38e90e5e4f020dd878562b335670b1af">z::PlainInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a58895a2a28294831b36285ede29b902c" name="a58895a2a28294831b36285ede29b902c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58895a2a28294831b36285ede29b902c">&#9670;&#160;</a></span>PreProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, typename InferencePrecision&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classz_1_1_abstract_net_inference_worker.html">z::AbstractNetInferenceWorker</a>&lt; <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, InferencePrecision &gt;::PreProcess </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>预处理方法，用户必须实现这个方法，用来实现推理前的准备工作,该方法在每次InferenceOnce()之前被调用 </p>
+
+<p>在 <a class="el" href="classz_1_1_arm_tracking_inference_worker.html#a178eb25dc2b8d355b5c18346935601de">z::ArmTrackingInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a>, <a class="el" href="classz_1_1_arm_tracking_inference_worker.html#a178eb25dc2b8d355b5c18346935601de">z::ArmTrackingInferenceWorker&lt; SchedulerType, RealNumber, JOINT_NUMBER &gt;</a>, <a class="el" href="classz_1_1_arm_tracking_inference_worker.html#a178eb25dc2b8d355b5c18346935601de">z::ArmTrackingInferenceWorker&lt; SchedulerType, RealNumber, JOINT_NUMBER &gt;</a>, <a class="el" href="classz_1_1_erax_like_inference_worker.html#a469349a61412642628f266049db0a006">z::EraxLikeInferenceWorker&lt; SchedulerType, InferencePrecision, INPUT_STUCK_LENGTH, EXTRA_INPUT_LENGTH, JOINT_NUMBER &gt;</a>, <a class="el" href="classz_1_1_erax_like_inference_worker.html#a469349a61412642628f266049db0a006">z::EraxLikeInferenceWorker&lt; SchedulerType, RealNumber, OBSERVATION_STUCK_LENGTH, OBSERVATION_EXTRA_LENGTH, JOINT_NUMBER &gt;</a>, <a class="el" href="classz_1_1_erax_like_inference_worker.html#a469349a61412642628f266049db0a006">z::EraxLikeInferenceWorker&lt; SchedulerType, RealNumber, OBSERVATION_STUCK_LENGTH, OBSERVATION_EXTRA_LENGTH, JOINT_NUMBER &gt;</a>, <a class="el" href="classz_1_1_humanoid_gym_inference_worker.html#a06252022c0f2a568ff3591a126c9804f">z::HumanoidGymInferenceWorker&lt; SchedulerType, InferencePrecision, INPUT_STUCK_LENGTH, JOINT_NUMBER &gt;</a> , 以及 <a class="el" href="classz_1_1_plain_inference_worker.html#ae5478b15a08251b9287008e6107aa338">z::PlainInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a1e0155aab60ec9902d53a1b9f8bcf318" name="a1e0155aab60ec9902d53a1b9f8bcf318"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e0155aab60ec9902d53a1b9f8bcf318">&#9670;&#160;</a></span>TaskCreate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, typename InferencePrecision&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classz_1_1_abstract_net_inference_worker.html">z::AbstractNetInferenceWorker</a>&lt; <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, InferencePrecision &gt;::TaskCreate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>任务创建的方法，该方法中会初始化模型，预热模型，绑定输入输出节点等 </p>
+
+<p>重载 <a class="el" href="classz_1_1_abstract_worker.html#a10203246dd092e6e7ee8e632a8fa95b5">z::AbstractWorker&lt; SchedulerType &gt;</a> .</p>
+
+</div>
+</div>
+<a id="a806fb181f59b745ccb28781e83673a5a" name="a806fb181f59b745ccb28781e83673a5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a806fb181f59b745ccb28781e83673a5a">&#9670;&#160;</a></span>TaskRun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, typename InferencePrecision&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classz_1_1_abstract_net_inference_worker.html">z::AbstractNetInferenceWorker</a>&lt; <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, InferencePrecision &gt;::TaskRun </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在每次任务队列循环中被调用，用来实现推理的逻辑,默认实现是依次调用PreProcess，InferenceOnce，PostProcess方法 </p>
+
+<p>实现了 <a class="el" href="classz_1_1_abstract_worker.html#a21c7a77eb87b6ac52e86b9cff4f558d2">z::AbstractWorker&lt; SchedulerType &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a8bf4762ebd0079c6e9a573f6305e2fe8" name="a8bf4762ebd0079c6e9a573f6305e2fe8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bf4762ebd0079c6e9a573f6305e2fe8">&#9670;&#160;</a></span>WarpOrtTensor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, typename InferencePrecision&gt; </div>
+<div class="memtemplate">
+template&lt;int64_t ... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ort::Value <a class="el" href="classz_1_1_abstract_net_inference_worker.html">z::AbstractNetInferenceWorker</a>&lt; <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, InferencePrecision &gt;::WarpOrtTensor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classz_1_1math_1_1_tensor.html">math::Tensor</a>&lt; InferencePrecision, Dims... &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>Tensor</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将z::math::Tensor类型的数据转换为Ort::Value类型的数据。 </p>
+<p>将z::math::Tensor类型的数据转换为Ort::Value类型的数据。 <b>注意Ort::Value类型的数据是一个指针，因此必须保证Tensor的生命周期大于Ort::Value的生命周期， 即Tensor不能提前销毁！</b></p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Dims</td><td>Tensor的维度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Tensor</td><td>输入的Tensor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Ort::Value 返回的Ort::Value类型的数据 </dd></dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/NN/<a class="el" href="_abstract_inference_worker_8hpp_source.html">AbstractInferenceWorker.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>z</b></li><li class="navelem"><a class="el" href="classz_1_1_abstract_net_inference_worker.html">AbstractNetInferenceWorker</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

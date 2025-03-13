@@ -1,5 +1,0 @@
-{
-  "dependencies": [
-    "onnxruntime-gpu"
-  ]
-}

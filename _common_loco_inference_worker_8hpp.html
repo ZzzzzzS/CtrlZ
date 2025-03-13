@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ctrl-Z: C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/NN/CommonLocoInferenceWorker.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Ctrl-Z
+   </div>
+   <div id="projectbrief">一个多线程机器人运动控制强化学习部署框架</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_common_loco_inference_worker_8hpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a>  </div>
+  <div class="headertitle"><div class="title">CommonLocoInferenceWorker.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_abstract_inference_worker_8hpp_source.html">AbstractInferenceWorker.hpp</a>&quot;</code><br />
+<code>#include &quot;onnxruntime_cxx_api.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="_math_types_8hpp_source.html">Utils/MathTypes.hpp</a>&quot;</code><br />
+<code>#include &quot;nlohmann/json.hpp&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+CommonLocoInferenceWorker.hpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_common_loco_inference_worker_8hpp__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_common_loco_inference_worker_8hpp" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_common_loco_inference_worker_8hpp" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_common_loco_inference_worker_8hpp">
+<area shape="rect" title=" " alt="" coords="1362,5,1612,80"/>
+<area shape="rect" href="_abstract_inference_worker_8hpp.html" title=" " alt="" coords="982,128,1172,155"/>
+<area shape="poly" title=" " alt="" coords="1362,76,1146,127,1145,121,1360,71"/>
+<area shape="rect" href="_math_types_8hpp.html" title=" " alt="" coords="1460,427,1570,453"/>
+<area shape="poly" title=" " alt="" coords="1507,79,1529,142,1537,178,1540,215,1540,292,1535,357,1524,412,1519,411,1529,356,1535,292,1535,215,1532,179,1524,143,1502,81"/>
+<area shape="rect" title=" " alt="" coords="1095,352,1225,379"/>
+<area shape="poly" title=" " alt="" coords="1452,82,1185,343,1181,339,1448,78"/>
+<area shape="rect" title=" " alt="" coords="1594,427,1750,453"/>
+<area shape="poly" title=" " alt="" coords="1545,79,1576,105,1603,136,1624,173,1630,194,1632,215,1632,292,1635,325,1642,357,1662,411,1657,413,1637,358,1630,325,1627,292,1627,215,1625,195,1619,175,1599,140,1572,108,1542,83"/>
+<area shape="rect" href="_abstract_worker_8hpp.html" title=" " alt="" coords="795,277,984,304"/>
+<area shape="poly" title=" " alt="" coords="1063,157,919,270,915,266,1060,153"/>
+<area shape="rect" title=" " alt="" coords="435,427,488,453"/>
+<area shape="poly" title=" " alt="" coords="982,148,793,158,565,180,454,197,354,219,272,246,240,262,215,279,191,303,176,327,173,351,176,364,184,376,274,398,420,428,419,433,273,403,181,381,172,366,167,352,171,325,187,299,212,275,237,257,270,241,352,214,453,192,565,175,793,152,981,143"/>
+<area shape="rect" title=" " alt="" coords="376,501,426,528"/>
+<area shape="poly" title=" " alt="" coords="982,148,491,167,248,184,162,194,111,205,71,220,38,234,26,243,16,255,10,270,8,289,8,366,11,379,18,392,48,416,92,437,146,457,264,486,362,505,361,510,263,492,145,462,90,442,45,420,15,395,6,381,3,367,3,289,5,268,12,252,22,239,36,229,69,215,110,200,161,189,248,179,490,162,982,143"/>
+<area shape="poly" title=" " alt="" coords="1100,153,1177,200,1297,272,1412,350,1491,414,1488,418,1409,354,1294,277,1175,205,1097,157"/>
+<area shape="rect" title=" " alt="" coords="1002,352,1070,379"/>
+<area shape="poly" title=" " alt="" coords="1082,155,1089,220,1088,262,1080,305,1071,324,1060,341,1055,338,1067,322,1075,303,1083,262,1084,220,1077,155"/>
+<area shape="poly" title=" " alt="" coords="1086,154,1108,202,1154,336,1149,338,1103,204,1081,156"/>
+<area shape="rect" title=" " alt="" coords="1007,277,1065,304"/>
+<area shape="poly" title=" " alt="" coords="1076,156,1046,263,1041,262,1071,154"/>
+<area shape="rect" title=" " alt="" coords="62,352,119,379"/>
+<area shape="poly" title=" " alt="" coords="982,145,764,148,500,156,375,164,266,174,185,188,157,196,140,205,116,233,102,269,95,305,93,337,87,336,90,304,97,267,112,231,137,201,155,191,184,183,266,169,374,159,500,151,764,142,982,140"/>
+<area shape="rect" href="_abstract_scheduler_8hpp.html" title="AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。" alt="" coords="529,203,751,229"/>
+<area shape="poly" title=" " alt="" coords="1001,158,732,202,731,197,1000,153"/>
+<area shape="poly" title=" " alt="" coords="1109,153,1216,200,1457,321,1637,417,1635,421,1455,326,1214,205,1107,158"/>
+<area shape="rect" href="_net_inference_worker_8h.html" title=" " alt="" coords="1250,352,1398,379"/>
+<area shape="poly" title=" " alt="" coords="1093,153,1301,340,1297,344,1090,157"/>
+<area shape="rect" href="_z_object_8hpp.html" title=" " alt="" coords="843,352,978,379"/>
+<area shape="poly" title=" " alt="" coords="896,304,905,336,900,338,890,305"/>
+<area shape="rect" href="_static_string_utils_8hpp.html" title=" " alt="" coords="634,352,819,379"/>
+<area shape="poly" title=" " alt="" coords="862,307,770,348,768,343,860,302"/>
+<area shape="poly" title=" " alt="" coords="916,302,998,342,996,347,914,307"/>
+<area shape="poly" title=" " alt="" coords="937,302,1099,345,1097,350,936,307"/>
+<area shape="rect" title=" " alt="" coords="880,501,952,528"/>
+<area shape="poly" title=" " alt="" coords="906,380,893,413,889,433,891,453,903,487,898,489,885,454,884,433,888,412,901,378"/>
+<area shape="poly" title=" " alt="" coords="744,377,890,490,886,494,741,381"/>
+<area shape="poly" title=" " alt="" coords="681,382,504,430,502,425,680,377"/>
+<area shape="poly" title=" " alt="" coords="683,382,620,402,552,429,436,495,434,491,550,424,618,397,681,377"/>
+<area shape="rect" title=" " alt="" coords="1130,501,1204,528"/>
+<area shape="poly" title=" " alt="" coords="752,377,841,424,865,439,889,451,948,470,1009,485,1115,504,1114,509,1008,490,947,475,887,456,862,443,839,429,749,382"/>
+<area shape="rect" title=" " alt="" coords="563,427,613,453"/>
+<area shape="poly" title=" " alt="" coords="704,382,627,421,625,417,701,377"/>
+<area shape="rect" title=" " alt="" coords="636,427,724,453"/>
+<area shape="poly" title=" " alt="" coords="721,381,698,415,694,412,716,378"/>
+<area shape="rect" title=" " alt="" coords="900,427,982,453"/>
+<area shape="poly" title=" " alt="" coords="765,377,890,419,889,424,763,382"/>
+<area shape="rect" title=" " alt="" coords="342,427,384,453"/>
+<area shape="poly" title=" " alt="" coords="663,382,423,429,400,434,399,429,422,424,662,377"/>
+<area shape="poly" title=" " alt="" coords="819,375,831,376,1002,390,1136,397,1271,406,1444,424,1444,429,1271,411,1136,402,1001,395,830,381,819,380"/>
+<area shape="poly" title=" " alt="" coords="1459,454,1447,456,1177,490,967,511,967,506,1176,485,1446,451,1459,449"/>
+<area shape="poly" title=" " alt="" coords="1459,454,1447,456,1145,484,851,502,603,511,442,515,442,510,603,506,851,496,1145,479,1446,451,1459,449"/>
+<area shape="poly" title=" " alt="" coords="1460,455,1219,505,1218,500,1459,450"/>
+<area shape="rect" title=" " alt="" coords="1439,501,1497,528"/>
+<area shape="poly" title=" " alt="" coords="1509,455,1486,490,1482,487,1504,452"/>
+<area shape="rect" title=" " alt="" coords="1521,501,1599,528"/>
+<area shape="poly" title=" " alt="" coords="1525,452,1546,487,1542,489,1520,455"/>
+<area shape="poly" title=" " alt="" coords="684,227,832,270,830,275,683,232"/>
+<area shape="poly" title=" " alt="" coords="660,227,784,302,869,343,867,348,781,306,658,232"/>
+<area shape="poly" title=" " alt="" coords="650,228,714,337,709,340,645,231"/>
+<area shape="poly" title=" " alt="" coords="640,231,621,299,601,342,574,380,540,408,503,427,501,422,537,404,570,377,597,339,616,297,635,229"/>
+<area shape="poly" title=" " alt="" coords="735,227,854,246,993,274,992,279,853,252,734,233"/>
+<area shape="poly" title=" " alt="" coords="529,221,457,227,376,237,294,254,214,280,160,310,116,344,113,340,157,305,212,275,292,249,376,232,456,221,528,216"/>
+<area shape="rect" href="_data_center_8hpp.html" title=" " alt="" coords="395,277,552,304"/>
+<area shape="poly" title=" " alt="" coords="612,232,517,273,515,268,610,227"/>
+<area shape="rect" title=" " alt="" coords="194,352,240,379"/>
+<area shape="poly" title=" " alt="" coords="528,222,444,228,357,238,283,255,255,266,235,279,226,292,221,306,217,337,212,337,215,305,221,289,231,275,252,261,281,250,356,233,443,222,528,217"/>
+<area shape="rect" title=" " alt="" coords="499,352,560,379"/>
+<area shape="poly" title=" " alt="" coords="633,231,550,341,546,338,628,228"/>
+<area shape="rect" title=" " alt="" coords="245,277,371,304"/>
+<area shape="poly" title=" " alt="" coords="582,233,381,276,380,271,581,227"/>
+<area shape="poly" title=" " alt="" coords="550,302,828,348,827,353,550,307"/>
+<area shape="poly" title=" " alt="" coords="518,302,669,345,667,350,517,307"/>
+<area shape="poly" title=" " alt="" coords="475,305,466,411,461,411,470,304"/>
+<area shape="poly" title=" " alt="" coords="417,307,377,325,359,338,343,354,328,378,320,401,322,425,332,452,346,473,366,490,363,494,343,477,327,455,317,426,315,400,323,376,339,350,355,334,374,320,415,302"/>
+<area shape="poly" title=" " alt="" coords="422,307,385,325,368,338,356,353,350,367,349,382,354,412,349,413,344,382,345,366,351,351,365,334,382,320,420,302"/>
+<area shape="poly" title=" " alt="" coords="407,307,135,358,134,353,406,302"/>
+<area shape="poly" title=" " alt="" coords="428,307,259,355,256,355,255,350,258,349,427,302"/>
+<area shape="rect" title=" " alt="" coords="366,352,423,379"/>
+<area shape="poly" title=" " alt="" coords="461,307,421,343,418,339,458,303"/>
+<area shape="poly" title=" " alt="" coords="485,303,513,338,508,341,481,306"/>
+<area shape="poly" title=" " alt="" coords="1251,382,1136,404,1046,429,990,460,944,494,941,489,987,456,1044,424,1135,399,1250,377"/>
+<area shape="poly" title=" " alt="" coords="1250,380,1238,381,1045,398,894,406,744,413,551,429,504,435,503,430,550,424,743,408,894,400,1044,392,1237,376,1249,375"/>
+<area shape="poly" title=" " alt="" coords="1255,382,1002,429,998,430,997,425,1001,424,1254,377"/>
+<area shape="poly" title=" " alt="" coords="1358,377,1468,418,1466,423,1356,382"/>
+<area shape="poly" title=" " alt="" coords="1386,377,1597,420,1596,426,1384,382"/>
+<area shape="rect" title=" " alt="" coords="1058,427,1113,453"/>
+<area shape="poly" title=" " alt="" coords="1283,382,1129,428,1127,423,1282,377"/>
+<area shape="rect" title=" " alt="" coords="1137,427,1204,453"/>
+<area shape="poly" title=" " alt="" coords="1298,382,1213,422,1210,417,1296,377"/>
+<area shape="rect" title=" " alt="" coords="1228,427,1324,453"/>
+<area shape="poly" title=" " alt="" coords="1318,381,1295,415,1290,412,1313,378"/>
+<area shape="rect" title=" " alt="" coords="1349,427,1435,453"/>
+<area shape="poly" title=" " alt="" coords="1338,377,1372,413,1368,417,1334,381"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="_common_loco_inference_worker_8hpp__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_common_loco_inference_worker_8hppdep" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_common_loco_inference_worker_8hppdep" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_common_loco_inference_worker_8hppdep">
+<area shape="rect" title=" " alt="" coords="378,5,629,80"/>
+<area shape="rect" href="_erax_like_inference_worker_8hpp.html" title=" " alt="" coords="5,128,226,203"/>
+<area shape="poly" title=" " alt="" coords="371,88,227,132,225,127,370,83"/>
+<area shape="rect" href="_humanoid_gym_inference_worker_8hpp.html" title=" " alt="" coords="250,128,506,203"/>
+<area shape="poly" title=" " alt="" coords="456,93,418,129,414,126,452,89"/>
+<area shape="rect" href="_plain_inference_worker_8hpp.html" title=" " alt="" coords="531,128,729,203"/>
+<area shape="poly" title=" " alt="" coords="555,89,594,126,590,130,551,93"/>
+<area shape="rect" href="_arm_tracking_inference_worker_8hpp.html" title="机械臂控制程序所需控制网络" alt="" coords="754,128,973,203"/>
+<area shape="poly" title=" " alt="" coords="629,83,754,125,753,130,627,88"/>
+<area shape="rect" href="_bitbot_simulation_2types_8hpp.html" title="类型定义" alt="" coords="144,251,351,325"/>
+<area shape="poly" title=" " alt="" coords="169,211,209,248,206,252,165,215"/>
+<area shape="rect" href="user__func_8cpp.html" title=" " alt="" coords="75,496,281,571"/>
+<area shape="poly" title=" " alt="" coords="220,340,206,374,191,438,183,496,178,496,185,437,201,372,216,338"/>
+<area shape="rect" href="user__func_8h.html" title=" " alt="" coords="215,373,421,448"/>
+<area shape="poly" title=" " alt="" coords="279,338,299,372,294,374,274,340"/>
+<area shape="poly" title=" " alt="" coords="266,460,222,498,219,494,262,456"/>
+<area shape="rect" href="_bitbot_simulation_2main_8cpp.html" title=" " alt="" coords="306,496,512,571"/>
+<area shape="poly" title=" " alt="" coords="357,459,383,494,379,497,353,462"/>
+<area shape="poly" title=" " alt="" coords="329,215,289,252,285,248,326,211"/>
+<area shape="rect" href="_airbot_arm_2types_8hpp.html" title="机械臂控制程序所需的一些类型定义" alt="" coords="779,251,948,325"/>
+<area shape="poly" title=" " alt="" coords="866,219,866,250,861,250,861,219"/>
+<area shape="rect" href="_airbot_arm_2main_8cpp.html" title=" " alt="" coords="779,373,948,448"/>
+<area shape="poly" title=" " alt="" coords="866,341,866,373,861,373,861,341"/>
+</map>
+</div>
+</div>
+<p><a href="_common_loco_inference_worker_8hpp_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_common_loco_inference_worker.html">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CommonLocoInferenceWorker类型是一个通用的Locomotion推理工人类型，该类型实现了一些Locomotion推理的通用逻辑。  <a href="classz_1_1_common_loco_inference_worker.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><dl class="section author"><dt>作者</dt><dd>Zishun Zhou </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2025-03-10</dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>Copyright (c) 2025 </dd></dl>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7b6a9de995744179e2af2e4eac8c765a.html">CtrlZ</a></li><li class="navelem"><a class="el" href="dir_23feaddda2c120f5a6c49ee991b2b1fd.html">Workers</a></li><li class="navelem"><a class="el" href="dir_4208ae36855875353e44c90f2e1c222d.html">NN</a></li><li class="navelem"><a class="el" href="_common_loco_inference_worker_8hpp.html">CommonLocoInferenceWorker.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

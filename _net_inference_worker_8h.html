@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ctrl-Z: C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/NN/NetInferenceWorker.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Ctrl-Z
+   </div>
+   <div id="projectbrief">一个多线程机器人运动控制强化学习部署框架</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_net_inference_worker_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">NetInferenceWorker.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;onnxruntime_cxx_api.h&quot;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;locale&gt;</code><br />
+<code>#include &lt;codecvt&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &quot;<a class="el" href="_math_types_8hpp_source.html">Utils/MathTypes.hpp</a>&quot;</code><br />
+<code>#include &lt;Eigen/Dense&gt;</code><br />
+<code>#include &lt;Eigen/Core&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+NetInferenceWorker.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_net_inference_worker_8h__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_net_inference_worker_8h" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_net_inference_worker_8h" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_net_inference_worker_8h">
+<area shape="rect" title=" " alt="" coords="358,5,534,80"/>
+<area shape="rect" title=" " alt="" coords="5,128,161,155"/>
+<area shape="poly" title=" " alt="" coords="358,70,146,126,145,121,356,65"/>
+<area shape="rect" title=" " alt="" coords="184,128,238,155"/>
+<area shape="poly" title=" " alt="" coords="358,83,253,126,251,121,356,78"/>
+<area shape="rect" title=" " alt="" coords="262,128,317,155"/>
+<area shape="poly" title=" " alt="" coords="388,83,324,122,322,117,385,78"/>
+<area shape="rect" title=" " alt="" coords="341,128,409,155"/>
+<area shape="poly" title=" " alt="" coords="421,82,395,117,391,114,417,79"/>
+<area shape="rect" title=" " alt="" coords="382,203,453,229"/>
+<area shape="poly" title=" " alt="" coords="442,81,425,188,419,187,437,80"/>
+<area shape="rect" href="_math_types_8hpp.html" title=" " alt="" coords="483,128,624,155"/>
+<area shape="poly" title=" " alt="" coords="488,78,530,115,526,119,485,82"/>
+<area shape="rect" title=" " alt="" coords="648,128,744,155"/>
+<area shape="poly" title=" " alt="" coords="535,75,650,120,649,125,533,80"/>
+<area shape="rect" title=" " alt="" coords="769,128,856,155"/>
+<area shape="poly" title=" " alt="" coords="535,65,755,122,753,127,534,70"/>
+<area shape="rect" title=" " alt="" coords="879,128,962,155"/>
+<area shape="poly" title=" " alt="" coords="535,58,865,125,864,130,534,64"/>
+<area shape="poly" title=" " alt="" coords="531,158,456,197,454,193,529,153"/>
+<area shape="rect" title=" " alt="" coords="478,203,528,229"/>
+<area shape="poly" title=" " alt="" coords="547,157,522,192,518,189,543,154"/>
+<area shape="rect" title=" " alt="" coords="552,203,609,229"/>
+<area shape="poly" title=" " alt="" coords="561,154,573,187,568,189,556,156"/>
+<area shape="rect" title=" " alt="" coords="632,203,707,229"/>
+<area shape="poly" title=" " alt="" coords="575,153,638,192,635,196,572,157"/>
+<area shape="rect" title=" " alt="" coords="731,203,808,229"/>
+<area shape="poly" title=" " alt="" coords="592,153,718,195,717,200,590,158"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="_net_inference_worker_8h__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_net_inference_worker_8hdep" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_net_inference_worker_8hdep" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_net_inference_worker_8hdep">
+<area shape="rect" title=" " alt="" coords="526,5,702,80"/>
+<area shape="rect" href="_abstract_inference_worker_8hpp.html" title=" " alt="" coords="423,128,642,203"/>
+<area shape="poly" title=" " alt="" coords="583,95,559,129,555,126,578,92"/>
+<area shape="rect" href="_erax_like_inference_worker_8hpp.html" title=" " alt="" coords="26,373,247,448"/>
+<area shape="poly" title=" " alt="" coords="512,69,441,94,407,111,374,130,338,157,305,188,244,255,195,320,160,374,156,371,191,317,240,252,301,184,335,153,371,126,404,106,439,89,510,64"/>
+<area shape="rect" href="_humanoid_gym_inference_worker_8hpp.html" title=" " alt="" coords="271,373,527,448"/>
+<area shape="poly" title=" " alt="" coords="512,68,458,92,434,109,413,130,395,157,384,188,377,221,375,255,380,320,391,373,386,374,375,320,370,255,372,221,379,187,391,155,409,126,431,105,456,87,510,63"/>
+<area shape="rect" href="_plain_inference_worker_8hpp.html" title=" " alt="" coords="552,373,750,448"/>
+<area shape="poly" title=" " alt="" coords="644,93,656,127,668,194,670,262,666,324,660,373,655,373,661,324,664,262,662,195,651,129,639,95"/>
+<area shape="rect" href="_arm_tracking_inference_worker_8hpp.html" title="机械臂控制程序所需控制网络" alt="" coords="775,373,994,448"/>
+<area shape="poly" title=" " alt="" coords="653,91,680,126,860,371,856,374,676,130,649,94"/>
+<area shape="rect" href="_net_inference_worker_8cpp.html" title=" " alt="" coords="775,128,965,203"/>
+<area shape="poly" title=" " alt="" coords="707,85,793,125,791,130,704,89"/>
+<area shape="rect" href="_common_loco_inference_worker_8hpp.html" title=" " alt="" coords="399,251,650,325"/>
+<area shape="poly" title=" " alt="" coords="532,219,530,250,524,250,526,218"/>
+<area shape="poly" title=" " alt="" coords="392,333,248,378,246,373,391,328"/>
+<area shape="poly" title=" " alt="" coords="477,338,439,375,435,371,473,334"/>
+<area shape="poly" title=" " alt="" coords="576,334,615,371,611,375,572,338"/>
+<area shape="poly" title=" " alt="" coords="650,328,775,370,774,375,648,333"/>
+<area shape="rect" href="_bitbot_simulation_2types_8hpp.html" title="类型定义" alt="" coords="165,496,372,571"/>
+<area shape="poly" title=" " alt="" coords="190,457,230,494,227,498,186,461"/>
+<area shape="rect" href="user__func_8cpp.html" title=" " alt="" coords="236,741,442,816"/>
+<area shape="poly" title=" " alt="" coords="301,583,316,618,332,682,340,741,334,742,327,683,311,620,296,586"/>
+<area shape="rect" href="user__func_8h.html" title=" " alt="" coords="96,619,302,693"/>
+<area shape="poly" title=" " alt="" coords="242,586,223,620,218,617,238,583"/>
+<area shape="poly" title=" " alt="" coords="255,702,298,739,295,743,251,706"/>
+<area shape="rect" href="_bitbot_simulation_2main_8cpp.html" title=" " alt="" coords="5,741,212,816"/>
+<area shape="poly" title=" " alt="" coords="165,707,138,743,134,739,160,704"/>
+<area shape="poly" title=" " alt="" coords="350,461,310,498,306,494,347,457"/>
+<area shape="rect" href="_airbot_arm_2types_8hpp.html" title="机械臂控制程序所需的一些类型定义" alt="" coords="800,496,969,571"/>
+<area shape="poly" title=" " alt="" coords="887,464,887,496,882,496,882,464"/>
+<area shape="rect" href="_airbot_arm_2main_8cpp.html" title=" " alt="" coords="800,619,969,693"/>
+<area shape="poly" title=" " alt="" coords="887,587,887,618,882,618,882,587"/>
+</map>
+</div>
+</div>
+<p><a href="_net_inference_worker_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a0b0cd3f6d6f69a39769d165fd6066ebb" id="r_a0b0cd3f6d6f69a39769d165fd6066ebb"><td class="memItemLeft" align="right" valign="top"><a id="a0b0cd3f6d6f69a39769d165fd6066ebb" name="a0b0cd3f6d6f69a39769d165fd6066ebb"></a>
+Ort::Env &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetOrtEnv</b> ()</td></tr>
+<tr class="memdesc:a0b0cd3f6d6f69a39769d165fd6066ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">singleton get Ort::Env object <br /></td></tr>
+<tr class="separator:a0b0cd3f6d6f69a39769d165fd6066ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad612e1d5a3738c231a1aeefb21c4d36d" id="r_ad612e1d5a3738c231a1aeefb21c4d36d"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad612e1d5a3738c231a1aeefb21c4d36d">string_to_wstring</a> (const std::string &amp;str)</td></tr>
+<tr class="memdesc:ad612e1d5a3738c231a1aeefb21c4d36d"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert string to wstring, this is used for windows platform  <br /></td></tr>
+<tr class="separator:ad612e1d5a3738c231a1aeefb21c4d36d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa311e66cec9aa200b58011b5afa43abc" id="r_aa311e66cec9aa200b58011b5afa43abc"><td class="memTemplParams" colspan="2">template&lt;typename Scalar&gt; </td></tr>
+<tr class="memitem:aa311e66cec9aa200b58011b5afa43abc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_vector.html">math::Vector</a>&lt; Scalar, 3 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa311e66cec9aa200b58011b5afa43abc">z::ComputeProjectedGravity</a> (<a class="el" href="classz_1_1math_1_1_vector.html">math::Vector</a>&lt; Scalar, 3 &gt; &amp;EularAngle, const <a class="el" href="classz_1_1math_1_1_vector.html">math::Vector</a>&lt; Scalar, 3 &gt; &amp;GravityVector={ 0, 0,-1 })</td></tr>
+<tr class="memdesc:aa311e66cec9aa200b58011b5afa43abc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute Projected Gravity for XYZ Eular angle  <br /></td></tr>
+<tr class="separator:aa311e66cec9aa200b58011b5afa43abc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><dl class="section author"><dt>作者</dt><dd>Zishun Zhou </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2025-03-10</dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>Copyright (c) 2025 </dd></dl>
+</div><h2 class="groupheader">函数说明</h2>
+<a id="aa311e66cec9aa200b58011b5afa43abc" name="aa311e66cec9aa200b58011b5afa43abc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa311e66cec9aa200b58011b5afa43abc">&#9670;&#160;</a></span>ComputeProjectedGravity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Scalar&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">math::Vector&lt; Scalar, 3 &gt; z::ComputeProjectedGravity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classz_1_1math_1_1_vector.html">math::Vector</a>&lt; Scalar, 3 &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>EularAngle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_vector.html">math::Vector</a>&lt; Scalar, 3 &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>GravityVector</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{&#160;0,0,-1&#160;}</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute Projected Gravity for XYZ Eular angle </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Scalar</td><td>arithmetic type, could be double or float </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">EularAngle</td><td>XYZ Eular angle vector </td></tr>
+    <tr><td class="paramname">GravityVector</td><td>Gravity Vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>math::Vector&lt;Scalar, 3&gt; Projected gravity vector </dd></dl>
+
+</div>
+</div>
+<a id="ad612e1d5a3738c231a1aeefb21c4d36d" name="ad612e1d5a3738c231a1aeefb21c4d36d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad612e1d5a3738c231a1aeefb21c4d36d">&#9670;&#160;</a></span>string_to_wstring()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring string_to_wstring </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>convert string to wstring, this is used for windows platform </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>input string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>std::wstring output wstring </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7b6a9de995744179e2af2e4eac8c765a.html">CtrlZ</a></li><li class="navelem"><a class="el" href="dir_23feaddda2c120f5a6c49ee991b2b1fd.html">Workers</a></li><li class="navelem"><a class="el" href="dir_4208ae36855875353e44c90f2e1c222d.html">NN</a></li><li class="navelem"><a class="el" href="_net_inference_worker_8h.html">NetInferenceWorker.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

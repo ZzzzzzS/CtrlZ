@@ -1,0 +1,478 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ctrl-Z: z::AbstractWorker&lt; SchedulerType &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Ctrl-Z
+   </div>
+   <div id="projectbrief">一个多线程机器人运动控制强化学习部署框架</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classz_1_1_abstract_worker.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="classz_1_1_abstract_worker-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">z::AbstractWorker&lt; SchedulerType &gt; 模板类 参考<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="classz_1_1_abstract_worker.html" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到...">AbstractWorker</a> 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到调度器中，形成一个TaskList，用户可以实现复杂的工作流程，在构成一个流水线的同时， 保证每个工人模块的逻辑是独立的，从而实现了工作流程的模块化和可扩展性。  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_abstract_worker_8hpp_source.html">AbstractWorker.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 z::AbstractWorker&lt; SchedulerType &gt; 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classz_1_1_abstract_worker__inherit__graph.png" border="0" usemap="#az_1_1_abstract_worker_3_01_scheduler_type_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="az_1_1_abstract_worker_3_01_scheduler_type_01_4_inherit__map" id="az_1_1_abstract_worker_3_01_scheduler_type_01_4_inherit__map">
+<area shape="rect" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="136,731,270,773"/>
+<area shape="rect" href="classz_1_1_async_logger_worker.html" title=" " alt="" coords="368,5,671,128"/>
+<area shape="poly" title=" " alt="" coords="204,715,214,587,234,416,249,329,268,250,290,184,316,138,339,116,367,99,369,104,343,120,320,142,295,186,273,251,254,330,240,417,219,588,209,715"/>
+<area shape="rect" href="classz_1_1_async_logger_worker.html" title=" " alt="" coords="318,152,721,339"/>
+<area shape="poly" title=" " alt="" coords="203,715,209,641,227,545,241,494,261,442,285,394,316,349,326,337,330,341,320,352,290,396,266,445,246,495,232,546,215,642,208,715"/>
+<area shape="rect" href="classz_1_1_imu_process_worker.html" title=" " alt="" coords="424,363,615,421"/>
+<area shape="poly" title=" " alt="" coords="203,715,211,653,230,576,244,536,263,498,287,462,316,431,340,415,367,403,423,390,425,395,369,408,343,419,320,435,291,466,268,500,249,538,235,578,217,654,209,716"/>
+<area shape="rect" href="classz_1_1_motor_control_worker.html" title=" " alt="" coords="402,445,638,504"/>
+<area shape="poly" title=" " alt="" coords="209,714,221,668,243,614,274,559,293,535,316,514,356,491,400,478,402,483,358,496,320,518,297,539,278,562,247,616,227,670,214,716"/>
+<area shape="rect" href="classz_1_1_motor_p_d_control_worker.html" title=" " alt="" coords="418,528,622,587"/>
+<area shape="poly" title=" " alt="" coords="218,715,257,654,284,622,317,596,365,574,416,561,418,566,367,579,319,601,288,626,262,657,223,718"/>
+<area shape="rect" href="classz_1_1_motor_reset_position_worker.html" title=" " alt="" coords="418,611,622,669"/>
+<area shape="poly" title=" " alt="" coords="244,719,279,698,317,679,366,663,416,651,418,656,368,668,319,684,281,702,247,724"/>
+<area shape="rect" href="classz_1_1_abstract_net_inference_worker.html" title="AbstractNetInferenceWorker类型是一切神经网络推理工人类型的基类，该类提供一些基本推理的功能， 用户可以通过继承这个类来实现自己的推理工人类型。" alt="" coords="396,693,643,736"/>
+<area shape="poly" title=" " alt="" coords="285,740,395,727,396,732,286,745"/>
+<area shape="rect" href="classz_1_1_async_logger_worker.html" title="异步日志工人类型，用户可以通过这个工人类型来异步的实现记录数据的功能。" alt="" coords="416,760,623,819"/>
+<area shape="poly" title=" " alt="" coords="286,759,417,775,416,780,285,764"/>
+<area shape="rect" href="classz_1_1_imu_process_worker.html" title="ImuProcessWorker 类型是一个IMU数据处理工人类型，这个类型用于处理IMU传感器的数据，包括加速度，角速度和角度。 通常来说，这个类型可以被用于主任务队列中。 这个类会在TaskCycl..." alt="" coords="429,843,610,901"/>
+<area shape="poly" title=" " alt="" coords="242,781,278,806,319,828,374,847,429,859,428,864,372,852,317,833,276,811,239,785"/>
+<area shape="rect" href="classz_1_1_keyboard_command_worker.html" title="KeyboardCommandWorker 类型是一个键盘命令工人类型，用户可以通过这个工人类型来实现键盘命令的功能。" alt="" coords="424,925,616,968"/>
+<area shape="poly" title=" " alt="" coords="222,787,238,818,260,852,287,884,319,911,344,924,370,933,424,943,423,949,368,938,342,929,317,916,283,888,255,855,233,820,217,789"/>
+<area shape="rect" href="classz_1_1_motor_control_worker.html" title="MotorControlWorker类型是一个电机控制类型，用于读取实际电机的位置、速度、电流等数据，并将控制指令写入到电机的控制接口。" alt="" coords="416,992,623,1051"/>
+<area shape="poly" title=" " alt="" coords="214,788,228,833,249,884,279,935,298,958,320,978,342,992,366,1002,417,1015,415,1021,364,1007,339,997,316,982,294,962,275,939,244,887,223,834,209,789"/>
+<area shape="rect" href="classz_1_1_motor_p_d_control_worker.html" title="MotorPDControlWorker类型是一个电机PD控制工人类型，用户可以通过这个工人类型来实现电机的PD控制。" alt="" coords="410,1075,629,1133"/>
+<area shape="poly" title=" " alt="" coords="209,788,217,849,236,923,250,961,269,998,292,1031,320,1061,340,1075,362,1086,411,1099,409,1104,360,1091,337,1079,316,1065,288,1035,264,1000,245,963,231,924,212,850,204,789"/>
+<area shape="rect" href="classz_1_1_motor_reset_position_worker.html" title="MotorResetPositionWorker 类型是一个电机复位工人类型，用户可以通过这个工人类型来实现电机的复位功能。" alt="" coords="410,1157,629,1216"/>
+<area shape="poly" title=" " alt="" coords="206,789,209,864,224,960,239,1010,259,1059,286,1104,320,1143,340,1158,362,1169,411,1183,409,1188,360,1174,337,1163,316,1147,281,1107,254,1061,234,1012,219,961,204,864,200,789"/>
+<area shape="rect" href="classz_1_1_simple_callback_worker.html" title="SimpleCallbackWorker 类型是一个简单的回调工人类型，用户可以通过这个工人类型来实现一些简单的工作逻辑。" alt="" coords="436,1240,604,1283"/>
+<area shape="poly" title=" " alt="" coords="210,789,223,891,245,1023,260,1089,277,1147,297,1195,320,1226,345,1244,374,1255,405,1262,435,1265,435,1270,404,1267,372,1261,342,1248,316,1230,293,1197,272,1149,255,1090,240,1024,218,892,205,789"/>
+<area shape="rect" href="classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="5,739,88,765"/>
+<area shape="poly" title=" " alt="" coords="103,749,135,749,135,755,103,755"/>
+<area shape="rect" href="classz_1_1_common_loco_inference_worker.html" title="CommonLocoInferenceWorker类型是一个通用的Locomotion推理工人类型，该类型实现了一些Locomotion推理的通用逻辑。" alt="" coords="769,685,1009,744"/>
+<area shape="poly" title=" " alt="" coords="659,712,769,712,769,717,659,717"/>
+<area shape="rect" href="classz_1_1_arm_tracking_inference_worker.html" title=" " alt="" coords="1107,443,1312,501"/>
+<area shape="poly" title=" " alt="" coords="912,671,938,632,971,589,1010,547,1055,511,1105,488,1107,493,1058,516,1014,551,975,592,942,635,917,673"/>
+<area shape="rect" href="classz_1_1_erax_like_inference_worker.html" title=" " alt="" coords="1070,525,1349,616"/>
+<area shape="poly" title=" " alt="" coords="956,675,1056,626,1082,614,1084,619,1058,630,958,680"/>
+<area shape="rect" href="classz_1_1_arm_tracking_inference_worker.html" title=" " alt="" coords="1090,640,1329,699"/>
+<area shape="poly" title=" " alt="" coords="1024,693,1089,684,1090,689,1024,698"/>
+<area shape="rect" href="classz_1_1_erax_like_inference_worker.html" title=" " alt="" coords="1069,723,1350,797"/>
+<area shape="poly" title=" " alt="" coords="1025,731,1069,737,1068,743,1024,736"/>
+<area shape="rect" href="classz_1_1_humanoid_gym_inference_worker.html" title="HumanoidGymInferenceWorker 类型是一个人形机器人推理工人类型，该类实现了HumanoidGym网络兼容的推理功能。" alt="" coords="1057,821,1362,880"/>
+<area shape="poly" title=" " alt="" coords="950,750,1001,780,1058,807,1089,818,1087,823,1056,812,999,785,947,755"/>
+<area shape="rect" href="classz_1_1_plain_inference_worker.html" title="该类型实现了一个可用的平凡推理工人类型，用户可以通过这个工人类型来实现推理的功能。" alt="" coords="1090,904,1329,963"/>
+<area shape="poly" title=" " alt="" coords="921,755,980,825,1017,860,1058,890,1090,905,1088,910,1055,894,1013,864,976,829,917,759"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+z::AbstractWorker&lt; SchedulerType &gt; 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classz_1_1_abstract_worker__coll__graph.png" border="0" usemap="#az_1_1_abstract_worker_3_01_scheduler_type_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="az_1_1_abstract_worker_3_01_scheduler_type_01_4_coll__map" id="az_1_1_abstract_worker_3_01_scheduler_type_01_4_coll__map">
+<area shape="rect" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="537,5,672,48"/>
+<area shape="rect" href="classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="5,29,88,56"/>
+<area shape="poly" title=" " alt="" coords="102,23,137,16,246,7,356,6,456,10,537,17,537,22,456,16,356,11,246,12,137,21,103,28"/>
+<area shape="rect" href="classz_1_1_abstract_scheduler.html" title=" " alt="" coords="137,31,427,153"/>
+<area shape="poly" title=" " alt="" coords="103,52,137,59,136,64,102,57"/>
+<area shape="poly" title=" " alt="" coords="442,57,536,38,537,43,443,62"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aacfc5c4056a1b543d20f677aac609bff" id="r_aacfc5c4056a1b543d20f677aac609bff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aacfc5c4056a1b543d20f677aac609bff">AbstractWorker</a> (<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *scheduler, const nlohmann::json &amp;cfg=nlohmann::json())</td></tr>
+<tr class="memdesc:aacfc5c4056a1b543d20f677aac609bff"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造一个抽象工人类型  <br /></td></tr>
+<tr class="separator:aacfc5c4056a1b543d20f677aac609bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30f113136aaacbbb515c80734b7432f4" id="r_a30f113136aaacbbb515c80734b7432f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30f113136aaacbbb515c80734b7432f4">setScheduler</a> (<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *scheduler)</td></tr>
+<tr class="memdesc:a30f113136aaacbbb515c80734b7432f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置调度器的指针  <br /></td></tr>
+<tr class="separator:a30f113136aaacbbb515c80734b7432f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7afec2a7c09fd2708333201335d881cd" id="r_a7afec2a7c09fd2708333201335d881cd"><td class="memItemLeft" align="right" valign="top"><a id="a7afec2a7c09fd2708333201335d881cd" name="a7afec2a7c09fd2708333201335d881cd"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~AbstractWorker</b> ()</td></tr>
+<tr class="memdesc:a7afec2a7c09fd2708333201335d881cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数，虚函数，用于释放资源 <br /></td></tr>
+<tr class="separator:a7afec2a7c09fd2708333201335d881cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10203246dd092e6e7ee8e632a8fa95b5" id="r_a10203246dd092e6e7ee8e632a8fa95b5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10203246dd092e6e7ee8e632a8fa95b5">TaskCreate</a> ()</td></tr>
+<tr class="memdesc:a10203246dd092e6e7ee8e632a8fa95b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">TaskCreate方法，在任务队列创建的时候会被调度器调用，用户可以在这个方法中初始化一些资源  <br /></td></tr>
+<tr class="separator:a10203246dd092e6e7ee8e632a8fa95b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9fcf291e3e17fed6ed6dd89c4734d49" id="r_ad9fcf291e3e17fed6ed6dd89c4734d49"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9fcf291e3e17fed6ed6dd89c4734d49">TaskDestroy</a> ()</td></tr>
+<tr class="memdesc:ad9fcf291e3e17fed6ed6dd89c4734d49"><td class="mdescLeft">&#160;</td><td class="mdescRight">TaskDestroy方法，在任务队列删除的时候会被调度器调用，用户可以在这个方法中释放一些资源  <br /></td></tr>
+<tr class="separator:ad9fcf291e3e17fed6ed6dd89c4734d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5ac80e86556d8a6e540d5581bd5ab21" id="r_ae5ac80e86556d8a6e540d5581bd5ab21"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5ac80e86556d8a6e540d5581bd5ab21">TaskCycleBegin</a> ()</td></tr>
+<tr class="memdesc:ae5ac80e86556d8a6e540d5581bd5ab21"><td class="mdescLeft">&#160;</td><td class="mdescRight">TaskCycleBegin方法，在每次任务队列循环的开始会被调度器调用。  <br /></td></tr>
+<tr class="separator:ae5ac80e86556d8a6e540d5581bd5ab21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21c7a77eb87b6ac52e86b9cff4f558d2" id="r_a21c7a77eb87b6ac52e86b9cff4f558d2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21c7a77eb87b6ac52e86b9cff4f558d2">TaskRun</a> ()=0</td></tr>
+<tr class="memdesc:a21c7a77eb87b6ac52e86b9cff4f558d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">TaskRun方法，在每次任务队列循环中被调用， 具体的调用时机取决于用户在调度器中设置的当前工人在流水线中的顺序， 用户必须要实现的方法，用于实现当前工人的具体工作逻辑。  <br /></td></tr>
+<tr class="separator:a21c7a77eb87b6ac52e86b9cff4f558d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a324d1283ce33a8314f31a2e7dc6fd543" id="r_a324d1283ce33a8314f31a2e7dc6fd543"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a324d1283ce33a8314f31a2e7dc6fd543">TaskCycleEnd</a> ()</td></tr>
+<tr class="memdesc:a324d1283ce33a8314f31a2e7dc6fd543"><td class="mdescLeft">&#160;</td><td class="mdescRight">TaskCycleEnd方法，在每次任务队列循环的结束会被调度器调用。  <br /></td></tr>
+<tr class="separator:a324d1283ce33a8314f31a2e7dc6fd543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classz_1_1_z_object"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classz_1_1_z_object')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classz_1_1_z_object.html">z::ZObject</a></td></tr>
+<tr class="memitem:a20fc044ee664a6b01d500d536e63a1ed inherit pub_methods_classz_1_1_z_object" id="r_a20fc044ee664a6b01d500d536e63a1ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_z_object.html#a20fc044ee664a6b01d500d536e63a1ed">PrintSplitLine</a> (size_t length=60, char c='-')</td></tr>
+<tr class="memdesc:a20fc044ee664a6b01d500d536e63a1ed inherit pub_methods_classz_1_1_z_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">print a split line, default length is 60 and character is '-'  <br /></td></tr>
+<tr class="separator:a20fc044ee664a6b01d500d536e63a1ed inherit pub_methods_classz_1_1_z_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:af4842124f95ccfb50ddb0d21a9642cab" id="r_af4842124f95ccfb50ddb0d21a9642cab"><td class="memItemLeft" align="right" valign="top"><a id="af4842124f95ccfb50ddb0d21a9642cab" name="af4842124f95ccfb50ddb0d21a9642cab"></a>
+<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>Scheduler</b> = nullptr</td></tr>
+<tr class="memdesc:af4842124f95ccfb50ddb0d21a9642cab"><td class="mdescLeft">&#160;</td><td class="mdescRight">调度器的指针，用户可以通过这个指针来获取一些全局的数据， 比如当前任务的时间戳，前级工人的输出数据等，也可以通过这个指针来设置一些全局的数据。 <br /></td></tr>
+<tr class="separator:af4842124f95ccfb50ddb0d21a9642cab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>&gt;<br />
+class z::AbstractWorker&lt; SchedulerType &gt;</div><p><a class="el" href="classz_1_1_abstract_worker.html" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到...">AbstractWorker</a> 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到调度器中，形成一个TaskList，用户可以实现复杂的工作流程，在构成一个流水线的同时， 保证每个工人模块的逻辑是独立的，从而实现了工作流程的模块化和可扩展性。 </p>
+<p>这个类的主要目的是为了实现工人的工作逻辑，用户可以通过继承这个类来实现自己的工人类型，然后通过调度器来调度这些工人的工作流程。 具体来说，调度器在任务队列创建和删除的时候会调用抽象工人类型的TaskCreate和TaskDestroy方法；而在任务队列的循环中，调度器会依次调用 TaskCycleBegin，TaskRun和TaskCycleEnd方法，其中TaskRun方法是用户必须要实现的方法，在用户继承的子类中应当实现当前工作的具体逻辑。 举例来说，如果这个Worker是一个用来处理电机的Worker，那么可能的实现是在TaskRun方法中获取当前电机的状态和下发电机的目标状态， 在TaskCreate方法中初始化电机的通信接口，在TaskDestroy方法中关闭电机的通信接口。</p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">SchedulerType</td><td>调度器类型，这个调度器类型会根据用户定义的调度逻辑依次调度工人的工作流程。 </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aacfc5c4056a1b543d20f677aac609bff" name="aacfc5c4056a1b543d20f677aac609bff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacfc5c4056a1b543d20f677aac609bff">&#9670;&#160;</a></span>AbstractWorker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1_abstract_worker.html">z::AbstractWorker</a>&lt; <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> &gt;::AbstractWorker </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *</td>          <td class="paramname"><span class="paramname"><em>scheduler</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const nlohmann::json &amp;</td>          <td class="paramname"><span class="paramname"><em>cfg</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nlohmann::json()</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造一个抽象工人类型 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scheduler</td><td>调度器的指针，可以通过调度器来获得一些全局的数据，比如当前任务的时间戳，前级工人的输出数据等 </td></tr>
+    <tr><td class="paramname">cfg</td><td>配置文件，用户可以通过配置文件来配置工人的一些参数。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a30f113136aaacbbb515c80734b7432f4" name="a30f113136aaacbbb515c80734b7432f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30f113136aaacbbb515c80734b7432f4">&#9670;&#160;</a></span>setScheduler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classz_1_1_abstract_worker.html">z::AbstractWorker</a>&lt; <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> &gt;::setScheduler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *</td>          <td class="paramname"><span class="paramname"><em>scheduler</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置调度器的指针 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scheduler</td><td>调度器指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a10203246dd092e6e7ee8e632a8fa95b5" name="a10203246dd092e6e7ee8e632a8fa95b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10203246dd092e6e7ee8e632a8fa95b5">&#9670;&#160;</a></span>TaskCreate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classz_1_1_abstract_worker.html">z::AbstractWorker</a>&lt; <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> &gt;::TaskCreate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>TaskCreate方法，在任务队列创建的时候会被调度器调用，用户可以在这个方法中初始化一些资源 </p>
+
+<p>被 <a class="el" href="classz_1_1_abstract_net_inference_worker.html#a1e0155aab60ec9902d53a1b9f8bcf318">z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;</a>, <a class="el" href="classz_1_1_async_logger_worker.html#a3b041aa09d6726224088e15e121f98f4">z::AsyncLoggerWorker&lt; SchedulerType, LogPrecision, Args &gt;</a>, <a class="el" href="classz_1_1_async_logger_worker.html#a3b041aa09d6726224088e15e121f98f4">z::AsyncLoggerWorker&lt; SchedulerType, RealNumber, ImuAccRawPair, ImuGyroRawPair, ImuMagRawPair, LinearVelocityValuePair, ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair, TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair, TargetMotorTorquePair, LimitTargetMotorTorquePair, NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair &gt;</a>, <a class="el" href="classz_1_1_async_logger_worker.html#a3b041aa09d6726224088e15e121f98f4">z::AsyncLoggerWorker&lt; SchedulerType, RealNumber, ImuAccRawPair, ImuGyroRawPair, ImuMagRawPair, LinearVelocityValuePair, ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair, TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair, TargetMotorTorquePair, LimitTargetMotorTorquePair, NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair &gt;</a>, <a class="el" href="classz_1_1_async_logger_worker.html#a3b041aa09d6726224088e15e121f98f4">z::AsyncLoggerWorker&lt; SchedulerType, RealNumber, TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair, NetLastActionPair, NetUserCommandPair, NetScaledActionPair, InferenceTimePair &gt;</a>, <a class="el" href="classz_1_1_async_logger_worker.html#a3b041aa09d6726224088e15e121f98f4">z::AsyncLoggerWorker&lt; SchedulerType, RealNumber, TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair, NetLastActionPair, NetUserCommandPair, NetScaledActionPair, InferenceTimePair &gt;</a>, <a class="el" href="classz_1_1_motor_control_worker.html#ad869ae74ae48f3d1c7a7a1b0106bde51">z::MotorControlWorker&lt; SchedulerType, JointType, MotorPrecision, JointNumber &gt;</a>, <a class="el" href="classz_1_1_motor_control_worker.html#ad869ae74ae48f3d1c7a7a1b0106bde51">z::MotorControlWorker&lt; SchedulerType, DeviceJoint *, RealNumber, JOINT_NUMBER &gt;</a> , 以及 <a class="el" href="classz_1_1_motor_control_worker.html#ad869ae74ae48f3d1c7a7a1b0106bde51">z::MotorControlWorker&lt; SchedulerType, DeviceJoint *, RealNumber, JOINT_NUMBER &gt;</a> 重载.</p>
+
+</div>
+</div>
+<a id="ae5ac80e86556d8a6e540d5581bd5ab21" name="ae5ac80e86556d8a6e540d5581bd5ab21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5ac80e86556d8a6e540d5581bd5ab21">&#9670;&#160;</a></span>TaskCycleBegin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classz_1_1_abstract_worker.html">z::AbstractWorker</a>&lt; <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> &gt;::TaskCycleBegin </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>TaskCycleBegin方法，在每次任务队列循环的开始会被调度器调用。 </p>
+
+<p>被 <a class="el" href="classz_1_1_imu_process_worker.html#a82720c5f7abc072c1d20a5b6a62377c5">z::ImuProcessWorker&lt; SchedulerType, ImuType, ImuPrecision &gt;</a>, <a class="el" href="classz_1_1_imu_process_worker.html#a82720c5f7abc072c1d20a5b6a62377c5">z::ImuProcessWorker&lt; SchedulerType, DeviceImu *, RealNumber &gt;</a>, <a class="el" href="classz_1_1_imu_process_worker.html#a82720c5f7abc072c1d20a5b6a62377c5">z::ImuProcessWorker&lt; SchedulerType, DeviceImu *, RealNumber &gt;</a>, <a class="el" href="classz_1_1_motor_control_worker.html#ae9112c7d70612770f8687d1020dbb604">z::MotorControlWorker&lt; SchedulerType, JointType, MotorPrecision, JointNumber &gt;</a>, <a class="el" href="classz_1_1_motor_control_worker.html#ae9112c7d70612770f8687d1020dbb604">z::MotorControlWorker&lt; SchedulerType, DeviceJoint *, RealNumber, JOINT_NUMBER &gt;</a> , 以及 <a class="el" href="classz_1_1_motor_control_worker.html#ae9112c7d70612770f8687d1020dbb604">z::MotorControlWorker&lt; SchedulerType, DeviceJoint *, RealNumber, JOINT_NUMBER &gt;</a> 重载.</p>
+
+</div>
+</div>
+<a id="a324d1283ce33a8314f31a2e7dc6fd543" name="a324d1283ce33a8314f31a2e7dc6fd543"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a324d1283ce33a8314f31a2e7dc6fd543">&#9670;&#160;</a></span>TaskCycleEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classz_1_1_abstract_worker.html">z::AbstractWorker</a>&lt; <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> &gt;::TaskCycleEnd </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>TaskCycleEnd方法，在每次任务队列循环的结束会被调度器调用。 </p>
+
+<p>被 <a class="el" href="classz_1_1_async_logger_worker.html#aa1954c7c5730dae67cf28f6e0bb6afd4">z::AsyncLoggerWorker&lt; SchedulerType, LogPrecision, Args &gt;</a>, <a class="el" href="classz_1_1_async_logger_worker.html#aa1954c7c5730dae67cf28f6e0bb6afd4">z::AsyncLoggerWorker&lt; SchedulerType, RealNumber, ImuAccRawPair, ImuGyroRawPair, ImuMagRawPair, LinearVelocityValuePair, ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair, TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair, TargetMotorTorquePair, LimitTargetMotorTorquePair, NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair &gt;</a>, <a class="el" href="classz_1_1_async_logger_worker.html#aa1954c7c5730dae67cf28f6e0bb6afd4">z::AsyncLoggerWorker&lt; SchedulerType, RealNumber, ImuAccRawPair, ImuGyroRawPair, ImuMagRawPair, LinearVelocityValuePair, ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair, TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair, TargetMotorTorquePair, LimitTargetMotorTorquePair, NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair &gt;</a>, <a class="el" href="classz_1_1_async_logger_worker.html#aa1954c7c5730dae67cf28f6e0bb6afd4">z::AsyncLoggerWorker&lt; SchedulerType, RealNumber, TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair, NetLastActionPair, NetUserCommandPair, NetScaledActionPair, InferenceTimePair &gt;</a>, <a class="el" href="classz_1_1_async_logger_worker.html#aa1954c7c5730dae67cf28f6e0bb6afd4">z::AsyncLoggerWorker&lt; SchedulerType, RealNumber, TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair, NetLastActionPair, NetUserCommandPair, NetScaledActionPair, InferenceTimePair &gt;</a>, <a class="el" href="classz_1_1_motor_control_worker.html#ae0b9aa6c02bd32b12e6f7e5c4d0048ba">z::MotorControlWorker&lt; SchedulerType, JointType, MotorPrecision, JointNumber &gt;</a>, <a class="el" href="classz_1_1_motor_control_worker.html#ae0b9aa6c02bd32b12e6f7e5c4d0048ba">z::MotorControlWorker&lt; SchedulerType, DeviceJoint *, RealNumber, JOINT_NUMBER &gt;</a> , 以及 <a class="el" href="classz_1_1_motor_control_worker.html#ae0b9aa6c02bd32b12e6f7e5c4d0048ba">z::MotorControlWorker&lt; SchedulerType, DeviceJoint *, RealNumber, JOINT_NUMBER &gt;</a> 重载.</p>
+
+</div>
+</div>
+<a id="ad9fcf291e3e17fed6ed6dd89c4734d49" name="ad9fcf291e3e17fed6ed6dd89c4734d49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9fcf291e3e17fed6ed6dd89c4734d49">&#9670;&#160;</a></span>TaskDestroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classz_1_1_abstract_worker.html">z::AbstractWorker</a>&lt; <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> &gt;::TaskDestroy </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>TaskDestroy方法，在任务队列删除的时候会被调度器调用，用户可以在这个方法中释放一些资源 </p>
+
+<p>被 <a class="el" href="classz_1_1_async_logger_worker.html#ae226437d0f244ab7d49582b49311aca7">z::AsyncLoggerWorker&lt; SchedulerType, LogPrecision, Args &gt;</a>, <a class="el" href="classz_1_1_async_logger_worker.html#ae226437d0f244ab7d49582b49311aca7">z::AsyncLoggerWorker&lt; SchedulerType, RealNumber, ImuAccRawPair, ImuGyroRawPair, ImuMagRawPair, LinearVelocityValuePair, ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair, TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair, TargetMotorTorquePair, LimitTargetMotorTorquePair, NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair &gt;</a>, <a class="el" href="classz_1_1_async_logger_worker.html#ae226437d0f244ab7d49582b49311aca7">z::AsyncLoggerWorker&lt; SchedulerType, RealNumber, ImuAccRawPair, ImuGyroRawPair, ImuMagRawPair, LinearVelocityValuePair, ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair, TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair, TargetMotorTorquePair, LimitTargetMotorTorquePair, NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair &gt;</a>, <a class="el" href="classz_1_1_async_logger_worker.html#ae226437d0f244ab7d49582b49311aca7">z::AsyncLoggerWorker&lt; SchedulerType, RealNumber, TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair, NetLastActionPair, NetUserCommandPair, NetScaledActionPair, InferenceTimePair &gt;</a> , 以及 <a class="el" href="classz_1_1_async_logger_worker.html#ae226437d0f244ab7d49582b49311aca7">z::AsyncLoggerWorker&lt; SchedulerType, RealNumber, TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair, NetLastActionPair, NetUserCommandPair, NetScaledActionPair, InferenceTimePair &gt;</a> 重载.</p>
+
+</div>
+</div>
+<a id="a21c7a77eb87b6ac52e86b9cff4f558d2" name="a21c7a77eb87b6ac52e86b9cff4f558d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21c7a77eb87b6ac52e86b9cff4f558d2">&#9670;&#160;</a></span>TaskRun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classz_1_1_abstract_worker.html">z::AbstractWorker</a>&lt; <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> &gt;::TaskRun </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>TaskRun方法，在每次任务队列循环中被调用， 具体的调用时机取决于用户在调度器中设置的当前工人在流水线中的顺序， 用户必须要实现的方法，用于实现当前工人的具体工作逻辑。 </p>
+
+<p>在 <a class="el" href="classz_1_1_abstract_net_inference_worker.html#a806fb181f59b745ccb28781e83673a5a">z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;</a>, <a class="el" href="classz_1_1_async_logger_worker.html#a9109878288558872b804db1f4e0b42b1">z::AsyncLoggerWorker&lt; SchedulerType, LogPrecision, Args &gt;</a>, <a class="el" href="classz_1_1_async_logger_worker.html#a9109878288558872b804db1f4e0b42b1">z::AsyncLoggerWorker&lt; SchedulerType, RealNumber, ImuAccRawPair, ImuGyroRawPair, ImuMagRawPair, LinearVelocityValuePair, ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair, TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair, TargetMotorTorquePair, LimitTargetMotorTorquePair, NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair &gt;</a>, <a class="el" href="classz_1_1_async_logger_worker.html#a9109878288558872b804db1f4e0b42b1">z::AsyncLoggerWorker&lt; SchedulerType, RealNumber, ImuAccRawPair, ImuGyroRawPair, ImuMagRawPair, LinearVelocityValuePair, ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair, TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair, TargetMotorTorquePair, LimitTargetMotorTorquePair, NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair &gt;</a>, <a class="el" href="classz_1_1_async_logger_worker.html#a9109878288558872b804db1f4e0b42b1">z::AsyncLoggerWorker&lt; SchedulerType, RealNumber, TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair, NetLastActionPair, NetUserCommandPair, NetScaledActionPair, InferenceTimePair &gt;</a>, <a class="el" href="classz_1_1_async_logger_worker.html#a9109878288558872b804db1f4e0b42b1">z::AsyncLoggerWorker&lt; SchedulerType, RealNumber, TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair, NetLastActionPair, NetUserCommandPair, NetScaledActionPair, InferenceTimePair &gt;</a>, <a class="el" href="classz_1_1_imu_process_worker.html#aed0b2196bc41137844a2aff7ee4f3871">z::ImuProcessWorker&lt; SchedulerType, ImuType, ImuPrecision &gt;</a>, <a class="el" href="classz_1_1_imu_process_worker.html#aed0b2196bc41137844a2aff7ee4f3871">z::ImuProcessWorker&lt; SchedulerType, DeviceImu *, RealNumber &gt;</a>, <a class="el" href="classz_1_1_imu_process_worker.html#aed0b2196bc41137844a2aff7ee4f3871">z::ImuProcessWorker&lt; SchedulerType, DeviceImu *, RealNumber &gt;</a>, <a class="el" href="classz_1_1_keyboard_command_worker.html#a3614a3df08930f42bf2587d0f0c77a8b">z::KeyboardCommandWorker&lt; SchedulerType &gt;</a>, <a class="el" href="classz_1_1_motor_control_worker.html#af23fdf0b2a8065aa23347cd2915f76b9">z::MotorControlWorker&lt; SchedulerType, JointType, MotorPrecision, JointNumber &gt;</a>, <a class="el" href="classz_1_1_motor_control_worker.html#af23fdf0b2a8065aa23347cd2915f76b9">z::MotorControlWorker&lt; SchedulerType, DeviceJoint *, RealNumber, JOINT_NUMBER &gt;</a>, <a class="el" href="classz_1_1_motor_control_worker.html#af23fdf0b2a8065aa23347cd2915f76b9">z::MotorControlWorker&lt; SchedulerType, DeviceJoint *, RealNumber, JOINT_NUMBER &gt;</a>, <a class="el" href="classz_1_1_motor_p_d_control_worker.html#a7782e443eeb77e179911a62750b4cb68">z::MotorPDControlWorker&lt; SchedulerType, MotorPrecision, JointNumber &gt;</a>, <a class="el" href="classz_1_1_motor_p_d_control_worker.html#a7782e443eeb77e179911a62750b4cb68">z::MotorPDControlWorker&lt; SchedulerType, RealNumber, JOINT_NUMBER &gt;</a>, <a class="el" href="classz_1_1_motor_p_d_control_worker.html#a7782e443eeb77e179911a62750b4cb68">z::MotorPDControlWorker&lt; SchedulerType, RealNumber, JOINT_NUMBER &gt;</a>, <a class="el" href="classz_1_1_motor_reset_position_worker.html#a7e816e0ef2a77748f940fb94401a1d00">z::MotorResetPositionWorker&lt; SchedulerType, MotorPrecision, JointNumber &gt;</a>, <a class="el" href="classz_1_1_motor_reset_position_worker.html#a7e816e0ef2a77748f940fb94401a1d00">z::MotorResetPositionWorker&lt; SchedulerType, RealNumber, JOINT_NUMBER &gt;</a>, <a class="el" href="classz_1_1_motor_reset_position_worker.html#a7e816e0ef2a77748f940fb94401a1d00">z::MotorResetPositionWorker&lt; SchedulerType, RealNumber, JOINT_NUMBER &gt;</a> , 以及 <a class="el" href="classz_1_1_simple_callback_worker.html#aa7d8f5d3f73d6aab93e23b6d041d477f">z::SimpleCallbackWorker&lt; SchedulerType &gt;</a> 内被实现.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/<a class="el" href="_abstract_worker_8hpp_source.html">AbstractWorker.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>z</b></li><li class="navelem"><a class="el" href="classz_1_1_abstract_worker.html">AbstractWorker</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

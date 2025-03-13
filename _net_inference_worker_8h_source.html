@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ctrl-Z: C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/NN/NetInferenceWorker.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Ctrl-Z
+   </div>
+   <div id="projectbrief">一个多线程机器人运动控制强化学习部署框架</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_net_inference_worker_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">NetInferenceWorker.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_net_inference_worker_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;onnxruntime_cxx_api.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;locale&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;codecvt&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="_math_types_8hpp.html">Utils/MathTypes.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;Eigen/Dense&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;Eigen/Core&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">extern</span> Ort::Env&amp; <a class="code hl_function" href="_net_inference_worker_8h.html#a0b0cd3f6d6f69a39769d165fd6066ebb">GetOrtEnv</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">extern</span> std::wstring <a class="code hl_function" href="_net_inference_worker_8h.html#ad612e1d5a3738c231a1aeefb21c4d36d">string_to_wstring</a>(<span class="keyword">const</span> std::string&amp; str);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">namespace </span>z</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Scalar&gt;</div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="_net_inference_worker_8h.html#aa311e66cec9aa200b58011b5afa43abc">   46</a></span>    <a class="code hl_class" href="classz_1_1math_1_1_vector.html">math::Vector&lt;Scalar, 3&gt;</a> <a class="code hl_function" href="_net_inference_worker_8h.html#aa311e66cec9aa200b58011b5afa43abc">ComputeProjectedGravity</a>(<a class="code hl_class" href="classz_1_1math_1_1_vector.html">math::Vector&lt;Scalar, 3&gt;</a>&amp; EularAngle, <span class="keyword">const</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">math::Vector&lt;Scalar, 3&gt;</a>&amp; GravityVector = { 0,0,-1 })</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keyword">static_assert</span>(std::is_arithmetic&lt;Scalar&gt;::value, <span class="stringliteral">&quot;Scalar must be a arithmetic type&quot;</span>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        Eigen::Matrix3&lt;Scalar&gt; RotMat;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        RotMat = (Eigen::AngleAxis&lt;Scalar&gt;(EularAngle[0], Eigen::Vector3&lt;Scalar&gt;::UnitX())</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            * Eigen::AngleAxis&lt;Scalar&gt;(EularAngle[1], Eigen::Vector3&lt;Scalar&gt;::UnitY())</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            * Eigen::AngleAxis&lt;Scalar&gt;(EularAngle[2], Eigen::Vector3&lt;Scalar&gt;::UnitZ()));</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        Eigen::Vector3 &lt;Scalar&gt; GravityVec(GravityVector[0], GravityVector[1], GravityVector[2]);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        Eigen::Vector3 &lt;Scalar&gt; ProjectedGravity = RotMat.transpose() * GravityVec;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        math::Vector&lt;Scalar, 3&gt; ProjectedGravityVec = { ProjectedGravity[0],ProjectedGravity[1],ProjectedGravity[2] };</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">return</span> ProjectedGravityVec;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
+</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>};</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="ttc" id="a_math_types_8hpp_html"><div class="ttname"><a href="_math_types_8hpp.html">MathTypes.hpp</a></div></div>
+<div class="ttc" id="a_net_inference_worker_8h_html_a0b0cd3f6d6f69a39769d165fd6066ebb"><div class="ttname"><a href="_net_inference_worker_8h.html#a0b0cd3f6d6f69a39769d165fd6066ebb">GetOrtEnv</a></div><div class="ttdeci">Ort::Env &amp; GetOrtEnv()</div><div class="ttdoc">singleton get Ort::Env object</div><div class="ttdef"><b>定义</b> NetInferenceWorker.cpp:21</div></div>
+<div class="ttc" id="a_net_inference_worker_8h_html_aa311e66cec9aa200b58011b5afa43abc"><div class="ttname"><a href="_net_inference_worker_8h.html#aa311e66cec9aa200b58011b5afa43abc">z::ComputeProjectedGravity</a></div><div class="ttdeci">math::Vector&lt; Scalar, 3 &gt; ComputeProjectedGravity(math::Vector&lt; Scalar, 3 &gt; &amp;EularAngle, const math::Vector&lt; Scalar, 3 &gt; &amp;GravityVector={ 0, 0,-1 })</div><div class="ttdoc">Compute Projected Gravity for XYZ Eular angle</div><div class="ttdef"><b>定义</b> NetInferenceWorker.h:46</div></div>
+<div class="ttc" id="a_net_inference_worker_8h_html_ad612e1d5a3738c231a1aeefb21c4d36d"><div class="ttname"><a href="_net_inference_worker_8h.html#ad612e1d5a3738c231a1aeefb21c4d36d">string_to_wstring</a></div><div class="ttdeci">std::wstring string_to_wstring(const std::string &amp;str)</div><div class="ttdoc">convert string to wstring, this is used for windows platform</div><div class="ttdef"><b>定义</b> NetInferenceWorker.cpp:33</div></div>
+<div class="ttc" id="aclassz_1_1math_1_1_vector_html"><div class="ttname"><a href="classz_1_1math_1_1_vector.html">z::math::Vector</a></div><div class="ttdoc">Vector class, support some vector operations, like dot, cross, normalize, etc.</div><div class="ttdef"><b>定义</b> MathTypes.hpp:56</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7b6a9de995744179e2af2e4eac8c765a.html">CtrlZ</a></li><li class="navelem"><a class="el" href="dir_23feaddda2c120f5a6c49ee991b2b1fd.html">Workers</a></li><li class="navelem"><a class="el" href="dir_4208ae36855875353e44c90f2e1c222d.html">NN</a></li><li class="navelem"><a class="el" href="_net_inference_worker_8h.html">NetInferenceWorker.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>
