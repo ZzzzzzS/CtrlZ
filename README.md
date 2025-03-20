@@ -49,6 +49,7 @@ AbstractWorker 类型是一切工人类型的基类，在这个类中指定了�
 * **@ref z::MotorControlWorker< SchedulerType, JointType, MotorPrecision, JointNumber >" MotorControlWorker:"** 实现了电机状态获取，PD控制，电机命令控制等功能。
 * **@ref z::MotorResetPositionWorker< SchedulerType, MotorPrecision, JointNumber > "MotorResetPositionWorker:"** 实现了电机复位的功能。
 * **@ref z::AsyncLoggerWorker< SchedulerType, LogPrecision, Args > "AsyncLoggerWorker:"** 实现了数据记录的功能。
+* **@ref z::NetCmdWorker< SchedulerType, CmdPrecision, CmdArgs > "NetCmdWorker":** 实现了处理用户指令输入的功能。
 
 ### 网络推理Workers功能
 

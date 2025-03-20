@@ -37,3 +37,4 @@
 out/
 build/
 vcpkg_installed/
+log/
