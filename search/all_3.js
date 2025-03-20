@@ -6,11 +6,12 @@ var searchData=
   ['datacenter_3',['dataCenter',['../classz_1_1_abstract_scheduler.html#ad2c119c841bc14e68b728b5479960262',1,'z::AbstractScheduler']]],
   ['datacenter_2ehpp_4',['DataCenter.hpp',['../_data_center_8hpp.html',1,'']]],
   ['datacenter_3c_20cts_2e_2e_2e_20_3e_5',['DataCenter&lt; CTS... &gt;',['../classz_1_1_data_center.html',1,'z']]],
-  ['defaultallocator_5f_5f_6',['DefaultAllocator__',['../classz_1_1_abstract_net_inference_worker.html#af7ce9a61c1433be200e001ea8f6da844',1,'z::AbstractNetInferenceWorker::DefaultAllocator__'],['../classz_1_1_common_loco_inference_worker.html#af7ce9a61c1433be200e001ea8f6da844',1,'z::CommonLocoInferenceWorker::DefaultAllocator__']]],
-  ['destroytasklist_7',['DestroyTaskList',['../classz_1_1_abstract_scheduler.html#a9cebfb9baf7708be2294470e80c5ca76',1,'z::AbstractScheduler']]],
-  ['dims_8',['dims',['../structz_1_1math_1_1_tensor_shape.html#a2647cc6f36d52696904b1f7789bd28ff',1,'z::math::TensorShape']]],
-  ['dims_5farray_9',['dims_array',['../structz_1_1math_1_1_tensor_shape.html#a64b17d2a0545e7ab73f99541839eb29a',1,'z::math::TensorShape']]],
-  ['disabletasklist_10',['DisableTaskList',['../classz_1_1_abstract_scheduler.html#a96023b059671fc266fd0fc64e213dbc7',1,'z::AbstractScheduler']]],
-  ['div_11',['div',['../structz_1_1_abstract_scheduler_1_1_t_c_b.html#aae6a26081713b6f2074b13fbe61fd8e8',1,'z::AbstractScheduler::TCB']]],
-  ['dot_12',['dot',['../classz_1_1math_1_1_vector.html#a5791b5c72379f95e1b8bc6aeff20fc89',1,'z::math::Vector']]]
+  ['decreasecmd_6',['DecreaseCmd',['../classz_1_1_net_cmd_worker.html#adbee721a622c8875c5c856b6fbea4e85',1,'z::NetCmdWorker']]],
+  ['defaultallocator_5f_5f_7',['DefaultAllocator__',['../classz_1_1_abstract_net_inference_worker.html#af7ce9a61c1433be200e001ea8f6da844',1,'z::AbstractNetInferenceWorker::DefaultAllocator__'],['../classz_1_1_common_loco_inference_worker.html#af7ce9a61c1433be200e001ea8f6da844',1,'z::CommonLocoInferenceWorker::DefaultAllocator__']]],
+  ['destroytasklist_8',['DestroyTaskList',['../classz_1_1_abstract_scheduler.html#a9cebfb9baf7708be2294470e80c5ca76',1,'z::AbstractScheduler']]],
+  ['dims_9',['dims',['../structz_1_1math_1_1_tensor_shape.html#a2647cc6f36d52696904b1f7789bd28ff',1,'z::math::TensorShape']]],
+  ['dims_5farray_10',['dims_array',['../structz_1_1math_1_1_tensor_shape.html#a64b17d2a0545e7ab73f99541839eb29a',1,'z::math::TensorShape']]],
+  ['disabletasklist_11',['DisableTaskList',['../classz_1_1_abstract_scheduler.html#a96023b059671fc266fd0fc64e213dbc7',1,'z::AbstractScheduler']]],
+  ['div_12',['div',['../structz_1_1_abstract_scheduler_1_1_t_c_b.html#aae6a26081713b6f2074b13fbe61fd8e8',1,'z::AbstractScheduler::TCB']]],
+  ['dot_13',['dot',['../classz_1_1math_1_1_vector.html#a5791b5c72379f95e1b8bc6aeff20fc89',1,'z::math::Vector']]]
 ];

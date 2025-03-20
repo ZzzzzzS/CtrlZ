@@ -14,6 +14,7 @@ var hierarchy =
       [ "z::math::Vector< InferencePrecision, OUTPUT_TENSOR_LENGTH >", "classz_1_1math_1_1_vector.html", null ],
       [ "z::math::Vector< T, Dim >", "classz_1_1math_1_1_vector.html", null ],
       [ "z::math::Vector< InferencePrecision, INPUT_TENSOR_LENGTH_UNIT >", "classz_1_1math_1_1_vector.html", null ],
+      [ "z::math::Vector< CmdPrecision, CmdArgs.dim >", "classz_1_1math_1_1_vector.html", null ],
       [ "z::math::Vector< T, N >", "classz_1_1math_1_1_vector.html", null ]
     ] ],
     [ "z::CTSArray< CTS >", "classz_1_1_c_t_s_array.html", null ],
@@ -50,6 +51,7 @@ var hierarchy =
         [ "z::MotorControlWorker< SchedulerType, DeviceJoint *, RealNumber, JOINT_NUMBER >", "classz_1_1_motor_control_worker.html", null ],
         [ "z::MotorPDControlWorker< SchedulerType, RealNumber, JOINT_NUMBER >", "classz_1_1_motor_p_d_control_worker.html", null ],
         [ "z::MotorResetPositionWorker< SchedulerType, RealNumber, JOINT_NUMBER >", "classz_1_1_motor_reset_position_worker.html", null ],
+        [ "z::NetCmdWorker< SchedulerType, RealNumber, NetCommand3Pair >", "classz_1_1_net_cmd_worker.html", null ],
         [ "z::AbstractNetInferenceWorker< SchedulerType, InferencePrecision >", "classz_1_1_abstract_net_inference_worker.html", [
           [ "z::CommonLocoInferenceWorker< SchedulerType, InferencePrecision, JOINT_NUMBER >", "classz_1_1_common_loco_inference_worker.html", [
             [ "z::ArmTrackingInferenceWorker< SchedulerType, RealNumber, JOINT_NUMBER >", "classz_1_1_arm_tracking_inference_worker.html", null ],
@@ -66,6 +68,7 @@ var hierarchy =
         [ "z::MotorControlWorker< SchedulerType, JointType, MotorPrecision, JointNumber >", "classz_1_1_motor_control_worker.html", null ],
         [ "z::MotorPDControlWorker< SchedulerType, MotorPrecision, JointNumber >", "classz_1_1_motor_p_d_control_worker.html", null ],
         [ "z::MotorResetPositionWorker< SchedulerType, MotorPrecision, JointNumber >", "classz_1_1_motor_reset_position_worker.html", null ],
+        [ "z::NetCmdWorker< SchedulerType, CmdPrecision, CmdArgs >", "classz_1_1_net_cmd_worker.html", null ],
         [ "z::SimpleCallbackWorker< SchedulerType >", "classz_1_1_simple_callback_worker.html", null ]
       ] ],
       [ "z::RingBuffer< T >", "classz_1_1_ring_buffer.html", null ],

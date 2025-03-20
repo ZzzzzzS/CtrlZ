@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zobject_0',['ZObject',['../classz_1_1_z_object.html',1,'z']]]
+  ['weightfilter_0',['WeightFilter',['../classz_1_1_weight_filter.html',1,'z']]]
 ];

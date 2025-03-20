@@ -1,31 +1,33 @@
 <map id="类继承关系图" name="类继承关系图">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,399,82,425"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,424,82,451"/>
 <area shape="rect" id="Node000001" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="130,5,355,32"/>
-<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="45,383,54,304,71,202,95,106,110,68,128,42,143,30,146,35,132,46,115,70,100,107,76,203,60,305,50,384"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="44,408,53,324,69,215,93,111,109,70,128,42,143,30,146,35,132,46,114,72,99,112,74,216,58,325,50,409"/>
 <area shape="rect" id="Node000002" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="136,56,349,99"/>
-<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="42,383,45,325,57,252,67,214,82,176,102,140,128,109,142,97,145,101,132,113,107,143,87,178,72,215,62,253,50,326,47,383"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="46,408,57,338,75,249,98,165,112,132,128,109,142,97,145,101,132,112,117,134,103,166,80,250,62,339,51,409"/>
 <area shape="rect" id="Node000003" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="142,123,342,165"/>
-<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="44,382,51,337,66,282,90,225,107,199,128,175,144,164,147,168,131,179,111,202,95,227,71,283,57,338,50,383"/>
+<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="43,408,49,358,62,296,87,232,105,202,128,175,143,164,146,168,132,179,110,205,92,234,67,298,54,359,49,409"/>
 <area shape="rect" id="Node000004" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="154,189,330,232"/>
-<area shape="poly" id="edge4_Node000000_Node000004" title=" " alt="" coords="49,383,59,350,76,313,98,275,128,242,152,227,155,231,131,246,102,278,80,315,64,352,54,385"/>
+<area shape="poly" id="edge4_Node000000_Node000004" title=" " alt="" coords="47,409,56,371,72,326,95,281,128,242,152,226,155,231,131,246,99,284,76,328,61,373,52,410"/>
 <area shape="rect" id="Node000005" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="154,256,330,299"/>
-<area shape="poly" id="edge5_Node000000_Node000005" title=" " alt="" coords="59,384,88,345,107,325,128,308,152,296,155,300,131,313,110,329,92,348,63,387"/>
+<area shape="poly" id="edge5_Node000000_Node000005" title=" " alt="" coords="54,408,83,358,103,331,128,309,152,295,155,299,131,313,107,335,87,361,59,411"/>
 <area shape="rect" id="Node000006" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="131,323,354,349"/>
-<area shape="poly" id="edge6_Node000000_Node000006" title=" " alt="" coords="75,387,129,359,164,347,166,352,131,364,78,392"/>
+<area shape="poly" id="edge6_Node000000_Node000006" title=" " alt="" coords="64,411,93,383,128,359,157,347,159,352,131,364,96,387,68,414"/>
 <area shape="rect" id="Node000007" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="131,373,354,400"/>
-<area shape="poly" id="edge7_Node000000_Node000007" title=" " alt="" coords="97,403,132,398,133,403,97,408"/>
+<area shape="poly" id="edge7_Node000000_Node000007" title=" " alt="" coords="96,419,129,409,176,398,177,403,130,415,97,424"/>
 <area shape="rect" id="Node000008" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="131,424,354,451"/>
-<area shape="poly" id="edge8_Node000000_Node000008" title=" " alt="" coords="97,416,133,421,132,426,97,421"/>
+<area shape="poly" id="edge8_Node000000_Node000008" title=" " alt="" coords="97,435,131,435,131,440,97,440"/>
 <area shape="rect" id="Node000009" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="143,475,342,517"/>
-<area shape="poly" id="edge9_Node000000_Node000009" title=" " alt="" coords="79,432,131,460,160,472,158,477,129,465,76,436"/>
+<area shape="poly" id="edge9_Node000000_Node000009" title=" " alt="" coords="97,450,168,471,167,477,96,455"/>
 <area shape="rect" id="Node000010" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="149,541,336,600"/>
-<area shape="poly" id="edge10_Node000000_Node000010" title=" " alt="" coords="61,438,90,484,109,507,131,527,150,539,147,543,128,531,105,511,85,487,56,441"/>
+<area shape="poly" id="edge10_Node000000_Node000010" title=" " alt="" coords="65,461,94,495,131,527,151,538,148,543,128,532,90,499,61,465"/>
 <area shape="rect" id="Node000011" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="142,624,343,683"/>
-<area shape="poly" id="edge11_Node000000_Node000011" title=" " alt="" coords="52,440,61,478,77,524,100,570,132,610,146,621,143,626,128,614,95,573,72,526,56,480,47,441"/>
+<area shape="poly" id="edge11_Node000000_Node000011" title=" " alt="" coords="54,465,64,498,80,537,102,576,131,610,147,621,144,626,128,614,98,579,76,539,59,500,49,466"/>
 <area shape="rect" id="Node000012" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="176,707,308,749"/>
-<area shape="poly" id="edge12_Node000000_Node000012" title=" " alt="" coords="48,440,52,494,64,562,75,597,89,632,108,664,131,693,152,708,177,717,175,722,150,712,128,697,104,667,85,634,70,599,59,563,46,495,42,441"/>
+<area shape="poly" id="edge12_Node000000_Node000012" title=" " alt="" coords="49,466,54,515,67,576,92,639,110,667,131,693,152,708,177,717,175,722,150,712,128,697,105,671,87,641,62,577,49,516,43,466"/>
 <area shape="rect" id="Node000013" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="149,773,336,832"/>
-<area shape="poly" id="edge13_Node000000_Node000013" title=" " alt="" coords="51,440,62,515,79,610,103,701,117,736,132,760,150,775,146,779,128,763,112,738,98,702,74,612,56,516,46,441"/>
-<area shape="rect" id="Node000014" href="$classz_1_1math_1_1_vector.html" title="Vector class, support some vector operations, like dot, cross, normalize, etc." alt="" coords="163,856,322,883"/>
-<area shape="poly" id="edge14_Node000000_Node000014" title=" " alt="" coords="49,441,57,532,72,653,83,713,96,768,113,812,132,842,146,853,164,861,161,866,143,858,128,846,108,815,91,770,77,714,66,654,51,533,44,441"/>
+<area shape="poly" id="edge13_Node000000_Node000013" title=" " alt="" coords="47,466,49,526,60,604,71,646,86,687,106,725,132,759,150,775,147,779,128,763,101,728,81,689,66,648,55,606,44,527,41,466"/>
+<area shape="rect" id="Node000014" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="138,856,346,899"/>
+<area shape="poly" id="edge14_Node000000_Node000014" title=" " alt="" coords="50,466,58,552,74,665,99,772,114,814,132,842,145,853,141,857,128,846,109,816,94,774,69,666,53,553,44,466"/>
+<area shape="rect" id="Node000015" href="$classz_1_1math_1_1_vector.html" title="Vector class, support some vector operations, like dot, cross, normalize, etc." alt="" coords="163,923,322,949"/>
+<area shape="poly" id="edge15_Node000000_Node000015" title=" " alt="" coords="49,466,55,565,69,698,80,765,94,826,111,876,132,909,146,920,164,928,162,933,144,925,128,912,106,878,89,828,75,766,64,699,49,565,43,466"/>
 </map>

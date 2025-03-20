@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ctrl-Z: C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/NetCmdWorker.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Ctrl-Z
+   </div>
+   <div id="projectbrief">一个多线程机器人运动控制强化学习部署框架</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_net_cmd_worker_8hpp_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">NetCmdWorker.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_abstract_worker_8hpp.html">Workers/AbstractWorker.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="_abstract_scheduler_8hpp.html">Schedulers/AbstractScheduler.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_static_string_utils_8hpp.html">Utils/StaticStringUtils.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;array&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_math_types_8hpp.html">Utils/MathTypes.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;mutex&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span>z</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> SchedulerType, <span class="keyword">typename</span> CmdPrecision, CTSPair CmdArgs&gt;</div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classz_1_1_net_cmd_worker.html">   33</a></span>    <span class="keyword">class </span><a class="code hl_function" href="classz_1_1_net_cmd_worker.html#ad90f04a481c7ad88d9e0e20a8cb97fd8">NetCmdWorker</a> : <span class="keyword">public</span> AbstractWorker&lt;SchedulerType&gt;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keyword">using </span>ArrayGetterType = std::array&lt;CmdPrecision, CmdArgs.dim&gt;;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classz_1_1_net_cmd_worker.html#ad90f04a481c7ad88d9e0e20a8cb97fd8">   43</a></span>        <a class="code hl_function" href="classz_1_1_net_cmd_worker.html#ad90f04a481c7ad88d9e0e20a8cb97fd8">NetCmdWorker</a>(SchedulerType* scheduler, <span class="keyword">const</span> nlohmann::json&amp; cfg = nlohmann::json())</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            :AbstractWorker&lt;SchedulerType&gt;(scheduler, cfg)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            nlohmann::json local_cfg = cfg[<span class="stringliteral">&quot;Workers&quot;</span>][<span class="stringliteral">&quot;Commander&quot;</span>];</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            this-&gt;EchoCmd = local_cfg[<span class="stringliteral">&quot;EchoCmd&quot;</span>].get&lt;<span class="keywordtype">bool</span>&gt;();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keywordflow">if</span> (local_cfg[<span class="stringliteral">&quot;UpperLimit&quot;</span>].size() != CmdArgs.dim ||</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                local_cfg[<span class="stringliteral">&quot;LowerLimit&quot;</span>].size() != CmdArgs.dim ||</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                local_cfg[<span class="stringliteral">&quot;DiscreteCmdStep&quot;</span>].size() != CmdArgs.dim ||</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                local_cfg[<span class="stringliteral">&quot;ReverseJoystickAxis&quot;</span>].size() != CmdArgs.dim</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                )</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                throw std::runtime_error(<span class="stringliteral">&quot;Command vector size mismatch with the one in config file&quot;</span>);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            this-&gt;CmdUpperLimit = <span class="keyword">static_cast&lt;</span>decltype(this-<span class="keyword">&gt;</span>CmdUpperLimit)&gt;(local_cfg[<span class="stringliteral">&quot;UpperLimit&quot;</span>].get&lt;ArrayGetterType&gt;());</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            this-&gt;CmdLowerLimit = <span class="keyword">static_cast&lt;</span>decltype(this-<span class="keyword">&gt;</span>CmdLowerLimit)&gt;(local_cfg[<span class="stringliteral">&quot;LowerLimit&quot;</span>].get&lt;ArrayGetterType&gt;());</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            this-&gt;CmdDiscreteStep = <span class="keyword">static_cast&lt;</span>decltype(this-<span class="keyword">&gt;</span>CmdDiscreteStep)&gt;(local_cfg[<span class="stringliteral">&quot;DiscreteCmdStep&quot;</span>].get&lt;ArrayGetterType&gt;());</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            this-&gt;CmdReverseAxis = local_cfg[<span class="stringliteral">&quot;ReverseJoystickAxis&quot;</span>].get&lt;<span class="keyword">decltype</span>(this-&gt;CmdReverseAxis)&gt;();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            this-&gt;PrintSplitLine();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;CommanderWorker&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Command Vector Length:&quot;</span> &lt;&lt; CmdArgs.dim &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Command Upper Limit=&quot;</span> &lt;&lt; this-&gt;CmdUpperLimit;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Command Lower Limit=&quot;</span> &lt;&lt; this-&gt;CmdLowerLimit;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Command Discrete Step=&quot;</span> &lt;&lt; this-&gt;CmdDiscreteStep;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Command Continuous Reverse Axis=&quot;</span> &lt;&lt; this-&gt;CmdReverseAxis;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Command EchoCmd= &quot;</span> &lt;&lt; (this-&gt;EchoCmd ? <span class="stringliteral">&quot;True&quot;</span> : <span class="stringliteral">&quot;False&quot;</span>) &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            this-&gt;PrintSplitLine();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        }</div>
+</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classz_1_1_net_cmd_worker.html#a85706741d4f6d3555de1db457ef62ce2">   78</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_net_cmd_worker.html#a85706741d4f6d3555de1db457ef62ce2">IncreaseCmd</a>(<span class="keywordtype">size_t</span> idx)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            std::lock_guard&lt;std::mutex&gt; lock(lock__);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt;CmdPrecision, CmdArgs.dim&gt; Cmd;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template GetData&lt;CmdArgs.str&gt;(Cmd);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            Cmd[idx] += this-&gt;CmdDiscreteStep[idx];</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            Cmd[idx] = std::clamp(Cmd[idx], this-&gt;CmdLowerLimit[idx], this-&gt;CmdUpperLimit[idx]);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            Cmd[idx] = (std::abs(Cmd[idx]) &lt; 0.0001) ? 0 : Cmd[idx];</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;CmdArgs.str&gt;(Cmd);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <span class="keywordflow">if</span> (this-&gt;EchoCmd)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;current cmd: &quot;</span> &lt;&lt; Cmd;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        }</div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
+<div class="foldopen" id="foldopen00098" data-start="{" data-end="}">
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classz_1_1_net_cmd_worker.html#adbee721a622c8875c5c856b6fbea4e85">   98</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_net_cmd_worker.html#adbee721a622c8875c5c856b6fbea4e85">DecreaseCmd</a>(<span class="keywordtype">size_t</span> idx)</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            std::lock_guard&lt;std::mutex&gt; lock(lock__);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt;CmdPrecision, CmdArgs.dim&gt; Cmd;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template GetData&lt;CmdArgs.str&gt;(Cmd);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            Cmd[idx] -= this-&gt;CmdDiscreteStep[idx];</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            Cmd[idx] = std::clamp(Cmd[idx], this-&gt;CmdLowerLimit[idx], this-&gt;CmdUpperLimit[idx]);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            Cmd[idx] = (std::abs(Cmd[idx]) &lt; 0.0001) ? 0 : Cmd[idx];</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;CmdArgs.str&gt;(Cmd);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <span class="keywordflow">if</span> (this-&gt;EchoCmd)</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;current cmd: &quot;</span> &lt;&lt; Cmd;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        }</div>
+</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
+<div class="foldopen" id="foldopen00119" data-start="{" data-end="}">
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="classz_1_1_net_cmd_worker.html#addecda3e21c6b5d48f7e07f1faa789f3">  119</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_net_cmd_worker.html#addecda3e21c6b5d48f7e07f1faa789f3">SetCmd</a>(<span class="keywordtype">size_t</span> idx, CmdPrecision val)</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            val = this-&gt;CmdReverseAxis[idx] ? -val : val;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            val *= (val &gt; 0 ? std::abs(this-&gt;CmdUpperLimit[idx]) : std::abs(this-&gt;CmdLowerLimit[idx]));</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            val = std::clamp(val, this-&gt;CmdLowerLimit[idx], this-&gt;CmdUpperLimit[idx]);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            this-&gt;<a class="code hl_function" href="classz_1_1_net_cmd_worker.html#abdc9f5585bdcaaf1978451170b9f0502">SetCmdNoScale</a>(idx, val);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        }</div>
+</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span></div>
+<div class="foldopen" id="foldopen00133" data-start="{" data-end="}">
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="classz_1_1_net_cmd_worker.html#abdc9f5585bdcaaf1978451170b9f0502">  133</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_net_cmd_worker.html#abdc9f5585bdcaaf1978451170b9f0502">SetCmdNoScale</a>(<span class="keywordtype">size_t</span> idx, CmdPrecision val)</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            std::lock_guard&lt;std::mutex&gt; lock(lock__);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt;CmdPrecision, CmdArgs.dim&gt; Cmd;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template GetData&lt;CmdArgs.str&gt;(Cmd);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            Cmd[idx] = val;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;CmdArgs.str&gt;(Cmd);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            <span class="keywordflow">if</span> (this-&gt;EchoCmd)</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;current cmd: &quot;</span> &lt;&lt; Cmd;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            }</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        }</div>
+</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="foldopen" id="foldopen00146" data-start="{" data-end="}">
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="classz_1_1_net_cmd_worker.html#a6c7e6a5b03ec989c65c079efd5141ad3">  146</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_net_cmd_worker.html#a6c7e6a5b03ec989c65c079efd5141ad3">TaskRun</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        }</div>
+</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt;CmdPrecision, CmdArgs.dim&gt; CmdUpperLimit;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt;CmdPrecision, CmdArgs.dim&gt; CmdLowerLimit;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt;CmdPrecision, CmdArgs.dim&gt; CmdDiscreteStep;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        std::array&lt;bool, CmdArgs.dim&gt; CmdReverseAxis;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="keywordtype">bool</span> EchoCmd = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        std::mutex lock__;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    };</div>
+</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>};</div>
+<div class="ttc" id="a_abstract_scheduler_8hpp_html"><div class="ttname"><a href="_abstract_scheduler_8hpp.html">AbstractScheduler.hpp</a></div><div class="ttdoc">AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。</div></div>
+<div class="ttc" id="a_abstract_worker_8hpp_html"><div class="ttname"><a href="_abstract_worker_8hpp.html">AbstractWorker.hpp</a></div></div>
+<div class="ttc" id="a_math_types_8hpp_html"><div class="ttname"><a href="_math_types_8hpp.html">MathTypes.hpp</a></div></div>
+<div class="ttc" id="a_static_string_utils_8hpp_html"><div class="ttname"><a href="_static_string_utils_8hpp.html">StaticStringUtils.hpp</a></div></div>
+<div class="ttc" id="aclassz_1_1_abstract_worker_html_af4842124f95ccfb50ddb0d21a9642cab"><div class="ttname"><a href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">z::AbstractWorker::Scheduler</a></div><div class="ttdeci">SchedulerType * Scheduler</div><div class="ttdoc">调度器的指针，用户可以通过这个指针来获取一些全局的数据， 比如当前任务的时间戳，前级工人的输出数据等，也可以通过这个指针来设置一些全局的数据。</div><div class="ttdef"><b>定义</b> AbstractWorker.hpp:98</div></div>
+<div class="ttc" id="aclassz_1_1_net_cmd_worker_html_a6c7e6a5b03ec989c65c079efd5141ad3"><div class="ttname"><a href="classz_1_1_net_cmd_worker.html#a6c7e6a5b03ec989c65c079efd5141ad3">z::NetCmdWorker::TaskRun</a></div><div class="ttdeci">void TaskRun() override</div><div class="ttdoc">TaskRun方法，在每次任务队列循环中被调用， 具体的调用时机取决于用户在调度器中设置的当前工人在流水线中的顺序， 用户必须要实现的方法，用于实现当前工人的具体工作逻辑。</div><div class="ttdef"><b>定义</b> NetCmdWorker.hpp:146</div></div>
+<div class="ttc" id="aclassz_1_1_net_cmd_worker_html_a85706741d4f6d3555de1db457ef62ce2"><div class="ttname"><a href="classz_1_1_net_cmd_worker.html#a85706741d4f6d3555de1db457ef62ce2">z::NetCmdWorker::IncreaseCmd</a></div><div class="ttdeci">void IncreaseCmd(size_t idx)</div><div class="ttdoc">离散增加命令，增加的步长为配置文件中设置的步长</div><div class="ttdef"><b>定义</b> NetCmdWorker.hpp:78</div></div>
+<div class="ttc" id="aclassz_1_1_net_cmd_worker_html_abdc9f5585bdcaaf1978451170b9f0502"><div class="ttname"><a href="classz_1_1_net_cmd_worker.html#abdc9f5585bdcaaf1978451170b9f0502">z::NetCmdWorker::SetCmdNoScale</a></div><div class="ttdeci">void SetCmdNoScale(size_t idx, CmdPrecision val)</div><div class="ttdoc">连续设置命令，不进行缩放</div><div class="ttdef"><b>定义</b> NetCmdWorker.hpp:133</div></div>
+<div class="ttc" id="aclassz_1_1_net_cmd_worker_html_ad90f04a481c7ad88d9e0e20a8cb97fd8"><div class="ttname"><a href="classz_1_1_net_cmd_worker.html#ad90f04a481c7ad88d9e0e20a8cb97fd8">z::NetCmdWorker::NetCmdWorker</a></div><div class="ttdeci">NetCmdWorker(SchedulerType *scheduler, const nlohmann::json &amp;cfg=nlohmann::json())</div><div class="ttdoc">构造一个神经网络用户命令工人类型</div><div class="ttdef"><b>定义</b> NetCmdWorker.hpp:43</div></div>
+<div class="ttc" id="aclassz_1_1_net_cmd_worker_html_adbee721a622c8875c5c856b6fbea4e85"><div class="ttname"><a href="classz_1_1_net_cmd_worker.html#adbee721a622c8875c5c856b6fbea4e85">z::NetCmdWorker::DecreaseCmd</a></div><div class="ttdeci">void DecreaseCmd(size_t idx)</div><div class="ttdoc">离散减少命令，减少的步长为配置文件中设置的步长</div><div class="ttdef"><b>定义</b> NetCmdWorker.hpp:98</div></div>
+<div class="ttc" id="aclassz_1_1_net_cmd_worker_html_addecda3e21c6b5d48f7e07f1faa789f3"><div class="ttname"><a href="classz_1_1_net_cmd_worker.html#addecda3e21c6b5d48f7e07f1faa789f3">z::NetCmdWorker::SetCmd</a></div><div class="ttdeci">void SetCmd(size_t idx, CmdPrecision val)</div><div class="ttdoc">连续设置命令，根据配置文件中的上下限和是否反转轴进行缩放</div><div class="ttdef"><b>定义</b> NetCmdWorker.hpp:119</div></div>
+<div class="ttc" id="aclassz_1_1math_1_1_vector_html"><div class="ttname"><a href="classz_1_1math_1_1_vector.html">z::math::Vector</a></div><div class="ttdoc">Vector class, support some vector operations, like dot, cross, normalize, etc.</div><div class="ttdef"><b>定义</b> MathTypes.hpp:77</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7b6a9de995744179e2af2e4eac8c765a.html">CtrlZ</a></li><li class="navelem"><a class="el" href="dir_23feaddda2c120f5a6c49ee991b2b1fd.html">Workers</a></li><li class="navelem"><b>NetCmdWorker.hpp</b></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

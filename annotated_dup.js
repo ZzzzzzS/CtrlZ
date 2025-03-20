@@ -29,6 +29,7 @@ var annotated_dup =
       [ "MotorControlWorker", "classz_1_1_motor_control_worker.html", "classz_1_1_motor_control_worker" ],
       [ "MotorPDControlWorker", "classz_1_1_motor_p_d_control_worker.html", "classz_1_1_motor_p_d_control_worker" ],
       [ "MotorResetPositionWorker", "classz_1_1_motor_reset_position_worker.html", "classz_1_1_motor_reset_position_worker" ],
+      [ "NetCmdWorker", "classz_1_1_net_cmd_worker.html", "classz_1_1_net_cmd_worker" ],
       [ "PlainInferenceWorker", "classz_1_1_plain_inference_worker.html", "classz_1_1_plain_inference_worker" ],
       [ "RingBuffer", "classz_1_1_ring_buffer.html", "classz_1_1_ring_buffer" ],
       [ "SimpleCallbackWorker", "classz_1_1_simple_callback_worker.html", "classz_1_1_simple_callback_worker" ],
