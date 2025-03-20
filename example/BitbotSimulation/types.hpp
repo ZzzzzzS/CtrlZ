@@ -20,6 +20,7 @@
 #include "Workers/ImuProcessWorker.hpp"
 #include "Workers/MotorControlWorker.hpp"
 #include "Workers/MotorResetPositionWorker.hpp"
+#include "Workers/NetCmdWorker.hpp"
 
 #include "Workers/NN/EraxLikeInferenceWorker.hpp"
 #include "Workers/NN/HumanoidGymInferenceWorker.hpp"
@@ -85,6 +86,7 @@ using LoggerWorkerType = z::AsyncLoggerWorker<SchedulerType, RealNumber, ImuAccR
     TargetMotorTorquePair, LimitTargetMotorTorquePair,
     NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair>;
 
+using CmdWorkerType = z::NetCmdWorker<SchedulerType, RealNumber, NetCommand3Pair>;
 using FlexPatchWorkerType = z::SimpleCallbackWorker<SchedulerType>;
 
 

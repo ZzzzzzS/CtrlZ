@@ -48,6 +48,7 @@ void ConfigFunc(const KernelBus& bus, UserData& d)
           bus.GetDevice<DeviceJoint>(7).value() });
     d.MotorPDWorker = new MotorPDWorkerType(d.TaskScheduler, cfg_root);
     d.Logger = new LoggerWorkerType(d.TaskScheduler, cfg_root);
+    d.CommanderWorker = new CmdWorkerType(d.TaskScheduler, cfg_root);
 
     //创建主任务列表，并添加worker
     d.TaskScheduler->CreateTaskList("MainTask", 1, true);
@@ -83,6 +84,7 @@ void FinishFunc(UserData& d)
     delete d.Logger;
     delete d.NetInferWorker;
     delete d.MotorResetWorker;
+    delete d.CommanderWorker;
 }
 
 
@@ -112,12 +114,6 @@ std::optional<bitbot::StateId> EventPolicyRun(bitbot::EventValue value, UserData
     return std::optional<bitbot::StateId>();
 }
 
-std::optional<bitbot::StateId> EventFakePowerOn(bitbot::EventValue value,
-    UserData& user_data)
-{
-    return std::optional<bitbot::StateId>();
-}
-
 std::optional<bitbot::StateId> EventSystemTest(bitbot::EventValue value,
     UserData& user_data)
 {
@@ -128,18 +124,11 @@ std::optional<bitbot::StateId> EventSystemTest(bitbot::EventValue value,
     return std::optional<bitbot::StateId>();
 }
 
-// velocity control callback
-#define X_VEL_STEP 0.2
-#define Y_VEL_STEP 0.05
 std::optional<bitbot::StateId> EventVeloXIncrease(bitbot::EventValue keyState, UserData& d)
 {
     if (keyState == static_cast<bitbot::EventValue>(bitbot::KeyboardEvent::Up))
     { //设置x轴速度
-        Vec3 cmd;
-        d.TaskScheduler->template GetData<"NetUserCommand3">(cmd);
-        cmd[0] += X_VEL_STEP;
-        std::cout << "current cmd velocity: " << cmd;
-        d.TaskScheduler->template SetData<"NetUserCommand3">(cmd);
+        d.CommanderWorker->IncreaseCmd(0);
     }
     return std::optional<bitbot::StateId>();
 }
@@ -148,11 +137,7 @@ std::optional<bitbot::StateId> EventVeloXDecrease(bitbot::EventValue keyState, U
 {
     if (keyState == static_cast<bitbot::EventValue>(bitbot::KeyboardEvent::Up))
     { //设置x轴速度
-        Vec3 cmd;
-        d.TaskScheduler->template GetData<"NetUserCommand3">(cmd);
-        cmd[0] -= X_VEL_STEP;
-        std::cout << "current cmd velocity: " << cmd;
-        d.TaskScheduler->template SetData<"NetUserCommand3">(cmd);
+        d.CommanderWorker->DecreaseCmd(0);
     }
     return std::optional<bitbot::StateId>();
 }
@@ -161,11 +146,7 @@ std::optional<bitbot::StateId> EventVeloYIncrease(bitbot::EventValue keyState, U
 {
     if (keyState == static_cast<bitbot::EventValue>(bitbot::KeyboardEvent::Up))
     {
-        Vec3 cmd;
-        d.TaskScheduler->template GetData<"NetUserCommand3">(cmd);
-        cmd[2] += Y_VEL_STEP;
-        std::cout << "current cmd velocity: " << cmd;
-        d.TaskScheduler->template SetData<"NetUserCommand3">(cmd);
+        d.CommanderWorker->IncreaseCmd(1);
     }
     return std::optional<bitbot::StateId>();
 }
@@ -174,12 +155,48 @@ std::optional<bitbot::StateId> EventVeloYDecrease(bitbot::EventValue keyState, U
 {
     if (keyState == static_cast<bitbot::EventValue>(bitbot::KeyboardEvent::Up))
     {
-        Vec3 cmd;
-        d.TaskScheduler->template GetData<"NetUserCommand3">(cmd);
-        cmd[2] -= Y_VEL_STEP;
-        std::cout << "current cmd velocity: " << cmd;
-        d.TaskScheduler->template SetData<"NetUserCommand3">(cmd);
+        d.CommanderWorker->DecreaseCmd(1);
     }
+    return std::optional<bitbot::StateId>();
+}
+
+std::optional<bitbot::StateId> EventVeloYawIncrease(bitbot::EventValue keyState, UserData& d)
+{
+    if (keyState == static_cast<bitbot::EventValue>(bitbot::KeyboardEvent::Up))
+    {
+        d.CommanderWorker->IncreaseCmd(2);
+    }
+    return std::optional<bitbot::StateId>();
+}
+
+std::optional<bitbot::StateId> EventVeloYawDecrease(bitbot::EventValue keyState, UserData& d)
+{
+    if (keyState == static_cast<bitbot::EventValue>(bitbot::KeyboardEvent::Up))
+    {
+        d.CommanderWorker->DecreaseCmd(2);
+    }
+    return std::optional<bitbot::StateId>();
+}
+
+
+std::optional<bitbot::StateId> EventJoystickXChange(bitbot::EventValue keyState, UserData& d)
+{
+    double vel = *reinterpret_cast<double*>(&keyState);
+    d.CommanderWorker->SetCmd(0, static_cast<RealNumber>(vel));
+    return std::optional<bitbot::StateId>();
+}
+
+std::optional<bitbot::StateId> EventJoystickYChange(bitbot::EventValue keyState, UserData& d)
+{
+    double vel = *reinterpret_cast<double*>(&keyState);
+    d.CommanderWorker->SetCmd(1, static_cast<RealNumber>(vel));
+    return std::optional<bitbot::StateId>();
+}
+
+std::optional<bitbot::StateId> EventJoystickYawChange(bitbot::EventValue keyState, UserData& d)
+{
+    double vel = *reinterpret_cast<double*>(&keyState);
+    d.CommanderWorker->SetCmd(2, static_cast<RealNumber>(vel));
     return std::optional<bitbot::StateId>();
 }
 

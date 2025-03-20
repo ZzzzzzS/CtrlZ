@@ -37,6 +37,27 @@ std::ostream& operator<<(std::ostream& os, const std::array<T, N>& arr) {
     return os;
 }
 
+/**
+ * @brief overload operator << for bool type std::array to print array
+ *
+ * @tparam N array length
+ * @param os std::ostream
+ * @param arr std::array<T, N>
+ * @return std::ostream&
+ */
+template<std::size_t N>
+std::ostream& operator<<(std::ostream& os, const std::array<bool, N>& arr) {
+    os << "[";
+    for (std::size_t i = 0; i < N; ++i) {
+        os << (arr[i] ? "true" : "false");
+        if (i < N - 1) {
+            os << ", ";
+        }
+    }
+    os << "]\n";
+    return os;
+}
+
 namespace z
 {
     /**
