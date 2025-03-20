@@ -46,10 +46,13 @@ namespace z
     math::Vector<Scalar, 3> ComputeProjectedGravity(math::Vector<Scalar, 3>& EularAngle, const math::Vector<Scalar, 3>& GravityVector = { 0,0,-1 })
     {
         static_assert(std::is_arithmetic<Scalar>::value, "Scalar must be a arithmetic type");
+
+
+
         Eigen::Matrix3<Scalar> RotMat;
-        RotMat = (Eigen::AngleAxis<Scalar>(EularAngle[0], Eigen::Vector3<Scalar>::UnitX())
+        RotMat = (Eigen::AngleAxis<Scalar>(EularAngle[2], Eigen::Vector3<Scalar>::UnitZ())
             * Eigen::AngleAxis<Scalar>(EularAngle[1], Eigen::Vector3<Scalar>::UnitY())
-            * Eigen::AngleAxis<Scalar>(EularAngle[2], Eigen::Vector3<Scalar>::UnitZ()));
+            * Eigen::AngleAxis<Scalar>(EularAngle[0], Eigen::Vector3<Scalar>::UnitX()));
         Eigen::Vector3 <Scalar> GravityVec(GravityVector[0], GravityVector[1], GravityVector[2]);
         Eigen::Vector3 <Scalar> ProjectedGravity = RotMat.transpose() * GravityVec;
 

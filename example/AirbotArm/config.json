@@ -39,7 +39,7 @@
                 "PolicyFrequency": 20
             },
             "Network": {
-                "ModelPath": "../../check_point/policy_1.onnx",
+                "ModelPath": "C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/example/BitbotSimulation/CheckPoints/policy_1.onnx",
                 "InputNodeNames": [
                     "observation"
                 ],

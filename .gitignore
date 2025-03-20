@@ -36,3 +36,4 @@
 .VSCodeCounter/
 out/
 build/
+vcpkg_installed/

@@ -34,14 +34,14 @@
     "MotorControl": {
       "ControlMode": "Torque",
       "TorqueLimit": [
-        100,
-        100,
-        100,
-        100,
-        100,
-        100,
-        100,
-        100
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60
       ],
       "PosFilterWeight": [
         1
@@ -62,37 +62,35 @@
     },
     "ImuProcess": {
       "AccFilterWeight": [
-        1,
         1
       ],
       "GyroFilterWeight": [
-        1,
         1
       ],
       "MagFilterWeight": [
-        1,
         1
       ]
     },
     "AsyncLogger": {
-      "LogPath": "./",
-      "WriteBackFrequency": 1000
+      "LogPath": "./log/extra_data/",
+      "WriteBackFrequency": 100
     },
     "NN": {
       "Inference": {
         "WarmUpModel": false,
-        "IntraNumberThreads": 1,
-        "PolicyFrequency": 20
+        "IntraNumberThreads": 1
       },
       "Network": {
         "ModelPath": "C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/example/BitbotSimulation/CheckPoints/policy_1.onnx",
+        //"ModelPath": "/home/owheel/Documents/BITWheelFoot/CheckPoints/policy_1.onnx",
         "InputNodeNames": [
           "observation"
         ],
         "OutputNodeNames": [
           "action"
         ],
-        "Cycle_time": 0.5
+        "Cycle_time": 0.5,
+        "SwitchTime": 1.0
       },
       "Preprocess": {
         "ObservationScales": {
