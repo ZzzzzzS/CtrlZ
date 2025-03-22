@@ -20,6 +20,7 @@
 #include <condition_variable>
 #include <mutex>
 #include <fstream>
+#include <filesystem>
 #include "readerwriterqueue/readerwriterqueue.h"
  //#include "readerwriterqueue.h"
 
@@ -123,6 +124,12 @@ namespace z
             if (this->AlreadyCreated__)
             {
                 return;
+            }
+
+            if (!std::filesystem::exists(this->LogPath__.substr(0, this->LogPath__.find_last_of("/"))))
+            {
+                std::cout << "AsyncLoggerWorker: Folder not exist, creating folder " << this->LogPath__.substr(0, this->LogPath__.find_last_of("/")) << std::endl;
+                std::filesystem::create_directories(this->LogPath__.substr(0, this->LogPath__.find_last_of("/")));
             }
 
             this->FileStream__.open(this->LogPath__, std::fstream::out);

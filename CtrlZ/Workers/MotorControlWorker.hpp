@@ -306,6 +306,8 @@ namespace z
                 });
 
 
+            this->Scheduler->template SetData<"CurrentMotorVelocityRaw">(MotorVel);
+            this->Scheduler->template SetData<"CurrentMotorPositionRaw">(MotorPos);
             this->CurrentMotorVel = (*JointVelFilter)(MotorVel);
             this->CurrentMotorPos = (*JointPosFilter)(MotorPos);
 
@@ -347,7 +349,8 @@ namespace z
                 val = this->Joints[i]->GetActualTorque();
                 });
 
-
+            this->Scheduler->template SetData<"CurrentMotorVelocityRaw">(MotorVel);
+            this->Scheduler->template SetData<"CurrentMotorPositionRaw">(MotorPos);
             this->CurrentMotorVel = (*JointVelFilter)(MotorVel);
             this->CurrentMotorPos = (*JointPosFilter)(MotorPos);
 
