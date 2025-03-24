@@ -20,6 +20,7 @@
 #include <condition_variable>
 #include <mutex>
 #include <fstream>
+#include <limits>
 #include "readerwriterqueue/readerwriterqueue.h"
  //#include "readerwriterqueue.h"
 
@@ -224,7 +225,7 @@ namespace z
 
         bool AlreadyCreated__ = false;
         std::mutex CreateMutex__;
-        std::atomic<size_t> last_call_time = { 0 };
+        std::atomic<size_t> last_call_time = { std::numeric_limits<size_t>::max() };
 
     private:
         void GenerateHeader()
