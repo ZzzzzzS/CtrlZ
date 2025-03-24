@@ -58,6 +58,8 @@ constexpr z::CTSPair<"CurrentMotorPosition", MotorVec> CurrentMotorPosPair;
 constexpr z::CTSPair<"CurrentMotorVelocity", MotorVec> CurrentMotorVelPair;
 constexpr z::CTSPair<"CurrentMotorTorque", MotorVec> CurrentMotorTorquePair;
 constexpr z::CTSPair<"LimitTargetMotorTorque", MotorVec> LimitTargetMotorTorquePair;
+constexpr z::CTSPair<"CurrentMotorPositionRaw", MotorVec> CurrentMotorPosRawPair;
+constexpr z::CTSPair<"CurrentMotorVelocityRaw", MotorVec> CurrentMotorVelRawPair;
 
 /********* NN pair ********************/
 constexpr z::CTSPair<"NetLastAction", MotorVec> NetLastActionPair;
@@ -72,6 +74,7 @@ using SchedulerType = z::AbstractScheduler<ImuAccRawPair, ImuGyroRawPair, ImuMag
     ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair,
     TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair,
     TargetMotorTorquePair, LimitTargetMotorTorquePair,
+    CurrentMotorVelRawPair, CurrentMotorPosRawPair,
     NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair>;
 
 
