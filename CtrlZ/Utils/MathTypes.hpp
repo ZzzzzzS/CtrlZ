@@ -249,6 +249,17 @@ namespace z
                 return result;
             }
 
+            static Vector<T, N> rand()
+            {
+                Vector<T, N> result;
+                //std::srand(std::time({}));//set seed
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = static_cast<T>(std::rand()) / RAND_MAX;
+                }
+                return result;
+            }
+
         public:
 
             /**
