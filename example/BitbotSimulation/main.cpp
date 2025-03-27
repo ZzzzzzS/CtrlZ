@@ -15,7 +15,6 @@
 int main(int argc, char const* argv[])
 {
     //NOTE: 注意将配置文件路径修改为自己的路径
-
     std::string cfg_path = PROJECT_ROOT_DIR + std::string("/bitbot_mujoco.xml");
     KernelType kernel(cfg_path);
 

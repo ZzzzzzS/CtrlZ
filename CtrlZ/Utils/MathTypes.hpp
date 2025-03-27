@@ -268,7 +268,7 @@ namespace z
              * @param idx index
              * @return T& reference of element
              */
-            constexpr T& operator()(size_t idx)
+            constexpr T& operator()(int idx)
             {
                 if (idx < 0)
                     return this->operator[](N + idx);
@@ -282,12 +282,40 @@ namespace z
              * @param idx index
              * @return const T& reference of element
              */
-            constexpr const T& operator()(size_t idx) const
+            constexpr const T& operator()(int idx) const
             {
                 if (idx < 0)
                     return this->operator[](N + idx);
                 else
                     return this->operator[](idx);
+            }
+
+            /**
+             * @brief operator []
+             *
+             * @param idx index
+             * @return constexpr T& reference of element
+             */
+            constexpr T& operator[](int idx)
+            {
+                if (idx < 0)
+                    return std::array<T, N>::operator[](N + idx);
+                else
+                    return std::array<T, N>::operator[](idx);
+            }
+
+            /**
+             * @brief operator [] const
+             *
+             * @param idx index
+             * @return constexpr const T& reference of element
+             */
+            constexpr const T& operator[](int idx) const
+            {
+                if (idx < 0)
+                    return std::array<T, N>::operator[](N + idx);
+                else
+                    return std::array<T, N>::operator[](idx);
             }
 
             /**
@@ -683,7 +711,10 @@ namespace z
             {
                 return sum() / N;
             }
-
+            /**
+             * @brief apply function to each element of the vector
+             *
+             */
             using SelfApplyFunc = std::function<void(T&, size_t)>;
             void apply(SelfApplyFunc func)
             {
@@ -691,6 +722,44 @@ namespace z
                 {
                     func(this->operator[](i), i);
                 }
+            }
+
+            template<size_t begin, size_t end, size_t step = 1>
+            Vector<T, (end - begin) / step> slice() const
+            {
+                static_assert(begin < end, "begin must be less than end");
+                static_assert(end <= N, "end must be less than or equal to N");
+                static_assert(step > 0, "step must be greater than 0");
+                static_assert((end - begin) / step > 0, "step must be less than slice length");
+                Vector<T, (end - begin) / step> result;
+                for (size_t i = begin, j = 0; i < end; i += step, j++)
+                {
+                    result[j] = this->operator[](i);
+                }
+                return result;
+            }
+
+            /**
+             * @brief remap the vector with given index
+             * @details remap the vector with given index, for example, after remap with index {2,-1,1},
+             * the origin vector {3,4,5} should be {5,5,4}
+             *
+             * @param idx new index
+             * @return constexpr Vector<T, N>
+             */
+            constexpr Vector<T, N> remap(const std::array<int, N>& idx)
+            {
+                Vector<T, N> result;
+                for (size_t i = 0;i < N;i++)
+                {
+                    if (idx[i] > static_cast<int>(N) || idx[i] < -static_cast<int>(N))
+                    {
+                        throw std::runtime_error("index out of range");
+                    }
+
+                    result[i] = this->operator[](idx[i]);
+                }
+                return result;
             }
         };
 
