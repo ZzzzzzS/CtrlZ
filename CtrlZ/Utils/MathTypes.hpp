@@ -1,4 +1,4 @@
-﻿/**
+﻿/*
  * @file MathTypes.hpp
  * @author zishun zhou
  * @brief
@@ -249,6 +249,13 @@ namespace z
                 return result;
             }
 
+            /**
+             * @brief create a vector with random elements between 0 and 1
+             * @warning this function does not set seed, therefore the result is not completely random
+             * user should set seed before call this function.
+             *
+             * @return Vector<T, N>
+             */
             static Vector<T, N> rand()
             {
                 Vector<T, N> result;
@@ -256,6 +263,92 @@ namespace z
                 for (size_t i = 0; i < N; i++)
                 {
                     result[i] = static_cast<T>(std::rand()) / RAND_MAX;
+                }
+                return result;
+            }
+
+            /**
+             * @brief Return a tensor of elements selected from either val1 or val2, depending on condition.
+             *
+             * @param cond When True (nonzero), yield val1, otherwise yield val2
+             * @param val1 value vector 1
+             * @param val2 value vector 2
+             * @return constexpr Vector<T, N> result vector
+             */
+            static constexpr Vector<T, N> where(const Vector<bool, N>& cond, const Vector<T, N>& val1, const Vector<T, N>& val2)
+            {
+                Vector<T, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = cond[i] ? val1[i] : val2[i];
+                }
+                return result;
+            }
+
+            /**
+             * @brief Computes element-wise equality
+             *
+             * @param val1 the vector to compare
+             * @param val2 the vector to compare with
+             * @return constexpr Vector<bool, N>  the output vector
+             */
+            static constexpr Vector<bool, N> eq(const Vector<T, N>& val1, const Vector<T, N>& val2)
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = (val1[i] == val2[i]);
+                }
+                return result;
+            }
+
+            /**
+             * @brief Computes element-wise equality
+             *
+             * @param val1 the vector to compare
+             * @param val2 the value to compare with
+             * @return constexpr Vector<bool, N> the output vector
+             */
+            static constexpr Vector<bool, N> eq(const Vector<T, N>& val1, T val2)
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = (val1[i] == val2);
+                }
+                return result;
+            }
+
+            /**
+             * @brief Computes element-wise not equal to
+             *
+             * @param val1 the vector to compare
+             * @param val2 the vector to compare with
+             * @return constexpr Vector<bool, N> the output vector
+             */
+            static constexpr Vector<bool, N> ne(const Vector<T, N>& val1, const Vector<T, N>& val2)
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = (val1[i] != val2[i]);
+                }
+                return result;
+            }
+
+            /**
+             * @brief Computes element-wise not equal to
+             *
+             * @param val1 the vector to compare
+             * @param val2 the value to compare with
+             * @return constexpr Vector<bool, N> the output vector
+             */
+            static constexpr Vector<bool, N> ne(const Vector<T, N>& val1, T val2)
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = (val1[i] != val2);
                 }
                 return result;
             }
@@ -374,6 +467,16 @@ namespace z
             }
 
             /**
+             * @brief operator +
+             *
+             * @return Vector<T, N>
+             */
+            constexpr Vector<T, N> operator+() const
+            {
+                return *this;
+            }
+
+            /**
              * @brief operator - for vector negation
              *
              * @return Vector<T, N>
@@ -436,6 +539,7 @@ namespace z
                 return result;
             }
 
+
             /**
              * @brief vector subtraction with value
              *
@@ -483,6 +587,199 @@ namespace z
                 }
                 return result;
             }
+
+            /**
+             * @brief vector logical operations
+             *
+             * @param other other vector
+             * @return constexpr Vector<bool, N>& result vector
+             */
+            constexpr Vector<bool, N>& operator==(const Vector<T, N>& other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) == other[i];
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector logical operations
+             *
+             * @param other other vector
+             * @return constexpr Vector<bool, N>& result vector
+             */
+            constexpr Vector<bool, N>& operator==(T other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) == other;
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector logical operations
+             *
+             * @param other other vector
+             * @return constexpr Vector<bool, N>& result vector
+             */
+            constexpr Vector<bool, N>& operator!=(const Vector<T, N>& other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) != other[i];
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector logical operations
+             *
+             * @param other other vector
+             * @return constexpr Vector<bool, N>& result vector
+             */
+            constexpr Vector<bool, N>& operator!=(T other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) != other;
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector logical operations
+             *
+             * @param other other vector
+             * @return constexpr Vector<bool, N>& result vector
+             */
+            constexpr Vector<bool, N>& operator>(const Vector<T, N>& other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) > other[i];
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector logical operations
+             *
+             * @param other other vector
+             * @return constexpr Vector<bool, N>& result vector
+             */
+            constexpr Vector<bool, N>& operator>(T other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) > other;
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector logical operations
+             *
+             * @param other other vector
+             * @return constexpr Vector<bool, N>& result vector
+             */
+            constexpr Vector<bool, N>& operator<(const Vector<T, N>& other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) < other[i];
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector logical operations
+             *
+             * @param other other vector
+             * @return constexpr Vector<bool, N>& result vector
+             */
+            constexpr Vector<bool, N>& operator<(T other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) < other;
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector logical operations
+             *
+             * @param other other vector
+             * @return constexpr Vector<bool, N>& result vector
+             */
+            constexpr Vector<bool, N>& operator>=(const Vector<T, N>& other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) >= other[i];
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector logical operations
+             *
+             * @param other other vector
+             * @return constexpr Vector<bool, N>& result vector
+             */
+            constexpr Vector<bool, N>& operator>=(T other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) >= other;
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector logical operations
+             *
+             * @param other other vector
+             * @return constexpr Vector<bool, N>& result vector
+             */
+            constexpr Vector<bool, N>& operator<=(const Vector<T, N>& other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) <= other[i];
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector logical operations
+             *
+             * @param other other vector
+             * @return constexpr Vector<bool, N>& result vector
+             */
+            constexpr Vector<bool, N>& operator<=(T other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) <= other;
+                }
+                return result;
+            }
+
 
             /**
              * @brief vector in-place addition
@@ -747,7 +1044,7 @@ namespace z
              * @param idx new index
              * @return constexpr Vector<T, N>
              */
-            constexpr Vector<T, N> remap(const std::array<int, N>& idx)
+            constexpr Vector<T, N> remap(const Vector<int, N>& idx)
             {
                 Vector<T, N> result;
                 for (size_t i = 0;i < N;i++)
@@ -758,6 +1055,709 @@ namespace z
                     }
 
                     result[i] = this->operator[](idx[i]);
+                }
+                return result;
+            }
+        };
+
+        /**
+         * @brief Vector class for bool type, support some vector logical operations etc.
+         *
+         * @tparam N length of vector
+         */
+        template<size_t N>
+        class Vector<bool, N> : public std::array<bool, N>
+        {
+            //using std::array<T, N>::_Elems;
+        public:
+            /**
+             * @brief create a vector with all elements set to false
+             *
+             * @return Vector<T, N>
+             */
+            static constexpr Vector<bool, N> zeros()
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = false;
+                }
+                return result;
+            }
+
+            /**
+             * @brief create a vector with all elements set to true
+             *
+             * @return Vector<T, N>
+             */
+            static constexpr Vector<bool, N> ones()
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = true;
+                }
+                return result;
+            }
+
+            /// @brief apply function to vector
+            using ApplyFunc = std::function<bool(const bool&, size_t)>;
+
+            /**
+             * @brief apply function to vector element
+             *
+             * @param val vector
+             * @param func apply function
+             * @return Vector<T, N> result vector
+             */
+            static Vector<bool, N> apply(const Vector<bool, N>& val, ApplyFunc func)
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = func(val[i], i);
+                }
+                return result;
+            }
+
+            /**
+             * @brief create a vector with random elements within [0, 1]
+             * @warning this function does not set seed, therefore the result is not completely random
+             * user should set seed before call this function.
+             *
+             * @return Vector<T, N>
+             */
+            static Vector<bool, N> rand()
+            {
+                Vector<bool, N> result;
+                //std::srand(std::time({}));//set seed
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = static_cast<bool>(std::rand() / (RAND_MAX / 2));
+                }
+                return result;
+            }
+
+            /**
+             * @brief Tests if all elements in input evaluate to True.
+             *
+             * @param val input vector
+             * @return true
+             * @return false
+             */
+            static constexpr bool all(const Vector<bool, N>& val)
+            {
+                for (size_t i = 0; i < N; i++)
+                {
+                    if (!val[i])
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            /**
+             * @brief Tests if any elements in input evaluate to True.
+             *
+             * @param val input vector
+             * @return true
+             * @return false
+             */
+            static constexpr bool any(const Vector<bool, N>& val)
+            {
+                for (size_t i = 0; i < N; i++)
+                {
+                    if (val[i])
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+
+
+        public:
+
+            /**
+             * @brief operator ()
+             *
+             * @param idx index
+             * @return T& reference of element
+             */
+            constexpr bool& operator()(int idx)
+            {
+                if (idx < 0)
+                    return this->operator[](N + idx);
+                else
+                    return this->operator[](idx);
+            }
+
+            /**
+             * @brief operator () const
+             *
+             * @param idx index
+             * @return const T& reference of element
+             */
+            constexpr const bool& operator()(int idx) const
+            {
+                if (idx < 0)
+                    return this->operator[](N + idx);
+                else
+                    return this->operator[](idx);
+            }
+
+            /**
+             * @brief operator []
+             *
+             * @param idx index
+             * @return constexpr T& reference of element
+             */
+            constexpr bool& operator[](int idx)
+            {
+                if (idx < 0)
+                    return std::array<bool, N>::operator[](N + idx);
+                else
+                    return std::array<bool, N>::operator[](idx);
+            }
+
+            /**
+             * @brief operator [] const
+             *
+             * @param idx index
+             * @return constexpr const T& reference of element
+             */
+            constexpr const bool& operator[](int idx) const
+            {
+                if (idx < 0)
+                    return std::array<bool, N>::operator[](N + idx);
+                else
+                    return std::array<bool, N>::operator[](idx);
+            }
+
+            /**
+             * @brief operator << for std::ostream
+             *
+             * @param os
+             * @param vec
+             * @return std::ostream&
+             */
+            friend std::ostream& operator<<(std::ostream& os, const Vector<bool, N>& vec)
+            {
+                os << "Vector<" << typeid(bool).name() << "," << N << ">: ";
+                os << "[";
+                for (size_t i = 0; i < N; i++)
+                {
+                    os << (vec[i] ? "true" : "false");
+                    if (i != N - 1)
+                    {
+                        os << ", ";
+                    }
+                }
+                os << "]\n";
+                return os;
+            }
+
+            /**
+             * @brief operator + for vector addition
+             *
+             * @param other other vector
+             * @return Vector<T, N>
+             */
+            constexpr Vector<bool, N> operator+(const Vector<bool, N>& other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    //or operation
+                    result[i] = this->operator[](i) || other[i];
+                }
+                return result;
+            }
+
+            /**
+             * @brief operator - for vector subtraction
+             *
+             * @param other other vector
+             * @return Vector<T, N>
+             */
+            constexpr Vector<bool, N> operator-(const Vector<bool, N>& other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    //xor operation
+                    result[i] = (this->operator[](i) && !other[i]) || (!this->operator[](i) && other[i]);
+                }
+                return result;
+            }
+
+            /**
+             * @brief operator - for vector negation
+             *
+             * @return Vector<T, N>
+             */
+            constexpr Vector<bool, N> operator-() const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    //not operation
+                    result[i] = !this->operator[](i);
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector batch multiplication
+             *
+             * @param other other vector
+             * @return Vector<T, N>
+             */
+            constexpr Vector<bool, N> operator*(const Vector<bool, N>& other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    //and operation
+                    result[i] = this->operator[](i) && other[i];
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector batch division
+             *
+             * @param other other vector
+             * @return Vector<T, N>
+             */
+            constexpr Vector<bool, N> operator/(const Vector<bool, N>& other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    //xnor
+                    result[i] = (this->operator[](i) && other[i]) || (!this->operator[](i) && !other[i]);
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector addition with value
+             *
+             * @param val value
+             * @return Vector<T, N>
+             */
+            constexpr Vector<bool, N> operator+(bool val) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) || val;
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector subtraction with value
+             *
+             * @param val value
+             * @return Vector<T, N>
+             */
+            constexpr Vector<bool, N> operator-(bool val) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    //xor
+                    result[i] = (this->operator[](i) && !val) || (!this->operator[](i) && val);
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector multiplication with value
+             *
+             * @param val value
+             * @return Vector<T, N>
+             */
+            constexpr Vector<bool, N> operator*(bool val) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) && val;
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector division with value
+             *
+             * @param val
+             * @return Vector<T, N>
+             */
+            constexpr Vector<bool, N> operator/(bool val) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    // xnor
+                    result[i] = (this->operator[](i) && val) || (!this->operator[](i) && !val);
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector logical operations
+             *
+             * @param other other vector
+             * @return constexpr Vector<bool, N>& result vector
+             */
+            constexpr Vector<bool, N>& operator==(const Vector<bool, N>& other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) == other[i];
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector logical operations
+             *
+             * @param other other vector
+             * @return constexpr Vector<bool, N>& result vector
+             */
+            constexpr Vector<bool, N>& operator==(bool other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) == other;
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector logical operations
+             *
+             * @param other other vector
+             * @return constexpr Vector<bool, N>& result vector
+             */
+            constexpr Vector<bool, N>& operator!=(const Vector<bool, N>& other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) != other[i];
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector logical operations
+             *
+             * @param other other vector
+             * @return constexpr Vector<bool, N>& result vector
+             */
+            constexpr Vector<bool, N>& operator!=(bool other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) != other;
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector logical operations
+             *
+             * @param other other vector
+             * @return constexpr Vector<bool, N>& result vector
+             */
+            constexpr Vector<bool, N>& operator||(const Vector<bool, N>& other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) || other[i];
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector logical operations
+             *
+             * @param other other vector
+             * @return constexpr Vector<bool, N>& result vector
+             */
+            constexpr Vector<bool, N>& operator&&(const Vector<bool, N>& other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) && other[i];
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector logical operations
+             *
+             * @param other other vector
+             * @return constexpr Vector<bool, N>& result vector
+             */
+            constexpr Vector<bool, N>& operator||(bool other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) || other;
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector logical operations
+             *
+             * @param other other vector
+             * @return constexpr Vector<bool, N>& result vector
+             */
+            constexpr Vector<bool, N>& operator&&(bool other) const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = this->operator[](i) && other;
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector logical operations
+             *
+             * @param other other vector
+             * @return constexpr Vector<bool, N>& result vector
+             */
+            constexpr Vector<bool, N>& operator!() const
+            {
+                Vector<bool, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = !this->operator[](i);
+                }
+                return result;
+            }
+
+            /**
+             * @brief vector in-place addition
+             *
+             * @param other other vector
+             * @return Vector<T, N>&
+             */
+            constexpr Vector<bool, N>& operator+=(const Vector<bool, N>& other)
+            {
+                for (size_t i = 0; i < N; i++)
+                {
+                    this->operator[](i) = this->operator[](i) || other[i];
+                }
+                return *this;
+            }
+
+            /**
+             * @brief vector in-place subtraction
+             *
+             * @param other other vector
+             * @return Vector<T, N>&
+             */
+            constexpr Vector<bool, N>& operator-=(const Vector<bool, N>& other)
+            {
+                for (size_t i = 0; i < N; i++)
+                {
+                    this->operator[](i) = (this->operator[](i) && !other[i]) || (!this->operator[](i) && other[i]);
+                }
+                return *this;
+            }
+
+            /**
+             * @brief vector in-place batch multiplication
+             *
+             * @param other
+             * @return Vector<T, N>&
+             */
+            constexpr Vector<bool, N>& operator*=(const Vector<bool, N>& other)
+            {
+                for (size_t i = 0; i < N; i++)
+                {
+                    this->operator[](i) = this->operator[](i) && other[i];
+                }
+                return *this;
+            }
+
+            /**
+             * @brief vector in-place batch division
+             *
+             * @param other
+             * @return Vector<T, N>&
+             */
+            constexpr Vector<bool, N>& operator/=(const Vector<bool, N>& other)
+            {
+                for (size_t i = 0; i < N; i++)
+                {
+                    this->operator[](i) = (this->operator[](i) && other[i]) || (!this->operator[](i) && !other[i]);
+                }
+                return *this;
+            }
+
+            /**
+             * @brief vector in-place addition with value
+             *
+             * @param val
+             * @return Vector<T, N>&
+             */
+            constexpr Vector<bool, N>& operator+=(bool val)
+            {
+                for (size_t i = 0; i < N; i++)
+                {
+                    this->operator[](i) = this->operator[](i) || val;
+                }
+                return *this;
+            }
+
+            /**
+             * @brief vector in-place subtraction with value
+             *
+             * @param val
+             * @return Vector<T, N>&
+             */
+            constexpr Vector<bool, N>& operator-=(bool val)
+            {
+                for (size_t i = 0; i < N; i++)
+                {
+                    this->operator[](i) = (this->operator[](i) && !val) || (!this->operator[](i) && val);
+                }
+                return *this;
+            }
+
+            /**
+             * @brief vector in-place multiplication with value
+             *
+             * @param val
+             * @return Vector<T, N>&
+             */
+            constexpr Vector<bool, N>& operator*=(bool val)
+            {
+                for (size_t i = 0; i < N; i++)
+                {
+                    this->operator[](i) = this->operator[](i) && val;
+                }
+                return *this;
+            }
+
+            /**
+             * @brief vector in-place division with value
+             *
+             * @param val
+             * @return Vector<T, N>&
+             */
+            constexpr Vector<bool, N>& operator/=(bool val)
+            {
+                for (size_t i = 0; i < N; i++)
+                {
+                    this->operator[](i) = (this->operator[](i) && val) || (!this->operator[](i) && !val);
+                }
+                return *this;
+            }
+
+            /**
+             * @brief check if any element is true
+             *
+             * @return true
+             * @return false
+             */
+            bool any() const
+            {
+                for (size_t i = 0; i < N; i++)
+                {
+                    if (this->operator[](i))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            /**
+             * @brief check if all elements are true
+             *
+             * @return true
+             * @return false
+             */
+            bool all() const
+            {
+                for (size_t i = 0; i < N; i++)
+                {
+                    if (!this->operator[](i))
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+
+            /**
+             * @brief sum of all elements
+             *
+             * @return T
+             */
+            constexpr size_t sum() const
+            {
+                size_t result = 0;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result += this->operator[](i) ? 1 : 0;
+                }
+                return result;
+            }
+
+            /**
+             * @brief average of all elements
+             *
+             * @return T
+             */
+            constexpr size_t average() const
+            {
+                return sum() / N;
+            }
+            /**
+             * @brief apply function to each element of the vector
+             *
+             */
+            using SelfApplyFunc = std::function<void(bool&, size_t)>;
+            void apply(SelfApplyFunc func)
+            {
+                for (size_t i = 0; i < N; i++)
+                {
+                    func(this->operator[](i), i);
+                }
+            }
+
+            template<size_t begin, size_t end, size_t step = 1>
+            Vector<bool, (end - begin) / step> slice() const
+            {
+                static_assert(begin < end, "begin must be less than end");
+                static_assert(end <= N, "end must be less than or equal to N");
+                static_assert(step > 0, "step must be greater than 0");
+                static_assert((end - begin) / step > 0, "step must be less than slice length");
+                Vector<bool, (end - begin) / step> result;
+                for (size_t i = begin, j = 0; i < end; i += step, j++)
+                {
+                    result[j] = this->operator[](i);
                 }
                 return result;
             }
@@ -796,7 +1796,6 @@ namespace z
             ((std::copy(vectors.begin(), vectors.end(), result.begin() + offset), offset += Ns), ...);
             return result;
         }
-
 
 
         /************************************************************************************************* */

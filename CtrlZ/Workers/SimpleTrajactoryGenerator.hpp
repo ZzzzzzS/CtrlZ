@@ -67,5 +67,79 @@ namespace z
         z::math::Vector<Scalar, JointNumber> Amp__;
         Scalar Cycle__;
     };
+
+    // template<typename SchedulerType, typename Scalar, size_t JointNumber>
+    // class StepTrajactoryGenerator : public z::AbstractWorker<SchedulerType>
+    // {
+    // public:
+
+    //     /**
+    //      * @brief 构造一个产生阶跃曲线的工人类型
+    //      * @details 构造一个产生阶跃曲线的工人类型,可用于电机测试等
+    //      * @details config.json配置文件示例：
+    //      * {
+    //      *   "Workers":{
+    //      *        "SinTrajactoryGenerator": {
+    //      *        "Amplitude": [0.5,0.5,0.5], //幅值,注意与电机数量一致
+    //      *        "Cycle": 0.5 //周期
+    //      *     }
+    //      *  }
+    //      *
+    //      * @param scheduler 调度器的指针
+    //      * @param cfg 配置文件，用户可以通过配置文件来配置工人的一些参数。
+    //      */
+    //     StepTrajactoryGenerator(SchedulerType* scheduler, const nlohmann::json& cfg = nlohmann::json())
+    //         :z::AbstractWorker<SchedulerType>(scheduler), cfg__(cfg)
+    //     {
+    //         nlohmann::json cfg_step = cfg__["Workers"]["SinTrajactoryGenerator"];
+    //         nlohmann::json StepUpper = cfg_step["UpperBound"];
+    //         nlohmann::json StepLower = cfg_step["LowerBound"];
+    //         nlohmann::json StepRandom = cfg_step["RandomStep"];
+    //         this->Cycle__ = cfg_step["Cycle"];
+    //         for (size_t i = 0; i < JointNumber; i++)
+    //         {
+    //             this->UpperBound__[i] = StepUpper[i];
+    //             this->LowerBound__[i] = StepLower[i];
+    //             this->RandomStep__[i] = StepRandom[i];
+    //         }
+
+    //         if (StepUpper.size() != JointNumber || StepLower.size() != JointNumber || StepRandom.size() != JointNumber)
+    //         {
+    //             throw(std::runtime_error("Step size is not equal!"));
+    //         }
+    //     }
+
+    //     /**
+    //      * @brief 析构函数，虚函数，用于释放资源
+    //      *
+    //      */
+    //     virtual ~StepTrajactoryGenerator() {}
+
+    //     /**
+    //      * @brief TaskRun方法，在每次任务队列循环中被调用，这个方法会调用用户传入的回调函数
+    //      *
+    //      */
+    //     virtual void TaskRun() override
+    //     {
+    //         //TargetMotorPosition
+    //         size_t t = this->Scheduler->getTimeStamp();
+    //     }
+
+    //     /**
+    //      * @brief 获取配置文件
+    //      *
+    //      * @return 配置文件
+    //      */
+    //     nlohmann::json& getConfig() { return this->cfg__; }
+
+    // private:
+    //     /// @brief 配置文件
+    //     nlohmann::json cfg__;
+
+    //     z::math::Vector<Scalar, JointNumber> UpperBound__;
+    //     z::math::Vector<Scalar, JointNumber> LowerBound__;
+    //     std::array<Scalar, JointNumber> RandomStep__;
+    //     Scalar Cycle__;
+    // };
 };
 
