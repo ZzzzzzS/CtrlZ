@@ -45,6 +45,7 @@ namespace z
              *
              */
             TensorBase() {
+                std::cout << "default construct" << std::endl;
                 this->ref_count__ = new std::atomic<size_t>(1);
                 this->data_ptr__ = new std::array<ValueType, Shape::total_size>();
                 this->data_ptr__->fill(ValueType());
@@ -52,8 +53,12 @@ namespace z
 
             ~TensorBase()
             {
+                if (this->ref_count__ == nullptr || this->data_ptr__ == nullptr) {
+                    return;
+                }
                 std::cout << "ref_count=" << *(this->ref_count__) << std::endl;
                 if (--(*this->ref_count__) == 0) {
+                    std::cout << "delete data_ptr__" << std::endl;
                     delete this->data_ptr__;
                     delete this->ref_count__;
                 }
@@ -96,14 +101,148 @@ namespace z
              *
              * @param other another tensor
              */
-            TensorBase(const TensorBase& other) = default;
+            TensorBase(const TensorBase& other) noexcept
+            {
+                std::cout << "copy construct" << std::endl;
+                this->ref_count__ = other.ref_count__;
+                this->data_ptr__ = other.data_ptr__;
+                ++(*this->ref_count__);
+            }
 
             /**
              * @brief Construct a new Tensor Base object, move from another tensor
              *
              * @param other another tensor
              */
-            TensorBase(TensorBase&& other) = default;
+            TensorBase(TensorBase&& other) noexcept
+            {
+                std::cout << "move construct" << std::endl;
+                this->ref_count__ = other.ref_count__;
+                this->data_ptr__ = other.data_ptr__;
+                other.ref_count__ = nullptr;
+                other.data_ptr__ = nullptr;
+            }
+
+            /**
+             * @brief assignment operator, copy from another tensor
+             *
+             * @param other another tensor
+             * @return TensorBase& reference of this tensor
+             */
+            TensorBase<T, Dims...>& operator=(const TensorBase& other) noexcept
+            {
+                std::cout << "copy assign" << std::endl;
+                if (this != &other) {
+                    if (--(*this->ref_count__) == 0) {
+                        std::cout << "delete data_ptr__" << std::endl;
+                        delete this->data_ptr__;
+                        delete this->ref_count__;
+                    }
+                    this->ref_count__ = other.ref_count__;
+                    this->data_ptr__ = other.data_ptr__;
+                    ++(*this->ref_count__);
+                }
+                return *this;
+            }
+
+            /**
+             * @brief assignment operator, move from another tensor
+             *
+             * @param other another tensor
+             * @return TensorBase& reference of this tensor
+             */
+            TensorBase<T, Dims...>& operator=(TensorBase&& other) noexcept
+            {
+                std::cout << "move assign" << std::endl;
+                if (this != &other) {
+                    if (--(*this->ref_count__) == 0) {
+                        delete this->data_ptr__;
+                        delete this->ref_count__;
+                    }
+                    this->ref_count__ = other.ref_count__;
+                    this->data_ptr__ = other.data_ptr__;
+                    other.ref_count__ = nullptr;
+                    other.data_ptr__ = nullptr;
+                }
+                return *this;
+            }
+
+
+            /**
+             * @brief clone function, used to deepcopy a tensor
+             *
+             * @return TensorBase<T, Dims...>
+             */
+            TensorBase<T, Dims...> clone()
+            {
+                TensorBase<T, Dims...> tensor;
+                tensor.Array() = this->Array();
+                return tensor;
+            }
+
+            /**
+             * @brief DeepCopy function, used to deepcopy a tensor
+             *
+             * @return TensorBase<T, Dims...>
+             */
+            TensorBase<T, Dims...> DeepCopy()
+            {
+                return this->clone();
+            }
+
+            /**
+             * @brief deep copy from other tensor without change data_ptr address,
+             * this is useful when the original tensor's data ptr is already registerd in somewhere else.
+             * (e.g. warped in onnx runtime)
+             *
+             * @param other
+             */
+            void DeepCopy(TensorBase<T, Dims...>& other)
+            {
+                if (*this == other)
+                    return;
+
+                this->Array() = other.Array();
+                return;
+            }
+
+            /**
+             * @brief deep copy from other tensor without change data_ptr address,
+             * this is useful when the original tensor's data ptr is already registerd in somewhere else.
+             * (e.g. warped in onnx runtime)
+             *
+             * @param other
+             */
+            void clone(TensorBase<T, Dims...>& other)
+            {
+                this->DeepCopy(other);
+                return;
+            }
+
+            /**
+             * @brief operator == for tensor comparison
+             *
+             * @param other another tensor
+             * @return true
+             * @return false
+             */
+            bool operator==(const TensorBase& other) const
+            {
+                return (this->data_ptr__ == other.data_ptr__) && (this->ref_count__ == other.ref_count__);
+            }
+
+            /**
+             * @brief operator != for tensor comparison
+             *
+             * @param other another tensor
+             * @return true
+             * @return false
+             */
+            bool operator!=(const TensorBase& other) const
+            {
+                return !(*this == other);
+            }
+
 
             /**
              * @brief convert to std::array
@@ -163,7 +302,7 @@ namespace z
              * @return T& reference of data
              */
             T& operator[](size_t index) {
-                return *(this->data_ptr__)[index];
+                return this->data_ptr__->operator[](index);
             }
 
             /**
@@ -173,7 +312,7 @@ namespace z
              * @return const T& reference of data
              */
             const T& operator[](size_t index) const {
-                return *(this->data_ptr__)[index];
+                return this->data_ptr__->operator[](index);
             }
 
             /**
@@ -188,7 +327,7 @@ namespace z
             T& operator()(Indices... indices) {
                 static_assert(sizeof...(Indices) == Shape::num_dims, "Number of indices must match number of dimensions");
                 size_t index = calculate_index(indices...);
-                return *(this->data_ptr__)[index];
+                return this->data_ptr__->operator[](index);
             }
 
             /**
@@ -202,7 +341,7 @@ namespace z
             const T& operator()(Indices... indices) const {
                 static_assert(sizeof...(Indices) == Shape::num_dims, "Number of indices must match number of dimensions");
                 size_t index = calculate_index(indices...);
-                return *(this->data_ptr__)[index];
+                return this->data_ptr__->operator[](index);
             }
 
             /**
@@ -217,7 +356,7 @@ namespace z
             T& at(Indices... indices) {
                 static_assert(sizeof...(Indices) == Shape::num_dims, "Number of indices must match number of dimensions");
                 size_t index = calculate_index(indices...);
-                return *(this->data_ptr__)[index];
+                return this->data_ptr__->operator[](index);
             }
 
             /**
@@ -231,7 +370,7 @@ namespace z
             const T& at(Indices... indices) const {
                 static_assert(sizeof...(Indices) == Shape::num_dims, "Number of indices must match number of dimensions");
                 size_t index = calculate_index(indices...);
-                return *(this->data_ptr__)[index];
+                return this->data_ptr__->operator[](index);
             }
 
             /**
@@ -307,9 +446,9 @@ namespace z
                 if (level == Shape::num_dims - 1) {
                     os << "[";
                     for (size_t i = 0; i < Shape::dims[level] - 1; ++i) {
-                        os << *(tensor.data_ptr__)[index + i] << ", ";
+                        os << tensor.data_ptr__->operator[](index + i) << ", ";
                     }
-                    os << *(tensor.data_ptr__)[index + Shape::dims[level] - 1];
+                    os << tensor.data_ptr__->operator[](index + Shape::dims[level] - 1);
                     os << "]";
                 }
                 else {
