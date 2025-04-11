@@ -1,6 +1,7 @@
 #pragma once
 #include <array>
 #include <memory>
+#include <atomic>
 #include "VectorType.hpp"
 
 namespace z
@@ -44,9 +45,12 @@ namespace z
              * @brief Construct a new Tensor Base object with all elements set to default value
              *
              */
-            TensorBase() {
-                std::cout << "default construct" << std::endl;
+            TensorBase()
+            {
+                //std::cout << "default construct" << std::endl;
                 this->ref_count__ = new std::atomic<size_t>(1);
+                //this->ref_count__->load(1);
+
                 this->data_ptr__ = new std::array<ValueType, Shape::total_size>();
                 this->data_ptr__->fill(ValueType());
             }
@@ -56,9 +60,10 @@ namespace z
                 if (this->ref_count__ == nullptr || this->data_ptr__ == nullptr) {
                     return;
                 }
-                std::cout << "ref_count=" << *(this->ref_count__) << std::endl;
-                if (--(*this->ref_count__) == 0) {
-                    std::cout << "delete data_ptr__" << std::endl;
+                //std::cout << "ref_count=" << *(this->ref_count__) << std::endl;
+                this->ref_count__->fetch_sub(1);
+                if (this->ref_count__->load() == 0) {
+                    //std::cout << "delete data_ptr__" << std::endl;
                     delete this->data_ptr__;
                     delete this->ref_count__;
                 }
@@ -68,8 +73,9 @@ namespace z
              * @brief Construct a new Tensor Base object with all elements set to given value
              *
              */
-            TensorBase(const T& val) {
-                this->ref_count__ = new size_t(1);
+            TensorBase(const T& val)
+            {
+                this->ref_count__ = new std::atomic<size_t>(1);
                 this->data_ptr__ = new std::array<ValueType, Shape::total_size>();
                 this->data_ptr__->fill(val);
             }
@@ -81,7 +87,7 @@ namespace z
              */
             TensorBase(const std::array<ValueType, Shape::total_size>& data)
             {
-                this->ref_count__ = new size_t(1);
+                this->ref_count__ = new std::atomic<size_t>(1);
                 this->data_ptr__ = new std::array<ValueType, Shape::total_size>(data);
             }
 
@@ -92,7 +98,7 @@ namespace z
              */
             TensorBase(std::array<ValueType, Shape::total_size>&& data)
             {
-                this->ref_count__ = new size_t(1);
+                this->ref_count__ = new std::atomic<size_t>(1);
                 this->data_ptr__ = new std::array<ValueType, Shape::total_size>(std::move(data));
             }
 
@@ -103,10 +109,10 @@ namespace z
              */
             TensorBase(const TensorBase& other) noexcept
             {
-                std::cout << "copy construct" << std::endl;
+                //std::cout << "copy construct" << std::endl;
                 this->ref_count__ = other.ref_count__;
                 this->data_ptr__ = other.data_ptr__;
-                ++(*this->ref_count__);
+                this->ref_count__->fetch_add(1);
             }
 
             /**
@@ -116,7 +122,7 @@ namespace z
              */
             TensorBase(TensorBase&& other) noexcept
             {
-                std::cout << "move construct" << std::endl;
+                //std::cout << "move construct" << std::endl;
                 this->ref_count__ = other.ref_count__;
                 this->data_ptr__ = other.data_ptr__;
                 other.ref_count__ = nullptr;
@@ -131,16 +137,17 @@ namespace z
              */
             TensorBase<T, Dims...>& operator=(const TensorBase& other) noexcept
             {
-                std::cout << "copy assign" << std::endl;
+                //std::cout << "copy assign" << std::endl;
                 if (this != &other) {
-                    if (--(*this->ref_count__) == 0) {
-                        std::cout << "delete data_ptr__" << std::endl;
+                    this->ref_count__->fetch_sub(1);
+                    if (this->ref_count__->load() == 0) {
+                        //std::cout << "delete data_ptr__" << std::endl;
                         delete this->data_ptr__;
                         delete this->ref_count__;
                     }
                     this->ref_count__ = other.ref_count__;
                     this->data_ptr__ = other.data_ptr__;
-                    ++(*this->ref_count__);
+                    this->ref_count__->fetch_add(1);
                 }
                 return *this;
             }
@@ -153,9 +160,10 @@ namespace z
              */
             TensorBase<T, Dims...>& operator=(TensorBase&& other) noexcept
             {
-                std::cout << "move assign" << std::endl;
+                //std::cout << "move assign" << std::endl;
                 if (this != &other) {
-                    if (--(*this->ref_count__) == 0) {
+                    this->ref_count__->fetch_sub(1);
+                    if (this->ref_count__->load() == 0) {
                         delete this->data_ptr__;
                         delete this->ref_count__;
                     }
@@ -173,7 +181,7 @@ namespace z
              *
              * @return TensorBase<T, Dims...>
              */
-            TensorBase<T, Dims...> clone()
+            TensorBase<T, Dims...> clone() const
             {
                 TensorBase<T, Dims...> tensor;
                 tensor.Array() = this->Array();
@@ -185,7 +193,7 @@ namespace z
              *
              * @return TensorBase<T, Dims...>
              */
-            TensorBase<T, Dims...> DeepCopy()
+            TensorBase<T, Dims...> DeepCopy() const
             {
                 return this->clone();
             }
@@ -220,29 +228,28 @@ namespace z
             }
 
             /**
-             * @brief operator == for tensor comparison
+             * @brief compare two tensors, used to check if the given two tensors are the same tensor.
              *
              * @param other another tensor
-             * @return true
-             * @return false
+             * @return true same
+             * @return false not the same
              */
-            bool operator==(const TensorBase& other) const
+            bool same(const TensorBase& other) const
             {
                 return (this->data_ptr__ == other.data_ptr__) && (this->ref_count__ == other.ref_count__);
             }
 
             /**
-             * @brief operator != for tensor comparison
+             * @brief compare two tensors, used to check if the given two tensors are the same tensor.
              *
              * @param other another tensor
-             * @return true
-             * @return false
+             * @return true same
+             * @return false not the same
              */
-            bool operator!=(const TensorBase& other) const
+            bool equal(const TensorBase& other) const
             {
-                return !(*this == other);
+                return this->same(other);
             }
-
 
             /**
              * @brief convert to std::array
@@ -254,12 +261,18 @@ namespace z
                 return *(this->data_ptr__);
             }
 
+            const std::array<ValueType, Shape::total_size>& Array() const
+            {
+                return *(this->data_ptr__);
+            }
+
             /**
              * @brief get total size of tensor
              *
              * @return constexpr size_t
              */
-            static constexpr size_t size() {
+            static constexpr size_t size()
+            {
                 return Shape::total_size;
             }
 
@@ -268,11 +281,13 @@ namespace z
              *
              * @return constexpr std::array<size_t, Shape::num_dims>
              */
-            static constexpr std::array<int64_t, Shape::num_dims> shape() {
+            static constexpr std::array<int64_t, Shape::num_dims> shape()
+            {
                 return Shape::dims_array;
             }
 
-            static constexpr const int64_t* shape_ptr() {
+            static constexpr const int64_t* shape_ptr()
+            {
                 return Shape::dims_array.data();
             }
 
@@ -281,7 +296,8 @@ namespace z
              *
              * @return ValueType* the pointer of data
              */
-            ValueType* data() {
+            ValueType* data()
+            {
                 return this->data_ptr__->data();
             }
 
@@ -290,7 +306,8 @@ namespace z
              *
              * @return constexpr size_t number of dimensions
              */
-            static constexpr size_t num_dims() {
+            static constexpr size_t num_dims()
+            {
                 return Shape::num_dims;
             }
 
@@ -301,7 +318,8 @@ namespace z
              * @param index data index
              * @return T& reference of data
              */
-            T& operator[](size_t index) {
+            T& operator[](size_t index)
+            {
                 return this->data_ptr__->operator[](index);
             }
 
@@ -311,7 +329,8 @@ namespace z
              * @param index data index
              * @return const T& reference of data
              */
-            const T& operator[](size_t index) const {
+            const T& operator[](size_t index) const
+            {
                 return this->data_ptr__->operator[](index);
             }
 
@@ -415,21 +434,27 @@ namespace z
                 static_assert(sizeof...(Indices) == Shape::num_dims, "Number of indices must match number of dimensions");
                 std::array<int64_t, Shape::num_dims> indices_array = { indices... };
 
+                for (size_t i = 0;i < Shape::num_dims;i++)
+                {
+                    if (indices_array[i] < 0)
+                        indices_array[i] += Shape::dims_array[i];
+                }
+
                 // calculate the index
                 size_t index = 0;
                 size_t factor = 1;
 
                 for (int i = Shape::num_dims - 1; i >= 0; i--) {
-                    std::cout << "i: " << i << std::endl;
+                    //std::cout << "i: " << i << std::endl;
                     index += indices_array[i] * factor;
                     factor *= Shape::dims_array[i];
 
-                    if (indices_array[i] >= Shape::dims_array[i])
+                    if (indices_array[i] >= Shape::dims_array[i] || indices_array[i] < 0)
                     {
                         throw std::out_of_range("Index out of range");
                     }
                 }
-                std::cout << "index: " << index << std::endl;
+                //std::cout << "index: " << index << std::endl;
                 return index;
             }
 
@@ -471,56 +496,13 @@ namespace z
          * @tparam Dims
          */
         template<typename T, int64_t... Dims>
-        class Tensor : public TensorBase<T, Dims...> {
+        class Tensor : public TensorBase<T, Dims...>
+        {
         public:
             using Base = TensorBase<T, Dims...>;
             using Shape = typename Base::Shape;
             using ValueType = typename Base::ValueType;
             using Base::Base;
-
-            using Ptr = std::shared_ptr<Tensor<T, Dims...>>;
-        public:
-
-            /**
-             * @brief create a new tensor pointer
-             *
-             * @return Ptr Pointer of new tensor
-             */
-            static Ptr Create()
-            {
-                return std::make_shared<Tensor<T, Dims...>>();
-            }
-
-            /**
-             * @brief create a new tensor pointer with given value for all elements
-             *
-             * @param val value for all elements
-             * @return Ptr Pointer of new tensor
-             */
-            static Ptr Create(const T& val)
-            {
-                return std::make_shared<Tensor<T, Dims...>>(val);
-            }
-
-            /**
-             * @brief create a new tensor pointer with data
-             *
-             * @param data data array
-             */
-            static Ptr Create(const std::array<ValueType, Shape::total_size>& data)
-            {
-                return std::make_shared<Tensor<T, Dims...>>(data);
-            }
-
-            /**
-             * @brief create a new tensor pointer with data
-             *
-             * @param data data array
-             */
-            static Ptr Create(std::array<ValueType, Shape::total_size>&& data)
-            {
-                return std::make_shared<Tensor<T, Dims...>>(std::move(data));
-            }
 
         public:
 
@@ -529,9 +511,1050 @@ namespace z
              *
              * @return Vector<ValueType, Shape::total_size> z vector
              */
-            Vector<ValueType, Shape::total_size> toVector()
+            Vector<ValueType, Shape::total_size> toVector() const
             {
                 return Vector<ValueType, Shape::total_size>(*(this->data_ptr__));
+            }
+
+            /**
+             * @brief clone function, used to deepcopy a tensor
+             *
+             * @return Tensor<T, Dims...>
+             */
+            Tensor<T, Dims...> clone() const
+            {
+                Tensor<T, Dims...> tensor;
+                tensor.Array() = this->Array();
+                return tensor;
+            }
+
+            /**
+             * @brief DeepCopy function, used to deepcopy a tensor
+             *
+             * @return Tensor<T, Dims...>
+             */
+            Tensor<T, Dims...> DeepCopy() const
+            {
+                return this->clone();
+            }
+
+        public: //numerical operations
+
+            /**
+             * @brief operator +, used to add two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<ValueType, Dims...>
+             */
+            Tensor<ValueType, Dims...> operator+(const Tensor<ValueType, Dims...>& other) const
+            {
+                Tensor<ValueType, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = this->data_ptr__->operator[](i) + other.data_ptr__->operator[](i);
+                }
+                return result;
+            }
+
+            /**
+             * @brief operator +, used to add a tensor and a value
+             *
+             * @param other
+             * @return Tensor<ValueType, Dims...>
+             */
+            Tensor<ValueType, Dims...> operator+(const ValueType& other) const
+            {
+                Tensor<ValueType, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = this->data_ptr__->operator[](i) + other;
+                }
+                return result;
+            }
+
+            /**
+             * @brief operator +=, used to add two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<ValueType, Dims...>&
+             */
+            Tensor<ValueType, Dims...>& operator+=(const Tensor<ValueType, Dims...>& other)
+            {
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    this->data_ptr__->operator[](i) += other.data_ptr__->operator[](i);
+                }
+                return *this;
+            }
+
+            /**
+             * @brief operator +=, used to add a tensor and a value
+             *
+             * @param other
+             * @return Tensor<ValueType, Dims...>&
+             */
+            Tensor<ValueType, Dims...>& operator+=(const ValueType& other)
+            {
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    this->data_ptr__->operator[](i) += other;
+                }
+                return *this;
+            }
+
+            /**
+             * @brief operator -, used to subtract two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<ValueType, Dims...>
+             */
+            Tensor<ValueType, Dims...> operator-(const Tensor<ValueType, Dims...>& other) const
+            {
+                Tensor<ValueType, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = this->data_ptr__->operator[](i) - other.data_ptr__->operator[](i);
+                }
+                return result;
+            }
+
+            /**
+             * @brief operator -, used to subtract a tensor and a value
+             *
+             * @param other
+             * @return Tensor<ValueType, Dims...>
+             */
+            Tensor<ValueType, Dims...> operator-(const ValueType& other) const
+            {
+                Tensor<ValueType, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = this->data_ptr__->operator[](i) - other;
+                }
+                return result;
+            }
+
+            /**
+             * @brief operator -=, used to subtract two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<ValueType, Dims...>&
+             */
+            Tensor<ValueType, Dims...>& operator-=(const Tensor<ValueType, Dims...>& other)
+            {
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    this->data_ptr__->operator[](i) -= other.data_ptr__->operator[](i);
+                }
+                return *this;
+            }
+
+            /**
+             * @brief operator -=, used to subtract a tensor and a value
+             *
+             * @param other
+             * @return Tensor<ValueType, Dims...>&
+             */
+            Tensor<ValueType, Dims...>& operator-=(const ValueType& other)
+            {
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    this->data_ptr__->operator[](i) -= other;
+                }
+                return *this;
+            }
+
+            /**
+             * @brief operator *, used to multiply two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<ValueType, Dims...>
+             */
+            Tensor<ValueType, Dims...> operator*(const Tensor<ValueType, Dims...>& other) const
+            {
+                Tensor<ValueType, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = this->data_ptr__->operator[](i) * other.data_ptr__->operator[](i);
+                }
+                return result;
+            }
+
+            /**
+             * @brief operator *, used to multiply a tensor and a value
+             *
+             * @param other
+             * @return Tensor<ValueType, Dims...>
+             */
+            Tensor<ValueType, Dims...> operator*(const ValueType& other) const
+            {
+                Tensor<ValueType, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = this->data_ptr__->operator[](i) * other;
+                }
+                return result;
+            }
+
+            /**
+             * @brief operator *=, used to multiply two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<ValueType, Dims...>&
+             */
+            Tensor<ValueType, Dims...>& operator*=(const Tensor<ValueType, Dims...>& other)
+            {
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    this->data_ptr__->operator[](i) *= other.data_ptr__->operator[](i);
+                }
+                return *this;
+            }
+
+            /**
+             * @brief operator *=, used to multiply a tensor and a value
+             *
+             * @param other
+             * @return Tensor<ValueType, Dims...>&
+             */
+            Tensor<ValueType, Dims...>& operator*=(const ValueType& other)
+            {
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    this->data_ptr__->operator[](i) *= other;
+                }
+                return *this;
+            }
+
+            /**
+             * @brief operator /, used to divide two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<ValueType, Dims...>
+             */
+            Tensor<ValueType, Dims...> operator/(const Tensor<ValueType, Dims...>& other) const
+            {
+                Tensor<ValueType, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = this->data_ptr__->operator[](i) / other.data_ptr__->operator[](i);
+                }
+                return result;
+            }
+
+            /**
+             * @brief operator /, used to divide a tensor and a value
+             *
+             * @param other
+             * @return Tensor<ValueType, Dims...>
+             */
+            Tensor<ValueType, Dims...> operator/(const ValueType& other) const
+            {
+                Tensor<ValueType, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = this->data_ptr__->operator[](i) / other;
+                }
+                return result;
+            }
+
+            /**
+             * @brief operator /=, used to divide two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<ValueType, Dims...>&
+             */
+            Tensor<ValueType, Dims...>& operator/=(const Tensor<ValueType, Dims...>& other)
+            {
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    this->data_ptr__->operator[](i) /= other.data_ptr__->operator[](i);
+                }
+                return *this;
+            }
+
+            /**
+             * @brief operator /=, used to divide a tensor and a value
+             *
+             * @param other
+             * @return Tensor<ValueType, Dims...>&
+             */
+            Tensor<ValueType, Dims...>& operator/=(const ValueType& other)
+            {
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    this->data_ptr__->operator[](i) /= other;
+                }
+                return *this;
+            }
+
+            /**
+             * @brief operator +, used to return the tensor itself
+             *
+             * @return Tensor<ValueType, Dims...>
+             */
+            Tensor<ValueType, Dims...> operator+() const
+            {
+                return this->clone();
+            }
+
+            /**
+             * @brief operator -, used to return the negative of the tensor
+             *
+             * @return Tensor<ValueType, Dims...>
+             */
+            Tensor<ValueType, Dims...> operator-() const
+            {
+                Tensor<ValueType, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = -this->data_ptr__->operator[](i);
+                }
+                return result;
+            }
+
+        public: //logical operations
+
+            /**
+             * @brief operator >, used to compare two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator>(const Tensor<ValueType, Dims...>& other) const
+            {
+                if (this->equal(other))
+                {
+                    return Tensor<bool, Dims...>(false);
+                }
+
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = (this->data_ptr__->operator[](i) > other.data_ptr__->operator[](i));
+                }
+                return result;
+            };
+
+            /**
+             * @brief operator >, used to compare a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator>(const ValueType& other) const
+            {
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = (this->data_ptr__->operator[](i) > other);
+                }
+                return result;
+            };
+
+            /**
+             * @brief operator >=, used to compare two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator>=(const Tensor<ValueType, Dims...>& other) const
+            {
+                if (this->equal(other))
+                {
+                    return Tensor<bool, Dims...>(true);
+                }
+
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = (this->data_ptr__->operator[](i) >= other.data_ptr__->operator[](i));
+                }
+                return result;
+            };
+
+            /**
+             * @brief operator >=, used to compare a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator>=(const ValueType& other) const
+            {
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = (this->data_ptr__->operator[](i) >= other);
+                }
+                return result;
+            };
+
+            /**
+             * @brief operator <, used to compare two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator<(const Tensor<ValueType, Dims...>& other) const
+            {
+                if (this->equal(other))
+                {
+                    return Tensor<bool, Dims...>(false);
+                }
+
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = (this->data_ptr__->operator[](i) < other.data_ptr__->operator[](i));
+                }
+                return result;
+            };
+
+            /**
+             * @brief operator <, used to compare a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator<(const ValueType& other) const
+            {
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = (this->data_ptr__->operator[](i) < other);
+                }
+                return result;
+            };
+
+            /**
+             * @brief operator <=, used to compare two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator<=(const Tensor<ValueType, Dims...>& other) const
+            {
+                if (this->equal(other))
+                {
+                    return Tensor<bool, Dims...>(true);
+                }
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = (this->data_ptr__->operator[](i) <= other.data_ptr__->operator[](i));
+                }
+                return result;
+            };
+
+            /**
+             * @brief operator <=, used to compare a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator<=(const ValueType& other) const
+            {
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = (this->data_ptr__->operator[](i) <= other);
+                }
+                return result;
+            };
+
+            /**
+             * @brief operator ==, used to compare two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator==(const Tensor<ValueType, Dims...>& other) const
+            {
+                if (this->equal(other))
+                {
+                    return Tensor<bool, Dims...>(true);
+                }
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = (this->data_ptr__->operator[](i) == other.data_ptr__->operator[](i));
+                }
+                return result;
+            };
+
+            /**
+             * @brief operator ==, used to compare a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator==(const ValueType& other) const
+            {
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = (this->data_ptr__->operator[](i) == other);
+                }
+                return result;
+            };
+
+            /**
+             * @brief operator !=, used to compare two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator!=(const Tensor<ValueType, Dims...>& other) const
+            {
+                if (this->equal(other))
+                {
+                    return Tensor<bool, Dims...>(false);
+                }
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = (this->data_ptr__->operator[](i) != other.data_ptr__->operator[](i));
+                }
+                return result;
+            };
+
+            /**
+             * @brief operator !=, used to compare a tensor and a value
+             *
+             * @param other value
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator!=(const ValueType& other) const
+            {
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = (this->data_ptr__->operator[](i) != other);
+                }
+                return result;
+            };
+        };
+
+
+        /**********************************bool tensor*****************************/
+
+        /**
+         * @brief Bool Tensor class, used to store bool type tensor data
+         *
+         * @tparam T type of tensor element
+         * @tparam Dims
+         */
+        template<int64_t... Dims>
+        class Tensor<bool, Dims...> : public TensorBase<bool, Dims...> {
+        public:
+            using Base = TensorBase<bool, Dims...>;
+            using Shape = typename Base::Shape;
+            using ValueType = typename Base::ValueType;
+            using Base::Base;
+
+        public:
+
+            /**
+             * @brief convert tensor to z vector
+             *
+             * @return Vector<ValueType, Shape::total_size> z vector
+             */
+            Vector<ValueType, Shape::total_size> toVector() const
+            {
+                return Vector<ValueType, Shape::total_size>(*(this->data_ptr__));
+            }
+
+            /**
+             * @brief clone function, used to deepcopy a tensor
+             *
+             * @return Tensor<T, Dims...>
+             */
+            Tensor<bool, Dims...> clone() const
+            {
+                Tensor<bool, Dims...> tensor;
+                tensor.Array() = this->Array();
+                return tensor;
+            }
+
+            /**
+             * @brief DeepCopy function, used to deepcopy a tensor
+             *
+             * @return Tensor<T, Dims...>
+             */
+            Tensor<bool, Dims...> DeepCopy() const
+            {
+                return this->clone();
+            }
+
+        public: //numerical operations
+            /**
+             * @brief operator +, used to add two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator+(const Tensor<bool, Dims...>& other) const
+            {
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = this->data_ptr__->operator[](i) || other.data_ptr__->operator[](i);
+                }
+                return result;
+            }
+
+            /**
+             * @brief operator +, used to add a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator+(const bool& other) const
+            {
+                if (other == false)
+                {
+                    return this->clone();
+                }
+                else//(other == true)
+                {
+                    return Tensor<bool, Dims...>(true);
+                }
+            }
+
+            /**
+             * @brief operator +=, used to add two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>&
+             */
+            Tensor<bool, Dims...>& operator+=(const Tensor<bool, Dims...>& other)
+            {
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    this->data_ptr__->operator[](i) = this->data_ptr__->operator[](i) || other.data_ptr__->operator[](i);
+                }
+                return *this;
+            }
+
+            /**
+             * @brief operator +=, used to add a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>&
+             */
+            Tensor<bool, Dims...>& operator+=(const bool& other)
+            {
+                if (other == false)
+                {
+                    return *this;
+                }
+                else//(other == true)
+                {
+                    for (size_t i = 0; i < Shape::total_size; i++)
+                    {
+                        this->data_ptr__->operator[](i) = true;
+                    }
+                    return *this;
+                }
+            }
+
+            //- xor
+            /**
+             * @brief operator -, used to subtract two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator-(const Tensor<bool, Dims...>& other) const
+            {
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    //xor
+                    result[i] = (!this->data_ptr__->operator[](i) && other.data_ptr__->operator[](i)) ||
+                        (this->data_ptr__->operator[](i) && !other.data_ptr__->operator[](i));
+                }
+                return result;
+            }
+
+            /**
+             * @brief operator -, used to subtract a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator-(const bool& other) const
+            {
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    //xor
+                    result[i] = (!this->data_ptr__->operator[](i) && other) ||
+                        (this->data_ptr__->operator[](i) && !other);
+                }
+                return result;
+            }
+
+            /**
+             * @brief operator -=, used to subtract two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>&
+             */
+            Tensor<bool, Dims...>& operator-=(const Tensor<bool, Dims...>& other)
+            {
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    //xor
+                    this->data_ptr__->operator[](i) = (!this->data_ptr__->operator[](i) && other.data_ptr__->operator[](i)) ||
+                        (this->data_ptr__->operator[](i) && !other.data_ptr__->operator[](i));
+                }
+                return *this;
+            }
+
+            /**
+             * @brief operator -=, used to subtract a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>&
+             */
+            Tensor<bool, Dims...>& operator-=(const bool& other)
+            {
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    //xor
+                    this->data_ptr__->operator[](i) = (!this->data_ptr__->operator[](i) && other) ||
+                        (this->data_ptr__->operator[](i) && !other);
+                }
+                return *this;
+            }
+
+            //* -> and
+            /**
+             * @brief operator *, used to multiply two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator*(const Tensor<bool, Dims...>& other) const
+            {
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = this->data_ptr__->operator[](i) && other.data_ptr__->operator[](i);
+                }
+                return result;
+            }
+
+            /**
+             * @brief operator *, used to multiply a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator*(const bool& other) const
+            {
+                if (other == false)
+                {
+                    return Tensor<bool, Dims...>(false);
+                }
+                else//(other == true)
+                {
+                    return this->clone();
+                }
+            }
+
+            /**
+             * @brief operator *=, used to multiply two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>&
+             */
+            Tensor<bool, Dims...>& operator*=(const Tensor<bool, Dims...>& other)
+            {
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    this->data_ptr__->operator[](i) = this->data_ptr__->operator[](i) && other.data_ptr__->operator[](i);
+                }
+                return *this;
+            }
+
+            /**
+             * @brief operator *=, used to multiply a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>&
+             */
+            Tensor<bool, Dims...>& operator*=(const bool& other)
+            {
+                if (other == false)
+                {
+                    for (size_t i = 0; i < Shape::total_size; i++)
+                    {
+                        this->data_ptr__->operator[](i) = false;
+                    }
+                    return *this;
+                }
+                else//(other == true)
+                {
+                    return *this;
+                }
+            }
+
+            // /->nxor
+            /**
+             * @brief operator /, used to divide two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator/(const Tensor<bool, Dims...>& other) const
+            {
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    //nxor
+                    result[i] = (this->data_ptr__->operator[](i) == other.data_ptr__->operator[](i)) ||
+                        (!this->data_ptr__->operator[](i) && !other.data_ptr__->operator[](i));
+                }
+                return result;
+            }
+
+            /**
+             * @brief operator /, used to divide a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator/(const bool& other) const
+            {
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    //nxor
+                    result[i] = (this->data_ptr__->operator[](i) == other) ||
+                        (!this->data_ptr__->operator[](i) && !other);
+                }
+                return result;
+            }
+
+            /**
+             * @brief operator /=, used to divide two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>&
+             */
+            Tensor<bool, Dims...>& operator/=(const Tensor<bool, Dims...>& other)
+            {
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    //nxor
+                    this->data_ptr__->operator[](i) = (this->data_ptr__->operator[](i) == other.data_ptr__->operator[](i)) ||
+                        (!this->data_ptr__->operator[](i) && !other.data_ptr__->operator[](i));
+                }
+                return *this;
+            }
+
+            /**
+             * @brief operator /=, used to divide a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>&
+             */
+            Tensor<bool, Dims...>& operator/=(const bool& other)
+            {
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    //nxor
+                    this->data_ptr__->operator[](i) = (this->data_ptr__->operator[](i) == other) ||
+                        (!this->data_ptr__->operator[](i) && !other);
+                }
+                return *this;
+            }
+
+            // - -> !
+            /**
+             * @brief operator -, used to return the negative of the tensor
+             *
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator-() const
+            {
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = !this->data_ptr__->operator[](i);
+                }
+                return result;
+            }
+
+            //+ -> this
+            /**
+             * @brief operator +, used to return the tensor itself
+             *
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator+() const
+            {
+                return this->clone();
+            }
+
+
+        public: //logical operations
+            /**
+             * @brief operator &&, used to compare two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator&&(const Tensor<bool, Dims...>& other) const
+            {
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = this->data_ptr__->operator[](i) && other.data_ptr__->operator[](i);
+                }
+                return result;
+            };
+
+            /**
+             * @brief operator &&, used to compare a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator&&(const bool& other) const
+            {
+                if (other == false)
+                {
+                    return Tensor<bool, Dims...>(false);
+                }
+                else//(other == true)
+                {
+                    return this->clone();
+                }
+            }
+
+            /**
+             * @brief operator ||, used to compare two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator||(const Tensor<bool, Dims...>& other) const
+            {
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = this->data_ptr__->operator[](i) || other.data_ptr__->operator[](i);
+                }
+                return result;
+            };
+
+            /**
+             * @brief operator ||, used to compare a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator||(const bool& other) const
+            {
+                if (other == false)
+                {
+                    return this->clone();
+                }
+                else//(other == true)
+                {
+                    return Tensor<bool, Dims...>(true);
+                }
+            }
+
+            /**
+             * @brief operator !, used to compare a tensor and a value
+             *
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator!() const
+            {
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = !this->data_ptr__->operator[](i);
+                }
+                return result;
+            };
+
+        public: //logical operation == !=
+            /**
+             * @brief operator ==, used to compare two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator==(const Tensor<bool, Dims...>& other) const
+            {
+                if (this->equal(other))
+                {
+                    return Tensor<bool, Dims...>(true);
+                }
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = (this->data_ptr__->operator[](i) == other.data_ptr__->operator[](i));
+                }
+                return result;
+            };
+
+            /**
+             * @brief operator ==, used to compare a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator==(const bool& other) const
+            {
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = (this->data_ptr__->operator[](i) == other);
+                }
+                return result;
+            };
+
+            /**
+             * @brief operator !=, used to compare two tensors or a tensor and a value
+             *
+             * @param other
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator!=(const Tensor<bool, Dims...>& other) const
+            {
+                if (this->equal(other))
+                {
+                    return Tensor<bool, Dims...>(false);
+                }
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = (this->data_ptr__->operator[](i) != other.data_ptr__->operator[](i));
+                }
+                return result;
+            };
+
+            /**
+             * @brief operator !=, used to compare a tensor and a value
+             *
+             * @param other value
+             * @return Tensor<bool, Dims...>
+             */
+            Tensor<bool, Dims...> operator!=(const bool& other) const
+            {
+                Tensor<bool, Dims...> result;
+                for (size_t i = 0; i < Shape::total_size; i++)
+                {
+                    result[i] = (this->data_ptr__->operator[](i) != other);
+                }
+                return result;
             }
         };
     };

@@ -594,7 +594,7 @@ namespace z
              * @param other other vector
              * @return constexpr Vector<bool, N>& result vector
              */
-            constexpr Vector<bool, N>& operator==(const Vector<T, N>& other) const
+            constexpr Vector<bool, N> operator==(const Vector<T, N>& other) const
             {
                 Vector<bool, N> result;
                 for (size_t i = 0; i < N; i++)
@@ -610,7 +610,7 @@ namespace z
              * @param other other vector
              * @return constexpr Vector<bool, N>& result vector
              */
-            constexpr Vector<bool, N>& operator==(T other) const
+            constexpr Vector<bool, N> operator==(T other) const
             {
                 Vector<bool, N> result;
                 for (size_t i = 0; i < N; i++)
@@ -626,7 +626,7 @@ namespace z
              * @param other other vector
              * @return constexpr Vector<bool, N>& result vector
              */
-            constexpr Vector<bool, N>& operator!=(const Vector<T, N>& other) const
+            constexpr Vector<bool, N> operator!=(const Vector<T, N>& other) const
             {
                 Vector<bool, N> result;
                 for (size_t i = 0; i < N; i++)
@@ -642,7 +642,7 @@ namespace z
              * @param other other vector
              * @return constexpr Vector<bool, N>& result vector
              */
-            constexpr Vector<bool, N>& operator!=(T other) const
+            constexpr Vector<bool, N> operator!=(T other) const
             {
                 Vector<bool, N> result;
                 for (size_t i = 0; i < N; i++)
@@ -658,7 +658,7 @@ namespace z
              * @param other other vector
              * @return constexpr Vector<bool, N>& result vector
              */
-            constexpr Vector<bool, N>& operator>(const Vector<T, N>& other) const
+            constexpr Vector<bool, N> operator>(const Vector<T, N>& other) const
             {
                 Vector<bool, N> result;
                 for (size_t i = 0; i < N; i++)
@@ -674,7 +674,7 @@ namespace z
              * @param other other vector
              * @return constexpr Vector<bool, N>& result vector
              */
-            constexpr Vector<bool, N>& operator>(T other) const
+            constexpr Vector<bool, N> operator>(T other) const
             {
                 Vector<bool, N> result;
                 for (size_t i = 0; i < N; i++)
@@ -690,7 +690,7 @@ namespace z
              * @param other other vector
              * @return constexpr Vector<bool, N>& result vector
              */
-            constexpr Vector<bool, N>& operator<(const Vector<T, N>& other) const
+            constexpr Vector<bool, N> operator<(const Vector<T, N>& other) const
             {
                 Vector<bool, N> result;
                 for (size_t i = 0; i < N; i++)
@@ -706,7 +706,7 @@ namespace z
              * @param other other vector
              * @return constexpr Vector<bool, N>& result vector
              */
-            constexpr Vector<bool, N>& operator<(T other) const
+            constexpr Vector<bool, N> operator<(T other) const
             {
                 Vector<bool, N> result;
                 for (size_t i = 0; i < N; i++)
@@ -722,7 +722,7 @@ namespace z
              * @param other other vector
              * @return constexpr Vector<bool, N>& result vector
              */
-            constexpr Vector<bool, N>& operator>=(const Vector<T, N>& other) const
+            constexpr Vector<bool, N> operator>=(const Vector<T, N>& other) const
             {
                 Vector<bool, N> result;
                 for (size_t i = 0; i < N; i++)
@@ -738,7 +738,7 @@ namespace z
              * @param other other vector
              * @return constexpr Vector<bool, N>& result vector
              */
-            constexpr Vector<bool, N>& operator>=(T other) const
+            constexpr Vector<bool, N> operator>=(T other) const
             {
                 Vector<bool, N> result;
                 for (size_t i = 0; i < N; i++)
@@ -754,7 +754,7 @@ namespace z
              * @param other other vector
              * @return constexpr Vector<bool, N>& result vector
              */
-            constexpr Vector<bool, N>& operator<=(const Vector<T, N>& other) const
+            constexpr Vector<bool, N> operator<=(const Vector<T, N>& other) const
             {
                 Vector<bool, N> result;
                 for (size_t i = 0; i < N; i++)
@@ -770,7 +770,7 @@ namespace z
              * @param other other vector
              * @return constexpr Vector<bool, N>& result vector
              */
-            constexpr Vector<bool, N>& operator<=(T other) const
+            constexpr Vector<bool, N> operator<=(T other) const
             {
                 Vector<bool, N> result;
                 for (size_t i = 0; i < N; i++)
@@ -1294,6 +1294,16 @@ namespace z
             }
 
             /**
+             * @brief operator +
+             *
+             * @return Vector<T, N>
+             */
+            constexpr Vector<bool, N> operator+() const
+            {
+                return *this;
+            }
+
+            /**
              * @brief operator - for vector negation
              *
              * @return Vector<T, N>
@@ -1415,7 +1425,7 @@ namespace z
              * @param other other vector
              * @return constexpr Vector<bool, N>& result vector
              */
-            constexpr Vector<bool, N>& operator==(const Vector<bool, N>& other) const
+            constexpr Vector<bool, N> operator==(const Vector<bool, N>& other) const
             {
                 Vector<bool, N> result;
                 for (size_t i = 0; i < N; i++)
@@ -1431,7 +1441,7 @@ namespace z
              * @param other other vector
              * @return constexpr Vector<bool, N>& result vector
              */
-            constexpr Vector<bool, N>& operator==(bool other) const
+            constexpr Vector<bool, N> operator==(bool other) const
             {
                 Vector<bool, N> result;
                 for (size_t i = 0; i < N; i++)
@@ -1447,7 +1457,7 @@ namespace z
              * @param other other vector
              * @return constexpr Vector<bool, N>& result vector
              */
-            constexpr Vector<bool, N>& operator!=(const Vector<bool, N>& other) const
+            constexpr Vector<bool, N> operator!=(const Vector<bool, N>& other) const
             {
                 Vector<bool, N> result;
                 for (size_t i = 0; i < N; i++)
@@ -1463,7 +1473,7 @@ namespace z
              * @param other other vector
              * @return constexpr Vector<bool, N>& result vector
              */
-            constexpr Vector<bool, N>& operator!=(bool other) const
+            constexpr Vector<bool, N> operator!=(bool other) const
             {
                 Vector<bool, N> result;
                 for (size_t i = 0; i < N; i++)
@@ -1479,7 +1489,7 @@ namespace z
              * @param other other vector
              * @return constexpr Vector<bool, N>& result vector
              */
-            constexpr Vector<bool, N>& operator||(const Vector<bool, N>& other) const
+            constexpr Vector<bool, N> operator||(const Vector<bool, N>& other) const
             {
                 Vector<bool, N> result;
                 for (size_t i = 0; i < N; i++)
@@ -1495,7 +1505,7 @@ namespace z
              * @param other other vector
              * @return constexpr Vector<bool, N>& result vector
              */
-            constexpr Vector<bool, N>& operator&&(const Vector<bool, N>& other) const
+            constexpr Vector<bool, N> operator&&(const Vector<bool, N>& other) const
             {
                 Vector<bool, N> result;
                 for (size_t i = 0; i < N; i++)
@@ -1511,7 +1521,7 @@ namespace z
              * @param other other vector
              * @return constexpr Vector<bool, N>& result vector
              */
-            constexpr Vector<bool, N>& operator||(bool other) const
+            constexpr Vector<bool, N> operator||(bool other) const
             {
                 Vector<bool, N> result;
                 for (size_t i = 0; i < N; i++)
@@ -1527,7 +1537,7 @@ namespace z
              * @param other other vector
              * @return constexpr Vector<bool, N>& result vector
              */
-            constexpr Vector<bool, N>& operator&&(bool other) const
+            constexpr Vector<bool, N> operator&&(bool other) const
             {
                 Vector<bool, N> result;
                 for (size_t i = 0; i < N; i++)
@@ -1543,7 +1553,7 @@ namespace z
              * @param other other vector
              * @return constexpr Vector<bool, N>& result vector
              */
-            constexpr Vector<bool, N>& operator!() const
+            constexpr Vector<bool, N> operator!() const
             {
                 Vector<bool, N> result;
                 for (size_t i = 0; i < N; i++)
