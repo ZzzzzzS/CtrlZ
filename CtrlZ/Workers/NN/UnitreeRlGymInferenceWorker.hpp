@@ -72,7 +72,7 @@ namespace z
             this->dt = cfg["Scheduler"]["dt"].get<InferencePrecision>();
 
             this->PrintSplitLine();
-            std::cout << "EraxInferenceWorker" << std::endl;
+            std::cout << "UnitreeRlGymInferenceWorker" << std::endl;
             std::cout << "JOINT_NUMBER=" << JOINT_NUMBER << std::endl;
             std::cout << "Cycle_time=" << this->cycle_time << std::endl;
             std::cout << "dt=" << this->dt << std::endl;
@@ -95,7 +95,7 @@ namespace z
             this->InputOrtTensors__.push_back(this->WarpOrtTensor(InputTensor));
             this->InputOrtTensors__.push_back(this->WarpOrtTensor(InputHiddenStateTensor));
             this->InputOrtTensors__.push_back(this->WarpOrtTensor(InputCellStateTensor));
-            
+
             this->OutputOrtTensors__.push_back(this->WarpOrtTensor(OutputTensor));
             this->OutputOrtTensors__.push_back(this->WarpOrtTensor(OutputHiddenStateTensor));
             this->OutputOrtTensors__.push_back(this->WarpOrtTensor(OutputCellStateTensor));
