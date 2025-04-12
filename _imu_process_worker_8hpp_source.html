@@ -112,7 +112,7 @@ $(function(){initNavTree('_imu_process_worker_8hpp_source.html',''); initResizab
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_abstract_scheduler_8hpp.html">../Schedulers/AbstractScheduler.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_static_string_utils_8hpp.html">../Utils/StaticStringUtils.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="_zen_buffer_8hpp.html">../Utils/ZenBuffer.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="_math_types_8hpp.html">../Utils/MathTypes.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;../Utils/MathTypes.hpp&quot;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
@@ -133,7 +133,7 @@ $(function(){initNavTree('_imu_process_worker_8hpp_source.html',''); initResizab
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            :AbstractWorker&lt;SchedulerType&gt;(scheduler),</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            ImuInstance(ImuInstancePtr)</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            nlohmann::json cfg = root_cfg[<span class="stringliteral">&quot;Workers&quot;</span>][<span class="stringliteral">&quot;ImuProcess&quot;</span>];</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            nlohmann::json cfg = root_cfg;</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            this-&gt;<a class="code hl_function" href="classz_1_1_z_object.html#a20fc044ee664a6b01d500d536e63a1ed">PrintSplitLine</a>();</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;ImuProcessWorker&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
@@ -255,7 +255,6 @@ $(function(){initNavTree('_imu_process_worker_8hpp_source.html',''); initResizab
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
 <div class="ttc" id="a_abstract_scheduler_8hpp_html"><div class="ttname"><a href="_abstract_scheduler_8hpp.html">AbstractScheduler.hpp</a></div><div class="ttdoc">AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。</div></div>
 <div class="ttc" id="a_abstract_worker_8hpp_html"><div class="ttname"><a href="_abstract_worker_8hpp.html">AbstractWorker.hpp</a></div></div>
-<div class="ttc" id="a_math_types_8hpp_html"><div class="ttname"><a href="_math_types_8hpp.html">MathTypes.hpp</a></div></div>
 <div class="ttc" id="a_static_string_utils_8hpp_html"><div class="ttname"><a href="_static_string_utils_8hpp.html">StaticStringUtils.hpp</a></div></div>
 <div class="ttc" id="a_zen_buffer_8hpp_html"><div class="ttname"><a href="_zen_buffer_8hpp.html">ZenBuffer.hpp</a></div></div>
 <div class="ttc" id="aclassz_1_1_abstract_worker_html_af4842124f95ccfb50ddb0d21a9642cab"><div class="ttname"><a href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">z::AbstractWorker::Scheduler</a></div><div class="ttdeci">SchedulerType * Scheduler</div><div class="ttdoc">调度器的指针，用户可以通过这个指针来获取一些全局的数据， 比如当前任务的时间戳，前级工人的输出数据等，也可以通过这个指针来设置一些全局的数据。</div><div class="ttdef"><b>定义</b> AbstractWorker.hpp:98</div></div>
@@ -264,8 +263,8 @@ $(function(){initNavTree('_imu_process_worker_8hpp_source.html',''); initResizab
 <div class="ttc" id="aclassz_1_1_imu_process_worker_html_aec094c042defe5615f82fcaafe8b32c2"><div class="ttname"><a href="classz_1_1_imu_process_worker.html#aec094c042defe5615f82fcaafe8b32c2">z::ImuProcessWorker::ImuProcessWorker</a></div><div class="ttdeci">ImuProcessWorker(SchedulerType *scheduler, ImuType ImuInstancePtr, const nlohmann::json &amp;root_cfg=nlohmann::json())</div><div class="ttdoc">构造一个IMU数据处理工人类型</div><div class="ttdef"><b>定义</b> ImuProcessWorker.hpp:73</div></div>
 <div class="ttc" id="aclassz_1_1_imu_process_worker_html_aed0b2196bc41137844a2aff7ee4f3871"><div class="ttname"><a href="classz_1_1_imu_process_worker.html#aed0b2196bc41137844a2aff7ee4f3871">z::ImuProcessWorker::TaskRun</a></div><div class="ttdeci">void TaskRun() override</div><div class="ttdoc">TaskRun方法默认没有实现工作逻辑，因为对IMU数据的处理通常在流水线的开始阶段。</div><div class="ttdef"><b>定义</b> ImuProcessWorker.hpp:178</div></div>
 <div class="ttc" id="aclassz_1_1_z_object_html_a20fc044ee664a6b01d500d536e63a1ed"><div class="ttname"><a href="classz_1_1_z_object.html#a20fc044ee664a6b01d500d536e63a1ed">z::ZObject::PrintSplitLine</a></div><div class="ttdeci">void PrintSplitLine(size_t length=60, char c=&#39;-&#39;)</div><div class="ttdoc">print a split line, default length is 60 and character is &#39;-&#39;</div><div class="ttdef"><b>定义</b> ZObject.hpp:32</div></div>
-<div class="ttc" id="aclassz_1_1math_1_1_vector_html"><div class="ttname"><a href="classz_1_1math_1_1_vector.html">z::math::Vector</a></div><div class="ttdoc">Vector class, support some vector operations, like dot, cross, normalize, etc.</div><div class="ttdef"><b>定义</b> MathTypes.hpp:77</div></div>
-<div class="ttc" id="aclassz_1_1math_1_1_vector_html_a9bf9d89ec2fa5861c383c6cb0f5e7602"><div class="ttname"><a href="classz_1_1math_1_1_vector.html#a9bf9d89ec2fa5861c383c6cb0f5e7602">z::math::Vector&lt; RealNumber, 3 &gt;::ones</a></div><div class="ttdeci">static constexpr Vector&lt; RealNumber, N &gt; ones()</div><div class="ttdef"><b>定义</b> MathTypes.hpp:222</div></div>
+<div class="ttc" id="aclassz_1_1math_1_1_vector_html"><div class="ttname"><a href="classz_1_1math_1_1_vector.html">z::math::Vector</a></div><div class="ttdoc">Vector class, support some vector operations, like dot, cross, normalize, etc.</div><div class="ttdef"><b>定义</b> VectorType.hpp:77</div></div>
+<div class="ttc" id="aclassz_1_1math_1_1_vector_html_a9bf9d89ec2fa5861c383c6cb0f5e7602"><div class="ttname"><a href="classz_1_1math_1_1_vector.html#a9bf9d89ec2fa5861c383c6cb0f5e7602">z::math::Vector&lt; RealNumber, 3 &gt;::ones</a></div><div class="ttdeci">static constexpr Vector&lt; RealNumber, N &gt; ones()</div><div class="ttdef"><b>定义</b> VectorType.hpp:222</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

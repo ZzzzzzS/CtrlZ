@@ -1,0 +1,6 @@
+<map id="z::math::Tensor&lt; bool, Dims... &gt;" name="z::math::Tensor&lt; bool, Dims... &gt;">
+<area shape="rect" id="Node000001" title="Bool Tensor class, used to store bool type tensor data" alt="" coords="5,96,158,139"/>
+<area shape="rect" id="Node000002" href="$classz_1_1math_1_1_tensor_base.html" title=" " alt="" coords="10,5,153,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,63,76,96,71,96,70,64"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="93,64,92,96,87,96,88,63"/>
+</map>

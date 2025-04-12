@@ -106,7 +106,6 @@ $(function(){initNavTree('classz_1_1math_1_1_tensor.html',''); initResizable(tru
   <div class="summary">
 <a href="#pub-types">Public 类型</a> &#124;
 <a href="#pub-methods">Public 成员函数</a> &#124;
-<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
 <a href="classz_1_1math_1_1_tensor-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">z::math::Tensor&lt; T, Dims &gt; 模板类 参考</div></div>
 </div><!--header-->
@@ -115,7 +114,7 @@ $(function(){initNavTree('classz_1_1math_1_1_tensor.html',''); initResizable(tru
 <p><a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor</a> class, used to store tensor data  
  <a href="#details">更多...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_math_types_8hpp_source.html">MathTypes.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_tensor_type_8hpp_source.html">TensorType.hpp</a>&gt;</code></p>
 <div class="dynheader">
 类 z::math::Tensor&lt; T, Dims &gt; 继承关系图:</div>
 <div class="dyncontent">
@@ -148,9 +147,6 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>Shape</b> = typename
 <tr class="memitem:a162cca83ca056e4fa838954e28d9dacd" id="r_a162cca83ca056e4fa838954e28d9dacd"><td class="memItemLeft" align="right" valign="top"><a id="a162cca83ca056e4fa838954e28d9dacd" name="a162cca83ca056e4fa838954e28d9dacd"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>ValueType</b> = typename Base::ValueType</td></tr>
 <tr class="separator:a162cca83ca056e4fa838954e28d9dacd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e49712411bf0b3b7dfea0590e96d8ae" id="r_a3e49712411bf0b3b7dfea0590e96d8ae"><td class="memItemLeft" align="right" valign="top"><a id="a3e49712411bf0b3b7dfea0590e96d8ae" name="a3e49712411bf0b3b7dfea0590e96d8ae"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>Ptr</b> = std::shared_ptr&lt;<a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt;T, Dims...&gt;&gt;</td></tr>
-<tr class="separator:a3e49712411bf0b3b7dfea0590e96d8ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classz_1_1math_1_1_tensor_base"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_classz_1_1math_1_1_tensor_base')"><img src="closed.png" alt="-"/>&#160;Public 类型 继承自 <a class="el" href="classz_1_1math_1_1_tensor_base.html">z::math::TensorBase&lt; T, Dims... &gt;</a></td></tr>
 <tr class="memitem:ae5ce0714b595e274a9bb15cf8a3ba216 inherit pub_types_classz_1_1math_1_1_tensor_base" id="r_ae5ce0714b595e274a9bb15cf8a3ba216"><td class="memItemLeft" align="right" valign="top">
 using&#160;</td><td class="memItemRight" valign="bottom"><b>Shape</b></td></tr>
@@ -161,9 +157,111 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>ValueType</b></td></
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a94d588134dd7060191b6fee0f31a3be2" id="r_a94d588134dd7060191b6fee0f31a3be2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; ValueType, Shape::total_size &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94d588134dd7060191b6fee0f31a3be2">toVector</a> ()</td></tr>
-<tr class="memdesc:a94d588134dd7060191b6fee0f31a3be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert tensor to z vector  <br /></td></tr>
-<tr class="separator:a94d588134dd7060191b6fee0f31a3be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff5290a8e7c1480a1fba51c15c0db148" id="r_aff5290a8e7c1480a1fba51c15c0db148"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; ValueType, Shape::total_size &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff5290a8e7c1480a1fba51c15c0db148">toVector</a> () const</td></tr>
+<tr class="memdesc:aff5290a8e7c1480a1fba51c15c0db148"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert tensor to z vector  <br /></td></tr>
+<tr class="separator:aff5290a8e7c1480a1fba51c15c0db148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e614be7aea12f856aba2c8778ecee0e" id="r_a5e614be7aea12f856aba2c8778ecee0e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e614be7aea12f856aba2c8778ecee0e">operator+</a> (const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;other) const</td></tr>
+<tr class="memdesc:a5e614be7aea12f856aba2c8778ecee0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator +, used to add two tensors or a tensor and a value  <br /></td></tr>
+<tr class="separator:a5e614be7aea12f856aba2c8778ecee0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a636a4e4eb6cf48a417cb2bb0bade500c" id="r_a636a4e4eb6cf48a417cb2bb0bade500c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a636a4e4eb6cf48a417cb2bb0bade500c">operator+</a> (const ValueType &amp;other) const</td></tr>
+<tr class="memdesc:a636a4e4eb6cf48a417cb2bb0bade500c"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator +, used to add a tensor and a value  <br /></td></tr>
+<tr class="separator:a636a4e4eb6cf48a417cb2bb0bade500c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d5f3ba00d4569eb2ff4eadb25fc04dd" id="r_a7d5f3ba00d4569eb2ff4eadb25fc04dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d5f3ba00d4569eb2ff4eadb25fc04dd">operator+=</a> (const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;other)</td></tr>
+<tr class="memdesc:a7d5f3ba00d4569eb2ff4eadb25fc04dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator +=, used to add two tensors or a tensor and a value  <br /></td></tr>
+<tr class="separator:a7d5f3ba00d4569eb2ff4eadb25fc04dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee1d053a99cf0ca7f84aa6d2257e4681" id="r_aee1d053a99cf0ca7f84aa6d2257e4681"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee1d053a99cf0ca7f84aa6d2257e4681">operator+=</a> (const ValueType &amp;other)</td></tr>
+<tr class="memdesc:aee1d053a99cf0ca7f84aa6d2257e4681"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator +=, used to add a tensor and a value  <br /></td></tr>
+<tr class="separator:aee1d053a99cf0ca7f84aa6d2257e4681"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc6036287ca2072f85eb3b10dcd6b737" id="r_adc6036287ca2072f85eb3b10dcd6b737"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc6036287ca2072f85eb3b10dcd6b737">operator-</a> (const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;other) const</td></tr>
+<tr class="memdesc:adc6036287ca2072f85eb3b10dcd6b737"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator -, used to subtract two tensors or a tensor and a value  <br /></td></tr>
+<tr class="separator:adc6036287ca2072f85eb3b10dcd6b737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab461c77b06fc9591b8918cdfa7513886" id="r_ab461c77b06fc9591b8918cdfa7513886"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab461c77b06fc9591b8918cdfa7513886">operator-</a> (const ValueType &amp;other) const</td></tr>
+<tr class="memdesc:ab461c77b06fc9591b8918cdfa7513886"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator -, used to subtract a tensor and a value  <br /></td></tr>
+<tr class="separator:ab461c77b06fc9591b8918cdfa7513886"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30bd39812afbef8949041aa5f84792e7" id="r_a30bd39812afbef8949041aa5f84792e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30bd39812afbef8949041aa5f84792e7">operator-=</a> (const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;other)</td></tr>
+<tr class="memdesc:a30bd39812afbef8949041aa5f84792e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator -=, used to subtract two tensors or a tensor and a value  <br /></td></tr>
+<tr class="separator:a30bd39812afbef8949041aa5f84792e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cb746cabfe9af4f9335ff9e3e897a08" id="r_a0cb746cabfe9af4f9335ff9e3e897a08"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0cb746cabfe9af4f9335ff9e3e897a08">operator-=</a> (const ValueType &amp;other)</td></tr>
+<tr class="memdesc:a0cb746cabfe9af4f9335ff9e3e897a08"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator -=, used to subtract a tensor and a value  <br /></td></tr>
+<tr class="separator:a0cb746cabfe9af4f9335ff9e3e897a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4df0db6d21712ca8d4ff40b98e90a662" id="r_a4df0db6d21712ca8d4ff40b98e90a662"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4df0db6d21712ca8d4ff40b98e90a662">operator*</a> (const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;other) const</td></tr>
+<tr class="memdesc:a4df0db6d21712ca8d4ff40b98e90a662"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator *, used to multiply two tensors or a tensor and a value  <br /></td></tr>
+<tr class="separator:a4df0db6d21712ca8d4ff40b98e90a662"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb5f9d4c3a027d6db2ab72d8245506d9" id="r_aeb5f9d4c3a027d6db2ab72d8245506d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb5f9d4c3a027d6db2ab72d8245506d9">operator*</a> (const ValueType &amp;other) const</td></tr>
+<tr class="memdesc:aeb5f9d4c3a027d6db2ab72d8245506d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator *, used to multiply a tensor and a value  <br /></td></tr>
+<tr class="separator:aeb5f9d4c3a027d6db2ab72d8245506d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af42ca2b75f0646f709641219cdd37e25" id="r_af42ca2b75f0646f709641219cdd37e25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af42ca2b75f0646f709641219cdd37e25">operator*=</a> (const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;other)</td></tr>
+<tr class="memdesc:af42ca2b75f0646f709641219cdd37e25"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator *=, used to multiply two tensors or a tensor and a value  <br /></td></tr>
+<tr class="separator:af42ca2b75f0646f709641219cdd37e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb3b60a55de1b758d8590e2a4bda616e" id="r_adb3b60a55de1b758d8590e2a4bda616e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb3b60a55de1b758d8590e2a4bda616e">operator*=</a> (const ValueType &amp;other)</td></tr>
+<tr class="memdesc:adb3b60a55de1b758d8590e2a4bda616e"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator *=, used to multiply a tensor and a value  <br /></td></tr>
+<tr class="separator:adb3b60a55de1b758d8590e2a4bda616e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af243a9a3e00f1f63f295fbe4d158276c" id="r_af243a9a3e00f1f63f295fbe4d158276c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af243a9a3e00f1f63f295fbe4d158276c">operator/</a> (const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;other) const</td></tr>
+<tr class="memdesc:af243a9a3e00f1f63f295fbe4d158276c"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator /, used to divide two tensors or a tensor and a value  <br /></td></tr>
+<tr class="separator:af243a9a3e00f1f63f295fbe4d158276c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2091ac4bb78eafa847ccb095527515e0" id="r_a2091ac4bb78eafa847ccb095527515e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2091ac4bb78eafa847ccb095527515e0">operator/</a> (const ValueType &amp;other) const</td></tr>
+<tr class="memdesc:a2091ac4bb78eafa847ccb095527515e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator /, used to divide a tensor and a value  <br /></td></tr>
+<tr class="separator:a2091ac4bb78eafa847ccb095527515e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd44c351d2c74f670da6d1a4bf1a9796" id="r_acd44c351d2c74f670da6d1a4bf1a9796"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd44c351d2c74f670da6d1a4bf1a9796">operator/=</a> (const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;other)</td></tr>
+<tr class="memdesc:acd44c351d2c74f670da6d1a4bf1a9796"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator /=, used to divide two tensors or a tensor and a value  <br /></td></tr>
+<tr class="separator:acd44c351d2c74f670da6d1a4bf1a9796"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f49f227fee1a5d618e1de95c87a3340" id="r_a9f49f227fee1a5d618e1de95c87a3340"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f49f227fee1a5d618e1de95c87a3340">operator/=</a> (const ValueType &amp;other)</td></tr>
+<tr class="memdesc:a9f49f227fee1a5d618e1de95c87a3340"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator /=, used to divide a tensor and a value  <br /></td></tr>
+<tr class="separator:a9f49f227fee1a5d618e1de95c87a3340"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedf145456264fefab26da81f62ef3442" id="r_aedf145456264fefab26da81f62ef3442"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedf145456264fefab26da81f62ef3442">operator+</a> () const</td></tr>
+<tr class="memdesc:aedf145456264fefab26da81f62ef3442"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator +, used to return the tensor itself  <br /></td></tr>
+<tr class="separator:aedf145456264fefab26da81f62ef3442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22d05b5360df98a9e64befd4a904aea1" id="r_a22d05b5360df98a9e64befd4a904aea1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22d05b5360df98a9e64befd4a904aea1">operator-</a> () const</td></tr>
+<tr class="memdesc:a22d05b5360df98a9e64befd4a904aea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator -, used to return the negative of the tensor  <br /></td></tr>
+<tr class="separator:a22d05b5360df98a9e64befd4a904aea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b236331d0d492fd2e50117c4c1ce709" id="r_a3b236331d0d492fd2e50117c4c1ce709"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b236331d0d492fd2e50117c4c1ce709">operator&gt;</a> (const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;other) const</td></tr>
+<tr class="memdesc:a3b236331d0d492fd2e50117c4c1ce709"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator &gt;, used to compare two tensors or a tensor and a value  <br /></td></tr>
+<tr class="separator:a3b236331d0d492fd2e50117c4c1ce709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1adb44f075d5019978323f5a456d84ff" id="r_a1adb44f075d5019978323f5a456d84ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1adb44f075d5019978323f5a456d84ff">operator&gt;</a> (const ValueType &amp;other) const</td></tr>
+<tr class="memdesc:a1adb44f075d5019978323f5a456d84ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator &gt;, used to compare a tensor and a value  <br /></td></tr>
+<tr class="separator:a1adb44f075d5019978323f5a456d84ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cb9b4b2ee2299b369b2da08e4b56737" id="r_a7cb9b4b2ee2299b369b2da08e4b56737"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7cb9b4b2ee2299b369b2da08e4b56737">operator&gt;=</a> (const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;other) const</td></tr>
+<tr class="memdesc:a7cb9b4b2ee2299b369b2da08e4b56737"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator &gt;=, used to compare two tensors or a tensor and a value  <br /></td></tr>
+<tr class="separator:a7cb9b4b2ee2299b369b2da08e4b56737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aeaec722f5623fca54e2ce24c508475" id="r_a5aeaec722f5623fca54e2ce24c508475"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5aeaec722f5623fca54e2ce24c508475">operator&gt;=</a> (const ValueType &amp;other) const</td></tr>
+<tr class="memdesc:a5aeaec722f5623fca54e2ce24c508475"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator &gt;=, used to compare a tensor and a value  <br /></td></tr>
+<tr class="separator:a5aeaec722f5623fca54e2ce24c508475"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6506810ef3d79f566dde7f5ef4ca84eb" id="r_a6506810ef3d79f566dde7f5ef4ca84eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6506810ef3d79f566dde7f5ef4ca84eb">operator&lt;</a> (const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;other) const</td></tr>
+<tr class="memdesc:a6506810ef3d79f566dde7f5ef4ca84eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator &lt;, used to compare two tensors or a tensor and a value  <br /></td></tr>
+<tr class="separator:a6506810ef3d79f566dde7f5ef4ca84eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6432a04c4e227dfb4f5a855a4a95626" id="r_af6432a04c4e227dfb4f5a855a4a95626"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6432a04c4e227dfb4f5a855a4a95626">operator&lt;</a> (const ValueType &amp;other) const</td></tr>
+<tr class="memdesc:af6432a04c4e227dfb4f5a855a4a95626"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator &lt;, used to compare a tensor and a value  <br /></td></tr>
+<tr class="separator:af6432a04c4e227dfb4f5a855a4a95626"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa65441618039ae51c6426b7ce2706321" id="r_aa65441618039ae51c6426b7ce2706321"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa65441618039ae51c6426b7ce2706321">operator&lt;=</a> (const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;other) const</td></tr>
+<tr class="memdesc:aa65441618039ae51c6426b7ce2706321"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator &lt;=, used to compare two tensors or a tensor and a value  <br /></td></tr>
+<tr class="separator:aa65441618039ae51c6426b7ce2706321"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64953e8743bce87e2501eebf8db8bdb9" id="r_a64953e8743bce87e2501eebf8db8bdb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64953e8743bce87e2501eebf8db8bdb9">operator&lt;=</a> (const ValueType &amp;other) const</td></tr>
+<tr class="memdesc:a64953e8743bce87e2501eebf8db8bdb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator &lt;=, used to compare a tensor and a value  <br /></td></tr>
+<tr class="separator:a64953e8743bce87e2501eebf8db8bdb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad75f07fe65bed60e02e8506665303117" id="r_ad75f07fe65bed60e02e8506665303117"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad75f07fe65bed60e02e8506665303117">operator==</a> (const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;other) const</td></tr>
+<tr class="memdesc:ad75f07fe65bed60e02e8506665303117"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator ==, used to compare two tensors or a tensor and a value  <br /></td></tr>
+<tr class="separator:ad75f07fe65bed60e02e8506665303117"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3aee4d3d8e178cdd6610f526188cdd6" id="r_ad3aee4d3d8e178cdd6610f526188cdd6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3aee4d3d8e178cdd6610f526188cdd6">operator==</a> (const ValueType &amp;other) const</td></tr>
+<tr class="memdesc:ad3aee4d3d8e178cdd6610f526188cdd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator ==, used to compare a tensor and a value  <br /></td></tr>
+<tr class="separator:ad3aee4d3d8e178cdd6610f526188cdd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe6940bdb49da8c5b6c8af3a7ab52f4a" id="r_abe6940bdb49da8c5b6c8af3a7ab52f4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe6940bdb49da8c5b6c8af3a7ab52f4a">operator!=</a> (const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;other) const</td></tr>
+<tr class="memdesc:abe6940bdb49da8c5b6c8af3a7ab52f4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator !=, used to compare two tensors or a tensor and a value  <br /></td></tr>
+<tr class="separator:abe6940bdb49da8c5b6c8af3a7ab52f4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a600219d29cdd783a9bc0486e4294af2d" id="r_a600219d29cdd783a9bc0486e4294af2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a600219d29cdd783a9bc0486e4294af2d">operator!=</a> (const ValueType &amp;other) const</td></tr>
+<tr class="memdesc:a600219d29cdd783a9bc0486e4294af2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator !=, used to compare a tensor and a value  <br /></td></tr>
+<tr class="separator:a600219d29cdd783a9bc0486e4294af2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77c6c3aa8b463b980b6a9e1a69f7671d" id="r_a77c6c3aa8b463b980b6a9e1a69f7671d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a>&lt; T, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77c6c3aa8b463b980b6a9e1a69f7671d">clone</a> () const</td></tr>
+<tr class="memdesc:a77c6c3aa8b463b980b6a9e1a69f7671d"><td class="mdescLeft">&#160;</td><td class="mdescRight">clone function, used to deepcopy a tensor  <br /></td></tr>
+<tr class="separator:a77c6c3aa8b463b980b6a9e1a69f7671d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab02939e995cf2a17c2828d1ff416e9d9" id="r_ab02939e995cf2a17c2828d1ff416e9d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab02939e995cf2a17c2828d1ff416e9d9">clone</a> (<a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a>&lt; T, Dims... &gt; &amp;other)</td></tr>
+<tr class="memdesc:ab02939e995cf2a17c2828d1ff416e9d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">deep copy from other tensor without change data_ptr address, this is useful when the original tensor's data ptr is already registerd in somewhere else. (e.g. warped in onnx runtime)  <br /></td></tr>
+<tr class="separator:ab02939e995cf2a17c2828d1ff416e9d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee0f559a03657911a4d23810a05d8276" id="r_aee0f559a03657911a4d23810a05d8276"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a>&lt; T, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee0f559a03657911a4d23810a05d8276">DeepCopy</a> () const</td></tr>
+<tr class="memdesc:aee0f559a03657911a4d23810a05d8276"><td class="mdescLeft">&#160;</td><td class="mdescRight">DeepCopy function, used to deepcopy a tensor  <br /></td></tr>
+<tr class="separator:aee0f559a03657911a4d23810a05d8276"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6ae9ac62789d2f8567ea871b6e8ed3b" id="r_af6ae9ac62789d2f8567ea871b6e8ed3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6ae9ac62789d2f8567ea871b6e8ed3b">DeepCopy</a> (<a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a>&lt; T, Dims... &gt; &amp;other)</td></tr>
+<tr class="memdesc:af6ae9ac62789d2f8567ea871b6e8ed3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">deep copy from other tensor without change data_ptr address, this is useful when the original tensor's data ptr is already registerd in somewhere else. (e.g. warped in onnx runtime)  <br /></td></tr>
+<tr class="separator:af6ae9ac62789d2f8567ea871b6e8ed3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classz_1_1math_1_1_tensor_base"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classz_1_1math_1_1_tensor_base')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classz_1_1math_1_1_tensor_base.html">z::math::TensorBase&lt; T, Dims... &gt;</a></td></tr>
 <tr class="memitem:ae562e8ee43f3bb9166236559c92272e3 inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_ae562e8ee43f3bb9166236559c92272e3"><td class="memItemLeft" align="right" valign="top">
 &#160;</td><td class="memItemRight" valign="bottom"><b>TensorBase</b> ()</td></tr>
@@ -179,15 +277,42 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a44577aee5726ef70459d5d6e0069f881 inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_a44577aee5726ef70459d5d6e0069f881"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#a44577aee5726ef70459d5d6e0069f881">TensorBase</a> (std::array&lt; ValueType, <a class="el" href="structz_1_1math_1_1_tensor_shape.html#a5d595da6a776f464052867045fb4f0f9">Shape::total_size</a> &gt; &amp;&amp;<a class="el" href="classz_1_1math_1_1_tensor_base.html#a054f5cba76838086f40f6696ef883a23">data</a>)</td></tr>
 <tr class="memdesc:a44577aee5726ef70459d5d6e0069f881 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor</a> Base object, move from std::array  <br /></td></tr>
 <tr class="separator:a44577aee5726ef70459d5d6e0069f881 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad46973dcda3f6c55807c92e5bd736e75 inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_ad46973dcda3f6c55807c92e5bd736e75"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#ad46973dcda3f6c55807c92e5bd736e75">TensorBase</a> (const <a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a> &amp;other)=default</td></tr>
-<tr class="memdesc:ad46973dcda3f6c55807c92e5bd736e75 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor</a> Base object, copy from another tensor  <br /></td></tr>
-<tr class="separator:ad46973dcda3f6c55807c92e5bd736e75 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c0843a4f9384b414105803553593219 inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_a5c0843a4f9384b414105803553593219"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#a5c0843a4f9384b414105803553593219">TensorBase</a> (<a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a> &amp;&amp;other)=default</td></tr>
-<tr class="memdesc:a5c0843a4f9384b414105803553593219 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor</a> Base object, move from another tensor  <br /></td></tr>
-<tr class="separator:a5c0843a4f9384b414105803553593219 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0da74581e9ccf4443d540d44d4825fff inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_a0da74581e9ccf4443d540d44d4825fff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#a0da74581e9ccf4443d540d44d4825fff">TensorBase</a> (const <a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a> &amp;other) noexcept</td></tr>
+<tr class="memdesc:a0da74581e9ccf4443d540d44d4825fff inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor</a> Base object, copy from another tensor  <br /></td></tr>
+<tr class="separator:a0da74581e9ccf4443d540d44d4825fff inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac56e6805d59225f1a8ad1d1fa598eaf1 inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_ac56e6805d59225f1a8ad1d1fa598eaf1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#ac56e6805d59225f1a8ad1d1fa598eaf1">TensorBase</a> (<a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="memdesc:ac56e6805d59225f1a8ad1d1fa598eaf1 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor</a> Base object, move from another tensor  <br /></td></tr>
+<tr class="separator:ac56e6805d59225f1a8ad1d1fa598eaf1 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1586fd6c737a14df9bd5104a9336b4bf inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_a1586fd6c737a14df9bd5104a9336b4bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a>&lt; T, Dims... &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#a1586fd6c737a14df9bd5104a9336b4bf">operator=</a> (const <a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a> &amp;other) noexcept</td></tr>
+<tr class="memdesc:a1586fd6c737a14df9bd5104a9336b4bf inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">assignment operator, copy from another tensor  <br /></td></tr>
+<tr class="separator:a1586fd6c737a14df9bd5104a9336b4bf inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0d6bd0046e4cfceba4a63f42ee422bd inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_af0d6bd0046e4cfceba4a63f42ee422bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a>&lt; T, Dims... &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#af0d6bd0046e4cfceba4a63f42ee422bd">operator=</a> (<a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="memdesc:af0d6bd0046e4cfceba4a63f42ee422bd inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">assignment operator, move from another tensor  <br /></td></tr>
+<tr class="separator:af0d6bd0046e4cfceba4a63f42ee422bd inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77c6c3aa8b463b980b6a9e1a69f7671d inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_a77c6c3aa8b463b980b6a9e1a69f7671d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a>&lt; T, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#a77c6c3aa8b463b980b6a9e1a69f7671d">clone</a> () const</td></tr>
+<tr class="memdesc:a77c6c3aa8b463b980b6a9e1a69f7671d inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">clone function, used to deepcopy a tensor  <br /></td></tr>
+<tr class="separator:a77c6c3aa8b463b980b6a9e1a69f7671d inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee0f559a03657911a4d23810a05d8276 inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_aee0f559a03657911a4d23810a05d8276"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a>&lt; T, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#aee0f559a03657911a4d23810a05d8276">DeepCopy</a> () const</td></tr>
+<tr class="memdesc:aee0f559a03657911a4d23810a05d8276 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">DeepCopy function, used to deepcopy a tensor  <br /></td></tr>
+<tr class="separator:aee0f559a03657911a4d23810a05d8276 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6ae9ac62789d2f8567ea871b6e8ed3b inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_af6ae9ac62789d2f8567ea871b6e8ed3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#af6ae9ac62789d2f8567ea871b6e8ed3b">DeepCopy</a> (<a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a>&lt; T, Dims... &gt; &amp;other)</td></tr>
+<tr class="memdesc:af6ae9ac62789d2f8567ea871b6e8ed3b inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">deep copy from other tensor without change data_ptr address, this is useful when the original tensor's data ptr is already registerd in somewhere else. (e.g. warped in onnx runtime)  <br /></td></tr>
+<tr class="separator:af6ae9ac62789d2f8567ea871b6e8ed3b inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab02939e995cf2a17c2828d1ff416e9d9 inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_ab02939e995cf2a17c2828d1ff416e9d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#ab02939e995cf2a17c2828d1ff416e9d9">clone</a> (<a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a>&lt; T, Dims... &gt; &amp;other)</td></tr>
+<tr class="memdesc:ab02939e995cf2a17c2828d1ff416e9d9 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">deep copy from other tensor without change data_ptr address, this is useful when the original tensor's data ptr is already registerd in somewhere else. (e.g. warped in onnx runtime)  <br /></td></tr>
+<tr class="separator:ab02939e995cf2a17c2828d1ff416e9d9 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8f5de53168a53316aa2e0010ad4341f inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_af8f5de53168a53316aa2e0010ad4341f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#af8f5de53168a53316aa2e0010ad4341f">same</a> (const <a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a> &amp;other) const</td></tr>
+<tr class="memdesc:af8f5de53168a53316aa2e0010ad4341f inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare two tensors, used to check if the given two tensors are the same tensor.  <br /></td></tr>
+<tr class="separator:af8f5de53168a53316aa2e0010ad4341f inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab12945a35e53b255953d2b4edc8cdb7d inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_ab12945a35e53b255953d2b4edc8cdb7d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#ab12945a35e53b255953d2b4edc8cdb7d">equal</a> (const <a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a> &amp;other) const</td></tr>
+<tr class="memdesc:ab12945a35e53b255953d2b4edc8cdb7d inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare two tensors, used to check if the given two tensors are the same tensor.  <br /></td></tr>
+<tr class="separator:ab12945a35e53b255953d2b4edc8cdb7d inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbfa90f5da36a93be4f527dc043cffa1 inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_acbfa90f5da36a93be4f527dc043cffa1"><td class="memItemLeft" align="right" valign="top">std::array&lt; ValueType, <a class="el" href="structz_1_1math_1_1_tensor_shape.html#a5d595da6a776f464052867045fb4f0f9">Shape::total_size</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#acbfa90f5da36a93be4f527dc043cffa1">Array</a> ()</td></tr>
 <tr class="memdesc:acbfa90f5da36a93be4f527dc043cffa1 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert to std::array  <br /></td></tr>
 <tr class="separator:acbfa90f5da36a93be4f527dc043cffa1 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0132edea3c1f5842583c784c53103df inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_af0132edea3c1f5842583c784c53103df"><td class="memItemLeft" align="right" valign="top">
+const std::array&lt; ValueType, <a class="el" href="structz_1_1math_1_1_tensor_shape.html#a5d595da6a776f464052867045fb4f0f9">Shape::total_size</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>Array</b> () const</td></tr>
+<tr class="separator:af0132edea3c1f5842583c784c53103df inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a054f5cba76838086f40f6696ef883a23 inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_a054f5cba76838086f40f6696ef883a23"><td class="memItemLeft" align="right" valign="top">ValueType *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#a054f5cba76838086f40f6696ef883a23">data</a> ()</td></tr>
 <tr class="memdesc:a054f5cba76838086f40f6696ef883a23 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">get data pointer  <br /></td></tr>
 <tr class="separator:a054f5cba76838086f40f6696ef883a23 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -223,15 +348,42 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a44577aee5726ef70459d5d6e0069f881 inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_a44577aee5726ef70459d5d6e0069f881"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#a44577aee5726ef70459d5d6e0069f881">TensorBase</a> (std::array&lt; ValueType, <a class="el" href="structz_1_1math_1_1_tensor_shape.html#a5d595da6a776f464052867045fb4f0f9">Shape::total_size</a> &gt; &amp;&amp;<a class="el" href="classz_1_1math_1_1_tensor_base.html#a054f5cba76838086f40f6696ef883a23">data</a>)</td></tr>
 <tr class="memdesc:a44577aee5726ef70459d5d6e0069f881 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor</a> Base object, move from std::array  <br /></td></tr>
 <tr class="separator:a44577aee5726ef70459d5d6e0069f881 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad46973dcda3f6c55807c92e5bd736e75 inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_ad46973dcda3f6c55807c92e5bd736e75"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#ad46973dcda3f6c55807c92e5bd736e75">TensorBase</a> (const <a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a> &amp;other)=default</td></tr>
-<tr class="memdesc:ad46973dcda3f6c55807c92e5bd736e75 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor</a> Base object, copy from another tensor  <br /></td></tr>
-<tr class="separator:ad46973dcda3f6c55807c92e5bd736e75 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c0843a4f9384b414105803553593219 inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_a5c0843a4f9384b414105803553593219"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#a5c0843a4f9384b414105803553593219">TensorBase</a> (<a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a> &amp;&amp;other)=default</td></tr>
-<tr class="memdesc:a5c0843a4f9384b414105803553593219 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor</a> Base object, move from another tensor  <br /></td></tr>
-<tr class="separator:a5c0843a4f9384b414105803553593219 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0da74581e9ccf4443d540d44d4825fff inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_a0da74581e9ccf4443d540d44d4825fff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#a0da74581e9ccf4443d540d44d4825fff">TensorBase</a> (const <a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a> &amp;other) noexcept</td></tr>
+<tr class="memdesc:a0da74581e9ccf4443d540d44d4825fff inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor</a> Base object, copy from another tensor  <br /></td></tr>
+<tr class="separator:a0da74581e9ccf4443d540d44d4825fff inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac56e6805d59225f1a8ad1d1fa598eaf1 inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_ac56e6805d59225f1a8ad1d1fa598eaf1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#ac56e6805d59225f1a8ad1d1fa598eaf1">TensorBase</a> (<a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="memdesc:ac56e6805d59225f1a8ad1d1fa598eaf1 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor</a> Base object, move from another tensor  <br /></td></tr>
+<tr class="separator:ac56e6805d59225f1a8ad1d1fa598eaf1 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1586fd6c737a14df9bd5104a9336b4bf inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_a1586fd6c737a14df9bd5104a9336b4bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a>&lt; T, Dims... &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#a1586fd6c737a14df9bd5104a9336b4bf">operator=</a> (const <a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a> &amp;other) noexcept</td></tr>
+<tr class="memdesc:a1586fd6c737a14df9bd5104a9336b4bf inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">assignment operator, copy from another tensor  <br /></td></tr>
+<tr class="separator:a1586fd6c737a14df9bd5104a9336b4bf inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0d6bd0046e4cfceba4a63f42ee422bd inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_af0d6bd0046e4cfceba4a63f42ee422bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a>&lt; T, Dims... &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#af0d6bd0046e4cfceba4a63f42ee422bd">operator=</a> (<a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="memdesc:af0d6bd0046e4cfceba4a63f42ee422bd inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">assignment operator, move from another tensor  <br /></td></tr>
+<tr class="separator:af0d6bd0046e4cfceba4a63f42ee422bd inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77c6c3aa8b463b980b6a9e1a69f7671d inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_a77c6c3aa8b463b980b6a9e1a69f7671d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a>&lt; T, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#a77c6c3aa8b463b980b6a9e1a69f7671d">clone</a> () const</td></tr>
+<tr class="memdesc:a77c6c3aa8b463b980b6a9e1a69f7671d inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">clone function, used to deepcopy a tensor  <br /></td></tr>
+<tr class="separator:a77c6c3aa8b463b980b6a9e1a69f7671d inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab02939e995cf2a17c2828d1ff416e9d9 inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_ab02939e995cf2a17c2828d1ff416e9d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#ab02939e995cf2a17c2828d1ff416e9d9">clone</a> (<a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a>&lt; T, Dims... &gt; &amp;other)</td></tr>
+<tr class="memdesc:ab02939e995cf2a17c2828d1ff416e9d9 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">deep copy from other tensor without change data_ptr address, this is useful when the original tensor's data ptr is already registerd in somewhere else. (e.g. warped in onnx runtime)  <br /></td></tr>
+<tr class="separator:ab02939e995cf2a17c2828d1ff416e9d9 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee0f559a03657911a4d23810a05d8276 inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_aee0f559a03657911a4d23810a05d8276"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a>&lt; T, Dims... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#aee0f559a03657911a4d23810a05d8276">DeepCopy</a> () const</td></tr>
+<tr class="memdesc:aee0f559a03657911a4d23810a05d8276 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">DeepCopy function, used to deepcopy a tensor  <br /></td></tr>
+<tr class="separator:aee0f559a03657911a4d23810a05d8276 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6ae9ac62789d2f8567ea871b6e8ed3b inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_af6ae9ac62789d2f8567ea871b6e8ed3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#af6ae9ac62789d2f8567ea871b6e8ed3b">DeepCopy</a> (<a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a>&lt; T, Dims... &gt; &amp;other)</td></tr>
+<tr class="memdesc:af6ae9ac62789d2f8567ea871b6e8ed3b inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">deep copy from other tensor without change data_ptr address, this is useful when the original tensor's data ptr is already registerd in somewhere else. (e.g. warped in onnx runtime)  <br /></td></tr>
+<tr class="separator:af6ae9ac62789d2f8567ea871b6e8ed3b inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8f5de53168a53316aa2e0010ad4341f inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_af8f5de53168a53316aa2e0010ad4341f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#af8f5de53168a53316aa2e0010ad4341f">same</a> (const <a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a> &amp;other) const</td></tr>
+<tr class="memdesc:af8f5de53168a53316aa2e0010ad4341f inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare two tensors, used to check if the given two tensors are the same tensor.  <br /></td></tr>
+<tr class="separator:af8f5de53168a53316aa2e0010ad4341f inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab12945a35e53b255953d2b4edc8cdb7d inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_ab12945a35e53b255953d2b4edc8cdb7d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#ab12945a35e53b255953d2b4edc8cdb7d">equal</a> (const <a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a> &amp;other) const</td></tr>
+<tr class="memdesc:ab12945a35e53b255953d2b4edc8cdb7d inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare two tensors, used to check if the given two tensors are the same tensor.  <br /></td></tr>
+<tr class="separator:ab12945a35e53b255953d2b4edc8cdb7d inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbfa90f5da36a93be4f527dc043cffa1 inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_acbfa90f5da36a93be4f527dc043cffa1"><td class="memItemLeft" align="right" valign="top">std::array&lt; ValueType, <a class="el" href="structz_1_1math_1_1_tensor_shape.html#a5d595da6a776f464052867045fb4f0f9">Shape::total_size</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#acbfa90f5da36a93be4f527dc043cffa1">Array</a> ()</td></tr>
 <tr class="memdesc:acbfa90f5da36a93be4f527dc043cffa1 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert to std::array  <br /></td></tr>
 <tr class="separator:acbfa90f5da36a93be4f527dc043cffa1 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0132edea3c1f5842583c784c53103df inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_af0132edea3c1f5842583c784c53103df"><td class="memItemLeft" align="right" valign="top">
+const std::array&lt; ValueType, <a class="el" href="structz_1_1math_1_1_tensor_shape.html#a5d595da6a776f464052867045fb4f0f9">Shape::total_size</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>Array</b> () const</td></tr>
+<tr class="separator:af0132edea3c1f5842583c784c53103df inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a054f5cba76838086f40f6696ef883a23 inherit pub_methods_classz_1_1math_1_1_tensor_base" id="r_a054f5cba76838086f40f6696ef883a23"><td class="memItemLeft" align="right" valign="top">ValueType *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#a054f5cba76838086f40f6696ef883a23">data</a> ()</td></tr>
 <tr class="memdesc:a054f5cba76838086f40f6696ef883a23 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">get data pointer  <br /></td></tr>
 <tr class="separator:a054f5cba76838086f40f6696ef883a23 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -254,20 +406,8 @@ Public 成员函数</h2></td></tr>
 <tr class="memdesc:a0343fb9fc6eb48bb771e97a10f821d40 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function is a overload of at, it will return the data according to the indices.  <br /></td></tr>
 <tr class="separator:a0343fb9fc6eb48bb771e97a10f821d40 inherit pub_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-静态 Public 成员函数</h2></td></tr>
-<tr class="memitem:a2dfbf0e9e973ef58675a3dfd728d26b5" id="r_a2dfbf0e9e973ef58675a3dfd728d26b5"><td class="memItemLeft" align="right" valign="top">static Ptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2dfbf0e9e973ef58675a3dfd728d26b5">Create</a> ()</td></tr>
-<tr class="memdesc:a2dfbf0e9e973ef58675a3dfd728d26b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a new tensor pointer  <br /></td></tr>
-<tr class="separator:a2dfbf0e9e973ef58675a3dfd728d26b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b4a9e080221f9a32f0c566e38585a6c" id="r_a2b4a9e080221f9a32f0c566e38585a6c"><td class="memItemLeft" align="right" valign="top">static Ptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b4a9e080221f9a32f0c566e38585a6c">Create</a> (const T &amp;val)</td></tr>
-<tr class="memdesc:a2b4a9e080221f9a32f0c566e38585a6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a new tensor pointer with given value for all elements  <br /></td></tr>
-<tr class="separator:a2b4a9e080221f9a32f0c566e38585a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bfe3d473a9a3beb2e2bf67cc4fe1109" id="r_a9bfe3d473a9a3beb2e2bf67cc4fe1109"><td class="memItemLeft" align="right" valign="top">static Ptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bfe3d473a9a3beb2e2bf67cc4fe1109">Create</a> (const std::array&lt; ValueType, Shape::total_size &gt; &amp;<a class="el" href="classz_1_1math_1_1_tensor_base.html#a054f5cba76838086f40f6696ef883a23">data</a>)</td></tr>
-<tr class="memdesc:a9bfe3d473a9a3beb2e2bf67cc4fe1109"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a new tensor pointer with data  <br /></td></tr>
-<tr class="separator:a9bfe3d473a9a3beb2e2bf67cc4fe1109"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cf787dd852ede7e4e091907b86a1747" id="r_a8cf787dd852ede7e4e091907b86a1747"><td class="memItemLeft" align="right" valign="top">static Ptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cf787dd852ede7e4e091907b86a1747">Create</a> (std::array&lt; ValueType, Shape::total_size &gt; &amp;&amp;<a class="el" href="classz_1_1math_1_1_tensor_base.html#a054f5cba76838086f40f6696ef883a23">data</a>)</td></tr>
-<tr class="memdesc:a8cf787dd852ede7e4e091907b86a1747"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a new tensor pointer with data  <br /></td></tr>
-<tr class="separator:a8cf787dd852ede7e4e091907b86a1747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classz_1_1math_1_1_tensor_base"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_classz_1_1math_1_1_tensor_base')"><img src="closed.png" alt="-"/>&#160;静态 Public 成员函数 继承自 <a class="el" href="classz_1_1math_1_1_tensor_base.html">z::math::TensorBase&lt; T, Dims... &gt;</a></td></tr>
 <tr class="memitem:a9a612a42ae515cec852c4a978151d1e0 inherit pub_static_methods_classz_1_1math_1_1_tensor_base" id="r_a9a612a42ae515cec852c4a978151d1e0"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#a9a612a42ae515cec852c4a978151d1e0">size</a> ()</td></tr>
 <tr class="memdesc:a9a612a42ae515cec852c4a978151d1e0 inherit pub_static_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">get total size of tensor  <br /></td></tr>
@@ -293,9 +433,6 @@ static constexpr const int64_t *&#160;</td><td class="memItemRight" valign="bott
 <tr class="memitem:ae0420e04c3f398c298fb5cab0cdbe13e inherit pub_static_methods_classz_1_1math_1_1_tensor_base" id="r_ae0420e04c3f398c298fb5cab0cdbe13e"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#ae0420e04c3f398c298fb5cab0cdbe13e">num_dims</a> ()</td></tr>
 <tr class="memdesc:ae0420e04c3f398c298fb5cab0cdbe13e inherit pub_static_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of dimensions  <br /></td></tr>
 <tr class="separator:ae0420e04c3f398c298fb5cab0cdbe13e inherit pub_static_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
-额外继承的成员函数</h2></td></tr>
 <tr class="inherit_header pro_static_methods_classz_1_1math_1_1_tensor_base"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_static_methods_classz_1_1math_1_1_tensor_base')"><img src="closed.png" alt="-"/>&#160;静态 Protected 成员函数 继承自 <a class="el" href="classz_1_1math_1_1_tensor_base.html">z::math::TensorBase&lt; T, Dims... &gt;</a></td></tr>
 <tr class="memitem:a689a0c60829c4b706207ac8e472ce27a inherit pro_static_methods_classz_1_1math_1_1_tensor_base" id="r_a689a0c60829c4b706207ac8e472ce27a"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1math_1_1_tensor_base.html#a689a0c60829c4b706207ac8e472ce27a">calculate_index</a> (Indices... indices)</td></tr>
 <tr class="memdesc:a689a0c60829c4b706207ac8e472ce27a inherit pro_static_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate the index according to the indices  <br /></td></tr>
@@ -310,14 +447,22 @@ static constexpr const int64_t *&#160;</td><td class="memItemRight" valign="bott
 <tr class="memdesc:a69bf280f9593819ec04ad2be77ad6d07 inherit pro_static_methods_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">print tensor elements recursively  <br /></td></tr>
 <tr class="separator:a69bf280f9593819ec04ad2be77ad6d07 inherit pro_static_methods_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classz_1_1math_1_1_tensor_base"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classz_1_1math_1_1_tensor_base')"><img src="closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="classz_1_1math_1_1_tensor_base.html">z::math::TensorBase&lt; T, Dims... &gt;</a></td></tr>
-<tr class="memitem:a5d9eddadadfbce22aedfc456e6b65c17 inherit pro_attribs_classz_1_1math_1_1_tensor_base" id="r_a5d9eddadadfbce22aedfc456e6b65c17"><td class="memItemLeft" align="right" valign="top">
-std::array&lt; T, <a class="el" href="structz_1_1math_1_1_tensor_shape.html#a5d595da6a776f464052867045fb4f0f9">Shape::total_size</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>data__</b></td></tr>
-<tr class="memdesc:a5d9eddadadfbce22aedfc456e6b65c17 inherit pro_attribs_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">data array, used to store tensor data <br /></td></tr>
-<tr class="separator:a5d9eddadadfbce22aedfc456e6b65c17 inherit pro_attribs_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d9eddadadfbce22aedfc456e6b65c17 inherit pro_attribs_classz_1_1math_1_1_tensor_base" id="r_a5d9eddadadfbce22aedfc456e6b65c17"><td class="memItemLeft" align="right" valign="top">
-std::array&lt; T, <a class="el" href="structz_1_1math_1_1_tensor_shape.html#a5d595da6a776f464052867045fb4f0f9">Shape::total_size</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>data__</b></td></tr>
-<tr class="memdesc:a5d9eddadadfbce22aedfc456e6b65c17 inherit pro_attribs_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">data array, used to store tensor data <br /></td></tr>
-<tr class="separator:a5d9eddadadfbce22aedfc456e6b65c17 inherit pro_attribs_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6629009e63b025ae519ff55dd1f9b7a4 inherit pro_attribs_classz_1_1math_1_1_tensor_base" id="r_a6629009e63b025ae519ff55dd1f9b7a4"><td class="memItemLeft" align="right" valign="top">
+std::array&lt; T, <a class="el" href="structz_1_1math_1_1_tensor_shape.html#a5d595da6a776f464052867045fb4f0f9">Shape::total_size</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>data_ptr__</b></td></tr>
+<tr class="memdesc:a6629009e63b025ae519ff55dd1f9b7a4 inherit pro_attribs_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">data array, used to store tensor data <br /></td></tr>
+<tr class="separator:a6629009e63b025ae519ff55dd1f9b7a4 inherit pro_attribs_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38609350dd959b1b38a3ec0a56fbf1a3 inherit pro_attribs_classz_1_1math_1_1_tensor_base" id="r_a38609350dd959b1b38a3ec0a56fbf1a3"><td class="memItemLeft" align="right" valign="top">
+std::atomic&lt; size_t &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>ref_count__</b></td></tr>
+<tr class="memdesc:a38609350dd959b1b38a3ec0a56fbf1a3 inherit pro_attribs_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">reference count <br /></td></tr>
+<tr class="separator:a38609350dd959b1b38a3ec0a56fbf1a3 inherit pro_attribs_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6629009e63b025ae519ff55dd1f9b7a4 inherit pro_attribs_classz_1_1math_1_1_tensor_base" id="r_a6629009e63b025ae519ff55dd1f9b7a4"><td class="memItemLeft" align="right" valign="top">
+std::array&lt; T, <a class="el" href="structz_1_1math_1_1_tensor_shape.html#a5d595da6a776f464052867045fb4f0f9">Shape::total_size</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>data_ptr__</b></td></tr>
+<tr class="memdesc:a6629009e63b025ae519ff55dd1f9b7a4 inherit pro_attribs_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">data array, used to store tensor data <br /></td></tr>
+<tr class="separator:a6629009e63b025ae519ff55dd1f9b7a4 inherit pro_attribs_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38609350dd959b1b38a3ec0a56fbf1a3 inherit pro_attribs_classz_1_1math_1_1_tensor_base" id="r_a38609350dd959b1b38a3ec0a56fbf1a3"><td class="memItemLeft" align="right" valign="top">
+std::atomic&lt; size_t &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>ref_count__</b></td></tr>
+<tr class="memdesc:a38609350dd959b1b38a3ec0a56fbf1a3 inherit pro_attribs_classz_1_1math_1_1_tensor_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">reference count <br /></td></tr>
+<tr class="separator:a38609350dd959b1b38a3ec0a56fbf1a3 inherit pro_attribs_classz_1_1math_1_1_tensor_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T, int64_t... Dims&gt;<br />
@@ -330,8 +475,8 @@ class z::math::Tensor&lt; T, Dims &gt;</div><p><a class="el" href="classz_1_1mat
   </dd>
 </dl>
 </div><h2 class="groupheader">成员函数说明</h2>
-<a id="a2dfbf0e9e973ef58675a3dfd728d26b5" name="a2dfbf0e9e973ef58675a3dfd728d26b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2dfbf0e9e973ef58675a3dfd728d26b5">&#9670;&#160;</a></span>Create() <span class="overload">[1/4]</span></h2>
+<a id="a77c6c3aa8b463b980b6a9e1a69f7671d" name="a77c6c3aa8b463b980b6a9e1a69f7671d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77c6c3aa8b463b980b6a9e1a69f7671d">&#9670;&#160;</a></span>clone() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -342,26 +487,26 @@ template&lt;typename T, int64_t... Dims&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Ptr <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::Create </td>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a>&lt; T, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor_base.html">z::math::TensorBase</a>&lt; T, Dims &gt;::clone </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>create a new tensor pointer </p>
-<dl class="section return"><dt>返回</dt><dd>Ptr Pointer of new tensor </dd></dl>
+<p>clone function, used to deepcopy a tensor </p>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase&lt;T, Dims...&gt;</a> </dd></dl>
 
 </div>
 </div>
-<a id="a9bfe3d473a9a3beb2e2bf67cc4fe1109" name="a9bfe3d473a9a3beb2e2bf67cc4fe1109"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bfe3d473a9a3beb2e2bf67cc4fe1109">&#9670;&#160;</a></span>Create() <span class="overload">[2/4]</span></h2>
+<a id="ab02939e995cf2a17c2828d1ff416e9d9" name="ab02939e995cf2a17c2828d1ff416e9d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab02939e995cf2a17c2828d1ff416e9d9">&#9670;&#160;</a></span>clone() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -372,31 +517,31 @@ template&lt;typename T, int64_t... Dims&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Ptr <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::Create </td>
+          <td class="memname">void <a class="el" href="classz_1_1math_1_1_tensor_base.html">z::math::TensorBase</a>&lt; T, Dims &gt;::clone </td>
           <td>(</td>
-          <td class="paramtype">const std::array&lt; ValueType, Shape::total_size &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a>&lt; T, Dims... &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>create a new tensor pointer with data </p>
+<p>deep copy from other tensor without change data_ptr address, this is useful when the original tensor's data ptr is already registerd in somewhere else. (e.g. warped in onnx runtime) </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>data array </td></tr>
+    <tr><td class="paramname">other</td><td></td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a2b4a9e080221f9a32f0c566e38585a6c" name="a2b4a9e080221f9a32f0c566e38585a6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b4a9e080221f9a32f0c566e38585a6c">&#9670;&#160;</a></span>Create() <span class="overload">[3/4]</span></h2>
+<a id="aee0f559a03657911a4d23810a05d8276" name="aee0f559a03657911a4d23810a05d8276"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee0f559a03657911a4d23810a05d8276">&#9670;&#160;</a></span>DeepCopy() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -407,32 +552,26 @@ template&lt;typename T, int64_t... Dims&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Ptr <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::Create </td>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a>&lt; T, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor_base.html">z::math::TensorBase</a>&lt; T, Dims &gt;::DeepCopy </td>
           <td>(</td>
-          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>create a new tensor pointer with given value for all elements </p>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">val</td><td>value for all elements </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>返回</dt><dd>Ptr Pointer of new tensor </dd></dl>
+<p>DeepCopy function, used to deepcopy a tensor </p>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase&lt;T, Dims...&gt;</a> </dd></dl>
 
 </div>
 </div>
-<a id="a8cf787dd852ede7e4e091907b86a1747" name="a8cf787dd852ede7e4e091907b86a1747"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8cf787dd852ede7e4e091907b86a1747">&#9670;&#160;</a></span>Create() <span class="overload">[4/4]</span></h2>
+<a id="af6ae9ac62789d2f8567ea871b6e8ed3b" name="af6ae9ac62789d2f8567ea871b6e8ed3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6ae9ac62789d2f8567ea871b6e8ed3b">&#9670;&#160;</a></span>DeepCopy() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -443,31 +582,1099 @@ template&lt;typename T, int64_t... Dims&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Ptr <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::Create </td>
+          <td class="memname">void <a class="el" href="classz_1_1math_1_1_tensor_base.html">z::math::TensorBase</a>&lt; T, Dims &gt;::DeepCopy </td>
           <td>(</td>
-          <td class="paramtype">std::array&lt; ValueType, Shape::total_size &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classz_1_1math_1_1_tensor_base.html">TensorBase</a>&lt; T, Dims... &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>create a new tensor pointer with data </p>
+<p>deep copy from other tensor without change data_ptr address, this is useful when the original tensor's data ptr is already registerd in somewhere else. (e.g. warped in onnx runtime) </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>data array </td></tr>
+    <tr><td class="paramname">other</td><td></td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a94d588134dd7060191b6fee0f31a3be2" name="a94d588134dd7060191b6fee0f31a3be2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94d588134dd7060191b6fee0f31a3be2">&#9670;&#160;</a></span>toVector()</h2>
+<a id="abe6940bdb49da8c5b6c8af3a7ab52f4a" name="abe6940bdb49da8c5b6c8af3a7ab52f4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe6940bdb49da8c5b6c8af3a7ab52f4a">&#9670;&#160;</a></span>operator!=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator !=, used to compare two tensors or a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor_3_01bool_00_01_dims_8_8_8_01_4.html" title="Bool Tensor class, used to store bool type tensor data">Tensor&lt;bool, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="a600219d29cdd783a9bc0486e4294af2d" name="a600219d29cdd783a9bc0486e4294af2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a600219d29cdd783a9bc0486e4294af2d">&#9670;&#160;</a></span>operator!=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const ValueType &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator !=, used to compare a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor_3_01bool_00_01_dims_8_8_8_01_4.html" title="Bool Tensor class, used to store bool type tensor data">Tensor&lt;bool, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="a4df0db6d21712ca8d4ff40b98e90a662" name="a4df0db6d21712ca8d4ff40b98e90a662"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4df0db6d21712ca8d4ff40b98e90a662">&#9670;&#160;</a></span>operator*() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator *, used to multiply two tensors or a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor&lt;ValueType, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="aeb5f9d4c3a027d6db2ab72d8245506d9" name="aeb5f9d4c3a027d6db2ab72d8245506d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb5f9d4c3a027d6db2ab72d8245506d9">&#9670;&#160;</a></span>operator*() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const ValueType &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator *, used to multiply a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor&lt;ValueType, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="af42ca2b75f0646f709641219cdd37e25" name="af42ca2b75f0646f709641219cdd37e25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af42ca2b75f0646f709641219cdd37e25">&#9670;&#160;</a></span>operator*=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator *=, used to multiply two tensors or a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor&lt;ValueType, Dims...&gt;</a>&amp; </dd></dl>
+
+</div>
+</div>
+<a id="adb3b60a55de1b758d8590e2a4bda616e" name="adb3b60a55de1b758d8590e2a4bda616e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb3b60a55de1b758d8590e2a4bda616e">&#9670;&#160;</a></span>operator*=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const ValueType &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator *=, used to multiply a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor&lt;ValueType, Dims...&gt;</a>&amp; </dd></dl>
+
+</div>
+</div>
+<a id="aedf145456264fefab26da81f62ef3442" name="aedf145456264fefab26da81f62ef3442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedf145456264fefab26da81f62ef3442">&#9670;&#160;</a></span>operator+() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator +, used to return the tensor itself </p>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor&lt;ValueType, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="a5e614be7aea12f856aba2c8778ecee0e" name="a5e614be7aea12f856aba2c8778ecee0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e614be7aea12f856aba2c8778ecee0e">&#9670;&#160;</a></span>operator+() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator +, used to add two tensors or a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor&lt;ValueType, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="a636a4e4eb6cf48a417cb2bb0bade500c" name="a636a4e4eb6cf48a417cb2bb0bade500c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a636a4e4eb6cf48a417cb2bb0bade500c">&#9670;&#160;</a></span>operator+() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const ValueType &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator +, used to add a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor&lt;ValueType, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="a7d5f3ba00d4569eb2ff4eadb25fc04dd" name="a7d5f3ba00d4569eb2ff4eadb25fc04dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d5f3ba00d4569eb2ff4eadb25fc04dd">&#9670;&#160;</a></span>operator+=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator +=, used to add two tensors or a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor&lt;ValueType, Dims...&gt;</a>&amp; </dd></dl>
+
+</div>
+</div>
+<a id="aee1d053a99cf0ca7f84aa6d2257e4681" name="aee1d053a99cf0ca7f84aa6d2257e4681"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee1d053a99cf0ca7f84aa6d2257e4681">&#9670;&#160;</a></span>operator+=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const ValueType &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator +=, used to add a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor&lt;ValueType, Dims...&gt;</a>&amp; </dd></dl>
+
+</div>
+</div>
+<a id="a22d05b5360df98a9e64befd4a904aea1" name="a22d05b5360df98a9e64befd4a904aea1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22d05b5360df98a9e64befd4a904aea1">&#9670;&#160;</a></span>operator-() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator- </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator -, used to return the negative of the tensor </p>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor&lt;ValueType, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="adc6036287ca2072f85eb3b10dcd6b737" name="adc6036287ca2072f85eb3b10dcd6b737"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc6036287ca2072f85eb3b10dcd6b737">&#9670;&#160;</a></span>operator-() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator -, used to subtract two tensors or a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor&lt;ValueType, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="ab461c77b06fc9591b8918cdfa7513886" name="ab461c77b06fc9591b8918cdfa7513886"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab461c77b06fc9591b8918cdfa7513886">&#9670;&#160;</a></span>operator-() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const ValueType &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator -, used to subtract a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor&lt;ValueType, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="a30bd39812afbef8949041aa5f84792e7" name="a30bd39812afbef8949041aa5f84792e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30bd39812afbef8949041aa5f84792e7">&#9670;&#160;</a></span>operator-=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator -=, used to subtract two tensors or a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor&lt;ValueType, Dims...&gt;</a>&amp; </dd></dl>
+
+</div>
+</div>
+<a id="a0cb746cabfe9af4f9335ff9e3e897a08" name="a0cb746cabfe9af4f9335ff9e3e897a08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cb746cabfe9af4f9335ff9e3e897a08">&#9670;&#160;</a></span>operator-=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const ValueType &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator -=, used to subtract a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor&lt;ValueType, Dims...&gt;</a>&amp; </dd></dl>
+
+</div>
+</div>
+<a id="af243a9a3e00f1f63f295fbe4d158276c" name="af243a9a3e00f1f63f295fbe4d158276c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af243a9a3e00f1f63f295fbe4d158276c">&#9670;&#160;</a></span>operator/() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator/ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator /, used to divide two tensors or a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor&lt;ValueType, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="a2091ac4bb78eafa847ccb095527515e0" name="a2091ac4bb78eafa847ccb095527515e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2091ac4bb78eafa847ccb095527515e0">&#9670;&#160;</a></span>operator/() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator/ </td>
+          <td>(</td>
+          <td class="paramtype">const ValueType &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator /, used to divide a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor&lt;ValueType, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="acd44c351d2c74f670da6d1a4bf1a9796" name="acd44c351d2c74f670da6d1a4bf1a9796"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd44c351d2c74f670da6d1a4bf1a9796">&#9670;&#160;</a></span>operator/=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator/= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator /=, used to divide two tensors or a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor&lt;ValueType, Dims...&gt;</a>&amp; </dd></dl>
+
+</div>
+</div>
+<a id="a9f49f227fee1a5d618e1de95c87a3340" name="a9f49f227fee1a5d618e1de95c87a3340"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f49f227fee1a5d618e1de95c87a3340">&#9670;&#160;</a></span>operator/=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator/= </td>
+          <td>(</td>
+          <td class="paramtype">const ValueType &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator /=, used to divide a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor.html" title="Tensor class, used to store tensor data">Tensor&lt;ValueType, Dims...&gt;</a>&amp; </dd></dl>
+
+</div>
+</div>
+<a id="a6506810ef3d79f566dde7f5ef4ca84eb" name="a6506810ef3d79f566dde7f5ef4ca84eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6506810ef3d79f566dde7f5ef4ca84eb">&#9670;&#160;</a></span>operator&lt;() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator &lt;, used to compare two tensors or a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor_3_01bool_00_01_dims_8_8_8_01_4.html" title="Bool Tensor class, used to store bool type tensor data">Tensor&lt;bool, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="af6432a04c4e227dfb4f5a855a4a95626" name="af6432a04c4e227dfb4f5a855a4a95626"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6432a04c4e227dfb4f5a855a4a95626">&#9670;&#160;</a></span>operator&lt;() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const ValueType &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator &lt;, used to compare a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor_3_01bool_00_01_dims_8_8_8_01_4.html" title="Bool Tensor class, used to store bool type tensor data">Tensor&lt;bool, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="aa65441618039ae51c6426b7ce2706321" name="aa65441618039ae51c6426b7ce2706321"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa65441618039ae51c6426b7ce2706321">&#9670;&#160;</a></span>operator&lt;=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator&lt;= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator &lt;=, used to compare two tensors or a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor_3_01bool_00_01_dims_8_8_8_01_4.html" title="Bool Tensor class, used to store bool type tensor data">Tensor&lt;bool, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="a64953e8743bce87e2501eebf8db8bdb9" name="a64953e8743bce87e2501eebf8db8bdb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64953e8743bce87e2501eebf8db8bdb9">&#9670;&#160;</a></span>operator&lt;=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator&lt;= </td>
+          <td>(</td>
+          <td class="paramtype">const ValueType &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator &lt;=, used to compare a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor_3_01bool_00_01_dims_8_8_8_01_4.html" title="Bool Tensor class, used to store bool type tensor data">Tensor&lt;bool, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="ad75f07fe65bed60e02e8506665303117" name="ad75f07fe65bed60e02e8506665303117"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad75f07fe65bed60e02e8506665303117">&#9670;&#160;</a></span>operator==() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator ==, used to compare two tensors or a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor_3_01bool_00_01_dims_8_8_8_01_4.html" title="Bool Tensor class, used to store bool type tensor data">Tensor&lt;bool, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="ad3aee4d3d8e178cdd6610f526188cdd6" name="ad3aee4d3d8e178cdd6610f526188cdd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3aee4d3d8e178cdd6610f526188cdd6">&#9670;&#160;</a></span>operator==() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const ValueType &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator ==, used to compare a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor_3_01bool_00_01_dims_8_8_8_01_4.html" title="Bool Tensor class, used to store bool type tensor data">Tensor&lt;bool, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="a3b236331d0d492fd2e50117c4c1ce709" name="a3b236331d0d492fd2e50117c4c1ce709"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b236331d0d492fd2e50117c4c1ce709">&#9670;&#160;</a></span>operator&gt;() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator&gt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator &gt;, used to compare two tensors or a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor_3_01bool_00_01_dims_8_8_8_01_4.html" title="Bool Tensor class, used to store bool type tensor data">Tensor&lt;bool, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="a1adb44f075d5019978323f5a456d84ff" name="a1adb44f075d5019978323f5a456d84ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1adb44f075d5019978323f5a456d84ff">&#9670;&#160;</a></span>operator&gt;() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator&gt; </td>
+          <td>(</td>
+          <td class="paramtype">const ValueType &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator &gt;, used to compare a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor_3_01bool_00_01_dims_8_8_8_01_4.html" title="Bool Tensor class, used to store bool type tensor data">Tensor&lt;bool, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="a7cb9b4b2ee2299b369b2da08e4b56737" name="a7cb9b4b2ee2299b369b2da08e4b56737"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cb9b4b2ee2299b369b2da08e4b56737">&#9670;&#160;</a></span>operator&gt;=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator&gt;= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; ValueType, Dims... &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator &gt;=, used to compare two tensors or a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor_3_01bool_00_01_dims_8_8_8_01_4.html" title="Bool Tensor class, used to store bool type tensor data">Tensor&lt;bool, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="a5aeaec722f5623fca54e2ce24c508475" name="a5aeaec722f5623fca54e2ce24c508475"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aeaec722f5623fca54e2ce24c508475">&#9670;&#160;</a></span>operator&gt;=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, int64_t... Dims&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_tensor.html">Tensor</a>&lt; bool, Dims... &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::operator&gt;= </td>
+          <td>(</td>
+          <td class="paramtype">const ValueType &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator &gt;=, used to compare a tensor and a value </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_tensor_3_01bool_00_01_dims_8_8_8_01_4.html" title="Bool Tensor class, used to store bool type tensor data">Tensor&lt;bool, Dims...&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="aff5290a8e7c1480a1fba51c15c0db148" name="aff5290a8e7c1480a1fba51c15c0db148"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff5290a8e7c1480a1fba51c15c0db148">&#9670;&#160;</a></span>toVector()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -481,7 +1688,7 @@ template&lt;typename T, int64_t... Dims&gt; </div>
           <td class="memname"><a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; ValueType, Shape::total_size &gt; <a class="el" href="classz_1_1math_1_1_tensor.html">z::math::Tensor</a>&lt; T, Dims &gt;::toVector </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -497,7 +1704,7 @@ template&lt;typename T, int64_t... Dims&gt; </div>
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
-<li>C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Utils/<a class="el" href="_math_types_8hpp_source.html">MathTypes.hpp</a></li>
+<li>C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Utils/<a class="el" href="_tensor_type_8hpp_source.html">TensorType.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

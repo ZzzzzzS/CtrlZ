@@ -144,9 +144,9 @@ z::MotorResetPositionWorker&lt; SchedulerType, MotorPrecision, JointNumber &gt; 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:afff6b60651c9f345d0c277e38ec7c431" id="r_afff6b60651c9f345d0c277e38ec7c431"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afff6b60651c9f345d0c277e38ec7c431">MotorResetPositionWorker</a> (<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *scheduler, const nlohmann::json &amp;cfg)</td></tr>
-<tr class="memdesc:afff6b60651c9f345d0c277e38ec7c431"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造一个电机复位工人类型  <br /></td></tr>
-<tr class="separator:afff6b60651c9f345d0c277e38ec7c431"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c0eb19f50c02c83cc93eba6468f2881" id="r_a9c0eb19f50c02c83cc93eba6468f2881"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c0eb19f50c02c83cc93eba6468f2881">MotorResetPositionWorker</a> (<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *scheduler, const nlohmann::json &amp;Motor_cfg, const nlohmann::json &amp;reset_cfg)</td></tr>
+<tr class="memdesc:a9c0eb19f50c02c83cc93eba6468f2881"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造一个电机复位工人类型  <br /></td></tr>
+<tr class="separator:a9c0eb19f50c02c83cc93eba6468f2881"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab015c9abddd6638dda5505e5f0b295eb" id="r_ab015c9abddd6638dda5505e5f0b295eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab015c9abddd6638dda5505e5f0b295eb">StartReset</a> (size_t epoches=0)</td></tr>
 <tr class="memdesc:ab015c9abddd6638dda5505e5f0b295eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">开始复位，用户可以通过这个方法来启动复位  <br /></td></tr>
 <tr class="separator:ab015c9abddd6638dda5505e5f0b295eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -206,8 +206,8 @@ class z::MotorResetPositionWorker&lt; SchedulerType, MotorPrecision, JointNumber
   </dd>
 </dl>
 </div><h2 class="groupheader">构造及析构函数说明</h2>
-<a id="afff6b60651c9f345d0c277e38ec7c431" name="afff6b60651c9f345d0c277e38ec7c431"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afff6b60651c9f345d0c277e38ec7c431">&#9670;&#160;</a></span>MotorResetPositionWorker()</h2>
+<a id="a9c0eb19f50c02c83cc93eba6468f2881" name="a9c0eb19f50c02c83cc93eba6468f2881"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c0eb19f50c02c83cc93eba6468f2881">&#9670;&#160;</a></span>MotorResetPositionWorker()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -225,7 +225,12 @@ template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">Sch
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const nlohmann::json &amp;</td>          <td class="paramname"><span class="paramname"><em>cfg</em></span>&#160;)</td>
+          <td class="paramtype">const nlohmann::json &amp;</td>          <td class="paramname"><span class="paramname"><em>Motor_cfg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const nlohmann::json &amp;</td>          <td class="paramname"><span class="paramname"><em>reset_cfg</em></span>&#160;)</td>
         </tr>
       </table>
   </td>

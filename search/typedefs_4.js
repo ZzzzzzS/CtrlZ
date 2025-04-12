@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['valvec3_0',['ValVec3',['../classz_1_1_common_loco_inference_worker.html#a437ab06141df51ea0a1b282b1cbbba25',1,'z::CommonLocoInferenceWorker::ValVec3'],['../classz_1_1_plain_inference_worker.html#a437ab06141df51ea0a1b282b1cbbba25',1,'z::PlainInferenceWorker::ValVec3']]],
-  ['valvec7_1',['ValVec7',['../classz_1_1_arm_tracking_inference_worker.html#a665edbf047a3937af34f8bb726f68482',1,'z::ArmTrackingInferenceWorker']]]
+  ['selfapplyfunc_0',['SelfApplyFunc',['../classz_1_1math_1_1_vector.html#a67d268efc28de268c098534ae6b6ef20',1,'z::math::Vector::SelfApplyFunc'],['../classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html#a0766fafc1e043abb802bdb49c06f0245',1,'z::math::Vector&lt; bool, N &gt;::SelfApplyFunc'],['../classz_1_1math_1_1_vector.html#a67d268efc28de268c098534ae6b6ef20',1,'z::math::Vector&lt; bool, N &gt;::SelfApplyFunc']]]
 ];

@@ -1,0 +1,10 @@
+<map id="z::SinTrajactoryGenerator&lt; SchedulerType, Scalar, JointNumber &gt;" name="z::SinTrajactoryGenerator&lt; SchedulerType, Scalar, JointNumber &gt;">
+<area shape="rect" id="Node000001" title=" " alt="" coords="721,5,891,64"/>
+<area shape="rect" id="Node000002" href="$classz_1_1_abstract_worker.html" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="537,13,672,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="687,32,720,32,720,37,687,37"/>
+<area shape="rect" id="Node000003" href="$classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="5,37,88,64"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="102,31,137,24,246,15,356,14,456,18,537,25,537,30,456,24,356,19,246,20,137,29,103,36"/>
+<area shape="rect" id="Node000004" href="$classz_1_1_abstract_scheduler.html" title=" " alt="" coords="137,39,427,161"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="103,60,137,67,136,72,102,65"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="442,65,536,46,537,51,443,70"/>
+</map>

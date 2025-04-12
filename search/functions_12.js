@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['warporttensor_0',['WarpOrtTensor',['../classz_1_1_abstract_net_inference_worker.html#a8bf4762ebd0079c6e9a573f6305e2fe8',1,'z::AbstractNetInferenceWorker']]],
-  ['weightfilter_1',['WeightFilter',['../classz_1_1_weight_filter.html#a070a3b5a5efb9de6f66512fcdb0ef667',1,'z::WeightFilter']]]
+  ['unitreerlgyminferenceworker_0',['UnitreeRlGymInferenceWorker',['../classz_1_1_unitree_rl_gym_inference_worker.html#a836cff6777eaa8d669d445a1fca46112',1,'z::UnitreeRlGymInferenceWorker']]]
 ];

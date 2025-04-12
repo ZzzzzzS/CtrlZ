@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ctrl-Z: C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/NN/UnitreeRlGymInferenceWorker.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Ctrl-Z
+   </div>
+   <div id="projectbrief">一个多线程机器人运动控制强化学习部署框架</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_unitree_rl_gym_inference_worker_8hpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a>  </div>
+  <div class="headertitle"><div class="title">UnitreeRlGymInferenceWorker.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Support lstm onnx model trained by unitree_rl_gym. For code to export lstm model to onnx format, please refer to <a href="https://github.com/Mr-Zqr/unitree_gym_bitbot/blob/main/legged_gym/utils/helpers.py">https://github.com/Mr-Zqr/unitree_gym_bitbot/blob/main/legged_gym/utils/helpers.py</a>  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_common_loco_inference_worker_8hpp_source.html">CommonLocoInferenceWorker.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_net_inference_worker_8h_source.html">NetInferenceWorker.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_zen_buffer_8hpp_source.html">Utils/ZenBuffer.hpp</a>&quot;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+UnitreeRlGymInferenceWorker.hpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_unitree_rl_gym_inference_worker_8hpp__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_unitree_rl_gym_inference_worker_8hpp" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_unitree_rl_gym_inference_worker_8hpp" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_unitree_rl_gym_inference_worker_8hpp">
+<area shape="rect" title="Support lstm onnx model trained by unitree_rl_gym. For code to export lstm model to onnx format,..." alt="" coords="1733,5,1985,80"/>
+<area shape="rect" href="_common_loco_inference_worker_8hpp.html" title=" " alt="" coords="1748,128,1970,155"/>
+<area shape="poly" title=" " alt="" coords="1862,80,1862,112,1856,112,1856,80"/>
+<area shape="rect" title=" " alt="" coords="2230,725,2288,752"/>
+<area shape="poly" title=" " alt="" coords="1986,54,2126,74,2201,88,2271,106,2335,127,2385,152,2420,181,2429,197,2432,214,2432,591,2429,615,2419,638,2405,658,2387,676,2345,704,2303,724,2301,720,2342,700,2383,672,2401,654,2415,635,2424,614,2427,590,2427,215,2424,199,2415,184,2382,156,2332,132,2270,111,2199,93,2126,79,1985,59"/>
+<area shape="rect" title=" " alt="" coords="2129,352,2189,379"/>
+<area shape="poly" title=" " alt="" coords="1922,78,1983,126,2035,181,2081,240,2146,337,2142,340,2077,243,2031,185,1980,130,1919,83"/>
+<area shape="rect" href="_net_inference_worker_8h.html" title=" " alt="" coords="646,277,794,304"/>
+<area shape="poly" title=" " alt="" coords="1733,74,794,276,793,271,1732,69"/>
+<area shape="rect" href="_zen_buffer_8hpp.html" title=" " alt="" coords="235,352,368,379"/>
+<area shape="poly" title=" " alt="" coords="1733,66,1358,131,995,200,634,280,362,350,361,345,633,275,994,195,1357,125,1732,61"/>
+<area shape="rect" href="_abstract_inference_worker_8hpp.html" title=" " alt="" coords="1370,203,1561,229"/>
+<area shape="poly" title=" " alt="" coords="1791,158,1550,202,1549,197,1790,153"/>
+<area shape="rect" href="_math_types_8hpp_source.html" title=" " alt="" coords="1938,501,2049,528"/>
+<area shape="poly" title=" " alt="" coords="1971,152,2086,171,2202,199,2253,217,2293,237,2321,261,2328,275,2331,289,2331,367,2324,406,2303,439,2272,464,2234,483,2192,497,2148,506,2065,515,2064,510,2147,501,2190,491,2232,478,2269,459,2299,435,2319,405,2326,366,2326,290,2323,277,2317,265,2290,242,2251,221,2201,204,2085,176,1970,158"/>
+<area shape="rect" title=" " alt="" coords="2014,427,2144,453"/>
+<area shape="poly" title=" " alt="" coords="1907,153,1977,178,2061,218,2102,244,2141,275,2176,310,2204,351,2208,363,2208,375,2195,395,2172,411,2143,424,2141,419,2169,407,2191,391,2203,374,2203,364,2199,353,2172,314,2138,279,2099,248,2058,222,1975,183,1905,158"/>
+<area shape="rect" title=" " alt="" coords="5,352,161,379"/>
+<area shape="poly" title=" " alt="" coords="1748,150,1509,164,1181,188,808,226,618,251,431,280,272,314,140,350,139,345,271,309,431,275,617,246,808,221,1181,183,1508,158,1747,145"/>
+<area shape="rect" href="_abstract_worker_8hpp.html" title=" " alt="" coords="1148,352,1336,379"/>
+<area shape="poly" title=" " alt="" coords="1448,232,1275,345,1272,341,1445,228"/>
+<area shape="rect" title=" " alt="" coords="1250,501,1303,528"/>
+<area shape="poly" title=" " alt="" coords="1372,233,1286,254,1241,270,1196,291,1155,317,1118,348,1089,384,1068,428,1064,441,1068,452,1078,461,1094,469,1137,485,1235,505,1234,510,1136,490,1092,474,1075,465,1063,455,1059,441,1063,426,1084,382,1114,344,1151,312,1194,286,1239,266,1285,249,1371,227"/>
+<area shape="rect" title=" " alt="" coords="1879,725,1930,752"/>
+<area shape="poly" title=" " alt="" coords="1561,218,1858,237,2006,253,2067,263,2113,275,2210,299,2296,320,2331,336,2358,359,2375,393,2382,438,2381,592,2328,615,2206,653,1945,729,1944,723,2204,648,2326,610,2377,589,2376,439,2370,395,2354,363,2328,340,2294,325,2209,304,2112,280,2066,268,2006,258,1857,242,1561,224"/>
+<area shape="poly" title=" " alt="" coords="1562,217,1728,226,1824,235,1922,248,2015,265,2096,287,2161,315,2186,332,2204,350,2211,365,2211,381,2199,411,2178,437,2158,455,2113,483,2065,501,2063,496,2111,478,2155,451,2174,434,2194,408,2206,380,2206,367,2199,354,2182,336,2159,320,2095,292,2013,270,1921,253,1824,240,1727,231,1561,222"/>
+<area shape="rect" title=" " alt="" coords="1178,651,1246,677"/>
+<area shape="poly" title=" " alt="" coords="1370,226,1171,246,1077,261,1011,280,972,295,939,310,927,319,918,330,912,345,910,364,910,441,917,484,937,522,967,555,1004,582,1045,605,1088,624,1164,649,1162,654,1086,629,1043,610,1001,587,964,559,933,525,912,486,904,442,904,364,907,343,913,327,923,315,937,305,970,290,1009,275,1076,256,1170,241,1370,221"/>
+<area shape="poly" title=" " alt="" coords="1562,223,1695,239,1846,264,1917,281,1981,301,2032,324,2068,350,2077,364,2082,380,2085,411,2079,412,2077,381,2072,366,2064,354,2030,328,1979,306,1916,286,1845,270,1694,244,1561,228"/>
+<area shape="rect" title=" " alt="" coords="1996,352,2053,379"/>
+<area shape="poly" title=" " alt="" coords="1514,227,1982,350,1980,355,1513,233"/>
+<area shape="rect" title=" " alt="" coords="945,427,1002,453"/>
+<area shape="poly" title=" " alt="" coords="1370,223,1280,228,1183,239,1098,255,1065,266,1042,279,1016,308,997,344,986,380,979,411,974,410,981,378,992,342,1011,305,1039,275,1063,262,1097,250,1182,233,1279,223,1370,217"/>
+<area shape="rect" href="_abstract_scheduler_8hpp.html" title="AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。" alt="" coords="1429,277,1652,304"/>
+<area shape="poly" title=" " alt="" coords="1481,228,1519,265,1515,269,1477,232"/>
+<area shape="poly" title=" " alt="" coords="1370,224,1044,244,839,259,634,280,378,316,166,351,165,346,377,310,633,275,839,254,1043,238,1370,219"/>
+<area shape="poly" title=" " alt="" coords="1370,229,810,283,809,278,1370,224"/>
+<area shape="rect" href="_z_object_8hpp.html" title=" " alt="" coords="1078,427,1213,453"/>
+<area shape="poly" title=" " alt="" coords="1227,381,1176,419,1173,415,1223,377"/>
+<area shape="rect" href="_static_string_utils_8hpp.html" title=" " alt="" coords="1390,427,1574,453"/>
+<area shape="poly" title=" " alt="" coords="1284,377,1426,419,1424,424,1283,382"/>
+<area shape="poly" title=" " alt="" coords="1243,379,1218,635,1212,635,1238,379"/>
+<area shape="poly" title=" " alt="" coords="1337,372,1999,429,1999,434,1336,377"/>
+<area shape="rect" title=" " alt="" coords="922,725,993,752"/>
+<area shape="poly" title=" " alt="" coords="1107,456,1068,475,1050,488,1034,503,1017,528,1002,555,981,612,968,667,962,710,957,710,963,666,976,610,997,552,1012,525,1030,500,1047,484,1066,470,1104,451"/>
+<area shape="poly" title=" " alt="" coords="1466,456,1409,503,1385,529,1368,553,1341,598,1311,640,1289,660,1260,680,1196,709,1129,727,1064,736,1009,740,1009,735,1063,731,1127,721,1195,704,1258,675,1286,656,1307,636,1336,595,1363,550,1381,526,1405,499,1463,452"/>
+<area shape="poly" title=" " alt="" coords="1447,456,1319,501,1317,496,1445,451"/>
+<area shape="poly" title=" " alt="" coords="1519,451,1561,471,1603,499,1627,523,1643,546,1664,590,1686,633,1703,654,1727,675,1761,695,1797,711,1865,729,1864,734,1795,716,1758,700,1724,679,1699,658,1682,636,1660,592,1639,548,1623,526,1600,503,1558,476,1516,456"/>
+<area shape="rect" title=" " alt="" coords="1567,725,1642,752"/>
+<area shape="poly" title=" " alt="" coords="1463,456,1438,476,1419,502,1416,515,1419,527,1433,557,1450,586,1493,639,1537,682,1576,714,1573,718,1534,686,1489,642,1446,589,1428,560,1414,529,1410,515,1414,500,1434,472,1459,452"/>
+<area shape="rect" title=" " alt="" coords="1429,501,1478,528"/>
+<area shape="poly" title=" " alt="" coords="1479,455,1466,488,1461,486,1474,453"/>
+<area shape="rect" title=" " alt="" coords="1502,501,1589,528"/>
+<area shape="poly" title=" " alt="" coords="1495,452,1526,488,1523,491,1491,456"/>
+<area shape="rect" title=" " alt="" coords="1044,501,1127,528"/>
+<area shape="poly" title=" " alt="" coords="1413,457,1142,506,1141,500,1412,451"/>
+<area shape="rect" title=" " alt="" coords="1664,501,1707,528"/>
+<area shape="poly" title=" " alt="" coords="1518,451,1651,498,1649,503,1516,456"/>
+<area shape="poly" title=" " alt="" coords="1572,451,1923,501,1922,506,1571,457"/>
+<area shape="rect" href="_vector_type_8hpp_source.html" title=" " alt="" coords="1942,651,2053,677"/>
+<area shape="poly" title=" " alt="" coords="2005,527,2018,549,2028,575,2030,592,2028,609,2016,638,2011,636,2022,607,2025,592,2023,577,2013,551,2000,530"/>
+<area shape="rect" href="_tensor_type_8hpp_source.html" title=" " alt="" coords="1900,576,2013,603"/>
+<area shape="poly" title=" " alt="" coords="1990,530,1972,564,1967,561,1985,527"/>
+<area shape="poly" title=" " alt="" coords="1942,674,1879,680,1372,716,1009,737,1008,732,1372,711,1879,675,1941,669"/>
+<area shape="poly" title=" " alt="" coords="1983,680,1934,718,1931,714,1980,676"/>
+<area shape="poly" title=" " alt="" coords="1942,678,1657,730,1656,725,1941,673"/>
+<area shape="poly" title=" " alt="" coords="2044,675,2216,723,2215,728,2042,680"/>
+<area shape="rect" title=" " alt="" coords="1959,725,2036,752"/>
+<area shape="poly" title=" " alt="" coords="2000,678,2000,710,1995,710,1995,678"/>
+<area shape="poly" title=" " alt="" coords="1953,604,1932,652,1914,711,1909,709,1927,650,1948,602"/>
+<area shape="poly" title=" " alt="" coords="1966,602,1985,636,1981,639,1961,605"/>
+<area shape="poly" title=" " alt="" coords="1899,599,1262,661,1262,655,1899,594"/>
+<area shape="rect" title=" " alt="" coords="1806,651,1866,677"/>
+<area shape="poly" title=" " alt="" coords="1937,605,1872,645,1869,640,1934,601"/>
+<area shape="poly" title=" " alt="" coords="1489,307,1309,350,1308,345,1487,302"/>
+<area shape="poly" title=" " alt="" coords="1429,295,1343,300,1256,310,1182,328,1155,339,1137,354,1130,367,1129,381,1136,412,1130,413,1123,382,1125,365,1133,350,1153,335,1181,322,1255,305,1343,295,1429,290"/>
+<area shape="poly" title=" " alt="" coords="1508,307,1477,326,1463,338,1452,353,1448,368,1450,383,1464,413,1459,415,1445,385,1443,367,1447,351,1459,335,1473,321,1505,302"/>
+<area shape="poly" title=" " alt="" coords="1516,307,1432,355,1383,389,1338,429,1313,459,1293,490,1288,487,1309,456,1334,425,1380,385,1429,350,1513,302"/>
+<area shape="poly" title=" " alt="" coords="1581,302,1717,350,1805,386,1892,425,1905,452,1909,481,1908,511,1901,541,1880,596,1856,639,1851,637,1875,594,1896,540,1903,511,1904,482,1899,454,1888,429,1803,391,1715,354,1579,307"/>
+<area shape="poly" title=" " alt="" coords="1652,295,1788,313,1862,328,1933,350,1987,377,2049,416,2046,420,1984,382,1931,354,1861,333,1788,318,1652,300"/>
+<area shape="poly" title=" " alt="" coords="1652,301,1807,321,1977,349,1982,350,1981,356,1976,355,1806,327,1652,307"/>
+<area shape="poly" title=" " alt="" coords="1429,299,1359,305,1280,316,1200,332,1121,354,1056,385,1003,420,1000,415,1054,381,1119,350,1198,327,1280,310,1358,300,1429,293"/>
+<area shape="rect" href="_data_center_8hpp.html" title=" " alt="" coords="1462,352,1618,379"/>
+<area shape="poly" title=" " alt="" coords="1543,305,1543,336,1538,336,1538,305"/>
+<area shape="rect" title=" " alt="" coords="1832,427,1878,453"/>
+<area shape="poly" title=" " alt="" coords="1568,302,1819,419,1816,424,1566,307"/>
+<area shape="rect" title=" " alt="" coords="1795,352,1920,379"/>
+<area shape="poly" title=" " alt="" coords="1597,302,1788,345,1787,351,1595,307"/>
+<area shape="poly" title=" " alt="" coords="1652,302,2066,349,2114,355,2113,361,2065,355,1652,307"/>
+<area shape="poly" title=" " alt="" coords="1472,382,1229,426,1228,421,1471,377"/>
+<area shape="poly" title=" " alt="" coords="1532,381,1503,416,1499,413,1528,378"/>
+<area shape="poly" title=" " alt="" coords="1494,382,1437,401,1379,429,1336,460,1300,492,1297,488,1332,456,1376,424,1435,396,1492,377"/>
+<area shape="poly" title=" " alt="" coords="1595,377,1668,398,1699,411,1719,425,1736,445,1744,465,1747,513,1747,590,1750,613,1759,634,1772,653,1789,670,1827,699,1866,719,1864,724,1825,703,1785,674,1768,657,1754,637,1745,615,1742,591,1742,513,1739,466,1731,448,1716,429,1696,416,1666,403,1594,382"/>
+<area shape="poly" title=" " alt="" coords="1555,377,1665,488,1661,492,1551,381"/>
+<area shape="poly" title=" " alt="" coords="1618,377,1704,397,1740,410,1765,425,1785,448,1801,475,1823,533,1835,590,1839,635,1833,636,1829,590,1818,535,1797,477,1781,451,1761,429,1738,415,1702,402,1617,382"/>
+<area shape="poly" title=" " alt="" coords="1462,379,1066,429,1018,436,1017,430,1065,424,1461,374"/>
+<area shape="poly" title=" " alt="" coords="1604,377,1814,424,1818,425,1816,430,1813,429,1603,382"/>
+<area shape="rect" title=" " alt="" coords="1649,427,1706,453"/>
+<area shape="poly" title=" " alt="" coords="1565,377,1641,417,1639,421,1563,382"/>
+<area shape="poly" title=" " alt="" coords="646,301,390,328,277,342,224,354,208,372,201,391,200,439,200,590,206,615,223,637,250,656,285,673,329,687,378,699,489,717,608,728,724,734,907,736,907,741,724,739,607,733,488,722,377,704,327,692,284,678,247,661,219,641,201,617,195,591,195,439,196,390,204,369,222,350,276,337,389,322,645,296"/>
+<area shape="poly" title=" " alt="" coords="741,302,809,350,843,380,869,406,895,429,933,451,991,468,1074,484,1234,506,1234,511,1073,489,990,473,931,456,892,433,865,410,840,384,805,354,738,307"/>
+<area shape="poly" title=" " alt="" coords="737,303,782,350,799,380,808,405,818,429,839,451,885,477,935,495,984,505,1029,510,1029,515,984,510,933,500,882,482,836,455,813,432,803,407,794,382,778,354,733,306"/>
+<area shape="poly" title=" " alt="" coords="795,289,948,291,1156,299,1393,317,1514,331,1631,349,1766,373,1822,392,1891,424,1937,455,1974,488,1970,492,1934,460,1888,429,1820,397,1764,379,1631,355,1513,337,1393,323,1156,304,948,296,795,294"/>
+<area shape="poly" title=" " alt="" coords="646,303,179,355,177,355,176,350,179,349,646,297"/>
+<area shape="rect" title=" " alt="" coords="502,352,557,379"/>
+<area shape="poly" title=" " alt="" coords="688,307,572,351,571,346,686,302"/>
+<area shape="rect" title=" " alt="" coords="581,352,649,379"/>
+<area shape="poly" title=" " alt="" coords="703,307,647,345,644,341,700,302"/>
+<area shape="rect" title=" " alt="" coords="672,352,768,379"/>
+<area shape="poly" title=" " alt="" coords="723,305,723,336,718,336,718,305"/>
+<area shape="rect" title=" " alt="" coords="392,352,478,379"/>
+<area shape="poly" title=" " alt="" coords="671,307,494,352,493,347,670,302"/>
+<area shape="poly" title=" " alt="" coords="369,375,381,376,558,394,697,403,1014,424,1063,428,1062,434,1013,429,697,409,558,399,380,381,369,380"/>
+<area shape="poly" title=" " alt="" coords="366,377,420,394,473,421,496,439,515,460,527,485,531,513,531,590,534,604,542,617,573,641,619,663,675,682,800,711,907,728,906,733,799,716,674,687,617,668,570,646,538,621,529,606,526,591,526,514,522,487,510,463,493,443,471,426,418,399,365,382"/>
+<area shape="poly" title=" " alt="" coords="369,374,381,376,695,411,930,432,929,438,694,416,380,381,368,380"/>
+</map>
+</div>
+</div>
+<p><a href="_unitree_rl_gym_inference_worker_8hpp_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_unitree_rl_gym_inference_worker.html">z::UnitreeRlGymInferenceWorker&lt; SchedulerType, InferencePrecision, INPUT_STUCK_LENGTH, JOINT_NUMBER &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classz_1_1_unitree_rl_gym_inference_worker.html" title="UnitreeRlGymInferenceWorker 类型是一个人形机器人推理工人类型，该类实现了Unitree_rl_gym网络兼容的推理功能。">UnitreeRlGymInferenceWorker</a> 类型是一个人形机器人推理工人类型，该类实现了Unitree_rl_gym网络兼容的推理功能。  <a href="classz_1_1_unitree_rl_gym_inference_worker.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ae71449b1cc6e6250b91f539153a7a0d3" id="r_ae71449b1cc6e6250b91f539153a7a0d3"><td class="memItemLeft" align="right" valign="top"><a id="ae71449b1cc6e6250b91f539153a7a0d3" name="ae71449b1cc6e6250b91f539153a7a0d3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>M_PI</b>&#160;&#160;&#160;3.14159265358979323846</td></tr>
+<tr class="separator:ae71449b1cc6e6250b91f539153a7a0d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Support lstm onnx model trained by unitree_rl_gym. For code to export lstm model to onnx format, please refer to <a href="https://github.com/Mr-Zqr/unitree_gym_bitbot/blob/main/legged_gym/utils/helpers.py">https://github.com/Mr-Zqr/unitree_gym_bitbot/blob/main/legged_gym/utils/helpers.py</a> </p>
+<dl class="section author"><dt>作者</dt><dd>Qingrui Zhao </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2025-04-10</dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>Copyright (c) 2025 </dd></dl>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7b6a9de995744179e2af2e4eac8c765a.html">CtrlZ</a></li><li class="navelem"><a class="el" href="dir_23feaddda2c120f5a6c49ee991b2b1fd.html">Workers</a></li><li class="navelem"><a class="el" href="dir_4208ae36855875353e44c90f2e1c222d.html">NN</a></li><li class="navelem"><a class="el" href="_unitree_rl_gym_inference_worker_8hpp.html">UnitreeRlGymInferenceWorker.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

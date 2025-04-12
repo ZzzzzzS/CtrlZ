@@ -3,9 +3,11 @@ var annotated_dup =
     [ "z", null, [
       [ "math", "namespacez_1_1math.html", [
         [ "Tensor", "classz_1_1math_1_1_tensor.html", "classz_1_1math_1_1_tensor" ],
+        [ "Tensor< bool, Dims... >", "classz_1_1math_1_1_tensor_3_01bool_00_01_dims_8_8_8_01_4.html", "classz_1_1math_1_1_tensor_3_01bool_00_01_dims_8_8_8_01_4" ],
         [ "TensorBase", "classz_1_1math_1_1_tensor_base.html", "classz_1_1math_1_1_tensor_base" ],
         [ "TensorShape", "structz_1_1math_1_1_tensor_shape.html", null ],
-        [ "Vector", "classz_1_1math_1_1_vector.html", "classz_1_1math_1_1_vector" ]
+        [ "Vector", "classz_1_1math_1_1_vector.html", "classz_1_1math_1_1_vector" ],
+        [ "Vector< bool, N >", "classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html", "classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4" ]
       ] ],
       [ "AbstractNetInferenceWorker", "classz_1_1_abstract_net_inference_worker.html", "classz_1_1_abstract_net_inference_worker" ],
       [ "AbstractScheduler", "classz_1_1_abstract_scheduler.html", "classz_1_1_abstract_scheduler" ],
@@ -33,6 +35,8 @@ var annotated_dup =
       [ "PlainInferenceWorker", "classz_1_1_plain_inference_worker.html", "classz_1_1_plain_inference_worker" ],
       [ "RingBuffer", "classz_1_1_ring_buffer.html", "classz_1_1_ring_buffer" ],
       [ "SimpleCallbackWorker", "classz_1_1_simple_callback_worker.html", "classz_1_1_simple_callback_worker" ],
+      [ "SinTrajactoryGenerator", "classz_1_1_sin_trajactory_generator.html", "classz_1_1_sin_trajactory_generator" ],
+      [ "UnitreeRlGymInferenceWorker", "classz_1_1_unitree_rl_gym_inference_worker.html", "classz_1_1_unitree_rl_gym_inference_worker" ],
       [ "WeightFilter", "classz_1_1_weight_filter.html", "classz_1_1_weight_filter" ],
       [ "ZObject", "classz_1_1_z_object.html", "classz_1_1_z_object" ]
     ] ],

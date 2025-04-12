@@ -116,7 +116,7 @@ $(function(){initNavTree('classz_1_1math_1_1_vector.html',''); initResizable(tru
 <p><a class="el" href="classz_1_1math_1_1_vector.html" title="Vector class, support some vector operations, like dot, cross, normalize, etc.">Vector</a> class, support some vector operations, like dot, cross, normalize, etc.  
  <a href="#details">更多...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_math_types_8hpp_source.html">MathTypes.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_vector_type_8hpp_source.html">VectorType.hpp</a>&gt;</code></p>
 <div class="dynheader">
 类 z::math::Vector&lt; T, N &gt; 继承关系图:</div>
 <div class="dyncontent">
@@ -146,22 +146,32 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>ApplyFunc</b> = std:
 <tr class="separator:a0e73bdab7eb0c527c2795ec9f83d6445"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67d268efc28de268c098534ae6b6ef20" id="r_a67d268efc28de268c098534ae6b6ef20"><td class="memItemLeft" align="right" valign="top"><a id="a67d268efc28de268c098534ae6b6ef20" name="a67d268efc28de268c098534ae6b6ef20"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>SelfApplyFunc</b> = std::function&lt;void(T&amp;, size_t)&gt;</td></tr>
+<tr class="memdesc:a67d268efc28de268c098534ae6b6ef20"><td class="mdescLeft">&#160;</td><td class="mdescRight">apply function to each element of the vector <br /></td></tr>
 <tr class="separator:a67d268efc28de268c098534ae6b6ef20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:af98a7c239a751814cd7de41bae339326" id="r_af98a7c239a751814cd7de41bae339326"><td class="memItemLeft" align="right" valign="top">constexpr T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af98a7c239a751814cd7de41bae339326">operator()</a> (size_t idx)</td></tr>
-<tr class="memdesc:af98a7c239a751814cd7de41bae339326"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator ()  <br /></td></tr>
-<tr class="separator:af98a7c239a751814cd7de41bae339326"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3015c391898d7855f12e6987352274d6" id="r_a3015c391898d7855f12e6987352274d6"><td class="memItemLeft" align="right" valign="top">constexpr const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3015c391898d7855f12e6987352274d6">operator()</a> (size_t idx) const</td></tr>
-<tr class="memdesc:a3015c391898d7855f12e6987352274d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator () const  <br /></td></tr>
-<tr class="separator:a3015c391898d7855f12e6987352274d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08aa783daab37dba4a988c45aae543f8" id="r_a08aa783daab37dba4a988c45aae543f8"><td class="memItemLeft" align="right" valign="top">constexpr T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08aa783daab37dba4a988c45aae543f8">operator()</a> (int idx)</td></tr>
+<tr class="memdesc:a08aa783daab37dba4a988c45aae543f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator ()  <br /></td></tr>
+<tr class="separator:a08aa783daab37dba4a988c45aae543f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2a4323656bc27984a6c16a73d31db14" id="r_ae2a4323656bc27984a6c16a73d31db14"><td class="memItemLeft" align="right" valign="top">constexpr const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2a4323656bc27984a6c16a73d31db14">operator()</a> (int idx) const</td></tr>
+<tr class="memdesc:ae2a4323656bc27984a6c16a73d31db14"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator () const  <br /></td></tr>
+<tr class="separator:ae2a4323656bc27984a6c16a73d31db14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a832c5d2ab6c984e63040a5b49dedad75" id="r_a832c5d2ab6c984e63040a5b49dedad75"><td class="memItemLeft" align="right" valign="top">constexpr T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a832c5d2ab6c984e63040a5b49dedad75">operator[]</a> (int idx)</td></tr>
+<tr class="memdesc:a832c5d2ab6c984e63040a5b49dedad75"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator []  <br /></td></tr>
+<tr class="separator:a832c5d2ab6c984e63040a5b49dedad75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d51f608ccb747ffb36f6d1b624ca167" id="r_a1d51f608ccb747ffb36f6d1b624ca167"><td class="memItemLeft" align="right" valign="top">constexpr const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d51f608ccb747ffb36f6d1b624ca167">operator[]</a> (int idx) const</td></tr>
+<tr class="memdesc:a1d51f608ccb747ffb36f6d1b624ca167"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator [] const  <br /></td></tr>
+<tr class="separator:a1d51f608ccb747ffb36f6d1b624ca167"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b8d130d9fbab76e6ad52b83daa21844" id="r_a8b8d130d9fbab76e6ad52b83daa21844"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b8d130d9fbab76e6ad52b83daa21844">operator+</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;other) const</td></tr>
 <tr class="memdesc:a8b8d130d9fbab76e6ad52b83daa21844"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator + for vector addition  <br /></td></tr>
 <tr class="separator:a8b8d130d9fbab76e6ad52b83daa21844"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6bfe670dc59473c0d47b58c9d628893" id="r_aa6bfe670dc59473c0d47b58c9d628893"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6bfe670dc59473c0d47b58c9d628893">operator-</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;other) const</td></tr>
 <tr class="memdesc:aa6bfe670dc59473c0d47b58c9d628893"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator - for vector subtraction  <br /></td></tr>
 <tr class="separator:aa6bfe670dc59473c0d47b58c9d628893"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20423db515218ad6b26b09865b31b2c5" id="r_a20423db515218ad6b26b09865b31b2c5"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20423db515218ad6b26b09865b31b2c5">operator+</a> () const</td></tr>
+<tr class="memdesc:a20423db515218ad6b26b09865b31b2c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator +  <br /></td></tr>
+<tr class="separator:a20423db515218ad6b26b09865b31b2c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60bb4d02225dd8934e04d6d72d0ce726" id="r_a60bb4d02225dd8934e04d6d72d0ce726"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60bb4d02225dd8934e04d6d72d0ce726">operator-</a> () const</td></tr>
 <tr class="memdesc:a60bb4d02225dd8934e04d6d72d0ce726"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator - for vector negation  <br /></td></tr>
 <tr class="separator:a60bb4d02225dd8934e04d6d72d0ce726"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -183,6 +193,42 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a7e0604247e3f67c1c08f27e0ca540de5" id="r_a7e0604247e3f67c1c08f27e0ca540de5"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e0604247e3f67c1c08f27e0ca540de5">operator/</a> (T val) const</td></tr>
 <tr class="memdesc:a7e0604247e3f67c1c08f27e0ca540de5"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector division with value  <br /></td></tr>
 <tr class="separator:a7e0604247e3f67c1c08f27e0ca540de5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8006570a8fcaef23a7506c5903c3384f" id="r_a8006570a8fcaef23a7506c5903c3384f"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8006570a8fcaef23a7506c5903c3384f">operator==</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;other) const</td></tr>
+<tr class="memdesc:a8006570a8fcaef23a7506c5903c3384f"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector logical operations  <br /></td></tr>
+<tr class="separator:a8006570a8fcaef23a7506c5903c3384f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f2ac32b910f17ae5b232c706e2b718a" id="r_a3f2ac32b910f17ae5b232c706e2b718a"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f2ac32b910f17ae5b232c706e2b718a">operator==</a> (T other) const</td></tr>
+<tr class="memdesc:a3f2ac32b910f17ae5b232c706e2b718a"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector logical operations  <br /></td></tr>
+<tr class="separator:a3f2ac32b910f17ae5b232c706e2b718a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abae253bb414ae2c9c92c66f2bf96383d" id="r_abae253bb414ae2c9c92c66f2bf96383d"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abae253bb414ae2c9c92c66f2bf96383d">operator!=</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;other) const</td></tr>
+<tr class="memdesc:abae253bb414ae2c9c92c66f2bf96383d"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector logical operations  <br /></td></tr>
+<tr class="separator:abae253bb414ae2c9c92c66f2bf96383d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e1b5428695ed45869c7ce45e32cc6ad" id="r_a5e1b5428695ed45869c7ce45e32cc6ad"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e1b5428695ed45869c7ce45e32cc6ad">operator!=</a> (T other) const</td></tr>
+<tr class="memdesc:a5e1b5428695ed45869c7ce45e32cc6ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector logical operations  <br /></td></tr>
+<tr class="separator:a5e1b5428695ed45869c7ce45e32cc6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adafca5dbe84035e1805cc8447f35fd12" id="r_adafca5dbe84035e1805cc8447f35fd12"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adafca5dbe84035e1805cc8447f35fd12">operator&gt;</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;other) const</td></tr>
+<tr class="memdesc:adafca5dbe84035e1805cc8447f35fd12"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector logical operations  <br /></td></tr>
+<tr class="separator:adafca5dbe84035e1805cc8447f35fd12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc7761f5861f12d28c7585fdb007bf49" id="r_abc7761f5861f12d28c7585fdb007bf49"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc7761f5861f12d28c7585fdb007bf49">operator&gt;</a> (T other) const</td></tr>
+<tr class="memdesc:abc7761f5861f12d28c7585fdb007bf49"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector logical operations  <br /></td></tr>
+<tr class="separator:abc7761f5861f12d28c7585fdb007bf49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b68c6bf6c54a826ba01e71f2afc7d3a" id="r_a3b68c6bf6c54a826ba01e71f2afc7d3a"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b68c6bf6c54a826ba01e71f2afc7d3a">operator&lt;</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;other) const</td></tr>
+<tr class="memdesc:a3b68c6bf6c54a826ba01e71f2afc7d3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector logical operations  <br /></td></tr>
+<tr class="separator:a3b68c6bf6c54a826ba01e71f2afc7d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0390048bccb633a7f53694d214b773a0" id="r_a0390048bccb633a7f53694d214b773a0"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0390048bccb633a7f53694d214b773a0">operator&lt;</a> (T other) const</td></tr>
+<tr class="memdesc:a0390048bccb633a7f53694d214b773a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector logical operations  <br /></td></tr>
+<tr class="separator:a0390048bccb633a7f53694d214b773a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2b92dae98f53a4dc9a105d839fd6f16" id="r_ad2b92dae98f53a4dc9a105d839fd6f16"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2b92dae98f53a4dc9a105d839fd6f16">operator&gt;=</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;other) const</td></tr>
+<tr class="memdesc:ad2b92dae98f53a4dc9a105d839fd6f16"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector logical operations  <br /></td></tr>
+<tr class="separator:ad2b92dae98f53a4dc9a105d839fd6f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a911a59ab44469402fa9f88526f4efff1" id="r_a911a59ab44469402fa9f88526f4efff1"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a911a59ab44469402fa9f88526f4efff1">operator&gt;=</a> (T other) const</td></tr>
+<tr class="memdesc:a911a59ab44469402fa9f88526f4efff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector logical operations  <br /></td></tr>
+<tr class="separator:a911a59ab44469402fa9f88526f4efff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5ec1e831e3b6f4eb4c7edb252fc8f3f" id="r_af5ec1e831e3b6f4eb4c7edb252fc8f3f"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5ec1e831e3b6f4eb4c7edb252fc8f3f">operator&lt;=</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;other) const</td></tr>
+<tr class="memdesc:af5ec1e831e3b6f4eb4c7edb252fc8f3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector logical operations  <br /></td></tr>
+<tr class="separator:af5ec1e831e3b6f4eb4c7edb252fc8f3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d3e9f896e9d12f6bb53edd90bd4d3f6" id="r_a6d3e9f896e9d12f6bb53edd90bd4d3f6"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d3e9f896e9d12f6bb53edd90bd4d3f6">operator&lt;=</a> (T other) const</td></tr>
+<tr class="memdesc:a6d3e9f896e9d12f6bb53edd90bd4d3f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector logical operations  <br /></td></tr>
+<tr class="separator:a6d3e9f896e9d12f6bb53edd90bd4d3f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5117ac460168024320828fd72c2e181" id="r_ac5117ac460168024320828fd72c2e181"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5117ac460168024320828fd72c2e181">operator+=</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;other)</td></tr>
 <tr class="memdesc:ac5117ac460168024320828fd72c2e181"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector in-place addition  <br /></td></tr>
 <tr class="separator:ac5117ac460168024320828fd72c2e181"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -229,8 +275,15 @@ Public 成员函数</h2></td></tr>
 <tr class="memdesc:a36f666a2582836d776f72e0de54f7de2"><td class="mdescLeft">&#160;</td><td class="mdescRight">average of all elements  <br /></td></tr>
 <tr class="separator:a36f666a2582836d776f72e0de54f7de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaece8bf0805995596044d4fb908c4e8b" id="r_aaece8bf0805995596044d4fb908c4e8b"><td class="memItemLeft" align="right" valign="top"><a id="aaece8bf0805995596044d4fb908c4e8b" name="aaece8bf0805995596044d4fb908c4e8b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>apply</b> (SelfApplyFunc func)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>apply</b> (<a class="el" href="#a67d268efc28de268c098534ae6b6ef20">SelfApplyFunc</a> func)</td></tr>
 <tr class="separator:aaece8bf0805995596044d4fb908c4e8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff22ca5ae4ca9f5fabbbe73854270359" id="r_aff22ca5ae4ca9f5fabbbe73854270359"><td class="memTemplParams" colspan="2"><a id="aff22ca5ae4ca9f5fabbbe73854270359" name="aff22ca5ae4ca9f5fabbbe73854270359"></a>
+template&lt;size_t begin, size_t end, size_t step = 1&gt; </td></tr>
+<tr class="memitem:aff22ca5ae4ca9f5fabbbe73854270359"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T,(end - begin)/step &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>slice</b> () const</td></tr>
+<tr class="separator:aff22ca5ae4ca9f5fabbbe73854270359"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0b8e3f636df900c519e862d3caea6ad" id="r_aa0b8e3f636df900c519e862d3caea6ad"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0b8e3f636df900c519e862d3caea6ad">remap</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; int, N &gt; &amp;idx)</td></tr>
+<tr class="memdesc:aa0b8e3f636df900c519e862d3caea6ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">remap the vector with given index  <br /></td></tr>
+<tr class="separator:aa0b8e3f636df900c519e862d3caea6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 静态 Public 成员函数</h2></td></tr>
@@ -264,6 +317,24 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>apply</b> (SelfApplyF
 <tr class="memitem:a41b9b9f809fd39c17049cae601c6ad26" id="r_a41b9b9f809fd39c17049cae601c6ad26"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41b9b9f809fd39c17049cae601c6ad26">apply</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;val, <a class="el" href="#a0e73bdab7eb0c527c2795ec9f83d6445">ApplyFunc</a> func)</td></tr>
 <tr class="memdesc:a41b9b9f809fd39c17049cae601c6ad26"><td class="mdescLeft">&#160;</td><td class="mdescRight">apply function to vector element  <br /></td></tr>
 <tr class="separator:a41b9b9f809fd39c17049cae601c6ad26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f19ac8a010745f72e1760ed4f33ab40" id="r_a2f19ac8a010745f72e1760ed4f33ab40"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f19ac8a010745f72e1760ed4f33ab40">rand</a> ()</td></tr>
+<tr class="memdesc:a2f19ac8a010745f72e1760ed4f33ab40"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a vector with random elements between 0 and 1  <br /></td></tr>
+<tr class="separator:a2f19ac8a010745f72e1760ed4f33ab40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7d3c55fae19cfcbc60abac41b5d4d36" id="r_aa7d3c55fae19cfcbc60abac41b5d4d36"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7d3c55fae19cfcbc60abac41b5d4d36">where</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt; &amp;cond, const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;val1, const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;val2)</td></tr>
+<tr class="memdesc:aa7d3c55fae19cfcbc60abac41b5d4d36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a vector of elements selected from either val1 or val2, depending on condition.  <br /></td></tr>
+<tr class="separator:aa7d3c55fae19cfcbc60abac41b5d4d36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85010b27b3cb3bcdba79806252511978" id="r_a85010b27b3cb3bcdba79806252511978"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85010b27b3cb3bcdba79806252511978">eq</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;val1, const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;val2)</td></tr>
+<tr class="memdesc:a85010b27b3cb3bcdba79806252511978"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes element-wise equality  <br /></td></tr>
+<tr class="separator:a85010b27b3cb3bcdba79806252511978"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f42ac0a702c7a2c60087e8732e5e0ed" id="r_a6f42ac0a702c7a2c60087e8732e5e0ed"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f42ac0a702c7a2c60087e8732e5e0ed">eq</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;val1, T val2)</td></tr>
+<tr class="memdesc:a6f42ac0a702c7a2c60087e8732e5e0ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes element-wise equality  <br /></td></tr>
+<tr class="separator:a6f42ac0a702c7a2c60087e8732e5e0ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5dd725c0e068c8e1a001dc8938cb4fc" id="r_af5dd725c0e068c8e1a001dc8938cb4fc"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5dd725c0e068c8e1a001dc8938cb4fc">ne</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;val1, const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;val2)</td></tr>
+<tr class="memdesc:af5dd725c0e068c8e1a001dc8938cb4fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes element-wise not equal to  <br /></td></tr>
+<tr class="separator:af5dd725c0e068c8e1a001dc8938cb4fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2e0e919700fb9395995219a7c515d0a" id="r_ab2e0e919700fb9395995219a7c515d0a"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2e0e919700fb9395995219a7c515d0a">ne</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;val1, T val2)</td></tr>
+<tr class="memdesc:ab2e0e919700fb9395995219a7c515d0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes element-wise not equal to  <br /></td></tr>
+<tr class="separator:ab2e0e919700fb9395995219a7c515d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 友元</h2></td></tr>
@@ -516,6 +587,88 @@ template&lt;typename T, size_t N&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>返回</dt><dd>T dot product result </dd></dl>
+
+</div>
+</div>
+<a id="a85010b27b3cb3bcdba79806252511978" name="a85010b27b3cb3bcdba79806252511978"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85010b27b3cb3bcdba79806252511978">&#9670;&#160;</a></span>eq() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::eq </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>val1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>val2</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes element-wise equality </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val1</td><td>the vector to compare </td></tr>
+    <tr><td class="paramname">val2</td><td>the vector to compare with </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>constexpr <a class="el" href="classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html" title="Vector class for bool type, support some vector logical operations etc.">Vector&lt;bool, N&gt;</a> the output vector </dd></dl>
+
+</div>
+</div>
+<a id="a6f42ac0a702c7a2c60087e8732e5e0ed" name="a6f42ac0a702c7a2c60087e8732e5e0ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f42ac0a702c7a2c60087e8732e5e0ed">&#9670;&#160;</a></span>eq() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::eq </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>val1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>val2</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes element-wise equality </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val1</td><td>the vector to compare </td></tr>
+    <tr><td class="paramname">val2</td><td>the value to compare with </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>constexpr <a class="el" href="classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html" title="Vector class for bool type, support some vector logical operations etc.">Vector&lt;bool, N&gt;</a> the output vector </dd></dl>
 
 </div>
 </div>
@@ -773,6 +926,88 @@ template&lt;typename T, size_t N&gt; </div>
 
 </div>
 </div>
+<a id="af5dd725c0e068c8e1a001dc8938cb4fc" name="af5dd725c0e068c8e1a001dc8938cb4fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5dd725c0e068c8e1a001dc8938cb4fc">&#9670;&#160;</a></span>ne() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::ne </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>val1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>val2</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes element-wise not equal to </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val1</td><td>the vector to compare </td></tr>
+    <tr><td class="paramname">val2</td><td>the vector to compare with </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>constexpr <a class="el" href="classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html" title="Vector class for bool type, support some vector logical operations etc.">Vector&lt;bool, N&gt;</a> the output vector </dd></dl>
+
+</div>
+</div>
+<a id="ab2e0e919700fb9395995219a7c515d0a" name="ab2e0e919700fb9395995219a7c515d0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2e0e919700fb9395995219a7c515d0a">&#9670;&#160;</a></span>ne() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::ne </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>val1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>val2</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes element-wise not equal to </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val1</td><td>the vector to compare </td></tr>
+    <tr><td class="paramname">val2</td><td>the value to compare with </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>constexpr <a class="el" href="classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html" title="Vector class for bool type, support some vector logical operations etc.">Vector&lt;bool, N&gt;</a> the output vector </dd></dl>
+
+</div>
+</div>
 <a id="a28189a0ecf5b1bb665aa8b7130ca2e7e" name="a28189a0ecf5b1bb665aa8b7130ca2e7e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a28189a0ecf5b1bb665aa8b7130ca2e7e">&#9670;&#160;</a></span>normalize()</h2>
 
@@ -833,8 +1068,80 @@ template&lt;typename T, size_t N&gt; </div>
 
 </div>
 </div>
-<a id="af98a7c239a751814cd7de41bae339326" name="af98a7c239a751814cd7de41bae339326"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af98a7c239a751814cd7de41bae339326">&#9670;&#160;</a></span>operator()() <span class="overload">[1/2]</span></h2>
+<a id="abae253bb414ae2c9c92c66f2bf96383d" name="abae253bb414ae2c9c92c66f2bf96383d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abae253bb414ae2c9c92c66f2bf96383d">&#9670;&#160;</a></span>operator!=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>vector logical operations </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>other vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>constexpr <a class="el" href="classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html" title="Vector class for bool type, support some vector logical operations etc.">Vector&lt;bool, N&gt;</a>&amp; result vector </dd></dl>
+
+</div>
+</div>
+<a id="a5e1b5428695ed45869c7ce45e32cc6ad" name="a5e1b5428695ed45869c7ce45e32cc6ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e1b5428695ed45869c7ce45e32cc6ad">&#9670;&#160;</a></span>operator!=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>vector logical operations </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>other vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>constexpr <a class="el" href="classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html" title="Vector class for bool type, support some vector logical operations etc.">Vector&lt;bool, N&gt;</a>&amp; result vector </dd></dl>
+
+</div>
+</div>
+<a id="a08aa783daab37dba4a988c45aae543f8" name="a08aa783daab37dba4a988c45aae543f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08aa783daab37dba4a988c45aae543f8">&#9670;&#160;</a></span>operator()() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -847,7 +1154,7 @@ template&lt;typename T, size_t N&gt; </div>
         <tr>
           <td class="memname">T &amp; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>idx</em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>idx</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -869,8 +1176,8 @@ template&lt;typename T, size_t N&gt; </div>
 
 </div>
 </div>
-<a id="a3015c391898d7855f12e6987352274d6" name="a3015c391898d7855f12e6987352274d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3015c391898d7855f12e6987352274d6">&#9670;&#160;</a></span>operator()() <span class="overload">[2/2]</span></h2>
+<a id="ae2a4323656bc27984a6c16a73d31db14" name="ae2a4323656bc27984a6c16a73d31db14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2a4323656bc27984a6c16a73d31db14">&#9670;&#160;</a></span>operator()() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -883,7 +1190,7 @@ template&lt;typename T, size_t N&gt; </div>
         <tr>
           <td class="memname">const T &amp; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>idx</em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>idx</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -1049,8 +1356,38 @@ template&lt;typename T, size_t N&gt; </div>
 
 </div>
 </div>
+<a id="a20423db515218ad6b26b09865b31b2c5" name="a20423db515218ad6b26b09865b31b2c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20423db515218ad6b26b09865b31b2c5">&#9670;&#160;</a></span>operator+() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator + </p>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_vector.html" title="Vector class, support some vector operations, like dot, cross, normalize, etc.">Vector&lt;T, N&gt;</a> </dd></dl>
+
+</div>
+</div>
 <a id="a8b8d130d9fbab76e6ad52b83daa21844" name="a8b8d130d9fbab76e6ad52b83daa21844"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b8d130d9fbab76e6ad52b83daa21844">&#9670;&#160;</a></span>operator+() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b8d130d9fbab76e6ad52b83daa21844">&#9670;&#160;</a></span>operator+() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1086,7 +1423,7 @@ template&lt;typename T, size_t N&gt; </div>
 </div>
 </div>
 <a id="a4b4d71c5ff1336559af4e13852a8b85e" name="a4b4d71c5ff1336559af4e13852a8b85e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b4d71c5ff1336559af4e13852a8b85e">&#9670;&#160;</a></span>operator+() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b4d71c5ff1336559af4e13852a8b85e">&#9670;&#160;</a></span>operator+() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1511,6 +1848,506 @@ template&lt;typename T, size_t N&gt; </div>
 
 </div>
 </div>
+<a id="a3b68c6bf6c54a826ba01e71f2afc7d3a" name="a3b68c6bf6c54a826ba01e71f2afc7d3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b68c6bf6c54a826ba01e71f2afc7d3a">&#9670;&#160;</a></span>operator&lt;() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>vector logical operations </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>other vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>constexpr <a class="el" href="classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html" title="Vector class for bool type, support some vector logical operations etc.">Vector&lt;bool, N&gt;</a>&amp; result vector </dd></dl>
+
+</div>
+</div>
+<a id="a0390048bccb633a7f53694d214b773a0" name="a0390048bccb633a7f53694d214b773a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0390048bccb633a7f53694d214b773a0">&#9670;&#160;</a></span>operator&lt;() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>vector logical operations </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>other vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>constexpr <a class="el" href="classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html" title="Vector class for bool type, support some vector logical operations etc.">Vector&lt;bool, N&gt;</a>&amp; result vector </dd></dl>
+
+</div>
+</div>
+<a id="af5ec1e831e3b6f4eb4c7edb252fc8f3f" name="af5ec1e831e3b6f4eb4c7edb252fc8f3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5ec1e831e3b6f4eb4c7edb252fc8f3f">&#9670;&#160;</a></span>operator&lt;=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::operator&lt;= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>vector logical operations </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>other vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>constexpr <a class="el" href="classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html" title="Vector class for bool type, support some vector logical operations etc.">Vector&lt;bool, N&gt;</a>&amp; result vector </dd></dl>
+
+</div>
+</div>
+<a id="a6d3e9f896e9d12f6bb53edd90bd4d3f6" name="a6d3e9f896e9d12f6bb53edd90bd4d3f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d3e9f896e9d12f6bb53edd90bd4d3f6">&#9670;&#160;</a></span>operator&lt;=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::operator&lt;= </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>vector logical operations </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>other vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>constexpr <a class="el" href="classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html" title="Vector class for bool type, support some vector logical operations etc.">Vector&lt;bool, N&gt;</a>&amp; result vector </dd></dl>
+
+</div>
+</div>
+<a id="a8006570a8fcaef23a7506c5903c3384f" name="a8006570a8fcaef23a7506c5903c3384f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8006570a8fcaef23a7506c5903c3384f">&#9670;&#160;</a></span>operator==() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>vector logical operations </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>other vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>constexpr <a class="el" href="classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html" title="Vector class for bool type, support some vector logical operations etc.">Vector&lt;bool, N&gt;</a>&amp; result vector </dd></dl>
+
+</div>
+</div>
+<a id="a3f2ac32b910f17ae5b232c706e2b718a" name="a3f2ac32b910f17ae5b232c706e2b718a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f2ac32b910f17ae5b232c706e2b718a">&#9670;&#160;</a></span>operator==() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>vector logical operations </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>other vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>constexpr <a class="el" href="classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html" title="Vector class for bool type, support some vector logical operations etc.">Vector&lt;bool, N&gt;</a>&amp; result vector </dd></dl>
+
+</div>
+</div>
+<a id="adafca5dbe84035e1805cc8447f35fd12" name="adafca5dbe84035e1805cc8447f35fd12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adafca5dbe84035e1805cc8447f35fd12">&#9670;&#160;</a></span>operator&gt;() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::operator&gt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>vector logical operations </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>other vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>constexpr <a class="el" href="classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html" title="Vector class for bool type, support some vector logical operations etc.">Vector&lt;bool, N&gt;</a>&amp; result vector </dd></dl>
+
+</div>
+</div>
+<a id="abc7761f5861f12d28c7585fdb007bf49" name="abc7761f5861f12d28c7585fdb007bf49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc7761f5861f12d28c7585fdb007bf49">&#9670;&#160;</a></span>operator&gt;() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::operator&gt; </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>vector logical operations </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>other vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>constexpr <a class="el" href="classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html" title="Vector class for bool type, support some vector logical operations etc.">Vector&lt;bool, N&gt;</a>&amp; result vector </dd></dl>
+
+</div>
+</div>
+<a id="ad2b92dae98f53a4dc9a105d839fd6f16" name="ad2b92dae98f53a4dc9a105d839fd6f16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2b92dae98f53a4dc9a105d839fd6f16">&#9670;&#160;</a></span>operator&gt;=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::operator&gt;= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>vector logical operations </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>other vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>constexpr <a class="el" href="classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html" title="Vector class for bool type, support some vector logical operations etc.">Vector&lt;bool, N&gt;</a>&amp; result vector </dd></dl>
+
+</div>
+</div>
+<a id="a911a59ab44469402fa9f88526f4efff1" name="a911a59ab44469402fa9f88526f4efff1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a911a59ab44469402fa9f88526f4efff1">&#9670;&#160;</a></span>operator&gt;=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::operator&gt;= </td>
+          <td>(</td>
+          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>vector logical operations </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>other vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>constexpr <a class="el" href="classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html" title="Vector class for bool type, support some vector logical operations etc.">Vector&lt;bool, N&gt;</a>&amp; result vector </dd></dl>
+
+</div>
+</div>
+<a id="a832c5d2ab6c984e63040a5b49dedad75" name="a832c5d2ab6c984e63040a5b49dedad75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a832c5d2ab6c984e63040a5b49dedad75">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>idx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator [] </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td>index </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>constexpr T&amp; reference of element </dd></dl>
+
+</div>
+</div>
+<a id="a1d51f608ccb747ffb36f6d1b624ca167" name="a1d51f608ccb747ffb36f6d1b624ca167"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d51f608ccb747ffb36f6d1b624ca167">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T &amp; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>idx</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>operator [] const </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td>index </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>constexpr const T&amp; reference of element </dd></dl>
+
+</div>
+</div>
+<a id="a2f19ac8a010745f72e1760ed4f33ab40" name="a2f19ac8a010745f72e1760ed4f33ab40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f19ac8a010745f72e1760ed4f33ab40">&#9670;&#160;</a></span>rand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::rand </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>create a vector with random elements between 0 and 1 </p>
+<dl class="section warning"><dt>警告</dt><dd>this function does not set seed, therefore the result is not completely random user should set seed before call this function.</dd></dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="classz_1_1math_1_1_vector.html" title="Vector class, support some vector operations, like dot, cross, normalize, etc.">Vector&lt;T, N&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a id="aa0b8e3f636df900c519e862d3caea6ad" name="aa0b8e3f636df900c519e862d3caea6ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0b8e3f636df900c519e862d3caea6ad">&#9670;&#160;</a></span>remap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::remap </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; int, N &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>idx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>remap the vector with given index </p>
+<p>remap the vector with given index, for example, after remap with index {2,-1,1}, the origin vector {3,4,5} should be {5,5,4}</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td>new index </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>constexpr <a class="el" href="classz_1_1math_1_1_vector.html" title="Vector class, support some vector operations, like dot, cross, normalize, etc.">Vector&lt;T, N&gt;</a> </dd></dl>
+
+</div>
+</div>
 <a id="a1e59b930bad2ea31cfc87a1352f6e5bb" name="a1e59b930bad2ea31cfc87a1352f6e5bb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1e59b930bad2ea31cfc87a1352f6e5bb">&#9670;&#160;</a></span>sum()</h2>
 
@@ -1538,6 +2375,53 @@ template&lt;typename T, size_t N&gt; </div>
 
 <p>sum of all elements </p>
 <dl class="section return"><dt>返回</dt><dd>T </dd></dl>
+
+</div>
+</div>
+<a id="aa7d3c55fae19cfcbc60abac41b5d4d36" name="aa7d3c55fae19cfcbc60abac41b5d4d36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7d3c55fae19cfcbc60abac41b5d4d36">&#9670;&#160;</a></span>where()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; T, N &gt;::where </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; bool, N &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>cond</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>val1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classz_1_1math_1_1_vector.html">Vector</a>&lt; T, N &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>val2</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return a vector of elements selected from either val1 or val2, depending on condition. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cond</td><td>When True (nonzero), yield val1, otherwise yield val2 </td></tr>
+    <tr><td class="paramname">val1</td><td>value vector 1 </td></tr>
+    <tr><td class="paramname">val2</td><td>value vector 2 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>constexpr <a class="el" href="classz_1_1math_1_1_vector.html" title="Vector class, support some vector operations, like dot, cross, normalize, etc.">Vector&lt;T, N&gt;</a> result vector </dd></dl>
 
 </div>
 </div>
@@ -1614,7 +2498,7 @@ template&lt;typename T, size_t N&gt; </div>
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
-<li>C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Utils/<a class="el" href="_math_types_8hpp_source.html">MathTypes.hpp</a></li>
+<li>C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Utils/<a class="el" href="_vector_type_8hpp_source.html">VectorType.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

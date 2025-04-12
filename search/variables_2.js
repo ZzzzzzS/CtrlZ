@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['data_5f_5f_0',['data__',['../classz_1_1math_1_1_tensor_base.html#a5d9eddadadfbce22aedfc456e6b65c17',1,'z::math::TensorBase']]],
+  ['data_5fptr_5f_5f_0',['data_ptr__',['../classz_1_1math_1_1_tensor_base.html#a6629009e63b025ae519ff55dd1f9b7a4',1,'z::math::TensorBase']]],
   ['datacenter_1',['dataCenter',['../classz_1_1_abstract_scheduler.html#ad2c119c841bc14e68b728b5479960262',1,'z::AbstractScheduler']]],
   ['defaultallocator_5f_5f_2',['DefaultAllocator__',['../classz_1_1_abstract_net_inference_worker.html#af7ce9a61c1433be200e001ea8f6da844',1,'z::AbstractNetInferenceWorker::DefaultAllocator__'],['../classz_1_1_common_loco_inference_worker.html#af7ce9a61c1433be200e001ea8f6da844',1,'z::CommonLocoInferenceWorker::DefaultAllocator__']]],
   ['dims_3',['dims',['../structz_1_1math_1_1_tensor_shape.html#a2647cc6f36d52696904b1f7789bd28ff',1,'z::math::TensorShape']]],

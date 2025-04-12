@@ -28,6 +28,8 @@ var namespaces_dup =
       [ "PlainInferenceWorker", "classz_1_1_plain_inference_worker.html", "classz_1_1_plain_inference_worker" ],
       [ "RingBuffer", "classz_1_1_ring_buffer.html", "classz_1_1_ring_buffer" ],
       [ "SimpleCallbackWorker", "classz_1_1_simple_callback_worker.html", "classz_1_1_simple_callback_worker" ],
+      [ "SinTrajactoryGenerator", "classz_1_1_sin_trajactory_generator.html", "classz_1_1_sin_trajactory_generator" ],
+      [ "UnitreeRlGymInferenceWorker", "classz_1_1_unitree_rl_gym_inference_worker.html", "classz_1_1_unitree_rl_gym_inference_worker" ],
       [ "WeightFilter", "classz_1_1_weight_filter.html", "classz_1_1_weight_filter" ],
       [ "ZObject", "classz_1_1_z_object.html", "classz_1_1_z_object" ],
       [ "filterd", "_zen_buffer_8hpp.html#ae8d05084e622d5a15d6b38a96758aa66", null ],

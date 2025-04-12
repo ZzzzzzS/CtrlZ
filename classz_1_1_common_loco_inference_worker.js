@@ -2,7 +2,7 @@ var classz_1_1_common_loco_inference_worker =
 [
     [ "MotorValVec", "classz_1_1_common_loco_inference_worker.html#a8730cda205924bea7d6f8ad8a8105869", null ],
     [ "ValVec3", "classz_1_1_common_loco_inference_worker.html#a437ab06141df51ea0a1b282b1cbbba25", null ],
-    [ "CommonLocoInferenceWorker", "classz_1_1_common_loco_inference_worker.html#a882a29661985c67fce2a12bd72001909", null ],
+    [ "CommonLocoInferenceWorker", "classz_1_1_common_loco_inference_worker.html#a9a2b87cb0201ac1f41139295f04d65a1", null ],
     [ "~CommonLocoInferenceWorker", "classz_1_1_common_loco_inference_worker.html#a3ac57e2f07deedf9f91d16524ac95816", null ],
     [ "ActionScale", "classz_1_1_common_loco_inference_worker.html#a9c7b919bc846c92b4ceb978df1421759", null ],
     [ "ClipAction", "classz_1_1_common_loco_inference_worker.html#a3d7f9a7ee6ac7e632143ea28e43536f4", null ],

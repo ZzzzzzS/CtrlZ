@@ -150,10 +150,10 @@ z::AbstractScheduler&lt; CTS &gt; 的协作图:</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:ae20b8b94872dd27438455ef87a67f444" id="r_ae20b8b94872dd27438455ef87a67f444"><td class="memItemLeft" align="right" valign="top"><a id="ae20b8b94872dd27438455ef87a67f444" name="ae20b8b94872dd27438455ef87a67f444"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AbstractScheduler</b> ()</td></tr>
-<tr class="memdesc:ae20b8b94872dd27438455ef87a67f444"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建一个调度器 <br /></td></tr>
-<tr class="separator:ae20b8b94872dd27438455ef87a67f444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e6a4c370a9a4d57a053772647f3906d" id="r_a5e6a4c370a9a4d57a053772647f3906d"><td class="memItemLeft" align="right" valign="top"><a id="a5e6a4c370a9a4d57a053772647f3906d" name="a5e6a4c370a9a4d57a053772647f3906d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>AbstractScheduler</b> (const nlohmann::json &amp;cfg=nlohmann::json())</td></tr>
+<tr class="memdesc:a5e6a4c370a9a4d57a053772647f3906d"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建一个调度器 <br /></td></tr>
+<tr class="separator:a5e6a4c370a9a4d57a053772647f3906d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ea6d67fd7f132bbfc3bf6ff4bb167d3" id="r_a1ea6d67fd7f132bbfc3bf6ff4bb167d3"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ea6d67fd7f132bbfc3bf6ff4bb167d3">~AbstractScheduler</a> ()</td></tr>
 <tr class="memdesc:a1ea6d67fd7f132bbfc3bf6ff4bb167d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">销毁调度器  <br /></td></tr>
 <tr class="separator:a1ea6d67fd7f132bbfc3bf6ff4bb167d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,6 +167,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SpinOnce</b> ()</td><
 <tr class="memitem:ab9a79659e7995d4e73c99b92c99cf70c" id="r_ab9a79659e7995d4e73c99b92c99cf70c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9a79659e7995d4e73c99b92c99cf70c">getTimeStamp</a> ()</td></tr>
 <tr class="memdesc:ab9a79659e7995d4e73c99b92c99cf70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取时间辍。  <br /></td></tr>
 <tr class="separator:ab9a79659e7995d4e73c99b92c99cf70c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2faf7e8033793329f3fc3c31e5fd4272" id="r_a2faf7e8033793329f3fc3c31e5fd4272"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2faf7e8033793329f3fc3c31e5fd4272">getSpinOnceTime</a> ()</td></tr>
+<tr class="memdesc:a2faf7e8033793329f3fc3c31e5fd4272"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取调度器的时间步长  <br /></td></tr>
+<tr class="separator:a2faf7e8033793329f3fc3c31e5fd4272"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b65b1d044186e193b1abd62d76d0e1f" id="r_a2b65b1d044186e193b1abd62d76d0e1f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b65b1d044186e193b1abd62d76d0e1f">CreateTaskList</a> (const std::string &amp;TaskName, size_t div, bool MainThreadTask=false)</td></tr>
 <tr class="memdesc:a2b65b1d044186e193b1abd62d76d0e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建一个任务队列，在调度器启动时，Workers中的TaskCreate方法会被调用，用于初始化每个Worker。  <br /></td></tr>
 <tr class="separator:a2b65b1d044186e193b1abd62d76d0e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -206,6 +209,12 @@ Protected 成员函数</h2></td></tr>
 <tr class="memitem:a04d1aea8ab24bdb4b0fc7591cc08a758" id="r_a04d1aea8ab24bdb4b0fc7591cc08a758"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04d1aea8ab24bdb4b0fc7591cc08a758">run</a> (const std::string &amp;TaskName)</td></tr>
 <tr class="memdesc:a04d1aea8ab24bdb4b0fc7591cc08a758"><td class="mdescLeft">&#160;</td><td class="mdescRight">运行任务  <br /></td></tr>
 <tr class="separator:a04d1aea8ab24bdb4b0fc7591cc08a758"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61a22424d53852ddb8702a4b33fceb70" id="r_a61a22424d53852ddb8702a4b33fceb70"><td class="memItemLeft" align="right" valign="top"><a id="a61a22424d53852ddb8702a4b33fceb70" name="a61a22424d53852ddb8702a4b33fceb70"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CheckRuntimeFrequency</b> ()</td></tr>
+<tr class="separator:a61a22424d53852ddb8702a4b33fceb70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62ce5e4107a077ae2af6917fd34b0af4" id="r_a62ce5e4107a077ae2af6917fd34b0af4"><td class="memItemLeft" align="right" valign="top"><a id="a62ce5e4107a077ae2af6917fd34b0af4" name="a62ce5e4107a077ae2af6917fd34b0af4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>PrintWelcomeMessage</b> ()</td></tr>
+<tr class="separator:a62ce5e4107a077ae2af6917fd34b0af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected 属性</h2></td></tr>
@@ -241,6 +250,19 @@ std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>SyncMutex</b></
 std::condition_variable&#160;</td><td class="memItemRight" valign="bottom"><b>SyncLock</b></td></tr>
 <tr class="memdesc:ab9f7e63da117efa52cdcc7bc0b458186"><td class="mdescLeft">&#160;</td><td class="mdescRight">task list sync lock variable <br /></td></tr>
 <tr class="separator:ab9f7e63da117efa52cdcc7bc0b458186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb563d1f04780de1de38a5dd721c3a20" id="r_aeb563d1f04780de1de38a5dd721c3a20"><td class="memItemLeft" align="right" valign="top"><a id="aeb563d1f04780de1de38a5dd721c3a20" name="aeb563d1f04780de1de38a5dd721c3a20"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>spin_dt</b> = 0.001</td></tr>
+<tr class="memdesc:aeb563d1f04780de1de38a5dd721c3a20"><td class="mdescLeft">&#160;</td><td class="mdescRight">task list spin once time <br /></td></tr>
+<tr class="separator:aeb563d1f04780de1de38a5dd721c3a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02f4245470c5840773cdd623d4c42b41" id="r_a02f4245470c5840773cdd623d4c42b41"><td class="memItemLeft" align="right" valign="top"><a id="a02f4245470c5840773cdd623d4c42b41" name="a02f4245470c5840773cdd623d4c42b41"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>HistorySpinDt</b> = 0</td></tr>
+<tr class="separator:a02f4245470c5840773cdd623d4c42b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7a22eaf0a5e526abbbf2e84abf35898" id="r_aa7a22eaf0a5e526abbbf2e84abf35898"><td class="memItemLeft" align="right" valign="top"><a id="aa7a22eaf0a5e526abbbf2e84abf35898" name="aa7a22eaf0a5e526abbbf2e84abf35898"></a>
+std::chrono::steady_clock::time_point&#160;</td><td class="memItemRight" valign="bottom"><b>last_time</b></td></tr>
+<tr class="separator:aa7a22eaf0a5e526abbbf2e84abf35898"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20fbeddc5862673e5db82859a100d134" id="r_a20fbeddc5862673e5db82859a100d134"><td class="memItemLeft" align="right" valign="top"><a id="a20fbeddc5862673e5db82859a100d134" name="a20fbeddc5862673e5db82859a100d134"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>CheckFrequency__</b> = true</td></tr>
+<tr class="separator:a20fbeddc5862673e5db82859a100d134"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... CTS&gt;<br />
@@ -565,6 +587,37 @@ template&lt;<a class="el" href="structz_1_1_c_t_string.html">CTString</a> CT, ty
   </dd>
 </dl>
 <dl class="section return"><dt>返回</dt><dd>size_t 数据的时间戳 </dd></dl>
+
+</div>
+</div>
+<a id="a2faf7e8033793329f3fc3c31e5fd4272" name="a2faf7e8033793329f3fc3c31e5fd4272"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2faf7e8033793329f3fc3c31e5fd4272">&#9670;&#160;</a></span>getSpinOnceTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... CTS&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classz_1_1_abstract_scheduler.html">z::AbstractScheduler</a>&lt; CTS &gt;::getSpinOnceTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取调度器的时间步长 </p>
+<p>调度器的时间步长是调度器是所有任务队列的基础调度间隔，也是MainTaskList的间隔。 这个间隔由配置文件设置，但实际调用频率和调度器的SpinOnce函数的调用频率有关。SpinOnce会检查 设置的时间步长是否和实际调用频率一致，如果不一致，会打印警告信息。</p>
+<dl class="section return"><dt>返回</dt><dd>double 调度器的时间步长(seconds) </dd></dl>
 
 </div>
 </div>

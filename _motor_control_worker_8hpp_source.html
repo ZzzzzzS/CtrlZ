@@ -112,7 +112,7 @@ $(function(){initNavTree('_motor_control_worker_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_abstract_scheduler_8hpp.html">Schedulers/AbstractScheduler.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_static_string_utils_8hpp.html">Utils/StaticStringUtils.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="_zen_buffer_8hpp.html">Utils/ZenBuffer.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="_math_types_8hpp.html">Utils/MathTypes.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;Utils/MathTypes.hpp&quot;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
@@ -129,7 +129,7 @@ $(function(){initNavTree('_motor_control_worker_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classz_1_1_motor_p_d_control_worker.html#aafc7fd1bd0802da1a4b60b9db377ed6b">   59</a></span>        <a class="code hl_function" href="classz_1_1_motor_p_d_control_worker.html#aafc7fd1bd0802da1a4b60b9db377ed6b">MotorPDControlWorker</a>(SchedulerType* scheduler, <span class="keyword">const</span> nlohmann::json&amp; root_cfg)</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            :AbstractWorker&lt;SchedulerType&gt;(scheduler)</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            nlohmann::json cfg = root_cfg[<span class="stringliteral">&quot;Workers&quot;</span>][<span class="stringliteral">&quot;MotorPDLoop&quot;</span>];</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            nlohmann::json cfg = root_cfg;</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            nlohmann::json Kp_cfg = cfg[<span class="stringliteral">&quot;Kp&quot;</span>];</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            nlohmann::json Kd_cfg = cfg[<span class="stringliteral">&quot;Kd&quot;</span>];</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordflow">if</span> (Kp.size() != JointNumber || Kd_cfg.size() != JointNumber)</div>
@@ -191,7 +191,7 @@ $(function(){initNavTree('_motor_control_worker_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            :AbstractWorker&lt;SchedulerType&gt;(scheduler),</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            Joints(Joints)</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        {</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            nlohmann::json cfg = root_cfg[<span class="stringliteral">&quot;Workers&quot;</span>][<span class="stringliteral">&quot;MotorControl&quot;</span>];</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            nlohmann::json cfg = root_cfg;</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            this-&gt;<a class="code hl_function" href="classz_1_1_z_object.html#a20fc044ee664a6b01d500d536e63a1ed">PrintSplitLine</a>();</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;MotorControlWorker&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;JointNumber=&quot;</span> &lt;&lt; JointNumber &lt;&lt; std::endl;</div>
@@ -335,140 +335,142 @@ $(function(){initNavTree('_motor_control_worker_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>                });</div>
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
 <div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>            this-&gt;CurrentMotorVel = (*JointVelFilter)(MotorVel);</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>            this-&gt;CurrentMotorPos = (*JointPosFilter)(MotorPos);</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span> </div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;CurrentMotorVelocity&quot;</span>&gt;(CurrentMotorVel);</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;CurrentMotorPosition&quot;</span>&gt;(CurrentMotorPos);</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;CurrentMotorTorque&quot;</span>&gt;(MotorTorque);</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span> </div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>            <a class="code hl_function" href="classz_1_1_motor_control_worker.html#ae399c4a46576fe99f846a23f2559caa8">SetCurrentPositionAsTargetPosition</a>();</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        }</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;CurrentMotorVelocityRaw&quot;</span>&gt;(MotorVel);</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;CurrentMotorPositionRaw&quot;</span>&gt;(MotorPos);</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>            this-&gt;CurrentMotorVel = (*JointVelFilter)(MotorVel);</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>            this-&gt;CurrentMotorPos = (*JointPosFilter)(MotorPos);</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;CurrentMotorVelocity&quot;</span>&gt;(CurrentMotorVel);</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;CurrentMotorPosition&quot;</span>&gt;(CurrentMotorPos);</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;CurrentMotorTorque&quot;</span>&gt;(MotorTorque);</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span> </div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>            <a class="code hl_function" href="classz_1_1_motor_control_worker.html#ae399c4a46576fe99f846a23f2559caa8">SetCurrentPositionAsTargetPosition</a>();</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        }</div>
 </div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span></div>
-<div class="foldopen" id="foldopen00323" data-start="{" data-end="}">
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno"><a class="line" href="classz_1_1_motor_control_worker.html#ae399c4a46576fe99f846a23f2559caa8">  323</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_motor_control_worker.html#ae399c4a46576fe99f846a23f2559caa8">SetCurrentPositionAsTargetPosition</a>()</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>        {</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>            MotorValVec TargetVel = <a class="code hl_function" href="classz_1_1math_1_1_vector.html#a75b3868251f980153452180cc47ab202">MotorValVec::zeros</a>();</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;TargetMotorPosition&quot;</span>&gt;(CurrentMotorPos);</div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;TargetMotorVelocity&quot;</span>&gt;(TargetVel);</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>        }</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span></div>
+<div class="foldopen" id="foldopen00325" data-start="{" data-end="}">
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno"><a class="line" href="classz_1_1_motor_control_worker.html#ae399c4a46576fe99f846a23f2559caa8">  325</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_motor_control_worker.html#ae399c4a46576fe99f846a23f2559caa8">SetCurrentPositionAsTargetPosition</a>()</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>        {</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>            MotorValVec TargetVel = <a class="code hl_function" href="classz_1_1math_1_1_vector.html#a75b3868251f980153452180cc47ab202">MotorValVec::zeros</a>();</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;TargetMotorPosition&quot;</span>&gt;(CurrentMotorPos);</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;TargetMotorVelocity&quot;</span>&gt;(TargetVel);</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        }</div>
 </div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span></div>
-<div class="foldopen" id="foldopen00334" data-start="{" data-end="}">
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno"><a class="line" href="classz_1_1_motor_control_worker.html#ae9112c7d70612770f8687d1020dbb604">  334</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_motor_control_worker.html#ae9112c7d70612770f8687d1020dbb604">TaskCycleBegin</a>()<span class="keyword"> override</span></div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>            MotorValVec MotorVel;</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>            MotorValVec MotorPos;</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>            MotorValVec MotorTorque;</div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span> </div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>            MotorVel.<a class="code hl_function" href="classz_1_1math_1_1_vector.html#a41b9b9f809fd39c17049cae601c6ad26">apply</a>([<span class="keyword">this</span>](MotorPrecision&amp; val, <span class="keywordtype">size_t</span> i) {</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>                val = this-&gt;Joints[i]-&gt;GetActualVelocity();</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>                });</div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>            MotorPos.<a class="code hl_function" href="classz_1_1math_1_1_vector.html#a41b9b9f809fd39c17049cae601c6ad26">apply</a>([<span class="keyword">this</span>](MotorPrecision&amp; val, <span class="keywordtype">size_t</span> i) {</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>                val = this-&gt;Joints[i]-&gt;GetActualPosition();</div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>                });</div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>            MotorTorque.<a class="code hl_function" href="classz_1_1math_1_1_vector.html#a41b9b9f809fd39c17049cae601c6ad26">apply</a>([<span class="keyword">this</span>](MotorPrecision&amp; val, <span class="keywordtype">size_t</span> i) {</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>                val = this-&gt;Joints[i]-&gt;GetActualTorque();</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>                });</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span> </div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span> </div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>            this-&gt;CurrentMotorVel = (*JointVelFilter)(MotorVel);</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>            this-&gt;CurrentMotorPos = (*JointPosFilter)(MotorPos);</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span> </div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;CurrentMotorVelocity&quot;</span>&gt;(CurrentMotorVel);</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;CurrentMotorPosition&quot;</span>&gt;(CurrentMotorPos);</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;CurrentMotorTorque&quot;</span>&gt;(MotorTorque);</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span> </div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>        }</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span></div>
+<div class="foldopen" id="foldopen00336" data-start="{" data-end="}">
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno"><a class="line" href="classz_1_1_motor_control_worker.html#ae9112c7d70612770f8687d1020dbb604">  336</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_motor_control_worker.html#ae9112c7d70612770f8687d1020dbb604">TaskCycleBegin</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>            MotorValVec MotorVel;</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>            MotorValVec MotorPos;</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>            MotorValVec MotorTorque;</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span> </div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>            MotorVel.<a class="code hl_function" href="classz_1_1math_1_1_vector.html#a41b9b9f809fd39c17049cae601c6ad26">apply</a>([<span class="keyword">this</span>](MotorPrecision&amp; val, <span class="keywordtype">size_t</span> i) {</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>                val = this-&gt;Joints[i]-&gt;GetActualVelocity();</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>                });</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>            MotorPos.<a class="code hl_function" href="classz_1_1math_1_1_vector.html#a41b9b9f809fd39c17049cae601c6ad26">apply</a>([<span class="keyword">this</span>](MotorPrecision&amp; val, <span class="keywordtype">size_t</span> i) {</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>                val = this-&gt;Joints[i]-&gt;GetActualPosition();</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>                });</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>            MotorTorque.<a class="code hl_function" href="classz_1_1math_1_1_vector.html#a41b9b9f809fd39c17049cae601c6ad26">apply</a>([<span class="keyword">this</span>](MotorPrecision&amp; val, <span class="keywordtype">size_t</span> i) {</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>                val = this-&gt;Joints[i]-&gt;GetActualTorque();</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>                });</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span> </div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;CurrentMotorVelocityRaw&quot;</span>&gt;(MotorVel);</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;CurrentMotorPositionRaw&quot;</span>&gt;(MotorPos);</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>            this-&gt;CurrentMotorVel = (*JointVelFilter)(MotorVel);</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>            this-&gt;CurrentMotorPos = (*JointPosFilter)(MotorPos);</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span> </div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;CurrentMotorVelocity&quot;</span>&gt;(CurrentMotorVel);</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;CurrentMotorPosition&quot;</span>&gt;(CurrentMotorPos);</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;CurrentMotorTorque&quot;</span>&gt;(MotorTorque);</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span> </div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>        }</div>
 </div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span></div>
-<div class="foldopen" id="foldopen00363" data-start="{" data-end="}">
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno"><a class="line" href="classz_1_1_motor_control_worker.html#af23fdf0b2a8065aa23347cd2915f76b9">  363</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_motor_control_worker.html#af23fdf0b2a8065aa23347cd2915f76b9">TaskRun</a>()<span class="keyword"> override</span></div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>        }</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span></div>
+<div class="foldopen" id="foldopen00366" data-start="{" data-end="}">
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno"><a class="line" href="classz_1_1_motor_control_worker.html#af23fdf0b2a8065aa23347cd2915f76b9">  366</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_motor_control_worker.html#af23fdf0b2a8065aa23347cd2915f76b9">TaskRun</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>        }</div>
 </div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span></div>
-<div class="foldopen" id="foldopen00371" data-start="{" data-end="}">
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno"><a class="line" href="classz_1_1_motor_control_worker.html#ae0b9aa6c02bd32b12e6f7e5c4d0048ba">  371</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_motor_control_worker.html#ae0b9aa6c02bd32b12e6f7e5c4d0048ba">TaskCycleEnd</a>()<span class="keyword"> override</span></div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>            MotorValVec MotorTorque;</div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template GetData&lt;<span class="stringliteral">&quot;TargetMotorTorque&quot;</span>&gt;(MotorTorque);</div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span> </div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>            MotorValVec MotorPos;</div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template GetData&lt;<span class="stringliteral">&quot;TargetMotorPosition&quot;</span>&gt;(MotorPos);</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span></div>
+<div class="foldopen" id="foldopen00374" data-start="{" data-end="}">
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno"><a class="line" href="classz_1_1_motor_control_worker.html#ae0b9aa6c02bd32b12e6f7e5c4d0048ba">  374</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_motor_control_worker.html#ae0b9aa6c02bd32b12e6f7e5c4d0048ba">TaskCycleEnd</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>            MotorValVec MotorTorque;</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template GetData&lt;<span class="stringliteral">&quot;TargetMotorTorque&quot;</span>&gt;(MotorTorque);</div>
 <div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span> </div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>            MotorValVec MotorVel;</div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template GetData&lt;<span class="stringliteral">&quot;TargetMotorVelocity&quot;</span>&gt;(MotorVel);</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>            MotorValVec MotorPos;</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template GetData&lt;<span class="stringliteral">&quot;TargetMotorPosition&quot;</span>&gt;(MotorPos);</div>
 <div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span> </div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>            MotorValVec LimitMotorTorque = <a class="code hl_function" href="classz_1_1math_1_1_vector.html#ac738e5b191bae52f95ebfe8c191066a0">math::Vector&lt;MotorPrecision, JointNumber&gt;::clamp</a>(MotorTorque, -TorqueLimit, TorqueLimit);</div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;LimitTargetMotorTorque&quot;</span>&gt;(LimitMotorTorque);</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>            MotorValVec MotorVel;</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template GetData&lt;<span class="stringliteral">&quot;TargetMotorVelocity&quot;</span>&gt;(MotorVel);</div>
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span> </div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; JointNumber; i++)</div>
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>            {</div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>                <span class="keywordflow">switch</span> (this-&gt;ControlModeArray[i])</div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>                {</div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>                <span class="keywordflow">case</span> ControlType::Torque:</div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>                    this-&gt;Joints[i]-&gt;SetTargetTorque(LimitMotorTorque[i]);</div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>                <span class="keywordflow">case</span> ControlType::Position:</div>
-<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>                    this-&gt;Joints[i]-&gt;SetTargetPosition(MotorPos[i]);</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>            MotorValVec LimitMotorTorque = <a class="code hl_function" href="classz_1_1math_1_1_vector.html#ac738e5b191bae52f95ebfe8c191066a0">math::Vector&lt;MotorPrecision, JointNumber&gt;::clamp</a>(MotorTorque, -TorqueLimit, TorqueLimit);</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>            this-&gt;<a class="code hl_variable" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">Scheduler</a>-&gt;template SetData&lt;<span class="stringliteral">&quot;LimitTargetMotorTorque&quot;</span>&gt;(LimitMotorTorque);</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span> </div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; JointNumber; i++)</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>            {</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>                <span class="keywordflow">switch</span> (this-&gt;ControlModeArray[i])</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>                {</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>                <span class="keywordflow">case</span> ControlType::Torque:</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>                    this-&gt;Joints[i]-&gt;SetTargetTorque(LimitMotorTorque[i]);</div>
 <div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>                <span class="keywordflow">case</span> ControlType::Velocity:</div>
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>                    this-&gt;Joints[i]-&gt;SetTargetVelocity(MotorVel[i]);</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>                <span class="keywordflow">case</span> ControlType::Position:</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>                    this-&gt;Joints[i]-&gt;SetTargetPosition(MotorPos[i]);</div>
 <div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>                <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>                }</div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>            }</div>
-<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>        }</div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>                <span class="keywordflow">case</span> ControlType::Velocity:</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>                    this-&gt;Joints[i]-&gt;SetTargetVelocity(MotorVel[i]);</div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>                <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>                }</div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>            }</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>        }</div>
 </div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span> </div>
-<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>        <span class="keyword">enum class</span> ControlType</div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>        {</div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>            Torque,</div>
-<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>            Position,</div>
-<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>            Velocity</div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>        };</div>
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span></div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>        std::array&lt;JointType, JointNumber&gt; Joints;</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span> </div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>        <span class="keyword">enum class</span> ControlType</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>        {</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>            Torque,</div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>            Position,</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>            Velocity</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>        };</div>
 <div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span></div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>        std::unique_ptr&lt;WeightFilter&lt;MotorValVec&gt;&gt; JointPosFilter;</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>        std::array&lt;JointType, JointNumber&gt; Joints;</div>
 <div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span></div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>        std::unique_ptr&lt;WeightFilter&lt;MotorValVec&gt;&gt; JointVelFilter;</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>        std::unique_ptr&lt;WeightFilter&lt;MotorValVec&gt;&gt; JointPosFilter;</div>
 <div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span></div>
-<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>        MotorValVec CurrentMotorPos;</div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>        std::unique_ptr&lt;WeightFilter&lt;MotorValVec&gt;&gt; JointVelFilter;</div>
 <div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span></div>
-<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>        MotorValVec CurrentMotorVel;</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>        MotorValVec CurrentMotorPos;</div>
 <div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span></div>
-<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>        MotorValVec TorqueLimit;</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>        MotorValVec CurrentMotorVel;</div>
 <div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span></div>
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>        std::array&lt;ControlType, JointNumber&gt; ControlModeArray;</div>
-<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>    };</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>        MotorValVec TorqueLimit;</div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span></div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>        std::array&lt;ControlType, JointNumber&gt; ControlModeArray;</div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>    };</div>
 </div>
-<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>};</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>};</div>
 <div class="ttc" id="a_abstract_scheduler_8hpp_html"><div class="ttname"><a href="_abstract_scheduler_8hpp.html">AbstractScheduler.hpp</a></div><div class="ttdoc">AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。</div></div>
 <div class="ttc" id="a_abstract_worker_8hpp_html"><div class="ttname"><a href="_abstract_worker_8hpp.html">AbstractWorker.hpp</a></div></div>
-<div class="ttc" id="a_math_types_8hpp_html"><div class="ttname"><a href="_math_types_8hpp.html">MathTypes.hpp</a></div></div>
 <div class="ttc" id="a_static_string_utils_8hpp_html"><div class="ttname"><a href="_static_string_utils_8hpp.html">StaticStringUtils.hpp</a></div></div>
 <div class="ttc" id="a_zen_buffer_8hpp_html"><div class="ttname"><a href="_zen_buffer_8hpp.html">ZenBuffer.hpp</a></div></div>
 <div class="ttc" id="aclassz_1_1_abstract_worker_html_af4842124f95ccfb50ddb0d21a9642cab"><div class="ttname"><a href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">z::AbstractWorker::Scheduler</a></div><div class="ttdeci">SchedulerType * Scheduler</div><div class="ttdoc">调度器的指针，用户可以通过这个指针来获取一些全局的数据， 比如当前任务的时间戳，前级工人的输出数据等，也可以通过这个指针来设置一些全局的数据。</div><div class="ttdef"><b>定义</b> AbstractWorker.hpp:98</div></div>
 <div class="ttc" id="aclassz_1_1_motor_control_worker_html_a0864e6f45639abe1e962d99cf858fba5"><div class="ttname"><a href="classz_1_1_motor_control_worker.html#a0864e6f45639abe1e962d99cf858fba5">z::MotorControlWorker::~MotorControlWorker</a></div><div class="ttdeci">~MotorControlWorker()</div><div class="ttdoc">析构函数</div><div class="ttdef"><b>定义</b> MotorControlWorker.hpp:290</div></div>
 <div class="ttc" id="aclassz_1_1_motor_control_worker_html_a368001fca32d237f1f9361271977b6ad"><div class="ttname"><a href="classz_1_1_motor_control_worker.html#a368001fca32d237f1f9361271977b6ad">z::MotorControlWorker::MotorControlWorker</a></div><div class="ttdeci">MotorControlWorker(SchedulerType *scheduler, const nlohmann::json &amp;root_cfg, const std::array&lt; JointType, JointNumber &gt; &amp;Joints)</div><div class="ttdoc">构造一个电机控制工人类型</div><div class="ttdef"><b>定义</b> MotorControlWorker.hpp:159</div></div>
 <div class="ttc" id="aclassz_1_1_motor_control_worker_html_ad869ae74ae48f3d1c7a7a1b0106bde51"><div class="ttname"><a href="classz_1_1_motor_control_worker.html#ad869ae74ae48f3d1c7a7a1b0106bde51">z::MotorControlWorker::TaskCreate</a></div><div class="ttdeci">void TaskCreate()</div><div class="ttdoc">TaskCreate方法，在任务队列创建的时候会被调度器调用，用户可以在这个方法中初始化一些资源</div><div class="ttdef"><b>定义</b> MotorControlWorker.hpp:292</div></div>
-<div class="ttc" id="aclassz_1_1_motor_control_worker_html_ae0b9aa6c02bd32b12e6f7e5c4d0048ba"><div class="ttname"><a href="classz_1_1_motor_control_worker.html#ae0b9aa6c02bd32b12e6f7e5c4d0048ba">z::MotorControlWorker::TaskCycleEnd</a></div><div class="ttdeci">void TaskCycleEnd() override</div><div class="ttdoc">TaskCycleEnd方法，在每次任务队列循环结束时被调用，用来将控制指令写入到电机的控制接口。 限制力矩大小，以及根据控制模式选择不同的控制方式。</div><div class="ttdef"><b>定义</b> MotorControlWorker.hpp:371</div></div>
-<div class="ttc" id="aclassz_1_1_motor_control_worker_html_ae399c4a46576fe99f846a23f2559caa8"><div class="ttname"><a href="classz_1_1_motor_control_worker.html#ae399c4a46576fe99f846a23f2559caa8">z::MotorControlWorker::SetCurrentPositionAsTargetPosition</a></div><div class="ttdeci">void SetCurrentPositionAsTargetPosition()</div><div class="ttdoc">设置当前位置为目标位置</div><div class="ttdef"><b>定义</b> MotorControlWorker.hpp:323</div></div>
-<div class="ttc" id="aclassz_1_1_motor_control_worker_html_ae9112c7d70612770f8687d1020dbb604"><div class="ttname"><a href="classz_1_1_motor_control_worker.html#ae9112c7d70612770f8687d1020dbb604">z::MotorControlWorker::TaskCycleBegin</a></div><div class="ttdeci">void TaskCycleBegin() override</div><div class="ttdoc">TaskCycleBegin方法，在每次任务队列循环开始时被调用，用来读取电机的位置、速度、电流等数据并写入到数据总线中</div><div class="ttdef"><b>定义</b> MotorControlWorker.hpp:334</div></div>
-<div class="ttc" id="aclassz_1_1_motor_control_worker_html_af23fdf0b2a8065aa23347cd2915f76b9"><div class="ttname"><a href="classz_1_1_motor_control_worker.html#af23fdf0b2a8065aa23347cd2915f76b9">z::MotorControlWorker::TaskRun</a></div><div class="ttdeci">void TaskRun() override</div><div class="ttdoc">TaskRun方法，在每次任务队列循环中被调用，用来实现电机的控制逻辑，默认为空实现，因为电机的控制逻辑在TaskCycleEnd中实现</div><div class="ttdef"><b>定义</b> MotorControlWorker.hpp:363</div></div>
+<div class="ttc" id="aclassz_1_1_motor_control_worker_html_ae0b9aa6c02bd32b12e6f7e5c4d0048ba"><div class="ttname"><a href="classz_1_1_motor_control_worker.html#ae0b9aa6c02bd32b12e6f7e5c4d0048ba">z::MotorControlWorker::TaskCycleEnd</a></div><div class="ttdeci">void TaskCycleEnd() override</div><div class="ttdoc">TaskCycleEnd方法，在每次任务队列循环结束时被调用，用来将控制指令写入到电机的控制接口。 限制力矩大小，以及根据控制模式选择不同的控制方式。</div><div class="ttdef"><b>定义</b> MotorControlWorker.hpp:374</div></div>
+<div class="ttc" id="aclassz_1_1_motor_control_worker_html_ae399c4a46576fe99f846a23f2559caa8"><div class="ttname"><a href="classz_1_1_motor_control_worker.html#ae399c4a46576fe99f846a23f2559caa8">z::MotorControlWorker::SetCurrentPositionAsTargetPosition</a></div><div class="ttdeci">void SetCurrentPositionAsTargetPosition()</div><div class="ttdoc">设置当前位置为目标位置</div><div class="ttdef"><b>定义</b> MotorControlWorker.hpp:325</div></div>
+<div class="ttc" id="aclassz_1_1_motor_control_worker_html_ae9112c7d70612770f8687d1020dbb604"><div class="ttname"><a href="classz_1_1_motor_control_worker.html#ae9112c7d70612770f8687d1020dbb604">z::MotorControlWorker::TaskCycleBegin</a></div><div class="ttdeci">void TaskCycleBegin() override</div><div class="ttdoc">TaskCycleBegin方法，在每次任务队列循环开始时被调用，用来读取电机的位置、速度、电流等数据并写入到数据总线中</div><div class="ttdef"><b>定义</b> MotorControlWorker.hpp:336</div></div>
+<div class="ttc" id="aclassz_1_1_motor_control_worker_html_af23fdf0b2a8065aa23347cd2915f76b9"><div class="ttname"><a href="classz_1_1_motor_control_worker.html#af23fdf0b2a8065aa23347cd2915f76b9">z::MotorControlWorker::TaskRun</a></div><div class="ttdeci">void TaskRun() override</div><div class="ttdoc">TaskRun方法，在每次任务队列循环中被调用，用来实现电机的控制逻辑，默认为空实现，因为电机的控制逻辑在TaskCycleEnd中实现</div><div class="ttdef"><b>定义</b> MotorControlWorker.hpp:366</div></div>
 <div class="ttc" id="aclassz_1_1_motor_p_d_control_worker_html_a7782e443eeb77e179911a62750b4cb68"><div class="ttname"><a href="classz_1_1_motor_p_d_control_worker.html#a7782e443eeb77e179911a62750b4cb68">z::MotorPDControlWorker::TaskRun</a></div><div class="ttdeci">void TaskRun()</div><div class="ttdoc">TaskRun方法，在每次任务队列循环中被调用，用来实现电机的PD控制逻辑</div><div class="ttdef"><b>定义</b> MotorControlWorker.hpp:85</div></div>
 <div class="ttc" id="aclassz_1_1_motor_p_d_control_worker_html_aafc7fd1bd0802da1a4b60b9db377ed6b"><div class="ttname"><a href="classz_1_1_motor_p_d_control_worker.html#aafc7fd1bd0802da1a4b60b9db377ed6b">z::MotorPDControlWorker::MotorPDControlWorker</a></div><div class="ttdeci">MotorPDControlWorker(SchedulerType *scheduler, const nlohmann::json &amp;root_cfg)</div><div class="ttdoc">构造一个电机PD控制工人类型</div><div class="ttdef"><b>定义</b> MotorControlWorker.hpp:59</div></div>
 <div class="ttc" id="aclassz_1_1_z_object_html_a20fc044ee664a6b01d500d536e63a1ed"><div class="ttname"><a href="classz_1_1_z_object.html#a20fc044ee664a6b01d500d536e63a1ed">z::ZObject::PrintSplitLine</a></div><div class="ttdeci">void PrintSplitLine(size_t length=60, char c=&#39;-&#39;)</div><div class="ttdoc">print a split line, default length is 60 and character is &#39;-&#39;</div><div class="ttdef"><b>定义</b> ZObject.hpp:32</div></div>
-<div class="ttc" id="aclassz_1_1math_1_1_vector_html"><div class="ttname"><a href="classz_1_1math_1_1_vector.html">z::math::Vector</a></div><div class="ttdoc">Vector class, support some vector operations, like dot, cross, normalize, etc.</div><div class="ttdef"><b>定义</b> MathTypes.hpp:77</div></div>
-<div class="ttc" id="aclassz_1_1math_1_1_vector_html_a41b9b9f809fd39c17049cae601c6ad26"><div class="ttname"><a href="classz_1_1math_1_1_vector.html#a41b9b9f809fd39c17049cae601c6ad26">z::math::Vector::apply</a></div><div class="ttdeci">static Vector&lt; T, N &gt; apply(const Vector&lt; T, N &gt; &amp;val, ApplyFunc func)</div><div class="ttdoc">apply function to vector element</div><div class="ttdef"><b>定义</b> MathTypes.hpp:242</div></div>
-<div class="ttc" id="aclassz_1_1math_1_1_vector_html_a75b3868251f980153452180cc47ab202"><div class="ttname"><a href="classz_1_1math_1_1_vector.html#a75b3868251f980153452180cc47ab202">z::math::Vector&lt; MotorPrecision, JointNumber &gt;::zeros</a></div><div class="ttdeci">static constexpr Vector&lt; MotorPrecision, N &gt; zeros()</div><div class="ttdef"><b>定义</b> MathTypes.hpp:207</div></div>
-<div class="ttc" id="aclassz_1_1math_1_1_vector_html_a9bf9d89ec2fa5861c383c6cb0f5e7602"><div class="ttname"><a href="classz_1_1math_1_1_vector.html#a9bf9d89ec2fa5861c383c6cb0f5e7602">z::math::Vector::ones</a></div><div class="ttdeci">static constexpr Vector&lt; T, N &gt; ones()</div><div class="ttdoc">create a vector with all elements set to 1</div><div class="ttdef"><b>定义</b> MathTypes.hpp:222</div></div>
-<div class="ttc" id="aclassz_1_1math_1_1_vector_html_ac738e5b191bae52f95ebfe8c191066a0"><div class="ttname"><a href="classz_1_1math_1_1_vector.html#ac738e5b191bae52f95ebfe8c191066a0">z::math::Vector::clamp</a></div><div class="ttdeci">static constexpr Vector&lt; T, N &gt; clamp(const Vector&lt; T, N &gt; &amp;val, const Vector&lt; T, N &gt; &amp;min, const Vector&lt; T, N &gt; &amp;max)</div><div class="ttdoc">clamp val to min and max</div><div class="ttdef"><b>定义</b> MathTypes.hpp:89</div></div>
+<div class="ttc" id="aclassz_1_1math_1_1_vector_html"><div class="ttname"><a href="classz_1_1math_1_1_vector.html">z::math::Vector</a></div><div class="ttdoc">Vector class, support some vector operations, like dot, cross, normalize, etc.</div><div class="ttdef"><b>定义</b> VectorType.hpp:77</div></div>
+<div class="ttc" id="aclassz_1_1math_1_1_vector_html_a41b9b9f809fd39c17049cae601c6ad26"><div class="ttname"><a href="classz_1_1math_1_1_vector.html#a41b9b9f809fd39c17049cae601c6ad26">z::math::Vector::apply</a></div><div class="ttdeci">static Vector&lt; T, N &gt; apply(const Vector&lt; T, N &gt; &amp;val, ApplyFunc func)</div><div class="ttdoc">apply function to vector element</div><div class="ttdef"><b>定义</b> VectorType.hpp:242</div></div>
+<div class="ttc" id="aclassz_1_1math_1_1_vector_html_a75b3868251f980153452180cc47ab202"><div class="ttname"><a href="classz_1_1math_1_1_vector.html#a75b3868251f980153452180cc47ab202">z::math::Vector&lt; MotorPrecision, JointNumber &gt;::zeros</a></div><div class="ttdeci">static constexpr Vector&lt; MotorPrecision, N &gt; zeros()</div><div class="ttdef"><b>定义</b> VectorType.hpp:207</div></div>
+<div class="ttc" id="aclassz_1_1math_1_1_vector_html_a9bf9d89ec2fa5861c383c6cb0f5e7602"><div class="ttname"><a href="classz_1_1math_1_1_vector.html#a9bf9d89ec2fa5861c383c6cb0f5e7602">z::math::Vector::ones</a></div><div class="ttdeci">static constexpr Vector&lt; T, N &gt; ones()</div><div class="ttdoc">create a vector with all elements set to 1</div><div class="ttdef"><b>定义</b> VectorType.hpp:222</div></div>
+<div class="ttc" id="aclassz_1_1math_1_1_vector_html_ac738e5b191bae52f95ebfe8c191066a0"><div class="ttname"><a href="classz_1_1math_1_1_vector.html#ac738e5b191bae52f95ebfe8c191066a0">z::math::Vector::clamp</a></div><div class="ttdeci">static constexpr Vector&lt; T, N &gt; clamp(const Vector&lt; T, N &gt; &amp;val, const Vector&lt; T, N &gt; &amp;min, const Vector&lt; T, N &gt; &amp;max)</div><div class="ttdoc">clamp val to min and max</div><div class="ttdef"><b>定义</b> VectorType.hpp:89</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
