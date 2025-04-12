@@ -1,6 +1,7 @@
 {
   "Scheduler": {
     "dt": 0.001,
+    "CheckFrequency": true,
     "InferTask": {
       "PolicyFrequency": 10
     }

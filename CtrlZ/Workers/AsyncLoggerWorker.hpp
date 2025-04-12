@@ -58,7 +58,7 @@ namespace z
         AsyncLoggerWorker(SchedulerType* scheduler, const nlohmann::json& root_cfg)
             :AbstractWorker<SchedulerType>(scheduler)
         {
-            nlohmann::json cfg = root_cfg["Workers"]["AsyncLogger"];
+            nlohmann::json cfg = root_cfg;
             //TODO: add static assert to check if the value type is a valid type (number or array of numbers)
             std::time_t now = std::time(nullptr);
             std::tm tm = *std::localtime(&now);

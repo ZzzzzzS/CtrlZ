@@ -56,11 +56,10 @@ namespace z
          * @param scheduler 调度器的指针
          * @param cfg 配置文件
          */
-        MotorResetPositionWorker(SchedulerType* scheduler, const nlohmann::json& cfg)
+        MotorResetPositionWorker(SchedulerType* scheduler, const nlohmann::json& Motor_cfg, const nlohmann::json& reset_cfg)
             :AbstractWorker<SchedulerType>(scheduler),
             enabled(false)
         {
-            nlohmann::json Motor_cfg = cfg["Workers"]["MotorControl"];
             if (Motor_cfg["DefaultPosition"].size() != JointNumber)
                 throw(std::runtime_error("Default Position size is not equal!"));
 
@@ -69,8 +68,8 @@ namespace z
                 this->DefaultPosition[i] = Motor_cfg["DefaultPosition"][i].get<MotorPrecision>();
             }
 
-            MotorPrecision dt = cfg["Scheduler"]["dt"];
-            MotorPrecision Duration = cfg["Workers"]["ResetPosition"]["Duration"];
+            MotorPrecision dt = scheduler->getSpinOnceTime();
+            MotorPrecision Duration = reset_cfg["Duration"];
             this->DefaultResetEpoches = static_cast<size_t>(Duration / dt);
 
             this->PrintSplitLine();

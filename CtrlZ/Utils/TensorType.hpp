@@ -207,7 +207,7 @@ namespace z
              */
             void DeepCopy(TensorBase<T, Dims...>& other)
             {
-                if (*this == other)
+                if ((this->data_ptr__ == other.data_ptr__) && (this->ref_count__ == other.ref_count__))
                     return;
 
                 this->Array() = other.Array();
@@ -223,6 +223,7 @@ namespace z
              */
             void clone(TensorBase<T, Dims...>& other)
             {
+
                 this->DeepCopy(other);
                 return;
             }
@@ -503,6 +504,8 @@ namespace z
             using Shape = typename Base::Shape;
             using ValueType = typename Base::ValueType;
             using Base::Base;
+            using Base::clone;
+            using Base::DeepCopy;
 
         public:
 
@@ -516,27 +519,6 @@ namespace z
                 return Vector<ValueType, Shape::total_size>(*(this->data_ptr__));
             }
 
-            /**
-             * @brief clone function, used to deepcopy a tensor
-             *
-             * @return Tensor<T, Dims...>
-             */
-            Tensor<T, Dims...> clone() const
-            {
-                Tensor<T, Dims...> tensor;
-                tensor.Array() = this->Array();
-                return tensor;
-            }
-
-            /**
-             * @brief DeepCopy function, used to deepcopy a tensor
-             *
-             * @return Tensor<T, Dims...>
-             */
-            Tensor<T, Dims...> DeepCopy() const
-            {
-                return this->clone();
-            }
 
         public: //numerical operations
 
@@ -1051,6 +1033,8 @@ namespace z
             using Shape = typename Base::Shape;
             using ValueType = typename Base::ValueType;
             using Base::Base;
+            using Base::clone;
+            using Base::DeepCopy;
 
         public:
 
@@ -1062,28 +1046,6 @@ namespace z
             Vector<ValueType, Shape::total_size> toVector() const
             {
                 return Vector<ValueType, Shape::total_size>(*(this->data_ptr__));
-            }
-
-            /**
-             * @brief clone function, used to deepcopy a tensor
-             *
-             * @return Tensor<T, Dims...>
-             */
-            Tensor<bool, Dims...> clone() const
-            {
-                Tensor<bool, Dims...> tensor;
-                tensor.Array() = this->Array();
-                return tensor;
-            }
-
-            /**
-             * @brief DeepCopy function, used to deepcopy a tensor
-             *
-             * @return Tensor<T, Dims...>
-             */
-            Tensor<bool, Dims...> DeepCopy() const
-            {
-                return this->clone();
             }
 
         public: //numerical operations

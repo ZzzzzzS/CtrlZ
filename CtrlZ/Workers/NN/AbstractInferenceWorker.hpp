@@ -72,8 +72,8 @@ namespace z
 			IoBinding__(nullptr)
 		{
 			//读取配置文件
-			nlohmann::json InferenceCfg = cfg["Workers"]["NN"]["Inference"];
-			nlohmann::json NetworkCfg = cfg["Workers"]["NN"]["Network"];
+			nlohmann::json InferenceCfg = cfg["Inference"];
+			nlohmann::json NetworkCfg = cfg["Network"];
 
 			//读取推理配置
 			this->WarmUpModel__ = InferenceCfg["WarmUpModel"].get<bool>();

@@ -74,7 +74,7 @@ namespace z
             :AbstractWorker<SchedulerType>(scheduler),
             ImuInstance(ImuInstancePtr)
         {
-            nlohmann::json cfg = root_cfg["Workers"]["ImuProcess"];
+            nlohmann::json cfg = root_cfg;
             this->PrintSplitLine();
             std::cout << "ImuProcessWorker" << std::endl;
 

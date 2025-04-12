@@ -73,11 +73,11 @@ namespace z
          * @param scheduler 调度器的指针
          * @param cfg 配置文件
          */
-        CommonLocoInferenceWorker(SchedulerType* scheduler, const nlohmann::json& cfg)
-            :AbstractNetInferenceWorker<SchedulerType, InferencePrecision>(scheduler, cfg)
+        CommonLocoInferenceWorker(SchedulerType* scheduler, const nlohmann::json& Net_cfg, const nlohmann::json& Motor_cfg)
+            :AbstractNetInferenceWorker<SchedulerType, InferencePrecision>(scheduler, Net_cfg)
         {
-            nlohmann::json PreprocessCfg = cfg["Workers"]["NN"]["Preprocess"];
-            nlohmann::json PostprocessCfg = cfg["Workers"]["NN"]["Postprocess"];
+            nlohmann::json PreprocessCfg = Net_cfg["Preprocess"];
+            nlohmann::json PostprocessCfg = Net_cfg["Postprocess"];
 
             //load pre process cfg
             //load obs scale
@@ -110,11 +110,11 @@ namespace z
             }
 
             //load default pos
-            if (cfg["Workers"]["MotorControl"]["DefaultPosition"].size() != JOINT_NUMBER)
+            if (Motor_cfg["DefaultPosition"].size() != JOINT_NUMBER)
                 throw(std::runtime_error("default_pos size is not equal!"));
             for (size_t i = 0; i < JOINT_NUMBER; i++)
             {
-                this->JointDefaultPos[i] = cfg["Workers"]["MotorControl"]["DefaultPosition"][i].get<InferencePrecision>();
+                this->JointDefaultPos[i] = Motor_cfg["DefaultPosition"][i].get<InferencePrecision>();
             }
 
             //load act clip and joint clip

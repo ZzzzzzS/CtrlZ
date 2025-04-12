@@ -22,6 +22,20 @@ file(GLOB_RECURSE SRC_SCHEDULERS Schedulers/*.cpp Schedulers/*.h)
 file(GLOB_RECURSE SRC_WORKERS Workers/*.cpp Workers/*.h)
 file(GLOB_RECURSE SRC_UTILS Utils/*.cpp Utils/*.h)
 
+
+message("
+Ctrl-Z is a muti-thread RL deployment framework for Robot locomotion.")
+message("Visit http://opensource.zzshub.cn/CtrlZ for detailed documentation.")
+
+message("+----------------------------------------+
+|  CCCC  TTTTT  RRRRR  L           ZZZZZ |
+| C        T    R   R  L              Z  |
+| C        T    RRRRR  L    =====    Z   |
+| C        T    R R    L            Z    |
+|  CCCC    T    R  RR  LLLLL       ZZZZZ |
++----------------------------------------+
+")
+
 # include directory for all target
 add_library(CtrlZ STATIC
     ${SRC_SCHEDULERS}

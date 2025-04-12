@@ -25,19 +25,22 @@ void ConfigFunc(const KernelBus& bus, UserData& d)
 {
     //读取json配置文件,并初始化各个worker
     nlohmann::json cfg_root;
+    nlohmann::json cfg_workers;
     {
         //NOTE: 注意将配置文件路径修改为自己的路径
         std::string path = PROJECT_ROOT_DIR + std::string("/config.json");
         std::ifstream cfg_file(path);
         cfg_root = nlohmann::json::parse(cfg_file, nullptr, true, true);
+        cfg_workers = cfg_root["Workers"];
     }
 
     //创建调度器
-    d.TaskScheduler = new SchedulerType();
+    d.TaskScheduler = new SchedulerType(cfg_root["Scheduler"]);
+
 
     //初始化各个worker
-    d.ImuWorker = new ImuWorkerType(d.TaskScheduler, bus.GetDevice<DeviceImu>(8).value(), cfg_root);
-    d.MotorWorker = new MotorWorkerType(d.TaskScheduler, cfg_root, {
+    d.ImuWorker = new ImuWorkerType(d.TaskScheduler, bus.GetDevice<DeviceImu>(8).value(), cfg_workers["ImuProcess"]);
+    d.MotorWorker = new MotorWorkerType(d.TaskScheduler, cfg_workers["MotorControl"], {
           bus.GetDevice<DeviceJoint>(0).value(),
           bus.GetDevice<DeviceJoint>(1).value(),
           bus.GetDevice<DeviceJoint>(2).value(),
@@ -46,9 +49,9 @@ void ConfigFunc(const KernelBus& bus, UserData& d)
           bus.GetDevice<DeviceJoint>(5).value(),
           bus.GetDevice<DeviceJoint>(6).value(),
           bus.GetDevice<DeviceJoint>(7).value() });
-    d.MotorPDWorker = new MotorPDWorkerType(d.TaskScheduler, cfg_root);
-    d.Logger = new LoggerWorkerType(d.TaskScheduler, cfg_root);
-    d.CommanderWorker = new CmdWorkerType(d.TaskScheduler, cfg_root);
+    d.MotorPDWorker = new MotorPDWorkerType(d.TaskScheduler, cfg_workers["MotorPDLoop"]);
+    d.Logger = new LoggerWorkerType(d.TaskScheduler, cfg_workers["AsyncLogger"]);
+    d.CommanderWorker = new CmdWorkerType(d.TaskScheduler, cfg_workers["Commander"]);
 
     //创建主任务列表，并添加worker
     d.TaskScheduler->CreateTaskList("MainTask", 1, true);
@@ -60,13 +63,13 @@ void ConfigFunc(const KernelBus& bus, UserData& d)
         });
 
     //创建推理任务列表，并添加worker，设置推理任务频率
-    d.NetInferWorker = new EraxLikeInferWorkerType(d.TaskScheduler, cfg_root);
+    d.NetInferWorker = new EraxLikeInferWorkerType(d.TaskScheduler, cfg_workers["NN"], cfg_workers["MotorControl"]);
     d.TaskScheduler->CreateTaskList("InferTask", cfg_root["Scheduler"]["InferTask"]["PolicyFrequency"]);
     d.TaskScheduler->AddWorker("InferTask", d.NetInferWorker);
     d.TaskScheduler->AddWorker("InferTask", d.Logger);
 
     //创建复位任务列表，并添加worker，设置复位任务频率为主任务频率的1/10
-    d.MotorResetWorker = new MotorResetWorkerType(d.TaskScheduler, cfg_root);
+    d.MotorResetWorker = new MotorResetWorkerType(d.TaskScheduler, cfg_workers["MotorControl"], cfg_workers["ResetPosition"]);
     d.TaskScheduler->CreateTaskList("ResetTask", 10);
     d.TaskScheduler->AddWorker("ResetTask", d.MotorResetWorker);
 

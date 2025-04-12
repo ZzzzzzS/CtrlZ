@@ -32,16 +32,16 @@ namespace z
         using ValVec3 = math::Vector<InferencePrecision, 3>;
 
     public:
-        EraxLikeInferenceWorker(SchedulerType* scheduler, const nlohmann::json& cfg)
-            :CommonLocoInferenceWorker<SchedulerType, InferencePrecision, JOINT_NUMBER>(scheduler, cfg),
+        EraxLikeInferenceWorker(SchedulerType* scheduler, const nlohmann::json& Net_Config, const nlohmann::json& Motor_Config)
+            :CommonLocoInferenceWorker<SchedulerType, InferencePrecision, JOINT_NUMBER>(scheduler, Net_Config, Motor_Config),
             GravityVector({ 0.0,0.0,-1.0 }),
             HistoryInputBuffer(INPUT_STUCK_LENGTH)
         {
             //read cfg
-            nlohmann::json InferenceCfg = cfg["Workers"]["NN"]["Inference"];
-            nlohmann::json NetworkCfg = cfg["Workers"]["NN"]["Network"];
+            nlohmann::json InferenceCfg = Net_Config["Inference"];
+            nlohmann::json NetworkCfg = Net_Config["Network"];
             this->CyctleTime = NetworkCfg["Cycle_time"].get<InferencePrecision>();
-            this->dt = cfg["Scheduler"]["dt"].get<InferencePrecision>();
+            this->dt = scheduler->getSpinOnceTime();
             InferencePrecision StableSwitchTime = NetworkCfg["SwitchTime"].get<InferencePrecision>();
             this->BlockOutputPeriod = static_cast<size_t>(StableSwitchTime / this->dt);
 

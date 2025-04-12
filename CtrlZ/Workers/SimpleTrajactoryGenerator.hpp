@@ -18,7 +18,7 @@ namespace z
         SinTrajactoryGenerator(SchedulerType* scheduler, const nlohmann::json& cfg = nlohmann::json())
             :z::AbstractWorker<SchedulerType>(scheduler), cfg__(cfg)
         {
-            nlohmann::json cfg_sin = cfg__["Workers"]["SinTrajactoryGenerator"];
+            nlohmann::json cfg_sin = cfg__;
             nlohmann::json AmpValue = cfg_sin["Amplitude"];
             this->Cycle__ = cfg_sin["Cycle"];
             if (AmpValue.size() != JointNumber)

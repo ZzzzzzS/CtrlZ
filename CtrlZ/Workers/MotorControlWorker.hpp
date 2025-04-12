@@ -59,7 +59,7 @@ namespace z
         MotorPDControlWorker(SchedulerType* scheduler, const nlohmann::json& root_cfg)
             :AbstractWorker<SchedulerType>(scheduler)
         {
-            nlohmann::json cfg = root_cfg["Workers"]["MotorPDLoop"];
+            nlohmann::json cfg = root_cfg;
             nlohmann::json Kp_cfg = cfg["Kp"];
             nlohmann::json Kd_cfg = cfg["Kd"];
             if (Kp.size() != JointNumber || Kd_cfg.size() != JointNumber)
@@ -160,7 +160,7 @@ namespace z
             :AbstractWorker<SchedulerType>(scheduler),
             Joints(Joints)
         {
-            nlohmann::json cfg = root_cfg["Workers"]["MotorControl"];
+            nlohmann::json cfg = root_cfg;
             this->PrintSplitLine();
             std::cout << "MotorControlWorker" << std::endl;
             std::cout << "JointNumber=" << JointNumber << std::endl;

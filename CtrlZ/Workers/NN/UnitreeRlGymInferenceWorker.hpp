@@ -60,16 +60,16 @@ namespace z
          * @param scheduler 调度器的指针
          * @param cfg 配置文件
          */
-        UnitreeRlGymInferenceWorker(SchedulerType* scheduler, const nlohmann::json& cfg)
-            :CommonLocoInferenceWorker<SchedulerType, InferencePrecision, JOINT_NUMBER>(scheduler, cfg),
+        UnitreeRlGymInferenceWorker(SchedulerType* scheduler, const nlohmann::json& Net_cfg, const nlohmann::json& Motor_cfg)
+            :CommonLocoInferenceWorker<SchedulerType, InferencePrecision, JOINT_NUMBER>(scheduler, Net_cfg, Motor_cfg),
             GravityVector({ 0.0,0.0,-1.0 }),
             HistoryInputBuffer(INPUT_STUCK_LENGTH)
         {
             //read cfg
-            nlohmann::json InferenceCfg = cfg["Workers"]["NN"]["Inference"];
-            nlohmann::json NetworkCfg = cfg["Workers"]["NN"]["Network"];
+            nlohmann::json InferenceCfg = Net_cfg["Inference"];
+            nlohmann::json NetworkCfg = Net_cfg["Network"];
             this->cycle_time = NetworkCfg["Cycle_time"].get<InferencePrecision>();
-            this->dt = cfg["Scheduler"]["dt"].get<InferencePrecision>();
+            this->dt = scheduler->getSpinOnceTime();
 
             this->PrintSplitLine();
             std::cout << "UnitreeRlGymInferenceWorker" << std::endl;

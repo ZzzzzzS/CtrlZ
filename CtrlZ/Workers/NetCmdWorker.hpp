@@ -43,7 +43,7 @@ namespace z
         NetCmdWorker(SchedulerType* scheduler, const nlohmann::json& cfg = nlohmann::json())
             :AbstractWorker<SchedulerType>(scheduler, cfg)
         {
-            nlohmann::json local_cfg = cfg["Workers"]["Commander"];
+            nlohmann::json local_cfg = cfg;
             this->EchoCmd = local_cfg["EchoCmd"].get<bool>();
             if (local_cfg["UpperLimit"].size() != CmdArgs.dim ||
                 local_cfg["LowerLimit"].size() != CmdArgs.dim ||

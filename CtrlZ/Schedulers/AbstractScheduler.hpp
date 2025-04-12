@@ -18,6 +18,8 @@
 #include <map>
 #include <condition_variable>
 #include <atomic>
+#include <nlohmann/json.hpp>
+#include <chrono>
 
 
 namespace z
@@ -51,9 +53,19 @@ namespace z
          * @brief 创建一个调度器
          *
          */
-        AbstractScheduler()
+        AbstractScheduler(const nlohmann::json& cfg = nlohmann::json())
         {
             this->threadId = std::this_thread::get_id();
+
+            if (!cfg.is_null())
+            {
+                this->spin_dt = cfg["dt"].get<double>();
+                this->CheckFrequency__ = cfg["CheckFrequency"].get<bool>();
+            }
+            else
+            {
+                std::cout << "Scheduler config is null!" << std::endl;
+            }
         }
 
         /**
@@ -104,7 +116,11 @@ namespace z
             for (auto worker : MainThreadTaskBlock->workers)
             {
                 worker->TaskCreate();
+                fflush(stdout);
             }
+
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+            this->PrintWelcomeMessage();
         }
 
         /**
@@ -121,6 +137,8 @@ namespace z
                 std::cout << "This function should be called in the main thread!" << std::endl;
                 return;
             }*/
+            if (this->CheckFrequency__)
+                this->CheckRuntimeFrequency();
 
             this->SyncMutex.lock();
 
@@ -157,6 +175,19 @@ namespace z
         size_t getTimeStamp()
         {
             return this->TimeStamp.load();
+        }
+
+        /**
+         * @brief 获取调度器的时间步长
+         * @details 调度器的时间步长是调度器是所有任务队列的基础调度间隔，也是MainTaskList的间隔。
+         * 这个间隔由配置文件设置，但实际调用频率和调度器的SpinOnce函数的调用频率有关。SpinOnce会检查
+         * 设置的时间步长是否和实际调用频率一致，如果不一致，会打印警告信息。
+         *
+         * @return double 调度器的时间步长(seconds)
+         */
+        double getSpinOnceTime()
+        {
+            return this->spin_dt;
         }
 
         /**
@@ -439,6 +470,12 @@ namespace z
         /// @brief task list sync lock variable
         std::condition_variable SyncLock;
 
+        /// @brief task list spin once time
+        double spin_dt = 0.001; // 1ms
+        double HistorySpinDt = 0;
+        std::chrono::steady_clock::time_point last_time;
+        bool CheckFrequency__ = true;
+
     protected:
         /**
          * @brief 运行任务的一个调度周期
@@ -478,6 +515,7 @@ namespace z
             for (auto worker : tcb->workers)
             {
                 worker->TaskCreate();
+                fflush(stdout);
             }
             tcb->NewRun = true;
             tcb->isRunning = true;
@@ -502,6 +540,50 @@ namespace z
             {
                 worker->TaskDestroy();
             }
+        }
+
+
+        void CheckRuntimeFrequency()
+        {
+            auto t = std::chrono::steady_clock::now();
+            auto duration = std::chrono::duration_cast<std::chrono::microseconds>(t - this->last_time).count();
+            this->last_time = t;
+            float dt = static_cast<float>(duration) / 1000000.0;
+            if (this->HistorySpinDt == 0)
+                this->HistorySpinDt = this->spin_dt; //first time, set to spin_dt
+            else [[likely]]
+                this->HistorySpinDt = this->HistorySpinDt * 0.999 + dt * 0.001;
+
+                if (this->HistorySpinDt > this->spin_dt * 1.4 || this->HistorySpinDt < this->spin_dt * 0.6)
+                {
+                    //set to red color
+                    std::cout << "\033[31m" << "Scheduler spin dt is not consistent with the set dt, please check your code!" << "\033[0m" << std::endl;
+                    std::cout << "Current dt: " << this->HistorySpinDt << ", set dt: " << this->spin_dt << std::endl;
+                }
+        }
+
+        void PrintWelcomeMessage()
+        {
+            fflush(stdout);
+            std::string line0 = "\033[32m============================================\033[0m";
+            std::string line1 = "\033[32m||  CCCC  TTTTT  RRRRR  L           ZZZZZ ||\033[0m";
+            std::string line2 = "\033[32m|| C        T    R   R  L              Z  ||\033[0m";
+            std::string line3 = "\033[32m|| C        T    RRRRR  L    =====    Z   ||\033[0m";
+            std::string line4 = "\033[32m|| C        T    R R    L            Z    ||\033[0m";
+            std::string line5 = "\033[32m||  CCCC    T    R  RR  LLLLL       ZZZZZ ||\033[0m";
+            std::string line6 = "\033[32m============================================\033[0m";
+            fflush(stdout);
+            std::cout << std::endl << std::endl << std::endl;
+            std::cout << line0 << std::endl;
+            std::cout << line1 << std::endl;
+            std::cout << line2 << std::endl;
+            std::cout << line3 << std::endl;
+            std::cout << line4 << std::endl;
+            std::cout << line5 << std::endl;
+            std::cout << line6 << std::endl;
+            std::cout << "\033[31mCtrl-Z is a muti-thread RL deployment framework for Robot locomotion. \033[0m" << std::endl;
+            std::cout << "\033[33mVisit http://opensource.zzshub.cn/CtrlZ for detailed documentation.\033[0m" << std::endl;
+            std::cout << std::endl << std::endl;
         }
     };
 };
