@@ -9,9 +9,9 @@ var searchData=
   ['scales_5flin_5fvel_6',['Scales_lin_vel',['../classz_1_1_common_loco_inference_worker.html#ae8a289578c62a1d2efafd1fadbbfaa1b',1,'z::CommonLocoInferenceWorker']]],
   ['scales_5fproject_5fgravity_7',['Scales_project_gravity',['../classz_1_1_common_loco_inference_worker.html#a94754b9801aed78a46f550ab8c05ec17',1,'z::CommonLocoInferenceWorker']]],
   ['scheduler_8',['Scheduler',['../classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab',1,'z::AbstractWorker']]],
-  ['schedulers_9',['@ref z::AbstractWorker&lt; SchedulerType &gt; &quot;Schedulers&quot;',['../index.html#autotoc_md3',1,'']]],
-  ['schedulertype_20schedulers_10',['@ref z::AbstractWorker&lt; SchedulerType &gt; &quot;Schedulers&quot;',['../index.html#autotoc_md3',1,'']]],
-  ['schedulertype_20workers_11',['@ref z::AbstractWorker&lt; SchedulerType &gt; &quot;Workers&quot;',['../index.html#autotoc_md4',1,'']]],
+  ['schedulers_9',['@ref z::AbstractWorker&lt; SchedulerType &gt; &quot;Schedulers&quot;',['../index.html#autotoc_md16',1,'']]],
+  ['schedulertype_20schedulers_10',['@ref z::AbstractWorker&lt; SchedulerType &gt; &quot;Schedulers&quot;',['../index.html#autotoc_md16',1,'']]],
+  ['schedulertype_20workers_11',['@ref z::AbstractWorker&lt; SchedulerType &gt; &quot;Workers&quot;',['../index.html#autotoc_md17',1,'']]],
   ['selfapplyfunc_12',['SelfApplyFunc',['../classz_1_1math_1_1_vector.html#a67d268efc28de268c098534ae6b6ef20',1,'z::math::Vector::SelfApplyFunc'],['../classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html#a0766fafc1e043abb802bdb49c06f0245',1,'z::math::Vector&lt; bool, N &gt;::SelfApplyFunc'],['../classz_1_1math_1_1_vector.html#a67d268efc28de268c098534ae6b6ef20',1,'z::math::Vector&lt; bool, N &gt;::SelfApplyFunc']]],
   ['session_5f_5f_13',['Session__',['../classz_1_1_abstract_net_inference_worker.html#a1ef3efd5054b843748581aebcb3b1794',1,'z::AbstractNetInferenceWorker::Session__'],['../classz_1_1_common_loco_inference_worker.html#a1ef3efd5054b843748581aebcb3b1794',1,'z::CommonLocoInferenceWorker::Session__']]],
   ['sessionoptions_5f_5f_14',['SessionOptions__',['../classz_1_1_abstract_net_inference_worker.html#a38fd97ac8e762c77a632d0cd64f14e89',1,'z::AbstractNetInferenceWorker']]],
@@ -32,7 +32,10 @@ var searchData=
   ['staticstringutils_2ehpp_29',['StaticStringUtils.hpp',['../_static_string_utils_8hpp.html',1,'']]],
   ['stopreset_30',['StopReset',['../classz_1_1_motor_reset_position_worker.html#aee554219438d9de5fd52471549f69c95',1,'z::MotorResetPositionWorker']]],
   ['string_5fto_5fwstring_31',['string_to_wstring',['../_net_inference_worker_8cpp.html#ad612e1d5a3738c231a1aeefb21c4d36d',1,'string_to_wstring(const std::string &amp;str):&#160;NetInferenceWorker.cpp'],['../_net_inference_worker_8h.html#ad612e1d5a3738c231a1aeefb21c4d36d',1,'string_to_wstring(const std::string &amp;str):&#160;NetInferenceWorker.cpp']]],
-  ['sum_32',['sum',['../classz_1_1math_1_1_vector.html#a1e59b930bad2ea31cfc87a1352f6e5bb',1,'z::math::Vector::sum()'],['../classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html#af2e58e47c2cecd2be961518c44001ee4',1,'z::math::Vector&lt; bool, N &gt;::sum() const'],['../classz_1_1math_1_1_vector.html#a1e59b930bad2ea31cfc87a1352f6e5bb',1,'z::math::Vector&lt; bool, N &gt;::sum() const']]],
-  ['synclock_33',['SyncLock',['../classz_1_1_abstract_scheduler.html#ab9f7e63da117efa52cdcc7bc0b458186',1,'z::AbstractScheduler']]],
-  ['syncmutex_34',['SyncMutex',['../classz_1_1_abstract_scheduler.html#aea76dd9c01f9b570984b8476b98d5f51',1,'z::AbstractScheduler']]]
+  ['submodule_32',['Git submodule',['../C:/Users/ZhouZishun/Desktop/CtrlZ/doc/doxygen-awesome-css-main/README.md#autotoc_md5',1,'']]],
+  ['sum_33',['sum',['../classz_1_1math_1_1_vector.html#a1e59b930bad2ea31cfc87a1352f6e5bb',1,'z::math::Vector::sum()'],['../classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html#af2e58e47c2cecd2be961518c44001ee4',1,'z::math::Vector&lt; bool, N &gt;::sum() const'],['../classz_1_1math_1_1_vector.html#a1e59b930bad2ea31cfc87a1352f6e5bb',1,'z::math::Vector&lt; bool, N &gt;::sum() const']]],
+  ['support_34',['Browser support',['../C:/Users/ZhouZishun/Desktop/CtrlZ/doc/doxygen-awesome-css-main/README.md#autotoc_md11',1,'']]],
+  ['synclock_35',['SyncLock',['../classz_1_1_abstract_scheduler.html#ab9f7e63da117efa52cdcc7bc0b458186',1,'z::AbstractScheduler']]],
+  ['syncmutex_36',['SyncMutex',['../classz_1_1_abstract_scheduler.html#aea76dd9c01f9b570984b8476b98d5f51',1,'z::AbstractScheduler']]],
+  ['system_20wide_37',['System-wide',['../C:/Users/ZhouZishun/Desktop/CtrlZ/doc/doxygen-awesome-css-main/README.md#autotoc_md8',1,'']]]
 ];

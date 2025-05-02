@@ -18,12 +18,8 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -36,18 +32,6 @@
    </div>
    <div id="projectbrief">一个多线程机器人运动控制强化学习部署框架</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -64,6 +48,17 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 $(function() { codefold.init(0); });
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -138,16 +133,17 @@ $(function(){initNavTree('files.html',''); initResizable(true); });
 <tr id="row_0_2_6_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="_motor_reset_position_worker_8hpp_source.html"><span class="icondoc"></span></a><a class="el" href="_motor_reset_position_worker_8hpp.html" target="_self">MotorResetPositionWorker.hpp</a></td><td class="desc"></td></tr>
 <tr id="row_0_2_7_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="_net_cmd_worker_8hpp_source.html"><span class="icondoc"></span></a><b>NetCmdWorker.hpp</b></td><td class="desc"></td></tr>
 <tr id="row_0_2_8_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="_simple_trajactory_generator_8hpp_source.html"><span class="icondoc"></span></a><b>SimpleTrajactoryGenerator.hpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_1_" class="arrow" onclick="dynsection.toggleFolder('1_')">&#9660;</span><span id="img_1_" class="iconfopen" onclick="dynsection.toggleFolder('1_')">&#160;</span><a class="el" href="dir_cfafba98a580ce4b62f8a6fa96d7cbb0.html" target="_self">example</a></td><td class="desc"></td></tr>
-<tr id="row_1_0_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_1_0_" class="arrow" onclick="dynsection.toggleFolder('1_0_')">&#9660;</span><span id="img_1_0_" class="iconfopen" onclick="dynsection.toggleFolder('1_0_')">&#160;</span><a class="el" href="dir_82c43eff1120581c7335bba2e9ef273e.html" target="_self">AirbotArm</a></td><td class="desc"></td></tr>
-<tr id="row_1_0_0_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="_arm_tracking_inference_worker_8hpp_source.html"><span class="icondoc"></span></a><a class="el" href="_arm_tracking_inference_worker_8hpp.html" target="_self">ArmTrackingInferenceWorker.hpp</a></td><td class="desc">机械臂控制程序所需控制网络 </td></tr>
-<tr id="row_1_0_1_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="_airbot_arm_2main_8cpp.html" target="_self">main.cpp</a></td><td class="desc"></td></tr>
-<tr id="row_1_0_2_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="_airbot_arm_2types_8hpp_source.html"><span class="icondoc"></span></a><a class="el" href="_airbot_arm_2types_8hpp.html" target="_self">types.hpp</a></td><td class="desc">机械臂控制程序所需的一些类型定义 </td></tr>
-<tr id="row_1_1_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_1_1_" class="arrow" onclick="dynsection.toggleFolder('1_1_')">&#9660;</span><span id="img_1_1_" class="iconfopen" onclick="dynsection.toggleFolder('1_1_')">&#160;</span><a class="el" href="dir_c050db323da6c49d1f45615466d39463.html" target="_self">BitbotSimulation</a></td><td class="desc"></td></tr>
-<tr id="row_1_1_0_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="_bitbot_simulation_2main_8cpp.html" target="_self">main.cpp</a></td><td class="desc"></td></tr>
-<tr id="row_1_1_1_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="_bitbot_simulation_2types_8hpp_source.html"><span class="icondoc"></span></a><a class="el" href="_bitbot_simulation_2types_8hpp.html" target="_self">types.hpp</a></td><td class="desc">类型定义 </td></tr>
-<tr id="row_1_1_2_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="user__func_8cpp.html" target="_self">user_func.cpp</a></td><td class="desc"></td></tr>
-<tr id="row_1_1_3_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="user__func_8h_source.html"><span class="icondoc"></span></a><a class="el" href="user__func_8h.html" target="_self">user_func.h</a></td><td class="desc"></td></tr>
+<tr id="row_1_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="iconfclosed"></span><a class="el" href="dir_b2237159c83c5a7cd5bce00ff4ee8b30.html" target="_self">doxygen-awesome-css-main</a></td><td class="desc"></td></tr>
+<tr id="row_2_" class="odd"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_2_" class="arrow" onclick="dynsection.toggleFolder('2_')">&#9660;</span><span id="img_2_" class="iconfopen" onclick="dynsection.toggleFolder('2_')">&#160;</span><a class="el" href="dir_cfafba98a580ce4b62f8a6fa96d7cbb0.html" target="_self">example</a></td><td class="desc"></td></tr>
+<tr id="row_2_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_2_0_" class="arrow" onclick="dynsection.toggleFolder('2_0_')">&#9660;</span><span id="img_2_0_" class="iconfopen" onclick="dynsection.toggleFolder('2_0_')">&#160;</span><a class="el" href="dir_82c43eff1120581c7335bba2e9ef273e.html" target="_self">AirbotArm</a></td><td class="desc"></td></tr>
+<tr id="row_2_0_0_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="_arm_tracking_inference_worker_8hpp_source.html"><span class="icondoc"></span></a><a class="el" href="_arm_tracking_inference_worker_8hpp.html" target="_self">ArmTrackingInferenceWorker.hpp</a></td><td class="desc">机械臂控制程序所需控制网络 </td></tr>
+<tr id="row_2_0_1_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="_airbot_arm_2main_8cpp.html" target="_self">main.cpp</a></td><td class="desc"></td></tr>
+<tr id="row_2_0_2_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="_airbot_arm_2types_8hpp_source.html"><span class="icondoc"></span></a><a class="el" href="_airbot_arm_2types_8hpp.html" target="_self">types.hpp</a></td><td class="desc">机械臂控制程序所需的一些类型定义 </td></tr>
+<tr id="row_2_1_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_2_1_" class="arrow" onclick="dynsection.toggleFolder('2_1_')">&#9660;</span><span id="img_2_1_" class="iconfopen" onclick="dynsection.toggleFolder('2_1_')">&#160;</span><a class="el" href="dir_c050db323da6c49d1f45615466d39463.html" target="_self">BitbotSimulation</a></td><td class="desc"></td></tr>
+<tr id="row_2_1_0_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="_bitbot_simulation_2main_8cpp.html" target="_self">main.cpp</a></td><td class="desc"></td></tr>
+<tr id="row_2_1_1_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="_bitbot_simulation_2types_8hpp_source.html"><span class="icondoc"></span></a><a class="el" href="_bitbot_simulation_2types_8hpp.html" target="_self">types.hpp</a></td><td class="desc">类型定义 </td></tr>
+<tr id="row_2_1_2_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="user__func_8cpp.html" target="_self">user_func.cpp</a></td><td class="desc"></td></tr>
+<tr id="row_2_1_3_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="user__func_8h_source.html"><span class="icondoc"></span></a><a class="el" href="user__func_8h.html" target="_self">user_func.h</a></td><td class="desc"></td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->

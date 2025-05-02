@@ -1,6 +1,6 @@
 var indexSectionsWithContent =
 {
-  0: "abcdefghijklmnoprstuvwz~基安示简网",
+  0: "abcdefghijklmnoprstuvwxz~基安示简网",
   1: "acdefhikmnprstuvwz",
   2: "z",
   3: "acdehikmnpstuz",

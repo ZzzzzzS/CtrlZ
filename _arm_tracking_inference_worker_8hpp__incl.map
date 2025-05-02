@@ -1,9 +1,9 @@
-<map id="C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/example/AirbotArm/ArmTrackingInferenceWorker.hpp" name="C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/example/AirbotArm/ArmTrackingInferenceWorker.hpp">
-<area shape="rect" id="Node000001" title="机械臂控制程序所需控制网络" alt="" coords="730,5,950,80"/>
+<map id="C:/Users/ZhouZishun/Desktop/CtrlZ/example/AirbotArm/ArmTrackingInferenceWorker.hpp" name="C:/Users/ZhouZishun/Desktop/CtrlZ/example/AirbotArm/ArmTrackingInferenceWorker.hpp">
+<area shape="rect" id="Node000001" title="机械臂控制程序所需控制网络" alt="" coords="732,5,948,80"/>
 <area shape="rect" id="Node000002" href="$_common_loco_inference_worker_8hpp.html" title=" " alt="" coords="724,128,956,171"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="843,80,843,113,837,113,837,80"/>
 <area shape="rect" id="Node000030" title=" " alt="" coords="2060,368,2121,395"/>
-<area shape="poly" id="edge73_Node000001_Node000030" title=" " alt="" coords="951,71,2046,365,2044,370,949,76"/>
+<area shape="poly" id="edge73_Node000001_Node000030" title=" " alt="" coords="949,71,2046,365,2045,370,948,76"/>
 <area shape="rect" id="Node000032" href="$_net_inference_worker_8h.html" title=" " alt="" coords="434,293,582,320"/>
 <area shape="poly" id="edge72_Node000001_Node000032" title=" " alt="" coords="782,83,714,130,612,214,534,285,530,281,609,210,710,126,779,78"/>
 <area shape="rect" id="Node000003" href="$_abstract_inference_worker_8hpp.html" title=" " alt="" coords="850,219,1040,245"/>
