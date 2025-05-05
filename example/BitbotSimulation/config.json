@@ -106,7 +106,6 @@
       },
       "Network": {
         "ModelPath": "../../example/BitbotSimulation/CheckPoints/policy_1.onnx",
-        //"ModelPath": "/home/owheel/Documents/BITWheelFoot/CheckPoints/policy_1.onnx",
         "InputNodeNames": [
           "observation"
         ],

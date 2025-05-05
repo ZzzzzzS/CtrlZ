@@ -166,6 +166,25 @@ namespace z
             return idx;
         }
 
+        /**
+         * @brief get the index of a compile time string in the array during runtime
+         *
+         * @param str  runtime string to search
+         * @return static size_t index of the compile time string in the array
+         */
+        static size_t index(const std::string_view& str)
+        {
+            const auto it = std::find(string_array_.begin(), string_array_.end(), str);
+            if (it != string_array_.end())
+            {
+                return std::distance(string_array_.begin(), it);
+            }
+            else
+            {
+                return sizeof...(CTS);
+            }
+        }
+
     private:
         constexpr static std::array<std::string_view, sizeof...(CTS)> string_array_{ CTS.value... };
     };
@@ -225,10 +244,22 @@ namespace z
          * @return size_t index of the compile time string key
          */
         template<CTString CT>
-        size_t index()
+        static constexpr size_t index()
         {
             return ctsArray.template index<CT>();
         }
+
+        /**
+         * @brief get the index of a runtime string key
+         *
+         * @param str runtime string key
+         * @return size_t index of the runtime string key
+         */
+        size_t index(const std::string_view& str)
+        {
+            return ctsArray.index(str);
+        }
+
 
         /**
          * @brief set the value of a compile time string key

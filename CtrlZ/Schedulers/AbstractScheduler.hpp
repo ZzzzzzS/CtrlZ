@@ -75,6 +75,7 @@ namespace z
          */
         virtual ~AbstractScheduler()
         {
+            this->CanSpin = false;
             for (auto [taskname, task] : TaskList)
             {
                 task->isRunning = false;
@@ -121,6 +122,16 @@ namespace z
 
             std::this_thread::sleep_for(std::chrono::seconds(1));
             this->PrintWelcomeMessage();
+            this->CanSpin = true;
+        }
+
+        /**
+         * @brief 停止调度器，注意停止后无法再次启动调度器，必须重新创建调度器。
+         *
+         */
+        void Stop()
+        {
+            this->CanSpin = false;
         }
 
         /**
@@ -131,6 +142,11 @@ namespace z
          */
         void SpinOnce()
         {
+            if (!this->CanSpin)
+            {
+                std::cout << "Scheduler is not started, start scheduler before call spin function!" << std::endl;
+                return;
+            }
             //TODO: solve the problem of calling this function in the main thread
             /*if (std::this_thread::get_id() != this->threadId)
             {
@@ -163,6 +179,32 @@ namespace z
 
             this->run_once(MainThreadTaskBlock);
         }
+
+        /**
+         * @brief 进行连续任务调度。
+         *
+         */
+        void Spin()
+        {
+            std::chrono::microseconds sleep_all_time = std::chrono::microseconds(static_cast<long long>(this->spin_dt * 1e6));
+            while (this->CanSpin)
+            {
+                auto start_time = std::chrono::high_resolution_clock::now();
+                this->SpinOnce();
+                auto end_time = std::chrono::high_resolution_clock::now();
+                auto time_cost = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
+                auto sleep_time = sleep_all_time - time_cost;
+                if (sleep_time > std::chrono::microseconds(0))
+                {
+                    std::this_thread::sleep_for(sleep_time);
+                }
+                else
+                {
+                    std::cout << "SpinOnce is too slow!" << std::endl;
+                }
+            }
+        }
+
 
         /**
          * @brief 获取时间辍。
@@ -446,6 +488,8 @@ namespace z
         };
 
     protected:
+        std::atomic<bool> CanSpin = false; //是否可以进行调度
+
         /// @brief main thread id
         std::thread::id threadId;
 
@@ -554,12 +598,12 @@ namespace z
             else [[likely]]
                 this->HistorySpinDt = this->HistorySpinDt * 0.999 + dt * 0.001;
 
-                if (this->HistorySpinDt > this->spin_dt * 1.4 || this->HistorySpinDt < this->spin_dt * 0.6)
-                {
-                    //set to red color
-                    std::cout << "\033[31m" << "Scheduler spin dt is not consistent with the set dt, please check your code!" << "\033[0m" << std::endl;
-                    std::cout << "Current dt: " << this->HistorySpinDt << ", set dt: " << this->spin_dt << std::endl;
-                }
+            if (this->HistorySpinDt > this->spin_dt * 1.4 || this->HistorySpinDt < this->spin_dt * 0.6)
+            {
+                //set to red color
+                std::cout << "\033[31m" << "Scheduler spin dt is not consistent with the set dt, please check your code!" << "\033[0m" << std::endl;
+                std::cout << "Current dt: " << this->HistorySpinDt << ", set dt: " << this->spin_dt << std::endl;
+            }
         }
 
         void PrintWelcomeMessage()

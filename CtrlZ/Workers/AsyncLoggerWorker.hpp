@@ -322,7 +322,7 @@ namespace z
                 WriteFile();
                 this->LogThreadNeedWrite__ = false;
             }
-            std::cout << "WriteLogThreadRun exit" << std::endl;
+            //std::cout << "WriteLogThreadRun exit" << std::endl;
             WriteFile();
             this->FileStream__.close();
         }
