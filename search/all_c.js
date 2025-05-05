@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['main_2ecpp_0',['main.cpp',['../_airbot_arm_2main_8cpp.html',1,'(全局命名空间)'],['../_bitbot_simulation_2main_8cpp.html',1,'(全局命名空间)']]],
+  ['main_2ecpp_0',['main.cpp',['../main_8cpp.html',1,'']]],
   ['mainthreadtaskblock_1',['MainThreadTaskBlock',['../classz_1_1_abstract_scheduler.html#a6d2527582dd43820a1b2d51ad23701fb',1,'z::AbstractScheduler']]],
   ['mainthreadtaskname_2',['MainThreadTaskName',['../classz_1_1_abstract_scheduler.html#a208a17d1ae9ede0b5e4a8d521a70bce3',1,'z::AbstractScheduler']]],
   ['max_3',['max',['../classz_1_1math_1_1_vector.html#a66d7fc9915ea3c81e7ddfc8710c4b5ae',1,'z::math::Vector::max(const Vector&lt; T, N &gt; &amp;val1, const Vector&lt; T, N &gt; &amp;val2)'],['../classz_1_1math_1_1_vector.html#aae057bd4cf77e4e25536499d4e3fc691',1,'z::math::Vector::max(const Vector&lt; T, N &gt; &amp;val, T max)'],['../classz_1_1math_1_1_vector.html#ac73b8bcbeb20c4979fc167be2f2276c8',1,'z::math::Vector::max() const'],['../classz_1_1math_1_1_vector.html#a66d7fc9915ea3c81e7ddfc8710c4b5ae',1,'z::math::Vector&lt; bool, N &gt;::max(const Vector&lt; bool, N &gt; &amp;val1, const Vector&lt; bool, N &gt; &amp;val2)'],['../classz_1_1math_1_1_vector.html#aae057bd4cf77e4e25536499d4e3fc691',1,'z::math::Vector&lt; bool, N &gt;::max(const Vector&lt; bool, N &gt; &amp;val, bool max)'],['../classz_1_1math_1_1_vector.html#ac73b8bcbeb20c4979fc167be2f2276c8',1,'z::math::Vector&lt; bool, N &gt;::max() const']]],
@@ -16,5 +16,5 @@ var searchData=
   ['motorresetpositionworker_13',['MotorResetPositionWorker',['../classz_1_1_motor_reset_position_worker.html',1,'z::MotorResetPositionWorker&lt; SchedulerType, MotorPrecision, JointNumber &gt;'],['../classz_1_1_motor_reset_position_worker.html#a9c0eb19f50c02c83cc93eba6468f2881',1,'z::MotorResetPositionWorker::MotorResetPositionWorker()']]],
   ['motorresetpositionworker_2ehpp_14',['MotorResetPositionWorker.hpp',['../_motor_reset_position_worker_8hpp.html',1,'']]],
   ['motorresetpositionworker_3c_20schedulertype_2c_20realnumber_2c_20joint_5fnumber_20_3e_15',['MotorResetPositionWorker&lt; SchedulerType, RealNumber, JOINT_NUMBER &gt;',['../classz_1_1_motor_reset_position_worker.html',1,'z']]],
-  ['motorvalvec_16',['MotorValVec',['../classz_1_1_common_loco_inference_worker.html#a8730cda205924bea7d6f8ad8a8105869',1,'z::CommonLocoInferenceWorker::MotorValVec'],['../classz_1_1_arm_tracking_inference_worker.html#a590ab5d8bd727b60261e91682c644952',1,'z::ArmTrackingInferenceWorker::MotorValVec'],['../classz_1_1_plain_inference_worker.html#a8730cda205924bea7d6f8ad8a8105869',1,'z::PlainInferenceWorker::MotorValVec']]]
+  ['motorvalvec_16',['MotorValVec',['../classz_1_1_common_loco_inference_worker.html#a8730cda205924bea7d6f8ad8a8105869',1,'z::CommonLocoInferenceWorker::MotorValVec'],['../classz_1_1_plain_inference_worker.html#a8730cda205924bea7d6f8ad8a8105869',1,'z::PlainInferenceWorker::MotorValVec']]]
 ];

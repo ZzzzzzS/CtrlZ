@@ -21,10 +21,11 @@ var searchData=
   ['ctsarray_18',['CTSArray',['../classz_1_1_c_t_s_array.html',1,'z::CTSArray&lt; CTS &gt;'],['../classz_1_1_c_t_s_array.html#afae0576f206ea9c0799a692c38d34ea4',1,'z::CTSArray::CTSArray()']]],
   ['ctsarray_3c_20cts_2estr_2e_2e_2e_20_3e_19',['CTSArray&lt; CTS.str... &gt;',['../classz_1_1_c_t_s_array.html',1,'z']]],
   ['ctsmap_20',['CTSMap',['../classz_1_1_c_t_s_map.html',1,'z::CTSMap&lt; CTS &gt;'],['../classz_1_1_c_t_s_map.html#aacb973f26ad51715ffcf29b8caaa9673',1,'z::CTSMap::CTSMap()']]],
-  ['ctsmap_3c_20cts_2e_2e_2e_20_3e_21',['CTSMap&lt; CTS... &gt;',['../classz_1_1_c_t_s_map.html',1,'z']]],
-  ['ctspair_22',['CTSPair',['../structz_1_1_c_t_s_pair.html',1,'z']]],
-  ['ctspair_3c_20ct_2c_20math_3a_3avector_3c_20t_2c_20dim_20_3e_20_3e_23',['CTSPair&lt; CT, math::Vector&lt; T, Dim &gt; &gt;',['../structz_1_1_c_t_s_pair_3_01_c_t_00_01math_1_1_vector_3_01_t_00_01_dim_01_4_01_4.html',1,'z']]],
-  ['ctspair_3c_20ct_2c_20std_3a_3aarray_3c_20t_2c_20dim_20_3e_20_3e_24',['CTSPair&lt; CT, std::array&lt; T, Dim &gt; &gt;',['../structz_1_1_c_t_s_pair_3_01_c_t_00_01std_1_1array_3_01_t_00_01_dim_01_4_01_4.html',1,'z']]],
-  ['ctspair_3c_20ct_2c_20t_5bdim_5d_3e_25',['CTSPair&lt; CT, T[Dim]&gt;',['../structz_1_1_c_t_s_pair_3_01_c_t_00_01_t_0f_dim_0e_4.html',1,'z']]],
-  ['ctstring_26',['CTString',['../structz_1_1_c_t_string.html',1,'z']]]
+  ['ctsmap_3c_20actionpairs_2e_2e_2e_20_3e_21',['CTSMap&lt; ActionPairs... &gt;',['../classz_1_1_c_t_s_map.html',1,'z']]],
+  ['ctsmap_3c_20cts_2e_2e_2e_20_3e_22',['CTSMap&lt; CTS... &gt;',['../classz_1_1_c_t_s_map.html',1,'z']]],
+  ['ctspair_23',['CTSPair',['../structz_1_1_c_t_s_pair.html',1,'z']]],
+  ['ctspair_3c_20ct_2c_20math_3a_3avector_3c_20t_2c_20dim_20_3e_20_3e_24',['CTSPair&lt; CT, math::Vector&lt; T, Dim &gt; &gt;',['../structz_1_1_c_t_s_pair_3_01_c_t_00_01math_1_1_vector_3_01_t_00_01_dim_01_4_01_4.html',1,'z']]],
+  ['ctspair_3c_20ct_2c_20std_3a_3aarray_3c_20t_2c_20dim_20_3e_20_3e_25',['CTSPair&lt; CT, std::array&lt; T, Dim &gt; &gt;',['../structz_1_1_c_t_s_pair_3_01_c_t_00_01std_1_1array_3_01_t_00_01_dim_01_4_01_4.html',1,'z']]],
+  ['ctspair_3c_20ct_2c_20t_5bdim_5d_3e_26',['CTSPair&lt; CT, T[Dim]&gt;',['../structz_1_1_c_t_s_pair_3_01_c_t_00_01_t_0f_dim_0e_4.html',1,'z']]],
+  ['ctstring_27',['CTString',['../structz_1_1_c_t_string.html',1,'z']]]
 ];

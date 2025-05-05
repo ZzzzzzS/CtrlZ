@@ -12,7 +12,7 @@ var annotated_dup =
       [ "AbstractNetInferenceWorker", "classz_1_1_abstract_net_inference_worker.html", "classz_1_1_abstract_net_inference_worker" ],
       [ "AbstractScheduler", "classz_1_1_abstract_scheduler.html", "classz_1_1_abstract_scheduler" ],
       [ "AbstractWorker", "classz_1_1_abstract_worker.html", "classz_1_1_abstract_worker" ],
-      [ "ArmTrackingInferenceWorker", "classz_1_1_arm_tracking_inference_worker.html", "classz_1_1_arm_tracking_inference_worker" ],
+      [ "ActionManagementWorker", "classz_1_1_action_management_worker.html", "classz_1_1_action_management_worker" ],
       [ "AsyncLoggerWorker", "classz_1_1_async_logger_worker.html", "classz_1_1_async_logger_worker" ],
       [ "CommonLocoInferenceWorker", "classz_1_1_common_loco_inference_worker.html", "classz_1_1_common_loco_inference_worker" ],
       [ "CTSArray", "classz_1_1_c_t_s_array.html", "classz_1_1_c_t_s_array" ],

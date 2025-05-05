@@ -1,21 +1,21 @@
 <map id="z::PlainInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;" name="z::PlainInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;">
-<area shape="rect" id="Node000001" title="该类型实现了一个可用的平凡推理工人类型，用户可以通过这个工人类型来实现推理的功能。" alt="" coords="1529,129,1768,188"/>
-<area shape="rect" id="Node000002" href="$classz_1_1_common_loco_inference_worker.html" title="CommonLocoInferenceWorker类型是一个通用的Locomotion推理工人类型，该类型实现了一些Locomotion推理的通用逻辑。" alt="" coords="1240,129,1480,188"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1495,156,1528,156,1528,161,1495,161"/>
-<area shape="rect" id="Node000003" href="$classz_1_1_abstract_net_inference_worker.html" title="AbstractNetInferenceWorker类型是一切神经网络推理工人类型的基类，该类提供一些基本推理的功能， 用户可以通过继承这个类来实现自己的推理工人类型。" alt="" coords="813,5,1060,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1076,18,1147,25,1217,44,1251,61,1283,82,1333,127,1330,131,1279,86,1249,66,1215,49,1146,31,1075,23"/>
-<area shape="rect" id="Node000004" href="$classz_1_1_abstract_worker.html" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="583,5,718,48"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="734,24,813,24,813,29,734,29"/>
-<area shape="rect" id="Node000005" href="$classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="5,29,88,56"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="102,23,137,16,260,6,383,5,494,10,583,17,583,22,494,15,383,10,260,11,137,21,103,28"/>
-<area shape="rect" id="Node000006" href="$classz_1_1_abstract_scheduler.html" title=" " alt="" coords="137,31,427,153"/>
-<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="103,52,137,59,136,64,102,57"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="442,61,583,36,584,41,443,66"/>
-<area shape="rect" id="Node000007" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="836,151,1037,193"/>
-<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="1052,166,1240,160,1240,165,1053,171"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="537,195,764,221"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="777,189,836,182,836,187,777,195"/>
-<area shape="rect" id="Node000009" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="848,224,1025,267"/>
-<area shape="poly" id="edge10_Node000009_Node000008" title=" " alt="" coords="773,221,848,231,848,236,773,227"/>
-<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="1040,250,1127,248,1172,243,1216,233,1268,213,1315,186,1317,191,1271,218,1217,239,1173,248,1127,253,1041,256"/>
+<area shape="rect" id="Node000001" title="该类型实现了一个可用的平凡推理工人类型，用户可以通过这个工人类型来实现推理的功能。" alt="" coords="1661,146,1900,205"/>
+<area shape="rect" id="Node000002" href="$classz_1_1_common_loco_inference_worker.html" title="CommonLocoInferenceWorker类型是一个通用的Locomotion推理工人类型，该类型实现了一些Locomotion推理的通用逻辑。" alt="" coords="1372,146,1612,205"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1627,173,1660,173,1660,178,1627,178"/>
+<area shape="rect" id="Node000003" href="$classz_1_1_abstract_net_inference_worker.html" title="AbstractNetInferenceWorker类型是一切神经网络推理工人类型的基类，该类提供一些基本推理的功能， 用户可以通过继承这个类来实现自己的推理工人类型。" alt="" coords="945,22,1192,65"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1208,35,1279,42,1349,61,1383,78,1415,99,1465,144,1462,148,1411,103,1381,82,1347,66,1278,47,1207,40"/>
+<area shape="rect" id="Node000004" href="$classz_1_1_abstract_worker.html" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="715,22,850,65"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="866,41,945,41,945,46,866,46"/>
+<area shape="rect" id="Node000005" href="$classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="5,57,88,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="81,46,107,33,136,24,200,11,254,4,302,3,347,5,440,14,560,23,715,34,715,40,559,29,440,20,346,10,301,8,254,10,200,16,138,29,109,38,83,51"/>
+<area shape="rect" id="Node000006" href="$classz_1_1_abstract_scheduler.html" title=" " alt="" coords="137,38,559,241"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="104,80,137,88,136,93,102,86"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="574,87,714,56,716,61,575,92"/>
+<area shape="rect" id="Node000007" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="968,167,1169,210"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="1184,182,1372,177,1372,182,1185,188"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="669,211,896,238"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="909,206,968,199,968,204,909,212"/>
+<area shape="rect" id="Node000009" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="980,241,1157,283"/>
+<area shape="poly" id="edge10_Node000009_Node000008" title=" " alt="" coords="905,238,980,248,980,253,905,243"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="1172,267,1259,265,1304,260,1348,250,1400,230,1447,203,1449,208,1403,234,1349,255,1305,265,1259,270,1173,273"/>
 </map>

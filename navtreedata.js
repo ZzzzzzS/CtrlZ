@@ -65,18 +65,17 @@ var NAVTREE =
         [ "全部", "globals.html", null ],
         [ "函数", "globals_func.html", null ]
       ] ]
-    ] ],
-    [ "示例", "examples.html", "examples" ]
+    ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
 "_abstract_inference_worker_8hpp.html",
-"classz_1_1_common_loco_inference_worker.html#a7a97490bcc221ec6b64ea380ebd258ce",
-"classz_1_1math_1_1_tensor.html#a64953e8743bce87e2501eebf8db8bdb9",
-"classz_1_1math_1_1_vector.html#a2aa82189b15a5472ef460e4e1a1e8164",
-"functions_func_l.html"
+"classz_1_1_common_loco_inference_worker.html#a8730cda205924bea7d6f8ad8a8105869",
+"classz_1_1math_1_1_tensor.html#a6506810ef3d79f566dde7f5ef4ca84eb",
+"classz_1_1math_1_1_vector.html#a3618c704875841e09e65c52810bb8d75",
+"functions_func_r.html"
 ];
 
 var SYNCONMSG = '点击 关闭 面板同步';

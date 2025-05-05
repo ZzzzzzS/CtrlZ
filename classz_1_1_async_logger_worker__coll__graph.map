@@ -1,10 +1,10 @@
 <map id="z::AsyncLoggerWorker&lt; SchedulerType, LogPrecision, Args &gt;" name="z::AsyncLoggerWorker&lt; SchedulerType, LogPrecision, Args &gt;">
-<area shape="rect" id="Node000001" title="异步日志工人类型，用户可以通过这个工人类型来异步的实现记录数据的功能。" alt="" coords="721,5,927,64"/>
-<area shape="rect" id="Node000002" href="$classz_1_1_abstract_worker.html" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="537,13,672,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="687,32,721,32,721,37,687,37"/>
-<area shape="rect" id="Node000003" href="$classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="5,37,88,64"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="102,31,137,24,246,15,356,14,456,18,537,25,537,30,456,24,356,19,246,20,137,29,103,36"/>
-<area shape="rect" id="Node000004" href="$classz_1_1_abstract_scheduler.html" title=" " alt="" coords="137,39,427,161"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="103,60,137,67,136,72,102,65"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="442,65,536,46,537,51,443,70"/>
+<area shape="rect" id="Node000001" title="异步日志工人类型，用户可以通过这个工人类型来异步的实现记录数据的功能。" alt="" coords="853,17,1059,75"/>
+<area shape="rect" id="Node000002" href="$classz_1_1_abstract_worker.html" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="669,25,804,67"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="819,43,853,43,853,49,819,49"/>
+<area shape="rect" id="Node000003" href="$classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="5,58,88,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="81,48,107,35,136,25,200,12,254,5,347,5,440,15,560,25,669,35,669,40,559,30,440,20,346,10,254,11,200,17,138,30,109,40,83,53"/>
+<area shape="rect" id="Node000004" href="$classz_1_1_abstract_scheduler.html" title=" " alt="" coords="137,39,559,242"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="104,82,137,90,136,95,102,87"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="574,83,668,60,670,65,575,88"/>
 </map>

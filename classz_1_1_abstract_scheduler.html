@@ -155,10 +155,18 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a9e23309ab7b1a5fbeb568379aba0cf69" id="r_a9e23309ab7b1a5fbeb568379aba0cf69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e23309ab7b1a5fbeb568379aba0cf69">Start</a> ()</td></tr>
 <tr class="memdesc:a9e23309ab7b1a5fbeb568379aba0cf69"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动调度器  <br /></td></tr>
 <tr class="separator:a9e23309ab7b1a5fbeb568379aba0cf69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aece254a4900f9db4144cda692734ae62" id="r_aece254a4900f9db4144cda692734ae62"><td class="memItemLeft" align="right" valign="top"><a id="aece254a4900f9db4144cda692734ae62" name="aece254a4900f9db4144cda692734ae62"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Stop</b> ()</td></tr>
+<tr class="memdesc:aece254a4900f9db4144cda692734ae62"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止调度器，注意停止后无法再次启动调度器，必须重新创建调度器。 <br /></td></tr>
+<tr class="separator:aece254a4900f9db4144cda692734ae62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a834279438447ba4412b1e021e9b4dc84" id="r_a834279438447ba4412b1e021e9b4dc84"><td class="memItemLeft" align="right" valign="top"><a id="a834279438447ba4412b1e021e9b4dc84" name="a834279438447ba4412b1e021e9b4dc84"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SpinOnce</b> ()</td></tr>
 <tr class="memdesc:a834279438447ba4412b1e021e9b4dc84"><td class="mdescLeft">&#160;</td><td class="mdescRight">进行一次调度，调度器将调度主线程任务(MainThreadTask)中的Worker，并为其他任务队列运行一个新的周期。 如果任务运行过慢，调度器会打印一个警告信息。**请不要在Worker中或者其他线程中调用这个函数，这个函数应该在主线程中调用。 否则会出现未定义行为！** <br /></td></tr>
 <tr class="separator:a834279438447ba4412b1e021e9b4dc84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36c6d7d9b0211d2540eae148e1671e2b" id="r_a36c6d7d9b0211d2540eae148e1671e2b"><td class="memItemLeft" align="right" valign="top"><a id="a36c6d7d9b0211d2540eae148e1671e2b" name="a36c6d7d9b0211d2540eae148e1671e2b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Spin</b> ()</td></tr>
+<tr class="memdesc:a36c6d7d9b0211d2540eae148e1671e2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">进行连续任务调度。 <br /></td></tr>
+<tr class="separator:a36c6d7d9b0211d2540eae148e1671e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9a79659e7995d4e73c99b92c99cf70c" id="r_ab9a79659e7995d4e73c99b92c99cf70c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9a79659e7995d4e73c99b92c99cf70c">getTimeStamp</a> ()</td></tr>
 <tr class="memdesc:ab9a79659e7995d4e73c99b92c99cf70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取时间辍。  <br /></td></tr>
 <tr class="separator:ab9a79659e7995d4e73c99b92c99cf70c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -213,6 +221,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>PrintWelcomeMessage</
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected 属性</h2></td></tr>
+<tr class="memitem:a4f4cbb859a0f8822a76c5a68e183355a" id="r_a4f4cbb859a0f8822a76c5a68e183355a"><td class="memItemLeft" align="right" valign="top"><a id="a4f4cbb859a0f8822a76c5a68e183355a" name="a4f4cbb859a0f8822a76c5a68e183355a"></a>
+std::atomic&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>CanSpin</b> = false</td></tr>
+<tr class="separator:a4f4cbb859a0f8822a76c5a68e183355a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d6e11efbbdc5fbf4abbd88e18fd8b4e" id="r_a0d6e11efbbdc5fbf4abbd88e18fd8b4e"><td class="memItemLeft" align="right" valign="top"><a id="a0d6e11efbbdc5fbf4abbd88e18fd8b4e" name="a0d6e11efbbdc5fbf4abbd88e18fd8b4e"></a>
 std::thread::id&#160;</td><td class="memItemRight" valign="bottom"><b>threadId</b></td></tr>
 <tr class="memdesc:a0d6e11efbbdc5fbf4abbd88e18fd8b4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">main thread id <br /></td></tr>

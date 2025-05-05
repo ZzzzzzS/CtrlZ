@@ -1,55 +1,53 @@
 <map id="z::AbstractWorker&lt; SchedulerType &gt;" name="z::AbstractWorker&lt; SchedulerType &gt;">
-<area shape="rect" id="Node000001" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="136,835,270,877"/>
-<area shape="rect" id="Node000003" href="$classz_1_1_async_logger_worker.html" title=" " alt="" coords="368,5,671,128"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="203,819,210,672,228,469,243,366,262,271,286,193,300,162,316,138,339,116,367,99,370,103,343,120,320,142,305,165,291,195,267,273,248,367,233,470,215,672,208,819"/>
-<area shape="rect" id="Node000004" href="$classz_1_1_async_logger_worker.html" title=" " alt="" coords="318,152,721,339"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="206,819,220,712,244,574,276,440,295,387,316,349,326,337,330,341,320,352,300,389,281,442,249,575,225,713,211,820"/>
-<area shape="rect" id="Node000005" href="$classz_1_1_imu_process_worker.html" title=" " alt="" coords="424,363,615,421"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="207,819,221,727,245,611,276,502,295,460,316,431,340,414,367,401,423,388,424,394,368,406,343,418,320,435,300,463,281,504,250,612,226,728,212,819"/>
-<area shape="rect" id="Node000006" href="$classz_1_1_motor_control_worker.html" title=" " alt="" coords="402,445,638,504"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="202,819,209,753,227,670,241,627,261,586,285,547,316,514,356,489,400,476,402,481,358,494,320,518,290,551,265,588,246,629,232,672,214,753,208,819"/>
-<area shape="rect" id="Node000007" href="$classz_1_1_motor_p_d_control_worker.html" title=" " alt="" coords="418,528,622,587"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="207,819,219,768,239,708,271,647,292,620,316,597,339,582,364,570,416,557,418,562,366,575,342,586,320,601,296,624,275,650,244,710,224,769,212,820"/>
-<area shape="rect" id="Node000008" href="$classz_1_1_motor_reset_position_worker.html" title=" " alt="" coords="418,611,622,669"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="215,819,231,785,253,747,282,710,317,679,365,656,416,643,418,648,367,661,319,684,286,714,258,750,236,787,220,821"/>
-<area shape="rect" id="Node000009" href="$classz_1_1_net_cmd_worker.html" title=" " alt="" coords="389,693,650,736"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="228,821,267,781,291,761,317,746,352,732,388,722,389,727,353,737,319,750,294,766,270,785,232,824"/>
-<area shape="rect" id="Node000010" href="$classz_1_1_abstract_net_inference_worker.html" title="AbstractNetInferenceWorker类型是一切神经网络推理工人类型的基类，该类提供一些基本推理的功能， 用户可以通过继承这个类来实现自己的推理工人类型。" alt="" coords="396,760,643,803"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="271,827,317,812,395,795,396,801,319,817,273,832"/>
-<area shape="rect" id="Node000019" href="$classz_1_1_async_logger_worker.html" title="异步日志工人类型，用户可以通过这个工人类型来异步的实现记录数据的功能。" alt="" coords="416,827,623,885"/>
-<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="285,853,416,853,416,859,285,859"/>
-<area shape="rect" id="Node000020" href="$classz_1_1_imu_process_worker.html" title="ImuProcessWorker 类型是一个IMU数据处理工人类型，这个类型用于处理IMU传感器的数据，包括加速度，角速度和角度。 通常来说，这个类型可以被用于主任务队列中。 这个类会在TaskCycl..." alt="" coords="429,909,610,968"/>
-<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="274,880,319,895,429,920,428,926,317,900,273,886"/>
-<area shape="rect" id="Node000021" href="$classz_1_1_keyboard_command_worker.html" title="KeyboardCommandWorker 类型是一个键盘命令工人类型，用户可以通过这个工人类型来实现键盘命令的功能。" alt="" coords="424,992,616,1035"/>
-<area shape="poly" id="edge20_Node000001_Node000021" title=" " alt="" coords="228,888,267,936,292,959,319,978,370,997,423,1008,422,1013,369,1003,317,982,288,963,263,940,224,892"/>
-<area shape="rect" id="Node000022" href="$classz_1_1_motor_control_worker.html" title="MotorControlWorker类型是一个电机控制类型，用于读取实际电机的位置、速度、电流等数据，并将控制指令写入到电机的控制接口。" alt="" coords="416,1059,623,1117"/>
-<area shape="poly" id="edge21_Node000001_Node000022" title=" " alt="" coords="218,891,233,928,255,970,283,1011,320,1044,366,1068,417,1081,415,1086,364,1073,316,1049,279,1014,250,973,228,930,213,893"/>
-<area shape="rect" id="Node000023" href="$classz_1_1_motor_p_d_control_worker.html" title="MotorPDControlWorker类型是一个电机PD控制工人类型，用户可以通过这个工人类型来实现电机的PD控制。" alt="" coords="410,1141,629,1200"/>
-<area shape="poly" id="edge22_Node000001_Node000023" title=" " alt="" coords="211,892,222,946,242,1010,273,1074,295,1102,320,1127,340,1141,362,1152,411,1165,409,1170,361,1157,337,1146,316,1131,291,1106,269,1077,237,1012,217,947,206,893"/>
-<area shape="rect" id="Node000024" href="$classz_1_1_motor_reset_position_worker.html" title="MotorResetPositionWorker 类型是一个电机复位工人类型，用户可以通过这个工人类型来实现电机的复位功能。" alt="" coords="410,1224,629,1283"/>
-<area shape="poly" id="edge23_Node000001_Node000024" title=" " alt="" coords="207,893,213,962,230,1048,244,1092,263,1136,288,1175,320,1210,340,1225,362,1236,411,1249,409,1254,360,1241,337,1229,316,1214,284,1179,259,1138,239,1094,225,1049,208,962,202,894"/>
-<area shape="rect" id="Node000025" href="$classz_1_1_net_cmd_worker.html" title="NetCmdWorker类型是一个神经网络用户命令工人类型，用户可以通过这个工人类型来实现神经网络用户命令的功能。" alt="" coords="412,1307,627,1349"/>
-<area shape="poly" id="edge24_Node000001_Node000025" title=" " alt="" coords="211,892,225,987,248,1108,263,1168,280,1221,299,1264,320,1293,340,1307,363,1318,413,1330,412,1335,361,1323,337,1312,316,1297,294,1267,275,1223,258,1169,243,1109,220,988,206,893"/>
-<area shape="rect" id="Node000026" href="$classz_1_1_simple_callback_worker.html" title="SimpleCallbackWorker 类型是一个简单的回调工人类型，用户可以通过这个工人类型来实现一些简单的工作逻辑。" alt="" coords="436,1373,604,1416"/>
-<area shape="poly" id="edge25_Node000001_Node000026" title=" " alt="" coords="210,893,222,1001,243,1142,258,1212,276,1275,296,1326,320,1359,345,1377,374,1389,405,1396,436,1398,435,1404,404,1401,372,1394,342,1382,316,1363,292,1328,271,1277,253,1213,238,1143,216,1002,205,893"/>
-<area shape="rect" id="Node000027" href="$classz_1_1_sin_trajactory_generator.html" title=" " alt="" coords="434,1440,605,1499"/>
-<area shape="poly" id="edge26_Node000001_Node000027" title=" " alt="" coords="209,892,219,1013,239,1174,254,1254,272,1327,294,1387,307,1409,320,1426,345,1445,373,1458,404,1466,435,1470,434,1475,403,1471,371,1463,342,1450,316,1430,302,1412,289,1389,267,1329,249,1255,234,1175,214,1014,204,893"/>
-<area shape="rect" id="Node000002" href="$classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="5,843,88,869"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,853,135,853,135,859,103,859"/>
-<area shape="rect" id="Node000011" href="$classz_1_1_common_loco_inference_worker.html" title="CommonLocoInferenceWorker类型是一个通用的Locomotion推理工人类型，该类型实现了一些Locomotion推理的通用逻辑。" alt="" coords="769,752,1009,811"/>
-<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="659,779,769,779,769,784,659,784"/>
-<area shape="rect" id="Node000012" href="$classz_1_1_arm_tracking_inference_worker.html" title=" " alt="" coords="1107,464,1312,523"/>
-<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="906,737,929,689,962,633,1004,579,1055,533,1079,518,1105,508,1107,513,1082,523,1058,537,1008,582,967,636,934,691,911,739"/>
-<area shape="rect" id="Node000013" href="$classz_1_1_erax_like_inference_worker.html" title=" " alt="" coords="1070,547,1349,637"/>
-<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="931,740,988,692,1055,647,1077,636,1080,640,1058,652,991,697,934,744"/>
-<area shape="rect" id="Node000014" href="$classz_1_1_arm_tracking_inference_worker.html" title=" " alt="" coords="1090,661,1329,720"/>
-<area shape="poly" id="edge13_Node000011_Node000014" title=" " alt="" coords="1004,745,1056,729,1096,718,1098,723,1057,735,1005,750"/>
-<area shape="rect" id="Node000015" href="$classz_1_1_erax_like_inference_worker.html" title=" " alt="" coords="1069,744,1350,819"/>
-<area shape="poly" id="edge14_Node000011_Node000015" title=" " alt="" coords="1024,779,1069,779,1069,784,1024,784"/>
-<area shape="rect" id="Node000016" href="$classz_1_1_humanoid_gym_inference_worker.html" title="HumanoidGymInferenceWorker 类型是一个人形机器人推理工人类型，该类实现了HumanoidGym网络兼容的推理功能。" alt="" coords="1057,843,1362,901"/>
-<area shape="poly" id="edge15_Node000011_Node000016" title=" " alt="" coords="1005,813,1057,828,1098,839,1096,845,1056,833,1004,818"/>
-<area shape="rect" id="Node000017" href="$classz_1_1_plain_inference_worker.html" title="该类型实现了一个可用的平凡推理工人类型，用户可以通过这个工人类型来实现推理的功能。" alt="" coords="1090,925,1329,984"/>
-<area shape="poly" id="edge16_Node000011_Node000017" title=" " alt="" coords="933,820,990,867,1058,911,1090,925,1088,930,1055,916,987,872,929,824"/>
-<area shape="rect" id="Node000018" href="$classz_1_1_unitree_rl_gym_inference_worker.html" title="UnitreeRlGymInferenceWorker 类型是一个人形机器人推理工人类型，该类实现了Unitree_rl_gym网络兼容的推理功能。" alt="" coords="1079,1008,1340,1083"/>
-<area shape="poly" id="edge17_Node000011_Node000018" title=" " alt="" coords="915,823,940,863,973,909,1013,955,1058,994,1080,1007,1077,1012,1055,998,1009,959,969,913,936,866,911,825"/>
+<area shape="rect" id="Node000001" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="136,796,270,839"/>
+<area shape="rect" id="Node000003" href="$classz_1_1_abstract_net_inference_worker.html" title=" " alt="" coords="392,5,648,48"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="202,781,205,625,221,408,235,297,255,196,281,114,298,82,316,58,350,34,390,22,392,27,353,39,320,62,302,85,286,116,260,198,240,298,226,408,211,625,207,781"/>
+<area shape="rect" id="Node000004" href="$classz_1_1_async_logger_worker.html" title=" " alt="" coords="318,72,721,259"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="205,780,218,666,241,515,256,439,274,369,294,310,316,269,325,258,329,261,320,272,298,313,279,370,262,440,247,516,224,667,210,781"/>
+<area shape="rect" id="Node000005" href="$classz_1_1_imu_process_worker.html" title=" " alt="" coords="424,283,615,341"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="205,780,219,680,241,552,256,488,274,431,294,384,316,351,340,334,367,321,424,308,425,313,368,326,343,338,320,355,298,386,279,432,262,489,247,553,224,681,211,781"/>
+<area shape="rect" id="Node000006" href="$classz_1_1_motor_control_worker.html" title=" " alt="" coords="402,365,638,424"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="201,780,205,707,221,614,235,564,256,517,282,473,316,434,335,420,356,409,400,395,402,400,358,414,338,424,320,438,286,476,260,519,240,566,226,615,210,708,206,781"/>
+<area shape="rect" id="Node000007" href="$classz_1_1_motor_p_d_control_worker.html" title=" " alt="" coords="418,448,622,507"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="204,780,214,722,233,650,247,614,266,578,289,545,316,517,339,501,364,489,416,476,418,481,366,495,341,506,320,521,293,549,270,581,252,616,238,652,219,723,210,781"/>
+<area shape="rect" id="Node000008" href="$classz_1_1_motor_reset_position_worker.html" title=" " alt="" coords="418,531,622,589"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="210,780,224,738,246,689,276,640,295,618,316,599,339,585,364,574,416,561,418,566,366,579,342,590,320,603,299,622,280,643,250,691,229,740,215,782"/>
+<area shape="rect" id="Node000009" href="$classz_1_1_net_cmd_worker.html" title=" " alt="" coords="389,613,650,656"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="219,781,258,720,285,690,317,666,351,649,388,639,389,644,353,654,319,670,288,694,262,724,223,783"/>
+<area shape="rect" id="Node000010" href="$classz_1_1_abstract_net_inference_worker.html" title="AbstractNetInferenceWorker类型是一切神经网络推理工人类型的基类，该类提供一些基本推理的功能， 用户可以通过继承这个类来实现自己的推理工人类型。" alt="" coords="396,680,643,723"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="237,783,274,756,317,732,355,719,395,710,396,715,357,724,319,737,277,760,241,787"/>
+<area shape="rect" id="Node000017" href="$classz_1_1_action_management_worker.html" title="ActionManagementWorker类型是一个用于管理和选择单个或多个推理网络的输出的工人类型。" alt="" coords="400,747,639,805"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="285,804,399,789,400,794,286,809"/>
+<area shape="rect" id="Node000018" href="$classz_1_1_async_logger_worker.html" title="异步日志工人类型，用户可以通过这个工人类型来异步的实现记录数据的功能。" alt="" coords="416,829,623,888"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="286,825,417,843,416,848,285,831"/>
+<area shape="rect" id="Node000019" href="$classz_1_1_imu_process_worker.html" title="ImuProcessWorker 类型是一个IMU数据处理工人类型，这个类型用于处理IMU传感器的数据，包括加速度，角速度和角度。 通常来说，这个类型可以被用于主任务队列中。 这个类会在TaskCycl..." alt="" coords="429,912,610,971"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="241,847,277,874,319,898,374,916,429,929,428,934,372,922,317,902,274,879,238,851"/>
+<area shape="rect" id="Node000020" href="$classz_1_1_keyboard_command_worker.html" title="KeyboardCommandWorker 类型是一个键盘命令工人类型，用户可以通过这个工人类型来实现键盘命令的功能。" alt="" coords="424,995,616,1037"/>
+<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="221,852,237,884,259,919,286,953,319,980,344,993,370,1002,424,1013,423,1018,368,1008,341,998,317,985,282,957,254,922,232,886,216,854"/>
+<area shape="rect" id="Node000021" href="$classz_1_1_motor_control_worker.html" title="MotorControlWorker类型是一个电机控制类型，用于读取实际电机的位置、速度、电流等数据，并将控制指令写入到电机的控制接口。" alt="" coords="416,1061,623,1120"/>
+<area shape="poly" id="edge20_Node000001_Node000021" title=" " alt="" coords="214,853,227,899,248,951,278,1004,298,1027,320,1047,342,1061,366,1072,417,1085,415,1090,364,1077,339,1066,316,1051,294,1031,274,1007,243,954,222,900,209,855"/>
+<area shape="rect" id="Node000022" href="$classz_1_1_motor_p_d_control_worker.html" title="MotorPDControlWorker类型是一个电机PD控制工人类型，用户可以通过这个工人类型来实现电机的PD控制。" alt="" coords="410,1144,629,1203"/>
+<area shape="poly" id="edge21_Node000001_Node000022" title=" " alt="" coords="209,854,217,915,236,990,250,1029,268,1066,292,1100,320,1130,340,1144,362,1155,411,1168,409,1174,360,1160,337,1149,316,1134,287,1104,264,1069,245,1031,230,992,212,916,204,855"/>
+<area shape="rect" id="Node000023" href="$classz_1_1_motor_reset_position_worker.html" title="MotorResetPositionWorker 类型是一个电机复位工人类型，用户可以通过这个工人类型来实现电机的复位功能。" alt="" coords="410,1227,629,1285"/>
+<area shape="poly" id="edge22_Node000001_Node000023" title=" " alt="" coords="206,854,209,930,224,1027,238,1078,258,1127,285,1173,320,1213,340,1228,362,1239,411,1252,409,1257,360,1244,337,1232,316,1217,281,1176,254,1130,233,1080,219,1028,203,930,200,854"/>
+<area shape="rect" id="Node000024" href="$classz_1_1_net_cmd_worker.html" title="NetCmdWorker类型是一个神经网络用户命令工人类型，用户可以通过这个工人类型来实现神经网络用户命令的功能。" alt="" coords="412,1309,627,1352"/>
+<area shape="poly" id="edge23_Node000001_Node000024" title=" " alt="" coords="210,854,223,957,245,1090,260,1156,277,1216,297,1264,320,1295,340,1310,363,1321,413,1333,411,1338,361,1326,337,1315,316,1299,293,1266,272,1217,255,1158,240,1091,218,958,205,854"/>
+<area shape="rect" id="Node000025" href="$classz_1_1_simple_callback_worker.html" title="SimpleCallbackWorker 类型是一个简单的回调工人类型，用户可以通过这个工人类型来实现一些简单的工作逻辑。" alt="" coords="436,1376,604,1419"/>
+<area shape="poly" id="edge24_Node000001_Node000025" title=" " alt="" coords="209,854,220,970,240,1124,255,1200,273,1269,295,1325,320,1362,345,1380,374,1392,405,1399,435,1401,435,1407,404,1404,372,1397,342,1385,316,1366,290,1327,268,1271,250,1201,235,1124,214,971,204,854"/>
+<area shape="rect" id="Node000026" href="$classz_1_1_sin_trajactory_generator.html" title=" " alt="" coords="434,1443,605,1501"/>
+<area shape="poly" id="edge25_Node000001_Node000026" title=" " alt="" coords="208,854,217,983,236,1156,251,1243,270,1322,293,1386,306,1410,320,1429,344,1448,373,1461,404,1469,434,1473,434,1478,403,1474,371,1466,342,1452,316,1433,301,1413,288,1388,264,1323,246,1244,231,1156,212,983,203,854"/>
+<area shape="rect" id="Node000002" href="$classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="5,804,88,831"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,815,135,815,135,820,103,820"/>
+<area shape="rect" id="Node000011" href="$classz_1_1_common_loco_inference_worker.html" title="CommonLocoInferenceWorker类型是一个通用的Locomotion推理工人类型，该类型实现了一些Locomotion推理的通用逻辑。" alt="" coords="769,672,1009,731"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="659,699,769,699,769,704,659,704"/>
+<area shape="rect" id="Node000012" href="$classz_1_1_erax_like_inference_worker.html" title=" " alt="" coords="1070,459,1349,549"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="928,659,986,608,1055,559,1077,548,1079,552,1058,564,989,612,932,663"/>
+<area shape="rect" id="Node000013" href="$classz_1_1_erax_like_inference_worker.html" title=" " alt="" coords="1069,573,1350,648"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="1009,665,1074,646,1076,651,1010,670"/>
+<area shape="rect" id="Node000014" href="$classz_1_1_humanoid_gym_inference_worker.html" title="HumanoidGymInferenceWorker 类型是一个人形机器人推理工人类型，该类实现了HumanoidGym网络兼容的推理功能。" alt="" coords="1057,672,1362,731"/>
+<area shape="poly" id="edge13_Node000011_Node000014" title=" " alt="" coords="1024,699,1056,699,1056,704,1024,704"/>
+<area shape="rect" id="Node000015" href="$classz_1_1_plain_inference_worker.html" title="该类型实现了一个可用的平凡推理工人类型，用户可以通过这个工人类型来实现推理的功能。" alt="" coords="1090,755,1329,813"/>
+<area shape="poly" id="edge14_Node000011_Node000015" title=" " alt="" coords="1021,733,1093,751,1092,757,1020,738"/>
+<area shape="rect" id="Node000016" href="$classz_1_1_unitree_rl_gym_inference_worker.html" title="UnitreeRlGymInferenceWorker 类型是一个人形机器人推理工人类型，该类实现了Unitree_rl_gym网络兼容的推理功能。" alt="" coords="1079,837,1340,912"/>
+<area shape="poly" id="edge15_Node000011_Node000016" title=" " alt="" coords="936,739,993,782,1058,823,1082,834,1080,839,1055,828,990,787,933,743"/>
 </map>

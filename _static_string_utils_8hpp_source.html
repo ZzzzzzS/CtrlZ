@@ -213,76 +213,101 @@ $(function(){initNavTree('_static_string_utils_8hpp_source.html',''); initResiza
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="keywordflow">return</span> idx;</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        }</div>
 </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <span class="keyword">constexpr</span> <span class="keyword">static</span> std::array&lt;std::string_view, <span class="keyword">sizeof</span>...(CTS)&gt; string_array_{ CTS.value... };</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    };</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span></div>
+<div class="foldopen" id="foldopen00175" data-start="{" data-end="}">
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="classz_1_1_c_t_s_array.html#a3a4491f4837501048a9aa2507245f64d">  175</a></span>        <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="classz_1_1_c_t_s_array.html#a3a4491f4837501048a9aa2507245f64d">index</a>(<span class="keyword">const</span> std::string_view&amp; str)</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            <span class="keyword">const</span> <span class="keyword">auto</span> it = std::find(string_array_.begin(), string_array_.end(), str);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            <span class="keywordflow">if</span> (it != string_array_.end())</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                <span class="keywordflow">return</span> std::distance(string_array_.begin(), it);</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            }</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                <span class="keywordflow">return</span> <span class="keyword">sizeof</span>...(CTS);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            }</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        }</div>
 </div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span></div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keyword">template</span>&lt;<a class="code hl_struct" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ...CTS&gt;</div>
-<div class="foldopen" id="foldopen00180" data-start="{" data-end="};">
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="classz_1_1_c_t_s_map.html">  180</a></span>    <span class="keyword">class </span><a class="code hl_function" href="classz_1_1_c_t_s_map.html#aacb973f26ad51715ffcf29b8caaa9673">CTSMap</a></div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    {</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="classz_1_1_c_t_s_map.html#aacb973f26ad51715ffcf29b8caaa9673">  187</a></span>        <a class="code hl_function" href="classz_1_1_c_t_s_map.html#aacb973f26ad51715ffcf29b8caaa9673">CTSMap</a>() {}</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span></div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="classz_1_1_c_t_s_map.html#ad64cda9c95175e69f31c20ee0b9a7f11">  193</a></span>        <a class="code hl_function" href="classz_1_1_c_t_s_map.html#ad64cda9c95175e69f31c20ee0b9a7f11">~CTSMap</a>() {}</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span></div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <span class="keyword">template</span>&lt;CTString CT, <span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00203" data-start="{" data-end="}">
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="classz_1_1_c_t_s_map.html#a2d5fb9ab652700528d7d3393fd1387dc">  203</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_c_t_s_map.html#a2d5fb9ab652700528d7d3393fd1387dc">get</a>(T&amp; value)</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        {</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>            <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> idx = ctsArray.template <a class="code hl_function" href="classz_1_1_c_t_s_map.html#a5e58687511986bf8baadc0a638e6453e">index&lt;CT&gt;</a>();</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>            <span class="comment">//constexpr auto error_message = concat(&quot;CTS not found in CTSMap: &quot;, CT.value);</span></div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>            <span class="keyword">static_assert</span>(idx != <span class="keyword">sizeof</span>...(CTS), <span class="stringliteral">&quot;CTS not found in CTSMap&quot;</span>);</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            value = std::get&lt;idx&gt;(ctsValue);</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        <span class="keyword">constexpr</span> <span class="keyword">static</span> std::array&lt;std::string_view, <span class="keyword">sizeof</span>...(CTS)&gt; string_array_{ CTS.value... };</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    };</div>
 </div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span></div>
-<div class="foldopen" id="foldopen00216" data-start="{" data-end="}">
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="classz_1_1_c_t_s_map.html#a56dbd8e83567b7f11fca62dd8f047d8d">  216</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_function" href="classz_1_1_c_t_s_map.html#a56dbd8e83567b7f11fca62dd8f047d8d">size</a>()</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        {</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            <span class="keywordflow">return</span> <span class="keyword">sizeof</span>...(CTS);</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        }</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keyword">template</span>&lt;<a class="code hl_struct" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ...CTS&gt;</div>
+<div class="foldopen" id="foldopen00199" data-start="{" data-end="};">
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="classz_1_1_c_t_s_map.html">  199</a></span>    <span class="keyword">class </span><a class="code hl_function" href="classz_1_1_c_t_s_map.html#aacb973f26ad51715ffcf29b8caaa9673">CTSMap</a></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="classz_1_1_c_t_s_map.html#aacb973f26ad51715ffcf29b8caaa9673">  206</a></span>        <a class="code hl_function" href="classz_1_1_c_t_s_map.html#aacb973f26ad51715ffcf29b8caaa9673">CTSMap</a>() {}</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno"><a class="line" href="classz_1_1_c_t_s_map.html#ad64cda9c95175e69f31c20ee0b9a7f11">  212</a></span>        <a class="code hl_function" href="classz_1_1_c_t_s_map.html#ad64cda9c95175e69f31c20ee0b9a7f11">~CTSMap</a>() {}</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        <span class="keyword">template</span>&lt;CTString CT, <span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00222" data-start="{" data-end="}">
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="classz_1_1_c_t_s_map.html#a2d5fb9ab652700528d7d3393fd1387dc">  222</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_c_t_s_map.html#a2d5fb9ab652700528d7d3393fd1387dc">get</a>(T&amp; value)</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        {</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>            <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> idx = ctsArray.template <a class="code hl_function" href="classz_1_1_c_t_s_map.html#a8a7aa9ff71eefa701bb21f6a28a35fcf">index&lt;CT&gt;</a>();</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>            <span class="comment">//constexpr auto error_message = concat(&quot;CTS not found in CTSMap: &quot;, CT.value);</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            <span class="keyword">static_assert</span>(idx != <span class="keyword">sizeof</span>...(CTS), <span class="stringliteral">&quot;CTS not found in CTSMap&quot;</span>);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            value = std::get&lt;idx&gt;(ctsValue);</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        }</div>
 </div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span></div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        <span class="keyword">template</span>&lt;CTString CT&gt;</div>
-<div class="foldopen" id="foldopen00228" data-start="{" data-end="}">
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="classz_1_1_c_t_s_map.html#a5e58687511986bf8baadc0a638e6453e">  228</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_function" href="classz_1_1_c_t_s_map.html#a5e58687511986bf8baadc0a638e6453e">index</a>()</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        {</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            <span class="keywordflow">return</span> ctsArray.template <a class="code hl_function" href="classz_1_1_c_t_s_map.html#a5e58687511986bf8baadc0a638e6453e">index&lt;CT&gt;</a>();</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        }</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span></div>
+<div class="foldopen" id="foldopen00235" data-start="{" data-end="}">
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno"><a class="line" href="classz_1_1_c_t_s_map.html#a56dbd8e83567b7f11fca62dd8f047d8d">  235</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_function" href="classz_1_1_c_t_s_map.html#a56dbd8e83567b7f11fca62dd8f047d8d">size</a>()</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            <span class="keywordflow">return</span> <span class="keyword">sizeof</span>...(CTS);</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        }</div>
 </div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span></div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        <span class="keyword">template</span>&lt;CTString CT, <span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00241" data-start="{" data-end="}">
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno"><a class="line" href="classz_1_1_c_t_s_map.html#a25c4360ca90bd167fab44f742e3315be">  241</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_c_t_s_map.html#a25c4360ca90bd167fab44f742e3315be">set</a>(<span class="keyword">const</span> T&amp; value)</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        {</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> idx = ctsArray.template <a class="code hl_function" href="classz_1_1_c_t_s_map.html#a5e58687511986bf8baadc0a638e6453e">index&lt;CT&gt;</a>();</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            <span class="comment">//constexpr auto error_message = concat(&quot;CTS not found in CTSMap: &quot;, CT.value);</span></div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>            <span class="keyword">static_assert</span>(idx != <span class="keyword">sizeof</span>...(CTS), <span class="stringliteral">&quot;CTS not found in CTSMap&quot;</span>);</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            std::get&lt;idx&gt;(ctsValue) = value;</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        }</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        <span class="keyword">template</span>&lt;CTString CT&gt;</div>
+<div class="foldopen" id="foldopen00247" data-start="{" data-end="}">
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno"><a class="line" href="classz_1_1_c_t_s_map.html#a8a7aa9ff71eefa701bb21f6a28a35fcf">  247</a></span>        <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="classz_1_1_c_t_s_map.html#a8a7aa9ff71eefa701bb21f6a28a35fcf">index</a>()</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>        {</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            <span class="keywordflow">return</span> ctsArray.template <a class="code hl_function" href="classz_1_1_c_t_s_map.html#a8a7aa9ff71eefa701bb21f6a28a35fcf">index&lt;CT&gt;</a>();</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        }</div>
 </div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_class" href="classz_1_1_c_t_s_array.html">CTSArray</a>&lt;CTS.str...&gt; ctsArray = {};</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span></div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        std::tuple&lt;std::remove_pointer_t&lt;<span class="keyword">decltype</span>(CTS.type)&gt;...&gt; ctsValue;</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    };</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span></div>
+<div class="foldopen" id="foldopen00258" data-start="{" data-end="}">
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno"><a class="line" href="classz_1_1_c_t_s_map.html#a81705066c43a5c362d4c6fdcde0d21a0">  258</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_function" href="classz_1_1_c_t_s_map.html#a81705066c43a5c362d4c6fdcde0d21a0">index</a>(<span class="keyword">const</span> std::string_view&amp; str)</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        {</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>            <span class="keywordflow">return</span> ctsArray.index(str);</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        }</div>
 </div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>};</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        <span class="keyword">template</span>&lt;CTString CT, <span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00272" data-start="{" data-end="}">
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno"><a class="line" href="classz_1_1_c_t_s_map.html#a25c4360ca90bd167fab44f742e3315be">  272</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classz_1_1_c_t_s_map.html#a25c4360ca90bd167fab44f742e3315be">set</a>(<span class="keyword">const</span> T&amp; value)</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        {</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>            <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> idx = ctsArray.template <a class="code hl_function" href="classz_1_1_c_t_s_map.html#a8a7aa9ff71eefa701bb21f6a28a35fcf">index&lt;CT&gt;</a>();</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>            <span class="comment">//constexpr auto error_message = concat(&quot;CTS not found in CTSMap: &quot;, CT.value);</span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>            <span class="keyword">static_assert</span>(idx != <span class="keyword">sizeof</span>...(CTS), <span class="stringliteral">&quot;CTS not found in CTSMap&quot;</span>);</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>            std::get&lt;idx&gt;(ctsValue) = value;</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        }</div>
+</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_class" href="classz_1_1_c_t_s_array.html">CTSArray</a>&lt;CTS.str...&gt; ctsArray = {};</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span></div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        std::tuple&lt;std::remove_pointer_t&lt;<span class="keyword">decltype</span>(CTS.type)&gt;...&gt; ctsValue;</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    };</div>
+</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>};</div>
 <div class="ttc" id="a_static_string_utils_8hpp_html_afc9b54d7f713da7786321505e73e2966"><div class="ttname"><a href="_static_string_utils_8hpp.html#afc9b54d7f713da7786321505e73e2966">z::concat</a></div><div class="ttdeci">constexpr auto concat(const char(&amp;a)[N], const char(&amp;b)[M])</div><div class="ttdoc">concat two compile time strings</div><div class="ttdef"><b>定义</b> StaticStringUtils.hpp:48</div></div>
 <div class="ttc" id="aclassz_1_1_c_t_s_array_html"><div class="ttname"><a href="classz_1_1_c_t_s_array.html">z::CTSArray</a></div><div class="ttdoc">compile time string array</div><div class="ttdef"><b>定义</b> StaticStringUtils.hpp:134</div></div>
+<div class="ttc" id="aclassz_1_1_c_t_s_array_html_a3a4491f4837501048a9aa2507245f64d"><div class="ttname"><a href="classz_1_1_c_t_s_array.html#a3a4491f4837501048a9aa2507245f64d">z::CTSArray::index</a></div><div class="ttdeci">static size_t index(const std::string_view &amp;str)</div><div class="ttdoc">get the index of a compile time string in the array during runtime</div><div class="ttdef"><b>定义</b> StaticStringUtils.hpp:175</div></div>
 <div class="ttc" id="aclassz_1_1_c_t_s_array_html_a74ef74b3b3eaf5f13793904933c704b5"><div class="ttname"><a href="classz_1_1_c_t_s_array.html#a74ef74b3b3eaf5f13793904933c704b5">z::CTSArray::size</a></div><div class="ttdeci">static constexpr size_t size()</div><div class="ttdoc">get the size of the array in compile time</div><div class="ttdef"><b>定义</b> StaticStringUtils.hpp:147</div></div>
 <div class="ttc" id="aclassz_1_1_c_t_s_array_html_afa692342874c2d6dbc247c49f19b6d2c"><div class="ttname"><a href="classz_1_1_c_t_s_array.html#afa692342874c2d6dbc247c49f19b6d2c">z::CTSArray::index</a></div><div class="ttdeci">static constexpr size_t index()</div><div class="ttdoc">get the index of a compile time string in the array during compile time</div><div class="ttdef"><b>定义</b> StaticStringUtils.hpp:159</div></div>
 <div class="ttc" id="aclassz_1_1_c_t_s_array_html_afae0576f206ea9c0799a692c38d34ea4"><div class="ttname"><a href="classz_1_1_c_t_s_array.html#afae0576f206ea9c0799a692c38d34ea4">z::CTSArray::CTSArray</a></div><div class="ttdeci">constexpr CTSArray()</div><div class="ttdoc">construct a new CTSArray object</div><div class="ttdef"><b>定义</b> StaticStringUtils.hpp:140</div></div>
-<div class="ttc" id="aclassz_1_1_c_t_s_map_html_a25c4360ca90bd167fab44f742e3315be"><div class="ttname"><a href="classz_1_1_c_t_s_map.html#a25c4360ca90bd167fab44f742e3315be">z::CTSMap::set</a></div><div class="ttdeci">void set(const T &amp;value)</div><div class="ttdoc">set the value of a compile time string key</div><div class="ttdef"><b>定义</b> StaticStringUtils.hpp:241</div></div>
-<div class="ttc" id="aclassz_1_1_c_t_s_map_html_a2d5fb9ab652700528d7d3393fd1387dc"><div class="ttname"><a href="classz_1_1_c_t_s_map.html#a2d5fb9ab652700528d7d3393fd1387dc">z::CTSMap::get</a></div><div class="ttdeci">void get(T &amp;value)</div><div class="ttdoc">get the value of a compile time string key</div><div class="ttdef"><b>定义</b> StaticStringUtils.hpp:203</div></div>
-<div class="ttc" id="aclassz_1_1_c_t_s_map_html_a56dbd8e83567b7f11fca62dd8f047d8d"><div class="ttname"><a href="classz_1_1_c_t_s_map.html#a56dbd8e83567b7f11fca62dd8f047d8d">z::CTSMap::size</a></div><div class="ttdeci">size_t size()</div><div class="ttdoc">get the size of the map</div><div class="ttdef"><b>定义</b> StaticStringUtils.hpp:216</div></div>
-<div class="ttc" id="aclassz_1_1_c_t_s_map_html_a5e58687511986bf8baadc0a638e6453e"><div class="ttname"><a href="classz_1_1_c_t_s_map.html#a5e58687511986bf8baadc0a638e6453e">z::CTSMap::index</a></div><div class="ttdeci">size_t index()</div><div class="ttdoc">get the index of a compile time string key</div><div class="ttdef"><b>定义</b> StaticStringUtils.hpp:228</div></div>
-<div class="ttc" id="aclassz_1_1_c_t_s_map_html_aacb973f26ad51715ffcf29b8caaa9673"><div class="ttname"><a href="classz_1_1_c_t_s_map.html#aacb973f26ad51715ffcf29b8caaa9673">z::CTSMap::CTSMap</a></div><div class="ttdeci">CTSMap()</div><div class="ttdoc">Construct a new CTSMap object</div><div class="ttdef"><b>定义</b> StaticStringUtils.hpp:187</div></div>
-<div class="ttc" id="aclassz_1_1_c_t_s_map_html_ad64cda9c95175e69f31c20ee0b9a7f11"><div class="ttname"><a href="classz_1_1_c_t_s_map.html#ad64cda9c95175e69f31c20ee0b9a7f11">z::CTSMap::~CTSMap</a></div><div class="ttdeci">~CTSMap()</div><div class="ttdoc">Destroy the CTSMap object</div><div class="ttdef"><b>定义</b> StaticStringUtils.hpp:193</div></div>
+<div class="ttc" id="aclassz_1_1_c_t_s_map_html_a25c4360ca90bd167fab44f742e3315be"><div class="ttname"><a href="classz_1_1_c_t_s_map.html#a25c4360ca90bd167fab44f742e3315be">z::CTSMap::set</a></div><div class="ttdeci">void set(const T &amp;value)</div><div class="ttdoc">set the value of a compile time string key</div><div class="ttdef"><b>定义</b> StaticStringUtils.hpp:272</div></div>
+<div class="ttc" id="aclassz_1_1_c_t_s_map_html_a2d5fb9ab652700528d7d3393fd1387dc"><div class="ttname"><a href="classz_1_1_c_t_s_map.html#a2d5fb9ab652700528d7d3393fd1387dc">z::CTSMap::get</a></div><div class="ttdeci">void get(T &amp;value)</div><div class="ttdoc">get the value of a compile time string key</div><div class="ttdef"><b>定义</b> StaticStringUtils.hpp:222</div></div>
+<div class="ttc" id="aclassz_1_1_c_t_s_map_html_a56dbd8e83567b7f11fca62dd8f047d8d"><div class="ttname"><a href="classz_1_1_c_t_s_map.html#a56dbd8e83567b7f11fca62dd8f047d8d">z::CTSMap::size</a></div><div class="ttdeci">size_t size()</div><div class="ttdoc">get the size of the map</div><div class="ttdef"><b>定义</b> StaticStringUtils.hpp:235</div></div>
+<div class="ttc" id="aclassz_1_1_c_t_s_map_html_a81705066c43a5c362d4c6fdcde0d21a0"><div class="ttname"><a href="classz_1_1_c_t_s_map.html#a81705066c43a5c362d4c6fdcde0d21a0">z::CTSMap::index</a></div><div class="ttdeci">size_t index(const std::string_view &amp;str)</div><div class="ttdoc">get the index of a runtime string key</div><div class="ttdef"><b>定义</b> StaticStringUtils.hpp:258</div></div>
+<div class="ttc" id="aclassz_1_1_c_t_s_map_html_a8a7aa9ff71eefa701bb21f6a28a35fcf"><div class="ttname"><a href="classz_1_1_c_t_s_map.html#a8a7aa9ff71eefa701bb21f6a28a35fcf">z::CTSMap::index</a></div><div class="ttdeci">static constexpr size_t index()</div><div class="ttdoc">get the index of a compile time string key</div><div class="ttdef"><b>定义</b> StaticStringUtils.hpp:247</div></div>
+<div class="ttc" id="aclassz_1_1_c_t_s_map_html_aacb973f26ad51715ffcf29b8caaa9673"><div class="ttname"><a href="classz_1_1_c_t_s_map.html#aacb973f26ad51715ffcf29b8caaa9673">z::CTSMap::CTSMap</a></div><div class="ttdeci">CTSMap()</div><div class="ttdoc">Construct a new CTSMap object</div><div class="ttdef"><b>定义</b> StaticStringUtils.hpp:206</div></div>
+<div class="ttc" id="aclassz_1_1_c_t_s_map_html_ad64cda9c95175e69f31c20ee0b9a7f11"><div class="ttname"><a href="classz_1_1_c_t_s_map.html#ad64cda9c95175e69f31c20ee0b9a7f11">z::CTSMap::~CTSMap</a></div><div class="ttdeci">~CTSMap()</div><div class="ttdoc">Destroy the CTSMap object</div><div class="ttdef"><b>定义</b> StaticStringUtils.hpp:212</div></div>
 <div class="ttc" id="aclassz_1_1math_1_1_vector_html"><div class="ttname"><a href="classz_1_1math_1_1_vector.html">z::math::Vector</a></div><div class="ttdoc">Vector class, support some vector operations, like dot, cross, normalize, etc.</div><div class="ttdef"><b>定义</b> VectorType.hpp:77</div></div>
 <div class="ttc" id="anamespacez_1_1math_html"><div class="ttname"><a href="namespacez_1_1math.html">z::math</a></div><div class="ttdoc">math namespace, contains some math functions</div><div class="ttdef"><b>定义</b> TensorType.hpp:10</div></div>
 <div class="ttc" id="astructz_1_1_c_t_s_pair_html"><div class="ttname"><a href="structz_1_1_c_t_s_pair.html">z::CTSPair</a></div><div class="ttdoc">compile time string key-value pair</div><div class="ttdef"><b>定义</b> StaticStringUtils.hpp:66</div></div>

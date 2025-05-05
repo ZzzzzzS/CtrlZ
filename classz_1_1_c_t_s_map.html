@@ -100,6 +100,7 @@ $(function(){initNavTree('classz_1_1_c_t_s_map.html',''); initResizable(true); }
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
 <a href="classz_1_1_c_t_s_map-members.html">所有成员列表</a>  </div>
   <div class="headertitle"><div class="title">z::CTSMap&lt; CTS &gt; 模板类 参考</div></div>
 </div><!--header-->
@@ -127,14 +128,20 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a56dbd8e83567b7f11fca62dd8f047d8d" id="r_a56dbd8e83567b7f11fca62dd8f047d8d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56dbd8e83567b7f11fca62dd8f047d8d">size</a> ()</td></tr>
 <tr class="memdesc:a56dbd8e83567b7f11fca62dd8f047d8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the size of the map  <br /></td></tr>
 <tr class="separator:a56dbd8e83567b7f11fca62dd8f047d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e58687511986bf8baadc0a638e6453e" id="r_a5e58687511986bf8baadc0a638e6453e"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structz_1_1_c_t_string.html">CTString</a> CT&gt; </td></tr>
-<tr class="memitem:a5e58687511986bf8baadc0a638e6453e"><td class="memTemplItemLeft" align="right" valign="top">size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5e58687511986bf8baadc0a638e6453e">index</a> ()</td></tr>
-<tr class="memdesc:a5e58687511986bf8baadc0a638e6453e"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the index of a compile time string key  <br /></td></tr>
-<tr class="separator:a5e58687511986bf8baadc0a638e6453e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81705066c43a5c362d4c6fdcde0d21a0" id="r_a81705066c43a5c362d4c6fdcde0d21a0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81705066c43a5c362d4c6fdcde0d21a0">index</a> (const std::string_view &amp;str)</td></tr>
+<tr class="memdesc:a81705066c43a5c362d4c6fdcde0d21a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the index of a runtime string key  <br /></td></tr>
+<tr class="separator:a81705066c43a5c362d4c6fdcde0d21a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25c4360ca90bd167fab44f742e3315be" id="r_a25c4360ca90bd167fab44f742e3315be"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structz_1_1_c_t_string.html">CTString</a> CT, typename T&gt; </td></tr>
 <tr class="memitem:a25c4360ca90bd167fab44f742e3315be"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a25c4360ca90bd167fab44f742e3315be">set</a> (const T &amp;value)</td></tr>
 <tr class="memdesc:a25c4360ca90bd167fab44f742e3315be"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the value of a compile time string key  <br /></td></tr>
 <tr class="separator:a25c4360ca90bd167fab44f742e3315be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a8a7aa9ff71eefa701bb21f6a28a35fcf" id="r_a8a7aa9ff71eefa701bb21f6a28a35fcf"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structz_1_1_c_t_string.html">CTString</a> CT&gt; </td></tr>
+<tr class="memitem:a8a7aa9ff71eefa701bb21f6a28a35fcf"><td class="memTemplItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a8a7aa9ff71eefa701bb21f6a28a35fcf">index</a> ()</td></tr>
+<tr class="memdesc:a8a7aa9ff71eefa701bb21f6a28a35fcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the index of a compile time string key  <br /></td></tr>
+<tr class="separator:a8a7aa9ff71eefa701bb21f6a28a35fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... CTS&gt;<br />
@@ -191,8 +198,8 @@ template&lt;<a class="el" href="structz_1_1_c_t_string.html">CTString</a> CT, ty
 
 </div>
 </div>
-<a id="a5e58687511986bf8baadc0a638e6453e" name="a5e58687511986bf8baadc0a638e6453e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e58687511986bf8baadc0a638e6453e">&#9670;&#160;</a></span>index()</h2>
+<a id="a8a7aa9ff71eefa701bb21f6a28a35fcf" name="a8a7aa9ff71eefa701bb21f6a28a35fcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a7aa9ff71eefa701bb21f6a28a35fcf">&#9670;&#160;</a></span>index() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -205,7 +212,7 @@ template&lt;<a class="el" href="structz_1_1_c_t_string.html">CTString</a> CT&gt;
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_t <a class="el" href="classz_1_1_c_t_s_map.html">z::CTSMap</a>&lt; CTS &gt;::index </td>
+          <td class="memname">static constexpr size_t <a class="el" href="classz_1_1_c_t_s_map.html">z::CTSMap</a>&lt; CTS &gt;::index </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -213,7 +220,7 @@ template&lt;<a class="el" href="structz_1_1_c_t_string.html">CTString</a> CT&gt;
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -226,6 +233,42 @@ template&lt;<a class="el" href="structz_1_1_c_t_string.html">CTString</a> CT&gt;
   </dd>
 </dl>
 <dl class="section return"><dt>返回</dt><dd>size_t index of the compile time string key </dd></dl>
+
+</div>
+</div>
+<a id="a81705066c43a5c362d4c6fdcde0d21a0" name="a81705066c43a5c362d4c6fdcde0d21a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81705066c43a5c362d4c6fdcde0d21a0">&#9670;&#160;</a></span>index() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... CTS&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classz_1_1_c_t_s_map.html">z::CTSMap</a>&lt; CTS &gt;::index </td>
+          <td>(</td>
+          <td class="paramtype">const std::string_view &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get the index of a runtime string key </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>runtime string key </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>size_t index of the runtime string key </dd></dl>
 
 </div>
 </div>

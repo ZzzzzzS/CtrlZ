@@ -1,0 +1,7 @@
+<map id="z::ActionManagementWorker&lt; SchedulerType, InferencePrecision, ActionPairs &gt;" name="z::ActionManagementWorker&lt; SchedulerType, InferencePrecision, ActionPairs &gt;">
+<area shape="rect" id="Node000001" title="ActionManagementWorker类型是一个用于管理和选择单个或多个推理网络的输出的工人类型。" alt="" coords="5,171,245,229"/>
+<area shape="rect" id="Node000002" href="$classz_1_1_abstract_worker.html" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="58,80,192,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,138,128,170,122,170,122,138"/>
+<area shape="rect" id="Node000003" href="$classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="84,5,166,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="128,48,128,80,122,80,122,48"/>
+</map>

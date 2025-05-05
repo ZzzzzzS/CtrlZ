@@ -5,16 +5,13 @@ var hierarchy =
       [ "z::math::Vector< MotorPrecision, JointNumber >", "classz_1_1math_1_1_vector.html", null ],
       [ "z::math::Vector< InferencePrecision, JOINT_NUMBER >", "classz_1_1math_1_1_vector.html", null ],
       [ "z::math::Vector< InferencePrecision, 3 >", "classz_1_1math_1_1_vector.html", null ],
-      [ "z::math::Vector< InferencePrecision, 7 >", "classz_1_1math_1_1_vector.html", null ],
       [ "z::math::Vector< RealNumber, 3 >", "classz_1_1math_1_1_vector.html", null ],
-      [ "z::math::Vector< RealNumber, 7 >", "classz_1_1math_1_1_vector.html", null ],
-      [ "z::math::Vector< RealNumber, 6 >", "classz_1_1math_1_1_vector.html", null ],
       [ "z::math::Vector< RealNumber, JOINT_NUMBER >", "classz_1_1math_1_1_vector.html", null ],
-      [ "z::math::Vector< InferencePrecision, INPUT_TENSOR_LENGTH >", "classz_1_1math_1_1_vector.html", null ],
-      [ "z::math::Vector< InferencePrecision, OUTPUT_TENSOR_LENGTH >", "classz_1_1math_1_1_vector.html", null ],
       [ "z::math::Vector< T, Dim >", "classz_1_1math_1_1_vector.html", null ],
       [ "z::math::Vector< InferencePrecision, INPUT_TENSOR_LENGTH_UNIT >", "classz_1_1math_1_1_vector.html", null ],
+      [ "z::math::Vector< InferencePrecision, OUTPUT_TENSOR_LENGTH >", "classz_1_1math_1_1_vector.html", null ],
       [ "z::math::Vector< CmdPrecision, CmdArgs.dim >", "classz_1_1math_1_1_vector.html", null ],
+      [ "z::math::Vector< InferencePrecision, INPUT_TENSOR_LENGTH >", "classz_1_1math_1_1_vector.html", null ],
       [ "z::math::Vector< Scalar, JointNumber >", "classz_1_1math_1_1_vector.html", null ],
       [ "z::math::Vector< bool, N >", "classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html", null ],
       [ "z::math::Vector< T, N >", "classz_1_1math_1_1_vector.html", null ],
@@ -45,7 +42,6 @@ var hierarchy =
     [ "z::math::TensorShape< Dims >", "structz_1_1math_1_1_tensor_shape.html", null ],
     [ "UserData", "struct_user_data.html", null ],
     [ "z::ZObject", "classz_1_1_z_object.html", [
-      [ "z::AbstractScheduler< TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair, NetLastActionPair, NetUserCommandPair, NetScaledActionPair, InferenceTimePair >", "classz_1_1_abstract_scheduler.html", null ],
       [ "z::AbstractScheduler< ImuAccRawPair, ImuGyroRawPair, ImuMagRawPair, LinearVelocityValuePair, ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair, TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair, TargetMotorTorquePair, LimitTargetMotorTorquePair, CurrentMotorVelRawPair, CurrentMotorPosRawPair, NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair >", "classz_1_1_abstract_scheduler.html", null ],
       [ "z::AbstractWorker< AbstractScheduler< CTS... > >", "classz_1_1_abstract_worker.html", null ],
       [ "z::RingBuffer< z::math::Vector< InferencePrecision, INPUT_TENSOR_LENGTH_UNIT > >", "classz_1_1_ring_buffer.html", null ],
@@ -53,7 +49,7 @@ var hierarchy =
       [ "z::filter< float >", "classz_1_1filter.html", null ],
       [ "z::AbstractScheduler< CTS >", "classz_1_1_abstract_scheduler.html", null ],
       [ "z::AbstractWorker< SchedulerType >", "classz_1_1_abstract_worker.html", [
-        [ "z::AsyncLoggerWorker< SchedulerType, RealNumber, TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair, NetLastActionPair, NetUserCommandPair, NetScaledActionPair, InferenceTimePair >", "classz_1_1_async_logger_worker.html", null ],
+        [ "z::AbstractNetInferenceWorker< SchedulerType *, InferencePrecision >", "classz_1_1_abstract_net_inference_worker.html", null ],
         [ "z::AsyncLoggerWorker< SchedulerType, RealNumber, ImuAccRawPair, ImuGyroRawPair, ImuMagRawPair, LinearVelocityValuePair, ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair, TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair, TargetMotorTorquePair, LimitTargetMotorTorquePair, NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair >", "classz_1_1_async_logger_worker.html", null ],
         [ "z::ImuProcessWorker< SchedulerType, DeviceImu *, RealNumber >", "classz_1_1_imu_process_worker.html", null ],
         [ "z::MotorControlWorker< SchedulerType, DeviceJoint *, RealNumber, JOINT_NUMBER >", "classz_1_1_motor_control_worker.html", null ],
@@ -62,15 +58,14 @@ var hierarchy =
         [ "z::NetCmdWorker< SchedulerType, RealNumber, NetCommand3Pair >", "classz_1_1_net_cmd_worker.html", null ],
         [ "z::AbstractNetInferenceWorker< SchedulerType, InferencePrecision >", "classz_1_1_abstract_net_inference_worker.html", [
           [ "z::CommonLocoInferenceWorker< SchedulerType, InferencePrecision, JOINT_NUMBER >", "classz_1_1_common_loco_inference_worker.html", [
-            [ "z::ArmTrackingInferenceWorker< SchedulerType, RealNumber, JOINT_NUMBER >", "classz_1_1_arm_tracking_inference_worker.html", null ],
             [ "z::EraxLikeInferenceWorker< SchedulerType, RealNumber, OBSERVATION_STUCK_LENGTH, OBSERVATION_EXTRA_LENGTH, JOINT_NUMBER >", "classz_1_1_erax_like_inference_worker.html", null ],
-            [ "z::ArmTrackingInferenceWorker< SchedulerType, InferencePrecision, JOINT_NUMBER >", "classz_1_1_arm_tracking_inference_worker.html", null ],
             [ "z::EraxLikeInferenceWorker< SchedulerType, InferencePrecision, INPUT_STUCK_LENGTH, EXTRA_INPUT_LENGTH, JOINT_NUMBER >", "classz_1_1_erax_like_inference_worker.html", null ],
             [ "z::HumanoidGymInferenceWorker< SchedulerType, InferencePrecision, INPUT_STUCK_LENGTH, JOINT_NUMBER >", "classz_1_1_humanoid_gym_inference_worker.html", null ],
             [ "z::PlainInferenceWorker< SchedulerType, InferencePrecision, JOINT_NUMBER >", "classz_1_1_plain_inference_worker.html", null ],
             [ "z::UnitreeRlGymInferenceWorker< SchedulerType, InferencePrecision, INPUT_STUCK_LENGTH, JOINT_NUMBER >", "classz_1_1_unitree_rl_gym_inference_worker.html", null ]
           ] ]
         ] ],
+        [ "z::ActionManagementWorker< SchedulerType, InferencePrecision, ActionPairs >", "classz_1_1_action_management_worker.html", null ],
         [ "z::AsyncLoggerWorker< SchedulerType, LogPrecision, Args >", "classz_1_1_async_logger_worker.html", null ],
         [ "z::ImuProcessWorker< SchedulerType, ImuType, ImuPrecision >", "classz_1_1_imu_process_worker.html", null ],
         [ "z::KeyboardCommandWorker< SchedulerType >", "classz_1_1_keyboard_command_worker.html", null ],
