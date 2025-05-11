@@ -13,6 +13,7 @@
 #include "CommonLocoInferenceWorker.hpp"
 #include "NetInferenceWorker.h"
 #include "Utils/ZenBuffer.hpp"
+#include "Utils/StaticStringUtils.hpp"
 #include <chrono>
 #include <cmath>
 
@@ -41,12 +42,13 @@ namespace z
      * }
      *
      * @tparam SchedulerType 调度器类型
+     * @tparam NetName 网络名称，用户可以通过这个参数来指定网络的名称, 这在有多个网络时可以区分数据总线上的不同网络数据
      * @tparam InferencePrecision 推理精度，用户可以通过这个参数来指定推理的精度，比如可以指定为float或者double
      * @tparam INPUT_STUCK_LENGTH HumanoidGym网络的Actor输入堆叠长度
      * @tparam JOINT_NUMBER 关节数量
      */
-    template<typename SchedulerType, typename InferencePrecision, size_t INPUT_STUCK_LENGTH, size_t JOINT_NUMBER>
-    class UnitreeRlGymInferenceWorker : public CommonLocoInferenceWorker<SchedulerType, InferencePrecision, JOINT_NUMBER>
+    template<typename SchedulerType, CTString NetName, typename InferencePrecision, size_t INPUT_STUCK_LENGTH, size_t JOINT_NUMBER>
+    class UnitreeRlGymInferenceWorker : public CommonLocoInferenceWorker<SchedulerType, NetName, InferencePrecision, JOINT_NUMBER>
     {
     public:
         using Base = CommonLocoInferenceWorker<SchedulerType, InferencePrecision, JOINT_NUMBER>;
@@ -61,7 +63,7 @@ namespace z
          * @param cfg 配置文件
          */
         UnitreeRlGymInferenceWorker(SchedulerType* scheduler, const nlohmann::json& Net_cfg, const nlohmann::json& Motor_cfg)
-            :CommonLocoInferenceWorker<SchedulerType, InferencePrecision, JOINT_NUMBER>(scheduler, Net_cfg, Motor_cfg),
+            :CommonLocoInferenceWorker<SchedulerType, NetName, InferencePrecision, JOINT_NUMBER>(scheduler, Net_cfg, Motor_cfg),
             GravityVector({ 0.0,0.0,-1.0 }),
             HistoryInputBuffer(INPUT_STUCK_LENGTH)
         {
@@ -127,10 +129,10 @@ namespace z
             CurrentMotorPos -= this->JointDefaultPos;
 
             MotorValVec LastAction;
-            this->Scheduler->template GetData<"NetLastAction">(LastAction);
+            this->Scheduler->template GetData<concat(NetName, "NetLastAction")>(LastAction);
 
             ValVec3 UserCmd3;
-            this->Scheduler->template GetData<"NetUserCommand3">(UserCmd3);
+            this->Scheduler->template GetData<concat(NetName, "NetUserCommand3")>(UserCmd3);
 
             ValVec3 LinVel;
             this->Scheduler->template GetData<"LinearVelocityValue">(LinVel);
@@ -149,7 +151,7 @@ namespace z
             InferencePrecision clock_sin = std::sin(phase * 2 * M_PI);
             InferencePrecision clock_cos = std::cos(phase * 2 * M_PI);
             z::math::Vector<InferencePrecision, 2> ClockVector = { clock_sin, clock_cos };
-            this->Scheduler->template SetData<"NetClockVector">(ClockVector);
+            this->Scheduler->template SetData<concat(NetName, "NetClockVector")>(ClockVector);
 
             auto SingleInputVecScaled = math::cat(
                 AngVel,
@@ -183,18 +185,18 @@ namespace z
         {
             auto LastAction = this->OutputTensor.toVector();
             auto ClipedLastAction = MotorValVec::clamp(LastAction, -this->ClipAction, this->ClipAction);
-            this->Scheduler->template SetData<"NetLastAction">(ClipedLastAction);
+            this->Scheduler->template SetData<concat(NetName, "NetLastAction")>(ClipedLastAction);
 
             auto ScaledAction = ClipedLastAction * this->OutputScaleVec + this->JointDefaultPos;
-            this->Scheduler->template SetData<"NetScaledAction">(ScaledAction);
+            this->Scheduler->template SetData<concat(NetName, "NetScaledAction")>(ScaledAction);
 
             auto clipedAction = MotorValVec::clamp(ScaledAction, this->JointClipLower, this->JointClipUpper);
-            this->Scheduler->template SetData<"TargetMotorPosition">(clipedAction);
+            this->Scheduler->template SetData<concat(NetName, "Action")>(clipedAction);
 
             this->end_time = std::chrono::steady_clock::now();
             auto duration = std::chrono::duration_cast<std::chrono::microseconds>(this->end_time - this->start_time);
             InferencePrecision inference_time = static_cast<InferencePrecision>(duration.count());
-            this->Scheduler->template SetData<"InferenceTime">(inference_time);
+            this->Scheduler->template SetData<concat(NetName, "InferenceTime")>(inference_time);
             InputHiddenStateTensor.Array() = OutputHiddenStateTensor.Array();
             InputCellStateTensor.Array() = OutputCellStateTensor.Array();
         }

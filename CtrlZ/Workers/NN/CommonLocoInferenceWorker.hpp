@@ -13,6 +13,7 @@
 #include "onnxruntime_cxx_api.h"
 #include "Utils/MathTypes.hpp"
 #include "nlohmann/json.hpp"
+#include "Utils/StaticStringUtils.hpp"
 
 namespace z
 {
@@ -50,15 +51,16 @@ namespace z
      * }
      *
      * @tparam SchedulerType 调度器类型
+     * @tparam NetName 网络名称，用户可以通过这个参数来指定网络的名称, 这在有多个网络时可以区分数据总线上的不同网络数据
      * @tparam InferencePrecision 推理精度，用户可以通过这个参数来指定推理的精度，比如可以指定为float或者double
      * @tparam JOINT_NUMBER 关节数量
      */
-    template<typename SchedulerType, typename InferencePrecision, size_t JOINT_NUMBER>
-    class CommonLocoInferenceWorker : public AbstractNetInferenceWorker<SchedulerType, InferencePrecision>
+    template<typename SchedulerType, CTString NetName, typename InferencePrecision, size_t JOINT_NUMBER>
+    class CommonLocoInferenceWorker : public AbstractNetInferenceWorker<SchedulerType, NetName, InferencePrecision>
     {
         static_assert(std::is_arithmetic<InferencePrecision>::value, "InferencePrecision must be a arithmetic type");
     public:
-        using Base = AbstractNetInferenceWorker<SchedulerType, InferencePrecision>;
+        using Base = AbstractNetInferenceWorker<SchedulerType, NetName, InferencePrecision>;
         using Base::Session__;
         using Base::MemoryInfo__;
         using Base::DefaultAllocator__;
@@ -74,7 +76,7 @@ namespace z
          * @param cfg 配置文件
          */
         CommonLocoInferenceWorker(SchedulerType* scheduler, const nlohmann::json& Net_cfg, const nlohmann::json& Motor_cfg)
-            :AbstractNetInferenceWorker<SchedulerType, InferencePrecision>(scheduler, Net_cfg)
+            :AbstractNetInferenceWorker<SchedulerType, NetName, InferencePrecision>(scheduler, Net_cfg)
         {
             nlohmann::json PreprocessCfg = Net_cfg["Preprocess"];
             nlohmann::json PostprocessCfg = Net_cfg["Postprocess"];

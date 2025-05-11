@@ -52,12 +52,6 @@ namespace z
     class ActionManagementWorker : public AbstractWorker<SchedulerType>
     {
     private:
-        template<CTSPair First>
-        static constexpr size_t ElementSize()
-        {
-            return First.dim;
-        }
-
         template<CTSPair First, CTSPair ...Rest>
         static constexpr size_t ElementSize()
         {
@@ -65,12 +59,9 @@ namespace z
         }
         static constexpr size_t ActionElementSize__ = ElementSize<ActionPairs...>();
 
-
     public:
         /// @brief 定义一个函数类型，用于重映射网络输出的函数类型，该函数类型接受一个调度器指针和一个网络输出的值，返回void。
         using OutPutRemapFunction = std::function<void(SchedulerType*, const z::math::Vector<InferencePrecision, ActionElementSize__>)>;
-
-        using InferenceWorkerType = AbstractNetInferenceWorker<SchedulerType*, InferencePrecision>;
 
     public:
         /**
@@ -83,11 +74,20 @@ namespace z
         ActionManagementWorker(SchedulerType* scheduler, const nlohmann::json& worker_cfg, const nlohmann::json& scheduler_cfg)
             :AbstractWorker<SchedulerType>(scheduler, worker_cfg)
         {
+            this->PrintSplitLine();
+            std::cout << "ActionManagementWorker" << std::endl;
             this->block__.store(true); //默认阻塞输出
             this->CycleTime__ = scheduler_cfg["dt"].get<InferencePrecision>();
             this->ActionRemapFunctions__.fill(std::bind(&ActionManagementWorker::DefaultActionRemapFunction, this, this->Scheduler, std::placeholders::_2));
             InferencePrecision DefaultSwitchIntervalTime = worker_cfg["SwitchIntervalTime"].get<InferencePrecision>();
             this->DefaultNextActionCycleCnt__ = static_cast<decltype(this->DefaultNextActionCycleCnt__)>(DefaultSwitchIntervalTime / this->CycleTime__);
+
+            std::cout << "DefaultSwitchIntervalTime=" << DefaultSwitchIntervalTime << std::endl;
+
+            std::cout << "Managed Action Pairs: \n";
+            // (std::cout << ActionPairs.str.value...);
+            (PrintCTSPairInfo<ActionPairs>(), ...);
+            this->PrintSplitLine();
         }
 
         /**
@@ -100,18 +100,13 @@ namespace z
             {
                 return;
             }
-            if (this->NextActionCycleCnt__ > 0)
-            {
-                this->NextActionCycleCnt__--;
-                if (this->NextActionCycleCnt__ == 0)
-                {
-                    this->ActionIndex__ = this->NextActionIndex__;
-                }
-            }
-            else
+
+            if (this->NextActionCycleCnt__.load() < this->Scheduler->getTimeStamp())
             {
                 this->ActionIndex__ = this->NextActionIndex__;
             }
+
+
             (this->ProcessAction<ActionPairs.str>(), ...);
         }
 
@@ -148,22 +143,31 @@ namespace z
                 return false;
             }
 
-            if (this->ActionIndex__ == idx)
+            return this->switchTo(idx, SwitchIntervalTime);
+        }
+
+        /**
+         * @brief 切换到指定的网络输出，用户可以通过这个方法来切换到指定的网络输出。
+         *
+         * @tparam CTSPair ActionPair 网络输出的名称类型对，用户可以通过这个名称来指定需要切换到的网络输出。
+         * @tparam InferencePrecision SwitchIntervalTime 切换间隔时间，用户可以通过这个参数来指定切换的间隔时间，网络将会在用户指定的时间后切换到指定的网络输出。
+         * @details 如果SwitchIntervalTime为-1，则使用默认的切换间隔时间。（切换单位为秒）
+         * @return true 切换成功
+         * @return false 切换失败，网络输出的名称未找到。
+         */
+        template<CTSPair ActionPair, InferencePrecision SwitchIntervalTime = -1>
+        bool SwitchTo()
+        {
+            this->block__ = false;
+            static_assert(ActionPair.dim == ActionElementSize__, "ActionPair size not match, the size of ActionPair must be the same as ActionElementSize__");
+            constexpr size_t idx = ActionPairs__.template index<ActionPair.str>();
+            if (idx == sizeof...(ActionPairs))
             {
-                return true;
+                std::cerr << "ActionManagementWorker: Action not found in ActionManagementWorker" << std::endl;
+                return false;
             }
 
-            this->NextActionIndex__ = idx;
-
-            if (this->NextActionCycleCnt__ == -1)
-            {
-                this->NextActionCycleCnt__ = this->DefaultNextActionCycleCnt__;
-            }
-            else
-            {
-                this->NextActionCycleCnt__ = SwitchIntervalTime / this->CycleTime__;
-            }
-            return true;
+            return this->switchTo(idx, SwitchIntervalTime);
         }
 
         /**
@@ -195,11 +199,32 @@ namespace z
             }
         }
 
+        bool switchTo(const size_t idx, InferencePrecision SwitchIntervalTime)
+        {
+            if (this->ActionIndex__ == idx)
+            {
+                return true;
+            }
+
+            this->NextActionIndex__ = idx;
+
+            if (SwitchIntervalTime == -1)
+            {
+                this->NextActionCycleCnt__ = this->DefaultNextActionCycleCnt__;
+            }
+            else
+            {
+                this->NextActionCycleCnt__ = static_cast<size_t>(SwitchIntervalTime / this->CycleTime__);
+            }
+            this->NextActionCycleCnt__ += this->Scheduler->getTimeStamp();
+            return true;
+        }
+
     private:
         std::array<OutPutRemapFunction, sizeof...(ActionPairs)> ActionRemapFunctions__;
         CTSMap<ActionPairs...> ActionPairs__;
 
-        size_t ActionIndex__ = 0;
+        size_t ActionIndex__ = std::numeric_limits<size_t>::max();
         std::atomic<size_t> NextActionIndex__ = 0;
         std::atomic<size_t> NextActionCycleCnt__ = 0;
         size_t DefaultNextActionCycleCnt__;

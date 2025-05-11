@@ -13,6 +13,7 @@
 #include "CommonLocoInferenceWorker.hpp"
 #include "NetInferenceWorker.h"
 #include "Utils/ZenBuffer.hpp"
+#include "Utils/StaticStringUtils.hpp"
 #include <chrono>
 #include <cmath>
 
@@ -21,19 +22,16 @@
 #endif
 namespace z
 {
-    template<typename SchedulerType, typename InferencePrecision, size_t INPUT_STUCK_LENGTH, size_t EXTRA_INPUT_LENGTH, size_t JOINT_NUMBER>
-    class EraxLikeInferenceWorker : public CommonLocoInferenceWorker<SchedulerType, InferencePrecision, JOINT_NUMBER>
+    template<typename SchedulerType, CTString NetName, typename InferencePrecision, size_t INPUT_STUCK_LENGTH, size_t EXTRA_INPUT_LENGTH, size_t JOINT_NUMBER>
+    class EraxLikeInferenceWorker : public CommonLocoInferenceWorker<SchedulerType, NetName, InferencePrecision, JOINT_NUMBER>
     {
     public:
-        using Base = CommonLocoInferenceWorker<SchedulerType, InferencePrecision, JOINT_NUMBER>;
-        /*using Base::MotorValVec;
-        using Base::ValVec3;*/
         using MotorValVec = math::Vector<InferencePrecision, JOINT_NUMBER>;
         using ValVec3 = math::Vector<InferencePrecision, 3>;
 
     public:
         EraxLikeInferenceWorker(SchedulerType* scheduler, const nlohmann::json& Net_Config, const nlohmann::json& Motor_Config)
-            :CommonLocoInferenceWorker<SchedulerType, InferencePrecision, JOINT_NUMBER>(scheduler, Net_Config, Motor_Config),
+            :CommonLocoInferenceWorker<SchedulerType, NetName, InferencePrecision, JOINT_NUMBER>(scheduler, Net_Config, Motor_Config),
             GravityVector({ 0.0,0.0,-1.0 }),
             HistoryInputBuffer(INPUT_STUCK_LENGTH)
         {
@@ -42,8 +40,6 @@ namespace z
             nlohmann::json NetworkCfg = Net_Config["Network"];
             this->CyctleTime = NetworkCfg["Cycle_time"].get<InferencePrecision>();
             this->dt = scheduler->getSpinOnceTime();
-            InferencePrecision StableSwitchTime = NetworkCfg["SwitchTime"].get<InferencePrecision>();
-            this->BlockOutputPeriod = static_cast<size_t>(StableSwitchTime / this->dt);
 
             this->PrintSplitLine();
             std::cout << "EraxInferenceWorker" << std::endl;
@@ -73,12 +69,6 @@ namespace z
 
         }
 
-        void AboutToSwitch()
-        {
-            this->BlockOutput = true;
-            this->BlockOutputTargetTimestamp = this->Scheduler->getTimeStamp() + this->BlockOutputPeriod;
-        }
-
         void PreProcess() override
         {
             this->start_time = std::chrono::steady_clock::now();
@@ -91,10 +81,10 @@ namespace z
             CurrentMotorPos -= this->JointDefaultPos;
 
             MotorValVec LastAction;
-            this->Scheduler->template GetData<"NetLastAction">(LastAction);
+            this->Scheduler->template GetData<concat(NetName, "NetLastAction")>(LastAction);
 
             ValVec3 UserCmd3;
-            this->Scheduler->template GetData<"NetUserCommand3">(UserCmd3);
+            this->Scheduler->template GetData<concat(NetName, "NetUserCommand3")>(UserCmd3);
             UserCmd3 = UserCmd3 * this->Scales_command3;
 
             ValVec3 LinVel;
@@ -107,14 +97,14 @@ namespace z
             this->Scheduler->template GetData<"AngleValue">(Ang);
 
             ValVec3 ProjectedGravity = ComputeProjectedGravity(Ang, this->GravityVector);
-            this->Scheduler->template SetData<"NetProjectedGravity">(ProjectedGravity);
+            this->Scheduler->template SetData<concat(NetName, "NetProjectedGravity")>(ProjectedGravity);
 
             size_t t = this->Scheduler->getTimeStamp();
             InferencePrecision clock = 2 * M_PI / this->CyctleTime * this->dt * static_cast<InferencePrecision>(t);
             InferencePrecision clock_sin = std::sin(clock);
             InferencePrecision clock_cos = std::cos(clock);
             z::math::Vector<InferencePrecision, 2> ClockVector = { clock_sin, clock_cos };
-            this->Scheduler->template SetData<"NetClockVector">(ClockVector);
+            this->Scheduler->template SetData<concat(NetName, "NetClockVector")>(ClockVector);
 
             z::math::Vector< InferencePrecision, EXTRA_INPUT_LENGTH> ExtraInputVec = math::cat(
                 UserCmd3, ClockVector
@@ -146,26 +136,18 @@ namespace z
         {
             auto LastAction = this->OutputTensor.toVector();
             auto ClipedLastAction = MotorValVec::clamp(LastAction, -this->ClipAction, this->ClipAction);
-            this->Scheduler->template SetData<"NetLastAction">(ClipedLastAction);
+            this->Scheduler->template SetData<concat(NetName, "NetLastAction")>(ClipedLastAction);
 
             auto ScaledAction = ClipedLastAction * this->OutputScaleVec + this->JointDefaultPos;
-            this->Scheduler->template SetData<"NetScaledAction">(ScaledAction);
+            this->Scheduler->template SetData<concat(NetName, "NetScaledAction")>(ScaledAction);
 
-            if (BlockOutput && static_cast<int>(this->Scheduler->getTimeStamp()) - static_cast<int>(BlockOutputTargetTimestamp) > 0)
-            {
-                BlockOutput = false;
-            }
-
-            if (!this->BlockOutput)
-            {
-                auto clipedAction = MotorValVec::clamp(ScaledAction, this->JointClipLower, this->JointClipUpper);
-                this->Scheduler->template SetData<"TargetMotorPosition">(clipedAction);
-            }
+            auto clipedAction = MotorValVec::clamp(ScaledAction, this->JointClipLower, this->JointClipUpper);
+            this->Scheduler->template SetData<concat(NetName, "Action")>(clipedAction);
 
             this->end_time = std::chrono::steady_clock::now();
             auto duration = std::chrono::duration_cast<std::chrono::microseconds>(this->end_time - this->start_time);
             InferencePrecision inference_time = static_cast<InferencePrecision>(duration.count()) / 1000.0;
-            this->Scheduler->template SetData<"InferenceTime">(inference_time);
+            this->Scheduler->template SetData<concat(NetName, "InferenceTime")>(inference_time);
         }
 
     private:
@@ -188,11 +170,6 @@ namespace z
 
         InferencePrecision CyctleTime;
         InferencePrecision dt;
-
-        //block output for state estimation stable
-        size_t BlockOutputTargetTimestamp = 0;
-        size_t BlockOutputPeriod = 0;
-        bool BlockOutput = false;
 
         //compute time
         std::chrono::steady_clock::time_point start_time;

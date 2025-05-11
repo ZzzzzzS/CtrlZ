@@ -10,6 +10,9 @@
     "ResetPosition": {
       "Duration": 3
     },
+    "ActionManager": {
+      "SwitchIntervalTime": 1.0
+    },
     "Commander": {
       "EchoCmd": true,
       "UpperLimit": [
@@ -112,8 +115,7 @@
         "OutputNodeNames": [
           "action"
         ],
-        "Cycle_time": 0.5,
-        "SwitchTime": 1.0
+        "Cycle_time": 0.5
       },
       "Preprocess": {
         "ObservationScales": {

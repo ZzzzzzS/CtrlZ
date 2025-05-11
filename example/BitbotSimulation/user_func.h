@@ -47,6 +47,7 @@ struct UserData
     EraxLikeInferWorkerType* NetInferWorker;
     MotorResetWorkerType* MotorResetWorker;
     CmdWorkerType* CommanderWorker;
+    ActionManagementWorkerType* ActionManagementWorker;
     //NOTE: REMEMBER TO DELETE THESE POINTERS IN FinishFunc
 };
 

@@ -90,6 +90,8 @@ namespace z
 
             std::cout << "LogPath:" << this->LogPath__ << std::endl;
             std::cout << "WriteBackFrequency:" << this->WriteBackFrequency__ << std::endl;
+            std::cout << "\nLogged Data Pairs: \n";
+            (PrintCTSPairInfo<Args>(), ...);
             this->PrintSplitLine();
 
         }

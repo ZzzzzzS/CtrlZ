@@ -38,23 +38,56 @@ namespace z
 
 
     /**
-     * @brief concat two compile time strings
+     * @brief concat multiple compile time strings
+     *
+     * @tparam N size of strings
+     * @return constexpr auto concatenated string
+     */
+    template<size_t ...N>
+    constexpr auto concat(const CTString<N>& ...strs)
+    {
+        constexpr size_t total_size = (N + ...) - sizeof...(N) + 1;
+        char result[total_size]{};
+        size_t offset = 0;
+        ((std::copy_n(strs.value, N - 1, result + offset), offset += N - 1), ...);
+        return CTString<total_size>{ result };
+    }
+
+    /**
+     * @brief concat a compile time string with a const string
      *
      * @tparam N size of first string
      * @tparam M size of second string
      * @return constexpr auto concatenated string
      */
-    template <std::size_t N, std::size_t M>
-    constexpr auto concat(const char(&a)[N], const char(&b)[M]) {
-        char result[N + M - 1] = {};
-        for (std::size_t i = 0; i < N - 1; ++i) {
-            result[i] = a[i];
-        }
-        for (std::size_t i = 0; i < M; ++i) {
-            result[N - 1 + i] = b[i];
-        }
-        return result;
+    template<size_t N, size_t M>
+    constexpr auto concat(const CTString<N>& str1, const char(&str2)[M])
+    {
+        char result[N + M - 1]{};
+        std::copy_n(str1.value, N - 1, result);
+        std::copy_n(str2, M, result + N - 1);
+        return CTString<N + M - 1>{ result };
     }
+
+    /**
+     * @brief concat multiple compile time strings
+     *
+     * @tparam N size of strings
+     * @return constexpr auto concatenated string
+     */
+    template<size_t ...N>
+    constexpr auto concat(const char(&...str)[N])
+    {
+        constexpr size_t total_size = (N + ...) - sizeof...(N) + 1;
+        char result[total_size]{};
+        size_t offset = 0;
+        ((std::copy_n(str, N - 1, result + offset), offset += N - 1), ...);
+        return CTString<total_size>{ result };
+    }
+
+
+
+
 
     /**
      * @brief compile time string key-value pair
@@ -123,6 +156,16 @@ namespace z
         static constexpr size_t dim = Dim;
     };
 
+    /**
+     * @brief print compile time string key-value pair info
+     *
+     * @tparam CTS
+     */
+    template<CTSPair CTS>
+    void PrintCTSPairInfo()
+    {
+        std::cout << "[\"" << CTS.str.value << "\"] = " << typeid(typename std::remove_pointer_t<decltype(CTS.type)>).name() << std::endl;
+    }
 
     /**
      * @brief compile time string array
@@ -162,6 +205,7 @@ namespace z
             constexpr size_t idx = it != string_array_.end() ? std::distance(string_array_.begin(), it) : sizeof...(CTS);
 
             //constexpr auto error_message = concat("CTS not found in CTSArray: ", CT.value);
+
             static_assert(idx != sizeof...(CTS), "CTS not found in CTSMap");
             return idx;
         }
@@ -188,6 +232,8 @@ namespace z
     private:
         constexpr static std::array<std::string_view, sizeof...(CTS)> string_array_{ CTS.value... };
     };
+
+
 
     /**
      * @brief Compile time string map

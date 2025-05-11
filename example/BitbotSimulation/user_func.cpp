@@ -52,6 +52,8 @@ void ConfigFunc(const KernelBus& bus, UserData& d)
     d.MotorPDWorker = new MotorPDWorkerType(d.TaskScheduler, cfg_workers["MotorPDLoop"]);
     d.Logger = new LoggerWorkerType(d.TaskScheduler, cfg_workers["AsyncLogger"]);
     d.CommanderWorker = new CmdWorkerType(d.TaskScheduler, cfg_workers["Commander"]);
+    d.ActionManagementWorker = new ActionManagementWorkerType(d.TaskScheduler, cfg_workers["ActionManager"], cfg_root["Scheduler"]);
+
 
     //创建主任务列表，并添加worker
     d.TaskScheduler->CreateTaskList("MainTask", 1, true);
@@ -66,6 +68,7 @@ void ConfigFunc(const KernelBus& bus, UserData& d)
     d.NetInferWorker = new EraxLikeInferWorkerType(d.TaskScheduler, cfg_workers["NN"], cfg_workers["MotorControl"]);
     d.TaskScheduler->CreateTaskList("InferTask", cfg_root["Scheduler"]["InferTask"]["PolicyFrequency"]);
     d.TaskScheduler->AddWorker("InferTask", d.NetInferWorker);
+    d.TaskScheduler->AddWorker("InferTask", d.ActionManagementWorker);
     d.TaskScheduler->AddWorker("InferTask", d.Logger);
 
     //创建复位任务列表，并添加worker，设置复位任务频率为主任务频率的1/10
@@ -110,7 +113,7 @@ std::optional<bitbot::StateId> EventPolicyRun(bitbot::EventValue value, UserData
         std::cout << "policy run\n";
         d.MotorResetWorker->StopReset(); //停止复位
         d.TaskScheduler->DisableTaskList("ResetTask"); //在复位任务列表中禁用复位任务
-
+        d.ActionManagementWorker->template SwitchTo<Net1OutPair>();
         d.TaskScheduler->EnableTaskList("InferTask"); //在推理任务列表中启用推理任务
         return static_cast<bitbot::StateId>(States::PF2PolicyRun);
     }

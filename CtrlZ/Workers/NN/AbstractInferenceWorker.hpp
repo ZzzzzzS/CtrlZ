@@ -17,6 +17,7 @@
 #include <array>
 #include <vector>
 #include "Utils/MathTypes.hpp"
+#include "Utils/StaticStringUtils.hpp"
 #include "Schedulers/AbstractScheduler.hpp"
 #include "onnxruntime_cxx_api.h"
 #include "NetInferenceWorker.h"
@@ -50,9 +51,10 @@ namespace z
 	 * }
 	 *
 	 * @tparam SchedulerType 调度器类型
+	 * @tparam NetName 网络名称，用户可以通过这个参数来指定网络的名称, 这在有多个网络时可以区分数据总线上的不同网络数据
 	 * @tparam InferencePrecision 推理精度，用户可以通过这个参数来指定推理的精度，比如可以指定为float或者double
 	 */
-	template<typename SchedulerType, typename InferencePrecision>
+	template<typename SchedulerType, CTString NetName, typename InferencePrecision>
 	class AbstractNetInferenceWorker : public AbstractWorker<SchedulerType>
 	{
 		/// @brief 推理精度必须是一个算术类型

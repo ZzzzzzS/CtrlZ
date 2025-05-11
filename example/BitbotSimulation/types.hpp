@@ -21,6 +21,7 @@
 #include "Workers/MotorControlWorker.hpp"
 #include "Workers/MotorResetPositionWorker.hpp"
 #include "Workers/NetCmdWorker.hpp"
+#include "Workers/ActionManagementWorker.hpp"
 
 #include "Workers/NN/EraxLikeInferenceWorker.hpp"
 #include "Workers/NN/HumanoidGymInferenceWorker.hpp"
@@ -62,12 +63,14 @@ constexpr z::CTSPair<"CurrentMotorPositionRaw", MotorVec> CurrentMotorPosRawPair
 constexpr z::CTSPair<"CurrentMotorVelocityRaw", MotorVec> CurrentMotorVelRawPair;
 
 /********* NN pair ********************/
-constexpr z::CTSPair<"NetLastAction", MotorVec> NetLastActionPair;
-constexpr z::CTSPair<"NetUserCommand3", Vec3> NetCommand3Pair;
-constexpr z::CTSPair<"NetProjectedGravity", Vec3> NetProjectedGravityPair;
-constexpr z::CTSPair<"NetScaledAction", MotorVec> NetScaledActionPair;
-constexpr z::CTSPair<"NetClockVector", z::math::Vector<RealNumber, 2>> NetClockVectorPair;
-constexpr z::CTSPair<"InferenceTime", RealNumber> InferenceTimePair;
+constexpr z::CTString Net1Name = "Net1";
+constexpr z::CTSPair<z::concat(Net1Name, "NetLastAction"), MotorVec> NetLastActionPair;
+constexpr z::CTSPair<z::concat(Net1Name, "NetUserCommand3"), Vec3> NetCommand3Pair;
+constexpr z::CTSPair<z::concat(Net1Name, "NetProjectedGravity"), Vec3> NetProjectedGravityPair;
+constexpr z::CTSPair<z::concat(Net1Name, "NetScaledAction"), MotorVec> NetScaledActionPair;
+constexpr z::CTSPair<z::concat(Net1Name, "NetClockVector"), z::math::Vector<RealNumber, 2>> NetClockVectorPair;
+constexpr z::CTSPair<z::concat(Net1Name, "InferenceTime"), RealNumber> InferenceTimePair;
+constexpr z::CTSPair<z::concat(Net1Name, "Action"), MotorVec> Net1OutPair;
 
 // define scheduler
 using SchedulerType = z::AbstractScheduler<ImuAccRawPair, ImuGyroRawPair, ImuMagRawPair, LinearVelocityValuePair,
@@ -75,7 +78,7 @@ using SchedulerType = z::AbstractScheduler<ImuAccRawPair, ImuGyroRawPair, ImuMag
     TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair,
     TargetMotorTorquePair, LimitTargetMotorTorquePair,
     CurrentMotorVelRawPair, CurrentMotorPosRawPair,
-    NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair>;
+    NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair, Net1OutPair>;
 
 
 //define workers
@@ -87,14 +90,15 @@ using LoggerWorkerType = z::AsyncLoggerWorker<SchedulerType, RealNumber, ImuAccR
     ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair,
     TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair,
     TargetMotorTorquePair, LimitTargetMotorTorquePair,
-    NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair>;
+    NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair, Net1OutPair>;
 
 using CmdWorkerType = z::NetCmdWorker<SchedulerType, RealNumber, NetCommand3Pair>;
 using FlexPatchWorkerType = z::SimpleCallbackWorker<SchedulerType>;
 
+using ActionManagementWorkerType = z::ActionManagementWorker<SchedulerType, RealNumber, Net1OutPair>;
 
 /******define actor net************/
 constexpr size_t OBSERVATION_STUCK_LENGTH = 10;
 constexpr size_t OBSERVATION_EXTRA_LENGTH = 5;
 //using HumanoidGymInferWorkerType = z::HumanoidGymInferenceWorker<SchedulerType, RealNumber,OBSERVATION_STUCK_LENGTH, JOINT_NUMBER>;
-using EraxLikeInferWorkerType = z::EraxLikeInferenceWorker<SchedulerType, RealNumber, OBSERVATION_STUCK_LENGTH, OBSERVATION_EXTRA_LENGTH, JOINT_NUMBER>;
+using EraxLikeInferWorkerType = z::EraxLikeInferenceWorker<SchedulerType, Net1Name, RealNumber, OBSERVATION_STUCK_LENGTH, OBSERVATION_EXTRA_LENGTH, JOINT_NUMBER>;
