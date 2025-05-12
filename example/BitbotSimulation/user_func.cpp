@@ -67,9 +67,13 @@ void ConfigFunc(const KernelBus& bus, UserData& d)
     //创建推理任务列表，并添加worker，设置推理任务频率
     d.NetInferWorker = new EraxLikeInferWorkerType(d.TaskScheduler, cfg_workers["NN"], cfg_workers["MotorControl"]);
     d.TaskScheduler->CreateTaskList("InferTask", cfg_root["Scheduler"]["InferTask"]["PolicyFrequency"]);
-    d.TaskScheduler->AddWorker("InferTask", d.NetInferWorker);
-    d.TaskScheduler->AddWorker("InferTask", d.ActionManagementWorker);
-    d.TaskScheduler->AddWorker("InferTask", d.Logger);
+    d.TaskScheduler->AddWorkers("InferTask",
+        {
+            d.CommanderWorker,
+            d.NetInferWorker,
+            d.ActionManagementWorker,
+            d.Logger
+        });
 
     //创建复位任务列表，并添加worker，设置复位任务频率为主任务频率的1/10
     d.MotorResetWorker = new MotorResetWorkerType(d.TaskScheduler, cfg_workers["MotorControl"], cfg_workers["ResetPosition"]);

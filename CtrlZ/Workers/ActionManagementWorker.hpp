@@ -125,6 +125,21 @@ namespace z
         }
 
         /**
+         * @brief 设置网络输出的重映射函数，用户可以通过这个方法来设置网络输出的重映射函数。
+         *
+         * @tparam CT 编译期动作对，表示网络输出的名称和对应的类型。
+         * @param func 重映射函数，用户可以通过这个函数来实现网络输出的重映射逻辑。
+         */
+        template<CTSPair CT>
+        void SetActionRemapFunction(OutPutRemapFunction func)
+        {
+            constexpr size_t idx = ActionPairs__.template index<CT.str>();
+            static_assert(CT.dim == ActionElementSize__, "ActionPair size not match, the size of ActionPair must be the same as ActionElementSize__");
+            static_assert(idx != sizeof...(ActionPairs), "ActionPair not found in ActionManagementWorker");
+            ActionRemapFunctions__[idx] = func;
+        }
+
+        /**
          * @brief 切换到指定的网络输出，用户可以通过这个方法来切换到指定的网络输出。
          *
          * @param ActionName 网络输出的名称，用户可以通过这个名称来指定需要切换到的网络输出。
