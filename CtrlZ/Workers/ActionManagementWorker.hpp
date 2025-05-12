@@ -69,15 +69,14 @@ namespace z
          *
          * @param scheduler 调度器的指针
          * @param worker_cfg 配置文件，用户可以通过配置文件来配置工人的一些参数。
-         * @param scheduler_cfg 调度器的配置文件，用户可以通过配置文件来配置调度器的一些参数。
          */
-        ActionManagementWorker(SchedulerType* scheduler, const nlohmann::json& worker_cfg, const nlohmann::json& scheduler_cfg)
+        ActionManagementWorker(SchedulerType* scheduler, const nlohmann::json& worker_cfg)
             :AbstractWorker<SchedulerType>(scheduler, worker_cfg)
         {
             this->PrintSplitLine();
             std::cout << "ActionManagementWorker" << std::endl;
             this->block__.store(true); //默认阻塞输出
-            this->CycleTime__ = scheduler_cfg["dt"].get<InferencePrecision>();
+            this->CycleTime__ = scheduler->getSpinOnceTime();
             this->ActionRemapFunctions__.fill(std::bind(&ActionManagementWorker::DefaultActionRemapFunction, this, this->Scheduler, std::placeholders::_2));
             InferencePrecision DefaultSwitchIntervalTime = worker_cfg["SwitchIntervalTime"].get<InferencePrecision>();
             this->DefaultNextActionCycleCnt__ = static_cast<decltype(this->DefaultNextActionCycleCnt__)>(DefaultSwitchIntervalTime / this->CycleTime__);

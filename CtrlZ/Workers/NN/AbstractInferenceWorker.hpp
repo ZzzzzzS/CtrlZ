@@ -156,14 +156,38 @@ namespace z
 		}
 
 		/**
+		 * @brief 设置是否启动推理。或是否在未来的某个时间点启动推理。
+		 *
+		 * @param enable 是否启用推理
+		 * @param future_time 在未来的某个时间点启用推理，单位为秒，默认值为0，表示立即启用
+		 */
+		void SetEnable(bool enable, InferencePrecision future_time = 0)
+		{
+			if (this->NextEnable__.load() == enable) [[unlikely]]
+				return;
+
+			this->NextEnable__.store(enable);
+			this->NextActionCycleCnt__.store(this->Scheduler->getTimeStamp() + static_cast<size_t>(future_time / this->Scheduler->getSpinOnceTime()));
+		}
+
+		/**
 		 * @brief 在每次任务队列循环中被调用，用来实现推理的逻辑,默认实现是依次调用PreProcess，InferenceOnce，PostProcess方法
 		 *
 		 */
 		void TaskRun() override
 		{
-			PreProcess();
-			InferenceOnce();
-			PostProcess();
+			if (this->NextActionCycleCnt__.load() < this->Scheduler->getTimeStamp()) [[likely]]
+			{
+				this->Enable__ = this->NextEnable__.load();
+			}
+
+			if (this->Enable__)
+			{
+				PreProcess();
+				InferenceOnce();
+				PostProcess();
+			}
+
 		}
 
 		/**
@@ -261,5 +285,10 @@ namespace z
 
 		/// @brief ONNXRuntime的IoBinding对象，用来绑定输入输出节点，绑定名称和数据
 		Ort::IoBinding IoBinding__;
+
+	private:
+		std::atomic<bool> NextEnable__ = true; //未来是否是允许的状态
+		bool Enable__ = true; //当前是否是允许的状态
+		std::atomic<size_t> NextActionCycleCnt__ = 0; //下一个动作周期计数器
 	};
 };

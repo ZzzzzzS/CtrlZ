@@ -52,7 +52,7 @@ void ConfigFunc(const KernelBus& bus, UserData& d)
     d.MotorPDWorker = new MotorPDWorkerType(d.TaskScheduler, cfg_workers["MotorPDLoop"]);
     d.Logger = new LoggerWorkerType(d.TaskScheduler, cfg_workers["AsyncLogger"]);
     d.CommanderWorker = new CmdWorkerType(d.TaskScheduler, cfg_workers["Commander"]);
-    d.ActionManagementWorker = new ActionManagementWorkerType(d.TaskScheduler, cfg_workers["ActionManager"], cfg_root["Scheduler"]);
+    d.ActionManagementWorker = new ActionManagementWorkerType(d.TaskScheduler, cfg_workers["ActionManager"]);
 
 
     //创建主任务列表，并添加worker
