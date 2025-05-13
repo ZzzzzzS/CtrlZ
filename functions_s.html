@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -102,23 +109,17 @@ $(function(){initNavTree('functions_s.html',''); initResizable(true); });
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
 <li>same()&#160;:&#160;<a class="el" href="classz_1_1math_1_1_tensor_base.html#af8f5de53168a53316aa2e0010ad4341f">z::math::TensorBase&lt; T, Dims &gt;</a></li>
-<li>Scales_ang_vel&#160;:&#160;<a class="el" href="classz_1_1_common_loco_inference_worker.html#a51218bfa3645f64ae90346c87069c3a1">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-<li>Scales_command3&#160;:&#160;<a class="el" href="classz_1_1_common_loco_inference_worker.html#a7a97490bcc221ec6b64ea380ebd258ce">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-<li>Scales_dof_pos&#160;:&#160;<a class="el" href="classz_1_1_common_loco_inference_worker.html#a2d95f14e3acf41fcd9ffd87120557ffe">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-<li>Scales_dof_vel&#160;:&#160;<a class="el" href="classz_1_1_common_loco_inference_worker.html#ad08d33e770dd0a85516e4d3d94798cf7">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-<li>Scales_last_action&#160;:&#160;<a class="el" href="classz_1_1_common_loco_inference_worker.html#abd9194daf7de374ecda33c1fd6c08553">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-<li>Scales_lin_vel&#160;:&#160;<a class="el" href="classz_1_1_common_loco_inference_worker.html#ae8a289578c62a1d2efafd1fadbbfaa1b">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-<li>Scales_project_gravity&#160;:&#160;<a class="el" href="classz_1_1_common_loco_inference_worker.html#a94754b9801aed78a46f550ab8c05ec17">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
 <li>Scheduler&#160;:&#160;<a class="el" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">z::AbstractWorker&lt; SchedulerType &gt;</a></li>
 <li>SelfApplyFunc&#160;:&#160;<a class="el" href="classz_1_1math_1_1_vector.html#a67d268efc28de268c098534ae6b6ef20">z::math::Vector&lt; T, N &gt;</a>, <a class="el" href="classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html#a0766fafc1e043abb802bdb49c06f0245">z::math::Vector&lt; bool, N &gt;</a></li>
-<li>Session__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#a1ef3efd5054b843748581aebcb3b1794">z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;</a>, <a class="el" href="classz_1_1_common_loco_inference_worker.html#a1ef3efd5054b843748581aebcb3b1794">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-<li>SessionOptions__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#a38fd97ac8e762c77a632d0cd64f14e89">z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;</a></li>
+<li>Session__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#a497b50253d740547c0dbe2b2d05a100c">z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;</a></li>
+<li>SessionOptions__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#ad0fc8c0937a0f3f21c5e95011504c440">z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;</a></li>
 <li>set()&#160;:&#160;<a class="el" href="classz_1_1_c_t_s_map.html#a25c4360ca90bd167fab44f742e3315be">z::CTSMap&lt; CTS &gt;</a></li>
 <li>SetActionRemapFunction()&#160;:&#160;<a class="el" href="classz_1_1_action_management_worker.html#ad30055558ca093ed9fcec36736c95333">z::ActionManagementWorker&lt; SchedulerType, InferencePrecision, ActionPairs &gt;</a></li>
 <li>SetCmd()&#160;:&#160;<a class="el" href="classz_1_1_net_cmd_worker.html#addecda3e21c6b5d48f7e07f1faa789f3">z::NetCmdWorker&lt; SchedulerType, CmdPrecision, CmdArgs &gt;</a></li>
 <li>SetCmdNoScale()&#160;:&#160;<a class="el" href="classz_1_1_net_cmd_worker.html#abdc9f5585bdcaaf1978451170b9f0502">z::NetCmdWorker&lt; SchedulerType, CmdPrecision, CmdArgs &gt;</a></li>
 <li>SetCurrentPositionAsTargetPosition()&#160;:&#160;<a class="el" href="classz_1_1_motor_control_worker.html#ae399c4a46576fe99f846a23f2559caa8">z::MotorControlWorker&lt; SchedulerType, JointType, MotorPrecision, JointNumber &gt;</a></li>
 <li>SetData()&#160;:&#160;<a class="el" href="classz_1_1_abstract_scheduler.html#aad27a82fb12320024611b0290a9fa36b">z::AbstractScheduler&lt; CTS &gt;</a>, <a class="el" href="classz_1_1_data_center.html#a62dcacac8eaedc2777d783c7ef49d5e0">z::DataCenter&lt; CTS &gt;</a></li>
+<li>SetEnable()&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#a755b7d346584757037ff61c91d1dce07">z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;</a></li>
 <li>setScheduler()&#160;:&#160;<a class="el" href="classz_1_1_abstract_worker.html#a30f113136aaacbbb515c80734b7432f4">z::AbstractWorker&lt; SchedulerType &gt;</a></li>
 <li>shape()&#160;:&#160;<a class="el" href="classz_1_1math_1_1_tensor_base.html#abea5318708d0d863a44efcb6919cf6be">z::math::TensorBase&lt; T, Dims &gt;</a></li>
 <li>SimpleCallbackWorker()&#160;:&#160;<a class="el" href="classz_1_1_simple_callback_worker.html#af16673de46ddaa2bb7ac631b2e785108">z::SimpleCallbackWorker&lt; SchedulerType &gt;</a></li>

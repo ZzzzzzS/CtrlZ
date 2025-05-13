@@ -5,6 +5,5 @@ var searchData=
   ['equal_2',['equal',['../classz_1_1math_1_1_tensor_base.html#ab12945a35e53b255953d2b4edc8cdb7d',1,'z::math::TensorBase']]],
   ['eraxlikeinferenceworker_3',['EraxLikeInferenceWorker',['../classz_1_1_erax_like_inference_worker.html',1,'z']]],
   ['eraxlikeinferenceworker_2ehpp_4',['EraxLikeInferenceWorker.hpp',['../_erax_like_inference_worker_8hpp.html',1,'']]],
-  ['eraxlikeinferenceworker_3c_20schedulertype_2c_20realnumber_2c_20observation_5fstuck_5flength_2c_20observation_5fextra_5flength_2c_20joint_5fnumber_20_3e_5',['EraxLikeInferenceWorker&lt; SchedulerType, RealNumber, OBSERVATION_STUCK_LENGTH, OBSERVATION_EXTRA_LENGTH, JOINT_NUMBER &gt;',['../classz_1_1_erax_like_inference_worker.html',1,'z']]],
-  ['examples_6',['Examples',['../C:/Users/ZhouZishun/Desktop/CtrlZ/doc/doxygen-awesome-css-main/README.md#autotoc_md3',1,'']]]
+  ['eraxlikeinferenceworker_3c_20schedulertype_2c_20net1name_2c_20realnumber_2c_20observation_5fstuck_5flength_2c_20observation_5fextra_5flength_2c_20joint_5fnumber_20_3e_5',['EraxLikeInferenceWorker&lt; SchedulerType, Net1Name, RealNumber, OBSERVATION_STUCK_LENGTH, OBSERVATION_EXTRA_LENGTH, JOINT_NUMBER &gt;',['../classz_1_1_erax_like_inference_worker.html',1,'z']]]
 ];

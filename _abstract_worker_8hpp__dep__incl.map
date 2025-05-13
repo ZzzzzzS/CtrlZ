@@ -1,58 +1,59 @@
-<map id="C:/Users/ZhouZishun/Desktop/CtrlZ/CtrlZ/Workers/AbstractWorker.hpp" name="C:/Users/ZhouZishun/Desktop/CtrlZ/CtrlZ/Workers/AbstractWorker.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="1260,5,1453,64"/>
-<area shape="rect" id="Node000002" href="$_abstract_scheduler_8hpp.html" title="AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。" alt="" coords="1027,112,1254,171"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1285,73,1201,114,1199,109,1283,69"/>
-<area shape="rect" id="Node000003" href="$_action_management_worker_8hpp.html" title="该文件定义了一个类ActionManagementWorker，用于管理和选择单个或多个推理网络的输出。" alt="" coords="236,349,491,408"/>
-<area shape="poly" id="edge26_Node000001_Node000003" title=" " alt="" coords="1245,45,1014,67,879,87,746,115,661,133,593,148,562,158,531,172,498,193,461,221,432,251,408,285,376,350,371,348,403,282,428,247,457,217,495,188,528,168,560,153,592,142,660,128,745,109,878,82,1013,62,1245,39"/>
-<area shape="rect" id="Node000004" href="$_imu_process_worker_8hpp.html" title=" " alt="" coords="1759,227,1972,285"/>
-<area shape="poly" id="edge29_Node000001_Node000004" title=" " alt="" coords="1438,68,1800,224,1798,229,1436,73"/>
-<area shape="rect" id="Node000005" href="$types_8hpp.html" title="类型定义" alt="" coords="1062,587,1243,645"/>
-<area shape="poly" id="edge36_Node000001_Node000005" title=" " alt="" coords="1468,36,1555,43,1654,56,1757,77,1857,109,1933,133,1998,155,2025,170,2045,190,2059,218,2063,255,2063,380,2056,411,2037,439,2006,465,1966,487,1918,508,1864,526,1739,556,1604,579,1469,595,1244,613,1244,608,1468,590,1603,573,1738,551,1862,521,1917,503,1964,482,2003,460,2033,436,2051,409,2058,380,2058,255,2053,219,2041,193,2021,174,1996,160,1931,139,1856,115,1756,83,1653,61,1554,48,1468,41"/>
-<area shape="rect" id="Node000009" href="$_keyboard_command_worker_8hpp.html" title=" " alt="" coords="1477,227,1735,285"/>
-<area shape="poly" id="edge30_Node000001_Node000009" title=" " alt="" coords="1402,72,1575,224,1571,228,1399,76"/>
-<area shape="rect" id="Node000010" href="$_motor_control_worker_8hpp.html" title=" " alt="" coords="701,227,919,285"/>
-<area shape="poly" id="edge31_Node000001_Node000010" title=" " alt="" coords="1245,52,1132,76,1073,93,1016,114,967,140,920,170,844,228,841,224,917,166,964,135,1014,110,1071,88,1131,70,1244,47"/>
-<area shape="rect" id="Node000011" href="$_motor_reset_position_worker_8hpp.html" title=" " alt="" coords="1044,219,1237,293"/>
-<area shape="poly" id="edge32_Node000001_Node000011" title=" " alt="" coords="1336,79,1306,126,1268,173,1238,198,1207,220,1204,216,1235,194,1264,169,1302,123,1332,76"/>
-<area shape="rect" id="Node000012" href="$_abstract_inference_worker_8hpp.html" title=" " alt="" coords="472,219,676,293"/>
-<area shape="poly" id="edge33_Node000001_Node000012" title=" " alt="" coords="1246,50,1086,74,997,92,911,115,839,138,769,166,647,221,645,216,767,161,837,133,909,109,996,87,1085,69,1245,45"/>
-<area shape="rect" id="Node000018" href="$_net_cmd_worker_8hpp_source.html" title=" " alt="" coords="1260,227,1453,285"/>
-<area shape="poly" id="edge34_Node000001_Node000018" title=" " alt="" coords="1359,80,1359,226,1354,226,1354,80"/>
-<area shape="rect" id="Node000019" href="$_async_logger_worker_8hpp.html" title=" " alt="" coords="1715,349,1934,408"/>
-<area shape="poly" id="edge27_Node000001_Node000019" title=" " alt="" coords="1468,50,1609,75,1765,112,1838,134,1902,159,1953,187,1987,217,1998,237,2001,255,1997,274,1987,295,1973,312,1957,328,1920,351,1917,346,1954,323,1970,309,1982,292,1992,273,1996,255,1993,238,1982,220,1950,191,1899,164,1836,139,1763,117,1608,80,1467,55"/>
-<area shape="rect" id="Node000020" href="$_simple_trajactory_generator_8hpp_source.html" title=" " alt="" coords="2098,112,2356,171"/>
-<area shape="poly" id="edge35_Node000001_Node000020" title=" " alt="" coords="1469,42,1747,68,2080,109,2099,112,2098,118,2079,115,1746,74,1468,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1054,180,1021,199,990,221,973,240,964,260,953,278,933,296,873,324,821,338,772,343,724,342,625,335,568,336,502,344,467,351,466,346,501,339,567,330,625,330,725,337,772,338,820,333,872,319,930,291,949,275,959,257,969,237,987,217,1018,194,1052,176"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="1269,150,1493,174,1621,193,1748,216,1778,223,1777,229,1747,221,1621,198,1493,179,1269,155"/>
-<area shape="poly" id="edge25_Node000002_Node000005" title=" " alt="" coords="1069,182,1050,199,1035,220,1028,239,1027,255,1035,293,1056,378,1085,461,1140,585,1136,587,1080,463,1051,380,1030,294,1022,255,1023,238,1030,217,1046,196,1065,178"/>
-<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="1270,170,1465,216,1495,223,1494,229,1464,221,1268,175"/>
-<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="1043,179,895,229,893,224,1041,174"/>
-<area shape="poly" id="edge12_Node000002_Node000011" title=" " alt="" coords="1143,186,1143,218,1138,218,1138,186"/>
-<area shape="poly" id="edge14_Node000002_Node000012" title=" " alt="" coords="1012,162,857,187,689,221,677,224,676,219,688,216,856,182,1011,157"/>
-<area shape="poly" id="edge23_Node000002_Node000018" title=" " alt="" coords="1210,176,1303,224,1300,229,1208,181"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1796,295,1211,589,1208,584,1794,290"/>
-<area shape="rect" id="Node000006" href="$user__func_8cpp.html" title=" " alt="" coords="1014,816,1174,891"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1134,661,1122,694,1107,758,1100,816,1094,815,1102,757,1117,693,1129,659"/>
-<area shape="rect" id="Node000007" href="$user__func_8h.html" title=" " alt="" coords="1131,693,1291,768"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="1177,658,1195,692,1190,694,1172,660"/>
-<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="1167,781,1131,817,1128,814,1163,778"/>
-<area shape="rect" id="Node000008" href="$main_8cpp.html" title=" " alt="" coords="1198,824,1376,883"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1245,780,1271,822,1267,825,1240,783"/>
-<area shape="poly" id="edge11_Node000010_Node000005" title=" " alt="" coords="856,294,938,370,1028,462,1057,499,1085,537,1128,585,1124,588,1081,540,1053,503,1024,466,934,374,852,298"/>
-<area shape="poly" id="edge13_Node000011_Node000005" title=" " alt="" coords="1145,309,1154,586,1149,587,1140,309"/>
-<area shape="poly" id="edge15_Node000012_Node000003" title=" " alt="" coords="497,304,415,351,412,346,495,299"/>
-<area shape="rect" id="Node000013" href="$_common_loco_inference_worker_8hpp.html" title=" " alt="" coords="514,341,751,416"/>
-<area shape="poly" id="edge16_Node000012_Node000013" title=" " alt="" coords="601,307,617,340,612,342,596,309"/>
-<area shape="rect" id="Node000014" href="$_erax_like_inference_worker_8hpp.html" title=" " alt="" coords="5,464,212,539"/>
-<area shape="poly" id="edge17_Node000013_Node000014" title=" " alt="" coords="499,419,422,434,360,442,299,451,224,467,213,469,211,464,223,461,298,446,359,437,421,429,499,414"/>
-<area shape="rect" id="Node000015" href="$_humanoid_gym_inference_worker_8hpp.html" title=" " alt="" coords="235,464,478,539"/>
-<area shape="poly" id="edge19_Node000013_Node000015" title=" " alt="" coords="535,425,442,466,440,461,533,420"/>
-<area shape="rect" id="Node000016" href="$_plain_inference_worker_8hpp.html" title=" " alt="" coords="763,472,1014,531"/>
-<area shape="poly" id="edge21_Node000013_Node000016" title=" " alt="" coords="726,421,829,469,826,474,723,426"/>
-<area shape="rect" id="Node000017" href="$_unitree_rl_gym_inference_worker_8hpp.html" title="Support lstm onnx model trained by unitree_rl_gym. For code to export lstm model to onnx format,..." alt="" coords="501,464,740,539"/>
-<area shape="poly" id="edge22_Node000013_Node000017" title=" " alt="" coords="630,432,627,464,621,463,625,432"/>
-<area shape="poly" id="edge18_Node000014_Node000005" title=" " alt="" coords="227,537,346,557,465,573,699,595,905,607,1061,611,1061,617,905,612,699,600,465,578,345,562,226,542"/>
-<area shape="poly" id="edge20_Node000015_Node000005" title=" " alt="" coords="493,536,653,562,809,582,1062,606,1061,611,808,588,652,568,492,542"/>
-<area shape="poly" id="edge24_Node000018_Node000005" title=" " alt="" coords="1335,301,1171,588,1166,585,1330,298"/>
-<area shape="poly" id="edge28_Node000019_Node000005" title=" " alt="" coords="1767,419,1654,481,1586,513,1517,541,1447,563,1375,581,1244,605,1243,600,1374,576,1446,558,1516,536,1584,509,1651,477,1764,414"/>
+<map id="C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/AbstractWorker.hpp" name="C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/AbstractWorker.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="977,5,1139,80"/>
+<area shape="rect" id="Node000002" href="$_abstract_scheduler_8hpp.html" title="AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。" alt="" coords="595,128,756,203"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="963,77,757,141,756,136,962,71"/>
+<area shape="rect" id="Node000003" href="$_action_management_worker_8hpp.html" title="该文件定义了一个类ActionManagementWorker，用于管理和选择单个或多个推理网络的输出。" alt="" coords="574,373,777,448"/>
+<area shape="poly" id="edge27_Node000001_Node000003" title=" " alt="" coords="1154,80,1248,127,1294,156,1334,187,1365,220,1382,255,1385,273,1382,291,1375,309,1361,327,1348,336,1326,343,1261,354,1081,365,898,370,789,376,778,378,777,373,788,371,898,365,1081,360,1260,348,1324,338,1345,331,1358,323,1370,307,1377,290,1379,273,1377,256,1360,223,1330,191,1291,160,1246,132,1152,85"/>
+<area shape="rect" id="Node000004" href="$types_8hpp.html" title="类型定义" alt="" coords="456,619,662,693"/>
+<area shape="poly" id="edge37_Node000001_Node000004" title=" " alt="" coords="1155,57,1315,90,1405,113,1493,140,1573,171,1638,205,1664,224,1683,244,1695,265,1699,286,1699,412,1695,465,1680,507,1653,541,1610,573,1589,582,1556,591,1463,606,1341,619,1200,630,905,646,663,655,663,649,905,640,1200,625,1340,614,1463,601,1555,586,1587,577,1607,568,1649,537,1676,504,1690,464,1694,412,1694,287,1690,267,1679,247,1660,228,1636,210,1571,175,1491,145,1403,118,1313,95,1153,62"/>
+<area shape="rect" id="Node000008" href="$_imu_process_worker_8hpp.html" title=" " alt="" coords="5,251,167,325"/>
+<area shape="poly" id="edge30_Node000001_Node000008" title=" " alt="" coords="962,47,843,53,696,66,537,91,457,109,380,131,313,156,248,188,140,252,138,248,246,183,311,151,378,125,456,104,536,86,695,61,842,48,962,42"/>
+<area shape="rect" id="Node000009" href="$_keyboard_command_worker_8hpp.html" title=" " alt="" coords="955,251,1161,325"/>
+<area shape="poly" id="edge31_Node000001_Node000009" title=" " alt="" coords="1061,95,1061,250,1055,250,1055,95"/>
+<area shape="rect" id="Node000010" href="$_motor_control_worker_8hpp.html" title=" " alt="" coords="191,251,357,325"/>
+<area shape="poly" id="edge32_Node000001_Node000010" title=" " alt="" coords="962,49,867,56,753,71,633,94,574,111,516,130,460,157,406,188,319,252,315,248,404,184,458,152,514,126,572,106,632,89,753,65,866,51,962,44"/>
+<area shape="rect" id="Node000011" href="$_motor_reset_position_worker_8hpp.html" title=" " alt="" coords="382,251,588,325"/>
+<area shape="poly" id="edge33_Node000001_Node000011" title=" " alt="" coords="962,54,860,65,750,81,651,103,612,116,584,130,554,156,531,188,513,221,499,251,494,249,508,218,526,185,550,153,580,126,610,111,649,98,749,76,860,60,962,49"/>
+<area shape="rect" id="Node000012" href="$_abstract_inference_worker_8hpp.html" title=" " alt="" coords="713,251,931,325"/>
+<area shape="poly" id="edge34_Node000001_Node000012" title=" " alt="" coords="1014,93,859,252,856,248,1010,89"/>
+<area shape="rect" id="Node000018" href="$_net_cmd_worker_8hpp.html" title="定义了一个神经网络用户命令工人类型" alt="" coords="1185,251,1347,325"/>
+<area shape="poly" id="edge35_Node000001_Node000018" title=" " alt="" coords="1101,90,1237,248,1233,252,1097,93"/>
+<area shape="rect" id="Node000019" href="$_async_logger_worker_8hpp.html" title=" " alt="" coords="1492,373,1659,448"/>
+<area shape="poly" id="edge28_Node000001_Node000019" title=" " alt="" coords="1155,61,1236,86,1277,104,1315,126,1354,153,1391,184,1458,251,1513,317,1553,371,1549,374,1509,320,1454,255,1387,188,1351,157,1313,130,1274,109,1234,91,1153,66"/>
+<area shape="rect" id="Node000020" href="$_simple_trajactory_generator_8hpp.html" title="定义了一个简单的轨迹生成器" alt="" coords="1734,128,1939,203"/>
+<area shape="poly" id="edge36_Node000001_Node000020" title=" " alt="" coords="1155,49,1410,76,1563,97,1716,125,1734,130,1733,135,1715,131,1562,103,1409,81,1154,54"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="678,218,678,373,673,373,673,218"/>
+<area shape="poly" id="edge26_Node000002_Node000004" title=" " alt="" coords="657,218,632,271,602,327,583,351,564,375,525,433,511,460,499,497,492,534,499,570,511,594,526,617,522,620,506,597,494,571,487,534,494,495,506,458,520,430,560,372,579,348,597,324,627,269,652,216"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="580,180,393,207,286,228,180,253,168,257,166,252,179,248,285,222,392,202,579,174"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="771,194,944,248,955,252,953,257,943,253,770,199"/>
+<area shape="poly" id="edge11_Node000002_Node000010" title=" " alt="" coords="581,193,371,253,358,257,357,252,369,248,579,188"/>
+<area shape="poly" id="edge13_Node000002_Node000011" title=" " alt="" coords="606,213,544,252,541,248,603,209"/>
+<area shape="poly" id="edge15_Node000002_Node000012" title=" " alt="" coords="734,211,779,248,776,252,730,215"/>
+<area shape="poly" id="edge24_Node000002_Node000018" title=" " alt="" coords="772,174,959,202,1067,222,1173,248,1186,252,1184,257,1172,253,1066,228,958,207,771,180"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="562,452,535,472,514,497,507,512,504,527,508,558,519,589,535,617,530,620,514,592,502,560,499,526,502,510,509,495,531,468,559,448"/>
+<area shape="rect" id="Node000005" href="$user__func_8cpp.html" title=" " alt="" coords="387,864,593,939"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="532,708,518,742,503,806,495,864,490,864,497,805,513,740,527,706"/>
+<area shape="rect" id="Node000006" href="$user__func_8h.html" title=" " alt="" coords="527,741,733,816"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="591,706,611,740,606,742,586,708"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="578,828,534,866,531,862,574,824"/>
+<area shape="rect" id="Node000007" href="$main_8cpp.html" title=" " alt="" coords="618,864,824,939"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="669,827,695,862,691,865,665,830"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="121,337,160,390,211,452,272,514,339,568,397,600,457,624,455,629,394,605,337,573,269,518,208,455,156,393,117,340"/>
+<area shape="poly" id="edge12_Node000010_Node000004" title=" " alt="" coords="287,340,302,392,324,453,355,514,396,569,426,595,461,616,459,620,423,599,392,572,351,517,319,455,297,394,282,341"/>
+<area shape="poly" id="edge14_Node000011_Node000004" title=" " alt="" coords="454,340,429,391,408,450,403,481,402,511,407,541,419,569,440,595,467,616,464,620,436,599,414,572,402,543,397,512,398,480,403,448,424,388,450,338"/>
+<area shape="poly" id="edge16_Node000012_Node000003" title=" " alt="" coords="767,338,722,375,718,371,764,334"/>
+<area shape="rect" id="Node000013" href="$_common_loco_inference_worker_8hpp.html" title=" " alt="" coords="801,373,1051,448"/>
+<area shape="poly" id="edge17_Node000012_Node000013" title=" " alt="" coords="866,336,896,371,892,375,862,339"/>
+<area shape="rect" id="Node000014" href="$_erax_like_inference_worker_8hpp.html" title=" " alt="" coords="524,496,744,571"/>
+<area shape="poly" id="edge18_Node000013_Node000014" title=" " alt="" coords="824,457,724,498,722,493,822,452"/>
+<area shape="rect" id="Node000015" href="$_humanoid_gym_inference_worker_8hpp.html" title=" " alt="" coords="1267,496,1524,571"/>
+<area shape="poly" id="edge20_Node000013_Node000015" title=" " alt="" coords="1067,445,1267,497,1266,502,1066,450"/>
+<area shape="rect" id="Node000016" href="$_plain_inference_worker_8hpp.html" title=" " alt="" coords="1044,496,1242,571"/>
+<area shape="poly" id="edge22_Node000013_Node000016" title=" " alt="" coords="1007,453,1078,493,1076,498,1004,458"/>
+<area shape="rect" id="Node000017" href="$_unitree_rl_gym_inference_worker_8hpp.html" title="Support lstm onnx model trained by unitree_rl_gym. For code to export lstm model to onnx format,..." alt="" coords="768,496,1020,571"/>
+<area shape="poly" id="edge23_Node000013_Node000017" title=" " alt="" coords="915,464,906,496,901,495,910,462"/>
+<area shape="poly" id="edge19_Node000014_Node000004" title=" " alt="" coords="605,586,584,620,580,617,601,583"/>
+<area shape="poly" id="edge21_Node000015_Node000004" title=" " alt="" coords="1252,574,1087,600,926,622,663,649,663,644,926,617,1087,595,1251,568"/>
+<area shape="poly" id="edge25_Node000018_Node000004" title=" " alt="" coords="1330,333,1460,430,1537,494,1547,516,1552,535,1549,554,1537,573,1520,584,1492,595,1409,612,1297,626,1167,637,892,651,663,656,663,651,892,645,1167,632,1297,621,1408,607,1490,590,1517,580,1533,569,1544,552,1547,535,1542,518,1533,498,1457,435,1326,337"/>
+<area shape="poly" id="edge29_Node000019_Node000004" title=" " alt="" coords="1596,463,1601,490,1602,520,1596,548,1581,573,1563,585,1533,596,1446,614,1328,628,1191,639,902,652,663,657,663,651,902,646,1191,633,1327,623,1445,609,1532,591,1560,580,1577,569,1591,546,1597,519,1596,491,1591,464"/>
 </map>

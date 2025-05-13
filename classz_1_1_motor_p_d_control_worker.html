@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -186,8 +193,16 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~AbstractWorker</b
 class z::MotorPDControlWorker&lt; SchedulerType, MotorPrecision, JointNumber &gt;</div><p>MotorPDControlWorker类型是一个电机PD控制工人类型，用户可以通过这个工人类型来实现电机的PD控制。 </p>
 <p>MotorPDControlWorker类型是一个电机PD控制工人类型，用户可以通过这个工人类型来实现电机的PD控制。 通常来说如果电机本身不支持位置控制，可以在主任务队列中使用这个工人类型来实现电机的位置控制。如果电机支持位置控制， 更建议使用电机内建的位置控制功能，这样可以减少控制延迟，提升控制精度。该类型需要从数据总线中读取 "TargetMotorPosition","TargetMotorVelocity","CurrentMotorPosition",CurrentMotorVelocity"这四个数据,并将
 "TargetMotorTorque"这个数据写入到数据总线中。用户需要在数据总线中注册这些数据类型，以便于工人类型能够正确的读写数据。 此外用户需要在配置文件中配置Kp和Kd参数。</p>
-<p>config.json配置文件示例： { "Workers": { "MotorPDLoop": { //注意这里的Kp和Kd参数需要和电机的数量相匹配 "Kp": [40, 40, 40], //位置控制参数 "Kd": [1.5, 1.5, 1.5] //速度控制参数 } }</p>
-<dl class="tparams"><dt>模板参数</dt><dd>
+<p>config.json配置文件示例： </p><div class="fragment"><div class="line">{</div>
+<div class="line">  &quot;Workers&quot;: {</div>
+<div class="line">     &quot;MotorPDLoop&quot;: {</div>
+<div class="line">        //注意这里的Kp和Kd参数需要和电机的数量相匹配</div>
+<div class="line">        &quot;Kp&quot;: [40, 40, 40],  //位置控制参数</div>
+<div class="line">        &quot;Kd&quot;: [1.5, 1.5, 1.5]   //速度控制参数</div>
+<div class="line">         }</div>
+<div class="line">     }</div>
+<div class="line">}</div>
+</div><!-- fragment --><dl class="tparams"><dt>模板参数</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">SchedulerType</td><td>调度器类型 </td></tr>
     <tr><td class="paramname">MotorPrecision</td><td>电机数据精度，用户可以通过这个参数来指定电机数据的精度，比如可以指定为float或者double </td></tr>
@@ -269,7 +284,7 @@ template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">Sch
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
-<li>C:/Users/ZhouZishun/Desktop/CtrlZ/CtrlZ/Workers/<a class="el" href="_motor_control_worker_8hpp_source.html">MotorControlWorker.hpp</a></li>
+<li>C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/<a class="el" href="_motor_control_worker_8hpp_source.html">MotorControlWorker.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

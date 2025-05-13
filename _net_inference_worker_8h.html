@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Ctrl-Z: C:/Users/ZhouZishun/Desktop/CtrlZ/CtrlZ/Workers/NN/NetInferenceWorker.h 文件参考</title>
+<title>Ctrl-Z: C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/NN/NetInferenceWorker.h 文件参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -108,91 +115,91 @@ $(function(){initNavTree('_net_inference_worker_8h.html',''); initResizable(true
 <code>#include &lt;locale&gt;</code><br />
 <code>#include &lt;codecvt&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
-<code>#include &quot;Utils/MathTypes.hpp&quot;</code><br />
+<code>#include &quot;<a class="el" href="_math_types_8hpp_source.html">Utils/MathTypes.hpp</a>&quot;</code><br />
 <code>#include &lt;Eigen/Dense&gt;</code><br />
 <code>#include &lt;Eigen/Core&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 NetInferenceWorker.h 的引用(Include)关系图:</div>
 <div class="dyncontent">
-<div class="center"><img src="_net_inference_worker_8h__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_desktop_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_net_inference_worker_8h" alt=""/></div>
-<map name="a_c_1_2_users_2_zhou_zishun_2_desktop_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_net_inference_worker_8h" id="a_c_1_2_users_2_zhou_zishun_2_desktop_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_net_inference_worker_8h">
-<area shape="rect" title=" " alt="" coords="332,5,560,64"/>
-<area shape="rect" title=" " alt="" coords="5,112,161,139"/>
-<area shape="poly" title=" " alt="" coords="332,66,150,111,149,105,330,61"/>
-<area shape="rect" title=" " alt="" coords="184,112,238,139"/>
-<area shape="poly" title=" " alt="" coords="370,67,253,111,251,106,369,62"/>
-<area shape="rect" title=" " alt="" coords="262,112,317,139"/>
-<area shape="poly" title=" " alt="" coords="396,67,326,106,324,102,394,62"/>
-<area shape="rect" title=" " alt="" coords="341,112,409,139"/>
-<area shape="poly" title=" " alt="" coords="425,66,397,101,392,98,421,63"/>
-<area shape="rect" title=" " alt="" coords="342,336,413,363"/>
-<area shape="poly" title=" " alt="" coords="442,65,386,321,381,320,437,64"/>
-<area shape="rect" href="_math_types_8hpp_source.html" title=" " alt="" coords="483,112,624,139"/>
-<area shape="poly" title=" " alt="" coords="482,62,528,100,525,104,479,66"/>
-<area shape="rect" title=" " alt="" coords="648,112,744,139"/>
-<area shape="poly" title=" " alt="" coords="528,62,647,104,646,109,526,67"/>
-<area shape="rect" title=" " alt="" coords="769,112,856,139"/>
-<area shape="poly" title=" " alt="" coords="561,61,755,107,754,113,560,66"/>
-<area shape="rect" title=" " alt="" coords="879,112,962,139"/>
-<area shape="poly" title=" " alt="" coords="561,53,865,109,864,114,560,58"/>
-<area shape="rect" href="_vector_type_8hpp_source.html" title=" " alt="" coords="499,261,611,288"/>
-<area shape="poly" title=" " alt="" coords="556,139,557,246,552,246,551,139"/>
-<area shape="rect" href="_tensor_type_8hpp_source.html" title=" " alt="" coords="592,187,705,213"/>
-<area shape="poly" title=" " alt="" coords="572,137,622,175,618,179,569,141"/>
-<area shape="poly" title=" " alt="" coords="525,291,424,332,422,327,523,286"/>
-<area shape="rect" title=" " alt="" coords="718,336,768,363"/>
-<area shape="poly" title=" " alt="" coords="589,286,704,330,702,335,587,291"/>
-<area shape="rect" title=" " alt="" coords="437,336,494,363"/>
-<area shape="poly" title=" " alt="" coords="541,291,495,328,491,324,538,286"/>
-<area shape="rect" title=" " alt="" coords="518,336,592,363"/>
-<area shape="poly" title=" " alt="" coords="558,289,558,320,552,320,552,289"/>
-<area shape="rect" title=" " alt="" coords="616,336,694,363"/>
-<area shape="poly" title=" " alt="" coords="574,286,627,324,624,329,571,291"/>
-<area shape="poly" title=" " alt="" coords="634,216,585,254,581,250,630,212"/>
-<area shape="poly" title=" " alt="" coords="652,213,659,248,676,287,693,307,713,325,709,329,689,311,671,289,654,249,647,214"/>
-<area shape="rect" title=" " alt="" coords="686,261,754,288"/>
-<area shape="poly" title=" " alt="" coords="663,212,699,248,695,252,659,216"/>
-<area shape="rect" title=" " alt="" coords="778,261,838,288"/>
-<area shape="poly" title=" " alt="" coords="677,211,768,252,766,257,675,216"/>
+<div class="center"><img src="_net_inference_worker_8h__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_net_inference_worker_8h" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_net_inference_worker_8h" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_net_inference_worker_8h">
+<area shape="rect" title=" " alt="" coords="358,5,534,80"/>
+<area shape="rect" title=" " alt="" coords="5,128,161,155"/>
+<area shape="poly" title=" " alt="" coords="358,70,146,126,145,121,356,65"/>
+<area shape="rect" title=" " alt="" coords="184,128,238,155"/>
+<area shape="poly" title=" " alt="" coords="358,83,253,126,251,121,356,78"/>
+<area shape="rect" title=" " alt="" coords="262,128,317,155"/>
+<area shape="poly" title=" " alt="" coords="388,83,324,122,322,117,385,78"/>
+<area shape="rect" title=" " alt="" coords="341,128,409,155"/>
+<area shape="poly" title=" " alt="" coords="421,82,395,117,391,114,417,79"/>
+<area shape="rect" title=" " alt="" coords="342,352,413,379"/>
+<area shape="poly" title=" " alt="" coords="441,81,386,337,381,336,435,80"/>
+<area shape="rect" href="_math_types_8hpp.html" title="定义了一些数学类型，包括向量和张量类型" alt="" coords="483,128,624,155"/>
+<area shape="poly" title=" " alt="" coords="488,78,530,115,526,119,485,82"/>
+<area shape="rect" title=" " alt="" coords="648,128,744,155"/>
+<area shape="poly" title=" " alt="" coords="535,75,650,120,649,125,533,80"/>
+<area shape="rect" title=" " alt="" coords="769,128,856,155"/>
+<area shape="poly" title=" " alt="" coords="535,65,755,122,753,127,534,70"/>
+<area shape="rect" title=" " alt="" coords="879,128,962,155"/>
+<area shape="poly" title=" " alt="" coords="535,58,865,125,864,130,534,64"/>
+<area shape="rect" href="_vector_type_8hpp.html" title="定义了一些向量类型" alt="" coords="499,277,611,304"/>
+<area shape="poly" title=" " alt="" coords="556,155,557,262,552,262,551,155"/>
+<area shape="rect" href="_tensor_type_8hpp.html" title="定义了一些张量类型" alt="" coords="592,203,705,229"/>
+<area shape="poly" title=" " alt="" coords="572,153,622,191,618,195,569,157"/>
+<area shape="poly" title=" " alt="" coords="525,307,424,348,422,343,523,302"/>
+<area shape="rect" title=" " alt="" coords="718,352,768,379"/>
+<area shape="poly" title=" " alt="" coords="589,302,704,346,702,351,587,307"/>
+<area shape="rect" title=" " alt="" coords="437,352,494,379"/>
+<area shape="poly" title=" " alt="" coords="541,307,495,344,491,340,538,302"/>
+<area shape="rect" title=" " alt="" coords="518,352,592,379"/>
+<area shape="poly" title=" " alt="" coords="558,305,558,336,552,336,552,305"/>
+<area shape="rect" title=" " alt="" coords="616,352,694,379"/>
+<area shape="poly" title=" " alt="" coords="574,302,627,340,624,345,571,307"/>
+<area shape="poly" title=" " alt="" coords="634,232,585,270,581,266,630,228"/>
+<area shape="poly" title=" " alt="" coords="652,229,659,264,676,303,693,323,713,341,709,345,689,327,671,305,654,265,647,230"/>
+<area shape="rect" title=" " alt="" coords="686,277,754,304"/>
+<area shape="poly" title=" " alt="" coords="663,228,699,264,695,268,659,232"/>
+<area shape="rect" title=" " alt="" coords="778,277,838,304"/>
+<area shape="poly" title=" " alt="" coords="677,227,768,268,766,273,675,232"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 此图展示该文件被哪些文件直接或间接地引用了:</div>
 <div class="dyncontent">
-<div class="center"><img src="_net_inference_worker_8h__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_desktop_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_net_inference_worker_8hdep" alt=""/></div>
-<map name="a_c_1_2_users_2_zhou_zishun_2_desktop_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_net_inference_worker_8hdep" id="a_c_1_2_users_2_zhou_zishun_2_desktop_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_net_inference_worker_8hdep">
-<area shape="rect" title=" " alt="" coords="581,5,809,64"/>
-<area shape="rect" href="_abstract_inference_worker_8hpp.html" title=" " alt="" coords="516,112,720,187"/>
-<area shape="poly" title=" " alt="" coords="669,78,645,113,641,110,665,75"/>
-<area shape="rect" href="_erax_like_inference_worker_8hpp.html" title=" " alt="" coords="5,357,212,432"/>
-<area shape="poly" title=" " alt="" coords="566,48,475,57,383,71,304,90,273,101,250,114,222,139,197,169,176,201,159,235,133,302,118,357,113,356,128,300,154,233,172,199,193,166,218,136,247,110,270,97,302,85,382,66,475,52,565,42"/>
-<area shape="rect" href="_humanoid_gym_inference_worker_8hpp.html" title=" " alt="" coords="235,357,478,432"/>
-<area shape="poly" title=" " alt="" coords="566,52,473,72,424,88,374,107,327,131,283,161,244,195,211,236,201,255,198,272,201,289,211,308,232,334,260,355,257,359,228,338,206,311,196,290,193,272,196,253,206,233,240,192,280,156,324,127,372,102,422,83,472,67,565,47"/>
-<area shape="rect" href="_plain_inference_worker_8hpp.html" title=" " alt="" coords="502,365,752,424"/>
-<area shape="poly" title=" " alt="" coords="722,77,744,126,762,186,767,218,767,250,762,281,751,311,725,343,693,367,689,363,722,339,746,308,757,279,762,249,762,218,757,187,739,128,717,79"/>
-<area shape="rect" href="_unitree_rl_gym_inference_worker_8hpp.html" title="Support lstm onnx model trained by unitree_rl_gym. For code to export lstm model to onnx format,..." alt="" coords="776,357,1014,432"/>
-<area shape="poly" title=" " alt="" coords="738,74,768,110,807,175,840,243,885,356,880,358,835,245,802,178,764,114,734,77"/>
-<area shape="rect" href="_net_inference_worker_8cpp.html" title=" " alt="" coords="862,120,1104,179"/>
-<area shape="poly" title=" " alt="" coords="784,68,911,117,909,122,782,73"/>
-<area shape="rect" href="_action_management_worker_8hpp.html" title="该文件定义了一个类ActionManagementWorker，用于管理和选择单个或多个推理网络的输出。" alt="" coords="221,243,476,301"/>
-<area shape="poly" title=" " alt="" coords="523,196,414,244,412,240,521,191"/>
-<area shape="rect" href="_common_loco_inference_worker_8hpp.html" title=" " alt="" coords="500,235,736,309"/>
-<area shape="poly" title=" " alt="" coords="620,203,620,234,615,234,615,203"/>
-<area shape="poly" title=" " alt="" coords="485,313,411,327,353,336,295,345,224,360,213,363,211,358,223,355,294,339,352,330,410,322,484,308"/>
-<area shape="poly" title=" " alt="" coords="525,319,437,359,435,354,523,314"/>
-<area shape="poly" title=" " alt="" coords="625,325,628,365,622,365,619,325"/>
-<area shape="poly" title=" " alt="" coords="718,314,812,354,809,359,715,318"/>
-<area shape="rect" href="types_8hpp.html" title="类型定义" alt="" coords="142,480,323,539"/>
-<area shape="poly" title=" " alt="" coords="162,440,203,478,199,482,158,444"/>
-<area shape="rect" href="user__func_8cpp.html" title=" " alt="" coords="94,709,254,784"/>
-<area shape="poly" title=" " alt="" coords="214,554,202,587,187,651,180,709,174,708,182,650,197,586,209,552"/>
-<area shape="rect" href="user__func_8h.html" title=" " alt="" coords="211,587,371,661"/>
-<area shape="poly" title=" " alt="" coords="257,551,275,585,270,588,252,554"/>
-<area shape="poly" title=" " alt="" coords="247,675,211,711,208,707,243,671"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="278,717,456,776"/>
-<area shape="poly" title=" " alt="" coords="325,673,351,715,347,718,320,676"/>
-<area shape="poly" title=" " alt="" coords="307,444,266,482,262,478,303,440"/>
+<div class="center"><img src="_net_inference_worker_8h__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_net_inference_worker_8hdep" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_net_inference_worker_8hdep" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_net_inference_worker_8hdep">
+<area shape="rect" title=" " alt="" coords="584,5,760,80"/>
+<area shape="rect" href="_abstract_inference_worker_8hpp.html" title=" " alt="" coords="56,128,275,203"/>
+<area shape="poly" title=" " alt="" coords="569,68,294,131,276,135,275,130,293,125,568,63"/>
+<area shape="rect" href="_humanoid_gym_inference_worker_8hpp.html" title=" " alt="" coords="67,373,323,448"/>
+<area shape="poly" title=" " alt="" coords="589,90,467,161,401,205,339,253,275,315,225,375,220,372,272,311,336,249,398,201,464,157,586,85"/>
+<area shape="rect" href="_plain_inference_worker_8hpp.html" title=" " alt="" coords="592,373,790,448"/>
+<area shape="poly" title=" " alt="" coords="678,95,692,373,686,373,672,95"/>
+<area shape="rect" href="_unitree_rl_gym_inference_worker_8hpp.html" title="Support lstm onnx model trained by unitree_rl_gym. For code to export lstm model to onnx format,..." alt="" coords="814,373,1066,448"/>
+<area shape="poly" title=" " alt="" coords="694,93,719,147,751,201,787,250,827,296,902,371,898,375,823,299,783,253,746,204,714,149,689,96"/>
+<area shape="rect" href="_net_inference_worker_8cpp.html" title=" " alt="" coords="760,128,950,203"/>
+<area shape="poly" title=" " alt="" coords="742,87,801,125,798,130,739,91"/>
+<area shape="rect" href="_action_management_worker_8hpp.html" title="该文件定义了一个类ActionManagementWorker，用于管理和选择单个或多个推理网络的输出。" alt="" coords="5,251,209,325"/>
+<area shape="poly" title=" " alt="" coords="143,218,127,251,122,249,139,216"/>
+<area shape="rect" href="_common_loco_inference_worker_8hpp.html" title=" " alt="" coords="350,251,600,325"/>
+<area shape="poly" title=" " alt="" coords="275,206,382,248,380,253,273,211"/>
+<area shape="rect" href="types_8hpp.html" title="类型定义" alt="" coords="92,496,298,571"/>
+<area shape="poly" title=" " alt="" coords="73,340,60,365,51,393,49,421,57,447,78,473,105,493,102,498,74,476,53,449,44,421,46,392,55,363,68,337"/>
+<area shape="rect" href="user__func_8cpp.html" title=" " alt="" coords="22,741,229,816"/>
+<area shape="poly" title=" " alt="" coords="168,586,154,620,138,683,131,742,125,741,133,683,148,618,163,583"/>
+<area shape="rect" href="user__func_8h.html" title=" " alt="" coords="162,619,369,693"/>
+<area shape="poly" title=" " alt="" coords="227,583,247,617,242,620,222,586"/>
+<area shape="poly" title=" " alt="" coords="213,706,170,743,166,739,210,702"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="253,741,460,816"/>
+<area shape="poly" title=" " alt="" coords="304,704,331,739,327,743,300,707"/>
+<area shape="rect" href="_erax_like_inference_worker_8hpp.html" title=" " alt="" coords="348,373,568,448"/>
+<area shape="poly" title=" " alt="" coords="470,341,466,373,460,373,465,340"/>
+<area shape="poly" title=" " alt="" coords="376,334,282,375,279,370,374,330"/>
+<area shape="poly" title=" " alt="" coords="555,331,626,370,624,375,552,335"/>
+<area shape="poly" title=" " alt="" coords="616,323,802,371,814,374,813,379,801,376,615,328"/>
+<area shape="poly" title=" " alt="" coords="365,457,276,498,274,493,362,453"/>
+<area shape="poly" title=" " alt="" coords="198,464,198,496,192,496,192,464"/>
 </map>
 </div>
 </div>

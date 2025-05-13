@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -107,7 +114,7 @@ $(function(){initNavTree('functions_d.html',''); initResizable(true); });
 <li>dataCenter&#160;:&#160;<a class="el" href="classz_1_1_abstract_scheduler.html#ad2c119c841bc14e68b728b5479960262">z::AbstractScheduler&lt; CTS &gt;</a></li>
 <li>DecreaseCmd()&#160;:&#160;<a class="el" href="classz_1_1_net_cmd_worker.html#adbee721a622c8875c5c856b6fbea4e85">z::NetCmdWorker&lt; SchedulerType, CmdPrecision, CmdArgs &gt;</a></li>
 <li>DeepCopy()&#160;:&#160;<a class="el" href="classz_1_1math_1_1_tensor.html#aee0f559a03657911a4d23810a05d8276">z::math::Tensor&lt; T, Dims &gt;</a>, <a class="el" href="classz_1_1math_1_1_tensor.html#aee0f559a03657911a4d23810a05d8276">z::math::Tensor&lt; bool, Dims... &gt;</a>, <a class="el" href="classz_1_1math_1_1_tensor_base.html#aee0f559a03657911a4d23810a05d8276">z::math::TensorBase&lt; T, Dims &gt;</a></li>
-<li>DefaultAllocator__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#af7ce9a61c1433be200e001ea8f6da844">z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;</a>, <a class="el" href="classz_1_1_common_loco_inference_worker.html#af7ce9a61c1433be200e001ea8f6da844">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
+<li>DefaultAllocator__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#ad28113b93a35aafd269c67f12d25f47c">z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;</a></li>
 <li>DestroyTaskList()&#160;:&#160;<a class="el" href="classz_1_1_abstract_scheduler.html#a9cebfb9baf7708be2294470e80c5ca76">z::AbstractScheduler&lt; CTS &gt;</a></li>
 <li>dims&#160;:&#160;<a class="el" href="structz_1_1math_1_1_tensor_shape.html#a2647cc6f36d52696904b1f7789bd28ff">z::math::TensorShape&lt; Dims &gt;</a></li>
 <li>dims_array&#160;:&#160;<a class="el" href="structz_1_1math_1_1_tensor_shape.html#a64b17d2a0545e7ab73f99541839eb29a">z::math::TensorShape&lt; Dims &gt;</a></li>

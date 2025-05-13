@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Ctrl-Z: C:/Users/ZhouZishun/Desktop/CtrlZ/example/BitbotSimulation/user_func.h 源文件</title>
+<title>Ctrl-Z: C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/example/BitbotSimulation/user_func.h 源文件</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -143,38 +150,39 @@ $(function(){initNavTree('user__func_8h_source.html',''); initResizable(true); }
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    EraxLikeInferWorkerType* NetInferWorker;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    MotorResetWorkerType* MotorResetWorker;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    CmdWorkerType* CommanderWorker;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="comment">//NOTE: REMEMBER TO DELETE THESE POINTERS IN FinishFunc</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>};</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    ActionManagementWorkerType* ActionManagementWorker;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">//NOTE: REMEMBER TO DELETE THESE POINTERS IN FinishFunc</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
 </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">using </span>KernelType = bitbot::MujocoKernel&lt;UserData&gt;;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">using </span>KernelBus = bitbot::MujocoBus;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">using </span>KernelType = bitbot::MujocoKernel&lt;UserData&gt;;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">using </span>KernelBus = bitbot::MujocoBus;</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>std::optional&lt;bitbot::StateId&gt; EventInitPose(bitbot::EventValue value, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; user_data);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>std::optional&lt;bitbot::StateId&gt; EventPolicyRun(bitbot::EventValue value, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; user_data);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>std::optional&lt;bitbot::StateId&gt; EventSystemTest(bitbot::EventValue value, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; user_data);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>std::optional&lt;bitbot::StateId&gt; EventVeloXIncrease(bitbot::EventValue keyState, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>std::optional&lt;bitbot::StateId&gt; EventVeloXDecrease(bitbot::EventValue keyState, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>std::optional&lt;bitbot::StateId&gt; EventVeloYIncrease(bitbot::EventValue keyState, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>std::optional&lt;bitbot::StateId&gt; EventVeloYDecrease(bitbot::EventValue keyState, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>std::optional&lt;bitbot::StateId&gt; EventVeloYawIncrease(bitbot::EventValue keyState, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>std::optional&lt;bitbot::StateId&gt; EventVeloYawDecrease(bitbot::EventValue keyState, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>std::optional&lt;bitbot::StateId&gt; EventJoystickXChange(bitbot::EventValue keyState, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>std::optional&lt;bitbot::StateId&gt; EventJoystickYChange(bitbot::EventValue keyState, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>std::optional&lt;bitbot::StateId&gt; EventJoystickYawChange(bitbot::EventValue keyState, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>std::optional&lt;bitbot::StateId&gt; EventInitPose(bitbot::EventValue value, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; user_data);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>std::optional&lt;bitbot::StateId&gt; EventPolicyRun(bitbot::EventValue value, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; user_data);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>std::optional&lt;bitbot::StateId&gt; EventSystemTest(bitbot::EventValue value, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; user_data);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>std::optional&lt;bitbot::StateId&gt; EventVeloXIncrease(bitbot::EventValue keyState, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>std::optional&lt;bitbot::StateId&gt; EventVeloXDecrease(bitbot::EventValue keyState, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>std::optional&lt;bitbot::StateId&gt; EventVeloYIncrease(bitbot::EventValue keyState, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>std::optional&lt;bitbot::StateId&gt; EventVeloYDecrease(bitbot::EventValue keyState, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>std::optional&lt;bitbot::StateId&gt; EventVeloYawIncrease(bitbot::EventValue keyState, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>std::optional&lt;bitbot::StateId&gt; EventVeloYawDecrease(bitbot::EventValue keyState, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>std::optional&lt;bitbot::StateId&gt; EventJoystickXChange(bitbot::EventValue keyState, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>std::optional&lt;bitbot::StateId&gt; EventJoystickYChange(bitbot::EventValue keyState, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>std::optional&lt;bitbot::StateId&gt; EventJoystickYawChange(bitbot::EventValue keyState, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keywordtype">void</span> ConfigFunc(<span class="keyword">const</span> KernelBus&amp; bus, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keywordtype">void</span> FinishFunc(<a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keywordtype">void</span> ConfigFunc(<span class="keyword">const</span> KernelBus&amp; bus, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keywordtype">void</span> FinishFunc(<a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; d);</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keywordtype">void</span> StateWaiting(<span class="keyword">const</span> bitbot::KernelInterface&amp; kernel, bitbot::ExtraData&amp; extra_data, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; user_data);</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keywordtype">void</span> StateJointInitPose(<span class="keyword">const</span> bitbot::KernelInterface&amp; kernel, bitbot::ExtraData&amp; extra_data, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; user_data);</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="keywordtype">void</span> StatePolicyRun(<span class="keyword">const</span> bitbot::KernelInterface&amp; kernel, bitbot::ExtraData&amp; extra_data, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; user_data);</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keywordtype">void</span> StateSystemTest(<span class="keyword">const</span> bitbot::KernelInterface&amp; kernel, bitbot::ExtraData&amp; extra_data, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; user_data);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keywordtype">void</span> StateWaiting(<span class="keyword">const</span> bitbot::KernelInterface&amp; kernel, bitbot::ExtraData&amp; extra_data, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; user_data);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="keywordtype">void</span> StateJointInitPose(<span class="keyword">const</span> bitbot::KernelInterface&amp; kernel, bitbot::ExtraData&amp; extra_data, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; user_data);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keywordtype">void</span> StatePolicyRun(<span class="keyword">const</span> bitbot::KernelInterface&amp; kernel, bitbot::ExtraData&amp; extra_data, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; user_data);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keywordtype">void</span> StateSystemTest(<span class="keyword">const</span> bitbot::KernelInterface&amp; kernel, bitbot::ExtraData&amp; extra_data, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; user_data);</div>
 <div class="ttc" id="astruct_user_data_html"><div class="ttname"><a href="struct_user_data.html">UserData</a></div><div class="ttdef"><b>定义</b> user_func.h:41</div></div>
 <div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div><div class="ttdoc">类型定义</div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -25,19 +25,18 @@
 var NAVTREE =
 [
   [ "Ctrl-Z", "index.html", [
-    [ "CtrlZ", "index.html#autotoc_md13", null ],
-    [ "安装", "index.html#autotoc_md14", null ],
-    [ "简介", "index.html#autotoc_md15", [
-      [ "Schedulers", "index.html#autotoc_md16", null ],
-      [ "Workers", "index.html#autotoc_md17", [
-        [ "基本Workers功能", "index.html#autotoc_md18", null ],
-        [ "网络推理Workers功能", "index.html#autotoc_md19", null ]
+    [ "CtrlZ", "index.html#autotoc_md0", null ],
+    [ "安装", "index.html#autotoc_md1", null ],
+    [ "简介", "index.html#autotoc_md2", [
+      [ "Schedulers", "index.html#autotoc_md3", null ],
+      [ "Workers", "index.html#autotoc_md4", [
+        [ "基本Workers功能", "index.html#autotoc_md5", null ],
+        [ "网络推理Workers功能", "index.html#autotoc_md6", null ]
       ] ],
-      [ "Utils", "index.html#autotoc_md20", null ]
+      [ "Utils", "index.html#autotoc_md7", null ]
     ] ],
-    [ "示例", "index.html#autotoc_md21", [
-      [ "BitbotSimulation", "index.html#autotoc_md22", null ],
-      [ "BitbotAirbotARM", "index.html#autotoc_md23", null ]
+    [ "示例", "index.html#autotoc_md8", [
+      [ "BitbotSimulation", "index.html#autotoc_md9", null ]
     ] ],
     [ "BitbotExample", "md__bitbot_example.html", null ],
     [ "命名空间", "namespaces.html", [
@@ -72,10 +71,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_abstract_inference_worker_8hpp.html",
-"classz_1_1_common_loco_inference_worker.html#a8730cda205924bea7d6f8ad8a8105869",
-"classz_1_1math_1_1_tensor.html#a6506810ef3d79f566dde7f5ef4ca84eb",
-"classz_1_1math_1_1_vector.html#a3618c704875841e09e65c52810bb8d75",
-"functions_func_r.html"
+"classz_1_1_humanoid_gym_inference_worker.html",
+"classz_1_1math_1_1_tensor.html#ad3aee4d3d8e178cdd6610f526188cdd6",
+"classz_1_1math_1_1_vector.html#a67d268efc28de268c098534ae6b6ef20",
+"namespacemembers_func.html"
 ];
 
 var SYNCONMSG = '点击 关闭 面板同步';

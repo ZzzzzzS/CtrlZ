@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -189,25 +196,25 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~AbstractWorker</b
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, typename ImuType, typename ImuPrecision&gt;<br />
 class z::ImuProcessWorker&lt; SchedulerType, ImuType, ImuPrecision &gt;</div><p><a class="el" href="classz_1_1_imu_process_worker.html" title="ImuProcessWorker 类型是一个IMU数据处理工人类型，这个类型用于处理IMU传感器的数据，包括加速度，角速度和角度。 通常来说，这个类型可以被用于主任务队列中。 这个类会在TaskCycl...">ImuProcessWorker</a> 类型是一个IMU数据处理工人类型，这个类型用于处理IMU传感器的数据，包括加速度，角速度和角度。 通常来说，这个类型可以被用于主任务队列中。 这个类会在TaskCycleBegin方法中获取IMU数据并对齐进行滤波和去除异常值。用户可以通过配置文件来配置滤波器的权重。 </p>
 <p>该类会要求数据总线中包含"AccelerationRaw","AngleVelocityRaw","AngleRaw"这三个数据用于存储IMU传感器的原始数据。 该类会在数据总线中存储"AccelerationValue","AngleVelocityValue","AngleValue"这三个数据用于存储滤波处理后的IMU数据。</p>
-<p>config.json配置文件示例： { <br  />
- "Workers": { <br  />
- "ImuProcess": { <br  />
- "AccFilterWeight": [ <br  />
- 1, //加速度滤波权重,表示一个长度为2周期，每个周期的权重都是1的滤波器(有限长冲激响应滤波器FIR) <br  />
- 1 <br  />
- ], <br  />
- "GyroFilterWeight": [ <br  />
- 1, <br  />
- 1 <br  />
- ], <br  />
- "MagFilterWeight": [ <br  />
- 1, <br  />
- 1 <br  />
- ] <br  />
- } <br  />
-} <br  />
-</p>
-<dl class="tparams"><dt>模板参数</dt><dd>
+<p>config.json配置文件示例： </p><div class="fragment"><div class="line">{</div>
+<div class="line">  &quot;Workers&quot;: {</div>
+<div class="line">     &quot;ImuProcess&quot;: {</div>
+<div class="line">         &quot;AccFilterWeight&quot;: [</div>
+<div class="line">           1,  //加速度滤波权重,表示一个长度为2周期，每个周期的权重都是1的滤波器(有限长冲激响应滤波器FIR)</div>
+<div class="line">           1</div>
+<div class="line">         ],</div>
+<div class="line">         &quot;GyroFilterWeight&quot;: [</div>
+<div class="line">           1,</div>
+<div class="line">           1</div>
+<div class="line">         ],</div>
+<div class="line">         &quot;MagFilterWeight&quot;: [</div>
+<div class="line">           1,</div>
+<div class="line">           1</div>
+<div class="line">         ]</div>
+<div class="line">     }</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+</div><!-- fragment --><dl class="tparams"><dt>模板参数</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">SchedulerType</td><td>调度器类型 </td></tr>
     <tr><td class="paramname">ImuType</td><td>IMU传感器类型，用户可以通过这个参数来指定IMU传感器的具体类型， 但是这个类型必须要实现GetAccX, GetAccY, GetAccZ, GetGyroX, GetGyroY, GetGyroZ, GetRoll, GetPitch, GetYaw这些方法。 </td></tr>
@@ -326,7 +333,7 @@ template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">Sch
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
-<li>C:/Users/ZhouZishun/Desktop/CtrlZ/CtrlZ/Workers/<a class="el" href="_imu_process_worker_8hpp_source.html">ImuProcessWorker.hpp</a></li>
+<li>C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/<a class="el" href="_imu_process_worker_8hpp_source.html">ImuProcessWorker.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

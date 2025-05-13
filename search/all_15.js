@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['warmupcnt_5f_5f_0',['WarmUpCnt__',['../classz_1_1_abstract_net_inference_worker.html#a0e6e847e9bce6700da317ffe14602749',1,'z::AbstractNetInferenceWorker']]],
-  ['warmupmodel_5f_5f_1',['WarmUpModel__',['../classz_1_1_abstract_net_inference_worker.html#a044e250c9621080c8f031e772659b4ec',1,'z::AbstractNetInferenceWorker']]],
-  ['warporttensor_2',['WarpOrtTensor',['../classz_1_1_abstract_net_inference_worker.html#a8bf4762ebd0079c6e9a573f6305e2fe8',1,'z::AbstractNetInferenceWorker']]],
-  ['weightfilter_3',['WeightFilter',['../classz_1_1_weight_filter.html',1,'z::WeightFilter&lt; T &gt;'],['../classz_1_1_weight_filter.html#a070a3b5a5efb9de6f66512fcdb0ef667',1,'z::WeightFilter::WeightFilter()']]],
-  ['where_4',['where',['../classz_1_1math_1_1_vector.html#aa7d3c55fae19cfcbc60abac41b5d4d36',1,'z::math::Vector::where()'],['../classz_1_1math_1_1_vector.html#aa7d3c55fae19cfcbc60abac41b5d4d36',1,'z::math::Vector&lt; bool, N &gt;::where()']]],
-  ['wide_5',['System-wide',['../C:/Users/ZhouZishun/Desktop/CtrlZ/doc/doxygen-awesome-css-main/README.md#autotoc_md8',1,'']]],
-  ['with_20fetchcontent_6',['CMake with FetchContent',['../C:/Users/ZhouZishun/Desktop/CtrlZ/doc/doxygen-awesome-css-main/README.md#autotoc_md6',1,'']]],
-  ['workers_7',['@ref z::AbstractWorker&lt; SchedulerType &gt; &quot;Workers&quot;',['../index.html#autotoc_md17',1,'']]],
-  ['workers_8',['workers',['../structz_1_1_abstract_scheduler_1_1_t_c_b.html#a30eabc1e59e2208792606a17d846bb02',1,'z::AbstractScheduler::TCB']]]
+  ['z_0',['Ctrl-Z',['../index.html',1,'']]],
+  ['z_3a_3aabstractworker_20schedulertype_20schedulers_1',['@ref z::AbstractWorker&lt; SchedulerType &gt; &quot;Schedulers&quot;',['../index.html#autotoc_md3',1,'']]],
+  ['z_3a_3aabstractworker_20schedulertype_20workers_2',['@ref z::AbstractWorker&lt; SchedulerType &gt; &quot;Workers&quot;',['../index.html#autotoc_md4',1,'']]],
+  ['z_3a_3amath_3',['math',['../namespacez_1_1math.html',1,'z']]],
+  ['zenbuffer_2ehpp_4',['ZenBuffer.hpp',['../_zen_buffer_8hpp.html',1,'']]],
+  ['zeros_5',['zeros',['../classz_1_1math_1_1_vector.html#a75b3868251f980153452180cc47ab202',1,'z::math::Vector::zeros()'],['../classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html#aa2c9aafff86e333f044a331ded621afa',1,'z::math::Vector&lt; bool, N &gt;::zeros()'],['../classz_1_1math_1_1_vector.html#a75b3868251f980153452180cc47ab202',1,'z::math::Vector&lt; bool, N &gt;::zeros()']]],
+  ['zobject_6',['ZObject',['../classz_1_1_z_object.html',1,'z']]],
+  ['zobject_2ehpp_7',['ZObject.hpp',['../_z_object_8hpp.html',1,'']]],
+  ['ztypetraits_2ehpp_8',['ZTypeTraits.hpp',['../_z_type_traits_8hpp.html',1,'']]]
 ];

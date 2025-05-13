@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -192,7 +199,17 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~AbstractWorker</b
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, typename MotorPrecision, size_t JointNumber&gt;<br />
 class z::MotorResetPositionWorker&lt; SchedulerType, MotorPrecision, JointNumber &gt;</div><p><a class="el" href="classz_1_1_motor_reset_position_worker.html" title="MotorResetPositionWorker 类型是一个电机复位工人类型，用户可以通过这个工人类型来实现电机的复位功能。">MotorResetPositionWorker</a> 类型是一个电机复位工人类型，用户可以通过这个工人类型来实现电机的复位功能。 </p>
 <p><a class="el" href="classz_1_1_motor_reset_position_worker.html" title="MotorResetPositionWorker 类型是一个电机复位工人类型，用户可以通过这个工人类型来实现电机的复位功能。">MotorResetPositionWorker</a> 类型是一个电机复位工人类型，用户可以通过这个工人类型来实现电机的复位功能。 通常来说可以由调度器创建一个复位任务队列，并在复位结束后销毁这个任务队列，这个队列通常不位于主任务队列中。 用户也可以通过调用StartReset方法来启动复位，通过StopReset方法来停止复位。 该类型需要从数据总线中读取"CurrentMotorPosition"这个数据，并将"TargetMotorPosition"这个数据写入到数据总线中。 用户需要在数据总线中注册这些数据类型，以便于工人类型能够正确的读写数据。用户可以通过配置文件来配置复位的目标位置和复位的时间。</p>
-<p>config.json配置文件示例： { "Scheduler": { "dt": 0.001 //调度器的时间步长 1ms }, "Workers": { "MotorControl": { "DefaultPosition": [0, 0, 0, 0, 0, 0] //默认位置 }, "ResetPosition": { "Duration": 1.0 //复位时间 1s } } } </p><dl class="tparams"><dt>模板参数</dt><dd>
+<p>config.json配置文件示例： </p><div class="fragment"><div class="line">{</div>
+<div class="line">   &quot;Workers&quot;: {</div>
+<div class="line">       &quot;MotorControl&quot;: {</div>
+<div class="line">          &quot;DefaultPosition&quot;: [0, 0, 0, 0, 0, 0] //默认位置</div>
+<div class="line">      },</div>
+<div class="line">     &quot;ResetPosition&quot;: {</div>
+<div class="line">        &quot;Duration&quot;: 1.0 //复位时间 1s</div>
+<div class="line">     }</div>
+<div class="line">   }</div>
+<div class="line">}</div>
+</div><!-- fragment --><dl class="tparams"><dt>模板参数</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">SchedulerType</td><td>调度器类型 </td></tr>
     <tr><td class="paramname">MotorPrecision</td><td>电机数据精度，用户可以通过这个参数来指定电机数据的精度，比如可以指定为float或者double </td></tr>
@@ -314,7 +331,7 @@ template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">Sch
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
-<li>C:/Users/ZhouZishun/Desktop/CtrlZ/CtrlZ/Workers/<a class="el" href="_motor_reset_position_worker_8hpp_source.html">MotorResetPositionWorker.hpp</a></li>
+<li>C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/<a class="el" href="_motor_reset_position_worker_8hpp_source.html">MotorResetPositionWorker.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,19 +1,7 @@
-<map id="z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;" name="z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;">
-<area shape="rect" id="Node000001" title="AbstractNetInferenceWorker类型是一切神经网络推理工人类型的基类，该类提供一些基本推理的功能， 用户可以通过继承这个类来实现自己的推理工人类型。" alt="" coords="318,227,565,269"/>
-<area shape="rect" id="Node000004" href="$classz_1_1_common_loco_inference_worker.html" title="CommonLocoInferenceWorker类型是一个通用的Locomotion推理工人类型，该类型实现了一些Locomotion推理的通用逻辑。" alt="" coords="613,219,853,277"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="581,245,613,245,613,251,581,251"/>
-<area shape="rect" id="Node000002" href="$classz_1_1_abstract_worker.html" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="136,227,270,269"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="286,245,318,245,318,251,286,251"/>
-<area shape="rect" id="Node000003" href="$classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="5,235,88,261"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="103,245,135,245,135,251,103,251"/>
-<area shape="rect" id="Node000005" href="$classz_1_1_erax_like_inference_worker.html" title=" " alt="" coords="914,5,1193,96"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="772,206,830,155,899,106,921,94,923,99,902,110,833,159,776,210"/>
-<area shape="rect" id="Node000006" href="$classz_1_1_erax_like_inference_worker.html" title=" " alt="" coords="913,120,1194,195"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="853,211,918,193,920,198,854,216"/>
-<area shape="rect" id="Node000007" href="$classz_1_1_humanoid_gym_inference_worker.html" title="HumanoidGymInferenceWorker 类型是一个人形机器人推理工人类型，该类实现了HumanoidGym网络兼容的推理功能。" alt="" coords="901,219,1206,277"/>
-<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="868,245,900,245,900,251,868,251"/>
-<area shape="rect" id="Node000008" href="$classz_1_1_plain_inference_worker.html" title="该类型实现了一个可用的平凡推理工人类型，用户可以通过这个工人类型来实现推理的功能。" alt="" coords="934,301,1173,360"/>
-<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="865,279,937,298,936,303,864,284"/>
-<area shape="rect" id="Node000009" href="$classz_1_1_unitree_rl_gym_inference_worker.html" title="UnitreeRlGymInferenceWorker 类型是一个人形机器人推理工人类型，该类实现了Unitree_rl_gym网络兼容的推理功能。" alt="" coords="923,384,1184,459"/>
-<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="780,285,837,329,902,370,926,381,924,386,899,374,834,333,777,290"/>
+<map id="z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;" name="z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;">
+<area shape="rect" id="Node000001" title="AbstractNetInferenceWorker类型是一切神经网络推理工人类型的基类，该类提供一些基本推理的功能， 用户可以通过继承这个类来实现自己的推理工人类型。" alt="" coords="5,171,207,229"/>
+<area shape="rect" id="Node000002" href="$classz_1_1_abstract_worker.html" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="39,80,173,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,138,109,170,103,170,103,138"/>
+<area shape="rect" id="Node000003" href="$classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="65,5,147,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="109,48,109,80,103,80,103,48"/>
 </map>

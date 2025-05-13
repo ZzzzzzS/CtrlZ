@@ -1,11 +1,5 @@
-<map id="z::EraxLikeInferenceWorker&lt; SchedulerType, InferencePrecision, INPUT_STUCK_LENGTH, EXTRA_INPUT_LENGTH, JOINT_NUMBER &gt;" name="z::EraxLikeInferenceWorker&lt; SchedulerType, InferencePrecision, INPUT_STUCK_LENGTH, EXTRA_INPUT_LENGTH, JOINT_NUMBER &gt;">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,368,287,443"/>
-<area shape="rect" id="Node000002" href="$classz_1_1_common_loco_inference_worker.html" title="CommonLocoInferenceWorker类型是一个通用的Locomotion推理工人类型，该类型实现了一些Locomotion推理的通用逻辑。" alt="" coords="26,261,266,320"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,335,149,368,143,368,143,335"/>
-<area shape="rect" id="Node000003" href="$classz_1_1_abstract_net_inference_worker.html" title="AbstractNetInferenceWorker类型是一切神经网络推理工人类型的基类，该类提供一些基本推理的功能， 用户可以通过继承这个类来实现自己的推理工人类型。" alt="" coords="22,171,270,213"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="149,229,149,261,143,261,143,229"/>
-<area shape="rect" id="Node000004" href="$classz_1_1_abstract_worker.html" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="79,80,213,123"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="149,138,149,170,143,170,143,138"/>
-<area shape="rect" id="Node000005" href="$classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="105,5,187,32"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="149,48,149,80,143,80,143,48"/>
+<map id="z::EraxLikeInferenceWorker&lt; SchedulerType, NetName, InferencePrecision, INPUT_STUCK_LENGTH, EXTRA_INPUT_LENGTH, JOINT_NUMBER &gt;" name="z::EraxLikeInferenceWorker&lt; SchedulerType, NetName, InferencePrecision, INPUT_STUCK_LENGTH, EXTRA_INPUT_LENGTH, JOINT_NUMBER &gt;">
+<area shape="rect" id="Node000001" title=" " alt="" coords="251,5,487,96"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,13,203,88"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,48,250,48,250,53,219,53"/>
 </map>

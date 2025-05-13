@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -188,7 +195,16 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~AbstractWorker</b
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, typename LogPrecision, <a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... Args&gt;<br />
 class z::AsyncLoggerWorker&lt; SchedulerType, LogPrecision, Args &gt;</div><p>异步日志工人类型，用户可以通过这个工人类型来异步的实现记录数据的功能。 </p>
-<p>异步日志工人类型，用户可以通过这个工人类型来异步的实现记录数据的功能。 这个工人类型的优点是可以异步的记录数据，不会阻塞主线程，适用于一些需要记录数据的场景。 比如需要记录一些传感器的数据，或者需要记录一些模型的输出数据。同时，用户可以通过配置文件来配置日志的路径和写入频率。 所有的数据都会被记录到一个csv文件中，用户可以通过这个文件来查看数据。 </p><dl class="tparams"><dt>模板参数</dt><dd>
+<p>异步日志工人类型，用户可以通过这个工人类型来异步的实现记录数据的功能。 这个工人类型的优点是可以异步的记录数据，不会阻塞主线程，适用于一些需要记录数据的场景。 比如需要记录一些传感器的数据，或者需要记录一些模型的输出数据。同时，用户可以通过配置文件来配置日志的路径和写入频率。 所有的数据都会被记录到一个csv文件中，用户可以通过这个文件来查看数据。</p>
+<p>config.json配置文件示例： </p><div class="fragment"><div class="line">{</div>
+<div class="line">  &quot;Workers&quot;: {</div>
+<div class="line">       &quot;AsyncLogger&quot;: {</div>
+<div class="line">          &quot;LogPath&quot;: &quot;./log/&quot;, //日志文件的路径</div>
+<div class="line">          &quot;WriteBackFrequency&quot;: 1000 //日志的写入频率，单位为ms</div>
+<div class="line">            }</div>
+<div class="line">       }</div>
+<div class="line"> }</div>
+</div><!-- fragment --><dl class="tparams"><dt>模板参数</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">SchedulerType</td><td>调度器类型 </td></tr>
     <tr><td class="paramname">LogPrecision</td><td>日志精度，用户可以通过这个参数来指定日志的精度，比如可以指定为float或者double </td></tr>
@@ -363,7 +379,7 @@ template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">Sch
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
-<li>C:/Users/ZhouZishun/Desktop/CtrlZ/CtrlZ/Workers/<a class="el" href="_async_logger_worker_8hpp_source.html">AsyncLoggerWorker.hpp</a></li>
+<li>C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/<a class="el" href="_async_logger_worker_8hpp_source.html">AsyncLoggerWorker.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

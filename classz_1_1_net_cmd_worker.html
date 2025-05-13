@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -197,8 +204,18 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~AbstractWorker</b
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, typename CmdPrecision, <a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> CmdArgs&gt;<br />
 class z::NetCmdWorker&lt; SchedulerType, CmdPrecision, CmdArgs &gt;</div><p>NetCmdWorker类型是一个神经网络用户命令工人类型，用户可以通过这个工人类型来实现神经网络用户命令的功能。 </p>
 <p>NetCmdWorker类型是一个神经网络用户命令工人类型，用户可以通过这个工人类型来实现神经网络用户命令的功能。该类型 可以用于使用键盘或手柄控制机器人运动。该类型会根据配置文档中的配置来设置命令的上下限，离散步长和反向轴等。</p>
-<p>config.json配置文件示例： { "Workers":{ "Commander": { "EchoCmd": true, //是否回显打印命令 "UpperLimit": [1.4,0.3,0.3], //命令上限 "LowerLimit": [-1.5,-0.3,-0.3], //命令下限 "DiscreteCmdStep": [0.2,0.05,0.05], //离散步长(通常用于键盘控制) "ReverseJoystickAxis": [false,true,true] //反向轴(通常用于手柄控制) } } }</p>
-<dl class="tparams"><dt>模板参数</dt><dd>
+<p>config.json配置文件示例： </p><div class="fragment"><div class="line">{</div>
+<div class="line">   &quot;Workers&quot;:{</div>
+<div class="line">   &quot;Commander&quot;: {</div>
+<div class="line">       &quot;EchoCmd&quot;: true, //是否回显打印命令</div>
+<div class="line">       &quot;UpperLimit&quot;: [1.4,0.3,0.3], //命令上限</div>
+<div class="line">       &quot;LowerLimit&quot;: [-1.5,-0.3,-0.3], //命令下限</div>
+<div class="line">       &quot;DiscreteCmdStep&quot;: [0.2,0.05,0.05], //离散步长(通常用于键盘控制)</div>
+<div class="line">       &quot;ReverseJoystickAxis&quot;: [false,true,true] //反向轴(通常用于手柄控制)</div>
+<div class="line">     }</div>
+<div class="line">   }</div>
+<div class="line">}</div>
+</div><!-- fragment --><dl class="tparams"><dt>模板参数</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">SchedulerType</td><td>调度器类型 </td></tr>
     <tr><td class="paramname">CmdPrecision</td><td>命令精度，用户可以通过这个参数来指定命令的精度，比如可以指定为float或者double </td></tr>
@@ -430,7 +447,7 @@ template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">Sch
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
-<li>C:/Users/ZhouZishun/Desktop/CtrlZ/CtrlZ/Workers/<a class="el" href="_net_cmd_worker_8hpp_source.html">NetCmdWorker.hpp</a></li>
+<li>C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/<a class="el" href="_net_cmd_worker_8hpp_source.html">NetCmdWorker.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

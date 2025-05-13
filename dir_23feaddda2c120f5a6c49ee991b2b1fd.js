@@ -8,6 +8,6 @@ var dir_23feaddda2c120f5a6c49ee991b2b1fd =
     [ "KeyboardCommandWorker.hpp", "_keyboard_command_worker_8hpp.html", "_keyboard_command_worker_8hpp" ],
     [ "MotorControlWorker.hpp", "_motor_control_worker_8hpp.html", "_motor_control_worker_8hpp" ],
     [ "MotorResetPositionWorker.hpp", "_motor_reset_position_worker_8hpp.html", "_motor_reset_position_worker_8hpp" ],
-    [ "NetCmdWorker.hpp", "_net_cmd_worker_8hpp_source.html", null ],
-    [ "SimpleTrajactoryGenerator.hpp", "_simple_trajactory_generator_8hpp_source.html", null ]
+    [ "NetCmdWorker.hpp", "_net_cmd_worker_8hpp.html", "_net_cmd_worker_8hpp" ],
+    [ "SimpleTrajactoryGenerator.hpp", "_simple_trajactory_generator_8hpp.html", "_simple_trajactory_generator_8hpp" ]
 ];

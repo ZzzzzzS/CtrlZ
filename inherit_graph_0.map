@@ -1,31 +1,13 @@
 <map id="类继承关系图" name="类继承关系图">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,419,82,445"/>
-<area shape="rect" id="Node000001" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="130,5,355,32"/>
-<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="45,403,53,320,69,212,94,110,109,70,128,42,143,30,146,35,132,46,114,72,99,111,75,213,59,321,50,404"/>
-<area shape="rect" id="Node000002" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="136,56,349,99"/>
-<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="41,403,43,342,54,264,65,222,80,181,101,143,128,109,142,97,145,101,132,113,105,146,85,183,70,224,59,265,48,343,46,403"/>
-<area shape="rect" id="Node000003" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="142,123,342,165"/>
-<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="43,403,49,354,63,293,88,230,106,201,128,175,143,164,146,168,131,179,110,204,93,233,68,294,54,355,49,403"/>
-<area shape="rect" id="Node000004" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="154,189,330,232"/>
-<area shape="poly" id="edge4_Node000000_Node000004" title=" " alt="" coords="47,403,57,366,73,323,96,280,128,242,152,226,155,231,131,246,100,283,77,325,62,368,53,404"/>
-<area shape="rect" id="Node000005" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="131,256,354,283"/>
-<area shape="poly" id="edge5_Node000000_Node000005" title=" " alt="" coords="52,403,80,346,102,317,128,293,149,281,152,285,131,297,106,321,85,349,57,405"/>
-<area shape="rect" id="Node000006" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="143,307,342,349"/>
-<area shape="poly" id="edge6_Node000000_Node000006" title=" " alt="" coords="67,405,95,381,128,359,154,347,156,352,131,364,98,385,71,409"/>
-<area shape="rect" id="Node000007" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="176,373,308,416"/>
-<area shape="poly" id="edge7_Node000000_Node000007" title=" " alt="" coords="97,419,175,404,176,410,98,425"/>
-<area shape="rect" id="Node000008" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="149,440,336,499"/>
-<area shape="poly" id="edge8_Node000000_Node000008" title=" " alt="" coords="98,439,149,449,148,454,97,445"/>
-<area shape="rect" id="Node000009" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="142,523,343,581"/>
-<area shape="poly" id="edge9_Node000000_Node000009" title=" " alt="" coords="68,455,97,483,131,508,152,520,150,524,128,513,93,487,65,459"/>
-<area shape="rect" id="Node000010" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="138,605,346,648"/>
-<area shape="poly" id="edge10_Node000000_Node000010" title=" " alt="" coords="55,459,65,490,81,526,103,561,131,591,148,603,146,607,128,595,99,564,77,528,60,492,50,461"/>
-<area shape="rect" id="Node000011" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="149,672,336,731"/>
-<area shape="poly" id="edge11_Node000000_Node000011" title=" " alt="" coords="50,460,58,503,73,556,97,611,113,636,132,658,150,672,147,677,128,662,108,639,92,613,68,558,53,505,45,461"/>
-<area shape="rect" id="Node000012" href="$classz_1_1math_1_1_vector.html" title=" " alt="" coords="161,755,324,797"/>
-<area shape="poly" id="edge12_Node000000_Node000012" title=" " alt="" coords="47,460,49,519,60,594,71,634,86,673,106,709,131,741,161,760,159,765,128,745,102,712,81,675,66,635,55,595,44,519,41,461"/>
-<area shape="rect" id="Node000013" href="$classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html" title="Vector class for bool type, support some vector logical operations etc." alt="" coords="154,821,330,848"/>
-<area shape="poly" id="edge13_Node000000_Node000013" title=" " alt="" coords="50,461,59,541,75,646,100,744,115,782,132,807,155,823,152,827,128,811,110,785,94,746,70,647,54,542,45,461"/>
-<area shape="rect" id="Node000014" href="$classz_1_1math_1_1_vector.html" title="Vector class, support some vector operations, like dot, cross, normalize, etc." alt="" coords="163,872,322,899"/>
-<area shape="poly" id="edge14_Node000000_Node000014" title=" " alt="" coords="49,460,57,551,72,671,83,731,96,785,113,829,132,858,146,869,164,877,161,882,144,874,128,862,108,831,91,786,78,732,67,672,51,552,44,461"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,259,203,285"/>
+<area shape="rect" id="Node000001" href="$classz_1_1_erax_like_inference_worker.html" title=" " alt="" coords="251,5,552,96"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="121,244,173,176,209,139,249,106,268,94,270,99,252,110,213,143,177,179,125,247"/>
+<area shape="rect" id="Node000002" href="$classz_1_1_erax_like_inference_worker.html" title=" " alt="" coords="283,120,520,211"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="157,250,282,205,283,210,159,255"/>
+<area shape="rect" id="Node000003" href="$classz_1_1_humanoid_gym_inference_worker.html" title="HumanoidGymInferenceWorker 类型是一个人形机器人推理工人类型，该类实现了HumanoidGym网络兼容的推理功能。" alt="" coords="271,235,532,309"/>
+<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="218,269,271,269,271,275,218,275"/>
+<area shape="rect" id="Node000004" href="$classz_1_1_plain_inference_worker.html" title="该类型实现了一个可用的平凡推理工人类型，用户可以通过这个工人类型来实现推理的功能。" alt="" coords="308,333,495,408"/>
+<area shape="poly" id="edge4_Node000000_Node000004" title=" " alt="" coords="161,288,252,319,308,338,306,343,250,324,160,293"/>
+<area shape="rect" id="Node000005" href="$classz_1_1_unitree_rl_gym_inference_worker.html" title="UnitreeRlGymInferenceWorker 类型是一个人形机器人推理工人类型，该类实现了Unitree_rl_gym网络兼容的推理功能。" alt="" coords="288,432,515,523"/>
+<area shape="poly" id="edge5_Node000000_Node000005" title=" " alt="" coords="127,296,180,356,214,389,252,418,289,438,286,442,249,422,211,393,176,360,123,299"/>
 </map>

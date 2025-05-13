@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Ctrl-Z: C:/Users/ZhouZishun/Desktop/CtrlZ/CtrlZ/Workers/NN/CommonLocoInferenceWorker.hpp 文件参考</title>
+<title>Ctrl-Z: C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/NN/CommonLocoInferenceWorker.hpp 文件参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -98,162 +105,156 @@ $(function(){initNavTree('_common_loco_inference_worker_8hpp.html',''); initResi
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">类</a>  </div>
   <div class="headertitle"><div class="title">CommonLocoInferenceWorker.hpp 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_abstract_inference_worker_8hpp_source.html">AbstractInferenceWorker.hpp</a>&quot;</code><br />
 <code>#include &quot;onnxruntime_cxx_api.h&quot;</code><br />
-<code>#include &quot;Utils/MathTypes.hpp&quot;</code><br />
+<code>#include &quot;<a class="el" href="_math_types_8hpp_source.html">Utils/MathTypes.hpp</a>&quot;</code><br />
 <code>#include &quot;nlohmann/json.hpp&quot;</code><br />
+<code>#include &quot;<a class="el" href="_static_string_utils_8hpp_source.html">Utils/StaticStringUtils.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 CommonLocoInferenceWorker.hpp 的引用(Include)关系图:</div>
 <div class="dyncontent">
-<div class="center"><img src="_common_loco_inference_worker_8hpp__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_desktop_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_common_loco_inference_worker_8hpp" alt=""/></div>
-<map name="a_c_1_2_users_2_zhou_zishun_2_desktop_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_common_loco_inference_worker_8hpp" id="a_c_1_2_users_2_zhou_zishun_2_desktop_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_common_loco_inference_worker_8hpp">
-<area shape="rect" title=" " alt="" coords="1282,5,1518,80"/>
-<area shape="rect" href="_abstract_inference_worker_8hpp.html" title=" " alt="" coords="1037,128,1227,155"/>
-<area shape="poly" title=" " alt="" coords="1299,83,1182,125,1180,120,1297,78"/>
-<area shape="rect" href="_math_types_8hpp_source.html" title=" " alt="" coords="1217,427,1327,453"/>
-<area shape="poly" title=" " alt="" coords="1411,80,1422,143,1428,215,1428,292,1425,315,1417,336,1389,372,1353,401,1317,422,1314,417,1350,396,1386,368,1412,333,1420,313,1423,292,1423,215,1417,143,1406,81"/>
-<area shape="rect" title=" " alt="" coords="1106,352,1236,379"/>
-<area shape="poly" title=" " alt="" coords="1376,82,1190,341,1186,338,1372,79"/>
-<area shape="rect" title=" " alt="" coords="1802,427,1958,453"/>
-<area shape="poly" title=" " alt="" coords="1519,64,1623,89,1726,123,1770,143,1805,165,1829,188,1835,201,1837,214,1837,292,1840,325,1848,357,1869,412,1864,414,1843,359,1835,326,1832,292,1832,215,1830,203,1824,191,1802,169,1767,148,1724,128,1622,94,1518,69"/>
-<area shape="rect" href="_abstract_worker_8hpp.html" title=" " alt="" coords="946,277,1134,304"/>
-<area shape="poly" title=" " alt="" coords="1126,157,1058,265,1054,263,1122,154"/>
-<area shape="rect" title=" " alt="" coords="429,427,483,453"/>
-<area shape="poly" title=" " alt="" coords="1037,147,819,153,554,164,317,181,233,192,185,205,154,224,131,245,121,271,121,286,125,303,136,328,147,346,163,361,185,376,243,404,305,421,365,431,414,435,414,440,364,436,304,426,242,409,183,381,159,365,143,350,131,331,120,305,116,287,116,270,127,242,151,220,183,200,232,187,317,175,553,158,819,147,1036,142"/>
-<area shape="rect" title=" " alt="" coords="610,651,660,677"/>
-<area shape="poly" title=" " alt="" coords="1036,145,828,147,568,155,438,162,317,173,215,187,138,205,89,218,47,230,31,239,19,251,11,267,8,290,8,516,13,536,27,555,49,572,79,587,156,612,248,631,347,644,444,652,594,659,594,665,443,657,346,649,247,636,154,617,77,592,46,577,23,559,8,539,3,516,3,289,6,266,14,248,28,235,45,226,88,213,137,200,214,182,317,167,437,157,568,149,828,141,1036,140"/>
-<area shape="poly" title=" " alt="" coords="1221,153,1261,171,1279,184,1294,201,1308,227,1315,256,1317,285,1315,315,1302,370,1287,414,1282,412,1297,369,1310,314,1312,285,1310,257,1303,229,1290,204,1276,188,1259,175,1218,158"/>
-<area shape="rect" title=" " alt="" coords="1080,576,1149,603"/>
-<area shape="poly" title=" " alt="" coords="1148,153,1185,190,1226,245,1243,277,1254,311,1258,345,1251,380,1241,396,1231,406,1219,415,1207,428,1162,500,1129,563,1125,561,1158,498,1203,425,1216,411,1227,402,1237,393,1245,378,1252,345,1249,312,1238,279,1222,248,1181,194,1144,157"/>
-<area shape="poly" title=" " alt="" coords="1140,154,1159,207,1176,277,1176,304,1175,336,1169,336,1171,304,1171,278,1154,208,1135,156"/>
-<area shape="rect" title=" " alt="" coords="145,277,202,304"/>
-<area shape="poly" title=" " alt="" coords="1036,150,793,167,647,183,502,205,344,241,218,278,216,273,343,236,501,200,646,178,792,162,1036,144"/>
-<area shape="rect" title=" " alt="" coords="195,352,253,379"/>
-<area shape="poly" title=" " alt="" coords="1036,146,906,150,741,160,559,178,378,205,302,213,239,216,212,222,186,233,160,251,136,279,131,288,131,296,140,314,159,330,183,344,180,348,156,334,136,317,125,298,126,287,131,276,157,247,183,228,210,217,239,211,301,208,377,200,558,172,740,155,905,145,1036,141"/>
-<area shape="rect" href="_abstract_scheduler_8hpp.html" title="AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。" alt="" coords="513,203,735,229"/>
-<area shape="poly" title=" " alt="" coords="1043,158,728,203,728,197,1043,153"/>
-<area shape="poly" title=" " alt="" coords="1202,153,1290,172,1384,200,1521,255,1653,316,1846,416,1844,421,1650,320,1519,259,1382,205,1288,177,1201,158"/>
-<area shape="rect" href="_net_inference_worker_8h.html" title=" " alt="" coords="1463,352,1612,379"/>
-<area shape="poly" title=" " alt="" coords="1204,153,1273,171,1344,200,1396,233,1445,270,1517,339,1514,342,1441,274,1393,237,1341,205,1272,176,1203,158"/>
-<area shape="rect" href="_z_object_8hpp.html" title=" " alt="" coords="683,352,818,379"/>
-<area shape="poly" title=" " alt="" coords="990,307,817,350,815,345,989,302"/>
-<area shape="rect" href="_static_string_utils_8hpp.html" title=" " alt="" coords="842,352,1027,379"/>
-<area shape="poly" title=" " alt="" coords="1023,307,967,345,964,341,1020,302"/>
-<area shape="poly" title=" " alt="" coords="1050,303,1079,355,1094,390,1107,426,1117,498,1119,560,1113,561,1112,499,1101,427,1089,392,1074,357,1046,306"/>
-<area shape="poly" title=" " alt="" coords="1064,302,1136,342,1133,346,1061,307"/>
-<area shape="rect" title=" " alt="" coords="898,651,969,677"/>
-<area shape="poly" title=" " alt="" coords="750,379,741,444,742,486,752,527,773,569,808,601,845,625,884,643,882,648,843,629,805,605,769,572,747,529,737,487,736,444,745,379"/>
-<area shape="poly" title=" " alt="" coords="843,380,798,397,779,411,764,428,751,458,752,488,765,518,786,548,813,575,843,601,900,640,897,645,840,605,810,579,782,551,760,521,747,489,745,457,759,425,776,407,796,393,841,375"/>
-<area shape="poly" title=" " alt="" coords="851,382,498,435,498,430,850,377"/>
-<area shape="poly" title=" " alt="" coords="844,382,792,400,768,412,746,429,723,452,704,478,674,535,654,591,642,636,637,635,649,589,669,533,700,475,719,448,742,425,765,408,790,395,843,377"/>
-<area shape="rect" title=" " alt="" coords="1386,651,1460,677"/>
-<area shape="poly" title=" " alt="" coords="942,378,963,415,979,435,999,451,1045,472,1088,481,1128,481,1167,476,1207,471,1248,470,1292,478,1340,499,1358,512,1373,527,1396,563,1411,602,1420,635,1415,636,1406,603,1391,566,1369,530,1354,516,1337,504,1290,483,1247,476,1207,476,1168,481,1128,486,1087,486,1043,478,996,456,975,439,959,418,937,380"/>
-<area shape="rect" title=" " alt="" coords="885,427,934,453"/>
-<area shape="poly" title=" " alt="" coords="933,380,921,413,916,411,928,378"/>
-<area shape="rect" title=" " alt="" coords="774,427,861,453"/>
-<area shape="poly" title=" " alt="" coords="916,381,852,421,849,416,913,377"/>
-<area shape="rect" title=" " alt="" coords="1010,427,1092,453"/>
-<area shape="poly" title=" " alt="" coords="956,377,1019,416,1016,420,953,381"/>
-<area shape="rect" title=" " alt="" coords="555,427,597,453"/>
-<area shape="poly" title=" " alt="" coords="872,382,613,434,612,429,871,377"/>
-<area shape="poly" title=" " alt="" coords="994,377,1202,421,1201,426,993,382"/>
-<area shape="rect" href="_vector_type_8hpp_source.html" title=" " alt="" coords="1275,576,1386,603"/>
-<area shape="poly" title=" " alt="" coords="1296,452,1321,472,1341,500,1347,532,1342,562,1337,561,1341,532,1336,502,1317,476,1292,456"/>
-<area shape="rect" href="_tensor_type_8hpp_source.html" title=" " alt="" coords="1213,501,1326,528"/>
-<area shape="poly" title=" " alt="" coords="1274,454,1273,486,1268,486,1269,454"/>
-<area shape="poly" title=" " alt="" coords="1275,603,985,656,984,651,1274,598"/>
-<area shape="poly" title=" " alt="" coords="1275,599,676,661,675,656,1275,594"/>
-<area shape="poly" title=" " alt="" coords="1348,601,1397,639,1393,643,1345,605"/>
-<area shape="rect" title=" " alt="" coords="1303,651,1361,677"/>
-<area shape="poly" title=" " alt="" coords="1334,603,1334,635,1329,635,1328,603"/>
-<area shape="rect" title=" " alt="" coords="1201,651,1279,677"/>
-<area shape="poly" title=" " alt="" coords="1317,605,1269,643,1266,639,1313,601"/>
-<area shape="poly" title=" " alt="" coords="1261,530,1221,568,1193,589,1162,605,1120,618,1064,629,926,646,675,664,675,658,925,641,1063,624,1119,613,1160,600,1190,584,1217,564,1257,526"/>
-<area shape="poly" title=" " alt="" coords="1282,527,1312,562,1308,566,1278,530"/>
-<area shape="poly" title=" " alt="" coords="1244,531,1156,571,1154,567,1241,526"/>
-<area shape="rect" title=" " alt="" coords="362,576,422,603"/>
-<area shape="poly" title=" " alt="" coords="1212,523,438,587,438,582,1212,518"/>
-<area shape="poly" title=" " alt="" coords="697,227,953,272,952,277,696,233"/>
-<area shape="poly" title=" " alt="" coords="629,229,638,264,646,284,658,302,682,325,709,342,706,347,679,329,654,306,642,287,633,266,623,230"/>
-<area shape="poly" title=" " alt="" coords="633,228,660,265,679,285,701,302,763,330,828,348,827,353,761,335,699,306,676,289,656,268,629,231"/>
-<area shape="poly" title=" " alt="" coords="513,232,424,251,390,264,369,279,360,296,358,313,363,332,372,350,399,386,430,415,426,419,395,389,367,353,358,334,353,314,355,294,365,276,387,259,423,246,512,227"/>
-<area shape="poly" title=" " alt="" coords="518,233,382,253,322,266,280,280,223,307,204,325,186,353,178,387,183,420,200,451,225,480,255,507,289,530,352,566,349,571,286,535,252,511,221,484,195,454,178,421,172,387,182,351,200,321,220,303,278,275,321,261,381,248,517,227"/>
-<area shape="poly" title=" " alt="" coords="736,221,984,241,1090,257,1127,265,1148,275,1160,288,1167,304,1173,336,1168,337,1162,306,1155,291,1145,279,1125,270,1089,262,983,247,735,226"/>
-<area shape="poly" title=" " alt="" coords="520,233,378,253,222,280,217,281,216,276,221,275,378,247,520,227"/>
-<area shape="poly" title=" " alt="" coords="513,228,418,246,370,261,324,280,280,309,246,342,242,339,277,305,321,275,368,256,417,241,512,223"/>
-<area shape="rect" href="_data_center_8hpp.html" title=" " alt="" coords="379,277,536,304"/>
-<area shape="poly" title=" " alt="" coords="596,232,501,273,499,268,594,227"/>
-<area shape="rect" title=" " alt="" coords="613,352,659,379"/>
-<area shape="poly" title=" " alt="" coords="620,231,609,264,606,284,608,303,622,337,617,339,603,305,601,284,604,263,615,229"/>
-<area shape="rect" title=" " alt="" coords="712,277,837,304"/>
-<area shape="poly" title=" " alt="" coords="651,227,736,268,734,273,649,232"/>
-<area shape="rect" title=" " alt="" coords="862,277,922,304"/>
-<area shape="poly" title=" " alt="" coords="673,227,847,274,846,279,671,232"/>
-<area shape="poly" title=" " alt="" coords="509,302,685,345,684,350,508,307"/>
-<area shape="poly" title=" " alt="" coords="537,301,836,346,836,352,536,307"/>
-<area shape="poly" title=" " alt="" coords="460,305,459,411,454,411,455,304"/>
-<area shape="poly" title=" " alt="" coords="424,307,383,327,340,355,321,373,307,393,297,414,293,439,293,516,296,539,302,559,313,577,327,592,364,618,409,636,459,648,509,656,595,661,594,666,508,661,458,653,408,641,362,622,324,596,309,580,298,561,290,540,288,516,288,438,292,413,302,390,317,369,337,351,380,322,421,302"/>
-<area shape="poly" title=" " alt="" coords="489,302,522,322,553,350,568,380,576,411,570,412,563,382,549,354,519,326,486,307"/>
-<area shape="poly" title=" " alt="" coords="456,305,439,358,420,427,406,499,398,561,393,560,401,498,415,426,433,357,450,304"/>
-<area shape="poly" title=" " alt="" coords="417,307,268,353,266,348,416,302"/>
-<area shape="poly" title=" " alt="" coords="489,302,600,347,598,351,487,307"/>
-<area shape="rect" title=" " alt="" coords="481,352,538,379"/>
-<area shape="poly" title=" " alt="" coords="469,303,494,338,489,341,464,306"/>
-<area shape="poly" title=" " alt="" coords="1482,382,1434,400,1412,413,1391,429,1373,453,1366,477,1359,503,1341,530,1313,551,1274,573,1202,605,1145,624,1087,639,985,658,984,653,1085,634,1144,619,1200,600,1272,568,1310,546,1337,526,1354,501,1361,476,1368,451,1387,425,1409,408,1432,395,1480,377"/>
-<area shape="poly" title=" " alt="" coords="1463,373,995,398,734,414,543,429,499,435,498,429,542,424,733,409,995,393,1462,368"/>
-<area shape="poly" title=" " alt="" coords="1463,380,1107,433,1107,428,1462,375"/>
-<area shape="poly" title=" " alt="" coords="1492,382,1334,425,1332,420,1490,377"/>
-<area shape="poly" title=" " alt="" coords="1598,377,1806,420,1805,426,1597,382"/>
-<area shape="rect" title=" " alt="" coords="1723,427,1778,453"/>
-<area shape="poly" title=" " alt="" coords="1575,377,1709,422,1707,427,1574,382"/>
-<area shape="rect" title=" " alt="" coords="1401,427,1468,453"/>
-<area shape="poly" title=" " alt="" coords="1521,381,1467,419,1464,415,1518,377"/>
-<area shape="rect" title=" " alt="" coords="1492,427,1588,453"/>
-<area shape="poly" title=" " alt="" coords="1540,379,1542,411,1536,411,1535,379"/>
-<area shape="rect" title=" " alt="" coords="1613,427,1699,453"/>
-<area shape="poly" title=" " alt="" coords="1559,377,1624,416,1621,421,1557,381"/>
+<div class="center"><img src="_common_loco_inference_worker_8hpp__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_common_loco_inference_worker_8hpp" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_common_loco_inference_worker_8hpp" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_common_loco_inference_worker_8hpp">
+<area shape="rect" title=" " alt="" coords="1254,5,1505,80"/>
+<area shape="rect" href="_abstract_inference_worker_8hpp.html" title=" " alt="" coords="1132,128,1323,155"/>
+<area shape="poly" title=" " alt="" coords="1323,83,1261,122,1258,117,1320,78"/>
+<area shape="rect" href="_static_string_utils_8hpp.html" title=" " alt="" coords="650,352,834,379"/>
+<area shape="poly" title=" " alt="" coords="1254,46,1102,55,1013,65,918,80,821,100,724,127,629,162,539,205,504,226,475,249,465,261,461,274,462,288,471,302,495,319,535,333,635,352,634,357,534,338,493,324,467,306,457,289,456,274,461,259,471,245,501,221,537,200,627,157,722,122,820,95,917,75,1012,60,1102,50,1254,41"/>
+<area shape="rect" href="_math_types_8hpp.html" title="定义了一些数学类型，包括向量和张量类型" alt="" coords="1267,427,1377,453"/>
+<area shape="poly" title=" " alt="" coords="1393,80,1416,181,1422,242,1421,304,1417,344,1413,361,1403,380,1383,403,1361,420,1357,416,1380,399,1398,377,1408,359,1412,343,1415,304,1417,242,1411,181,1388,81"/>
+<area shape="rect" title=" " alt="" coords="1110,352,1241,379"/>
+<area shape="poly" title=" " alt="" coords="1369,82,1336,156,1309,201,1284,233,1225,306,1197,342,1193,338,1221,302,1280,230,1304,198,1332,153,1365,79"/>
+<area shape="rect" title=" " alt="" coords="1854,427,2009,453"/>
+<area shape="poly" title=" " alt="" coords="1505,62,1616,87,1727,120,1774,140,1811,162,1837,187,1844,201,1846,214,1846,292,1852,328,1868,361,1888,390,1909,414,1905,417,1884,393,1863,363,1847,329,1841,292,1841,215,1839,202,1832,190,1808,167,1771,145,1725,125,1615,92,1504,67"/>
+<area shape="rect" href="_abstract_worker_8hpp.html" title=" " alt="" coords="868,277,1056,304"/>
+<area shape="poly" title=" " alt="" coords="1206,158,999,272,997,267,1203,153"/>
+<area shape="poly" title=" " alt="" coords="1179,158,1031,204,943,238,857,280,808,311,768,344,765,340,805,307,854,275,941,233,1029,199,1178,153"/>
+<area shape="rect" title=" " alt="" coords="453,427,506,453"/>
+<area shape="poly" title=" " alt="" coords="1132,145,918,148,649,157,389,174,283,188,203,205,163,219,133,233,105,252,73,279,44,304,19,328,12,340,8,352,10,364,18,377,35,383,73,390,190,406,437,432,437,437,190,411,72,395,33,388,15,381,5,366,3,351,7,338,15,325,40,300,70,275,102,247,130,228,161,214,201,200,282,183,389,169,649,151,918,143,1132,140"/>
+<area shape="rect" title=" " alt="" coords="946,651,997,677"/>
+<area shape="poly" title=" " alt="" coords="1236,154,1254,194,1271,253,1276,286,1276,319,1269,351,1255,380,1241,395,1226,404,1195,410,1163,413,1146,418,1129,429,1102,452,1078,479,1037,537,1005,593,984,638,979,636,1000,591,1032,534,1074,476,1099,449,1126,425,1144,414,1161,408,1195,405,1225,399,1238,391,1250,377,1264,349,1271,318,1271,286,1266,254,1249,196,1231,156"/>
+<area shape="poly" title=" " alt="" coords="1265,153,1307,172,1349,201,1382,234,1401,277,1404,297,1403,317,1390,355,1370,390,1347,417,1343,414,1365,387,1386,353,1398,316,1399,297,1395,278,1377,237,1346,205,1305,177,1263,158"/>
+<area shape="rect" title=" " alt="" coords="1060,576,1128,603"/>
+<area shape="poly" title=" " alt="" coords="1252,153,1278,173,1299,201,1319,250,1329,293,1328,314,1323,335,1299,380,1282,397,1264,406,1226,408,1187,409,1169,415,1151,428,1137,451,1123,486,1103,561,1098,560,1118,485,1132,449,1147,425,1166,411,1186,404,1226,403,1263,400,1279,393,1295,377,1318,334,1323,314,1323,294,1314,252,1294,204,1274,177,1249,157"/>
+<area shape="poly" title=" " alt="" coords="1229,155,1222,220,1205,305,1191,339,1186,337,1199,303,1217,219,1224,155"/>
+<area shape="rect" title=" " alt="" coords="1132,277,1189,304"/>
+<area shape="poly" title=" " alt="" coords="1224,156,1175,264,1170,262,1219,154"/>
+<area shape="rect" title=" " alt="" coords="29,352,87,379"/>
+<area shape="poly" title=" " alt="" coords="1132,145,891,148,741,155,585,166,432,183,294,207,233,222,180,239,135,258,100,279,87,292,78,306,66,338,61,336,73,304,83,288,96,275,132,253,178,234,232,216,293,202,432,178,584,161,740,150,890,143,1132,139"/>
+<area shape="rect" href="_abstract_scheduler_8hpp.html" title="AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。" alt="" coords="550,203,772,229"/>
+<area shape="poly" title=" " alt="" coords="1132,157,775,203,775,197,1132,152"/>
+<area shape="poly" title=" " alt="" coords="1302,153,1388,172,1480,200,1569,240,1687,301,1897,416,1895,421,1684,306,1567,245,1478,205,1387,177,1301,158"/>
+<area shape="rect" href="_net_inference_worker_8h.html" title=" " alt="" coords="1519,352,1667,379"/>
+<area shape="poly" title=" " alt="" coords="1324,150,1389,168,1421,182,1450,201,1474,225,1486,249,1496,275,1515,302,1561,341,1558,345,1511,306,1491,277,1481,252,1469,228,1447,205,1418,187,1387,173,1322,155"/>
+<area shape="rect" href="_z_object_8hpp.html" title=" " alt="" coords="882,352,1018,379"/>
+<area shape="poly" title=" " alt="" coords="963,305,957,337,952,336,957,304"/>
+<area shape="poly" title=" " alt="" coords="925,307,796,349,794,344,923,302"/>
+<area shape="poly" title=" " alt="" coords="983,302,1009,323,1032,351,1059,406,1077,464,1089,518,1094,560,1089,561,1083,518,1072,465,1054,408,1028,353,1005,327,980,307"/>
+<area shape="poly" title=" " alt="" coords="1000,302,1125,344,1123,349,998,307"/>
+<area shape="rect" title=" " alt="" coords="1132,651,1203,677"/>
+<area shape="poly" title=" " alt="" coords="955,379,963,420,981,478,1009,543,1027,573,1049,601,1082,626,1118,644,1116,649,1079,631,1045,605,1023,576,1004,545,976,480,958,421,949,380"/>
+<area shape="poly" title=" " alt="" coords="780,377,826,396,873,425,900,448,920,470,949,514,978,557,998,578,1025,600,1071,627,1118,646,1116,651,1069,632,1022,605,994,582,974,560,945,517,916,474,896,452,870,429,824,401,778,382"/>
+<area shape="poly" title=" " alt="" coords="697,382,522,430,520,425,696,377"/>
+<area shape="poly" title=" " alt="" coords="715,382,692,395,672,412,660,432,659,442,662,452,686,491,717,526,752,556,790,582,868,623,932,648,930,653,865,628,788,587,749,561,713,530,682,494,657,454,653,442,655,430,668,408,689,391,713,377"/>
+<area shape="rect" title=" " alt="" coords="1029,651,1103,677"/>
+<area shape="poly" title=" " alt="" coords="778,377,814,396,847,425,862,449,870,472,874,516,879,559,888,579,904,601,922,613,949,625,1014,646,1013,651,947,630,919,617,900,605,883,582,874,560,869,517,865,473,857,451,843,428,811,401,775,382"/>
+<area shape="rect" title=" " alt="" coords="783,427,832,453"/>
+<area shape="poly" title=" " alt="" coords="755,377,788,413,784,417,751,381"/>
+<area shape="rect" title=" " alt="" coords="672,427,759,453"/>
+<area shape="poly" title=" " alt="" coords="740,380,728,413,723,411,735,378"/>
+<area shape="rect" title=" " alt="" coords="1161,427,1243,453"/>
+<area shape="poly" title=" " alt="" coords="823,377,1146,427,1146,433,822,382"/>
+<area shape="rect" title=" " alt="" coords="300,427,342,453"/>
+<area shape="poly" title=" " alt="" coords="669,382,358,435,357,430,668,377"/>
+<area shape="poly" title=" " alt="" coords="835,373,1023,394,1252,424,1251,429,1023,399,834,378"/>
+<area shape="rect" href="_vector_type_8hpp.html" title="定义了一些向量类型" alt="" coords="1204,576,1315,603"/>
+<area shape="poly" title=" " alt="" coords="1320,455,1290,529,1274,563,1269,561,1285,527,1315,453"/>
+<area shape="rect" href="_tensor_type_8hpp.html" title="定义了一些张量类型" alt="" coords="1161,501,1275,528"/>
+<area shape="poly" title=" " alt="" coords="1305,456,1250,494,1247,490,1302,452"/>
+<area shape="poly" title=" " alt="" coords="1245,605,1197,643,1193,639,1242,601"/>
+<area shape="poly" title=" " alt="" coords="1208,606,1017,653,1012,655,1010,650,1016,648,1207,601"/>
+<area shape="poly" title=" " alt="" coords="1227,606,1115,647,1113,642,1225,601"/>
+<area shape="rect" title=" " alt="" coords="1228,651,1285,677"/>
+<area shape="poly" title=" " alt="" coords="1262,603,1260,635,1255,635,1256,603"/>
+<area shape="rect" title=" " alt="" coords="1310,651,1387,677"/>
+<area shape="poly" title=" " alt="" coords="1277,601,1323,639,1320,643,1273,605"/>
+<area shape="poly" title=" " alt="" coords="1212,530,1184,567,1164,587,1142,605,1085,630,1012,654,1010,649,1083,625,1139,600,1161,583,1180,563,1208,527"/>
+<area shape="poly" title=" " alt="" coords="1228,527,1247,561,1242,564,1223,530"/>
+<area shape="poly" title=" " alt="" coords="1198,531,1130,570,1127,566,1195,526"/>
+<area shape="rect" title=" " alt="" coords="77,576,138,603"/>
+<area shape="poly" title=" " alt="" coords="1161,522,153,588,153,582,1161,517"/>
+<area shape="poly" title=" " alt="" coords="714,227,895,271,894,276,713,233"/>
+<area shape="poly" title=" " alt="" coords="687,227,913,342,911,347,684,232"/>
+<area shape="poly" title=" " alt="" coords="673,228,706,276,734,337,729,339,701,279,668,231"/>
+<area shape="poly" title=" " alt="" coords="550,230,506,248,487,262,471,279,465,302,465,337,476,411,471,412,460,337,459,301,466,276,483,258,503,244,548,225"/>
+<area shape="poly" title=" " alt="" coords="549,224,430,230,300,241,182,257,135,268,99,280,63,298,35,318,26,329,20,343,17,359,19,378,34,431,54,481,94,561,90,563,49,483,29,432,14,379,12,359,14,342,21,327,31,314,60,293,97,275,133,262,181,252,300,236,430,225,549,218"/>
+<area shape="poly" title=" " alt="" coords="773,215,841,220,917,231,995,249,1070,275,1118,305,1156,339,1152,343,1115,309,1068,280,994,254,916,236,841,226,772,221"/>
+<area shape="poly" title=" " alt="" coords="773,226,934,246,1113,275,1117,276,1116,281,1112,280,933,251,772,231"/>
+<area shape="poly" title=" " alt="" coords="549,223,439,230,319,240,211,257,169,267,137,280,118,292,101,307,75,340,71,337,97,304,115,288,134,275,167,262,210,251,318,235,438,224,549,218"/>
+<area shape="rect" href="_data_center_8hpp.html" title=" " alt="" coords="148,277,304,304"/>
+<area shape="poly" title=" " alt="" coords="585,233,317,277,317,272,584,227"/>
+<area shape="rect" title=" " alt="" coords="396,352,443,379"/>
+<area shape="poly" title=" " alt="" coords="566,233,481,252,448,264,427,279,419,292,416,307,416,337,411,337,410,306,414,290,423,276,445,260,480,246,565,227"/>
+<area shape="rect" title=" " alt="" coords="481,277,606,304"/>
+<area shape="poly" title=" " alt="" coords="642,232,578,271,575,267,639,228"/>
+<area shape="rect" title=" " alt="" coords="631,277,691,304"/>
+<area shape="poly" title=" " alt="" coords="663,230,663,262,658,262,658,230"/>
+<area shape="poly" title=" " alt="" coords="305,297,846,349,867,352,866,357,846,355,305,302"/>
+<area shape="poly" title=" " alt="" coords="305,300,637,347,636,352,304,306"/>
+<area shape="poly" title=" " alt="" coords="250,302,334,350,447,416,444,421,331,354,247,307"/>
+<area shape="poly" title=" " alt="" coords="221,306,194,362,183,400,178,439,178,515,184,529,202,542,232,554,271,567,372,589,492,609,744,640,931,657,930,662,744,645,492,615,371,595,270,572,230,559,200,546,180,532,173,517,173,439,178,399,189,360,216,303"/>
+<area shape="poly" title=" " alt="" coords="230,304,237,338,254,377,271,398,291,415,287,419,267,402,249,380,232,340,225,305"/>
+<area shape="poly" title=" " alt="" coords="207,307,181,327,159,353,135,407,120,465,113,518,110,561,105,560,108,518,115,464,130,406,154,351,178,323,204,303"/>
+<area shape="poly" title=" " alt="" coords="198,307,102,348,100,343,196,302"/>
+<area shape="poly" title=" " alt="" coords="261,302,383,348,381,353,259,307"/>
+<area shape="rect" title=" " alt="" coords="264,352,321,379"/>
+<area shape="poly" title=" " alt="" coords="240,303,273,339,269,342,236,306"/>
+<area shape="poly" title=" " alt="" coords="1538,382,1488,400,1441,429,1419,450,1404,472,1386,516,1368,560,1352,582,1329,605,1282,628,1219,650,1217,645,1280,623,1326,600,1348,579,1363,558,1381,514,1399,470,1415,447,1438,425,1486,395,1536,377"/>
+<area shape="poly" title=" " alt="" coords="1518,374,660,429,521,439,521,433,659,424,1518,369"/>
+<area shape="poly" title=" " alt="" coords="1519,382,1259,429,1258,424,1518,376"/>
+<area shape="poly" title=" " alt="" coords="1546,382,1385,425,1383,420,1545,377"/>
+<area shape="poly" title=" " alt="" coords="1653,377,1858,420,1857,426,1652,382"/>
+<area shape="rect" title=" " alt="" coords="1682,427,1738,453"/>
+<area shape="poly" title=" " alt="" coords="1615,377,1678,416,1675,421,1612,381"/>
+<area shape="rect" title=" " alt="" coords="1762,427,1829,453"/>
+<area shape="poly" title=" " alt="" coords="1629,377,1748,419,1746,424,1627,382"/>
+<area shape="rect" title=" " alt="" coords="1451,427,1548,453"/>
+<area shape="poly" title=" " alt="" coords="1578,381,1529,419,1526,415,1575,377"/>
+<area shape="rect" title=" " alt="" coords="1572,427,1659,453"/>
+<area shape="poly" title=" " alt="" coords="1599,378,1609,411,1604,413,1594,380"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 此图展示该文件被哪些文件直接或间接地引用了:</div>
 <div class="dyncontent">
-<div class="center"><img src="_common_loco_inference_worker_8hpp__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_desktop_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_common_loco_inference_worker_8hppdep" alt=""/></div>
-<map name="a_c_1_2_users_2_zhou_zishun_2_desktop_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_common_loco_inference_worker_8hppdep" id="a_c_1_2_users_2_zhou_zishun_2_desktop_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_common_loco_inference_worker_8hppdep">
-<area shape="rect" title=" " alt="" coords="373,5,609,80"/>
-<area shape="rect" href="_erax_like_inference_worker_8hpp.html" title=" " alt="" coords="5,128,212,203"/>
-<area shape="poly" title=" " alt="" coords="361,88,224,131,213,134,211,129,222,125,359,83"/>
-<area shape="rect" href="_humanoid_gym_inference_worker_8hpp.html" title=" " alt="" coords="235,128,478,203"/>
-<area shape="poly" title=" " alt="" coords="441,93,399,130,396,126,437,89"/>
-<area shape="rect" href="_plain_inference_worker_8hpp.html" title=" " alt="" coords="502,136,752,195"/>
-<area shape="poly" title=" " alt="" coords="546,88,597,134,593,138,542,92"/>
-<area shape="rect" href="_unitree_rl_gym_inference_worker_8hpp.html" title="Support lstm onnx model trained by unitree_rl_gym. For code to export lstm model to onnx format,..." alt="" coords="776,128,1014,203"/>
-<area shape="poly" title=" " alt="" coords="625,81,776,126,775,131,623,86"/>
-<area shape="rect" href="types_8hpp.html" title="类型定义" alt="" coords="142,251,323,309"/>
-<area shape="poly" title=" " alt="" coords="162,211,203,248,199,252,158,215"/>
-<area shape="rect" href="user__func_8cpp.html" title=" " alt="" coords="94,480,254,555"/>
-<area shape="poly" title=" " alt="" coords="214,325,202,358,187,422,180,480,174,479,182,421,197,357,209,323"/>
-<area shape="rect" href="user__func_8h.html" title=" " alt="" coords="211,357,371,432"/>
-<area shape="poly" title=" " alt="" coords="257,322,275,356,270,358,252,324"/>
-<area shape="poly" title=" " alt="" coords="247,445,211,481,208,478,243,442"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="278,488,456,547"/>
-<area shape="poly" title=" " alt="" coords="325,444,351,486,347,489,320,447"/>
-<area shape="poly" title=" " alt="" coords="307,215,266,252,262,248,303,211"/>
+<div class="center"><img src="_common_loco_inference_worker_8hpp__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_common_loco_inference_worker_8hppdep" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_common_loco_inference_worker_8hppdep" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_n_n_2_common_loco_inference_worker_8hppdep">
+<area shape="rect" title=" " alt="" coords="378,5,629,80"/>
+<area shape="rect" href="_erax_like_inference_worker_8hpp.html" title=" " alt="" coords="5,128,226,203"/>
+<area shape="poly" title=" " alt="" coords="371,88,227,132,225,127,370,83"/>
+<area shape="rect" href="_humanoid_gym_inference_worker_8hpp.html" title=" " alt="" coords="250,128,506,203"/>
+<area shape="poly" title=" " alt="" coords="456,93,418,129,414,126,452,89"/>
+<area shape="rect" href="_plain_inference_worker_8hpp.html" title=" " alt="" coords="531,128,729,203"/>
+<area shape="poly" title=" " alt="" coords="555,89,594,126,590,130,551,93"/>
+<area shape="rect" href="_unitree_rl_gym_inference_worker_8hpp.html" title="Support lstm onnx model trained by unitree_rl_gym. For code to export lstm model to onnx format,..." alt="" coords="753,128,1006,203"/>
+<area shape="poly" title=" " alt="" coords="634,83,766,125,764,130,632,88"/>
+<area shape="rect" href="types_8hpp.html" title="类型定义" alt="" coords="143,251,349,325"/>
+<area shape="poly" title=" " alt="" coords="168,211,208,248,205,252,165,215"/>
+<area shape="rect" href="user__func_8cpp.html" title=" " alt="" coords="74,496,280,571"/>
+<area shape="poly" title=" " alt="" coords="219,340,205,374,189,438,182,496,177,496,184,437,200,372,214,338"/>
+<area shape="rect" href="user__func_8h.html" title=" " alt="" coords="214,373,420,448"/>
+<area shape="poly" title=" " alt="" coords="278,338,298,372,293,374,273,340"/>
+<area shape="poly" title=" " alt="" coords="265,460,221,498,218,494,261,456"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="304,496,511,571"/>
+<area shape="poly" title=" " alt="" coords="356,459,382,494,378,497,351,462"/>
+<area shape="poly" title=" " alt="" coords="329,215,288,252,284,248,325,211"/>
 </map>
 </div>
 </div>
 <p><a href="_common_loco_inference_worker_8hpp_source.html">浏览该文件的源代码.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-类</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_common_loco_inference_worker.html">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CommonLocoInferenceWorker类型是一个通用的Locomotion推理工人类型，该类型实现了一些Locomotion推理的通用逻辑。  <a href="classz_1_1_common_loco_inference_worker.html#details">更多...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><dl class="section author"><dt>作者</dt><dd>Zishun Zhou </dd></dl>
 <dl class="section date"><dt>日期</dt><dd>2025-03-10</dd></dl>

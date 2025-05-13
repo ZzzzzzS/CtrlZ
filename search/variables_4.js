@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['jointcliplower_0',['JointClipLower',['../classz_1_1_common_loco_inference_worker.html#a6894a1c56906f7231c5e1e53ebd04319',1,'z::CommonLocoInferenceWorker']]],
-  ['jointclipupper_1',['JointClipUpper',['../classz_1_1_common_loco_inference_worker.html#a0f61df5a8ce9879a6b7a420345de5d66',1,'z::CommonLocoInferenceWorker']]],
-  ['jointdefaultpos_2',['JointDefaultPos',['../classz_1_1_common_loco_inference_worker.html#a1b74a5c35f6f5e8308440b5d77622b65',1,'z::CommonLocoInferenceWorker']]]
+  ['newrun_0',['NewRun',['../structz_1_1_abstract_scheduler_1_1_t_c_b.html#a324c5c65e9d07af5db4a7f230bed6699',1,'z::AbstractScheduler::TCB']]],
+  ['num_5fdims_1',['num_dims',['../structz_1_1math_1_1_tensor_shape.html#ae1b9f667deca88c17cd32543a1bc51d1',1,'z::math::TensorShape']]]
 ];

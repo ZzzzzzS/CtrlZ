@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -100,14 +107,7 @@ $(function(){initNavTree('functions_vars.html',''); initResizable(true); });
 <div class="contents">
 <div class="textblock">这里是所有文档化的变量, 及指向类中所有成员文档的链接: </div>
 
-<h3><a id="index_a" name="index_a"></a>- a -</h3><ul>
-<li>ActionScale&#160;:&#160;<a class="el" href="classz_1_1_common_loco_inference_worker.html#a9c7b919bc846c92b4ceb978df1421759">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-</ul>
-
-
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
-<li>ClipAction&#160;:&#160;<a class="el" href="classz_1_1_common_loco_inference_worker.html#a3d7f9a7ee6ac7e632143ea28e43536f4">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-<li>ClipObservation&#160;:&#160;<a class="el" href="classz_1_1_common_loco_inference_worker.html#a35ef0ec1740617bc594074aaa4ecfa25">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
 <li>cnt&#160;:&#160;<a class="el" href="structz_1_1_abstract_scheduler_1_1_t_c_b.html#ad6902e89c82c25d5243512bb90987a9f">z::AbstractScheduler&lt; CTS &gt;::TCB</a></li>
 </ul>
 
@@ -115,7 +115,7 @@ $(function(){initNavTree('functions_vars.html',''); initResizable(true); });
 <h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
 <li>data_ptr__&#160;:&#160;<a class="el" href="classz_1_1math_1_1_tensor_base.html#a6629009e63b025ae519ff55dd1f9b7a4">z::math::TensorBase&lt; T, Dims &gt;</a></li>
 <li>dataCenter&#160;:&#160;<a class="el" href="classz_1_1_abstract_scheduler.html#ad2c119c841bc14e68b728b5479960262">z::AbstractScheduler&lt; CTS &gt;</a></li>
-<li>DefaultAllocator__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#af7ce9a61c1433be200e001ea8f6da844">z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;</a>, <a class="el" href="classz_1_1_common_loco_inference_worker.html#af7ce9a61c1433be200e001ea8f6da844">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
+<li>DefaultAllocator__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#ad28113b93a35aafd269c67f12d25f47c">z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;</a></li>
 <li>dims&#160;:&#160;<a class="el" href="structz_1_1math_1_1_tensor_shape.html#a2647cc6f36d52696904b1f7789bd28ff">z::math::TensorShape&lt; Dims &gt;</a></li>
 <li>dims_array&#160;:&#160;<a class="el" href="structz_1_1math_1_1_tensor_shape.html#a64b17d2a0545e7ab73f99541839eb29a">z::math::TensorShape&lt; Dims &gt;</a></li>
 <li>div&#160;:&#160;<a class="el" href="structz_1_1_abstract_scheduler_1_1_t_c_b.html#aae6a26081713b6f2074b13fbe61fd8e8">z::AbstractScheduler&lt; CTS &gt;::TCB</a></li>
@@ -123,26 +123,19 @@ $(function(){initNavTree('functions_vars.html',''); initResizable(true); });
 
 
 <h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
-<li>InputNodeNames__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#ac5a97583ace87779b016d6e12f6d83b9">z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;</a>, <a class="el" href="classz_1_1_common_loco_inference_worker.html#ac5a97583ace87779b016d6e12f6d83b9">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-<li>InputOrtTensors__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#a7d902e76f24d3d3c3da5c9ff78d22347">z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;</a>, <a class="el" href="classz_1_1_common_loco_inference_worker.html#a7d902e76f24d3d3c3da5c9ff78d22347">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-<li>IntraNumberThreads__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#ac3ff2aab7efd26d91289bee89e576774">z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;</a></li>
-<li>IoBinding__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#ab93ad5aa7fca9bb6c85b8beb43dd58e8">z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;</a></li>
+<li>InputNodeNames__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#ad94e743413d536f5817c5e5462999079">z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;</a></li>
+<li>InputOrtTensors__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#a635956ceab288805b2f1b725b8f68d82">z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;</a></li>
+<li>IntraNumberThreads__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#a9270eb5629fb0422a94ef654d83eea07">z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;</a></li>
+<li>IoBinding__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#a576e8dba57dddc23e9d3db66ae7032c5">z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;</a></li>
 <li>isRunning&#160;:&#160;<a class="el" href="structz_1_1_abstract_scheduler_1_1_t_c_b.html#a91c970e4d89e4f6640be318f4aac524d">z::AbstractScheduler&lt; CTS &gt;::TCB</a></li>
-</ul>
-
-
-<h3><a id="index_j" name="index_j"></a>- j -</h3><ul>
-<li>JointClipLower&#160;:&#160;<a class="el" href="classz_1_1_common_loco_inference_worker.html#a6894a1c56906f7231c5e1e53ebd04319">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-<li>JointClipUpper&#160;:&#160;<a class="el" href="classz_1_1_common_loco_inference_worker.html#a0f61df5a8ce9879a6b7a420345de5d66">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-<li>JointDefaultPos&#160;:&#160;<a class="el" href="classz_1_1_common_loco_inference_worker.html#a1b74a5c35f6f5e8308440b5d77622b65">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
 </ul>
 
 
 <h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
 <li>MainThreadTaskBlock&#160;:&#160;<a class="el" href="classz_1_1_abstract_scheduler.html#a6d2527582dd43820a1b2d51ad23701fb">z::AbstractScheduler&lt; CTS &gt;</a></li>
 <li>MainThreadTaskName&#160;:&#160;<a class="el" href="classz_1_1_abstract_scheduler.html#a208a17d1ae9ede0b5e4a8d521a70bce3">z::AbstractScheduler&lt; CTS &gt;</a></li>
-<li>MemoryInfo__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#a1484a6fb51e3669b9ae0840c18006a3c">z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;</a>, <a class="el" href="classz_1_1_common_loco_inference_worker.html#a1484a6fb51e3669b9ae0840c18006a3c">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-<li>ModelPath__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#ac4b7153b7a195cd21516fad2e323ef71">z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;</a></li>
+<li>MemoryInfo__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#a5cdbb23c7f90347f748bf131de355672">z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;</a></li>
+<li>ModelPath__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#a05e89e2b2b34fbd8f1f442a965e55892">z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;</a></li>
 </ul>
 
 
@@ -153,8 +146,8 @@ $(function(){initNavTree('functions_vars.html',''); initResizable(true); });
 
 
 <h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
-<li>OutputNodeNames__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#aff692268930a3f8da04346885cc6d273">z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;</a>, <a class="el" href="classz_1_1_common_loco_inference_worker.html#aff692268930a3f8da04346885cc6d273">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-<li>OutputOrtTensors__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#ae83553a86377993037ce2505cc1f2091">z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;</a>, <a class="el" href="classz_1_1_common_loco_inference_worker.html#ae83553a86377993037ce2505cc1f2091">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
+<li>OutputNodeNames__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#a6987ac04c6b5245c4fdbda83350555bd">z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;</a></li>
+<li>OutputOrtTensors__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#a6926fc4109782798c6454d0f7dc14fca">z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;</a></li>
 </ul>
 
 
@@ -164,16 +157,9 @@ $(function(){initNavTree('functions_vars.html',''); initResizable(true); });
 
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
-<li>Scales_ang_vel&#160;:&#160;<a class="el" href="classz_1_1_common_loco_inference_worker.html#a51218bfa3645f64ae90346c87069c3a1">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-<li>Scales_command3&#160;:&#160;<a class="el" href="classz_1_1_common_loco_inference_worker.html#a7a97490bcc221ec6b64ea380ebd258ce">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-<li>Scales_dof_pos&#160;:&#160;<a class="el" href="classz_1_1_common_loco_inference_worker.html#a2d95f14e3acf41fcd9ffd87120557ffe">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-<li>Scales_dof_vel&#160;:&#160;<a class="el" href="classz_1_1_common_loco_inference_worker.html#ad08d33e770dd0a85516e4d3d94798cf7">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-<li>Scales_last_action&#160;:&#160;<a class="el" href="classz_1_1_common_loco_inference_worker.html#abd9194daf7de374ecda33c1fd6c08553">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-<li>Scales_lin_vel&#160;:&#160;<a class="el" href="classz_1_1_common_loco_inference_worker.html#ae8a289578c62a1d2efafd1fadbbfaa1b">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-<li>Scales_project_gravity&#160;:&#160;<a class="el" href="classz_1_1_common_loco_inference_worker.html#a94754b9801aed78a46f550ab8c05ec17">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
 <li>Scheduler&#160;:&#160;<a class="el" href="classz_1_1_abstract_worker.html#af4842124f95ccfb50ddb0d21a9642cab">z::AbstractWorker&lt; SchedulerType &gt;</a></li>
-<li>Session__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#a1ef3efd5054b843748581aebcb3b1794">z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;</a>, <a class="el" href="classz_1_1_common_loco_inference_worker.html#a1ef3efd5054b843748581aebcb3b1794">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
-<li>SessionOptions__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#a38fd97ac8e762c77a632d0cd64f14e89">z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;</a></li>
+<li>Session__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#a497b50253d740547c0dbe2b2d05a100c">z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;</a></li>
+<li>SessionOptions__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#ad0fc8c0937a0f3f21c5e95011504c440">z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;</a></li>
 <li>spin_dt&#160;:&#160;<a class="el" href="classz_1_1_abstract_scheduler.html#aeb563d1f04780de1de38a5dd721c3a20">z::AbstractScheduler&lt; CTS &gt;</a></li>
 <li>SyncLock&#160;:&#160;<a class="el" href="classz_1_1_abstract_scheduler.html#ab9f7e63da117efa52cdcc7bc0b458186">z::AbstractScheduler&lt; CTS &gt;</a></li>
 <li>SyncMutex&#160;:&#160;<a class="el" href="classz_1_1_abstract_scheduler.html#aea76dd9c01f9b570984b8476b98d5f51">z::AbstractScheduler&lt; CTS &gt;</a></li>
@@ -192,8 +178,8 @@ $(function(){initNavTree('functions_vars.html',''); initResizable(true); });
 
 
 <h3><a id="index_w" name="index_w"></a>- w -</h3><ul>
-<li>WarmUpCnt__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#a0e6e847e9bce6700da317ffe14602749">z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;</a></li>
-<li>WarmUpModel__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#a044e250c9621080c8f031e772659b4ec">z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;</a></li>
+<li>WarmUpCnt__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#ab1a3429754e0a6f870c3546be757e9e0">z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;</a></li>
+<li>WarmUpModel__&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#a5a4de9ead8866412d865677aec29cfdf">z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;</a></li>
 <li>workers&#160;:&#160;<a class="el" href="structz_1_1_abstract_scheduler_1_1_t_c_b.html#a30eabc1e59e2208792606a17d846bb02">z::AbstractScheduler&lt; CTS &gt;::TCB</a></li>
 </ul>
 </div><!-- contents -->

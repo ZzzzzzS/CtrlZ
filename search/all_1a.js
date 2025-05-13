@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['安装_0',['安装',['../index.html#autotoc_md14',1,'']]]
+  ['简介_0',['简介',['../index.html#autotoc_md2',1,'']]]
 ];

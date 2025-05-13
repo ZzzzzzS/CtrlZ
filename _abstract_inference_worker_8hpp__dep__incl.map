@@ -1,25 +1,26 @@
-<map id="C:/Users/ZhouZishun/Desktop/CtrlZ/CtrlZ/Workers/NN/AbstractInferenceWorker.hpp" name="C:/Users/ZhouZishun/Desktop/CtrlZ/CtrlZ/Workers/NN/AbstractInferenceWorker.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="254,5,459,80"/>
-<area shape="rect" id="Node000002" href="$_action_management_worker_8hpp.html" title="该文件定义了一个类ActionManagementWorker，用于管理和选择单个或多个推理网络的输出。" alt="" coords="94,136,350,195"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="306,93,256,138,252,134,302,89"/>
-<area shape="rect" id="Node000003" href="$_common_loco_inference_worker_8hpp.html" title=" " alt="" coords="373,128,609,203"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="411,89,452,126,449,130,407,93"/>
-<area shape="rect" id="Node000004" href="$_erax_like_inference_worker_8hpp.html" title=" " alt="" coords="5,251,212,325"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="361,210,224,253,213,257,211,252,222,248,359,205"/>
-<area shape="rect" id="Node000009" href="$_humanoid_gym_inference_worker_8hpp.html" title=" " alt="" coords="235,251,478,325"/>
-<area shape="poly" id="edge9_Node000003_Node000009" title=" " alt="" coords="441,215,399,252,396,248,437,211"/>
-<area shape="rect" id="Node000010" href="$_plain_inference_worker_8hpp.html" title=" " alt="" coords="502,259,752,317"/>
-<area shape="poly" id="edge11_Node000003_Node000010" title=" " alt="" coords="546,211,597,256,593,260,542,215"/>
-<area shape="rect" id="Node000011" href="$_unitree_rl_gym_inference_worker_8hpp.html" title="Support lstm onnx model trained by unitree_rl_gym. For code to export lstm model to onnx format,..." alt="" coords="776,251,1014,325"/>
-<area shape="poly" id="edge12_Node000003_Node000011" title=" " alt="" coords="625,204,776,249,775,254,623,209"/>
-<area shape="rect" id="Node000005" href="$types_8hpp.html" title="类型定义" alt="" coords="142,373,323,432"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="162,334,203,371,199,375,158,338"/>
-<area shape="rect" id="Node000006" href="$user__func_8cpp.html" title=" " alt="" coords="94,603,254,677"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="214,447,202,481,187,545,180,603,174,602,182,544,197,479,209,446"/>
-<area shape="rect" id="Node000007" href="$user__func_8h.html" title=" " alt="" coords="211,480,371,555"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="257,445,275,478,270,481,252,447"/>
-<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="247,568,211,604,208,600,243,564"/>
-<area shape="rect" id="Node000008" href="$main_8cpp.html" title=" " alt="" coords="278,611,456,669"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="325,567,351,609,347,612,320,570"/>
-<area shape="poly" id="edge10_Node000009_Node000005" title=" " alt="" coords="307,338,266,375,262,371,303,334"/>
+<map id="C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/NN/AbstractInferenceWorker.hpp" name="C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/NN/AbstractInferenceWorker.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="126,5,344,80"/>
+<area shape="rect" id="Node000002" href="$_action_management_worker_8hpp.html" title="该文件定义了一个类ActionManagementWorker，用于管理和选择单个或多个推理网络的输出。" alt="" coords="8,128,212,203"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,93,150,129,146,126,184,89"/>
+<area shape="rect" id="Node000007" href="$_common_loco_inference_worker_8hpp.html" title=" " alt="" coords="315,128,566,203"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="312,86,379,125,376,130,309,90"/>
+<area shape="rect" id="Node000003" href="$types_8hpp.html" title="类型定义" alt="" coords="75,373,281,448"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="74,217,58,252,48,289,50,305,57,324,77,350,102,371,99,375,73,354,53,327,45,306,43,289,53,250,69,215"/>
+<area shape="rect" id="Node000004" href="$user__func_8cpp.html" title=" " alt="" coords="5,619,212,693"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="151,463,136,497,121,561,114,619,108,618,116,560,131,495,146,461"/>
+<area shape="rect" id="Node000005" href="$user__func_8h.html" title=" " alt="" coords="145,496,352,571"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="209,460,229,494,225,497,205,463"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="196,583,153,620,149,616,193,579"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html" title=" " alt="" coords="236,619,442,693"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="287,582,314,617,310,620,283,585"/>
+<area shape="rect" id="Node000008" href="$_erax_like_inference_worker_8hpp.html" title=" " alt="" coords="68,251,288,325"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="347,212,259,252,257,248,345,207"/>
+<area shape="rect" id="Node000009" href="$_humanoid_gym_inference_worker_8hpp.html" title=" " alt="" coords="312,251,569,325"/>
+<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="443,219,443,250,438,250,438,219"/>
+<area shape="rect" id="Node000010" href="$_plain_inference_worker_8hpp.html" title=" " alt="" coords="593,251,792,325"/>
+<area shape="poly" id="edge12_Node000007_Node000010" title=" " alt="" coords="532,207,617,248,614,252,530,212"/>
+<area shape="rect" id="Node000011" href="$_unitree_rl_gym_inference_worker_8hpp.html" title="Support lstm onnx model trained by unitree_rl_gym. For code to export lstm model to onnx format,..." alt="" coords="816,251,1068,325"/>
+<area shape="poly" id="edge13_Node000007_Node000011" title=" " alt="" coords="581,196,804,248,816,251,815,256,803,253,580,201"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="180,341,180,373,175,373,175,341"/>
+<area shape="poly" id="edge11_Node000009_Node000003" title=" " alt="" coords="347,335,259,375,257,370,345,330"/>
 </map>

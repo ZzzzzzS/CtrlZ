@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -144,15 +151,12 @@ Public 类型</h2></td></tr>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>OutPutRemapFunction</b> = std::function&lt;void(<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>*, const <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt;InferencePrecision, ActionElementSize__&gt;)&gt;</td></tr>
 <tr class="memdesc:a4e8e2e4146ec363687d2491cce498840"><td class="mdescLeft">&#160;</td><td class="mdescRight">定义一个函数类型，用于重映射网络输出的函数类型，该函数类型接受一个调度器指针和一个网络输出的值，返回void。 <br /></td></tr>
 <tr class="separator:a4e8e2e4146ec363687d2491cce498840"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2639ce32219bc3b603a793b10a1326f5" id="r_a2639ce32219bc3b603a793b10a1326f5"><td class="memItemLeft" align="right" valign="top"><a id="a2639ce32219bc3b603a793b10a1326f5" name="a2639ce32219bc3b603a793b10a1326f5"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>InferenceWorkerType</b> = <a class="el" href="classz_1_1_abstract_net_inference_worker.html">AbstractNetInferenceWorker</a>&lt;<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>*, InferencePrecision&gt;</td></tr>
-<tr class="separator:a2639ce32219bc3b603a793b10a1326f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a36b3c0e7e7134fd7c6199f067dde0fb9" id="r_a36b3c0e7e7134fd7c6199f067dde0fb9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36b3c0e7e7134fd7c6199f067dde0fb9">ActionManagementWorker</a> (<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *scheduler, const nlohmann::json &amp;worker_cfg, const nlohmann::json &amp;scheduler_cfg)</td></tr>
-<tr class="memdesc:a36b3c0e7e7134fd7c6199f067dde0fb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造一个ActionManagementWorker类型  <br /></td></tr>
-<tr class="separator:a36b3c0e7e7134fd7c6199f067dde0fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6821f47434afe2e2bec04d04fdebe027" id="r_a6821f47434afe2e2bec04d04fdebe027"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6821f47434afe2e2bec04d04fdebe027">ActionManagementWorker</a> (<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *scheduler, const nlohmann::json &amp;worker_cfg)</td></tr>
+<tr class="memdesc:a6821f47434afe2e2bec04d04fdebe027"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造一个ActionManagementWorker类型  <br /></td></tr>
+<tr class="separator:a6821f47434afe2e2bec04d04fdebe027"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e610152635af848a9693087d84e92de" id="r_a6e610152635af848a9693087d84e92de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e610152635af848a9693087d84e92de">TaskRun</a> ()</td></tr>
 <tr class="memdesc:a6e610152635af848a9693087d84e92de"><td class="mdescLeft">&#160;</td><td class="mdescRight">任务运行方法，在每次任务队列循环中被调用。  <br /></td></tr>
 <tr class="separator:a6e610152635af848a9693087d84e92de"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,9 +164,17 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:ad30055558ca093ed9fcec36736c95333"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad30055558ca093ed9fcec36736c95333">SetActionRemapFunction</a> (<a class="el" href="#a4e8e2e4146ec363687d2491cce498840">OutPutRemapFunction</a> func)</td></tr>
 <tr class="memdesc:ad30055558ca093ed9fcec36736c95333"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置网络输出的重映射函数，用户可以通过这个方法来设置网络输出的重映射函数。  <br /></td></tr>
 <tr class="separator:ad30055558ca093ed9fcec36736c95333"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad30055558ca093ed9fcec36736c95333" id="r_ad30055558ca093ed9fcec36736c95333"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> CT&gt; </td></tr>
+<tr class="memitem:ad30055558ca093ed9fcec36736c95333"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad30055558ca093ed9fcec36736c95333">SetActionRemapFunction</a> (<a class="el" href="#a4e8e2e4146ec363687d2491cce498840">OutPutRemapFunction</a> func)</td></tr>
+<tr class="memdesc:ad30055558ca093ed9fcec36736c95333"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置网络输出的重映射函数，用户可以通过这个方法来设置网络输出的重映射函数。  <br /></td></tr>
+<tr class="separator:ad30055558ca093ed9fcec36736c95333"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4239ae7b5a265e96f03a0351a5290ae" id="r_ad4239ae7b5a265e96f03a0351a5290ae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4239ae7b5a265e96f03a0351a5290ae">SwitchTo</a> (std::string ActionName, InferencePrecision SwitchIntervalTime=-1)</td></tr>
 <tr class="memdesc:ad4239ae7b5a265e96f03a0351a5290ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">切换到指定的网络输出，用户可以通过这个方法来切换到指定的网络输出。  <br /></td></tr>
 <tr class="separator:ad4239ae7b5a265e96f03a0351a5290ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5383b335e0c94dd9b6b40bd7e929b64a" id="r_a5383b335e0c94dd9b6b40bd7e929b64a"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ActionPair, InferencePrecision SwitchIntervalTime = static_cast&lt;InferencePrecision&gt;(-1)&gt; </td></tr>
+<tr class="memitem:a5383b335e0c94dd9b6b40bd7e929b64a"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5383b335e0c94dd9b6b40bd7e929b64a">SwitchTo</a> ()</td></tr>
+<tr class="memdesc:a5383b335e0c94dd9b6b40bd7e929b64a"><td class="mdescLeft">&#160;</td><td class="mdescRight">切换到指定的网络输出，用户可以通过这个方法来切换到指定的网络输出。  <br /></td></tr>
+<tr class="separator:a5383b335e0c94dd9b6b40bd7e929b64a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64c4e594e8e686c86fa7ee959d5d4071" id="r_a64c4e594e8e686c86fa7ee959d5d4071"><td class="memItemLeft" align="right" valign="top"><a id="a64c4e594e8e686c86fa7ee959d5d4071" name="a64c4e594e8e686c86fa7ee959d5d4071"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>BlockOutput</b> ()</td></tr>
 <tr class="memdesc:a64c4e594e8e686c86fa7ee959d5d4071"><td class="mdescLeft">&#160;</td><td class="mdescRight">阻止输出，用户可以通过这个方法来阻止输出。输出被阻止后，网络输出将不会更新电机目标位置， 用户可以通过SwitchTo方法来切换到指定的网络输出来重新更新位置。 <br /></td></tr>
@@ -207,11 +219,13 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~AbstractWorker</b
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, typename InferencePrecision, <a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... ActionPairs&gt;<br />
 class z::ActionManagementWorker&lt; SchedulerType, InferencePrecision, ActionPairs &gt;</div><p>ActionManagementWorker类型是一个用于管理和选择单个或多个推理网络的输出的工人类型。 </p>
 <p>ActionManagementWorker类型是一个用于管理和选择单个或多个推理网络的输出的工人类型。 用户可以通过这个工人类型来实现多个推理网络的输出的选择和管理。用户可以通过配置文件来配置需要管理的网络输出的名称和类型， 用户可以通过SwitchTo方法来切换到指定的网络输出，用户也可以通过SetActionRemapFunction方法来设置网络输出的重映射函数。 该类型实现了一个默认的重映射函数，默认重映射函数将网络输出的值直接写入数据总线的"TargetMotorPosition"中。</p>
-<ul>
-<li></li>
-</ul>
-<p>config.json配置文件示例： { "Workers": { "ActionManagement": { "SwitchIntervalTime": 1, //默认切换间隔时间 1s } }</p>
-<dl class="tparams"><dt>模板参数</dt><dd>
+<p>config.json配置文件示例： </p><div class="fragment"><div class="line">{</div>
+<div class="line">   &quot;Workers&quot;: {</div>
+<div class="line">      &quot;ActionManagement&quot;: {</div>
+<div class="line">         &quot;SwitchIntervalTime&quot;: 1, //默认切换间隔时间 1s</div>
+<div class="line">      }</div>
+<div class="line">}</div>
+</div><!-- fragment --><dl class="tparams"><dt>模板参数</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">SchedulerType</td><td>调度器类型 </td></tr>
     <tr><td class="paramname">InferencePrecision</td><td>推理精度，用户可以通过这个参数来指定推理的精度，比如可以指定为float。 </td></tr>
@@ -220,8 +234,8 @@ class z::ActionManagementWorker&lt; SchedulerType, InferencePrecision, ActionPai
   </dd>
 </dl>
 </div><h2 class="groupheader">构造及析构函数说明</h2>
-<a id="a36b3c0e7e7134fd7c6199f067dde0fb9" name="a36b3c0e7e7134fd7c6199f067dde0fb9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36b3c0e7e7134fd7c6199f067dde0fb9">&#9670;&#160;</a></span>ActionManagementWorker()</h2>
+<a id="a6821f47434afe2e2bec04d04fdebe027" name="a6821f47434afe2e2bec04d04fdebe027"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6821f47434afe2e2bec04d04fdebe027">&#9670;&#160;</a></span>ActionManagementWorker()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -239,12 +253,7 @@ template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">Sch
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const nlohmann::json &amp;</td>          <td class="paramname"><span class="paramname"><em>worker_cfg</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const nlohmann::json &amp;</td>          <td class="paramname"><span class="paramname"><em>scheduler_cfg</em></span>&#160;)</td>
+          <td class="paramtype">const nlohmann::json &amp;</td>          <td class="paramname"><span class="paramname"><em>worker_cfg</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -259,7 +268,6 @@ template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">Sch
   <table class="params">
     <tr><td class="paramname">scheduler</td><td>调度器的指针 </td></tr>
     <tr><td class="paramname">worker_cfg</td><td>配置文件，用户可以通过配置文件来配置工人的一些参数。 </td></tr>
-    <tr><td class="paramname">scheduler_cfg</td><td>调度器的配置文件，用户可以通过配置文件来配置调度器的一些参数。 </td></tr>
   </table>
   </dd>
 </dl>
@@ -268,7 +276,7 @@ template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">Sch
 </div>
 <h2 class="groupheader">成员函数说明</h2>
 <a id="ad30055558ca093ed9fcec36736c95333" name="ad30055558ca093ed9fcec36736c95333"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad30055558ca093ed9fcec36736c95333">&#9670;&#160;</a></span>SetActionRemapFunction()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad30055558ca093ed9fcec36736c95333">&#9670;&#160;</a></span>SetActionRemapFunction() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -310,8 +318,92 @@ template&lt;<a class="el" href="structz_1_1_c_t_string.html">CTString</a> CT&gt;
 
 </div>
 </div>
+<a id="ad30055558ca093ed9fcec36736c95333" name="ad30055558ca093ed9fcec36736c95333"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad30055558ca093ed9fcec36736c95333">&#9670;&#160;</a></span>SetActionRemapFunction() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, typename InferencePrecision, <a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... ActionPairs&gt; </div>
+<div class="memtemplate">
+template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> CT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classz_1_1_action_management_worker.html">z::ActionManagementWorker</a>&lt; <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, InferencePrecision, ActionPairs &gt;::SetActionRemapFunction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a4e8e2e4146ec363687d2491cce498840">OutPutRemapFunction</a></td>          <td class="paramname"><span class="paramname"><em>func</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置网络输出的重映射函数，用户可以通过这个方法来设置网络输出的重映射函数。 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">CT</td><td>编译期动作对，表示网络输出的名称和对应的类型。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">func</td><td>重映射函数，用户可以通过这个函数来实现网络输出的重映射逻辑。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5383b335e0c94dd9b6b40bd7e929b64a" name="a5383b335e0c94dd9b6b40bd7e929b64a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5383b335e0c94dd9b6b40bd7e929b64a">&#9670;&#160;</a></span>SwitchTo() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, typename InferencePrecision, <a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... ActionPairs&gt; </div>
+<div class="memtemplate">
+template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ActionPair, InferencePrecision SwitchIntervalTime = static_cast&lt;InferencePrecision&gt;(-1)&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classz_1_1_action_management_worker.html">z::ActionManagementWorker</a>&lt; <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, InferencePrecision, ActionPairs &gt;::SwitchTo </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>切换到指定的网络输出，用户可以通过这个方法来切换到指定的网络输出。 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname"><a class="el" href="structz_1_1_c_t_s_pair.html" title="compile time string key-value pair">CTSPair</a></td><td>ActionPair 网络输出的名称类型对，用户可以通过这个名称来指定需要切换到的网络输出。 </td></tr>
+    <tr><td class="paramname">InferencePrecision</td><td>SwitchIntervalTime 切换间隔时间，用户可以通过这个参数来指定切换的间隔时间，网络将会在用户指定的时间后切换到指定的网络输出。</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>如果SwitchIntervalTime为-1，则使用默认的切换间隔时间。（切换单位为秒） </p><dl class="section return"><dt>返回</dt><dd>true 切换成功 </dd>
+<dd>
+false 切换失败，网络输出的名称未找到。 </dd></dl>
+
+</div>
+</div>
 <a id="ad4239ae7b5a265e96f03a0351a5290ae" name="ad4239ae7b5a265e96f03a0351a5290ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4239ae7b5a265e96f03a0351a5290ae">&#9670;&#160;</a></span>SwitchTo()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4239ae7b5a265e96f03a0351a5290ae">&#9670;&#160;</a></span>SwitchTo() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -385,7 +477,7 @@ template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">Sch
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
-<li>C:/Users/ZhouZishun/Desktop/CtrlZ/CtrlZ/Workers/<a class="el" href="_action_management_worker_8hpp_source.html">ActionManagementWorker.hpp</a></li>
+<li>C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/<a class="el" href="_action_management_worker_8hpp_source.html">ActionManagementWorker.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

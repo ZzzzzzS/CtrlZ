@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Ctrl-Z: C:/Users/ZhouZishun/Desktop/CtrlZ/CtrlZ/Utils/VectorType.hpp 源文件</title>
+<title>Ctrl-Z: C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Utils/VectorType.hpp 源文件</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -101,16 +108,7 @@ $(function(){initNavTree('_vector_type_8hpp_source.html',''); initResizable(true
   <div class="headertitle"><div class="title">VectorType.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file MathTypes.hpp</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @author zishun zhou</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * @brief</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * @date 2025-03-10</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * @copyright Copyright (c) 2025</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> */</span></div>
+<a href="_vector_type_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;array&gt;</span></div>
@@ -119,7 +117,8 @@ $(function(){initNavTree('_vector_type_8hpp_source.html',''); initResizable(true
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> std::array&lt;T, N&gt;&amp; arr) {</div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="_vector_type_8hpp.html#a2c7ad6354fdf518deece60214b2f7be7">   28</a></span>std::ostream&amp; <a class="code hl_function" href="_vector_type_8hpp.html#a2c7ad6354fdf518deece60214b2f7be7">operator&lt;&lt;</a>(std::ostream&amp; os, <span class="keyword">const</span> std::array&lt;T, N&gt;&amp; arr) {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    os &lt;&lt; <span class="stringliteral">&quot;[&quot;</span>;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; N; ++i) {</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        os &lt;&lt; arr[i];</div>
@@ -130,9 +129,11 @@ $(function(){initNavTree('_vector_type_8hpp_source.html',''); initResizable(true
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    os &lt;&lt; <span class="stringliteral">&quot;]\n&quot;</span>;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">return</span> os;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
+</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">template</span>&lt;std::<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> std::array&lt;bool, N&gt;&amp; arr) {</div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="_vector_type_8hpp.html#aa1502400db589dc095279554e2883de7">   49</a></span>std::ostream&amp; <a class="code hl_function" href="_vector_type_8hpp.html#a2c7ad6354fdf518deece60214b2f7be7">operator&lt;&lt;</a>(std::ostream&amp; os, <span class="keyword">const</span> std::array&lt;bool, N&gt;&amp; arr) {</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    os &lt;&lt; <span class="stringliteral">&quot;[&quot;</span>;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; N; ++i) {</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        os &lt;&lt; (arr[i] ? <span class="stringliteral">&quot;true&quot;</span> : <span class="stringliteral">&quot;false&quot;</span>);</div>
@@ -143,6 +144,7 @@ $(function(){initNavTree('_vector_type_8hpp_source.html',''); initResizable(true
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    os &lt;&lt; <span class="stringliteral">&quot;]\n&quot;</span>;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> os;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
+</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">namespace </span>z</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
@@ -1453,6 +1455,7 @@ $(function(){initNavTree('_vector_type_8hpp_source.html',''); initResizable(true
 <div class="line"><a id="l01810" name="l01810"></a><span class="lineno"> 1810</span> </div>
 <div class="line"><a id="l01811" name="l01811"></a><span class="lineno"> 1811</span>    };</div>
 <div class="line"><a id="l01812" name="l01812"></a><span class="lineno"> 1812</span>};</div>
+<div class="ttc" id="a_vector_type_8hpp_html_a2c7ad6354fdf518deece60214b2f7be7"><div class="ttname"><a href="_vector_type_8hpp.html#a2c7ad6354fdf518deece60214b2f7be7">operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const std::array&lt; T, N &gt; &amp;arr)</div><div class="ttdoc">overload operator &lt;&lt; for std::array to print array</div><div class="ttdef"><b>定义</b> VectorType.hpp:28</div></div>
 <div class="ttc" id="aclassz_1_1math_1_1_vector_3_01bool_00_01_n_01_4_html_a06782c6bd6284b63bb722f2c5291c2d1"><div class="ttname"><a href="classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html#a06782c6bd6284b63bb722f2c5291c2d1">z::math::Vector&lt; bool, N &gt;::operator-</a></div><div class="ttdeci">constexpr Vector&lt; bool, N &gt; operator-(bool val) const</div><div class="ttdoc">vector subtraction with value</div><div class="ttdef"><b>定义</b> VectorType.hpp:1378</div></div>
 <div class="ttc" id="aclassz_1_1math_1_1_vector_3_01bool_00_01_n_01_4_html_a0766fafc1e043abb802bdb49c06f0245"><div class="ttname"><a href="classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html#a0766fafc1e043abb802bdb49c06f0245">z::math::Vector&lt; bool, N &gt;::SelfApplyFunc</a></div><div class="ttdeci">std::function&lt; void(bool &amp;, size_t)&gt; SelfApplyFunc</div><div class="ttdoc">apply function to each element of the vector</div><div class="ttdef"><b>定义</b> VectorType.hpp:1751</div></div>
 <div class="ttc" id="aclassz_1_1math_1_1_vector_3_01bool_00_01_n_01_4_html_a08bdc3056355641d9954210a46433a4a"><div class="ttname"><a href="classz_1_1math_1_1_vector_3_01bool_00_01_n_01_4.html#a08bdc3056355641d9954210a46433a4a">z::math::Vector&lt; bool, N &gt;::operator==</a></div><div class="ttdeci">constexpr Vector&lt; bool, N &gt; operator==(const Vector&lt; bool, N &gt; &amp;other) const</div><div class="ttdoc">vector logical operations</div><div class="ttdef"><b>定义</b> VectorType.hpp:1428</div></div>
@@ -1559,14 +1562,14 @@ $(function(){initNavTree('_vector_type_8hpp_source.html',''); initResizable(true
 <div class="ttc" id="aclassz_1_1math_1_1_vector_html_af5dd725c0e068c8e1a001dc8938cb4fc"><div class="ttname"><a href="classz_1_1math_1_1_vector.html#af5dd725c0e068c8e1a001dc8938cb4fc">z::math::Vector::ne</a></div><div class="ttdeci">static constexpr Vector&lt; bool, N &gt; ne(const Vector&lt; T, N &gt; &amp;val1, const Vector&lt; T, N &gt; &amp;val2)</div><div class="ttdoc">Computes element-wise not equal to</div><div class="ttdef"><b>定义</b> VectorType.hpp:329</div></div>
 <div class="ttc" id="aclassz_1_1math_1_1_vector_html_af5ec1e831e3b6f4eb4c7edb252fc8f3f"><div class="ttname"><a href="classz_1_1math_1_1_vector.html#af5ec1e831e3b6f4eb4c7edb252fc8f3f">z::math::Vector::operator&lt;=</a></div><div class="ttdeci">constexpr Vector&lt; bool, N &gt; operator&lt;=(const Vector&lt; T, N &gt; &amp;other) const</div><div class="ttdoc">vector logical operations</div><div class="ttdef"><b>定义</b> VectorType.hpp:757</div></div>
 <div class="ttc" id="aclassz_1_1math_1_1_vector_html_af69c93a5825fc5198a11b2b028df77e9"><div class="ttname"><a href="classz_1_1math_1_1_vector.html#af69c93a5825fc5198a11b2b028df77e9">z::math::Vector::clamp</a></div><div class="ttdeci">static constexpr Vector&lt; T, N &gt; clamp(const Vector&lt; T, N &gt; &amp;val, T min, T max)</div><div class="ttdoc">clamp val to min and max</div><div class="ttdef"><b>定义</b> VectorType.hpp:158</div></div>
-<div class="ttc" id="anamespacez_1_1math_html"><div class="ttname"><a href="namespacez_1_1math.html">z::math</a></div><div class="ttdoc">math namespace, contains some math functions</div><div class="ttdef"><b>定义</b> TensorType.hpp:10</div></div>
+<div class="ttc" id="anamespacez_1_1math_html"><div class="ttname"><a href="namespacez_1_1math.html">z::math</a></div><div class="ttdoc">math namespace, contains some math functions</div><div class="ttdef"><b>定义</b> TensorType.hpp:19</div></div>
 <div class="ttc" id="anamespacez_1_1math_html_a97de6a212f97f3c9ce4cfb986d4806c4"><div class="ttname"><a href="namespacez_1_1math.html#a97de6a212f97f3c9ce4cfb986d4806c4">z::math::cat</a></div><div class="ttdeci">constexpr auto cat(const std::array&lt; T, Ns &gt; &amp;... arrays)</div><div class="ttdoc">concatenate multiple std::array</div><div class="ttdef"><b>定义</b> VectorType.hpp:1785</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_7b6a9de995744179e2af2e4eac8c765a.html">CtrlZ</a></li><li class="navelem"><a class="el" href="dir_0ae636835fa1df8aeaf077e074b22c49.html">Utils</a></li><li class="navelem"><b>VectorType.hpp</b></li>
+    <li class="navelem"><a class="el" href="dir_7b6a9de995744179e2af2e4eac8c765a.html">CtrlZ</a></li><li class="navelem"><a class="el" href="dir_0ae636835fa1df8aeaf077e074b22c49.html">Utils</a></li><li class="navelem"><a class="el" href="_vector_type_8hpp.html">VectorType.hpp</a></li>
     <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

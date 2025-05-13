@@ -1,5 +1,5 @@
-<map id="z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;" name="z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;">
-<area shape="rect" id="Node000001" title="AbstractNetInferenceWorker类型是一切神经网络推理工人类型的基类，该类提供一些基本推理的功能， 用户可以通过继承这个类来实现自己的推理工人类型。" alt="" coords="853,25,1100,67"/>
+<map id="z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;" name="z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;">
+<area shape="rect" id="Node000001" title="AbstractNetInferenceWorker类型是一切神经网络推理工人类型的基类，该类提供一些基本推理的功能， 用户可以通过继承这个类来实现自己的推理工人类型。" alt="" coords="853,17,1054,75"/>
 <area shape="rect" id="Node000002" href="$classz_1_1_abstract_worker.html" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="669,25,804,67"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="819,43,853,43,853,49,819,49"/>
 <area shape="rect" id="Node000003" href="$classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="5,58,88,85"/>

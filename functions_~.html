@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -101,20 +108,19 @@ $(function(){initNavTree('functions_~.html',''); initResizable(true); });
 <div class="textblock">这里列出了所有文档化的类成员，并附带类所属的文件:</div>
 
 <h3><a id="index__7E" name="index__7E"></a>- ~ -</h3><ul>
-<li>~AbstractNetInferenceWorker()&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#a664eb7fce52aef3ed4ba727a25f7482f">z::AbstractNetInferenceWorker&lt; SchedulerType, InferencePrecision &gt;</a></li>
+<li>~AbstractNetInferenceWorker()&#160;:&#160;<a class="el" href="classz_1_1_abstract_net_inference_worker.html#aa33730a740ca66c2760fbded56002bbd">z::AbstractNetInferenceWorker&lt; SchedulerType, NetName, InferencePrecision &gt;</a></li>
 <li>~AbstractScheduler()&#160;:&#160;<a class="el" href="classz_1_1_abstract_scheduler.html#a1ea6d67fd7f132bbfc3bf6ff4bb167d3">z::AbstractScheduler&lt; CTS &gt;</a></li>
 <li>~AbstractWorker()&#160;:&#160;<a class="el" href="classz_1_1_abstract_worker.html#a7afec2a7c09fd2708333201335d881cd">z::AbstractWorker&lt; SchedulerType &gt;</a></li>
 <li>~AsyncLoggerWorker()&#160;:&#160;<a class="el" href="classz_1_1_async_logger_worker.html#ad6e7b4a2bf803ec9cc79948adc1c9574">z::AsyncLoggerWorker&lt; SchedulerType, LogPrecision, Args &gt;</a></li>
-<li>~CommonLocoInferenceWorker()&#160;:&#160;<a class="el" href="classz_1_1_common_loco_inference_worker.html#a3ac57e2f07deedf9f91d16524ac95816">z::CommonLocoInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
 <li>~CTSMap()&#160;:&#160;<a class="el" href="classz_1_1_c_t_s_map.html#ad64cda9c95175e69f31c20ee0b9a7f11">z::CTSMap&lt; CTS &gt;</a></li>
 <li>~DataCenter()&#160;:&#160;<a class="el" href="classz_1_1_data_center.html#a593bd55450036e6d5751fa88ef33a1ec">z::DataCenter&lt; CTS &gt;</a></li>
-<li>~HumanoidGymInferenceWorker()&#160;:&#160;<a class="el" href="classz_1_1_humanoid_gym_inference_worker.html#af60b614a20b9d044b91ced6c0975f92c">z::HumanoidGymInferenceWorker&lt; SchedulerType, InferencePrecision, INPUT_STUCK_LENGTH, JOINT_NUMBER &gt;</a></li>
+<li>~HumanoidGymInferenceWorker()&#160;:&#160;<a class="el" href="classz_1_1_humanoid_gym_inference_worker.html#a65db747c76fd1b41e98820d8842e02a8">z::HumanoidGymInferenceWorker&lt; SchedulerType, NetName, InferencePrecision, INPUT_STUCK_LENGTH, JOINT_NUMBER &gt;</a></li>
 <li>~ImuProcessWorker()&#160;:&#160;<a class="el" href="classz_1_1_imu_process_worker.html#a35e33fe70a80a0b77239a6d3d997324c">z::ImuProcessWorker&lt; SchedulerType, ImuType, ImuPrecision &gt;</a></li>
 <li>~MotorControlWorker()&#160;:&#160;<a class="el" href="classz_1_1_motor_control_worker.html#a0864e6f45639abe1e962d99cf858fba5">z::MotorControlWorker&lt; SchedulerType, JointType, MotorPrecision, JointNumber &gt;</a></li>
-<li>~PlainInferenceWorker()&#160;:&#160;<a class="el" href="classz_1_1_plain_inference_worker.html#aa6aae025e581b2a8ed48722c3aef9225">z::PlainInferenceWorker&lt; SchedulerType, InferencePrecision, JOINT_NUMBER &gt;</a></li>
+<li>~PlainInferenceWorker()&#160;:&#160;<a class="el" href="classz_1_1_plain_inference_worker.html#a39fc67e89641d9b43aa2d6fc317a2d48">z::PlainInferenceWorker&lt; SchedulerType, NetName, InferencePrecision, JOINT_NUMBER &gt;</a></li>
 <li>~SimpleCallbackWorker()&#160;:&#160;<a class="el" href="classz_1_1_simple_callback_worker.html#a9165d34de62a1f2006dfd1e87377d657">z::SimpleCallbackWorker&lt; SchedulerType &gt;</a></li>
 <li>~SinTrajactoryGenerator()&#160;:&#160;<a class="el" href="classz_1_1_sin_trajactory_generator.html#a01430853ce594b0e0c158d670c8786fc">z::SinTrajactoryGenerator&lt; SchedulerType, Scalar, JointNumber &gt;</a></li>
-<li>~UnitreeRlGymInferenceWorker()&#160;:&#160;<a class="el" href="classz_1_1_unitree_rl_gym_inference_worker.html#aa66ff17ccca3d2bf5142375d3235a597">z::UnitreeRlGymInferenceWorker&lt; SchedulerType, InferencePrecision, INPUT_STUCK_LENGTH, JOINT_NUMBER &gt;</a></li>
+<li>~UnitreeRlGymInferenceWorker()&#160;:&#160;<a class="el" href="classz_1_1_unitree_rl_gym_inference_worker.html#a2f5a2618ca5415a41fb9de87d522c7d7">z::UnitreeRlGymInferenceWorker&lt; SchedulerType, NetName, InferencePrecision, INPUT_STUCK_LENGTH, JOINT_NUMBER &gt;</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

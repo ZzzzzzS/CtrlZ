@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -193,8 +200,21 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~AbstractWorker</b
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>, typename JointType, typename MotorPrecision, size_t JointNumber&gt;<br />
 class z::MotorControlWorker&lt; SchedulerType, JointType, MotorPrecision, JointNumber &gt;</div><p>MotorControlWorker类型是一个电机控制类型，用于读取实际电机的位置、速度、电流等数据，并将控制指令写入到电机的控制接口。 </p>
 <p>MotorControlWorker类型是一个电机控制类型，用于读取实际电机的位置、速度、电流等数据，并将控制指令写入到电机的控制接口。 通常来说，用户可以将该类型放在主任务队列中，用于实现电机的控制逻辑。该类型会向数据总线中写入"CurrentMotorPosition", "CurrentMotorVelocity","CurrentMotorTorque"这三个数据，并读取"TargetMotorPosition","TargetMotorVelocity","TargetMotorTorque" 这三个数据并下发给电机，此外还会向数据总线中写入"LimitTargetMotorTorque"数据，以在力矩模式中展示被限制后的目标力矩输出。 用户需要在数据总线中注册这些数据类型，以便于工人类型能够正确的读写数据。用户可以通过配置文件来配置电机的控制模式，限制力矩大小等。</p>
-<p>config.json配置文件示例： { "Workers": { "MotorControl": { //注意这里的ControlMode参数需要和电机的数量相匹配,支持的控制模式有"Torque","Position","Velocity" //若所有电机都是同一种控制模型,可以简写为一个字符串 //"ControlMode":"Torque" "ControlMode": [ "Position", "Position", "Velocity", "Position", "Position", "Velocity" ], "TorqueLimit":[100,100,100,100,100,100], //非力矩模式该字段可以省略 "PosFilterWeight": [0.9,0.1], //位置滤波权重 "VelFilterWeight": [0.9,0.1], //速度滤波权重 "DefaultPosition": [0,0,0,0,0,0] //默认位置，注意这里的默认位置需要和电机的数量相匹配 } } }</p>
-<dl class="tparams"><dt>模板参数</dt><dd>
+<p>config.json配置文件示例： </p><div class="fragment"><div class="line">{</div>
+<div class="line">     &quot;Workers&quot;: {</div>
+<div class="line">         &quot;MotorControl&quot;: {</div>
+<div class="line">             //注意这里的ControlMode参数需要和电机的数量相匹配,支持的控制模式有&quot;Torque&quot;,&quot;Position&quot;,&quot;Velocity&quot;</div>
+<div class="line">             //若所有电机都是同一种控制模型,可以简写为一个字符串</div>
+<div class="line">             //&quot;ControlMode&quot;:&quot;Torque&quot;</div>
+<div class="line">             &quot;ControlMode&quot;: [ &quot;Position&quot;, &quot;Position&quot;, &quot;Velocity&quot;, &quot;Position&quot;, &quot;Position&quot;, &quot;Velocity&quot; ],</div>
+<div class="line">             &quot;TorqueLimit&quot;:[100,100,100,100,100,100], //非力矩模式该字段可以省略</div>
+<div class="line">             &quot;PosFilterWeight&quot;: [0.9,0.1], //位置滤波权重</div>
+<div class="line">             &quot;VelFilterWeight&quot;: [0.9,0.1], //速度滤波权重</div>
+<div class="line">             &quot;DefaultPosition&quot;: [0,0,0,0,0,0] //默认位置，注意这里的默认位置需要和电机的数量相匹配</div>
+<div class="line">         }</div>
+<div class="line">     }</div>
+<div class="line">}</div>
+</div><!-- fragment --><dl class="tparams"><dt>模板参数</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">SchedulerType</td><td>调度器类型 </td></tr>
     <tr><td class="paramname">JointType</td><td>电机类型指针，在这个类型中必须实现GetActualPosition(),GetActualTorque(),GetActualTorque(), SetTargetTorque(),SetTargetPosition(),SetTargetVelocity()方法 </td></tr>
@@ -376,7 +396,7 @@ template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">Sch
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
-<li>C:/Users/ZhouZishun/Desktop/CtrlZ/CtrlZ/Workers/<a class="el" href="_motor_control_worker_8hpp_source.html">MotorControlWorker.hpp</a></li>
+<li>C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Workers/<a class="el" href="_motor_control_worker_8hpp_source.html">MotorControlWorker.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
