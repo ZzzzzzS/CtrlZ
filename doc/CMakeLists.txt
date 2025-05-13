@@ -13,11 +13,12 @@ if (DOXYGEN_FOUND)
     set(DOXYGEN_HTML_EXTRA_STYLESHEET ${CMAKE_CURRENT_SOURCE_DIR}/doxygen-awesome-css-main/doxygen-awesome.css)
     set(DOXYGEN_HAVE_DOT YES)
     set(DOXYGEN_INHERIT_GRAPH NO)
+    set(DOXYGEN_CALL_GRAPH NO)
     set(DOXYGEN_GENERATE_TREEVIEW YES)
     set(DOXYGEN_GENERATE_HTML YES)
     set(DOXYGEN_DISABLE_INDEX NO)
     set(DOXYGEN_MARKDOWN_SUPPORT YES)
-    set(DOXYGEN_USE_MATHJAX = YES)
+    set(DOXYGEN_USE_MATHJAX  YES)
     set(DOXYGEN_OUTPUT_LANGUAGE "Chinese")
     
     if(BUILD_DOC)
@@ -27,7 +28,7 @@ if (DOXYGEN_FOUND)
         ${CMAKE_SOURCE_DIR}/CtrlZ/Utils
         ${CMAKE_SOURCE_DIR}/CtrlZ/Workers
         ${CMAKE_SOURCE_DIR}/example
-        ${CMAKE_CURRENT_SOURCE_DIR}
+        ./BitbotExample.md
         ../README.md
         )
     endif(BUILD_DOC)

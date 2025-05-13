@@ -31,14 +31,17 @@ namespace z
      * 此外用户需要在配置文件中配置Kp和Kd参数。
      *
      * @details config.json配置文件示例：
+     * @code {.json}
      * {
      *   "Workers": {
      *      "MotorPDLoop": {
      *         //注意这里的Kp和Kd参数需要和电机的数量相匹配
      *         "Kp": [40, 40, 40],  //位置控制参数
      *         "Kd": [1.5, 1.5, 1.5]   //速度控制参数
-     *  }
+     *          }
+     *      }
      * }
+     * @endcode
      *
      * @tparam SchedulerType 调度器类型
      * @tparam MotorPrecision 电机数据精度，用户可以通过这个参数来指定电机数据的精度，比如可以指定为float或者double
@@ -122,6 +125,7 @@ namespace z
      * 用户需要在数据总线中注册这些数据类型，以便于工人类型能够正确的读写数据。用户可以通过配置文件来配置电机的控制模式，限制力矩大小等。
      *
      * @details config.json配置文件示例：
+     * @code {.json}
      * {
      *      "Workers": {
      *          "MotorControl": {
@@ -136,6 +140,7 @@ namespace z
      *          }
      *      }
      * }
+     * @endcode
      *
      * @tparam SchedulerType 调度器类型
      * @tparam JointType 电机类型指针，在这个类型中必须实现GetActualPosition(),GetActualTorque(),GetActualTorque(),

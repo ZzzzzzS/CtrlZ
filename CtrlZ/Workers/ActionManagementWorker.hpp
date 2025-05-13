@@ -36,13 +36,15 @@ namespace z
      * 用户可以通过SwitchTo方法来切换到指定的网络输出，用户也可以通过SetActionRemapFunction方法来设置网络输出的重映射函数。
      * 该类型实现了一个默认的重映射函数，默认重映射函数将网络输出的值直接写入数据总线的"TargetMotorPosition"中。
      *
-     * * @details config.json配置文件示例：
+     * @details config.json配置文件示例：
+     * @code {.json}
      * {
      *    "Workers": {
      *       "ActionManagement": {
      *          "SwitchIntervalTime": 1, //默认切换间隔时间 1s
      *       }
      * }
+     * @endcode
      *
      * @tparam SchedulerType 调度器类型
      * @tparam InferencePrecision 推理精度，用户可以通过这个参数来指定推理的精度，比如可以指定为float。
@@ -169,7 +171,7 @@ namespace z
          * @return true 切换成功
          * @return false 切换失败，网络输出的名称未找到。
          */
-        template<CTSPair ActionPair, InferencePrecision SwitchIntervalTime = -1>
+        template<CTSPair ActionPair, InferencePrecision SwitchIntervalTime = static_cast<InferencePrecision>(-1)>
         bool SwitchTo()
         {
             this->block__ = false;

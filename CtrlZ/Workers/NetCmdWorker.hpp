@@ -1,3 +1,13 @@
+/**
+ * @file NetCmdWorker.hpp
+ * @author zishun zhou
+ * @brief 定义了一个神经网络用户命令工人类型
+ * @details 该工人类型可以用于使用键盘或手柄控制机器人运动。该类型会根据配置文档中的配置来设置命令的上下限，离散步长和反向轴等。
+ * @date 2025-05-14
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
 #pragma once
 #include "Workers/AbstractWorker.hpp"
 #include "Schedulers/AbstractScheduler.hpp"
@@ -13,6 +23,7 @@ namespace z
      * @details NetCmdWorker类型是一个神经网络用户命令工人类型，用户可以通过这个工人类型来实现神经网络用户命令的功能。该类型
      * 可以用于使用键盘或手柄控制机器人运动。该类型会根据配置文档中的配置来设置命令的上下限，离散步长和反向轴等。
      * @details config.json配置文件示例：
+     * @code {.json}
      * {
      *    "Workers":{
      *    "Commander": {
@@ -24,6 +35,7 @@ namespace z
      *      }
      *    }
      * }
+     * @endcode
      *
      * @tparam SchedulerType 调度器类型
      * @tparam CmdPrecision 命令精度，用户可以通过这个参数来指定命令的精度，比如可以指定为float或者double
