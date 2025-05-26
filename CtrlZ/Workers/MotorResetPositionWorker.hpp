@@ -27,10 +27,8 @@ namespace z
      * 该类型需要从数据总线中读取"CurrentMotorPosition"这个数据，并将"TargetMotorPosition"这个数据写入到数据总线中。
      * 用户需要在数据总线中注册这些数据类型，以便于工人类型能够正确的读写数据。用户可以通过配置文件来配置复位的目标位置和复位的时间。
      * @details config.json配置文件示例：
+     * @code {.json}
      * {
-     *    "Scheduler": {
-     *       "dt": 0.001 //调度器的时间步长 1ms
-     *    },
      *    "Workers": {
      *        "MotorControl": {
      *           "DefaultPosition": [0, 0, 0, 0, 0, 0] //默认位置
@@ -40,6 +38,8 @@ namespace z
      *      }
      *    }
      * }
+     * @endcode
+     *
      * @tparam SchedulerType 调度器类型
      * @tparam MotorPrecision 电机数据精度，用户可以通过这个参数来指定电机数据的精度，比如可以指定为float或者double
      * @tparam JointNumber 电机数量，用户可以通过这个参数来指定电机的数量

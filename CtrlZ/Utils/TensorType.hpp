@@ -1,3 +1,12 @@
+/**
+ * @file TensorType.hpp
+ * @author zishun zhou
+ * @brief 定义了一些张量类型
+ * @date 2025-05-14
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
 #pragma once
 #include <array>
 #include <memory>

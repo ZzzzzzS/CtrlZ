@@ -1,3 +1,13 @@
+/**
+ * @file SimpleTrajactoryGenerator.hpp
+ * @author zishun zhou
+ * @brief 定义了一个简单的轨迹生成器
+ * @details 该轨迹生成器可以生成简单的正弦波形状的轨迹
+ * @date 2025-05-14
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
 #pragma once
 #include "Workers/AbstractWorker.hpp"
 #include "Utils/MathTypes.hpp"
@@ -11,6 +21,18 @@ namespace z
 
         /**
          * @brief 构造一个产生Sin曲线的工人类型
+         * @details 构造一个产生Sin曲线的工人类型,可用于电机测试等。
+         * @details config.json配置文件示例：
+         * @code {.json}
+         * {
+         *   "Workers":{
+         *       "SinTrajactoryGenerator": {
+         *       "Amplitude": [0.5,0.5,0.5], //幅值,注意与电机数量一致
+         *       "Cycle": 0.5 //周期
+         *       }
+         *   }
+         * }
+         * @endcode
          *
          * @param scheduler 调度器的指针
          * @param cfg 配置文件，用户可以通过配置文件来配置工人的一些参数。

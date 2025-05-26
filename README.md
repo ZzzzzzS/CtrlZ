@@ -20,13 +20,12 @@ else()
 endif()
 ```
 
-> * 若要编译本项目文档还需要安装doxygen和graphviz，文档默认不编译，可在cmake变量中设置``BUILD_DOC``为``ON``来启动编译。
+> * 若要编译本项目文档还需要安装doxygen和graphviz，文档默认不编译，可在cmake变量中设置``BUILD_DOC``为``ON``来启动编译。(普通用户无需编译文档)
 > * 若要编译本项目的Bitbot示例(默认不编译)还需下载一些依赖项，请在完全畅通的网络环境下编译
-> * 若要编译本项目的Airbot示例(默认不编译)，可能需要先手动安装[airbot robotics](https://airbots.online)的相关依赖库
 
 # 简介
 
-CtrlZ是一个针对于强化学习类控制算法部署问题编写的多线程推理框架。框架实现了传感器信息获取，用户指令控制，网络推理，PD跟随，数据记录等功能。支持建立任务队列实现多线程同步计算，还提供了时间戳功能用于数据同步。
+CtrlZ是一个针对于强化学习类控制算法部署问题编写的多线程推理框架。框架实现了传感器信息获取，用户指令控制，网络推理，多网络切换，PD跟随，数据记录等功能。支持建立任务队列实现多线程同步计算，还提供了时间戳功能用于数据同步。
 
 CtrlZ框架主要可以分为``Schedulers``, ``Workers``和``Utils``三个子模块。``Schedulers``模块是调度器，用于实现多线程任务调度功能，``Workers``模块下含各种具体的任务子模块，该模块用于实现下层具体的子功能。用户通过配置``Schedulers``调度器模块调度多个``Workers``模块，组合实现复杂上层任务。``Utils``模块包含了一些常用辅助函数供其余模块开发使用。
 
@@ -50,6 +49,7 @@ AbstractWorker 类型是一切工人类型的基类，在这个类中指定了�
 * **@ref z::MotorResetPositionWorker< SchedulerType, MotorPrecision, JointNumber > "MotorResetPositionWorker:"** 实现了电机复位的功能。
 * **@ref z::AsyncLoggerWorker< SchedulerType, LogPrecision, Args > "AsyncLoggerWorker:"** 实现了数据记录的功能。
 * **@ref z::NetCmdWorker< SchedulerType, CmdPrecision, CmdArgs > "NetCmdWorker":** 实现了处理用户指令输入的功能。
+* **@ref z::ActionManagementWorker< SchedulerType, InferencePrecision, ActionPairs > "ActionManagementWorker":** 实现了多网络切换和网络输出分配的功能。
 
 ### 网络推理Workers功能
 
@@ -69,7 +69,3 @@ AbstractWorker 类型是一切工人类型的基类，在这个类中指定了�
 ## BitbotSimulation
 
 BitbotSimulation示例是使用Bitbot Mujoco结合CtrlZ，在Mujoco仿真器中控制机器人的程序，Bitbot也可用于真实机器人部署，关于更多Bitbot的信息请参阅[Bitbot网站](https://bitbot.lmy.name/)。若要编译该示例，需要在cmake中设置``DBUILD_EXAMPLE_BITBOT_SIM``变量为``ON``. *可能需要稳定的国际互联网连接来正确下载部分依赖项*.
-
-## BitbotAirbotARM
-
-BitbotAirbotArm示例是使用CtrlZ结合Airbot机械臂进行抓取控制的示例，若要编译该示例，需要在cmake中设置``BUILD_EXAMPLE_AIRBOT_ARM``为``ON``. *由于SDK限制，该项目仅能在Ubuntu20.04环境下运行，且需要提前安装Airbot机械臂相关[SDK](https://airbots.online/dowload)*。

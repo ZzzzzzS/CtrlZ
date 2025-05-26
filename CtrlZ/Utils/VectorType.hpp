@@ -1,7 +1,7 @@
-/*
- * @file MathTypes.hpp
+/**
+ * @file VectorType.hpp
  * @author zishun zhou
- * @brief
+ * @brief 定义了一些向量类型
  *
  * @date 2025-03-10
  *

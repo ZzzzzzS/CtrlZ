@@ -32,7 +32,8 @@ namespace z
 	 * 输入节点名称，输出节点名称，线程数等参数。用户可以通过继承这个类来实现自己的推理工人类型，用户必须实现PreProcess，PostProcess，方法
 	 * 分别用来实现推理前的准备工作，推理后的处理工作，将在推理前后(InferenceOnce方法前后)依次调用这两个方法。
 	 *
-	 * details config.json配置文件示例：
+	 * @details config.json配置文件示例：
+	 * @code {.json}
 	 * {
 	 * 		"Workers": {
 	 * 			"NN": {
@@ -49,6 +50,7 @@ namespace z
 	 * 			}
 	 * 		}
 	 * }
+	 * @endcode
 	 *
 	 * @tparam SchedulerType 调度器类型
 	 * @tparam NetName 网络名称，用户可以通过这个参数来指定网络的名称, 这在有多个网络时可以区分数据总线上的不同网络数据
@@ -156,14 +158,38 @@ namespace z
 		}
 
 		/**
+		 * @brief 设置是否启动推理。或是否在未来的某个时间点启动推理。
+		 *
+		 * @param enable 是否启用推理
+		 * @param future_time 在未来的某个时间点启用推理，单位为秒，默认值为0，表示立即启用
+		 */
+		void SetEnable(bool enable, InferencePrecision future_time = 0)
+		{
+			if (this->NextEnable__.load() == enable) [[unlikely]]
+				return;
+
+			this->NextEnable__.store(enable);
+			this->NextActionCycleCnt__.store(this->Scheduler->getTimeStamp() + static_cast<size_t>(future_time / this->Scheduler->getSpinOnceTime()));
+		}
+
+		/**
 		 * @brief 在每次任务队列循环中被调用，用来实现推理的逻辑,默认实现是依次调用PreProcess，InferenceOnce，PostProcess方法
 		 *
 		 */
 		void TaskRun() override
 		{
-			PreProcess();
-			InferenceOnce();
-			PostProcess();
+			if (this->NextActionCycleCnt__.load() < this->Scheduler->getTimeStamp()) [[likely]]
+			{
+				this->Enable__ = this->NextEnable__.load();
+			}
+
+			if (this->Enable__)
+			{
+				PreProcess();
+				InferenceOnce();
+				PostProcess();
+			}
+
 		}
 
 		/**
@@ -261,5 +287,10 @@ namespace z
 
 		/// @brief ONNXRuntime的IoBinding对象，用来绑定输入输出节点，绑定名称和数据
 		Ort::IoBinding IoBinding__;
+
+	private:
+		std::atomic<bool> NextEnable__ = true; //未来是否是允许的状态
+		bool Enable__ = true; //当前是否是允许的状态
+		std::atomic<size_t> NextActionCycleCnt__ = 0; //下一个动作周期计数器
 	};
 };

@@ -37,6 +37,18 @@ namespace z
      * 这个工人类型的优点是可以异步的记录数据，不会阻塞主线程，适用于一些需要记录数据的场景。
      * 比如需要记录一些传感器的数据，或者需要记录一些模型的输出数据。同时，用户可以通过配置文件来配置日志的路径和写入频率。
      * 所有的数据都会被记录到一个csv文件中，用户可以通过这个文件来查看数据。
+     * @details config.json配置文件示例：
+     * @code {.json}
+     * {
+     *   "Workers": {
+     *        "AsyncLogger": {
+     *           "LogPath": "./log/", //日志文件的路径
+     *           "WriteBackFrequency": 1000 //日志的写入频率，单位为ms
+     *             }
+     *        }
+     *  }
+     * @endcode
+     *
      * @tparam SchedulerType 调度器类型
      * @tparam LogPrecision 日志精度，用户可以通过这个参数来指定日志的精度，比如可以指定为float或者double
      * @tparam Args 一个或者多个CTSPair类型的模板参数，用户可以通过这个参数来指定需要记录的数据的名称和类型，

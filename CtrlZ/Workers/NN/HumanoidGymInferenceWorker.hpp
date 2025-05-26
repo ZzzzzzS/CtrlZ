@@ -28,10 +28,8 @@ namespace z
      * HumanoidGym参见[https://github.com/roboterax/humanoid-gym](https://github.com/roboterax/humanoid-gym)
      *
      * @details config.json配置文件示例：
+     * @code {.json}
      * {
-     *  "Scheduler": {
-     *    "dt": 0.001 //调度器的时间步长 1ms
-     *  },
      *  "Workers": {
      *     "NN": {
      *        "NetWork":{
@@ -40,6 +38,7 @@ namespace z
      *     }
      *   }
      * }
+     * @endcode
      *
      * @tparam SchedulerType 调度器类型
      * @tparam NetName 网络名称，用户可以通过这个参数来指定网络的名称, 这在有多个网络时可以区分数据总线上的不同网络数据
