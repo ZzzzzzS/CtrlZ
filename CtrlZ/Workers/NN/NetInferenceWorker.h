@@ -48,7 +48,7 @@ namespace z
         static_assert(std::is_arithmetic<Scalar>::value, "Scalar must be a arithmetic type");
 
 
-
+        //TODO: change to z::math implementation
         Eigen::Matrix3<Scalar> RotMat;
         RotMat = (Eigen::AngleAxis<Scalar>(EularAngle[2], Eigen::Vector3<Scalar>::UnitZ())
             * Eigen::AngleAxis<Scalar>(EularAngle[1], Eigen::Vector3<Scalar>::UnitY())

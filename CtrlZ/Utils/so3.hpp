@@ -29,11 +29,11 @@ namespace z
         template<typename Scalar>
         z::math::Vector<Scalar, 3> cross(const z::math::Vector<Scalar, 3>& a, const z::math::Vector<Scalar, 3>& b)
         {
-            return z::math::Vector<Scalar, 3>{
-                a[1] * b[2] - a[2] * b[1],
-                    a[2] * b[0] - a[0] * b[2],
-                    a[0] * b[1] - a[1] * b[0]
-            };
+            z::math::Vector<Scalar, 3> result;
+            result[0] = a[1] * b[2] - a[2] * b[1];
+            result[1] = a[2] * b[0] - a[0] * b[2];
+            result[2] = a[0] * b[1] - a[1] * b[0];
+            return result;
         }
 
         /**
@@ -105,11 +105,11 @@ namespace z
         template<typename Scalar>
         z::math::Vector<Scalar, 3> quat_rotate(const z::math::Vector<Scalar, 4>& q, const z::math::Vector<Scalar, 3>& v)
         {
-            Scalar q_w = quat[3];
+            Scalar q_w = q[3];
             z::math::Vector<Scalar, 3> q_vec = { q[0], q[1], q[2] };
             z::math::Vector<Scalar, 3> a = v * (2 * q_w * q_w - 1.0);
             z::math::Vector<Scalar, 3> b = cross(q_vec, v) * (2 * q_w);
-            z::math::Vector<Scalar, 3> c = 2.0 * q_vec * (q_vec.dot(v));
+            z::math::Vector<Scalar, 3> c = q_vec * (q_vec.dot(v)) * static_cast<Scalar>(2.0);
             return a + b + c;
         }
 
@@ -122,13 +122,13 @@ namespace z
          * @return z::math::Vector<Scalar, 3> Resulting vector after rotation by the inverse of the quaternion.
          */
         template<typename Scalar>
-        z::math::Vector<Scalar, 3> quat_rotate_inverse(const z::math::Vector<Scalar, 4>& quat, const z::math::Vector<Scalar, 3>& vec)
+        z::math::Vector<Scalar, 3> quat_rotate_inverse(const z::math::Vector<Scalar, 4>& q, const z::math::Vector<Scalar, 3>& v)
         {
-            Scalar q_w = quat[3];
+            Scalar q_w = q[3];
             z::math::Vector<Scalar, 3> q_vec = { q[0], q[1], q[2] };
             z::math::Vector<Scalar, 3> a = v * (2 * q_w * q_w - 1.0);
             z::math::Vector<Scalar, 3> b = cross(q_vec, v) * (2 * q_w);
-            z::math::Vector<Scalar, 3> c = 2.0 * q_vec * (q_vec.dot(v));
+            z::math::Vector<Scalar, 3> c = q_vec * (q_vec.dot(v)) * static_cast<Scalar>(2.0);
             return a - b + c;
         }
 
@@ -155,7 +155,7 @@ namespace z
             qx = cy * sr * cp - sy * cr * sp;
             qy = cy * cr * sp + sy * sr * cp;
             qz = sy * cr * cp - cy * sr * sp;
-            quat = { qx, qy, qz，qw };
+            quat = { qx, qy, qz, qw };
 
             return quat;
         }
