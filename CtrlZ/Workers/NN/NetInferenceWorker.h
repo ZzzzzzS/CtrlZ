@@ -15,8 +15,6 @@
 #include <codecvt>
 #include <iostream>
 #include "Utils/MathTypes.hpp"
-#include <Eigen/Dense>
-#include <Eigen/Core>
 #include <type_traits>
 
  /**
@@ -46,18 +44,9 @@ namespace z
     math::Vector<Scalar, 3> ComputeProjectedGravity(math::Vector<Scalar, 3>& EularAngle, const math::Vector<Scalar, 3>& GravityVector = { 0,0,-1 })
     {
         static_assert(std::is_arithmetic<Scalar>::value, "Scalar must be a arithmetic type");
-
-
-        //TODO: change to z::math implementation
-        Eigen::Matrix3<Scalar> RotMat;
-        RotMat = (Eigen::AngleAxis<Scalar>(EularAngle[2], Eigen::Vector3<Scalar>::UnitZ())
-            * Eigen::AngleAxis<Scalar>(EularAngle[1], Eigen::Vector3<Scalar>::UnitY())
-            * Eigen::AngleAxis<Scalar>(EularAngle[0], Eigen::Vector3<Scalar>::UnitX()));
-        Eigen::Vector3 <Scalar> GravityVec(GravityVector[0], GravityVector[1], GravityVector[2]);
-        Eigen::Vector3 <Scalar> ProjectedGravity = RotMat.transpose() * GravityVec;
-
-        math::Vector<Scalar, 3> ProjectedGravityVec = { ProjectedGravity[0],ProjectedGravity[1],ProjectedGravity[2] };
-        return ProjectedGravityVec;
+        math::Vector<Scalar, 4> quat = math::quat_from_euler_xyz(EularAngle);
+        math::Vector<Scalar, 3> pravity_vec = math::quat_rotate_inverse(quat, GravityVector);
+        return pravity_vec;
     }
 };
 

@@ -14,40 +14,38 @@ include(bitbot.cmake)
 
 
 BitbotAddDependency(
-  NAME           bitbot_mujoco
-  FILE_NAME      "bitbot_mujoco-main.zip"
-  FILE_PATH      ${BITBOT_DEPENDENCY_LOCAL_FILE_PATH}
+  NAME bitbot_mujoco
+  FILE_NAME "bitbot_mujoco-main.zip"
+  FILE_PATH ${BITBOT_DEPENDENCY_LOCAL_FILE_PATH}
   USE_LOCAL_FILE TRUE
 )
 
 BitbotAddDependency(
-  NAME           bitbot_kernel
-  FILE_NAME      "bitbot_kernel-main.zip"
-  FILE_PATH      ${BITBOT_DEPENDENCY_LOCAL_FILE_PATH}
+  NAME bitbot_kernel
+  FILE_NAME "bitbot_kernel-main.zip"
+  FILE_PATH ${BITBOT_DEPENDENCY_LOCAL_FILE_PATH}
   USE_LOCAL_FILE TRUE
 )
 
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 
-find_package(Eigen3 REQUIRED)
-message(STATUS "Eigen version=${Eigen3_VERSION}")
 set(PROJECT_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 add_definitions(-DPROJECT_ROOT_DIR="${PROJECT_ROOT_DIR}")
 message("PROJECT_ROOT_DIR: ${PROJECT_ROOT_DIR}")
 
-add_executable(main_app 
-    main.cpp
-    user_func.h
-    user_func.cpp
-    types.hpp
-    )
+add_executable(main_app
+  main.cpp
+  user_func.h
+  user_func.cpp
+  types.hpp
+)
 
 
 add_definitions(-DMUJOCO_SIM)
 target_link_libraries(main_app BitbotMujoco)
 
 target_link_libraries(main_app
-    CtrlZ
+  CtrlZ
 )
 
 target_compile_options(main_app PUBLIC)

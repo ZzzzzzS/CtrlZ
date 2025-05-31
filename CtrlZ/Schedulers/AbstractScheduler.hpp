@@ -147,12 +147,7 @@ namespace z
                 std::cout << "Scheduler is not started, start scheduler before call spin function!" << std::endl;
                 return;
             }
-            //TODO: solve the problem of calling this function in the main thread
-            /*if (std::this_thread::get_id() != this->threadId)
-            {
-                std::cout << "This function should be called in the main thread!" << std::endl;
-                return;
-            }*/
+
             if (this->CheckFrequency__)
                 this->CheckRuntimeFrequency();
 
@@ -439,8 +434,6 @@ namespace z
         {
             return dataCenter.template GetData<CT, T>(data);
         }
-
-
     protected:
 
         /**

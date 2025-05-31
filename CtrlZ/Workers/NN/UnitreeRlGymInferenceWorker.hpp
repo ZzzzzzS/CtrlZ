@@ -146,7 +146,7 @@ namespace z
 
 
             size_t t = this->Scheduler->getTimeStamp();
-            InferencePrecision phase = this->dt * static_cast<InferencePrecision>(t) / this->cycle_time; // TODO might overflow after a looooong time.
+            InferencePrecision phase = this->dt * static_cast<InferencePrecision>(t) / this->cycle_time;
             InferencePrecision clock_sin = std::sin(phase * 2 * M_PI);
             InferencePrecision clock_cos = std::cos(phase * 2 * M_PI);
             z::math::Vector<InferencePrecision, 2> ClockVector = { clock_sin, clock_cos };

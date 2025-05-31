@@ -10,3 +10,4 @@
 #pragma once
 #include "VectorType.hpp"
 #include "TensorType.hpp"
+#include "so3.hpp"

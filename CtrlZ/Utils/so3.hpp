@@ -181,5 +181,87 @@ namespace z
 
             return z::math::Vector<Scalar, 3>{ roll, pitch, yaw };
         }
+
+
+        /**
+         * @brief Convert a quaternion to an so(3) vector representation.
+         *
+         * @tparam Scalar Type of the scalar (e.g., float, double).
+         * @param quat A quaternion represented as a vector in XYZW format.
+         * @return z::math::Vector<Scalar, 3> so(3) vector representation of the quaternion.
+         */
+        template<typename Scalar>
+        z::math::Vector<Scalar, 3> so3_from_quat(const z::math::Vector<Scalar, 4>& quat)
+        {
+            auto quat = quat_unit(quat);
+            z::math::Vector<Scalar, 3> v = { quat[0], quat[1], quat[2] };
+            Scalar w = quat[3];
+            Scalar theta = 2 * std::acos(w);
+            Scalar sin_theta = std::sin(theta / 2.0);
+            if (std::abs(sin_theta) < 1e-6) {
+                return z::math::Vector<Scalar, 3>{0, 0, 0}; // Return zero vector if sin(theta/2) is too small
+            }
+            return v * (theta / sin_theta);
+        }
+
+        /**
+         * @brief Convert an so(3) vector representation to a quaternion.
+         *
+         * @tparam Scalar Type of the scalar (e.g., float, double).
+         * @param so3 A vector representing the so(3) representation of a rotation.
+         * @return z::math::Vector<Scalar, 4> Quaternion representation of the so(3) vector in XYZW format.
+         */
+        template<typename Scalar>
+        z::math::Vector<Scalar, 4> so3_to_quat(const z::math::Vector<Scalar, 3>& so3)
+        {
+            Scalar theta = so3.length();
+            if (theta < 1e-6) {
+                return z::math::Vector<Scalar, 4>{0, 0, 0, 1}; // Return identity quaternion if norm is too small
+            }
+            Scalar half_theta = theta / 2.0;
+            Scalar sin_half_theta = std::sin(half_theta);
+            return z::math::Vector<Scalar, 4>{ so3[0] * sin_half_theta / theta,
+                so3[1] * sin_half_theta / theta,
+                so3[2] * sin_half_theta / theta,
+                std::cos(half_theta) };
+        }
+
+
+        /**
+         * @brief Perform spherical linear interpolation (SLERP) between two quaternions.
+         *
+         * @tparam Scalar Type of the scalar (e.g., float, double).
+         * @param a quaternion a represented as begin interpolation quaternion in XYZW format.
+         * @param b quaternion b represented as end interpolation quaternion in XYZW format.
+         * @param t interpolation parameter, where t = 0 corresponds to a and t = 1 corresponds to b.
+         * @return z::math::Vector<Scalar, 4>  Interpolated quaternion in XYZW format.
+         */
+        template<typename Scalar>
+        z::math::Vector<Scalar, 4> quat_slerp(const z::math::Vector<Scalar, 4>& a, const z::math::Vector<Scalar, 4>& b, Scalar t)
+        {
+            // Ensure both quaternions are unit quaternions
+            auto a_unit = quat_unit(a);
+            auto b_unit = quat_unit(b);
+
+            // Compute the dot product
+            Scalar dot = a_unit.dot(b_unit);
+
+            // If the dot product is negative, negate one quaternion to take the shortest path
+            if (dot < 0.0) {
+                b_unit = -b_unit;
+                dot = -dot;
+            }
+
+            // Perform spherical linear interpolation
+            Scalar theta = std::acos(dot);
+            Scalar sin_theta = std::sin(theta);
+            if (sin_theta < 1e-6) {
+                // If sin(theta) is too small, return a linear interpolation
+                return a_unit * (1 - t) + b_unit * t;
+            }
+            Scalar a_scale = std::sin((1 - t) * theta) / sin_theta;
+            Scalar b_scale = std::sin(t * theta) / sin_theta;
+            return quat_unit(a_unit * a_scale + b_unit * b_scale);
+        }
     };
 }
