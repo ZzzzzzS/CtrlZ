@@ -72,7 +72,7 @@ namespace z
          * @param ImuInstance IMU传感器实例指针
          * @param root_cfg 配置文件
          */
-        ImuProcessWorker(SchedulerType* scheduler, ImuType ImuInstancePtr, const nlohmann::json& root_cfg = nlohmann::json())
+        ImuProcessWorker(SchedulerType::Ptr scheduler, ImuType ImuInstancePtr, const nlohmann::json& root_cfg = nlohmann::json())
             :AbstractWorker<SchedulerType>(scheduler),
             ImuInstance(ImuInstancePtr)
         {

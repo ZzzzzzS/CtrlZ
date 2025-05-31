@@ -52,7 +52,7 @@ namespace z
          * @param scheduler 调度器的指针
          * @param cfg 配置文件
          */
-        NetCmdWorker(SchedulerType* scheduler, const nlohmann::json& cfg = nlohmann::json())
+        NetCmdWorker(SchedulerType::Ptr scheduler, const nlohmann::json& cfg = nlohmann::json())
             :AbstractWorker<SchedulerType>(scheduler, cfg)
         {
             nlohmann::json local_cfg = cfg;

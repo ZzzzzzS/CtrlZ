@@ -50,6 +50,14 @@ namespace z
         /// @brief 和调度器匹配的工人类型
         using WorkerType = AbstractWorker<AbstractScheduler<CTS...>>;
     public:
+        using Ptr = std::shared_ptr<AbstractScheduler<CTS...>>; ///< 调度器类型的指针类型
+
+        static AbstractScheduler<CTS...>::Ptr Create(const nlohmann::json& cfg = nlohmann::json())
+        {
+            Ptr ptr = std::make_shared<AbstractScheduler<CTS...>>(cfg);
+            ptr->weak_ptr = ptr; // 将自身的shared_ptr转换为weak_ptr，方便后续使用
+            return ptr;
+        }
 
         /**
          * @brief 创建一个调度器
@@ -114,7 +122,12 @@ namespace z
         template<class ptr, typename ...Args>
         ptr* CreateWorker(Args&&... args)
         {
-            ptr* worker = new ptr(this, std::forward<Args>(args)...);
+            if (this->weak_ptr.expired())
+            {
+                std::cerr << "Scheduler weak_ptr expired, cannot create worker!" << std::endl;
+                return nullptr;
+            }
+            ptr* worker = new ptr(this->weak_ptr.lock(), std::forward<Args>(args)...);
             this->ManagedWorkers.push_back(worker);
             return worker;
         }
@@ -565,6 +578,8 @@ namespace z
 
         /// @brief worker list, these workers are created by the scheduler and managed by the scheduler.
         std::vector<WorkerType*> ManagedWorkers;
+
+        std::weak_ptr<AbstractScheduler<CTS...>> weak_ptr; ///< weak pointer to the scheduler, used for worker to access scheduler
 
         /// @brief task list spin once time
         double spin_dt = 0.001; // 1ms

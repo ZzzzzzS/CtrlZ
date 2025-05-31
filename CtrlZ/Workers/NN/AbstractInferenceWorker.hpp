@@ -68,7 +68,7 @@ namespace z
 		 * @param scheduler 调度器的指针
 		 * @param cfg 配置文件
 		 */
-		AbstractNetInferenceWorker(SchedulerType* scheduler, const nlohmann::json& cfg)
+		AbstractNetInferenceWorker(SchedulerType::Ptr scheduler, const nlohmann::json& cfg)
 			:AbstractWorker<SchedulerType>(scheduler, cfg),
 			Session__(nullptr),
 			SessionOptions__(),

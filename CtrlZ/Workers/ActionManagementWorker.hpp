@@ -63,7 +63,7 @@ namespace z
 
     public:
         /// @brief 定义一个函数类型，用于重映射网络输出的函数类型，该函数类型接受一个调度器指针和一个网络输出的值，返回void。
-        using OutPutRemapFunction = std::function<void(SchedulerType*, const z::math::Vector<InferencePrecision, ActionElementSize__>)>;
+        using OutPutRemapFunction = std::function<void(typename SchedulerType::Ptr, const z::math::Vector<InferencePrecision, ActionElementSize__>)>;
 
     public:
         /**
@@ -72,7 +72,7 @@ namespace z
          * @param scheduler 调度器的指针
          * @param worker_cfg 配置文件，用户可以通过配置文件来配置工人的一些参数。
          */
-        ActionManagementWorker(SchedulerType* scheduler, const nlohmann::json& worker_cfg)
+        ActionManagementWorker(SchedulerType::Ptr scheduler, const nlohmann::json& worker_cfg)
             :AbstractWorker<SchedulerType>(scheduler, worker_cfg)
         {
             this->PrintSplitLine();
@@ -198,7 +198,7 @@ namespace z
         }
 
     private:
-        void DefaultActionRemapFunction(SchedulerType* scheduler, const z::math::Vector<InferencePrecision, ActionElementSize__>& data)
+        void DefaultActionRemapFunction(SchedulerType::Ptr scheduler, const z::math::Vector<InferencePrecision, ActionElementSize__>& data)
         {
             scheduler->template SetData<"TargetMotorPosition">(data);
         }

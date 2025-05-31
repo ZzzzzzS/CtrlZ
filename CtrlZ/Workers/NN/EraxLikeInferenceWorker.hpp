@@ -30,7 +30,7 @@ namespace z
         using ValVec3 = math::Vector<InferencePrecision, 3>;
 
     public:
-        EraxLikeInferenceWorker(SchedulerType* scheduler, const nlohmann::json& Net_Config, const nlohmann::json& Motor_Config)
+        EraxLikeInferenceWorker(SchedulerType::Ptr scheduler, const nlohmann::json& Net_Config, const nlohmann::json& Motor_Config)
             :CommonLocoInferenceWorker<SchedulerType, NetName, InferencePrecision, JOINT_NUMBER>(scheduler, Net_Config, Motor_Config),
             GravityVector({ 0.0,0.0,-1.0 }),
             HistoryInputBuffer(INPUT_STUCK_LENGTH)

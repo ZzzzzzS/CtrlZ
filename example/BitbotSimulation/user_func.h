@@ -39,7 +39,7 @@ enum class States : bitbot::StateId
 
 struct UserData
 {
-    SchedulerType* TaskScheduler;
+    SchedulerType::Ptr TaskScheduler;
     ImuWorkerType* ImuWorker;
     MotorWorkerType* MotorWorker;
     MotorPDWorkerType* MotorPDWorker;

@@ -59,7 +59,7 @@ namespace z
          * @param scheduler 调度器的指针
          * @param root_cfg 配置文件
          */
-        MotorPDControlWorker(SchedulerType* scheduler, const nlohmann::json& root_cfg)
+        MotorPDControlWorker(SchedulerType::Ptr scheduler, const nlohmann::json& root_cfg)
             :AbstractWorker<SchedulerType>(scheduler)
         {
             nlohmann::json cfg = root_cfg;
@@ -161,7 +161,7 @@ namespace z
          * @param root_cfg 配置文件
          * @param Joints 电机指针数组
          */
-        MotorControlWorker(SchedulerType* scheduler, const nlohmann::json& root_cfg, const std::array<JointType, JointNumber>& Joints)
+        MotorControlWorker(SchedulerType::Ptr scheduler, const nlohmann::json& root_cfg, const std::array<JointType, JointNumber>& Joints)
             :AbstractWorker<SchedulerType>(scheduler),
             Joints(Joints)
         {

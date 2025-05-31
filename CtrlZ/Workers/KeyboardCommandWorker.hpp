@@ -81,8 +81,8 @@ namespace z
     class KeyboardCommandWorker : public AbstractWorker<SchedulerType>
     {
     public:
-        /// @brief 键盘输入回调函数类型，函数签名为void(SchedulerType*)，包含一个调度器的指针
-        using KeyCallbackType = std::function<void(SchedulerType*)>;
+        /// @brief 键盘输入回调函数类型，函数签名为void(SchedulerType::Ptr)，包含一个调度器的指针
+        using KeyCallbackType = std::function<void(SchedulerType::Ptr)>;
     public:
         /**
          * @brief 构造一个键盘命令工人类型
@@ -90,7 +90,7 @@ namespace z
          * @param scheduler 调度器的指针
          * @param cfg 配置文件
          */
-        KeyboardCommandWorker(SchedulerType* scheduler, const nlohmann::json& cfg = nlohmann::json())
+        KeyboardCommandWorker(SchedulerType::Ptr scheduler, const nlohmann::json& cfg = nlohmann::json())
             :AbstractWorker<SchedulerType>(scheduler, cfg)
         {
             for (size_t i = 0; i < 256; i++)
@@ -103,7 +103,7 @@ namespace z
          * @brief 注册一个键盘输入回调函数
          *
          * @param key 绑定的按键
-         * @param callback 回调函数，函数签名为void(SchedulerType*)
+         * @param callback 回调函数，函数签名为void(SchedulerType::Ptr)
          */
         void RegisterKeyCallback(char key, KeyCallbackType callback)
         {

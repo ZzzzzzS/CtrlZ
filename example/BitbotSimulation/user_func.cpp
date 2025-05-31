@@ -35,7 +35,7 @@ void ConfigFunc(const KernelBus& bus, UserData& d)
     }
 
     //创建调度器
-    d.TaskScheduler = new SchedulerType(cfg_root["Scheduler"]);
+    d.TaskScheduler = SchedulerType::Create(cfg_root["Scheduler"]);
 
     //初始化各个worker
     std::array<DeviceJoint*, 8> joints = {
@@ -88,7 +88,6 @@ void ConfigFunc(const KernelBus& bus, UserData& d)
 
 void FinishFunc(UserData& d)
 {
-    delete d.TaskScheduler; //删除调度器
 }
 
 

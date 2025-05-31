@@ -67,7 +67,7 @@ namespace z
          * @param scheduler 调度器的指针
          * @param root_cfg 配置文件
          */
-        AsyncLoggerWorker(SchedulerType* scheduler, const nlohmann::json& root_cfg)
+        AsyncLoggerWorker(SchedulerType::Ptr scheduler, const nlohmann::json& root_cfg)
             :AbstractWorker<SchedulerType>(scheduler)
         {
             nlohmann::json cfg = root_cfg;

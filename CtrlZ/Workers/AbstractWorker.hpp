@@ -13,6 +13,7 @@
 #include "../Utils/StaticStringUtils.hpp"
 #include <memory>
 #include <nlohmann/json.hpp>
+#include <functional>
 
 namespace z
 {
@@ -40,7 +41,7 @@ namespace z
          * @param scheduler 调度器的指针，可以通过调度器来获得一些全局的数据，比如当前任务的时间戳，前级工人的输出数据等
          * @param cfg 配置文件，用户可以通过配置文件来配置工人的一些参数。
          */
-        AbstractWorker(SchedulerType* scheduler, const nlohmann::json& cfg = nlohmann::json())
+        AbstractWorker(SchedulerType::Ptr scheduler, const nlohmann::json& cfg = nlohmann::json())
         {
             this->Scheduler = scheduler;
         }
@@ -50,7 +51,7 @@ namespace z
          *
          * @param scheduler 调度器指针
          */
-        void setScheduler(SchedulerType* scheduler) { this->scheduler = scheduler; }
+        void setScheduler(SchedulerType::Ptr scheduler) { this->scheduler = scheduler; }
 
         /**
          * @brief 析构函数，虚函数，用于释放资源
@@ -95,7 +96,7 @@ namespace z
          * @brief 调度器的指针，用户可以通过这个指针来获取一些全局的数据，
          * 比如当前任务的时间戳，前级工人的输出数据等，也可以通过这个指针来设置一些全局的数据。
          */
-        SchedulerType* Scheduler = nullptr;
+        SchedulerType::Ptr Scheduler = nullptr;
     };
 
 
@@ -110,8 +111,8 @@ namespace z
     template<typename SchedulerType>
     class SimpleCallbackWorker : public AbstractWorker<SchedulerType>
     {
-        /// @brief 回调函数类型，函数签名为void(SchedulerType*)，包含一个调度器的指针
-        using CallbackType = std::function<void(SchedulerType*)>;
+        /// @brief 回调函数类型，函数签名为void(SchedulerType::Ptr)，包含一个调度器的指针
+        using CallbackType = std::function<void(typename SchedulerType::Ptr)>;
     public:
 
         /**
@@ -121,7 +122,7 @@ namespace z
          * @param func 回调函数，用户可以通过这个回调函数来实现工人的工作逻辑，该函数在TaskRun方法中被调用
          * @param cfg 配置文件，用户可以通过配置文件来配置工人的一些参数。
          */
-        SimpleCallbackWorker(SchedulerType* scheduler, CallbackType func, const nlohmann::json& cfg = nlohmann::json())
+        SimpleCallbackWorker(SchedulerType::Ptr scheduler, CallbackType func, const nlohmann::json& cfg = nlohmann::json())
             :AbstractWorker<SchedulerType>(scheduler), callback__(func), cfg__(cfg) {}
 
         /**

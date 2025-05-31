@@ -77,7 +77,7 @@ namespace z
          * @param scheduler 调度器的指针
          * @param cfg 配置文件
          */
-        CommonLocoInferenceWorker(SchedulerType* scheduler, const nlohmann::json& Net_cfg, const nlohmann::json& Motor_cfg)
+        CommonLocoInferenceWorker(SchedulerType::Ptr scheduler, const nlohmann::json& Net_cfg, const nlohmann::json& Motor_cfg)
             :AbstractNetInferenceWorker<SchedulerType, NetName, InferencePrecision>(scheduler, Net_cfg)
         {
             nlohmann::json PreprocessCfg = Net_cfg["Preprocess"];

@@ -51,7 +51,7 @@ namespace z
          * @param scheduler 调度器的指针
          * @param cfg 配置文件
          */
-        PlainInferenceWorker(SchedulerType* scheduler, const nlohmann::json& Net_cfg, const nlohmann::json& Motor_cfg)
+        PlainInferenceWorker(SchedulerType::Ptr scheduler, const nlohmann::json& Net_cfg, const nlohmann::json& Motor_cfg)
             :CommonLocoInferenceWorker<SchedulerType, NetName, InferencePrecision, JOINT_NUMBER>(scheduler, Net_cfg, Motor_cfg),
             GravityVector({ 0.0,0.0,-1.0 })
         {

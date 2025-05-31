@@ -61,7 +61,7 @@ namespace z
          * @param scheduler 调度器的指针
          * @param cfg 配置文件
          */
-        UnitreeRlGymInferenceWorker(SchedulerType* scheduler, const nlohmann::json& Net_cfg, const nlohmann::json& Motor_cfg)
+        UnitreeRlGymInferenceWorker(SchedulerType::Ptr scheduler, const nlohmann::json& Net_cfg, const nlohmann::json& Motor_cfg)
             :CommonLocoInferenceWorker<SchedulerType, NetName, InferencePrecision, JOINT_NUMBER>(scheduler, Net_cfg, Motor_cfg),
             GravityVector({ 0.0,0.0,-1.0 }),
             HistoryInputBuffer(INPUT_STUCK_LENGTH)

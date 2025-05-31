@@ -56,7 +56,7 @@ namespace z
          * @param scheduler 调度器的指针
          * @param cfg 配置文件
          */
-        MotorResetPositionWorker(SchedulerType* scheduler, const nlohmann::json& Motor_cfg, const nlohmann::json& reset_cfg)
+        MotorResetPositionWorker(SchedulerType::Ptr scheduler, const nlohmann::json& Motor_cfg, const nlohmann::json& reset_cfg)
             :AbstractWorker<SchedulerType>(scheduler),
             enabled(false)
         {

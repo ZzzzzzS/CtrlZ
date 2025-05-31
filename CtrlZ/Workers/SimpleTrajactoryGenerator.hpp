@@ -37,7 +37,7 @@ namespace z
          * @param scheduler 调度器的指针
          * @param cfg 配置文件，用户可以通过配置文件来配置工人的一些参数。
          */
-        SinTrajactoryGenerator(SchedulerType* scheduler, const nlohmann::json& cfg = nlohmann::json())
+        SinTrajactoryGenerator(SchedulerType::Ptr scheduler, const nlohmann::json& cfg = nlohmann::json())
             :z::AbstractWorker<SchedulerType>(scheduler), cfg__(cfg)
         {
             nlohmann::json cfg_sin = cfg__;
@@ -110,7 +110,7 @@ namespace z
     //      * @param scheduler 调度器的指针
     //      * @param cfg 配置文件，用户可以通过配置文件来配置工人的一些参数。
     //      */
-    //     StepTrajactoryGenerator(SchedulerType* scheduler, const nlohmann::json& cfg = nlohmann::json())
+    //     StepTrajactoryGenerator(SchedulerType::Ptr scheduler, const nlohmann::json& cfg = nlohmann::json())
     //         :z::AbstractWorker<SchedulerType>(scheduler), cfg__(cfg)
     //     {
     //         nlohmann::json cfg_step = cfg__["Workers"]["SinTrajactoryGenerator"];
