@@ -48,7 +48,7 @@ struct UserData
     MotorResetWorkerType* MotorResetWorker;
     CmdWorkerType* CommanderWorker;
     ActionManagementWorkerType* ActionManagementWorker;
-    //NOTE: REMEMBER TO DELETE THESE POINTERS IN FinishFunc
+    //NOTE: you don't need to delete these workers, they will be deleted by the scheduler automaticlly when the scheduler is destroyed
 };
 
 using KernelType = bitbot::MujocoKernel<UserData>;

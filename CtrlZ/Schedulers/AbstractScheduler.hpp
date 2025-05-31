@@ -20,6 +20,8 @@
 #include <atomic>
 #include <nlohmann/json.hpp>
 #include <chrono>
+#include <functional>
+#include <memory>
 
 
 namespace z
@@ -89,8 +91,34 @@ namespace z
             {
                 worker->TaskDestroy();
             }
+            for (auto worker : this->ManagedWorkers)
+            {
+                delete worker;
+            }
+
             delete this->MainThreadTaskBlock;
+
+
         }
+
+        /**
+         * @brief 从调度器创建一个Worker
+         *
+         * @details 这个函数用于从调度器中创建一个Worker，并将其添加到调度器的ManagedWorkers列表中。
+         * Worker的生命周期由调度器管理，调度器会在销毁时销毁所有的Worker。用户不需要手动销毁Worker。
+         * @tparam ptr Worker类型的指针类型，通常是一个继承自AbstractWorker的类型。
+         * @tparam Args Worker的构造函数参数类型，可以是任意类型，通常是一些配置参数或者数据。
+         * @param args Worker的构造函数参数，可以是任意类型，通常是一些配置参数或者数据。
+         * @return ptr* 返回创建的Worker指针，用户可以通过这个指针来访问Worker的成员函数和数据。
+         */
+        template<class ptr, typename ...Args>
+        ptr* CreateWorker(Args&&... args)
+        {
+            ptr* worker = new ptr(this, std::forward<Args>(args)...);
+            this->ManagedWorkers.push_back(worker);
+            return worker;
+        }
+
 
         /**
          * @brief 启动调度器
@@ -380,9 +408,21 @@ namespace z
                 return;
             }
             if (TaskName == MainThreadTaskName)
+            {
                 MainThreadTaskBlock->workers.push_back(worker);
+                MainThreadTaskBlock->workerFuncBegins.push_back(std::bind(&WorkerType::TaskCycleBegin, worker));
+                MainThreadTaskBlock->workerFuncRuns.push_back(std::bind(&WorkerType::TaskRun, worker));
+                MainThreadTaskBlock->workerFuncEnds.push_back(std::bind(&WorkerType::TaskCycleEnd, worker));
+            }
+
             else
+            {
                 TaskList[TaskName]->workers.push_back(worker);
+                TaskList[TaskName]->workerFuncBegins.push_back(std::bind(&WorkerType::TaskCycleBegin, worker));
+                TaskList[TaskName]->workerFuncRuns.push_back(std::bind(&WorkerType::TaskRun, worker));
+                TaskList[TaskName]->workerFuncEnds.push_back(std::bind(&WorkerType::TaskCycleEnd, worker));
+            }
+
         }
 
 
@@ -402,9 +442,20 @@ namespace z
             for (auto worker : workers)
             {
                 if (TaskName == MainThreadTaskName)
+                {
                     MainThreadTaskBlock->workers.push_back(worker);
+                    MainThreadTaskBlock->workerFuncBegins.push_back(std::bind(&WorkerType::TaskCycleBegin, worker));
+                    MainThreadTaskBlock->workerFuncRuns.push_back(std::bind(&WorkerType::TaskRun, worker));
+                    MainThreadTaskBlock->workerFuncEnds.push_back(std::bind(&WorkerType::TaskCycleEnd, worker));
+                }
                 else
+                {
                     TaskList[TaskName]->workers.push_back(worker);
+                    TaskList[TaskName]->workerFuncBegins.push_back(std::bind(&WorkerType::TaskCycleBegin, worker));
+                    TaskList[TaskName]->workerFuncRuns.push_back(std::bind(&WorkerType::TaskRun, worker));
+                    TaskList[TaskName]->workerFuncEnds.push_back(std::bind(&WorkerType::TaskCycleEnd, worker));
+                }
+
             }
         }
 
@@ -444,6 +495,11 @@ namespace z
         {
             /// @brief worker list
             std::vector<WorkerType*> workers;
+
+            /// @brief worker functions, used for lambda functions
+            std::vector<std::function<void(void)>> workerFuncBegins;
+            std::vector<std::function<void(void)>> workerFuncRuns;
+            std::vector<std::function<void(void)>> workerFuncEnds;
 
             /// @brief division control of the task
             size_t div;
@@ -507,6 +563,9 @@ namespace z
         /// @brief task list sync lock variable
         std::condition_variable SyncLock;
 
+        /// @brief worker list, these workers are created by the scheduler and managed by the scheduler.
+        std::vector<WorkerType*> ManagedWorkers;
+
         /// @brief task list spin once time
         double spin_dt = 0.001; // 1ms
         double HistorySpinDt = 0;
@@ -522,19 +581,21 @@ namespace z
         void run_once(TCB* tcb)
         {
             //std::cout << "task:" << tcb->TaskName << " is running in cycle" << this->TimeStamp.load() << std::endl;
-            for (auto worker : tcb->workers)
+
+            for (auto& func : tcb->workerFuncBegins)
             {
-                worker->TaskCycleBegin();
+                func();
             }
 
-            for (auto worker : tcb->workers)
+
+            for (auto& func : tcb->workerFuncRuns)
             {
-                worker->TaskRun();
+                func();
             }
 
-            for (auto worker : tcb->workers)
+            for (auto& func : tcb->workerFuncEnds)
             {
-                worker->TaskCycleEnd();
+                func();
             }
 
             tcb->NewRun = false;
