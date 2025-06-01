@@ -142,7 +142,7 @@ $(function(){initNavTree('user__func_8h_source.html',''); initResizable(true); }
 <div class="foldopen" id="foldopen00040" data-start="{" data-end="};">
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="struct_user_data.html">   40</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_user_data.html">UserData</a></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>{</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    SchedulerType* TaskScheduler;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_typedef" href="classz_1_1_abstract_scheduler.html#a09d987fbd682831cede55056d5623487">SchedulerType::Ptr</a> TaskScheduler;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    ImuWorkerType* ImuWorker;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    MotorWorkerType* MotorWorker;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    MotorPDWorkerType* MotorPDWorker;</div>
@@ -151,7 +151,7 @@ $(function(){initNavTree('user__func_8h_source.html',''); initResizable(true); }
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    MotorResetWorkerType* MotorResetWorker;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    CmdWorkerType* CommanderWorker;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    ActionManagementWorkerType* ActionManagementWorker;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">//NOTE: REMEMBER TO DELETE THESE POINTERS IN FinishFunc</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">//NOTE: you don&#39;t need to delete these workers, they will be deleted by the scheduler automaticlly when the scheduler is destroyed</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
 </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
@@ -183,6 +183,7 @@ $(function(){initNavTree('user__func_8h_source.html',''); initResizable(true); }
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="keywordtype">void</span> StateJointInitPose(<span class="keyword">const</span> bitbot::KernelInterface&amp; kernel, bitbot::ExtraData&amp; extra_data, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; user_data);</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keywordtype">void</span> StatePolicyRun(<span class="keyword">const</span> bitbot::KernelInterface&amp; kernel, bitbot::ExtraData&amp; extra_data, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; user_data);</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keywordtype">void</span> StateSystemTest(<span class="keyword">const</span> bitbot::KernelInterface&amp; kernel, bitbot::ExtraData&amp; extra_data, <a class="code hl_struct" href="struct_user_data.html">UserData</a>&amp; user_data);</div>
+<div class="ttc" id="aclassz_1_1_abstract_scheduler_html_a09d987fbd682831cede55056d5623487"><div class="ttname"><a href="classz_1_1_abstract_scheduler.html#a09d987fbd682831cede55056d5623487">z::AbstractScheduler&lt; ImuAccRawPair, ImuGyroRawPair, ImuMagRawPair, LinearVelocityValuePair, ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair, TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair, TargetMotorTorquePair, LimitTargetMotorTorquePair, CurrentMotorVelRawPair, CurrentMotorPosRawPair, NetLastActionPair, NetCommand3Pair, NetProjectedGravityPair, NetScaledActionPair, NetClockVectorPair, InferenceTimePair, Net1OutPair &gt;::Ptr</a></div><div class="ttdeci">std::shared_ptr&lt; AbstractScheduler&lt; CTS... &gt; &gt; Ptr</div><div class="ttdef"><b>定义</b> AbstractScheduler.hpp:53</div></div>
 <div class="ttc" id="astruct_user_data_html"><div class="ttname"><a href="struct_user_data.html">UserData</a></div><div class="ttdef"><b>定义</b> user_func.h:41</div></div>
 <div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div><div class="ttdoc">类型定义</div></div>
 </div><!-- fragment --></div><!-- contents -->

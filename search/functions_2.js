@@ -8,6 +8,8 @@ var searchData=
   ['computeprojectedgravity_5',['ComputeProjectedGravity',['../_net_inference_worker_8h.html#aa311e66cec9aa200b58011b5afa43abc',1,'z']]],
   ['concat_6',['concat',['../_static_string_utils_8hpp.html#ab79c328ddd68339c73459b4c967323c7',1,'z::concat(const CTString&lt; N &gt; &amp;...strs)'],['../_static_string_utils_8hpp.html#a6391946f7e4453376b2b1be362c787f2',1,'z::concat(const CTString&lt; N &gt; &amp;str1, const char(&amp;str2)[M])'],['../_static_string_utils_8hpp.html#a68629358761a45e919bf670bba03caf6',1,'z::concat(const char(&amp;...str)[N])']]],
   ['createtasklist_7',['CreateTaskList',['../classz_1_1_abstract_scheduler.html#a2b65b1d044186e193b1abd62d76d0e1f',1,'z::AbstractScheduler']]],
-  ['ctsarray_8',['CTSArray',['../classz_1_1_c_t_s_array.html#afae0576f206ea9c0799a692c38d34ea4',1,'z::CTSArray']]],
-  ['ctsmap_9',['CTSMap',['../classz_1_1_c_t_s_map.html#aacb973f26ad51715ffcf29b8caaa9673',1,'z::CTSMap']]]
+  ['createworker_8',['CreateWorker',['../classz_1_1_abstract_scheduler.html#a5795982996e13752d42a0b0ffcab0703',1,'z::AbstractScheduler']]],
+  ['cross_9',['cross',['../namespacez_1_1math.html#ac55ff186477e70d2b2c77658a87956fc',1,'z::math']]],
+  ['ctsarray_10',['CTSArray',['../classz_1_1_c_t_s_array.html#afae0576f206ea9c0799a692c38d34ea4',1,'z::CTSArray']]],
+  ['ctsmap_11',['CTSMap',['../classz_1_1_c_t_s_map.html#aacb973f26ad51715ffcf29b8caaa9673',1,'z::CTSMap']]]
 ];

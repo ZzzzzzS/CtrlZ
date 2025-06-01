@@ -1,6 +1,6 @@
 var classz_1_1_abstract_net_inference_worker =
 [
-    [ "AbstractNetInferenceWorker", "classz_1_1_abstract_net_inference_worker.html#ae1eefe547c9b3712972b9db92dadbec1", null ],
+    [ "AbstractNetInferenceWorker", "classz_1_1_abstract_net_inference_worker.html#a34b2305b1be11613b2a5a32ddbc0482b", null ],
     [ "~AbstractNetInferenceWorker", "classz_1_1_abstract_net_inference_worker.html#aa33730a740ca66c2760fbded56002bbd", null ],
     [ "InferenceOnce", "classz_1_1_abstract_net_inference_worker.html#a989f8aa6d25dc60acf6ba280bfa5b3a2", null ],
     [ "PostProcess", "classz_1_1_abstract_net_inference_worker.html#ad20630a7378ed4ceee515877e8da5cf1", null ],

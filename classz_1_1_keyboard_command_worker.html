@@ -134,42 +134,39 @@ z::KeyboardCommandWorker&lt; SchedulerType &gt; 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="classz_1_1_keyboard_command_worker__coll__graph.png" border="0" usemap="#az_1_1_keyboard_command_worker_3_01_scheduler_type_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="az_1_1_keyboard_command_worker_3_01_scheduler_type_01_4_coll__map" id="az_1_1_keyboard_command_worker_3_01_scheduler_type_01_4_coll__map">
-<area shape="rect" title="KeyboardCommandWorker 类型是一个键盘命令工人类型，用户可以通过这个工人类型来实现键盘命令的功能。" alt="" coords="853,25,1045,67"/>
-<area shape="rect" href="classz_1_1_abstract_worker.html" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="669,25,804,67"/>
-<area shape="poly" title=" " alt="" coords="819,43,853,43,853,49,819,49"/>
-<area shape="rect" href="classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="5,58,88,85"/>
-<area shape="poly" title=" " alt="" coords="81,48,107,35,136,25,200,12,254,5,347,5,440,15,560,25,669,35,669,40,559,30,440,20,346,10,254,11,200,17,138,30,109,40,83,53"/>
-<area shape="rect" href="classz_1_1_abstract_scheduler.html" title=" " alt="" coords="137,39,559,242"/>
-<area shape="poly" title=" " alt="" coords="104,82,137,90,136,95,102,87"/>
-<area shape="poly" title=" " alt="" coords="574,83,668,60,670,65,575,88"/>
+<area shape="rect" title="KeyboardCommandWorker 类型是一个键盘命令工人类型，用户可以通过这个工人类型来实现键盘命令的功能。" alt="" coords="5,171,198,213"/>
+<area shape="rect" href="classz_1_1_abstract_worker.html" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="34,80,169,123"/>
+<area shape="poly" title=" " alt="" coords="104,138,104,170,99,170,99,138"/>
+<area shape="rect" href="classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="60,5,143,32"/>
+<area shape="poly" title=" " alt="" coords="104,48,104,80,99,80,99,48"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public 类型</h2></td></tr>
-<tr class="memitem:a8715c2871cff017d34149c74307f0afb" id="r_a8715c2871cff017d34149c74307f0afb"><td class="memItemLeft" align="right" valign="top"><a id="a8715c2871cff017d34149c74307f0afb" name="a8715c2871cff017d34149c74307f0afb"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>KeyCallbackType</b> = std::function&lt;void(<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>*)&gt;</td></tr>
-<tr class="memdesc:a8715c2871cff017d34149c74307f0afb"><td class="mdescLeft">&#160;</td><td class="mdescRight">键盘输入回调函数类型，函数签名为void(SchedulerType*)，包含一个调度器的指针 <br /></td></tr>
-<tr class="separator:a8715c2871cff017d34149c74307f0afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe3a0098089a31ef480354960f37b819" id="r_afe3a0098089a31ef480354960f37b819"><td class="memItemLeft" align="right" valign="top"><a id="afe3a0098089a31ef480354960f37b819" name="afe3a0098089a31ef480354960f37b819"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>KeyCallbackType</b> = std::function&lt;void(<a class="el" href="classz_1_1_abstract_scheduler.html#a09d987fbd682831cede55056d5623487">SchedulerType::Ptr</a>)&gt;</td></tr>
+<tr class="memdesc:afe3a0098089a31ef480354960f37b819"><td class="mdescLeft">&#160;</td><td class="mdescRight">键盘输入回调函数类型，函数签名为void(SchedulerType::Ptr)，包含一个调度器的指针 <br /></td></tr>
+<tr class="separator:afe3a0098089a31ef480354960f37b819"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:ad38ebdb41a15e93e1da826b6d25ce067" id="r_ad38ebdb41a15e93e1da826b6d25ce067"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad38ebdb41a15e93e1da826b6d25ce067">KeyboardCommandWorker</a> (<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *scheduler, const nlohmann::json &amp;cfg=nlohmann::json())</td></tr>
-<tr class="memdesc:ad38ebdb41a15e93e1da826b6d25ce067"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造一个键盘命令工人类型  <br /></td></tr>
-<tr class="separator:ad38ebdb41a15e93e1da826b6d25ce067"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb89b3d4351cbb4a0d59d0f6cf9a271c" id="r_abb89b3d4351cbb4a0d59d0f6cf9a271c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb89b3d4351cbb4a0d59d0f6cf9a271c">RegisterKeyCallback</a> (char key, <a class="el" href="#a8715c2871cff017d34149c74307f0afb">KeyCallbackType</a> callback)</td></tr>
+<tr class="memitem:a31e8bc811a02ae240853740966c18ae6" id="r_a31e8bc811a02ae240853740966c18ae6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31e8bc811a02ae240853740966c18ae6">KeyboardCommandWorker</a> (<a class="el" href="classz_1_1_abstract_scheduler.html#a09d987fbd682831cede55056d5623487">SchedulerType::Ptr</a> scheduler, const nlohmann::json &amp;cfg=nlohmann::json())</td></tr>
+<tr class="memdesc:a31e8bc811a02ae240853740966c18ae6"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造一个键盘命令工人类型  <br /></td></tr>
+<tr class="separator:a31e8bc811a02ae240853740966c18ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb89b3d4351cbb4a0d59d0f6cf9a271c" id="r_abb89b3d4351cbb4a0d59d0f6cf9a271c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb89b3d4351cbb4a0d59d0f6cf9a271c">RegisterKeyCallback</a> (char key, <a class="el" href="#afe3a0098089a31ef480354960f37b819">KeyCallbackType</a> callback)</td></tr>
 <tr class="memdesc:abb89b3d4351cbb4a0d59d0f6cf9a271c"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册一个键盘输入回调函数  <br /></td></tr>
 <tr class="separator:abb89b3d4351cbb4a0d59d0f6cf9a271c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3614a3df08930f42bf2587d0f0c77a8b" id="r_a3614a3df08930f42bf2587d0f0c77a8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3614a3df08930f42bf2587d0f0c77a8b">TaskRun</a> () override</td></tr>
 <tr class="memdesc:a3614a3df08930f42bf2587d0f0c77a8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理键盘输入的工作逻辑  <br /></td></tr>
 <tr class="separator:a3614a3df08930f42bf2587d0f0c77a8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classz_1_1_abstract_worker"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classz_1_1_abstract_worker')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classz_1_1_abstract_worker.html">z::AbstractWorker&lt; SchedulerType &gt;</a></td></tr>
-<tr class="memitem:aacfc5c4056a1b543d20f677aac609bff inherit pub_methods_classz_1_1_abstract_worker" id="r_aacfc5c4056a1b543d20f677aac609bff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_abstract_worker.html#aacfc5c4056a1b543d20f677aac609bff">AbstractWorker</a> (<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *scheduler, const nlohmann::json &amp;cfg=nlohmann::json())</td></tr>
-<tr class="memdesc:aacfc5c4056a1b543d20f677aac609bff inherit pub_methods_classz_1_1_abstract_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造一个抽象工人类型  <br /></td></tr>
-<tr class="separator:aacfc5c4056a1b543d20f677aac609bff inherit pub_methods_classz_1_1_abstract_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30f113136aaacbbb515c80734b7432f4 inherit pub_methods_classz_1_1_abstract_worker" id="r_a30f113136aaacbbb515c80734b7432f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_abstract_worker.html#a30f113136aaacbbb515c80734b7432f4">setScheduler</a> (<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *scheduler)</td></tr>
-<tr class="memdesc:a30f113136aaacbbb515c80734b7432f4 inherit pub_methods_classz_1_1_abstract_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置调度器的指针  <br /></td></tr>
-<tr class="separator:a30f113136aaacbbb515c80734b7432f4 inherit pub_methods_classz_1_1_abstract_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a751b375858650b55a77cb2ac8442538d inherit pub_methods_classz_1_1_abstract_worker" id="r_a751b375858650b55a77cb2ac8442538d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_abstract_worker.html#a751b375858650b55a77cb2ac8442538d">AbstractWorker</a> (<a class="el" href="classz_1_1_abstract_scheduler.html#a09d987fbd682831cede55056d5623487">SchedulerType::Ptr</a> scheduler, const nlohmann::json &amp;cfg=nlohmann::json())</td></tr>
+<tr class="memdesc:a751b375858650b55a77cb2ac8442538d inherit pub_methods_classz_1_1_abstract_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造一个抽象工人类型  <br /></td></tr>
+<tr class="separator:a751b375858650b55a77cb2ac8442538d inherit pub_methods_classz_1_1_abstract_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9e30771d4b9770ffedf8425945ee3d4 inherit pub_methods_classz_1_1_abstract_worker" id="r_af9e30771d4b9770ffedf8425945ee3d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_abstract_worker.html#af9e30771d4b9770ffedf8425945ee3d4">setScheduler</a> (<a class="el" href="classz_1_1_abstract_scheduler.html#a09d987fbd682831cede55056d5623487">SchedulerType::Ptr</a> scheduler)</td></tr>
+<tr class="memdesc:af9e30771d4b9770ffedf8425945ee3d4 inherit pub_methods_classz_1_1_abstract_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置调度器的指针  <br /></td></tr>
+<tr class="separator:af9e30771d4b9770ffedf8425945ee3d4 inherit pub_methods_classz_1_1_abstract_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7afec2a7c09fd2708333201335d881cd inherit pub_methods_classz_1_1_abstract_worker" id="r_a7afec2a7c09fd2708333201335d881cd"><td class="memItemLeft" align="right" valign="top">
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~AbstractWorker</b> ()</td></tr>
 <tr class="memdesc:a7afec2a7c09fd2708333201335d881cd inherit pub_methods_classz_1_1_abstract_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数，虚函数，用于释放资源 <br /></td></tr>
@@ -194,10 +191,10 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~AbstractWorker</b
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 额外继承的成员函数</h2></td></tr>
 <tr class="inherit_header pro_attribs_classz_1_1_abstract_worker"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classz_1_1_abstract_worker')"><img src="closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="classz_1_1_abstract_worker.html">z::AbstractWorker&lt; SchedulerType &gt;</a></td></tr>
-<tr class="memitem:af4842124f95ccfb50ddb0d21a9642cab inherit pro_attribs_classz_1_1_abstract_worker" id="r_af4842124f95ccfb50ddb0d21a9642cab"><td class="memItemLeft" align="right" valign="top">
-<a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>Scheduler</b> = nullptr</td></tr>
-<tr class="memdesc:af4842124f95ccfb50ddb0d21a9642cab inherit pro_attribs_classz_1_1_abstract_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">调度器的指针，用户可以通过这个指针来获取一些全局的数据， 比如当前任务的时间戳，前级工人的输出数据等，也可以通过这个指针来设置一些全局的数据。 <br /></td></tr>
-<tr class="separator:af4842124f95ccfb50ddb0d21a9642cab inherit pro_attribs_classz_1_1_abstract_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83332e23771fd922a827a3ce73fe307c inherit pro_attribs_classz_1_1_abstract_worker" id="r_a83332e23771fd922a827a3ce73fe307c"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="classz_1_1_abstract_scheduler.html#a09d987fbd682831cede55056d5623487">SchedulerType::Ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Scheduler</b> = nullptr</td></tr>
+<tr class="memdesc:a83332e23771fd922a827a3ce73fe307c inherit pro_attribs_classz_1_1_abstract_worker"><td class="mdescLeft">&#160;</td><td class="mdescRight">调度器的指针，用户可以通过这个指针来获取一些全局的数据， 比如当前任务的时间戳，前级工人的输出数据等，也可以通过这个指针来设置一些全局的数据。 <br /></td></tr>
+<tr class="separator:a83332e23771fd922a827a3ce73fe307c inherit pro_attribs_classz_1_1_abstract_worker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a>&gt;<br />
@@ -210,8 +207,8 @@ class z::KeyboardCommandWorker&lt; SchedulerType &gt;</div><p><a class="el" href
   </dd>
 </dl>
 </div><h2 class="groupheader">构造及析构函数说明</h2>
-<a id="ad38ebdb41a15e93e1da826b6d25ce067" name="ad38ebdb41a15e93e1da826b6d25ce067"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad38ebdb41a15e93e1da826b6d25ce067">&#9670;&#160;</a></span>KeyboardCommandWorker()</h2>
+<a id="a31e8bc811a02ae240853740966c18ae6" name="a31e8bc811a02ae240853740966c18ae6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31e8bc811a02ae240853740966c18ae6">&#9670;&#160;</a></span>KeyboardCommandWorker()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -224,7 +221,7 @@ template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">Sch
         <tr>
           <td class="memname"><a class="el" href="classz_1_1_keyboard_command_worker.html">z::KeyboardCommandWorker</a>&lt; <a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> &gt;::KeyboardCommandWorker </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classz_1_1_abstract_scheduler.html">SchedulerType</a> *</td>          <td class="paramname"><span class="paramname"><em>scheduler</em></span>, </td>
+          <td class="paramtype"><a class="el" href="classz_1_1_abstract_scheduler.html#a09d987fbd682831cede55056d5623487">SchedulerType::Ptr</a></td>          <td class="paramname"><span class="paramname"><em>scheduler</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -270,7 +267,7 @@ template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">Sch
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#a8715c2871cff017d34149c74307f0afb">KeyCallbackType</a></td>          <td class="paramname"><span class="paramname"><em>callback</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="#afe3a0098089a31ef480354960f37b819">KeyCallbackType</a></td>          <td class="paramname"><span class="paramname"><em>callback</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -284,7 +281,7 @@ template&lt;typename <a class="el" href="classz_1_1_abstract_scheduler.html">Sch
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
     <tr><td class="paramname">key</td><td>绑定的按键 </td></tr>
-    <tr><td class="paramname">callback</td><td>回调函数，函数签名为void(SchedulerType*) </td></tr>
+    <tr><td class="paramname">callback</td><td>回调函数，函数签名为void(SchedulerType::Ptr) </td></tr>
   </table>
   </dd>
 </dl>

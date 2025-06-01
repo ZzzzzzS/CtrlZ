@@ -1,8 +1,5 @@
 <map id="z::AbstractWorker&lt; SchedulerType &gt;" name="z::AbstractWorker&lt; SchedulerType &gt;">
-<area shape="rect" id="Node000001" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="669,25,804,67"/>
-<area shape="rect" id="Node000002" href="$classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="5,58,88,85"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,48,107,35,136,25,200,12,254,5,347,5,440,15,560,25,669,35,669,40,559,30,440,20,346,10,254,11,200,17,138,30,109,40,83,53"/>
-<area shape="rect" id="Node000003" href="$classz_1_1_abstract_scheduler.html" title=" " alt="" coords="137,39,559,242"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="104,82,137,90,136,95,102,87"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="574,83,668,60,670,65,575,88"/>
+<area shape="rect" id="Node000001" title="AbstractWorker 类型是一切工人类型的基类，在这个类中指定了一些必须要实现的基本方法，这些方法将在调度器的调度流水线下被依次调用 来实现工人的工作逻辑。通过将多个Worker类型的工人注册到..." alt="" coords="5,80,140,123"/>
+<area shape="rect" id="Node000002" href="$classz_1_1_z_object.html" title="ZObject z fundamental object" alt="" coords="31,5,114,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,48,75,80,70,80,70,48"/>
 </map>

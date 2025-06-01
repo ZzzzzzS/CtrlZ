@@ -107,7 +107,9 @@ $(function(){initNavTree('classz_1_1_abstract_scheduler.html',''); initResizable
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">类</a> &#124;
+<a href="#pub-types">Public 类型</a> &#124;
 <a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
 <a href="#pro-methods">Protected 成员函数</a> &#124;
 <a href="#pro-attribs">Protected 属性</a> &#124;
 <a href="classz_1_1_abstract_scheduler-members.html">所有成员列表</a>  </div>
@@ -150,6 +152,13 @@ z::AbstractScheduler&lt; CTS &gt; 的协作图:</div>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task Control Block  <a href="structz_1_1_abstract_scheduler_1_1_t_c_b.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a09d987fbd682831cede55056d5623487" id="r_a09d987fbd682831cede55056d5623487"><td class="memItemLeft" align="right" valign="top"><a id="a09d987fbd682831cede55056d5623487" name="a09d987fbd682831cede55056d5623487"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>Ptr</b> = std::shared_ptr&lt;<a class="el" href="classz_1_1_abstract_scheduler.html">AbstractScheduler</a>&lt;CTS...&gt;&gt;</td></tr>
+<tr class="memdesc:a09d987fbd682831cede55056d5623487"><td class="mdescLeft">&#160;</td><td class="mdescRight">调度器类型的指针类型 <br /></td></tr>
+<tr class="separator:a09d987fbd682831cede55056d5623487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
 <tr class="memitem:a5e6a4c370a9a4d57a053772647f3906d" id="r_a5e6a4c370a9a4d57a053772647f3906d"><td class="memItemLeft" align="right" valign="top"><a id="a5e6a4c370a9a4d57a053772647f3906d" name="a5e6a4c370a9a4d57a053772647f3906d"></a>
@@ -159,6 +168,10 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a1ea6d67fd7f132bbfc3bf6ff4bb167d3" id="r_a1ea6d67fd7f132bbfc3bf6ff4bb167d3"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ea6d67fd7f132bbfc3bf6ff4bb167d3">~AbstractScheduler</a> ()</td></tr>
 <tr class="memdesc:a1ea6d67fd7f132bbfc3bf6ff4bb167d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">销毁调度器  <br /></td></tr>
 <tr class="separator:a1ea6d67fd7f132bbfc3bf6ff4bb167d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5795982996e13752d42a0b0ffcab0703" id="r_a5795982996e13752d42a0b0ffcab0703"><td class="memTemplParams" colspan="2">template&lt;class ptr, typename ... Args&gt; </td></tr>
+<tr class="memitem:a5795982996e13752d42a0b0ffcab0703"><td class="memTemplItemLeft" align="right" valign="top">ptr *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5795982996e13752d42a0b0ffcab0703">CreateWorker</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a5795982996e13752d42a0b0ffcab0703"><td class="mdescLeft">&#160;</td><td class="mdescRight">从调度器创建一个Worker  <br /></td></tr>
+<tr class="separator:a5795982996e13752d42a0b0ffcab0703"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e23309ab7b1a5fbeb568379aba0cf69" id="r_a9e23309ab7b1a5fbeb568379aba0cf69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e23309ab7b1a5fbeb568379aba0cf69">Start</a> ()</td></tr>
 <tr class="memdesc:a9e23309ab7b1a5fbeb568379aba0cf69"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动调度器  <br /></td></tr>
 <tr class="separator:a9e23309ab7b1a5fbeb568379aba0cf69"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,6 +223,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Spin</b> ()</td></tr>
 <tr class="memitem:a20fc044ee664a6b01d500d536e63a1ed inherit pub_methods_classz_1_1_z_object" id="r_a20fc044ee664a6b01d500d536e63a1ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz_1_1_z_object.html#a20fc044ee664a6b01d500d536e63a1ed">PrintSplitLine</a> (size_t length=60, char c='-')</td></tr>
 <tr class="memdesc:a20fc044ee664a6b01d500d536e63a1ed inherit pub_methods_classz_1_1_z_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">print a split line, default length is 60 and character is '-'  <br /></td></tr>
 <tr class="separator:a20fc044ee664a6b01d500d536e63a1ed inherit pub_methods_classz_1_1_z_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a8501e40d49cb53956c42137589742ee6" id="r_a8501e40d49cb53956c42137589742ee6"><td class="memItemLeft" align="right" valign="top"><a id="a8501e40d49cb53956c42137589742ee6" name="a8501e40d49cb53956c42137589742ee6"></a>
+static <a class="el" href="classz_1_1_abstract_scheduler.html">AbstractScheduler</a>&lt; CTS... &gt;<a class="el" href="#a09d987fbd682831cede55056d5623487">::Ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Create</b> (const nlohmann::json &amp;cfg=nlohmann::json())</td></tr>
+<tr class="separator:a8501e40d49cb53956c42137589742ee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected 成员函数</h2></td></tr>
@@ -263,6 +282,14 @@ std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>SyncMutex</b></
 std::condition_variable&#160;</td><td class="memItemRight" valign="bottom"><b>SyncLock</b></td></tr>
 <tr class="memdesc:ab9f7e63da117efa52cdcc7bc0b458186"><td class="mdescLeft">&#160;</td><td class="mdescRight">task list sync lock variable <br /></td></tr>
 <tr class="separator:ab9f7e63da117efa52cdcc7bc0b458186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af74bfef8434281895d1eb24a690f80fc" id="r_af74bfef8434281895d1eb24a690f80fc"><td class="memItemLeft" align="right" valign="top"><a id="af74bfef8434281895d1eb24a690f80fc" name="af74bfef8434281895d1eb24a690f80fc"></a>
+std::vector&lt; <a class="el" href="classz_1_1_abstract_worker.html">WorkerType</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ManagedWorkers</b></td></tr>
+<tr class="memdesc:af74bfef8434281895d1eb24a690f80fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">worker list, these workers are created by the scheduler and managed by the scheduler. <br /></td></tr>
+<tr class="separator:af74bfef8434281895d1eb24a690f80fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af796f9cf7efdd485adc40ec3d38091fb" id="r_af796f9cf7efdd485adc40ec3d38091fb"><td class="memItemLeft" align="right" valign="top"><a id="af796f9cf7efdd485adc40ec3d38091fb" name="af796f9cf7efdd485adc40ec3d38091fb"></a>
+std::weak_ptr&lt; <a class="el" href="classz_1_1_abstract_scheduler.html">AbstractScheduler</a>&lt; CTS... &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>weak_ptr</b></td></tr>
+<tr class="memdesc:af796f9cf7efdd485adc40ec3d38091fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">weak pointer to the scheduler, used for worker to access scheduler <br /></td></tr>
+<tr class="separator:af796f9cf7efdd485adc40ec3d38091fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb563d1f04780de1de38a5dd721c3a20" id="r_aeb563d1f04780de1de38a5dd721c3a20"><td class="memItemLeft" align="right" valign="top"><a id="aeb563d1f04780de1de38a5dd721c3a20" name="aeb563d1f04780de1de38a5dd721c3a20"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>spin_dt</b> = 0.001</td></tr>
 <tr class="memdesc:aeb563d1f04780de1de38a5dd721c3a20"><td class="mdescLeft">&#160;</td><td class="mdescRight">task list spin once time <br /></td></tr>
@@ -443,6 +470,51 @@ template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... CTS
   </dd>
 </dl>
 <dl class="section return"><dt>返回</dt><dd>size_t 任务ID </dd></dl>
+
+</div>
+</div>
+<a id="a5795982996e13752d42a0b0ffcab0703" name="a5795982996e13752d42a0b0ffcab0703"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5795982996e13752d42a0b0ffcab0703">&#9670;&#160;</a></span>CreateWorker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structz_1_1_c_t_s_pair.html">CTSPair</a> ... CTS&gt; </div>
+<div class="memtemplate">
+template&lt;class ptr, typename ... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ptr * <a class="el" href="classz_1_1_abstract_scheduler.html">z::AbstractScheduler</a>&lt; CTS &gt;::CreateWorker </td>
+          <td>(</td>
+          <td class="paramtype">Args &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>从调度器创建一个Worker </p>
+<p>这个函数用于从调度器中创建一个Worker，并将其添加到调度器的ManagedWorkers列表中。 Worker的生命周期由调度器管理，调度器会在销毁时销毁所有的Worker。用户不需要手动销毁Worker。 </p><dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">ptr</td><td>Worker类型的指针类型，通常是一个继承自AbstractWorker的类型。 </td></tr>
+    <tr><td class="paramname">Args</td><td>Worker的构造函数参数类型，可以是任意类型，通常是一些配置参数或者数据。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Worker的构造函数参数，可以是任意类型，通常是一些配置参数或者数据。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ptr* 返回创建的Worker指针，用户可以通过这个指针来访问Worker的成员函数和数据。 </dd></dl>
 
 </div>
 </div>

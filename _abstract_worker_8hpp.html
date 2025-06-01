@@ -114,55 +114,63 @@ $(function(){initNavTree('_abstract_worker_8hpp.html',''); initResizable(true); 
 <code>#include &quot;<a class="el" href="_static_string_utils_8hpp_source.html">../Utils/StaticStringUtils.hpp</a>&quot;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;nlohmann/json.hpp&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 AbstractWorker.hpp 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="_abstract_worker_8hpp__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_abstract_worker_8hpp" alt=""/></div>
 <map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_abstract_worker_8hpp" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_workers_2_abstract_worker_8hpp">
-<area shape="rect" title=" " alt="" coords="750,5,911,80"/>
-<area shape="rect" href="_z_object_8hpp.html" title=" " alt="" coords="843,277,978,304"/>
-<area shape="poly" title=" " alt="" coords="845,79,904,262,899,264,840,81"/>
-<area shape="rect" href="_static_string_utils_8hpp.html" title=" " alt="" coords="336,128,520,155"/>
-<area shape="poly" title=" " alt="" coords="750,66,496,127,494,121,749,61"/>
-<area shape="rect" title=" " alt="" coords="598,352,666,379"/>
-<area shape="poly" title=" " alt="" coords="814,82,776,152,730,231,653,341,648,338,725,228,772,149,809,79"/>
-<area shape="rect" title=" " alt="" coords="893,128,1024,155"/>
-<area shape="poly" title=" " alt="" coords="881,78,931,116,928,121,877,83"/>
-<area shape="rect" title=" " alt="" coords="737,427,809,453"/>
-<area shape="poly" title=" " alt="" coords="901,306,797,417,793,413,897,303"/>
-<area shape="poly" title=" " alt="" coords="521,147,643,166,695,181,715,190,730,201,748,224,762,251,778,309,782,366,779,411,774,411,776,366,772,310,757,253,744,227,726,205,712,195,693,186,642,171,520,153"/>
-<area shape="rect" title=" " alt="" coords="290,203,344,229"/>
-<area shape="poly" title=" " alt="" coords="410,157,350,196,347,192,407,153"/>
-<area shape="rect" title=" " alt="" coords="381,427,432,453"/>
-<area shape="poly" title=" " alt="" coords="420,156,368,236,338,292,317,353,314,366,317,377,339,403,369,422,366,426,336,407,312,380,308,366,312,351,334,290,363,233,416,153"/>
-<area shape="rect" title=" " alt="" coords="638,427,713,453"/>
-<area shape="poly" title=" " alt="" coords="458,153,511,180,575,223,607,249,637,280,662,314,681,351,687,382,685,412,679,411,681,382,676,353,657,316,633,283,604,253,572,227,508,185,455,157"/>
-<area shape="rect" title=" " alt="" coords="667,203,716,229"/>
-<area shape="poly" title=" " alt="" coords="474,153,653,201,652,206,473,158"/>
-<area shape="rect" title=" " alt="" coords="5,203,93,229"/>
-<area shape="poly" title=" " alt="" coords="358,158,109,205,108,199,357,153"/>
-<area shape="rect" title=" " alt="" coords="117,203,200,229"/>
-<area shape="poly" title=" " alt="" coords="381,158,215,202,214,197,380,153"/>
-<area shape="rect" title=" " alt="" coords="224,203,266,229"/>
-<area shape="poly" title=" " alt="" coords="397,158,282,203,280,198,395,153"/>
-<area shape="rect" href="_math_types_8hpp.html" title="定义了一些数学类型，包括向量和张量类型" alt="" coords="418,203,528,229"/>
-<area shape="poly" title=" " alt="" coords="438,154,459,188,455,191,433,157"/>
-<area shape="rect" href="_vector_type_8hpp.html" title="定义了一些向量类型" alt="" coords="463,352,574,379"/>
-<area shape="poly" title=" " alt="" coords="480,229,496,277,513,336,508,338,490,278,475,231"/>
-<area shape="rect" href="_tensor_type_8hpp.html" title="定义了一些张量类型" alt="" coords="368,277,482,304"/>
-<area shape="poly" title=" " alt="" coords="467,231,444,266,439,263,462,228"/>
-<area shape="poly" title=" " alt="" coords="563,377,723,422,722,427,562,382"/>
-<area shape="poly" title=" " alt="" coords="500,381,440,420,437,416,497,377"/>
-<area shape="poly" title=" " alt="" coords="547,377,635,417,633,422,545,382"/>
-<area shape="rect" title=" " alt="" coords="558,427,615,453"/>
-<area shape="poly" title=" " alt="" coords="532,377,566,413,562,417,528,381"/>
-<area shape="rect" title=" " alt="" coords="456,427,533,453"/>
-<area shape="poly" title=" " alt="" coords="517,380,506,413,501,411,512,378"/>
-<area shape="poly" title=" " alt="" coords="426,305,412,411,407,411,421,304"/>
-<area shape="poly" title=" " alt="" coords="443,302,492,340,489,345,440,307"/>
-<area shape="poly" title=" " alt="" coords="462,302,584,345,582,350,460,307"/>
-<area shape="rect" title=" " alt="" coords="327,352,387,379"/>
-<area shape="poly" title=" " alt="" coords="415,306,381,342,377,339,411,303"/>
+<area shape="rect" title=" " alt="" coords="819,5,980,80"/>
+<area shape="rect" href="_z_object_8hpp.html" title=" " alt="" coords="5,277,141,304"/>
+<area shape="poly" title=" " alt="" coords="819,48,686,57,605,67,517,82,426,102,334,129,245,163,161,205,123,234,93,267,89,263,119,231,158,200,243,158,332,124,424,97,516,77,604,62,686,52,819,43"/>
+<area shape="rect" href="_static_string_utils_8hpp.html" title=" " alt="" coords="444,128,628,155"/>
+<area shape="poly" title=" " alt="" coords="819,68,599,126,597,121,818,63"/>
+<area shape="rect" title=" " alt="" coords="790,501,868,528"/>
+<area shape="poly" title=" " alt="" coords="920,79,942,142,950,178,953,215,953,367,951,388,944,407,922,443,893,472,864,495,861,491,890,468,918,439,939,405,945,386,948,367,948,215,945,179,937,143,915,81"/>
+<area shape="rect" title=" " alt="" coords="743,427,811,453"/>
+<area shape="poly" title=" " alt="" coords="902,81,902,215,902,292,900,313,893,333,871,368,842,398,813,420,809,416,838,394,867,365,888,331,895,312,897,292,897,215,897,81"/>
+<area shape="rect" title=" " alt="" coords="988,128,1118,155"/>
+<area shape="poly" title=" " alt="" coords="959,78,1022,117,1019,122,957,83"/>
+<area shape="rect" title=" " alt="" coords="177,501,249,528"/>
+<area shape="poly" title=" " alt="" coords="81,303,112,368,162,452,192,488,188,492,157,455,108,371,76,305"/>
+<area shape="poly" title=" " alt="" coords="443,145,358,154,314,164,272,177,236,196,207,221,188,251,181,290,181,367,183,399,189,431,205,486,200,487,184,432,178,400,176,367,176,289,183,249,203,217,233,192,270,173,312,159,357,149,443,140"/>
+<area shape="rect" title=" " alt="" coords="758,203,812,229"/>
+<area shape="poly" title=" " alt="" coords="582,153,744,199,743,204,580,158"/>
+<area shape="rect" title=" " alt="" coords="596,501,646,528"/>
+<area shape="poly" title=" " alt="" coords="629,149,743,168,793,183,825,201,842,221,850,241,852,289,852,367,850,415,842,435,826,455,788,483,744,500,700,511,662,515,661,510,700,505,743,495,785,478,822,451,837,432,844,414,846,367,846,289,845,242,838,223,822,205,791,187,742,173,628,154"/>
+<area shape="rect" title=" " alt="" coords="288,501,362,528"/>
+<area shape="poly" title=" " alt="" coords="443,153,387,160,331,171,285,186,268,195,256,204,237,238,230,276,233,316,242,356,257,395,275,431,309,487,305,490,270,434,252,397,237,358,227,317,225,276,232,237,252,201,265,190,283,181,330,166,386,155,443,147"/>
+<area shape="rect" title=" " alt="" coords="267,203,316,229"/>
+<area shape="poly" title=" " alt="" coords="491,158,332,204,330,199,489,153"/>
+<area shape="rect" title=" " alt="" coords="340,203,427,229"/>
+<area shape="poly" title=" " alt="" coords="510,158,425,198,423,193,508,153"/>
+<area shape="rect" title=" " alt="" coords="452,203,534,229"/>
+<area shape="poly" title=" " alt="" coords="531,157,510,191,506,188,526,154"/>
+<area shape="rect" title=" " alt="" coords="558,203,601,229"/>
+<area shape="poly" title=" " alt="" coords="546,154,566,188,562,191,541,157"/>
+<area shape="rect" href="_math_types_8hpp.html" title="定义了一些数学类型，包括向量和张量类型" alt="" coords="624,203,735,229"/>
+<area shape="poly" title=" " alt="" coords="562,153,642,193,640,198,560,158"/>
+<area shape="rect" href="_vector_type_8hpp.html" title="定义了一些向量类型" alt="" coords="472,427,583,453"/>
+<area shape="poly" title=" " alt="" coords="673,231,547,416,542,412,669,228"/>
+<area shape="rect" href="_tensor_type_8hpp.html" title="定义了一些张量类型" alt="" coords="623,352,736,379"/>
+<area shape="poly" title=" " alt="" coords="682,230,682,336,677,336,677,230"/>
+<area shape="rect" href="so3_8hpp.html" title="this file defines the SO3 class, which represents the special orthogonal group in 3D space." alt="" coords="481,277,548,304"/>
+<area shape="poly" title=" " alt="" coords="652,232,558,273,556,268,650,227"/>
+<area shape="poly" title=" " alt="" coords="473,457,264,504,263,499,472,451"/>
+<area shape="poly" title=" " alt="" coords="546,452,595,490,591,494,542,456"/>
+<area shape="poly" title=" " alt="" coords="493,456,376,498,374,493,491,451"/>
+<area shape="rect" title=" " alt="" coords="452,501,510,528"/>
+<area shape="poly" title=" " alt="" coords="522,455,499,490,495,487,517,452"/>
+<area shape="poly" title=" " alt="" coords="581,451,776,498,774,503,580,457"/>
+<area shape="poly" title=" " alt="" coords="674,380,649,428,630,487,625,485,644,426,669,378"/>
+<area shape="poly" title=" " alt="" coords="654,382,569,422,567,417,652,377"/>
+<area shape="poly" title=" " alt="" coords="698,377,750,415,747,420,695,381"/>
+<area shape="rect" title=" " alt="" coords="659,427,719,453"/>
+<area shape="poly" title=" " alt="" coords="684,379,688,411,683,412,679,380"/>
+<area shape="poly" title=" " alt="" coords="499,307,244,494,241,490,496,302"/>
+<area shape="poly" title=" " alt="" coords="518,304,528,411,523,411,513,305"/>
+<area shape="poly" title=" " alt="" coords="510,306,485,358,472,392,462,427,463,458,471,486,466,488,457,459,457,426,467,390,480,355,505,303"/>
+<area shape="poly" title=" " alt="" coords="544,302,638,343,636,348,542,307"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">

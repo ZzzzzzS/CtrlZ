@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['imuprocessworker_0',['ImuProcessWorker',['../classz_1_1_imu_process_worker.html',1,'z::ImuProcessWorker&lt; SchedulerType, ImuType, ImuPrecision &gt;'],['../classz_1_1_imu_process_worker.html#aec094c042defe5615f82fcaafe8b32c2',1,'z::ImuProcessWorker::ImuProcessWorker()']]],
+  ['imuprocessworker_0',['ImuProcessWorker',['../classz_1_1_imu_process_worker.html',1,'z::ImuProcessWorker&lt; SchedulerType, ImuType, ImuPrecision &gt;'],['../classz_1_1_imu_process_worker.html#a61cc659231cb030637ad84622cf84559',1,'z::ImuProcessWorker::ImuProcessWorker()']]],
   ['imuprocessworker_2ehpp_1',['ImuProcessWorker.hpp',['../_imu_process_worker_8hpp.html',1,'']]],
   ['imuprocessworker_3c_20schedulertype_2c_20deviceimu_20_2a_2c_20realnumber_20_3e_2',['ImuProcessWorker&lt; SchedulerType, DeviceImu *, RealNumber &gt;',['../classz_1_1_imu_process_worker.html',1,'z']]],
   ['increasecmd_3',['IncreaseCmd',['../classz_1_1_net_cmd_worker.html#a85706741d4f6d3555de1db457ef62ce2',1,'z::NetCmdWorker']]],

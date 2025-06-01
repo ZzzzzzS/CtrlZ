@@ -1,23 +1,29 @@
 <map id="C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Utils/MathTypes.hpp" name="C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Utils/MathTypes.hpp">
-<area shape="rect" id="Node000001" title="定义了一些数学类型，包括向量和张量类型" alt="" coords="147,5,359,64"/>
-<area shape="rect" id="Node000002" href="$_vector_type_8hpp.html" title="定义了一些向量类型" alt="" coords="141,187,253,213"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="246,65,209,173,204,171,241,63"/>
-<area shape="rect" id="Node000008" href="$_tensor_type_8hpp.html" title="定义了一些张量类型" alt="" coords="254,112,367,139"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="274,63,296,97,292,100,269,66"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,261,77,288"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="171,216,83,257,81,252,169,211"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="421,261,472,288"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="241,211,407,259,406,264,240,216"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="100,261,158,288"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="187,216,153,252,149,248,183,212"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="181,261,256,288"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="203,213,213,246,208,247,198,215"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="280,261,357,288"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="219,212,285,251,283,255,217,216"/>
-<area shape="poly" id="edge11_Node000008_Node000002" title=" " alt="" coords="292,141,231,180,228,176,289,137"/>
-<area shape="poly" id="edge8_Node000008_Node000004" title=" " alt="" coords="369,136,409,154,428,168,443,185,450,200,454,216,454,246,449,246,449,216,445,201,439,188,424,172,407,159,366,141"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="276,187,344,213"/>
-<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="313,139,313,171,308,171,308,139"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="368,187,428,213"/>
-<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="327,137,373,175,370,179,324,141"/>
+<area shape="rect" id="Node000001" title="定义了一些数学类型，包括向量和张量类型" alt="" coords="179,5,390,64"/>
+<area shape="rect" id="Node000002" href="$_vector_type_8hpp.html" title="定义了一些向量类型" alt="" coords="233,261,344,288"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="288,65,291,246,286,246,283,65"/>
+<area shape="rect" id="Node000008" href="$_tensor_type_8hpp.html" title="定义了一些张量类型" alt="" coords="134,187,247,213"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="271,66,207,174,203,172,266,63"/>
+<area shape="rect" id="Node000011" href="$so3_8hpp.html" title="this file defines the SO3 class, which represents the special orthogonal group in 3D space." alt="" coords="322,112,389,139"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="310,63,338,98,334,101,306,66"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="434,336,506,363"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="321,286,425,327,423,332,319,291"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="80,336,130,363"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="258,291,145,335,144,330,256,286"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="354,336,411,363"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="307,286,356,324,353,329,303,291"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="256,336,330,363"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="292,288,294,320,289,321,287,289"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="154,336,232,363"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="274,291,223,329,220,324,271,286"/>
+<area shape="poly" id="edge11_Node000008_Node000002" title=" " alt="" coords="209,212,261,250,258,254,206,216"/>
+<area shape="poly" id="edge8_Node000008_Node000004" title=" " alt="" coords="192,214,187,249,173,289,156,311,138,328,134,324,152,307,168,287,182,248,187,214"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="5,261,74,288"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="165,216,81,257,78,252,163,211"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="97,261,158,288"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="181,216,150,251,146,248,177,212"/>
+<area shape="poly" id="edge14_Node000011_Node000002" title=" " alt="" coords="352,140,303,248,298,246,347,138"/>
+<area shape="poly" id="edge15_Node000011_Node000003" title=" " alt="" coords="364,138,459,321,454,323,360,140"/>
+<area shape="poly" id="edge16_Node000011_Node000005" title=" " alt="" coords="360,139,382,321,376,321,354,140"/>
+<area shape="poly" id="edge13_Node000011_Node000008" title=" " alt="" coords="328,142,234,182,232,177,326,137"/>
 </map>

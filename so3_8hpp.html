@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ctrl-Z: C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Utils/so3.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Ctrl-Z
+   </div>
+   <div id="projectbrief">一个多线程机器人运动控制强化学习部署框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('so3_8hpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">命名空间</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">so3.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>this file defines the SO3 class, which represents the special orthogonal group in 3D space.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_tensor_type_8hpp_source.html">TensorType.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_vector_type_8hpp_source.html">VectorType.hpp</a>&quot;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+so3.hpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="so3_8hpp__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_utils_2so3_8hpp" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_utils_2so3_8hpp" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_utils_2so3_8hpp">
+<area shape="rect" title="this file defines the SO3 class, which represents the special orthogonal group in 3D space." alt="" coords="245,5,413,64"/>
+<area shape="rect" href="_tensor_type_8hpp.html" title="定义了一些张量类型" alt="" coords="95,112,208,139"/>
+<area shape="poly" title=" " alt="" coords="273,67,192,107,190,102,270,62"/>
+<area shape="rect" href="_vector_type_8hpp.html" title="定义了一些向量类型" alt="" coords="206,187,317,213"/>
+<area shape="poly" title=" " alt="" coords="320,65,275,173,270,171,315,63"/>
+<area shape="rect" title=" " alt="" coords="310,261,381,288"/>
+<area shape="poly" title=" " alt="" coords="334,64,346,246,341,246,328,65"/>
+<area shape="rect" title=" " alt="" coords="404,261,462,288"/>
+<area shape="poly" title=" " alt="" coords="344,64,424,246,419,248,339,66"/>
+<area shape="rect" title=" " alt="" coords="5,261,56,288"/>
+<area shape="poly" title=" " alt="" coords="96,139,53,157,34,171,19,188,14,202,13,217,20,247,15,248,8,217,9,201,15,185,31,167,50,153,94,134"/>
+<area shape="rect" title=" " alt="" coords="30,187,98,213"/>
+<area shape="poly" title=" " alt="" coords="138,141,92,179,89,175,135,137"/>
+<area shape="rect" title=" " alt="" coords="122,187,182,213"/>
+<area shape="poly" title=" " alt="" coords="154,139,154,171,149,171,149,139"/>
+<area shape="poly" title=" " alt="" coords="172,137,231,176,228,180,169,141"/>
+<area shape="poly" title=" " alt="" coords="222,216,71,263,70,258,220,211"/>
+<area shape="poly" title=" " alt="" coords="278,212,321,249,317,253,274,216"/>
+<area shape="poly" title=" " alt="" coords="292,211,391,253,389,258,290,216"/>
+<area shape="rect" title=" " alt="" coords="211,261,285,288"/>
+<area shape="poly" title=" " alt="" coords="261,214,256,247,250,246,256,213"/>
+<area shape="rect" title=" " alt="" coords="109,261,186,288"/>
+<area shape="poly" title=" " alt="" coords="243,216,182,255,179,250,240,212"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="so3_8hpp__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_utils_2so3_8hppdep" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_utils_2so3_8hppdep" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_ctrl_z_2_ctrl_z_2_utils_2so3_8hppdep">
+<area shape="rect" title="this file defines the SO3 class, which represents the special orthogonal group in 3D space." alt="" coords="1465,5,1634,64"/>
+<area shape="rect" href="_math_types_8hpp.html" title="定义了一些数学类型，包括向量和张量类型" alt="" coords="1444,112,1655,171"/>
+<area shape="poly" title=" " alt="" coords="1552,80,1552,112,1547,112,1547,80"/>
+<area shape="rect" href="_static_string_utils_8hpp.html" title=" " alt="" coords="997,219,1187,293"/>
+<area shape="poly" title=" " alt="" coords="1429,175,1188,234,1187,229,1428,170"/>
+<area shape="rect" href="_action_management_worker_8hpp.html" title="该文件定义了一个类ActionManagementWorker，用于管理和选择单个或多个推理网络的输出。" alt="" coords="704,709,907,784"/>
+<area shape="poly" title=" " alt="" coords="1428,147,1144,153,796,166,630,175,486,188,376,203,338,212,313,221,280,245,261,271,228,343,200,390,170,432,118,510,103,546,98,583,107,620,134,659,161,674,212,687,365,710,544,726,703,737,703,743,544,732,364,715,211,693,159,679,130,663,103,622,93,583,98,545,113,507,165,429,195,387,223,340,256,269,276,241,311,216,336,207,375,198,485,182,630,170,796,160,1144,148,1428,142"/>
+<area shape="rect" href="types_8hpp.html" title="类型定义" alt="" coords="889,955,1095,1029"/>
+<area shape="poly" title=" " alt="" coords="1671,152,1864,178,1972,197,2077,222,2173,252,2250,287,2280,307,2303,329,2318,352,2323,377,2323,748,2326,796,2330,836,2329,855,2323,873,2313,891,2296,909,2271,923,2231,936,2112,956,1954,971,1772,982,1394,992,1096,994,1096,989,1394,987,1772,977,1954,966,2111,951,2229,931,2269,918,2293,905,2309,887,2318,871,2323,854,2324,836,2321,796,2317,748,2317,378,2313,354,2299,332,2277,311,2248,292,2171,257,2076,227,1971,203,1863,183,1670,157"/>
+<area shape="rect" href="_imu_process_worker_8hpp.html" title=" " alt="" coords="145,587,306,661"/>
+<area shape="poly" title=" " alt="" coords="1428,149,1211,157,950,171,701,192,599,205,522,221,443,241,381,259,354,272,327,289,300,312,271,343,252,371,238,402,229,435,223,468,219,533,223,586,217,587,214,533,217,468,223,434,233,400,248,368,267,340,296,308,324,284,351,267,379,254,442,236,521,216,598,200,701,187,950,165,1211,151,1428,143"/>
+<area shape="rect" href="_motor_control_worker_8hpp.html" title=" " alt="" coords="381,587,547,661"/>
+<area shape="poly" title=" " alt="" coords="1428,157,1182,183,878,225,728,250,590,279,473,310,388,344,320,383,291,404,267,427,250,452,242,478,245,506,259,537,277,553,307,569,382,597,380,602,304,574,274,557,255,540,240,508,237,478,246,450,263,424,288,400,318,378,386,339,472,305,588,273,727,245,877,219,1181,178,1428,151"/>
+<area shape="rect" href="_motor_reset_position_worker_8hpp.html" title=" " alt="" coords="952,587,1158,661"/>
+<area shape="poly" title=" " alt="" coords="1551,186,1545,263,1525,358,1509,408,1487,457,1459,501,1424,541,1329,565,1159,603,1158,598,1328,560,1421,536,1455,498,1483,454,1504,406,1520,357,1539,262,1546,186"/>
+<area shape="rect" href="_abstract_inference_worker_8hpp.html" title=" " alt="" coords="1418,587,1636,661"/>
+<area shape="poly" title=" " alt="" coords="1670,172,1699,191,1722,217,1737,244,1745,268,1748,291,1747,313,1737,360,1723,417,1707,483,1694,510,1671,540,1643,567,1611,588,1608,584,1640,563,1667,537,1690,507,1702,481,1717,415,1731,359,1742,312,1743,291,1740,269,1732,246,1718,220,1696,195,1668,177"/>
+<area shape="rect" href="_common_loco_inference_worker_8hpp.html" title=" " alt="" coords="1566,709,1816,784"/>
+<area shape="poly" title=" " alt="" coords="1671,171,1714,191,1754,217,1797,252,1829,285,1841,303,1849,324,1856,377,1856,503,1853,535,1844,566,1815,623,1776,672,1737,711,1734,707,1772,668,1810,620,1839,564,1848,534,1851,503,1851,378,1844,325,1836,305,1825,288,1793,256,1750,221,1711,195,1669,176"/>
+<area shape="rect" href="_net_cmd_worker_8hpp.html" title="定义了一个神经网络用户命令工人类型" alt="" coords="1233,587,1394,661"/>
+<area shape="poly" title=" " alt="" coords="1564,185,1579,262,1584,308,1585,358,1581,408,1569,456,1549,501,1519,541,1396,593,1394,588,1516,537,1545,498,1564,454,1575,407,1580,357,1579,309,1574,262,1559,186"/>
+<area shape="rect" href="_simple_trajactory_generator_8hpp.html" title="定义了一个简单的轨迹生成器" alt="" coords="1205,464,1411,539"/>
+<area shape="poly" title=" " alt="" coords="1524,185,1335,465,1331,462,1519,182"/>
+<area shape="rect" href="_net_inference_worker_8h.html" title=" " alt="" coords="1890,464,2067,539"/>
+<area shape="poly" title=" " alt="" coords="1671,157,1790,181,1840,198,1874,217,1899,244,1920,274,1951,342,1969,409,1978,463,1973,464,1964,410,1946,344,1916,277,1895,247,1870,221,1838,202,1789,186,1670,162"/>
+<area shape="rect" href="_abstract_scheduler_8hpp.html" title="AbstractScheduler 调度器类型，用于管理任务，工作线程和数据。" alt="" coords="665,464,826,539"/>
+<area shape="poly" title=" " alt="" coords="982,266,889,275,793,290,712,312,682,327,662,343,652,360,650,377,662,415,677,440,698,462,694,466,673,443,658,417,645,377,647,359,658,340,679,322,710,307,792,285,888,270,981,261"/>
+<area shape="poly" title=" " alt="" coords="981,266,868,276,747,292,638,314,595,328,564,344,539,365,522,388,511,411,504,435,488,486,473,513,451,541,429,556,407,563,388,570,372,588,362,610,359,630,363,648,372,664,386,678,405,690,453,710,513,725,578,734,704,743,703,748,577,740,512,730,452,715,402,695,382,682,367,667,358,650,354,630,357,609,367,585,385,566,405,558,426,551,448,537,469,510,483,484,499,434,506,409,517,385,535,362,561,339,593,323,636,309,746,286,868,271,981,261"/>
+<area shape="poly" title=" " alt="" coords="981,262,808,269,605,283,505,294,415,307,339,324,282,344,173,395,126,420,86,447,53,478,29,517,13,564,8,623,8,748,15,779,35,808,67,834,109,857,160,879,219,897,352,928,498,951,644,968,888,984,888,990,643,973,497,957,351,933,217,902,158,884,107,862,64,838,31,811,10,781,3,748,3,623,8,563,24,514,49,475,82,443,123,415,170,390,280,339,337,319,414,302,505,289,604,278,807,264,981,257"/>
+<area shape="poly" title=" " alt="" coords="982,265,831,274,659,289,499,312,436,327,388,344,343,367,311,391,286,422,260,465,246,495,237,528,229,587,224,586,232,526,241,494,255,463,281,419,308,387,340,363,386,339,434,322,498,307,658,284,831,269,981,259"/>
+<area shape="poly" title=" " alt="" coords="982,270,888,282,789,298,702,319,668,331,643,344,611,369,583,398,536,465,501,532,479,587,474,585,496,529,531,462,579,395,608,365,640,339,666,326,700,314,788,293,887,277,981,265"/>
+<area shape="poly" title=" " alt="" coords="1093,309,1087,416,1064,587,1058,586,1081,416,1088,309"/>
+<area shape="poly" title=" " alt="" coords="1203,280,1272,304,1337,339,1371,365,1401,395,1452,462,1490,529,1515,585,1510,587,1485,532,1447,465,1397,398,1367,369,1335,344,1269,309,1201,285"/>
+<area shape="poly" title=" " alt="" coords="1203,256,1277,264,1359,278,1441,303,1481,319,1519,339,1590,388,1616,413,1637,440,1654,469,1668,503,1695,586,1701,618,1703,651,1699,709,1694,709,1697,651,1695,619,1689,587,1663,504,1649,472,1632,443,1612,417,1586,393,1516,344,1479,324,1439,308,1357,284,1276,269,1203,262"/>
+<area shape="rect" href="_humanoid_gym_inference_worker_8hpp.html" title=" " alt="" coords="1282,832,1539,907"/>
+<area shape="poly" title=" " alt="" coords="1203,272,1299,297,1348,316,1395,339,1459,384,1537,450,1607,522,1633,555,1650,586,1658,607,1662,625,1660,643,1650,663,1629,684,1606,692,1581,698,1555,712,1521,741,1490,773,1439,833,1435,830,1486,769,1517,737,1552,707,1580,693,1605,687,1627,680,1646,660,1655,641,1657,625,1653,608,1646,588,1629,558,1603,525,1533,453,1456,388,1392,344,1346,321,1297,303,1202,277"/>
+<area shape="rect" href="_plain_inference_worker_8hpp.html" title=" " alt="" coords="1808,832,2006,907"/>
+<area shape="poly" title=" " alt="" coords="1203,264,1306,276,1417,292,1516,313,1556,325,1585,339,1620,362,1653,389,1712,450,1762,519,1804,590,1839,661,1866,728,1900,831,1895,832,1861,730,1834,664,1800,593,1758,521,1708,454,1650,393,1617,367,1583,344,1554,330,1515,318,1416,297,1306,281,1202,270"/>
+<area shape="rect" href="_unitree_rl_gym_inference_worker_8hpp.html" title="Support lstm onnx model trained by unitree_rl_gym. For code to export lstm model to onnx format,..." alt="" coords="2030,832,2282,907"/>
+<area shape="poly" title=" " alt="" coords="1203,260,1378,276,1485,291,1601,311,1722,337,1845,371,1965,412,2080,462,2134,486,2178,508,2214,537,2231,558,2246,586,2258,618,2261,652,2257,687,2247,720,2219,783,2187,833,2182,830,2214,780,2242,719,2251,686,2255,652,2252,619,2242,588,2226,561,2210,541,2175,512,2132,491,2078,466,1963,417,1843,376,1721,343,1600,316,1484,296,1377,282,1202,265"/>
+<area shape="poly" title=" " alt="" coords="1182,298,1254,336,1327,379,1388,422,1410,443,1425,463,1434,483,1437,501,1434,519,1425,540,1407,566,1383,588,1379,584,1403,563,1420,537,1429,518,1432,501,1429,484,1420,465,1406,447,1384,427,1324,383,1251,341,1180,303"/>
+<area shape="rect" href="_data_center_8hpp.html" title=" " alt="" coords="672,349,886,408"/>
+<area shape="poly" title=" " alt="" coords="983,302,854,351,852,346,981,297"/>
+<area shape="rect" href="_abstract_worker_8hpp.html" title=" " alt="" coords="910,341,1071,416"/>
+<area shape="poly" title=" " alt="" coords="1053,307,1023,343,1019,339,1049,304"/>
+<area shape="rect" href="_async_logger_worker_8hpp.html" title=" " alt="" coords="270,464,437,539"/>
+<area shape="poly" title=" " alt="" coords="981,264,845,271,691,286,552,310,497,325,457,344,427,369,402,401,383,434,369,464,364,462,378,431,398,398,423,365,455,339,496,320,551,304,691,281,844,266,981,258"/>
+<area shape="poly" title=" " alt="" coords="687,551,673,569,662,588,655,608,652,625,654,641,662,660,683,686,711,707,708,711,680,690,658,663,649,643,646,625,650,606,658,586,669,566,683,548"/>
+<area shape="poly" title=" " alt="" coords="675,551,659,568,646,588,635,616,630,642,630,666,635,688,658,733,694,782,744,836,802,882,861,921,916,952,913,957,858,926,799,887,741,840,690,786,653,736,630,690,625,667,625,642,630,615,642,585,654,565,671,547"/>
+<area shape="poly" title=" " alt="" coords="650,528,595,541,370,589,307,604,306,599,369,584,594,536,649,523"/>
+<area shape="rect" href="_keyboard_command_worker_8hpp.html" title=" " alt="" coords="672,587,878,661"/>
+<area shape="poly" title=" " alt="" coords="761,554,768,586,763,587,755,555"/>
+<area shape="poly" title=" " alt="" coords="651,546,548,590,546,585,649,541"/>
+<area shape="poly" title=" " alt="" coords="842,537,961,584,959,589,840,542"/>
+<area shape="poly" title=" " alt="" coords="842,510,1144,545,1296,565,1407,584,1418,586,1416,592,1406,589,1295,571,1143,550,841,516"/>
+<area shape="poly" title=" " alt="" coords="842,518,1170,584,1233,599,1231,604,1169,589,841,523"/>
+<area shape="poly" title=" " alt="" coords="845,795,966,952,962,956,840,798"/>
+<area shape="rect" href="user__func_8cpp.html" title=" " alt="" coords="820,1200,1026,1275"/>
+<area shape="poly" title=" " alt="" coords="965,1044,951,1078,935,1142,928,1200,922,1200,930,1141,945,1076,960,1042"/>
+<area shape="rect" href="user__func_8h.html" title=" " alt="" coords="960,1077,1166,1152"/>
+<area shape="poly" title=" " alt="" coords="1024,1042,1044,1076,1039,1078,1019,1044"/>
+<area shape="poly" title=" " alt="" coords="1010,1164,967,1202,963,1198,1007,1160"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="1050,1200,1256,1275"/>
+<area shape="poly" title=" " alt="" coords="1101,1163,1128,1198,1124,1201,1097,1166"/>
+<area shape="poly" title=" " alt="" coords="261,672,304,728,361,792,430,854,467,881,507,904,553,926,603,943,704,968,803,982,889,988,888,993,802,987,703,974,601,948,551,931,504,909,464,885,426,858,357,795,300,731,256,676"/>
+<area shape="poly" title=" " alt="" coords="470,677,479,731,496,793,525,854,544,881,567,905,590,919,621,932,704,953,799,969,889,979,888,985,798,974,703,958,620,937,587,924,564,909,540,884,520,857,491,795,474,732,465,678"/>
+<area shape="poly" title=" " alt="" coords="1048,677,1001,955,996,954,1043,676"/>
+<area shape="poly" title=" " alt="" coords="1403,665,1266,691,1132,712,908,739,907,733,1131,706,1265,686,1402,660"/>
+<area shape="poly" title=" " alt="" coords="1591,669,1642,707,1639,711,1587,673"/>
+<area shape="rect" href="_erax_like_inference_worker_8hpp.html" title=" " alt="" coords="1563,832,1784,907"/>
+<area shape="poly" title=" " alt="" coords="1686,800,1681,832,1676,831,1681,799"/>
+<area shape="poly" title=" " alt="" coords="1592,793,1497,834,1495,829,1590,788"/>
+<area shape="poly" title=" " alt="" coords="1771,789,1842,829,1839,834,1768,794"/>
+<area shape="poly" title=" " alt="" coords="1832,781,2018,829,2030,833,2029,838,2017,835,1831,787"/>
+<area shape="poly" title=" " alt="" coords="1548,910,1423,934,1301,954,1096,982,1095,977,1301,949,1422,929,1547,905"/>
+<area shape="poly" title=" " alt="" coords="1269,914,1096,964,1095,958,1267,909"/>
+<area shape="poly" title=" " alt="" coords="1311,677,1301,731,1283,792,1255,854,1237,883,1215,909,1189,931,1159,949,1097,974,1095,969,1157,944,1186,926,1211,905,1233,880,1251,852,1278,790,1296,729,1305,676"/>
+<area shape="poly" title=" " alt="" coords="769,424,758,464,753,463,764,422"/>
+<area shape="poly" title=" " alt="" coords="903,426,821,466,819,461,901,421"/>
+<area shape="poly" title=" " alt="" coords="982,432,949,542,923,604,892,663,872,688,851,711,847,707,868,685,887,660,919,602,944,540,977,430"/>
+<area shape="poly" title=" " alt="" coords="997,431,1011,486,1023,513,1041,537,1056,549,1073,555,1107,558,1141,562,1157,570,1172,585,1181,605,1182,622,1172,662,1142,749,1102,831,1059,902,1022,956,1017,953,1054,899,1097,828,1137,747,1167,661,1177,622,1176,606,1167,588,1154,574,1139,567,1106,563,1071,561,1054,554,1037,541,1019,516,1006,488,992,432"/>
+<area shape="poly" title=" " alt="" coords="895,419,810,435,742,440,676,447,595,467,553,483,522,501,492,520,450,541,308,597,306,592,448,536,489,515,520,496,551,479,594,461,675,441,742,435,809,429,894,414"/>
+<area shape="poly" title=" " alt="" coords="937,428,898,466,804,588,800,585,894,462,933,424"/>
+<area shape="poly" title=" " alt="" coords="896,419,825,430,768,432,715,440,686,450,655,466,635,483,625,500,614,520,597,541,565,566,532,588,529,584,562,562,593,537,610,517,620,498,631,479,652,462,684,445,713,434,768,427,824,425,895,413"/>
+<area shape="poly" title=" " alt="" coords="988,431,989,484,1000,538,1011,562,1025,585,1021,588,1006,565,995,539,984,484,983,432"/>
+<area shape="poly" title=" " alt="" coords="1046,424,1127,490,1165,518,1195,536,1251,558,1298,566,1346,572,1407,584,1418,587,1416,592,1406,589,1346,577,1297,572,1250,563,1192,541,1162,523,1123,494,1042,428"/>
+<area shape="poly" title=" " alt="" coords="1022,428,1063,492,1100,537,1150,559,1233,591,1232,596,1148,564,1097,541,1059,495,1017,431"/>
+<area shape="poly" title=" " alt="" coords="895,419,801,439,726,448,651,455,558,467,438,487,437,482,557,461,651,449,725,443,800,434,894,414"/>
+<area shape="poly" title=" " alt="" coords="1087,414,1212,461,1210,466,1085,419"/>
+<area shape="poly" title=" " alt="" coords="256,517,221,527,188,542,158,562,134,588,125,606,123,623,126,640,134,660,158,710,183,751,208,784,237,811,269,835,306,858,400,904,439,918,491,931,621,953,762,970,889,981,888,986,762,975,620,958,490,937,437,924,398,909,303,862,266,840,233,815,204,787,178,754,154,713,130,662,121,641,117,623,120,605,130,585,155,558,186,537,220,522,254,512"/>
+<area shape="poly" title=" " alt="" coords="1876,533,1637,596,1636,591,1875,527"/>
+<area shape="poly" title=" " alt="" coords="1961,554,1899,686,1863,747,1846,770,1830,786,1793,808,1760,821,1728,827,1697,828,1631,826,1594,828,1551,835,1540,837,1539,832,1550,829,1593,823,1631,821,1697,823,1728,822,1758,816,1791,804,1826,782,1842,767,1859,744,1894,683,1956,552"/>
+<area shape="poly" title=" " alt="" coords="1971,555,1916,832,1911,831,1966,554"/>
+<area shape="poly" title=" " alt="" coords="1995,553,2011,605,2033,660,2083,753,2132,830,2128,833,2079,756,2028,662,2006,607,1990,554"/>
+<area shape="rect" href="_net_inference_worker_8cpp.html" title=" " alt="" coords="2042,587,2232,661"/>
+<area shape="poly" title=" " alt="" coords="2041,546,2091,584,2088,588,2037,550"/>
+</map>
+</div>
+</div>
+<p><a href="so3_8hpp_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacez_1_1math.html">z::math</a></td></tr>
+<tr class="memdesc:namespacez_1_1math"><td class="mdescLeft">&#160;</td><td class="mdescRight">math namespace, contains some math functions <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ac55ff186477e70d2b2c77658a87956fc" id="r_ac55ff186477e70d2b2c77658a87956fc"><td class="memTemplParams" colspan="2">template&lt;typename Scalar&gt; </td></tr>
+<tr class="memitem:ac55ff186477e70d2b2c77658a87956fc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 3 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacez_1_1math.html#ac55ff186477e70d2b2c77658a87956fc">z::math::cross</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 3 &gt; &amp;a, const <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 3 &gt; &amp;b)</td></tr>
+<tr class="memdesc:ac55ff186477e70d2b2c77658a87956fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">cross product of two 3D vectors.  <br /></td></tr>
+<tr class="separator:ac55ff186477e70d2b2c77658a87956fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90ab6bd87b94b3b7535cf9621d5d167a" id="r_a90ab6bd87b94b3b7535cf9621d5d167a"><td class="memTemplParams" colspan="2">template&lt;typename Scalar&gt; </td></tr>
+<tr class="memitem:a90ab6bd87b94b3b7535cf9621d5d167a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 4 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacez_1_1math.html#a90ab6bd87b94b3b7535cf9621d5d167a">z::math::quat_conjugate</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 4 &gt; &amp;quat)</td></tr>
+<tr class="memdesc:a90ab6bd87b94b3b7535cf9621d5d167a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the conjugate of a quaternion.  <br /></td></tr>
+<tr class="separator:a90ab6bd87b94b3b7535cf9621d5d167a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e72887f67cd97a9305ad8769e876a2e" id="r_a8e72887f67cd97a9305ad8769e876a2e"><td class="memTemplParams" colspan="2">template&lt;typename Scalar&gt; </td></tr>
+<tr class="memitem:a8e72887f67cd97a9305ad8769e876a2e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 4 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacez_1_1math.html#a8e72887f67cd97a9305ad8769e876a2e">z::math::quat_unit</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 4 &gt; &amp;quat)</td></tr>
+<tr class="memdesc:a8e72887f67cd97a9305ad8769e876a2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize a quaternion to unit length.  <br /></td></tr>
+<tr class="separator:a8e72887f67cd97a9305ad8769e876a2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d55be220fa716b857f3899bed425a27" id="r_a8d55be220fa716b857f3899bed425a27"><td class="memTemplParams" colspan="2">template&lt;typename Scalar&gt; </td></tr>
+<tr class="memitem:a8d55be220fa716b857f3899bed425a27"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 4 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacez_1_1math.html#a8d55be220fa716b857f3899bed425a27">z::math::quat_mul</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 4 &gt; &amp;a, const <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 4 &gt; &amp;b)</td></tr>
+<tr class="memdesc:a8d55be220fa716b857f3899bed425a27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply two quaternions.  <br /></td></tr>
+<tr class="separator:a8d55be220fa716b857f3899bed425a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8efead6756c38fff38e7d7c39cd58e7e" id="r_a8efead6756c38fff38e7d7c39cd58e7e"><td class="memTemplParams" colspan="2">template&lt;typename Scalar&gt; </td></tr>
+<tr class="memitem:a8efead6756c38fff38e7d7c39cd58e7e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 3 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacez_1_1math.html#a8efead6756c38fff38e7d7c39cd58e7e">z::math::quat_rotate</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 4 &gt; &amp;q, const <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 3 &gt; &amp;v)</td></tr>
+<tr class="memdesc:a8efead6756c38fff38e7d7c39cd58e7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotate a 3D vector by a quaternion.  <br /></td></tr>
+<tr class="separator:a8efead6756c38fff38e7d7c39cd58e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05acf4f144d593d277915f4cea7d5d57" id="r_a05acf4f144d593d277915f4cea7d5d57"><td class="memTemplParams" colspan="2">template&lt;typename Scalar&gt; </td></tr>
+<tr class="memitem:a05acf4f144d593d277915f4cea7d5d57"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 3 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacez_1_1math.html#a05acf4f144d593d277915f4cea7d5d57">z::math::quat_rotate_inverse</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 4 &gt; &amp;q, const <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 3 &gt; &amp;v)</td></tr>
+<tr class="memdesc:a05acf4f144d593d277915f4cea7d5d57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotate a 3D vector by the inverse of a quaternion.  <br /></td></tr>
+<tr class="separator:a05acf4f144d593d277915f4cea7d5d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5853edfeca7ce094066773f4e498d9a3" id="r_a5853edfeca7ce094066773f4e498d9a3"><td class="memTemplParams" colspan="2">template&lt;typename Scalar&gt; </td></tr>
+<tr class="memitem:a5853edfeca7ce094066773f4e498d9a3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 4 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacez_1_1math.html#a5853edfeca7ce094066773f4e498d9a3">z::math::quat_from_euler_xyz</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 3 &gt; &amp;euler)</td></tr>
+<tr class="memdesc:a5853edfeca7ce094066773f4e498d9a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert Euler angles (in radians) to quaternion representation.  <br /></td></tr>
+<tr class="separator:a5853edfeca7ce094066773f4e498d9a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e8f247556f01cf3300a6303d01a91fd" id="r_a4e8f247556f01cf3300a6303d01a91fd"><td class="memTemplParams" colspan="2">template&lt;typename Scalar&gt; </td></tr>
+<tr class="memitem:a4e8f247556f01cf3300a6303d01a91fd"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 3 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacez_1_1math.html#a4e8f247556f01cf3300a6303d01a91fd">z::math::get_euler_xyz</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 4 &gt; &amp;quat)</td></tr>
+<tr class="memdesc:a4e8f247556f01cf3300a6303d01a91fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert quaternion representation to Euler angles (in radians).  <br /></td></tr>
+<tr class="separator:a4e8f247556f01cf3300a6303d01a91fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5843722d4d2ca06811cc11e9256cf8b0" id="r_a5843722d4d2ca06811cc11e9256cf8b0"><td class="memTemplParams" colspan="2">template&lt;typename Scalar&gt; </td></tr>
+<tr class="memitem:a5843722d4d2ca06811cc11e9256cf8b0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 3 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacez_1_1math.html#a5843722d4d2ca06811cc11e9256cf8b0">z::math::so3_from_quat</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 4 &gt; &amp;quat)</td></tr>
+<tr class="memdesc:a5843722d4d2ca06811cc11e9256cf8b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a quaternion to an so(3) vector representation.  <br /></td></tr>
+<tr class="separator:a5843722d4d2ca06811cc11e9256cf8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7daaee9cfeb16ff33fc668f427be69e6" id="r_a7daaee9cfeb16ff33fc668f427be69e6"><td class="memTemplParams" colspan="2">template&lt;typename Scalar&gt; </td></tr>
+<tr class="memitem:a7daaee9cfeb16ff33fc668f427be69e6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 4 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacez_1_1math.html#a7daaee9cfeb16ff33fc668f427be69e6">z::math::so3_to_quat</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 3 &gt; &amp;so3)</td></tr>
+<tr class="memdesc:a7daaee9cfeb16ff33fc668f427be69e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an so(3) vector representation to a quaternion.  <br /></td></tr>
+<tr class="separator:a7daaee9cfeb16ff33fc668f427be69e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a864b7aa9dd867568e6c2e2bee7a4e289" id="r_a864b7aa9dd867568e6c2e2bee7a4e289"><td class="memTemplParams" colspan="2">template&lt;typename Scalar&gt; </td></tr>
+<tr class="memitem:a864b7aa9dd867568e6c2e2bee7a4e289"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 4 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacez_1_1math.html#a864b7aa9dd867568e6c2e2bee7a4e289">z::math::quat_slerp</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 4 &gt; &amp;a, const <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 4 &gt; &amp;b, Scalar t)</td></tr>
+<tr class="memdesc:a864b7aa9dd867568e6c2e2bee7a4e289"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform spherical linear interpolation (SLERP) between two quaternions.  <br /></td></tr>
+<tr class="separator:a864b7aa9dd867568e6c2e2bee7a4e289"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adce843209980c9c11ef26f8a4b62eefa" id="r_adce843209980c9c11ef26f8a4b62eefa"><td class="memTemplParams" colspan="2">template&lt;typename Scalar&gt; </td></tr>
+<tr class="memitem:adce843209980c9c11ef26f8a4b62eefa"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 4 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacez_1_1math.html#adce843209980c9c11ef26f8a4b62eefa">z::math::quat_diff</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 4 &gt; &amp;a, const <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 4 &gt; &amp;b)</td></tr>
+<tr class="memdesc:adce843209980c9c11ef26f8a4b62eefa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the difference between two quaternions, ensuring the shortest path.  <br /></td></tr>
+<tr class="separator:adce843209980c9c11ef26f8a4b62eefa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab793e09a008b00f53ccc5710639cff93" id="r_ab793e09a008b00f53ccc5710639cff93"><td class="memTemplParams" colspan="2">template&lt;typename Scalar&gt; </td></tr>
+<tr class="memitem:ab793e09a008b00f53ccc5710639cff93"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 3 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacez_1_1math.html#ab793e09a008b00f53ccc5710639cff93">z::math::so3_diff</a> (const <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 3 &gt; &amp;a, const <a class="el" href="classz_1_1math_1_1_vector.html">z::math::Vector</a>&lt; Scalar, 3 &gt; &amp;b)</td></tr>
+<tr class="memdesc:ab793e09a008b00f53ccc5710639cff93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the difference between two so(3) vectors, ensuring the shortest path.  <br /></td></tr>
+<tr class="separator:ab793e09a008b00f53ccc5710639cff93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>this file defines the SO3 class, which represents the special orthogonal group in 3D space. </p>
+<dl class="section author"><dt>作者</dt><dd>zishun zhou </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2025-05-26</dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>Copyright (c) 2025 </dd></dl>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7b6a9de995744179e2af2e4eac8c765a.html">CtrlZ</a></li><li class="navelem"><a class="el" href="dir_0ae636835fa1df8aeaf077e074b22c49.html">Utils</a></li><li class="navelem"><a class="el" href="so3_8hpp.html">so3.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

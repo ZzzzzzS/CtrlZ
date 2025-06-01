@@ -1,6 +1,6 @@
 var classz_1_1_async_logger_worker =
 [
-    [ "AsyncLoggerWorker", "classz_1_1_async_logger_worker.html#a4bccc137988c29200407c5e85aa4396c", null ],
+    [ "AsyncLoggerWorker", "classz_1_1_async_logger_worker.html#a208126c286236eaa6f31af9975615ff9", null ],
     [ "~AsyncLoggerWorker", "classz_1_1_async_logger_worker.html#ad6e7b4a2bf803ec9cc79948adc1c9574", null ],
     [ "TaskCreate", "classz_1_1_async_logger_worker.html#a3b041aa09d6726224088e15e121f98f4", null ],
     [ "TaskCycleEnd", "classz_1_1_async_logger_worker.html#aa1954c7c5730dae67cf28f6e0bb6afd4", null ],

@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ctrl-Z: C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/CtrlZ/Utils/so3.hpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Ctrl-Z
+   </div>
+   <div id="projectbrief">一个多线程机器人运动控制强化学习部署框架</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('so3_8hpp_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">so3.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="so3_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_tensor_type_8hpp.html">TensorType.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_vector_type_8hpp.html">VectorType.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span>z</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespacez_1_1math.html">   19</a></span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacez_1_1math.html">math</a></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Scalar&gt;</div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="namespacez_1_1math.html#ac55ff186477e70d2b2c77658a87956fc">   30</a></span>        <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a> <a class="code hl_function" href="namespacez_1_1math.html#ac55ff186477e70d2b2c77658a87956fc">cross</a>(<span class="keyword">const</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a>&amp; a, <span class="keyword">const</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a>&amp; b)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a> result;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            result[0] = a[1] * b[2] - a[2] * b[1];</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            result[1] = a[2] * b[0] - a[0] * b[2];</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            result[2] = a[0] * b[1] - a[1] * b[0];</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        }</div>
+</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Scalar&gt;</div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="namespacez_1_1math.html#a90ab6bd87b94b3b7535cf9621d5d167a">   47</a></span>        <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a> <a class="code hl_function" href="namespacez_1_1math.html#a90ab6bd87b94b3b7535cf9621d5d167a">quat_conjugate</a>(<span class="keyword">const</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a>&amp; quat)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keywordflow">return</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a>{ -quat[0], -quat[1], -quat[2], quat[3] };</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
+</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Scalar&gt;</div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="namespacez_1_1math.html#a8e72887f67cd97a9305ad8769e876a2e">   61</a></span>        <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a> <a class="code hl_function" href="namespacez_1_1math.html#a8e72887f67cd97a9305ad8769e876a2e">quat_unit</a>(<span class="keyword">const</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a>&amp; quat)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            Scalar norm = std::sqrt(quat[0] * quat[0] + quat[1] * quat[1] + quat[2] * quat[2] + quat[3] * quat[3]);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="keywordflow">if</span> (norm == 0) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Quaternion norm is zero, cannot normalize.&quot;</span>);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordflow">return</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a>{ quat[0] / norm, quat[1] / norm, quat[2] / norm, quat[3] / norm };</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        }</div>
+</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Scalar&gt;</div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="namespacez_1_1math.html#a8d55be220fa716b857f3899bed425a27">   79</a></span>        <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a> <a class="code hl_function" href="namespacez_1_1math.html#a8d55be220fa716b857f3899bed425a27">quat_mul</a>(<span class="keyword">const</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a>&amp; a, <span class="keyword">const</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a>&amp; b)</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            Scalar x1 = a[0], y1 = a[1], z1 = a[2], w1 = a[3];</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            Scalar x2 = b[0], y2 = b[1], z2 = b[2], w2 = b[3];</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            Scalar ww = (z1 + x1) * (x2 + y2);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            Scalar yy = (w1 - y1) * (w2 + z2);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            Scalar zz = (w1 + y1) * (w2 - z2);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            Scalar xx = ww + yy + zz;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            Scalar qq = 0.5 * (xx + (z1 - x1) * (x2 - y2));</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            Scalar w = qq - ww + (z1 - y1) * (y2 - z2);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            Scalar x = qq - xx + (x1 + w1) * (x2 + w2);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            Scalar y = qq - yy + (w1 - x1) * (y2 + z2);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            Scalar z = qq - zz + (z1 + y1) * (w2 - x2);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keywordflow">return</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a>{ x, y, z, w };</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        }</div>
+</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Scalar&gt;</div>
+<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="namespacez_1_1math.html#a8efead6756c38fff38e7d7c39cd58e7e">  106</a></span>        <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a> <a class="code hl_function" href="namespacez_1_1math.html#a8efead6756c38fff38e7d7c39cd58e7e">quat_rotate</a>(<span class="keyword">const</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a>&amp; q, <span class="keyword">const</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a>&amp; v)</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            Scalar q_w = q[3];</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a> q_vec = { q[0], q[1], q[2] };</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a> a = v * (2 * q_w * q_w - 1.0);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a> b = <a class="code hl_function" href="namespacez_1_1math.html#ac55ff186477e70d2b2c77658a87956fc">cross</a>(q_vec, v) * (2 * q_w);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a> c = q_vec * (q_vec.<a class="code hl_function" href="classz_1_1math_1_1_vector.html#a5791b5c72379f95e1b8bc6aeff20fc89">dot</a>(v)) * <span class="keyword">static_cast&lt;</span>Scalar<span class="keyword">&gt;</span>(2.0);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <span class="keywordflow">return</span> a + b + c;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        }</div>
+</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Scalar&gt;</div>
+<div class="foldopen" id="foldopen00125" data-start="{" data-end="}">
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="namespacez_1_1math.html#a05acf4f144d593d277915f4cea7d5d57">  125</a></span>        <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a> <a class="code hl_function" href="namespacez_1_1math.html#a05acf4f144d593d277915f4cea7d5d57">quat_rotate_inverse</a>(<span class="keyword">const</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a>&amp; q, <span class="keyword">const</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a>&amp; v)</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            Scalar q_w = q[3];</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a> q_vec = { q[0], q[1], q[2] };</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a> a = v * (2 * q_w * q_w - 1.0);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a> b = <a class="code hl_function" href="namespacez_1_1math.html#ac55ff186477e70d2b2c77658a87956fc">cross</a>(q_vec, v) * (2 * q_w);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a> c = q_vec * (q_vec.<a class="code hl_function" href="classz_1_1math_1_1_vector.html#a5791b5c72379f95e1b8bc6aeff20fc89">dot</a>(v)) * <span class="keyword">static_cast&lt;</span>Scalar<span class="keyword">&gt;</span>(2.0);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <span class="keywordflow">return</span> a - b + c;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        }</div>
+</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Scalar&gt;</div>
+<div class="foldopen" id="foldopen00143" data-start="{" data-end="}">
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="namespacez_1_1math.html#a5853edfeca7ce094066773f4e498d9a3">  143</a></span>        <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a> <a class="code hl_function" href="namespacez_1_1math.html#a5853edfeca7ce094066773f4e498d9a3">quat_from_euler_xyz</a>(<span class="keyword">const</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a>&amp; euler)</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            Scalar cy = std::cos(euler[2] * 0.5);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            Scalar sy = std::sin(euler[2] * 0.5);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            Scalar cp = std::cos(euler[1] * 0.5);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            Scalar sp = std::sin(euler[1] * 0.5);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            Scalar cr = std::cos(euler[0] * 0.5);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            Scalar sr = std::sin(euler[0] * 0.5);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a> quat;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            Scalar qw, qx, qy, qz;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            qw = cy * cr * cp + sy * sr * sp;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            qx = cy * sr * cp - sy * cr * sp;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            qy = cy * cr * sp + sy * sr * cp;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            qz = sy * cr * cp - cy * sr * sp;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            quat = { qx, qy, qz, qw };</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            <span class="keywordflow">return</span> quat;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        }</div>
+</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Scalar&gt;</div>
+<div class="foldopen" id="foldopen00171" data-start="{" data-end="}">
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="namespacez_1_1math.html#a4e8f247556f01cf3300a6303d01a91fd">  171</a></span>        <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a> <a class="code hl_function" href="namespacez_1_1math.html#a4e8f247556f01cf3300a6303d01a91fd">get_euler_xyz</a>(<span class="keyword">const</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a>&amp; quat)</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        {</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            Scalar qw = quat[3];</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            Scalar qx = quat[0];</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            Scalar qy = quat[1];</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            Scalar qz = quat[2];</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            Scalar roll = std::atan2(2.0 * (qy * qz + qw * qx), qw * qw - qx * qx - qy * qy + qz * qz);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            Scalar pitch = std::asin(-2.0 * (qx * qz - qw * qy));</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            Scalar yaw = std::atan2(2.0 * (qx * qy + qw * qz), qw * qw + qx * qx - qy * qy - qz * qz);</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            <span class="keywordflow">return</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a>{ roll, pitch, yaw };</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        }</div>
+</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Scalar&gt;</div>
+<div class="foldopen" id="foldopen00194" data-start="{" data-end="}">
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="namespacez_1_1math.html#a5843722d4d2ca06811cc11e9256cf8b0">  194</a></span>        <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a> <a class="code hl_function" href="namespacez_1_1math.html#a5843722d4d2ca06811cc11e9256cf8b0">so3_from_quat</a>(<span class="keyword">const</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a>&amp; quat)</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>            <span class="keyword">auto</span> quat = <a class="code hl_function" href="namespacez_1_1math.html#a8e72887f67cd97a9305ad8769e876a2e">quat_unit</a>(quat);</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a> v = { quat[0], quat[1], quat[2] };</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>            Scalar w = quat[3];</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>            Scalar theta = 2 * std::acos(w);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>            Scalar sin_theta = std::sin(theta / 2.0);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            <span class="keywordflow">if</span> (std::abs(sin_theta) &lt; 1e-6) {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                <span class="keywordflow">return</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a>{0, 0, 0}; <span class="comment">// Return zero vector if sin(theta/2) is too small</span></div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>            }</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            <span class="keywordflow">return</span> v * (theta / sin_theta);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        }</div>
+</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Scalar&gt;</div>
+<div class="foldopen" id="foldopen00215" data-start="{" data-end="}">
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="namespacez_1_1math.html#a7daaee9cfeb16ff33fc668f427be69e6">  215</a></span>        <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a> <a class="code hl_function" href="namespacez_1_1math.html#a7daaee9cfeb16ff33fc668f427be69e6">so3_to_quat</a>(<span class="keyword">const</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a>&amp; so3)</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        {</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            Scalar theta = so3.<a class="code hl_function" href="classz_1_1math_1_1_vector.html#a95f674b6e10118283b8f34dcdceb688d">length</a>();</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            <span class="keywordflow">if</span> (theta &lt; 1e-6) {</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                <span class="keywordflow">return</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a>{0, 0, 0, 1}; <span class="comment">// Return identity quaternion if norm is too small</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>            }</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>            Scalar half_theta = theta / 2.0;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            Scalar sin_half_theta = std::sin(half_theta);</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>            <span class="keywordflow">return</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a>{ so3[0] * sin_half_theta / theta,</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                so3[1] * sin_half_theta / theta,</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                so3[2] * sin_half_theta / theta,</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                std::cos(half_theta) };</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        }</div>
+</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Scalar&gt;</div>
+<div class="foldopen" id="foldopen00240" data-start="{" data-end="}">
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno"><a class="line" href="namespacez_1_1math.html#a864b7aa9dd867568e6c2e2bee7a4e289">  240</a></span>        <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a> <a class="code hl_function" href="namespacez_1_1math.html#a864b7aa9dd867568e6c2e2bee7a4e289">quat_slerp</a>(<span class="keyword">const</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a>&amp; a, <span class="keyword">const</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a>&amp; b, Scalar t)</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        {</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            <span class="comment">// Ensure both quaternions are unit quaternions</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            <span class="keyword">auto</span> a_unit = <a class="code hl_function" href="namespacez_1_1math.html#a8e72887f67cd97a9305ad8769e876a2e">quat_unit</a>(a);</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            <span class="keyword">auto</span> b_unit = <a class="code hl_function" href="namespacez_1_1math.html#a8e72887f67cd97a9305ad8769e876a2e">quat_unit</a>(b);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            <span class="comment">// Compute the dot product</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            Scalar dot = a_unit.dot(b_unit);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            <span class="comment">// If the dot product is negative, negate one quaternion to take the shortest path</span></div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>            <span class="keywordflow">if</span> (dot &lt; 0.0) {</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                b_unit = -b_unit;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                dot = -dot;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>            }</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            <span class="comment">// Perform spherical linear interpolation</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>            Scalar theta = std::acos(dot);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>            Scalar sin_theta = std::sin(theta);</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>            <span class="keywordflow">if</span> (sin_theta &lt; 1e-6) {</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                <span class="comment">// If sin(theta) is too small, return a linear interpolation</span></div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                <span class="keywordflow">return</span> a_unit * (1 - t) + b_unit * t;</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>            }</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>            Scalar a_scale = std::sin((1 - t) * theta) / sin_theta;</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>            Scalar b_scale = std::sin(t * theta) / sin_theta;</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="namespacez_1_1math.html#a8e72887f67cd97a9305ad8769e876a2e">quat_unit</a>(a_unit * a_scale + b_unit * b_scale);</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        }</div>
+</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span></div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Scalar&gt;</div>
+<div class="foldopen" id="foldopen00276" data-start="{" data-end="}">
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno"><a class="line" href="namespacez_1_1math.html#adce843209980c9c11ef26f8a4b62eefa">  276</a></span>        <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a> <a class="code hl_function" href="namespacez_1_1math.html#adce843209980c9c11ef26f8a4b62eefa">quat_diff</a>(<span class="keyword">const</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a>&amp; a, <span class="keyword">const</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 4&gt;</a>&amp; b)</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        {</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>            <span class="keyword">auto</span> quat_a = <a class="code hl_function" href="namespacez_1_1math.html#a8e72887f67cd97a9305ad8769e876a2e">quat_unit</a>(a);</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>            <span class="keyword">auto</span> quat_b = <a class="code hl_function" href="namespacez_1_1math.html#a8e72887f67cd97a9305ad8769e876a2e">quat_unit</a>(b);</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>            Scalar dot = quat_a.dot(quat_b);</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>            <span class="keywordflow">if</span> (dot &lt; 0.0) {</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>                quat_b = -quat_b; <span class="comment">// Ensure the shortest path</span></div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>            }</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="namespacez_1_1math.html#a8e72887f67cd97a9305ad8769e876a2e">quat_unit</a>(<a class="code hl_function" href="namespacez_1_1math.html#a8d55be220fa716b857f3899bed425a27">quat_mul</a>(<a class="code hl_function" href="namespacez_1_1math.html#a90ab6bd87b94b3b7535cf9621d5d167a">quat_conjugate</a>(a), b));</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        }</div>
+</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Scalar&gt;</div>
+<div class="foldopen" id="foldopen00296" data-start="{" data-end="}">
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno"><a class="line" href="namespacez_1_1math.html#ab793e09a008b00f53ccc5710639cff93">  296</a></span>        <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a> <a class="code hl_function" href="namespacez_1_1math.html#ab793e09a008b00f53ccc5710639cff93">so3_diff</a>(<span class="keyword">const</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a>&amp; a, <span class="keyword">const</span> <a class="code hl_class" href="classz_1_1math_1_1_vector.html">z::math::Vector&lt;Scalar, 3&gt;</a>&amp; b)</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        {</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>            Scalar dot = a.<a class="code hl_function" href="classz_1_1math_1_1_vector.html#a5791b5c72379f95e1b8bc6aeff20fc89">dot</a>(b);</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>            <span class="keywordflow">if</span> (dot &lt; 0.0) {</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="namespacez_1_1math.html#ac55ff186477e70d2b2c77658a87956fc">cross</a>(b, a);</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>            }</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="namespacez_1_1math.html#ac55ff186477e70d2b2c77658a87956fc">cross</a>(a, b);</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        }</div>
+</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    };</div>
+</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>}</div>
+<div class="ttc" id="a_tensor_type_8hpp_html"><div class="ttname"><a href="_tensor_type_8hpp.html">TensorType.hpp</a></div><div class="ttdoc">定义了一些张量类型</div></div>
+<div class="ttc" id="a_vector_type_8hpp_html"><div class="ttname"><a href="_vector_type_8hpp.html">VectorType.hpp</a></div><div class="ttdoc">定义了一些向量类型</div></div>
+<div class="ttc" id="aclassz_1_1math_1_1_vector_html"><div class="ttname"><a href="classz_1_1math_1_1_vector.html">z::math::Vector</a></div><div class="ttdoc">Vector class, support some vector operations, like dot, cross, normalize, etc.</div><div class="ttdef"><b>定义</b> VectorType.hpp:77</div></div>
+<div class="ttc" id="aclassz_1_1math_1_1_vector_html_a5791b5c72379f95e1b8bc6aeff20fc89"><div class="ttname"><a href="classz_1_1math_1_1_vector.html#a5791b5c72379f95e1b8bc6aeff20fc89">z::math::Vector::dot</a></div><div class="ttdeci">constexpr T dot(const Vector&lt; T, N &gt; &amp;other) const</div><div class="ttdoc">vector dot product</div><div class="ttdef"><b>定义</b> VectorType.hpp:910</div></div>
+<div class="ttc" id="aclassz_1_1math_1_1_vector_html_a95f674b6e10118283b8f34dcdceb688d"><div class="ttname"><a href="classz_1_1math_1_1_vector.html#a95f674b6e10118283b8f34dcdceb688d">z::math::Vector::length</a></div><div class="ttdeci">T length() const</div><div class="ttdoc">vector length in L2 norm</div><div class="ttdef"><b>定义</b> VectorType.hpp:925</div></div>
+<div class="ttc" id="anamespacez_1_1math_html"><div class="ttname"><a href="namespacez_1_1math.html">z::math</a></div><div class="ttdoc">math namespace, contains some math functions</div><div class="ttdef"><b>定义</b> so3.hpp:20</div></div>
+<div class="ttc" id="anamespacez_1_1math_html_a05acf4f144d593d277915f4cea7d5d57"><div class="ttname"><a href="namespacez_1_1math.html#a05acf4f144d593d277915f4cea7d5d57">z::math::quat_rotate_inverse</a></div><div class="ttdeci">z::math::Vector&lt; Scalar, 3 &gt; quat_rotate_inverse(const z::math::Vector&lt; Scalar, 4 &gt; &amp;q, const z::math::Vector&lt; Scalar, 3 &gt; &amp;v)</div><div class="ttdoc">Rotate a 3D vector by the inverse of a quaternion.</div><div class="ttdef"><b>定义</b> so3.hpp:125</div></div>
+<div class="ttc" id="anamespacez_1_1math_html_a4e8f247556f01cf3300a6303d01a91fd"><div class="ttname"><a href="namespacez_1_1math.html#a4e8f247556f01cf3300a6303d01a91fd">z::math::get_euler_xyz</a></div><div class="ttdeci">z::math::Vector&lt; Scalar, 3 &gt; get_euler_xyz(const z::math::Vector&lt; Scalar, 4 &gt; &amp;quat)</div><div class="ttdoc">Convert quaternion representation to Euler angles (in radians).</div><div class="ttdef"><b>定义</b> so3.hpp:171</div></div>
+<div class="ttc" id="anamespacez_1_1math_html_a5843722d4d2ca06811cc11e9256cf8b0"><div class="ttname"><a href="namespacez_1_1math.html#a5843722d4d2ca06811cc11e9256cf8b0">z::math::so3_from_quat</a></div><div class="ttdeci">z::math::Vector&lt; Scalar, 3 &gt; so3_from_quat(const z::math::Vector&lt; Scalar, 4 &gt; &amp;quat)</div><div class="ttdoc">Convert a quaternion to an so(3) vector representation.</div><div class="ttdef"><b>定义</b> so3.hpp:194</div></div>
+<div class="ttc" id="anamespacez_1_1math_html_a5853edfeca7ce094066773f4e498d9a3"><div class="ttname"><a href="namespacez_1_1math.html#a5853edfeca7ce094066773f4e498d9a3">z::math::quat_from_euler_xyz</a></div><div class="ttdeci">z::math::Vector&lt; Scalar, 4 &gt; quat_from_euler_xyz(const z::math::Vector&lt; Scalar, 3 &gt; &amp;euler)</div><div class="ttdoc">Convert Euler angles (in radians) to quaternion representation.</div><div class="ttdef"><b>定义</b> so3.hpp:143</div></div>
+<div class="ttc" id="anamespacez_1_1math_html_a7daaee9cfeb16ff33fc668f427be69e6"><div class="ttname"><a href="namespacez_1_1math.html#a7daaee9cfeb16ff33fc668f427be69e6">z::math::so3_to_quat</a></div><div class="ttdeci">z::math::Vector&lt; Scalar, 4 &gt; so3_to_quat(const z::math::Vector&lt; Scalar, 3 &gt; &amp;so3)</div><div class="ttdoc">Convert an so(3) vector representation to a quaternion.</div><div class="ttdef"><b>定义</b> so3.hpp:215</div></div>
+<div class="ttc" id="anamespacez_1_1math_html_a864b7aa9dd867568e6c2e2bee7a4e289"><div class="ttname"><a href="namespacez_1_1math.html#a864b7aa9dd867568e6c2e2bee7a4e289">z::math::quat_slerp</a></div><div class="ttdeci">z::math::Vector&lt; Scalar, 4 &gt; quat_slerp(const z::math::Vector&lt; Scalar, 4 &gt; &amp;a, const z::math::Vector&lt; Scalar, 4 &gt; &amp;b, Scalar t)</div><div class="ttdoc">Perform spherical linear interpolation (SLERP) between two quaternions.</div><div class="ttdef"><b>定义</b> so3.hpp:240</div></div>
+<div class="ttc" id="anamespacez_1_1math_html_a8d55be220fa716b857f3899bed425a27"><div class="ttname"><a href="namespacez_1_1math.html#a8d55be220fa716b857f3899bed425a27">z::math::quat_mul</a></div><div class="ttdeci">z::math::Vector&lt; Scalar, 4 &gt; quat_mul(const z::math::Vector&lt; Scalar, 4 &gt; &amp;a, const z::math::Vector&lt; Scalar, 4 &gt; &amp;b)</div><div class="ttdoc">Multiply two quaternions.</div><div class="ttdef"><b>定义</b> so3.hpp:79</div></div>
+<div class="ttc" id="anamespacez_1_1math_html_a8e72887f67cd97a9305ad8769e876a2e"><div class="ttname"><a href="namespacez_1_1math.html#a8e72887f67cd97a9305ad8769e876a2e">z::math::quat_unit</a></div><div class="ttdeci">z::math::Vector&lt; Scalar, 4 &gt; quat_unit(const z::math::Vector&lt; Scalar, 4 &gt; &amp;quat)</div><div class="ttdoc">Normalize a quaternion to unit length.</div><div class="ttdef"><b>定义</b> so3.hpp:61</div></div>
+<div class="ttc" id="anamespacez_1_1math_html_a8efead6756c38fff38e7d7c39cd58e7e"><div class="ttname"><a href="namespacez_1_1math.html#a8efead6756c38fff38e7d7c39cd58e7e">z::math::quat_rotate</a></div><div class="ttdeci">z::math::Vector&lt; Scalar, 3 &gt; quat_rotate(const z::math::Vector&lt; Scalar, 4 &gt; &amp;q, const z::math::Vector&lt; Scalar, 3 &gt; &amp;v)</div><div class="ttdoc">Rotate a 3D vector by a quaternion.</div><div class="ttdef"><b>定义</b> so3.hpp:106</div></div>
+<div class="ttc" id="anamespacez_1_1math_html_a90ab6bd87b94b3b7535cf9621d5d167a"><div class="ttname"><a href="namespacez_1_1math.html#a90ab6bd87b94b3b7535cf9621d5d167a">z::math::quat_conjugate</a></div><div class="ttdeci">z::math::Vector&lt; Scalar, 4 &gt; quat_conjugate(const z::math::Vector&lt; Scalar, 4 &gt; &amp;quat)</div><div class="ttdoc">Compute the conjugate of a quaternion.</div><div class="ttdef"><b>定义</b> so3.hpp:47</div></div>
+<div class="ttc" id="anamespacez_1_1math_html_ab793e09a008b00f53ccc5710639cff93"><div class="ttname"><a href="namespacez_1_1math.html#ab793e09a008b00f53ccc5710639cff93">z::math::so3_diff</a></div><div class="ttdeci">z::math::Vector&lt; Scalar, 3 &gt; so3_diff(const z::math::Vector&lt; Scalar, 3 &gt; &amp;a, const z::math::Vector&lt; Scalar, 3 &gt; &amp;b)</div><div class="ttdoc">Compute the difference between two so(3) vectors, ensuring the shortest path.</div><div class="ttdef"><b>定义</b> so3.hpp:296</div></div>
+<div class="ttc" id="anamespacez_1_1math_html_ac55ff186477e70d2b2c77658a87956fc"><div class="ttname"><a href="namespacez_1_1math.html#ac55ff186477e70d2b2c77658a87956fc">z::math::cross</a></div><div class="ttdeci">z::math::Vector&lt; Scalar, 3 &gt; cross(const z::math::Vector&lt; Scalar, 3 &gt; &amp;a, const z::math::Vector&lt; Scalar, 3 &gt; &amp;b)</div><div class="ttdoc">cross product of two 3D vectors.</div><div class="ttdef"><b>定义</b> so3.hpp:30</div></div>
+<div class="ttc" id="anamespacez_1_1math_html_adce843209980c9c11ef26f8a4b62eefa"><div class="ttname"><a href="namespacez_1_1math.html#adce843209980c9c11ef26f8a4b62eefa">z::math::quat_diff</a></div><div class="ttdeci">z::math::Vector&lt; Scalar, 4 &gt; quat_diff(const z::math::Vector&lt; Scalar, 4 &gt; &amp;a, const z::math::Vector&lt; Scalar, 4 &gt; &amp;b)</div><div class="ttdoc">Compute the difference between two quaternions, ensuring the shortest path.</div><div class="ttdef"><b>定义</b> so3.hpp:276</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7b6a9de995744179e2af2e4eac8c765a.html">CtrlZ</a></li><li class="navelem"><a class="el" href="dir_0ae636835fa1df8aeaf077e074b22c49.html">Utils</a></li><li class="navelem"><a class="el" href="so3_8hpp.html">so3.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

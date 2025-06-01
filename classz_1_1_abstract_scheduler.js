@@ -1,11 +1,13 @@
 var classz_1_1_abstract_scheduler =
 [
     [ "TCB", "structz_1_1_abstract_scheduler_1_1_t_c_b.html", "structz_1_1_abstract_scheduler_1_1_t_c_b" ],
+    [ "Ptr", "classz_1_1_abstract_scheduler.html#a09d987fbd682831cede55056d5623487", null ],
     [ "AbstractScheduler", "classz_1_1_abstract_scheduler.html#a5e6a4c370a9a4d57a053772647f3906d", null ],
     [ "~AbstractScheduler", "classz_1_1_abstract_scheduler.html#a1ea6d67fd7f132bbfc3bf6ff4bb167d3", null ],
     [ "AddWorker", "classz_1_1_abstract_scheduler.html#ab1c73b08a6d3def995487191b466f1dd", null ],
     [ "AddWorkers", "classz_1_1_abstract_scheduler.html#a59ebdaf47017266dbb8068fd5ed0c8d2", null ],
     [ "CreateTaskList", "classz_1_1_abstract_scheduler.html#a2b65b1d044186e193b1abd62d76d0e1f", null ],
+    [ "CreateWorker", "classz_1_1_abstract_scheduler.html#a5795982996e13752d42a0b0ffcab0703", null ],
     [ "DestroyTaskList", "classz_1_1_abstract_scheduler.html#a9cebfb9baf7708be2294470e80c5ca76", null ],
     [ "DisableTaskList", "classz_1_1_abstract_scheduler.html#a96023b059671fc266fd0fc64e213dbc7", null ],
     [ "EnableTaskList", "classz_1_1_abstract_scheduler.html#a9a2e5b15e795ac09025a5593542f72a9", null ],
@@ -22,10 +24,12 @@ var classz_1_1_abstract_scheduler =
     [ "dataCenter", "classz_1_1_abstract_scheduler.html#ad2c119c841bc14e68b728b5479960262", null ],
     [ "MainThreadTaskBlock", "classz_1_1_abstract_scheduler.html#a6d2527582dd43820a1b2d51ad23701fb", null ],
     [ "MainThreadTaskName", "classz_1_1_abstract_scheduler.html#a208a17d1ae9ede0b5e4a8d521a70bce3", null ],
+    [ "ManagedWorkers", "classz_1_1_abstract_scheduler.html#af74bfef8434281895d1eb24a690f80fc", null ],
     [ "spin_dt", "classz_1_1_abstract_scheduler.html#aeb563d1f04780de1de38a5dd721c3a20", null ],
     [ "SyncLock", "classz_1_1_abstract_scheduler.html#ab9f7e63da117efa52cdcc7bc0b458186", null ],
     [ "SyncMutex", "classz_1_1_abstract_scheduler.html#aea76dd9c01f9b570984b8476b98d5f51", null ],
     [ "TaskList", "classz_1_1_abstract_scheduler.html#a75b97f9d5ec52aa50b3a6b8289caa115", null ],
     [ "threadId", "classz_1_1_abstract_scheduler.html#a0d6e11efbbdc5fbf4abbd88e18fd8b4e", null ],
-    [ "TimeStamp", "classz_1_1_abstract_scheduler.html#a48e19a1edd67fff5596103dfb1514e54", null ]
+    [ "TimeStamp", "classz_1_1_abstract_scheduler.html#a48e19a1edd67fff5596103dfb1514e54", null ],
+    [ "weak_ptr", "classz_1_1_abstract_scheduler.html#af796f9cf7efdd485adc40ec3d38091fb", null ]
 ];

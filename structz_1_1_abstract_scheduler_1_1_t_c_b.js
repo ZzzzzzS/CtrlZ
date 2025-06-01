@@ -9,5 +9,6 @@ var structz_1_1_abstract_scheduler_1_1_t_c_b =
     [ "TaskName", "structz_1_1_abstract_scheduler_1_1_t_c_b.html#a002fd94ef1a60e50281ee1bd202d4110", null ],
     [ "thread", "structz_1_1_abstract_scheduler_1_1_t_c_b.html#a2926a40852204f2df46d65ad42a55a36", null ],
     [ "threadId", "structz_1_1_abstract_scheduler_1_1_t_c_b.html#a5c1203a0c6dbc5ff7a99178c68c50d18", null ],
+    [ "workerFuncBegins", "structz_1_1_abstract_scheduler_1_1_t_c_b.html#ae81bf6c7aa8bb29cf520f9a5fe3a913e", null ],
     [ "workers", "structz_1_1_abstract_scheduler_1_1_t_c_b.html#a30eabc1e59e2208792606a17d846bb02", null ]
 ];
