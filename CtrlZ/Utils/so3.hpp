@@ -263,5 +263,43 @@ namespace z
             Scalar b_scale = std::sin(t * theta) / sin_theta;
             return quat_unit(a_unit * a_scale + b_unit * b_scale);
         }
+
+        /**
+         * @brief Compute the difference between two quaternions, ensuring the shortest path.
+         *
+         * @tparam Scalar Type of the scalar (e.g., float, double).
+         * @param a quaternion a represented as the first quaternion in XYZW format.
+         * @param b quaternion b represented as the second quaternion in XYZW format.
+         * @return z::math::Vector<Scalar, 4> Quaternion representing the difference between a and b, ensuring the shortest path.
+         */
+        template<typename Scalar>
+        z::math::Vector<Scalar, 4> quat_diff(const z::math::Vector<Scalar, 4>& a, const z::math::Vector<Scalar, 4>& b)
+        {
+            auto quat_a = quat_unit(a);
+            auto quat_b = quat_unit(b);
+            Scalar dot = quat_a.dot(quat_b);
+            if (dot < 0.0) {
+                quat_b = -quat_b; // Ensure the shortest path
+            }
+            return quat_unit(quat_mul(quat_conjugate(a), b));
+        }
+
+        /**
+         * @brief Compute the difference between two so(3) vectors, ensuring the shortest path.
+         *
+         * @tparam Scalar Type of the scalar (e.g., float, double).
+         * @param a so(3) vector a represented as the first vector in 3D space.
+         * @param b so(3) vector b represented as the second vector in 3D space.
+         * @return z::math::Vector<Scalar, 3> Vector representing the difference between a and b, ensuring the shortest path.
+         */
+        template<typename Scalar>
+        z::math::Vector<Scalar, 3> so3_diff(const z::math::Vector<Scalar, 3>& a, const z::math::Vector<Scalar, 3>& b)
+        {
+            Scalar dot = a.dot(b);
+            if (dot < 0.0) {
+                return cross(b, a);
+            }
+            return cross(a, b);
+        }
     };
 }
