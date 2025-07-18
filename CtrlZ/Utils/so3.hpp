@@ -193,9 +193,9 @@ namespace z
         template<typename Scalar>
         z::math::Vector<Scalar, 3> so3_from_quat(const z::math::Vector<Scalar, 4>& quat)
         {
-            auto quat = quat_unit(quat);
-            z::math::Vector<Scalar, 3> v = { quat[0], quat[1], quat[2] };
-            Scalar w = quat[3];
+            auto unit_quat = quat_unit(quat);
+            z::math::Vector<Scalar, 3> v = { unit_quat[0], unit_quat[1], unit_quat[2] };
+            Scalar w = unit_quat[3];
             Scalar theta = 2 * std::acos(w);
             Scalar sin_theta = std::sin(theta / 2.0);
             if (std::abs(sin_theta) < 1e-6) {

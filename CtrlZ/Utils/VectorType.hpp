@@ -363,6 +363,10 @@ namespace z
              */
             constexpr T& operator()(int idx)
             {
+                if (idx < -static_cast<int>(N) || idx >= static_cast<int>(N))
+                    throw std::out_of_range("Index out of range in Vector<bool, N>::operator[]");
+                // idx must be in range [-N, N-1]
+
                 if (idx < 0)
                     return this->operator[](N + idx);
                 else
@@ -377,6 +381,9 @@ namespace z
              */
             constexpr const T& operator()(int idx) const
             {
+                if (idx < -static_cast<int>(N) || idx >= static_cast<int>(N))
+                    throw std::out_of_range("Index out of range in Vector<bool, N>::operator[]");
+                // idx must be in range [-N, N-1]
                 if (idx < 0)
                     return this->operator[](N + idx);
                 else
@@ -391,6 +398,9 @@ namespace z
              */
             constexpr T& operator[](int idx)
             {
+                if (idx < -static_cast<int>(N) || idx >= static_cast<int>(N))
+                    throw std::out_of_range("Index out of range in Vector<bool, N>::operator[]");
+                // idx must be in range [-N, N-1]
                 if (idx < 0)
                     return std::array<T, N>::operator[](N + idx);
                 else
@@ -405,6 +415,9 @@ namespace z
              */
             constexpr const T& operator[](int idx) const
             {
+                if (idx < -static_cast<int>(N) || idx >= static_cast<int>(N))
+                    throw std::out_of_range("Index out of range in Vector<bool, N>::operator[]");
+                // idx must be in range [-N, N-1]
                 if (idx < 0)
                     return std::array<T, N>::operator[](N + idx);
                 else
@@ -1188,6 +1201,9 @@ namespace z
              */
             constexpr bool& operator()(int idx)
             {
+                if (idx < -static_cast<int>(N) || idx >= static_cast<int>(N))
+                    throw std::out_of_range("Index out of range in Vector<bool, N>::operator[]");
+                // idx must be in range [-N, N-1]
                 if (idx < 0)
                     return this->operator[](N + idx);
                 else
@@ -1202,6 +1218,9 @@ namespace z
              */
             constexpr const bool& operator()(int idx) const
             {
+                if (idx < -static_cast<int>(N) || idx >= static_cast<int>(N))
+                    throw std::out_of_range("Index out of range in Vector<bool, N>::operator[]");
+                // idx must be in range [-N, N-1]
                 if (idx < 0)
                     return this->operator[](N + idx);
                 else
@@ -1216,6 +1235,9 @@ namespace z
              */
             constexpr bool& operator[](int idx)
             {
+                if (idx < -static_cast<int>(N) || idx >= static_cast<int>(N))
+                    throw std::out_of_range("Index out of range in Vector<bool, N>::operator[]");
+                // idx must be in range [-N, N-1]
                 if (idx < 0)
                     return std::array<bool, N>::operator[](N + idx);
                 else
@@ -1230,6 +1252,10 @@ namespace z
              */
             constexpr const bool& operator[](int idx) const
             {
+                if (idx < -static_cast<int>(N) || idx >= static_cast<int>(N))
+                    throw std::out_of_range("Index out of range in Vector<bool, N>::operator[]");
+
+                // idx must be in range [-N, N-1]
                 if (idx < 0)
                     return std::array<bool, N>::operator[](N + idx);
                 else
