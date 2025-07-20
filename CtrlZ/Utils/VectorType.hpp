@@ -1071,6 +1071,47 @@ namespace z
                 }
                 return result;
             }
+
+            /**
+             * @brief  cast the vector to another type
+             *
+             * @tparam Scalar
+             * @return constexpr Vector<Scalar, N>
+             */
+            template<typename Scalar>
+            constexpr Vector<Scalar, N> cast() const
+            {
+                static_assert(std::is_arithmetic_v<Scalar>, "Scalar must be an arithmetic type");
+                static_assert(std::is_convertible_v<T, Scalar>, "T must be convertible to Scalar");
+                Vector<Scalar, N> result;
+                for (size_t i = 0; i < N; i++)
+                {
+                    result[i] = static_cast<Scalar>(this->operator[](i));
+                }
+                return result;
+            }
+
+            /**
+             * @brief cast the vector to itself, this is a no-op function
+             *
+             * @return constexpr Vector<T, N>
+             */
+            constexpr Vector<T, N> cast() const
+            {
+                return *this;
+            }
+
+            /**
+             * @brief convert the vector to another type
+             *
+             * @tparam Scalar
+             * @return constexpr Vector<Scalar, N>
+             */
+            template<typename Scalar>
+            constexpr Vector<Scalar, N> to() const
+            {
+                return cast<Scalar>();
+            }
         };
 
         /**

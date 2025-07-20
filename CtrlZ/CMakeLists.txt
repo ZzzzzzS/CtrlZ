@@ -41,6 +41,9 @@ add_library(CtrlZ STATIC
     ${SRC_WORKERS}
     ${SRC_UTILS}
 )
+
+add_subdirectory(Extensions)
+
 target_include_directories(CtrlZ PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 if(WIN32)
