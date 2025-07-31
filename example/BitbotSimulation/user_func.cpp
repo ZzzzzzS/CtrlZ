@@ -184,21 +184,21 @@ std::optional<bitbot::StateId> EventVeloYawDecrease(bitbot::EventValue keyState,
 
 std::optional<bitbot::StateId> EventJoystickXChange(bitbot::EventValue keyState, UserData& d)
 {
-    double vel = *reinterpret_cast<double*>(&keyState);
+    double vel = static_cast<double>(keyState / 32768.0);
     d.CommanderWorker->SetCmd(0, static_cast<RealNumber>(vel));
     return std::optional<bitbot::StateId>();
 }
 
 std::optional<bitbot::StateId> EventJoystickYChange(bitbot::EventValue keyState, UserData& d)
 {
-    double vel = *reinterpret_cast<double*>(&keyState);
+    double vel = static_cast<double>(keyState / 32768.0);
     d.CommanderWorker->SetCmd(1, static_cast<RealNumber>(vel));
     return std::optional<bitbot::StateId>();
 }
 
 std::optional<bitbot::StateId> EventJoystickYawChange(bitbot::EventValue keyState, UserData& d)
 {
-    double vel = *reinterpret_cast<double*>(&keyState);
+    double vel = static_cast<double>(keyState / 32768.0);
     d.CommanderWorker->SetCmd(2, static_cast<RealNumber>(vel));
     return std::optional<bitbot::StateId>();
 }

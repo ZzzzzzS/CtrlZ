@@ -98,15 +98,15 @@
     },
     {
       "event": "joystick_x_change",
-      "kb_key": "GAMEPAD_RY"
+      "kb_key": "GAMEPAD_JOYSTICK_RY"
     },
     {
       "event": "joystick_y_change",
-      "kb_key": "GAMEPAD_LX"
+      "kb_key": "GAMEPAD_JOYSTICK_LX"
     },
     {
       "event": "joystick_yaw_change",
-      "kb_key": "GAMEPAD_RX"
+      "kb_key": "GAMEPAD_JOYSTICK_RX"
     }
   ]
 }
