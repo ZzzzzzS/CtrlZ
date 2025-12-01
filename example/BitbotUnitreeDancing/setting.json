@@ -1,0 +1,60 @@
+{
+  "control": [
+    {
+      "event": "enable_record",
+      "kb_key": "m"
+    },
+    {
+      "event": "enable_record",
+      "kb_key": "GAMEPAD_BUTTON_Y"
+    },
+    {
+      "event": "start",
+      "kb_key": "8"
+    },
+    {
+      "event": "start",
+      "kb_key": "GAMEPAD_BUTTON_X"
+    },
+    {
+      "event": "power_on",
+      "kb_key": "9"
+    },
+    {
+      "event": "power_on",
+      "kb_key": "GAMEPAD_BUTTON_L_STICK"
+    },
+    {
+      "event": "stop",
+      "kb_key": " "
+    },
+    {
+      "event": "stop",
+      "kb_key": "GAMEPAD_BUTTON_R_STICK"
+    },
+    {
+      "event": "init_pose",
+      "kb_key": "p"
+    },
+    {
+      "event": "init_pose",
+      "kb_key": "GAMEPAD_BUTTON_B"
+    },
+    {
+      "event": "policy_run",
+      "kb_key": "r"
+    },
+    {
+      "event": "policy_run",
+      "kb_key": "GAMEPAD_BUTTON_A"
+    },
+    {
+      "event": "dance",
+      "kb_key": "d"
+    },
+    {
+      "event": "dance",
+      "kb_key": "GAMEPAD_BUTTON_SWITCH"
+    }
+  ]
+}

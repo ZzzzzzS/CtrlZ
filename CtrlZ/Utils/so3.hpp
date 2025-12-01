@@ -301,5 +301,37 @@ namespace z
             }
             return cross(a, b);
         }
+
+        /**
+         * @brief Convert a quaternion to a rotation matrix.
+         *
+         * @tparam Scalar Type of the scalar (e.g., float, double).
+         * @param quat A quaternion represented as a vector in XYZW format.
+         * @return z::math::Tensor<Scalar, 3, 3> Rotation matrix corresponding to the quaternion.
+         */
+        template<typename Scalar>
+        z::math::Tensor<Scalar, 3, 3> toRotationMatrix(const z::math::Vector<Scalar, 4>& quat)
+        {
+            Scalar qw = quat[3];
+            Scalar qx = quat[0];
+            Scalar qy = quat[1];
+            Scalar qz = quat[2];
+
+            z::math::Tensor<Scalar, 3, 3> R;
+
+
+            R(0, 0) = 1 - 2 * (qy * qy + qz * qz);
+            R(0, 1) = 2 * (qx * qy - qz * qw);
+            R(0, 2) = 2 * (qx * qz + qy * qw);
+
+            R(1, 0) = 2 * (qx * qy + qz * qw);
+            R(1, 1) = 1 - 2 * (qx * qx + qz * qz);
+            R(1, 2) = 2 * (qy * qz - qx * qw);
+
+            R(2, 0) = 2 * (qx * qz - qy * qw);
+            R(2, 1) = 2 * (qy * qz + qx * qw);
+            R(2, 2) = 1 - 2 * (qx * qx + qy * qy);
+            return R;
+        }
     };
 }

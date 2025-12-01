@@ -1,0 +1,125 @@
+{
+  "Scheduler": {
+    "dt": 0.002,
+    "CheckFrequency": true,
+    "InferTask": {
+      "PolicyFrequency": 10
+    }
+  },
+  "Workers": {
+    "ResetPosition": {
+      "Duration": 3
+    },
+    "ActionManager": {
+      "SwitchIntervalTime": 1.0
+    },
+    "MotorControl": {
+      "ControlMode": "Position",
+      "PosFilterWeight": [
+        1
+      ],
+      "VelFilterWeight": [
+        1
+      ],
+      "DefaultPosition": [
+        -0.302,
+        -0.319,
+        0.00124,
+        0.000442,
+        0.00489,
+        0.00191,
+        0.00929,
+        0.00796,
+        0.00546,
+        0.672,
+        0.67,
+        0.2,
+        0.202,
+        -0.368,
+        -0.355,
+        0.194,
+        -0.196,
+        -0.00644,
+        0.00976,
+        0.00258,
+        -0.00029,
+        0.605,
+        0.596,
+        0.00818,
+        0.00322,
+        0.00293,
+        -0.00339,
+        -0.00955,
+        -0.00715
+      ]
+    },
+    "ImuProcess": {
+      "AccFilterWeight": [
+        1
+      ],
+      "GyroFilterWeight": [
+        1
+      ],
+      "MagFilterWeight": [
+        1
+      ]
+    },
+    "AsyncLogger": {
+      "LogPath": "./log/extra_data/",
+      "WriteBackFrequency": 100
+    },
+    "NN": {
+      "Inference": {
+        "WarmUpModel": false,
+        "IntraNumberThreads": 1
+      },
+      "Network": {
+        "ModelPath": "../../example/BitbotUnitreeDancing/CheckPoints/policy_102.onnx",
+        "InputNodeNames": [
+          "obs"
+        ],
+        "OutputNodeNames": [
+          "actions"
+        ],
+        "Cycle_time": 0.01667
+      },
+      "Preprocess": {
+        "trajectory_path": "../../example/BitbotUnitreeDancing/CheckPoints/G1_Take_102.bvh_60hz.csv",
+        "include_velocity": false
+      },
+      "Postprocess": {
+        "action_scale": [
+          0.548,
+          0.548,
+          0.548,
+          0.351,
+          0.351,
+          0.439,
+          0.548,
+          0.548,
+          0.439,
+          0.351,
+          0.351,
+          0.439,
+          0.439,
+          0.439,
+          0.439,
+          0.439,
+          0.439,
+          0.439,
+          0.439,
+          0.439,
+          0.439,
+          0.439,
+          0.439,
+          0.439,
+          0.439,
+          0.0745,
+          0.0745,
+          0.0745,
+          0.0745
+        ]
+      }
+    }
+  }
+}
