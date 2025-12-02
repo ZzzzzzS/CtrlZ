@@ -30,6 +30,7 @@ struct UserData
 {
     SchedulerType::Ptr TaskScheduler;
     ImuWorkerType* ImuWorker;
+    AlterImuWorkerType* AlterImuWorker;
     MotorWorkerType* MotorWorker;
     LoggerWorkerType* Logger;
     BeyondMimicUnitreeInferWorkerType* NetInferWorker;
@@ -39,6 +40,7 @@ struct UserData
 
     std::array<DeviceJoint*, JOINT_NUMBER> JointsPtr;
     DeviceImu* ImuPtr;
+    DeviceImu* ImuAlterPtr;
 };
 
 using KernelType = bitbot::MujocoKernel<UserData>;

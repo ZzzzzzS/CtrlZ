@@ -61,7 +61,7 @@
 
   <worldbody>
     <!-- <body name="pelvis" pos="0 0 0.993"> -->
-    <body name="pelvis" pos="0 0 0.793" euler="0 0 3.14">
+    <body name="pelvis" pos="0 0 0.793" euler="0 0 -1.57">
       <site name="imu" size="0.01" pos="0.0 0.0 0.0" />
       <inertial pos="0 0 -0.07605" quat="1 0 -0.000399148 0" mass="3.813"
         diaginertia="0.010549 0.0093089 0.0079184" />

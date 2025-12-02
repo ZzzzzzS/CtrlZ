@@ -34,36 +34,6 @@
         <device id="27" type="MujocoJoint" name="right_wrist_pitch_joint" mode="position" pos_kp='16.8' pos_kd='1.07' pos_ki='0' vel_kp='0' vel_kd='0' />
         <device id="28" type="MujocoJoint" name="right_wrist_yaw_joint" mode="position" pos_kp='16.8' pos_kd='1.07' pos_ki='0' vel_kp='0' vel_kd='0' />
 
-                <!-- <device id="0" type="MujocoJoint" name="left_hip_pitch_joint" mode="position" pos_kp='100' pos_kd='2.56' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="1" type="MujocoJoint" name="left_hip_roll_joint" mode="position" pos_kp='100' pos_kd='6.31' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="2" type="MujocoJoint" name="left_hip_yaw_joint" mode="position" pos_kp='100' pos_kd='2.56' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="3" type="MujocoJoint" name="left_knee_joint" mode="position" pos_kp='100' pos_kd='6.31' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="4" type="MujocoJoint" name="left_ankle_pitch_joint" mode="position" pos_kp='100.5' pos_kd='1.81' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="5" type="MujocoJoint" name="left_ankle_roll_joint" mode="position" pos_kp='100.5' pos_kd='1.81' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="6" type="MujocoJoint" name="right_hip_pitch_joint" mode="position" pos_kp='100.2' pos_kd='2.56' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="7" type="MujocoJoint" name="right_hip_roll_joint" mode="position" pos_kp='100.1' pos_kd='6.31' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="8" type="MujocoJoint" name="right_hip_yaw_joint" mode="position" pos_kp='100.2' pos_kd='2.56' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="9" type="MujocoJoint" name="right_knee_joint" mode="position" pos_kp='100.1' pos_kd='6.31' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="10" type="MujocoJoint" name="right_ankle_pitch_joint" mode="position" pos_kp='100.5' pos_kd='1.81' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="11" type="MujocoJoint" name="right_ankle_roll_joint" mode="position" pos_kp='100.5' pos_kd='1.81' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="12" type="MujocoJoint" name="waist_yaw_joint" mode="position" pos_kp='100.2' pos_kd='2.56' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="13" type="MujocoJoint" name="waist_roll_joint" mode="position" pos_kp='100.5' pos_kd='1.81' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="14" type="MujocoJoint" name="waist_pitch_joint" mode="position" pos_kp='100.5' pos_kd='1.81' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="15" type="MujocoJoint" name="left_shoulder_pitch_joint" mode="position" pos_kp='100.3' pos_kd='0.907' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="16" type="MujocoJoint" name="left_shoulder_roll_joint" mode="position" pos_kp='100.3' pos_kd='0.907' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="17" type="MujocoJoint" name="left_shoulder_yaw_joint" mode="position" pos_kp='100.3' pos_kd='0.907' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="18" type="MujocoJoint" name="left_elbow_joint" mode="position" pos_kp='100.3' pos_kd='0.907' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="19" type="MujocoJoint" name="left_wrist_roll_joint" mode="position" pos_kp='100.3' pos_kd='0.907' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="20" type="MujocoJoint" name="left_wrist_pitch_joint" mode="position" pos_kp='100.8' pos_kd='1.07' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="21" type="MujocoJoint" name="left_wrist_yaw_joint" mode="position" pos_kp='100.8' pos_kd='1.07' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="22" type="MujocoJoint" name="right_shoulder_pitch_joint" mode="position" pos_kp='100.3' pos_kd='0.907' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="23" type="MujocoJoint" name="right_shoulder_roll_joint" mode="position" pos_kp='100.3' pos_kd='0.907' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="24" type="MujocoJoint" name="right_shoulder_yaw_joint" mode="position" pos_kp='100.3' pos_kd='0.907' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="25" type="MujocoJoint" name="right_elbow_joint" mode="position" pos_kp='100.3' pos_kd='0.907' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="26" type="MujocoJoint" name="right_wrist_roll_joint" mode="position" pos_kp='100.3' pos_kd='0.907' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="27" type="MujocoJoint" name="right_wrist_pitch_joint" mode="position" pos_kp='100.8' pos_kd='1.07' pos_ki='0' vel_kp='0' vel_kd='0' />
-        <device id="28" type="MujocoJoint" name="right_wrist_yaw_joint" mode="position" pos_kp='100.8' pos_kd='1.07' pos_ki='0' vel_kp='0' vel_kd='0' /> -->
-
         <device id="29" type="MujocoImu" name="imu" site="imu" acc="imu_acc" gyro="imu_gyro"/>
         <device id="30" type="MujocoImu" name="secondary_imu" site="secondary_imu" acc="secondary_imu_acc" gyro="secondary_imu_gyro"/>
     </bus>

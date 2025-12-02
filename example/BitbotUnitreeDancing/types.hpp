@@ -42,6 +42,7 @@ constexpr std::array<size_t, JOINT_NUMBER> JOINT_ID_MAP = {
     0, 6, 12, 1, 7, 13, 2, 8, 14, 3, 9, 15, 22, 4, 10, 16, 23, 5, 11, 17, 24, 18, 25, 19, 26, 20, 27, 21, 28
 };
 constexpr size_t IMU_ID_MAP = 29;
+constexpr size_t ALTER_IMU_ID_MAP = 30;
 
 /********** IMU Data Pair******************/
 constexpr z::CTSPair<"AccelerationRaw", Vec3> ImuAccRawPair;
@@ -51,6 +52,7 @@ constexpr z::CTSPair<"AngleRaw", Vec3> ImuMagRawPair;
 constexpr z::CTSPair<"AccelerationValue", Vec3> ImuAccFilteredPair;
 constexpr z::CTSPair<"AngleValue", Vec3> ImuMagFilteredPair;
 constexpr z::CTSPair<"AngleVelocityValue", Vec3> ImuGyroFilteredPair;
+constexpr z::CTSPair<"AlterAngleValue", Vec3> ImuAlterAngleFilteredPair;
 
 
 /********** Motor control Pair ************/
@@ -79,18 +81,19 @@ using SchedulerType = z::AbstractScheduler<ImuAccRawPair, ImuGyroRawPair, ImuMag
     TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair,
     TargetMotorTorquePair, LimitTargetMotorTorquePair,
     CurrentMotorVelRawPair, CurrentMotorPosRawPair,
-    NetLastActionPair, InferenceTimePair, Net1OutPair, Net1RefTrajPair, Net1RefVelPair>;
+    NetLastActionPair, InferenceTimePair, Net1OutPair, Net1RefTrajPair, Net1RefVelPair, ImuAlterAngleFilteredPair>;
 
 
 //define workers
 using MotorResetWorkerType = z::MotorResetPositionWorker<SchedulerType, RealNumber, JOINT_NUMBER>;
 using ImuWorkerType = z::ImuProcessWorker<SchedulerType, DeviceImu*, RealNumber>;
+using AlterImuWorkerType = z::SimpleCallbackWorker<SchedulerType>;
 using MotorWorkerType = z::MotorControlWorker<SchedulerType, DeviceJoint*, RealNumber, JOINT_NUMBER>;
 using LoggerWorkerType = z::AsyncLoggerWorker<SchedulerType, RealNumber, ImuAccRawPair, ImuGyroRawPair, ImuMagRawPair,
     ImuAccFilteredPair, ImuGyroFilteredPair, ImuMagFilteredPair,
     TargetMotorPosPair, TargetMotorVelPair, CurrentMotorPosPair, CurrentMotorVelPair, CurrentMotorTorquePair,
     TargetMotorTorquePair, LimitTargetMotorTorquePair,
-    NetLastActionPair, InferenceTimePair, Net1OutPair, Net1RefTrajPair, Net1RefVelPair>;
+    NetLastActionPair, InferenceTimePair, Net1OutPair, Net1RefTrajPair, Net1RefVelPair, ImuAlterAngleFilteredPair>;
 
 using ActionManagementWorkerType = z::ActionManagementWorker<SchedulerType, RealNumber, Net1OutPair>;
 

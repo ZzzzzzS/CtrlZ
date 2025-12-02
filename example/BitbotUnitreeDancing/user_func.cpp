@@ -43,6 +43,7 @@ void ConfigFunc(const KernelBus& bus, UserData& d)
     }
 
     d.ImuPtr = bus.GetDevice<DeviceImu>(IMU_ID_MAP).value();
+    d.ImuAlterPtr = bus.GetDevice<DeviceImu>(ALTER_IMU_ID_MAP).value();
     Apply(d.JointsPtr, [&bus](DeviceJoint** joint, size_t i)
         { *joint = bus.GetDevice<DeviceJoint>(JOINT_ID_MAP[i]).value(); });
 
@@ -54,6 +55,13 @@ void ConfigFunc(const KernelBus& bus, UserData& d)
     d.MotorWorker = d.TaskScheduler->template CreateWorker<MotorWorkerType>(cfg_workers["MotorControl"], d.JointsPtr);
     d.Logger = d.TaskScheduler->template CreateWorker<LoggerWorkerType>(cfg_workers["AsyncLogger"]);
     d.ActionManagementWorker = d.TaskScheduler->template CreateWorker<ActionManagementWorkerType>(cfg_workers["ActionManager"]);
+    d.AlterImuWorker = d.TaskScheduler->template CreateWorker<AlterImuWorkerType>([&d](SchedulerType::Ptr scheduler) {
+        RealNumber roll = d.ImuAlterPtr->GetRoll();
+        RealNumber pitch = d.ImuAlterPtr->GetPitch();
+        RealNumber yaw = d.ImuAlterPtr->GetYaw();
+        Vec3 euler_angles = Vec3({ roll, pitch, yaw });
+        scheduler->template SetData<"AlterAngleValue">(euler_angles);
+        });
 
 
     //创建主任务列表，并添加worker
@@ -61,6 +69,7 @@ void ConfigFunc(const KernelBus& bus, UserData& d)
     d.TaskScheduler->AddWorkers("MainTask",
         {
             d.ImuWorker,
+            d.AlterImuWorker,
             d.MotorWorker
         });
 

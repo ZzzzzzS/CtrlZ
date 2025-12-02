@@ -23,30 +23,6 @@
 #endif
 namespace z
 {
-    /**
-     * @brief UnitreeRlGymInferenceWorker 类型是一个人形机器人推理工人类型，该类实现了Unitree_rl_gym网络兼容的推理功能。
-     * @details UnitreeRlGymInferenceWorker 类型是一个人形机器人推理工人类型，该类实现了Unitree_rl_gym网络兼容的推理功能。
-     * Unitree_rl_gym: [https://github.com/unitreerobotics/unitree_rl_gym](https://github.com/unitreerobotics/unitree_rl_gym)
-     *
-     * @details config.json配置文件示例：
-     * @code {.json}
-     * {
-     *  "Workers": {
-     *     "NN": {
-     *        "NetWork":{
-     *           "Cycle_time": 0.63 //步频周期
-     *       }
-     *     }
-     *   }
-     * }
-     * @endcode
-     *
-     * @tparam SchedulerType 调度器类型
-     * @tparam NetName 网络名称，用户可以通过这个参数来指定网络的名称, 这在有多个网络时可以区分数据总线上的不同网络数据
-     * @tparam InferencePrecision 推理精度，用户可以通过这个参数来指定推理的精度，比如可以指定为float或者double
-     * @tparam INPUT_STUCK_LENGTH HumanoidGym网络的Actor输入堆叠长度
-     * @tparam JOINT_NUMBER 关节数量
-     */
     template<typename SchedulerType, CTString NetName, typename InferencePrecision, size_t JOINT_NUMBER, size_t TRAJ_LENGTH>
     class BeyondMimicUnitreeInferenceWorker : public AbstractNetInferenceWorker<SchedulerType, NetName, InferencePrecision>
     {
@@ -122,6 +98,10 @@ namespace z
 
         }
 
+        /**
+         * @brief 开始运行跳舞轨迹
+         *
+         */
         void start()
         {
             this->compute_init_quat();
@@ -162,10 +142,7 @@ namespace z
                 this->first_run = false;
             }
 
-            Vec4 torso_quat = this->compute_torso_quat_from_base_inertial_measurement_unit_measurement(
-                Ang,
-                CurrentMotorPosRaw
-            );
+            Vec4 torso_quat = this->compute_torso_quat_from_base_inertial_measurement_unit_measurement();
 
             MotorValVec ref_joint_pos;
             MotorValVec ref_joint_vel;
@@ -240,10 +217,7 @@ namespace z
             MotorValVec CurrentMotorPos;
             this->Scheduler->template GetData<"CurrentMotorPosition">(CurrentMotorPos);
 
-            Vec4 current_quat = this->compute_torso_quat_from_base_inertial_measurement_unit_measurement(
-                Ang,
-                CurrentMotorPos
-            );
+            Vec4 current_quat = this->compute_torso_quat_from_base_inertial_measurement_unit_measurement();
 
             auto robot_yaw = this->yawQuaternion(current_quat);
             Vec4 init_quat_e({ this->TrajectoryTensor(0, 3), this->TrajectoryTensor(0, 4), this->TrajectoryTensor(0, 5),this->TrajectoryTensor(0, 6) });
@@ -354,12 +328,16 @@ namespace z
             return data;
         }
 
-        Vec4 compute_torso_quat_from_base_inertial_measurement_unit_measurement(const Vec3& imu_angle, const MotorValVec& joint_positions)
+        Vec4 compute_torso_quat_from_base_inertial_measurement_unit_measurement()
         {
-            Vec3 waist_motor = { joint_positions[this->ReverseJointIdMap[13]], joint_positions[this->ReverseJointIdMap[14]],joint_positions[this->ReverseJointIdMap[12]] }; // roll pitch yaw
-            Vec4 waist_quat = z::math::quat_from_euler_xyz(waist_motor);
-            Vec4 imu_quat = z::math::quat_from_euler_xyz(imu_angle);
-            Vec4 torso_quat = z::math::quat_mul(imu_quat, waist_quat);
+            // Vec3 waist_motor = { joint_positions[this->ReverseJointIdMap[13]], joint_positions[this->ReverseJointIdMap[14]],joint_positions[this->ReverseJointIdMap[12]] }; // roll pitch yaw
+            // Vec4 waist_quat = z::math::quat_from_euler_xyz(waist_motor);
+            // Vec4 imu_quat = z::math::quat_from_euler_xyz(imu_angle);
+            // Vec4 torso_quat = z::math::quat_mul(imu_quat, waist_quat);
+            Vec3 imu_euler;
+            this->Scheduler->template GetData<"AlterAngleValue">(imu_euler);
+            Vec4 torso_quat = z::math::quat_from_euler_xyz(imu_euler);
+
             return torso_quat;
         }
 
