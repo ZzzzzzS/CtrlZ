@@ -304,6 +304,12 @@ namespace z
             ref_root_quat[2] = this->TrajectoryTensor(index, 5);
             ref_root_quat[3] = this->TrajectoryTensor(index, 6);
 
+            Vec4 quat_z = z::math::quat_from_euler_xyz(Vec3({ 0.0f, 0.0f, this->TrajectoryTensor(index, 12 + 7) }));
+            Vec4 quat_y = z::math::quat_from_euler_xyz(Vec3({ 0.0f, this->TrajectoryTensor(index, 14 + 7), 0.0f }));
+            Vec4 quat_x = z::math::quat_from_euler_xyz(Vec3({ this->TrajectoryTensor(index, 13 + 7), 0.0f, 0.0f }));
+            Vec4 yaw_quat = z::math::quat_mul(z::math::quat_mul(quat_z, quat_x), quat_y);
+            ref_root_quat = z::math::quat_mul(ref_root_quat, yaw_quat);
+
             //joint pos and vel
             for (size_t j = 0; j < JOINT_NUMBER; j++)
             {
@@ -330,13 +336,18 @@ namespace z
 
         Vec4 compute_torso_quat_from_base_inertial_measurement_unit_measurement()
         {
-            // Vec3 waist_motor = { joint_positions[this->ReverseJointIdMap[13]], joint_positions[this->ReverseJointIdMap[14]],joint_positions[this->ReverseJointIdMap[12]] }; // roll pitch yaw
-            // Vec4 waist_quat = z::math::quat_from_euler_xyz(waist_motor);
-            // Vec4 imu_quat = z::math::quat_from_euler_xyz(imu_angle);
-            // Vec4 torso_quat = z::math::quat_mul(imu_quat, waist_quat);
-            Vec3 imu_euler;
-            this->Scheduler->template GetData<"AlterAngleValue">(imu_euler);
-            Vec4 torso_quat = z::math::quat_from_euler_xyz(imu_euler);
+            Vec3 imu_angle;
+            this->Scheduler->template GetData<"AngleValue">(imu_angle);
+            MotorValVec joint_positions;
+            this->Scheduler->template GetData<"CurrentMotorPosition">(joint_positions);
+            Vec4 torso_quat;
+
+            Vec4 imu_quat_e = z::math::quat_from_euler_xyz(imu_angle);
+            Vec4 quat_z = z::math::quat_from_euler_xyz(Vec3({ 0.0f, 0.0f, joint_positions[this->ReverseJointIdMap[12]] }));
+            Vec4 quat_y = z::math::quat_from_euler_xyz(Vec3({ 0.0f, joint_positions[this->ReverseJointIdMap[14]], 0.0f }));
+            Vec4 quat_x = z::math::quat_from_euler_xyz(Vec3({ joint_positions[this->ReverseJointIdMap[13]], 0.0f, 0.0f }));
+            Vec4 waist_quat_e = z::math::quat_mul(z::math::quat_mul(quat_z, quat_x), quat_y);
+            torso_quat = z::math::quat_mul(imu_quat_e, waist_quat_e);
 
             return torso_quat;
         }
