@@ -2651,7 +2651,7 @@ namespace z
          * @return auto
          */
         template<typename T, size_t ...Ns>
-        constexpr auto cat(Vector<T, Ns>&... vectors) {
+        constexpr auto cat(const Vector<T, Ns>&... vectors) {
             constexpr size_t total_size = (Ns + ...);
             Vector<T, total_size> result;
             size_t offset = 0;
