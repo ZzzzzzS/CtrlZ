@@ -9,13 +9,15 @@
  *
  */
 #pragma once
-#include "onnxruntime_cxx_api.h"
 #include <string>
 #include <locale>
 #include <codecvt>
 #include <iostream>
 #include "Utils/MathTypes.hpp"
 #include <type_traits>
+
+#ifndef USE_OPENVINO
+#include "onnxruntime_cxx_api.h"
 
  /**
   * @brief singleton get Ort::Env object
@@ -29,6 +31,7 @@ extern Ort::Env& GetOrtEnv();
  * @return std::wstring output wstring
  */
 extern std::wstring string_to_wstring(const std::string& str);
+#endif
 
 namespace z
 {

@@ -9,6 +9,8 @@
  *
  */
 #include "NetInferenceWorker.h"
+
+#ifndef USE_OPENVINO
 #include "onnxruntime_cxx_api.h"
 #include <string>
 #include <locale>
@@ -34,3 +36,4 @@ std::wstring string_to_wstring(const std::string& str) {
     std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
     return converter.from_bytes(str);
 }
+#endif

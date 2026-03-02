@@ -10,7 +10,6 @@
  */
 #pragma once
 #include "AbstractInferenceWorker.hpp"
-#include "onnxruntime_cxx_api.h"
 #include "Utils/MathTypes.hpp"
 #include "nlohmann/json.hpp"
 #include "Utils/StaticStringUtils.hpp"
@@ -63,9 +62,11 @@ namespace z
         static_assert(std::is_arithmetic<InferencePrecision>::value, "InferencePrecision must be a arithmetic type");
     public:
         using Base = AbstractNetInferenceWorker<SchedulerType, NetName, InferencePrecision>;
+#ifndef USE_OPENVINO
         using Base::Session__;
         using Base::MemoryInfo__;
         using Base::DefaultAllocator__;
+#endif
         using Base::InputNodeNames__;
         using Base::OutputNodeNames__;
         using Base::InputOrtTensors__;
