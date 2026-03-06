@@ -34,6 +34,9 @@ file(GLOB_RECURSE SRC_SCHEDULERS Schedulers/*.cpp Schedulers/*.h)
 file(GLOB_RECURSE SRC_WORKERS Workers/*.cpp Workers/*.h)
 file(GLOB_RECURSE SRC_UTILS Utils/*.cpp Utils/*.h)
 
+# tinyxml2 源文件
+set(TINYXML2_SRC ${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty/include/tinyxml2/tinyxml2.cpp)
+
 
 message("
 Ctrl-Z is a muti-thread RL deployment framework for Robot locomotion.")
@@ -53,6 +56,7 @@ add_library(CtrlZ STATIC
     ${SRC_SCHEDULERS}
     ${SRC_WORKERS}
     ${SRC_UTILS}
+    ${TINYXML2_SRC}
 )
 
 add_subdirectory(Extensions)

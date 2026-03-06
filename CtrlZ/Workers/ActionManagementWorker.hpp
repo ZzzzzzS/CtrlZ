@@ -407,11 +407,11 @@ namespace z
             for (size_t i = 0; i < sizeof...(ActionPairs); i++)
             {
 
-                if (MotorVec::BoolType::all(this->PositionKp__[i] == MotorVec::zeros()))
+                if (z::math::all(this->PositionKp__[i] == MotorVec::zeros()))
                 {
                     this->PositionKp__[i] = default_stiffness;
                 }
-                if (MotorVec::BoolType::all(this->VelocityKd__[i] == MotorVec::zeros()))
+                if (z::math::all(this->VelocityKd__[i] == MotorVec::zeros()))
                 {
                     this->VelocityKd__[i] = default_damping;
                 }

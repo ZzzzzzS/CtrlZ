@@ -81,7 +81,7 @@ namespace z
             {
                 //如果没指定,设置为0并按照上下限裁剪
                 z::math::Vector<CmdPrecision, CmdArgs.dim> zero_cmd = z::math::Vector<CmdPrecision, CmdArgs.dim>::zeros();
-                zero_cmd = z::math::Vector<CmdPrecision, CmdArgs.dim>::clamp(zero_cmd, this->CmdLowerLimit, this->CmdUpperLimit);
+                zero_cmd = z::math::clamp(zero_cmd, this->CmdLowerLimit, this->CmdUpperLimit);
                 this->Scheduler->template SetData<CmdArgs.str>(zero_cmd);
                 std::cout << "[Warning] No DefaultValue specified for NetCmdWorker, setting to zero command: " << zero_cmd << std::endl;
             }

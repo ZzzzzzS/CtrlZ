@@ -334,5 +334,166 @@ namespace z
             R(2, 2) = 1 - 2 * (qx * qx + qy * qy);
             return R;
         }
+
+        /**
+         * @brief Convert a rotation matrix to a quaternion (XYZW format).
+         *
+         * @tparam Scalar Type of the scalar (e.g., float, double).
+         * @param R A 3x3 rotation matrix.
+         * @return z::math::Vector<Scalar, 4> Quaternion in XYZW format.
+         */
+        template<typename Scalar>
+        z::math::Vector<Scalar, 4> rotationMatrixToQuat(const z::math::Tensor<Scalar, 3, 3>& R)
+        {
+            Scalar trace = R(0, 0) + R(1, 1) + R(2, 2);
+            z::math::Vector<Scalar, 4> q;
+
+            if (trace > 0)
+            {
+                Scalar s = 0.5 / std::sqrt(trace + 1.0);
+                q[3] = 0.25 / s;
+                q[0] = (R(2, 1) - R(1, 2)) * s;
+                q[1] = (R(0, 2) - R(2, 0)) * s;
+                q[2] = (R(1, 0) - R(0, 1)) * s;
+            }
+            else
+            {
+                if (R(0, 0) > R(1, 1) && R(0, 0) > R(2, 2))
+                {
+                    Scalar s = 2.0 * std::sqrt(1.0 + R(0, 0) - R(1, 1) - R(2, 2));
+                    q[3] = (R(2, 1) - R(1, 2)) / s;
+                    q[0] = 0.25 * s;
+                    q[1] = (R(0, 1) + R(1, 0)) / s;
+                    q[2] = (R(0, 2) + R(2, 0)) / s;
+                }
+                else if (R(1, 1) > R(2, 2))
+                {
+                    Scalar s = 2.0 * std::sqrt(1.0 + R(1, 1) - R(0, 0) - R(2, 2));
+                    q[3] = (R(0, 2) - R(2, 0)) / s;
+                    q[0] = (R(0, 1) + R(1, 0)) / s;
+                    q[1] = 0.25 * s;
+                    q[2] = (R(1, 2) + R(2, 1)) / s;
+                }
+                else
+                {
+                    Scalar s = 2.0 * std::sqrt(1.0 + R(2, 2) - R(0, 0) - R(1, 1));
+                    q[3] = (R(1, 0) - R(0, 1)) / s;
+                    q[0] = (R(0, 2) + R(2, 0)) / s;
+                    q[1] = (R(1, 2) + R(2, 1)) / s;
+                    q[2] = 0.25 * s;
+                }
+            }
+
+            // 归一化
+            Scalar norm = std::sqrt(q[0] * q[0] + q[1] * q[1] + q[2] * q[2] + q[3] * q[3]);
+            if (norm > 0)
+            {
+                q[0] /= norm;
+                q[1] /= norm;
+                q[2] /= norm;
+                q[3] /= norm;
+            }
+            return q;
+        }
+
+        /**
+         * @brief Convert a rotation matrix to Euler angles (XYZ/RPY order).
+         *
+         * @tparam Scalar Type of the scalar (e.g., float, double).
+         * @param R A 3x3 rotation matrix.
+         * @return z::math::Vector<Scalar, 3> Euler angles in radians (roll, pitch, yaw).
+         */
+        template<typename Scalar>
+        z::math::Vector<Scalar, 3> rotationMatrixToRPY(const z::math::Tensor<Scalar, 3, 3>& R)
+        {
+            z::math::Vector<Scalar, 3> rpy;
+            // roll (x-axis rotation)
+            rpy[0] = std::atan2(R(2, 1), R(2, 2));
+            // pitch (y-axis rotation)
+            rpy[1] = std::atan2(-R(2, 0), std::sqrt(R(2, 1) * R(2, 1) + R(2, 2) * R(2, 2)));
+            // yaw (z-axis rotation)
+            rpy[2] = std::atan2(R(1, 0), R(0, 0));
+            return rpy;
+        }
+
+        /**
+         * @brief Convert Euler angles (RPY) to a rotation matrix.
+         *
+         * @tparam Scalar Type of the scalar (e.g., float, double).
+         * @param rpy Euler angles in radians (roll, pitch, yaw).
+         * @return z::math::Tensor<Scalar, 3, 3> Rotation matrix.
+         */
+        template<typename Scalar>
+        z::math::Tensor<Scalar, 3, 3> rpyToRotationMatrix(const z::math::Vector<Scalar, 3>& rpy)
+        {
+            Scalar cr = std::cos(rpy[0]), sr = std::sin(rpy[0]);
+            Scalar cp = std::cos(rpy[1]), sp = std::sin(rpy[1]);
+            Scalar cy = std::cos(rpy[2]), sy = std::sin(rpy[2]);
+
+            z::math::Tensor<Scalar, 3, 3> R;
+
+            R(0, 0) = cy * cp;
+            R(0, 1) = cy * sp * sr - sy * cr;
+            R(0, 2) = cy * sp * cr + sy * sr;
+
+            R(1, 0) = sy * cp;
+            R(1, 1) = sy * sp * sr + cy * cr;
+            R(1, 2) = sy * sp * cr - cy * sr;
+
+            R(2, 0) = -sp;
+            R(2, 1) = cp * sr;
+            R(2, 2) = cp * cr;
+
+            return R;
+        }
+
+        template<typename Scalar>
+        z::math::Tensor<Scalar, 4, 4> xyz_rpy_ToTranslationMatrix(const Vector<Scalar, 3>& xyz, const Vector<Scalar, 3>& rpy)
+        {
+            z::math::Tensor<Scalar, 4, 4> t;
+            Scalar cr = std::cos(rpy[0]), sr = std::sin(rpy[0]);
+            Scalar cp = std::cos(rpy[1]), sp = std::sin(rpy[1]);
+            Scalar cy = std::cos(rpy[2]), sy = std::sin(rpy[2]);
+
+            // 计算旋转矩阵 (R = Rz * Ry * Rx)
+            t.matrix(0, 0) = cy * cp;
+            t.matrix(0, 1) = cy * sp * sr - sy * cr;
+            t.matrix(0, 2) = cy * sp * cr + sy * sr;
+            t.matrix(0, 3) = xyz[0];
+
+            t.matrix(1, 0) = sy * cp;
+            t.matrix(1, 1) = sy * sp * sr + cy * cr;
+            t.matrix(1, 2) = sy * sp * cr - cy * sr;
+            t.matrix(1, 3) = xyz[1];
+
+            t.matrix(2, 0) = -sp;
+            t.matrix(2, 1) = cp * sr;
+            t.matrix(2, 2) = cp * cr;
+            t.matrix(2, 3) = xyz[2];
+
+            t.matrix(3, 0) = 0;
+            t.matrix(3, 1) = 0;
+            t.matrix(3, 2) = 0;
+            t.matrix(3, 3) = 1;
+
+            return t;
+        }
+
+        template<typename Scalar>
+        z::math::Tensor<Scalar, 3, 3> toRotationMatrix(const z::math::Tensor<Scalar, 4, 4>& t)
+        {
+            z::math::Tensor<Scalar, 3, 3> r;
+            for (int i = 0; i < 3;i++)
+            {
+                for (int j = 0; j < 3;j++)
+                {
+                    r(i, j) = t(i, j);
+                }
+            }
+            return r;
+        }
+
+
+
     };
 }

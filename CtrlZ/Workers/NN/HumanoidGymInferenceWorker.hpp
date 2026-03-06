@@ -163,7 +163,7 @@ namespace z
                 std::copy(this->HistoryInputBuffer[i].begin(), this->HistoryInputBuffer[i].end(), InputVec.begin() + i * INPUT_TENSOR_LENGTH_UNIT);
             }
 
-            this->InputTensor.Array() = decltype(InputVec)::clamp(InputVec, -this->ClipObservation, this->ClipObservation);
+            this->InputTensor.Array() = z::math::clamp(InputVec, -this->ClipObservation, this->ClipObservation);
         }
 
         /**
@@ -173,13 +173,13 @@ namespace z
         void PostProcess() override
         {
             auto LastAction = this->OutputTensor.toVector();
-            auto ClipedLastAction = MotorValVec::clamp(LastAction, -this->ClipAction, this->ClipAction);
+            auto ClipedLastAction = z::math::clamp(LastAction, -this->ClipAction, this->ClipAction);
             this->Scheduler->template SetData<concat(NetName, "NetLastAction")>(ClipedLastAction);
 
             auto ScaledAction = ClipedLastAction * this->OutputScaleVec + this->JointDefaultPos;
             this->Scheduler->template SetData<concat(NetName, "NetScaledAction")>(ScaledAction);
 
-            auto clipedAction = MotorValVec::clamp(ScaledAction, this->JointClipLower, this->JointClipUpper);
+            auto clipedAction = z::math::clamp(ScaledAction, this->JointClipLower, this->JointClipUpper);
             this->Scheduler->template SetData<concat(NetName, "Action")>(clipedAction);
 
             this->end_time = std::chrono::steady_clock::now();

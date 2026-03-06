@@ -387,7 +387,7 @@ namespace z
             MotorValVec MotorVel;
             this->Scheduler->template GetData<"TargetMotorVelocity">(MotorVel);
 
-            MotorValVec LimitMotorTorque = math::Vector<MotorPrecision, JointNumber>::clamp(MotorTorque, -TorqueLimit, TorqueLimit);
+            MotorValVec LimitMotorTorque = z::math::clamp(MotorTorque, -TorqueLimit, TorqueLimit);
             this->Scheduler->template SetData<"LimitTargetMotorTorque">(LimitMotorTorque);
 
             for (size_t i = 0; i < JointNumber; i++)
