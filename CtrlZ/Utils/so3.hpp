@@ -113,6 +113,21 @@ namespace z
             return a + b + c;
         }
 
+
+        /**
+         * @brief Apply a quaternion rotation to a vector.
+         *
+         * @tparam Scalar Type of the scalar (e.g., float, double).
+         * @param quat A quaternion represented as a vector in XYZW format.
+         * @param vec A 3D vector to be rotated by the quaternion.
+         * @return z::math::Vector<Scalar, 3> Resulting vector after rotation by the quaternion.
+         */
+        template<typename Scalar>
+        z::math::Vector<Scalar, 3> quat_apply(const z::math::Vector<Scalar, 4>& q, const z::math::Vector<Scalar, 3>& v)
+        {
+            return quat_rotate(q, v);
+        }
+
         /**
          * @brief Rotate a 3D vector by the inverse of a quaternion.
          *

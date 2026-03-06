@@ -147,12 +147,6 @@ namespace z
                 return result;
             }
 
-
-
-
-
-
-
             /**
              * @brief get a bool type vector with the same size as this vector
              *
