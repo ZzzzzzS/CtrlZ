@@ -14,7 +14,7 @@
 #include <cmath>
 #include <algorithm>
 #include <functional>
-#include <format>
+
 
  /**
   * @brief overload operator << for std::array to print array
@@ -944,47 +944,3 @@ namespace z
         // Free math functions are now in MathFunction.hpp
     }; // namespace math
 }; // namespace z
-
-namespace std {
-    // 为 z::math::Vector<T, N> 特化 formatter
-    template<typename T, size_t N>
-    struct formatter<z::math::Vector<T, N>> {
-        constexpr auto parse(format_parse_context& ctx) {
-            return ctx.begin();  // 基础版本，不支持格式规范
-        }
-
-        auto format(const z::math::Vector<T, N>& vec, format_context& ctx) const {
-            auto out = ctx.out();
-            out = std::format_to(out, "Vector<{},{}>: [", typeid(T).name(), N);
-            for (size_t i = 0; i < N; ++i) {
-                out = std::format_to(out, "{}", vec[i]);
-                if (i != N - 1) {
-                    out = std::format_to(out, ",");
-                }
-            }
-            out = std::format_to(out, "]\n");
-            return out;
-        }
-    };
-
-    // 为 z::math::Vector<bool, N> 特化 formatter
-    template<size_t N>
-    struct formatter<z::math::Vector<bool, N>> {
-        constexpr auto parse(format_parse_context& ctx) {
-            return ctx.begin();
-        }
-
-        auto format(const z::math::Vector<bool, N>& vec, format_context& ctx) const {
-            auto out = ctx.out();
-            out = std::format_to(out, "Vector<bool,{}>: [", N);
-            for (size_t i = 0; i < N; ++i) {
-                out = std::format_to(out, "{}", vec[i] ? "true" : "false");
-                if (i != N - 1) {
-                    out = std::format_to(out, ",");
-                }
-            }
-            out = std::format_to(out, "]\n");
-            return out;
-        }
-    };
-}

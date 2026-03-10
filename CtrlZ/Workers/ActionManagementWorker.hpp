@@ -19,7 +19,6 @@
 #include <initializer_list>
 #include <functional>
 #include <limits>
-#include <format>
 
 #include "Schedulers/AbstractScheduler.hpp"
 #include "Workers/AbstractWorker.hpp"
@@ -343,12 +342,12 @@ namespace z
                         PositionKp[i] = pos_kp_cfg[i].get<InferencePrecision>();
                         VelocityKd[i] = pos_kd_cfg[i].get<InferencePrecision>();
                     }
-                    std::cout << std::format("  PositionKp: {}\n", PositionKp);
-                    std::cout << std::format("  VelocityKd: {}\n", VelocityKd);
+                    std::cout << "  PositionKp: " << PositionKp << std::endl;
+                    std::cout << "  VelocityKd: " << VelocityKd << std::endl;
                 }
                 else
                 {
-                    std::cout << std::format("  Motor Properties for ActionPair: {} not fully specified, using default values.\n", net_name);
+                    std::cout << "  Motor Properties for ActionPair: " << net_name << " not fully specified, using default values.\n";
                     PositionKp.fill(static_cast<InferencePrecision>(0));
                     VelocityKd.fill(static_cast<InferencePrecision>(0));
                 }
@@ -362,7 +361,7 @@ namespace z
                     {
                         ActionOffset[i] = action_offset_cfg[i].get<InferencePrecision>();
                     }
-                    std::cout << std::format("  ActionOffset: {}\n", ActionOffset);
+                    std::cout << "  ActionOffset: " << ActionOffset << std::endl;
                 }
                 else
                 {
@@ -379,7 +378,7 @@ namespace z
                     {
                         ActionScale[i] = action_scale_cfg[i].get<InferencePrecision>();
                     }
-                    std::cout << std::format("  ActionScale: {}\n", ActionScale);
+                    std::cout << "  ActionScale: " << ActionScale << std::endl;
                 }
                 else
                 {
