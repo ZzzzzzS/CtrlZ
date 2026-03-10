@@ -61,7 +61,7 @@ add_library(CtrlZ STATIC
 
 add_subdirectory(Extensions)
 
-target_include_directories(CtrlZ PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(CtrlZ PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty/include ${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty/include/tinyxml2)
 
 # 通过目标属性暴露宏定义给依赖项
 if(USE_OPENVINO)
@@ -75,7 +75,7 @@ endif()
 
 if(USE_OPENVINO)
     # OpenVINO 配置
-    target_link_libraries(CtrlZ PUBLIC 
+    target_link_libraries(CtrlZ PUBLIC
         openvino::runtime
     )
 else()
