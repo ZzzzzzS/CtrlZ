@@ -22,43 +22,43 @@ namespace z
 {
     /**
      * @brief 默认IMU数据访问器
-     * @details 提供默认的IMU数据访问函数，要求ImuType实现GetAccX, GetAccY, GetAccZ, 
+     * @details 提供默认的IMU数据访问函数，要求ImuType实现GetAccX, GetAccY, GetAccZ,
      *          GetGyroX, GetGyroY, GetGyroZ, GetRoll, GetPitch, GetYaw方法
-     * 
+     *
      * @par 自定义访问器示例：
      * 当IMU传感器的接口函数名与默认值不同时，可以实现自定义访问器：
      * @code {.cpp}
      * struct MyImuAccessor {
-     *     static float GetAccX(MyImu* imu)  { return imu->acc_x(); }   // 自定义函数名
-     *     static float GetAccY(MyImu* imu)  { return imu->acc_y(); }
-     *     static float GetAccZ(MyImu* imu)  { return imu->acc_z(); }
-     *     static float GetGyroX(MyImu* imu) { return imu->gyro_x(); }
-     *     static float GetGyroY(MyImu* imu) { return imu->gyro_y(); }
-     *     static float GetGyroZ(MyImu* imu) { return imu->gyro_z(); }
-     *     static float GetRoll(MyImu* imu)  { return imu->roll(); }
-     *     static float GetPitch(MyImu* imu) { return imu->pitch(); }
-     *     static float GetYaw(MyImu* imu)   { return imu->yaw(); }
+     *     static float GetAccX(MyImu imu)  { return imu->acc_x(); }   // 自定义函数名
+     *     static float GetAccY(MyImu imu)  { return imu->acc_y(); }
+     *     static float GetAccZ(MyImu imu)  { return imu->acc_z(); }
+     *     static float GetGyroX(MyImu imu) { return imu->gyro_x(); }
+     *     static float GetGyroY(MyImu imu) { return imu->gyro_y(); }
+     *     static float GetGyroZ(MyImu imu) { return imu->gyro_z(); }
+     *     static float GetRoll(MyImu imu)  { return imu->roll(); }
+     *     static float GetPitch(MyImu imu) { return imu->pitch(); }
+     *     static float GetYaw(MyImu imu)   { return imu->yaw(); }
      * };
-     * 
+     *
      * // 使用自定义访问器实例化工人类型
      * using MyImuWorker = ImuProcessWorker<Scheduler, MyImu*, float, MyImuAccessor>;
      * @endcode
-     * 
+     *
      * @tparam ImuType IMU传感器类型
      * @tparam ImuPrecision IMU数据精度
      */
     template<typename ImuType, typename ImuPrecision>
     struct DefaultImuAccessor
     {
-        static ImuPrecision GetAccX(ImuType* instance) { return instance->GetAccX(); }
-        static ImuPrecision GetAccY(ImuType* instance) { return instance->GetAccY(); }
-        static ImuPrecision GetAccZ(ImuType* instance) { return instance->GetAccZ(); }
-        static ImuPrecision GetGyroX(ImuType* instance) { return instance->GetGyroX(); }
-        static ImuPrecision GetGyroY(ImuType* instance) { return instance->GetGyroY(); }
-        static ImuPrecision GetGyroZ(ImuType* instance) { return instance->GetGyroZ(); }
-        static ImuPrecision GetRoll(ImuType* instance) { return instance->GetRoll(); }
-        static ImuPrecision GetPitch(ImuType* instance) { return instance->GetPitch(); }
-        static ImuPrecision GetYaw(ImuType* instance) { return instance->GetYaw(); }
+        static ImuPrecision GetAccX(ImuType instance) { return instance->GetAccX(); }
+        static ImuPrecision GetAccY(ImuType instance) { return instance->GetAccY(); }
+        static ImuPrecision GetAccZ(ImuType instance) { return instance->GetAccZ(); }
+        static ImuPrecision GetGyroX(ImuType instance) { return instance->GetGyroX(); }
+        static ImuPrecision GetGyroY(ImuType instance) { return instance->GetGyroY(); }
+        static ImuPrecision GetGyroZ(ImuType instance) { return instance->GetGyroZ(); }
+        static ImuPrecision GetRoll(ImuType instance) { return instance->GetRoll(); }
+        static ImuPrecision GetPitch(ImuType instance) { return instance->GetPitch(); }
+        static ImuPrecision GetYaw(ImuType instance) { return instance->GetYaw(); }
     };
 
     /**
@@ -96,9 +96,9 @@ namespace z
      * @tparam ImuPrecision IMU数据的精度，用户可以通过这个参数来指定IMU数据的精度，比如可以指定为float或者double
      * @tparam ImuAccessor IMU数据访问器类型，默认为DefaultImuAccessor，用户可以自定义访问器来指定如何获取IMU数据
      */
-    template<typename SchedulerType, typename ImuType, typename ImuPrecision, 
-             typename ImuAccessor = DefaultImuAccessor<ImuType, ImuPrecision>>
-    class ImuProcessWorker : public AbstractWorker<SchedulerType>
+    template<typename SchedulerType, typename ImuType, typename ImuPrecision,
+        typename ImuAccessor = DefaultImuAccessor<ImuType, ImuPrecision>>
+        class ImuProcessWorker : public AbstractWorker<SchedulerType>
     {
         ///@brief 传感器数据必须是数值类型
         static_assert(std::is_arithmetic<ImuPrecision>::value, "ImuPrecision must be a arithmetic type");
