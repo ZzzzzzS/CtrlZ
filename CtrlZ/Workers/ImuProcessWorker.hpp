@@ -21,6 +21,47 @@
 namespace z
 {
     /**
+     * @brief 默认IMU数据访问器
+     * @details 提供默认的IMU数据访问函数，要求ImuType实现GetAccX, GetAccY, GetAccZ, 
+     *          GetGyroX, GetGyroY, GetGyroZ, GetRoll, GetPitch, GetYaw方法
+     * 
+     * @par 自定义访问器示例：
+     * 当IMU传感器的接口函数名与默认值不同时，可以实现自定义访问器：
+     * @code {.cpp}
+     * struct MyImuAccessor {
+     *     static float GetAccX(MyImu* imu)  { return imu->acc_x(); }   // 自定义函数名
+     *     static float GetAccY(MyImu* imu)  { return imu->acc_y(); }
+     *     static float GetAccZ(MyImu* imu)  { return imu->acc_z(); }
+     *     static float GetGyroX(MyImu* imu) { return imu->gyro_x(); }
+     *     static float GetGyroY(MyImu* imu) { return imu->gyro_y(); }
+     *     static float GetGyroZ(MyImu* imu) { return imu->gyro_z(); }
+     *     static float GetRoll(MyImu* imu)  { return imu->roll(); }
+     *     static float GetPitch(MyImu* imu) { return imu->pitch(); }
+     *     static float GetYaw(MyImu* imu)   { return imu->yaw(); }
+     * };
+     * 
+     * // 使用自定义访问器实例化工人类型
+     * using MyImuWorker = ImuProcessWorker<Scheduler, MyImu*, float, MyImuAccessor>;
+     * @endcode
+     * 
+     * @tparam ImuType IMU传感器类型
+     * @tparam ImuPrecision IMU数据精度
+     */
+    template<typename ImuType, typename ImuPrecision>
+    struct DefaultImuAccessor
+    {
+        static ImuPrecision GetAccX(ImuType* instance) { return instance->GetAccX(); }
+        static ImuPrecision GetAccY(ImuType* instance) { return instance->GetAccY(); }
+        static ImuPrecision GetAccZ(ImuType* instance) { return instance->GetAccZ(); }
+        static ImuPrecision GetGyroX(ImuType* instance) { return instance->GetGyroX(); }
+        static ImuPrecision GetGyroY(ImuType* instance) { return instance->GetGyroY(); }
+        static ImuPrecision GetGyroZ(ImuType* instance) { return instance->GetGyroZ(); }
+        static ImuPrecision GetRoll(ImuType* instance) { return instance->GetRoll(); }
+        static ImuPrecision GetPitch(ImuType* instance) { return instance->GetPitch(); }
+        static ImuPrecision GetYaw(ImuType* instance) { return instance->GetYaw(); }
+    };
+
+    /**
      * @brief ImuProcessWorker 类型是一个IMU数据处理工人类型，这个类型用于处理IMU传感器的数据，包括加速度，角速度和角度。
      * 通常来说，这个类型可以被用于主任务队列中。
      * 这个类会在TaskCycleBegin方法中获取IMU数据并对齐进行滤波和去除异常值。用户可以通过配置文件来配置滤波器的权重。
@@ -51,11 +92,12 @@ namespace z
      * @endcode
      *
      * @tparam SchedulerType 调度器类型
-     * @tparam ImuType IMU传感器类型，用户可以通过这个参数来指定IMU传感器的具体类型，
-     * 但是这个类型必须要实现GetAccX, GetAccY, GetAccZ, GetGyroX, GetGyroY, GetGyroZ, GetRoll, GetPitch, GetYaw这些方法。
+     * @tparam ImuType IMU传感器类型，用户可以通过这个参数来指定IMU传感器的具体类型
      * @tparam ImuPrecision IMU数据的精度，用户可以通过这个参数来指定IMU数据的精度，比如可以指定为float或者double
+     * @tparam ImuAccessor IMU数据访问器类型，默认为DefaultImuAccessor，用户可以自定义访问器来指定如何获取IMU数据
      */
-    template<typename SchedulerType, typename ImuType, typename ImuPrecision>
+    template<typename SchedulerType, typename ImuType, typename ImuPrecision, 
+             typename ImuAccessor = DefaultImuAccessor<ImuType, ImuPrecision>>
     class ImuProcessWorker : public AbstractWorker<SchedulerType>
     {
         ///@brief 传感器数据必须是数值类型
@@ -136,9 +178,9 @@ namespace z
         void TaskCycleBegin() override
         {
             ImuValVec Acc = {
-            static_cast<ImuPrecision>(this->ImuInstance->GetAccX()),
-            static_cast<ImuPrecision>(this->ImuInstance->GetAccY()),
-            static_cast<ImuPrecision>(this->ImuInstance->GetAccZ())
+            static_cast<ImuPrecision>(ImuAccessor::GetAccX(this->ImuInstance)),
+            static_cast<ImuPrecision>(ImuAccessor::GetAccY(this->ImuInstance)),
+            static_cast<ImuPrecision>(ImuAccessor::GetAccZ(this->ImuInstance))
             }; //获取Acc数据
             ImuValVec LastAcc;
             this->Scheduler->template GetData<"AccelerationRaw">(LastAcc);
@@ -147,9 +189,9 @@ namespace z
 
 
             ImuValVec Gyro = {
-                static_cast<ImuPrecision>(this->ImuInstance->GetGyroX()),
-                static_cast<ImuPrecision>(this->ImuInstance->GetGyroY()),
-                static_cast<ImuPrecision>(this->ImuInstance->GetGyroZ())
+                static_cast<ImuPrecision>(ImuAccessor::GetGyroX(this->ImuInstance)),
+                static_cast<ImuPrecision>(ImuAccessor::GetGyroY(this->ImuInstance)),
+                static_cast<ImuPrecision>(ImuAccessor::GetGyroZ(this->ImuInstance))
             }; //获取Gyro数据
             ImuValVec LastGyro;
             this->Scheduler->template GetData<"AngleVelocityRaw">(LastGyro);
@@ -158,9 +200,9 @@ namespace z
 
 
             ImuValVec Mag = {
-                static_cast<ImuPrecision>(this->ImuInstance->GetRoll()),
-                static_cast<ImuPrecision>(this->ImuInstance->GetPitch()),
-                static_cast<ImuPrecision>(this->ImuInstance->GetYaw())
+                static_cast<ImuPrecision>(ImuAccessor::GetRoll(this->ImuInstance)),
+                static_cast<ImuPrecision>(ImuAccessor::GetPitch(this->ImuInstance)),
+                static_cast<ImuPrecision>(ImuAccessor::GetYaw(this->ImuInstance))
             }; //获取Mag数据
             ImuValVec LastMag;
             this->Scheduler->template GetData<"AngleRaw">(LastMag);

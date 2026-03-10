@@ -21,6 +21,44 @@
 namespace z
 {
     /**
+     * @brief 默认电机数据访问器
+     * @details 提供默认的电机数据访问函数，要求JointType实现GetActualPosition, GetActualVelocity, GetActualTorque,
+     *          SetTargetTorque, SetTargetPosition, SetTargetVelocity方法
+     * 
+     * @par 自定义访问器示例：
+     * 当电机接口的函数名与默认值不同时，可以实现自定义访问器：
+     * @code {.cpp}
+     * struct MyMotorAccessor {
+     *     // 读取实际状态（getter）
+     *     static float GetActualPosition(MyMotor* m) { return m->pos(); }
+     *     static float GetActualVelocity(MyMotor* m) { return m->vel(); }
+     *     static float GetActualTorque(MyMotor* m)   { return m->torque(); }
+     *     
+     *     // 写入目标指令（setter）
+     *     static void SetTargetTorque(MyMotor* m, float v)   { m->set_torque(v); }
+     *     static void SetTargetPosition(MyMotor* m, float v) { m->set_pos(v); }
+     *     static void SetTargetVelocity(MyMotor* m, float v) { m->set_vel(v); }
+     * };
+     * 
+     * // 使用自定义访问器实例化工人类型
+     * using MyMotorWorker = MotorControlWorker<Scheduler, MyMotor*, float, 6, MyMotorAccessor>;
+     * @endcode
+     * 
+     * @tparam JointType 电机类型
+     * @tparam MotorPrecision 电机数据精度
+     */
+    template<typename JointType, typename MotorPrecision>
+    struct DefaultMotorAccessor
+    {
+        static MotorPrecision GetActualPosition(JointType joint) { return joint->GetActualPosition(); }
+        static MotorPrecision GetActualVelocity(JointType joint) { return joint->GetActualVelocity(); }
+        static MotorPrecision GetActualTorque(JointType joint) { return joint->GetActualTorque(); }
+        static void SetTargetTorque(JointType joint, MotorPrecision value) { joint->SetTargetTorque(value); }
+        static void SetTargetPosition(JointType joint, MotorPrecision value) { joint->SetTargetPosition(value); }
+        static void SetTargetVelocity(JointType joint, MotorPrecision value) { joint->SetTargetVelocity(value); }
+    };
+
+    /**
      * @brief MotorPDControlWorker类型是一个电机PD控制工人类型，用户可以通过这个工人类型来实现电机的PD控制。
 
      * @details MotorPDControlWorker类型是一个电机PD控制工人类型，用户可以通过这个工人类型来实现电机的PD控制。
@@ -143,12 +181,13 @@ namespace z
      * @endcode
      *
      * @tparam SchedulerType 调度器类型
-     * @tparam JointType 电机类型指针，在这个类型中必须实现GetActualPosition(),GetActualTorque(),GetActualTorque(),
-     * SetTargetTorque(),SetTargetPosition(),SetTargetVelocity()方法
+     * @tparam JointType 电机类型指针
      * @tparam MotorPrecision 电机数据精度，用户可以通过这个参数来指定电机数据的精度，比如可以指定为float或者double
      * @tparam JointNumber 关节电机数量
+     * @tparam MotorAccessor 电机数据访问器类型，默认为DefaultMotorAccessor，用户可以自定义访问器来指定如何访问电机数据
      */
-    template<typename SchedulerType, typename JointType, typename MotorPrecision, size_t JointNumber>
+    template<typename SchedulerType, typename JointType, typename MotorPrecision, size_t JointNumber,
+             typename MotorAccessor = DefaultMotorAccessor<JointType, MotorPrecision>>
     class MotorControlWorker : public AbstractWorker<SchedulerType>
     {
         /// @brief 电机数据类型
@@ -301,13 +340,13 @@ namespace z
             MotorValVec MotorTorque;
 
             MotorVel.apply([this](MotorPrecision& val, size_t i) {
-                val = this->Joints[i]->GetActualVelocity();
+                val = MotorAccessor::GetActualVelocity(this->Joints[i]);
                 });
             MotorPos.apply([this](MotorPrecision& val, size_t i) {
-                val = this->Joints[i]->GetActualPosition();
+                val = MotorAccessor::GetActualPosition(this->Joints[i]);
                 });
             MotorTorque.apply([this](MotorPrecision& val, size_t i) {
-                val = this->Joints[i]->GetActualTorque();
+                val = MotorAccessor::GetActualTorque(this->Joints[i]);
                 });
 
 
@@ -345,13 +384,13 @@ namespace z
             MotorValVec MotorTorque;
 
             MotorVel.apply([this](MotorPrecision& val, size_t i) {
-                val = this->Joints[i]->GetActualVelocity();
+                val = MotorAccessor::GetActualVelocity(this->Joints[i]);
                 });
             MotorPos.apply([this](MotorPrecision& val, size_t i) {
-                val = this->Joints[i]->GetActualPosition();
+                val = MotorAccessor::GetActualPosition(this->Joints[i]);
                 });
             MotorTorque.apply([this](MotorPrecision& val, size_t i) {
-                val = this->Joints[i]->GetActualTorque();
+                val = MotorAccessor::GetActualTorque(this->Joints[i]);
                 });
 
             this->Scheduler->template SetData<"CurrentMotorVelocityRaw">(MotorVel);
@@ -395,13 +434,13 @@ namespace z
                 switch (this->ControlModeArray[i])
                 {
                 case ControlType::Torque:
-                    this->Joints[i]->SetTargetTorque(LimitMotorTorque[i]);
+                    MotorAccessor::SetTargetTorque(this->Joints[i], LimitMotorTorque[i]);
                     break;
                 case ControlType::Position:
-                    this->Joints[i]->SetTargetPosition(MotorPos[i]);
+                    MotorAccessor::SetTargetPosition(this->Joints[i], MotorPos[i]);
                     break;
                 case ControlType::Velocity:
-                    this->Joints[i]->SetTargetVelocity(MotorVel[i]);
+                    MotorAccessor::SetTargetVelocity(this->Joints[i], MotorVel[i]);
                     break;
                 default:
                     break;
