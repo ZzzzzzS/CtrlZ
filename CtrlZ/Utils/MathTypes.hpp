@@ -12,3 +12,4 @@
 #include "TensorType.hpp"
 #include "MathFunction.hpp"
 #include "so3.hpp"
+#include "DualNumber.hpp"
