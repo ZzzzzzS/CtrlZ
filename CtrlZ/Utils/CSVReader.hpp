@@ -57,6 +57,7 @@ namespace z
             if (!file.is_open())
             {
                 std::cout << "Error opening file" << std::endl;
+                throw(std::runtime_error("Error opening file, file not found: " + filename_));
             }
             else
             {
