@@ -20,6 +20,7 @@
 #include <algorithm>
 #include <cctype>
 #include <set>
+#include "ZObject.hpp"
 
  // 使用项目自定义的数学类型
 #include "MathTypes.hpp"
@@ -250,12 +251,23 @@ namespace z
          * @tparam Scalar 标量类型 (float, double)
          */
         template<typename Scalar>
-        class URDFParser
+        class URDFParser : public ZObject
         {
         public:
             using LinkType = Link<Scalar>;
             using JointType_ = Joint<Scalar>;
             using Vector3 = Vector<Scalar, 3>;
+        public:
+
+            /**
+            * @brief 构造函数
+            */
+            URDFParser() = default;
+
+            /**
+             * @brief 析构函数
+             */
+            ~URDFParser() = default;
 
             /**
              * @brief 从文件加载 URDF
@@ -268,6 +280,7 @@ namespace z
                 if (doc.LoadFile(filename.c_str()) != tinyxml2::XML_SUCCESS)
                 {
                     std::cerr << "Failed to load URDF file: " << filename << std::endl;
+                    throw std::runtime_error("Failed to load URDF file: " + filename);
                     return false;
                 }
                 return ParseDocument(doc);
@@ -284,6 +297,8 @@ namespace z
                 if (doc.Parse(xml_string.c_str()) != tinyxml2::XML_SUCCESS)
                 {
                     std::cerr << "Failed to parse URDF XML string" << std::endl;
+                    std::cerr << "Error: " << doc.ErrorStr() << std::endl;
+                    throw std::runtime_error("Failed to parse URDF XML string: " + std::string(doc.ErrorStr()));
                     return false;
                 }
                 return ParseDocument(doc);
