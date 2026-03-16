@@ -154,7 +154,7 @@ namespace z
 
             auto SingleInputVecScaled = math::cat(
                 AngVel,
-                ProjectedGravity, // TODO need project gravety
+                ProjectedGravity,
                 UserCmd3,
                 CurrentMotorPos,
                 CurrentMotorVel,

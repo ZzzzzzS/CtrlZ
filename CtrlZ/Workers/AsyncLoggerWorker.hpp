@@ -59,6 +59,28 @@ namespace z
     class AsyncLoggerWorker : public AbstractWorker<SchedulerType>
     {
         static_assert(std::is_arithmetic<LogPrecision>::value, "LogPrecision must be a number type");
+
+        /**
+         * @brief 编译期断言：所有CTSPair的Args必须是算术类型或者是算术类型的数组
+         * @details 对于非数组类型，直接检查类型本身；对于数组类型，检查其元素类型
+         */
+        static_assert(([]() constexpr {
+            using ValueType = std::remove_pointer_t<decltype(Args.type)>;
+            if constexpr (Args.isArray) {
+                // 对于数组类型（std::array, math::Vector, POD array），检查元素类型
+                // 使用 ValueType::value_type 获取数组元素类型（适用于 std::array 和 math::Vector）
+                // 如果 ValueType 没有 value_type，则使用 std::remove_extent_t（适用于 POD array）
+                if constexpr (requires { typename ValueType::value_type; }) {
+                    return std::is_arithmetic_v<typename ValueType::value_type>;
+                } else {
+                    return std::is_arithmetic_v<std::remove_extent_t<ValueType>>;
+                }
+            } else {
+                // 对于非数组类型，直接检查类型本身
+                return std::is_arithmetic_v<ValueType>;
+            }
+        }() && ...), "All CTSPair value types must be arithmetic types (e.g., int, float, double) or arrays of arithmetic types");
+
     public:
 
         /**
@@ -71,7 +93,6 @@ namespace z
             :AbstractWorker<SchedulerType>(scheduler)
         {
             nlohmann::json cfg = root_cfg;
-            //TODO: add static assert to check if the value type is a valid type (number or array of numbers)
             std::time_t now = std::time(nullptr);
             std::tm tm = *std::localtime(&now);
             std::string time_str = std::to_string(tm.tm_year + 1900) + "-" + std::to_string(tm.tm_mon + 1) + "-" + std::to_string(tm.tm_mday) + "-" + std::to_string(tm.tm_hour) + "-" + std::to_string(tm.tm_min) + "-" + std::to_string(tm.tm_sec);
@@ -116,12 +137,6 @@ namespace z
         {
             TaskDestroy();
         }
-
-        // TODO: add a static assert to check if the value type is a valid type (number or array of numbers)
-        // static constexpr void checkType()
-        // {
-        //     static_assert(std::conjunction_v<std::is_arithmetic<Args::type>...> , "All Args must be a number type");
-        // }
 
         /**
          * @brief TaskRun方法，在每次任务队列循环中被调用，但是这个方法在这里没有实际的作用，因为数据记录通常发生在流水线的结尾，也就是在TaskCycleEnd方法中。

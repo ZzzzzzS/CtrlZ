@@ -14,6 +14,7 @@
 #include <cmath>
 #include <algorithm>
 #include <functional>
+#include <random>
 
 
  /**
@@ -138,11 +139,13 @@ namespace z
             static Vector<T, N> rand()
             {
                 Vector<T, N> result;
-                //std::srand(std::time({}));//set seed
+
+                thread_local static std::random_device rd;
+                thread_local static std::mt19937 gen(rd());
+                std::uniform_real_distribution<T> dis(T(0), T(1));
                 for (size_t i = 0; i < N; i++)
                 {
-                    //FIXME: we might need to use a better random function, like std::mt19937, but for now we just use std::rand
-                    result[i] = static_cast<T>(std::rand()) / RAND_MAX;
+                    result[i] = dis(gen);
                 }
                 return result;
             }

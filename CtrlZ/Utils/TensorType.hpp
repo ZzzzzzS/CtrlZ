@@ -434,41 +434,59 @@ namespace z
             std::atomic<size_t>* ref_count__ = nullptr;
 
             /**
-             * @brief calculate the index according to the indices
+             * @brief calculate the index according to the indices (compile-time supported)
              *
              * @tparam Indices
              * @param indices
              * @return constexpr size_t
              */
-             //TODO: add support for compile time index calculation
             template<typename... Indices>
             static constexpr size_t calculate_index(Indices... indices) {
-                static_assert(sizeof...(Indices) == Shape::num_dims, "Number of indices must match number of dimensions");
+                static_assert(sizeof...(Indices) == Shape::num_dims, 
+                              "Number of indices must match number of dimensions");
+                return calculate_index_impl(std::make_index_sequence<Shape::num_dims>{}, 
+                                            static_cast<int64_t>(indices)...);
+            }
+
+        private:
+            /**
+             * @brief Implementation of calculate_index with compile-time support
+             */
+            template<size_t... Is, typename... Indices>
+            static constexpr size_t calculate_index_impl(std::index_sequence<Is...>, Indices... indices) {
                 std::array<int64_t, Shape::num_dims> indices_array = { indices... };
 
-                for (size_t i = 0;i < Shape::num_dims;i++)
-                {
+                // Handle negative indices
+                for (size_t i = 0; i < Shape::num_dims; i++) {
                     if (indices_array[i] < 0)
                         indices_array[i] += Shape::dims_array[i];
                 }
 
-                // calculate the index
-                size_t index = 0;
-                size_t factor = 1;
-
-                for (int i = Shape::num_dims - 1; i >= 0; i--) {
-                    //std::cout << "i: " << i << std::endl;
-                    index += indices_array[i] * factor;
-                    factor *= Shape::dims_array[i];
-
-                    if (indices_array[i] >= Shape::dims_array[i] || indices_array[i] < 0)
-                    {
-                        throw std::out_of_range("Index out of range");
+                // Runtime bounds check (only when not in constant evaluation)
+                if (!std::is_constant_evaluated()) {
+                    for (size_t i = 0; i < Shape::num_dims; i++) {
+                        if (indices_array[i] >= Shape::dims_array[i] || indices_array[i] < 0) {
+                            throw std::out_of_range("Index out of range");
+                        }
                     }
                 }
-                //std::cout << "index: " << index << std::endl;
+
+                // Calculate strides for each dimension
+                size_t strides[Shape::num_dims] = {};
+                size_t factor = 1;
+                for (int i = Shape::num_dims - 1; i >= 0; --i) {
+                    strides[i] = factor;
+                    factor *= Shape::dims_array[i];
+                }
+
+                // Calculate the final index
+                size_t index = 0;
+                ((index += static_cast<size_t>(indices_array[Is]) * strides[Is]), ...);
+
                 return index;
             }
+
+        protected:
 
             /**
              * @brief print tensor elements recursively
@@ -567,8 +585,8 @@ namespace z
             static Tensor<T, Dims...> rand()
             {
                 Tensor<T, Dims...> result;
-                static std::random_device rd;
-                static std::mt19937 gen(rd());
+                thread_local static std::random_device rd;
+                thread_local static std::mt19937 gen(rd());
                 std::uniform_real_distribution<T> dis(T(0), T(1));
                 for (size_t i = 0; i < result.size(); ++i)
                 {
