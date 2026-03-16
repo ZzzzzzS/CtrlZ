@@ -19,6 +19,7 @@
 
 #include "URDFParser.hpp"
 #include "so3.hpp"
+#include "ZObject.hpp"
 
 namespace z
 {
@@ -68,7 +69,7 @@ namespace z
          * @tparam MaxJoints 最大关节数量（用于静态分配）
          */
         template<typename Scalar>
-        class ForwardKinematics
+        class ForwardKinematics : public ZObject
         {
         public:
             using Vector3 = Vector<Scalar, 3>;

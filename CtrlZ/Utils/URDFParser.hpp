@@ -264,6 +264,12 @@ namespace z
             */
             URDFParser() = default;
 
+            URDFParser(const URDFParser&) = delete;
+            URDFParser& operator=(const URDFParser&) = delete;
+            URDFParser(URDFParser&&) = delete;
+            URDFParser& operator=(URDFParser&&) = delete;
+
+
             /**
              * @brief 析构函数
              */
@@ -469,6 +475,7 @@ namespace z
                 if (!robot_elem)
                 {
                     std::cerr << "No <robot> element found in URDF" << std::endl;
+                    throw std::runtime_error("No <robot> element found in URDF");
                     return false;
                 }
 
@@ -515,6 +522,10 @@ namespace z
                 // 清空临时存储
                 temp_links_.clear();
                 temp_joints_.clear();
+
+                this->PrintSplitLine();
+                this->PrintRobotInfo();
+                this->PrintSplitLine();
 
                 return true;
             }
