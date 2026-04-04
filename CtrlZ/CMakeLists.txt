@@ -61,6 +61,7 @@ add_library(CtrlZ STATIC
     ${SRC_UTILS}
     ${TINYXML2_SRC}
 )
+set_target_properties(CtrlZ PROPERTIES POSITION_INDEPENDENT_CODE ON)
 
 add_subdirectory(Extensions)
 
